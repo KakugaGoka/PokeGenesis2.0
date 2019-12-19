@@ -63669,6 +63669,221 @@
 				"90 Hyper Beam - Normal"
 			],
 			"stage": 2
+		},
+		{
+			"number": 810,
+			"image": "810",
+			"audio": "810",
+			"species": "Grookey",
+			"type": "Grass",
+			"hp": 5,
+			"atk": 7,
+			"def": 5,
+			"spatk": 4,
+			"spdef": 4,
+			"spd": 7,
+			"size": "1’ 0” / 0.3m (Small)",
+			"weight": "11 lbs / 5kg (1)",
+			"gender": "87.5% M / 12.5% F",
+			"egg": "Field / Plant",
+			"hatch": "10 Days",
+			"diet": "Herbivore",
+			"habitat": "Forest, Rainforest",
+			"legendary": false,
+			"entry": "When it uses its special stick to strike up a beat, the sound waves produced carry revitalizing energy to the plants and flowers in the area.",
+			"basicAbilities": [
+				"Overgrow",
+				"Frisk"
+			],
+			"advancedAbilities": [
+				"Drown Out",
+				"Celebrate"
+			],
+			"highAbilities": [
+				"Grassy Surge"
+			],
+			"athleticsDie": 3,
+			"athleticsBonus": 0,
+			"acrobaticsDie": 3,
+			"acrobaticsBonus": 3,
+			"combatDie": 2,
+			"combatBonus": 0,
+			"stealthDie": 3,
+			"stealthBonus": 0,
+			"perceptionDie": 2,
+			"perceptionBonus": 0,
+			"focusDie": 3,
+			"focusBonus": 2,
+			"capabilities": [
+				"Overland 5",
+				"Swim 3", 
+				"Jump 2/2", 
+				"Power 2", 
+				"Naturewalk (Forest)", 
+				"Pack Mon", 
+				"Underdog"
+			],
+			"evolutions": [
+				"1 - Grookey",
+				"2 - Thwackey Minimum 15",
+				"3 - Rillaboom Minimum 30"
+			],
+			"moves": [
+				"1 Scratch - Normal",
+				"1 Growl - Normal",  
+				"6 Branch Poke - Grass",  
+				"8 Taunt - Dark",
+				"12 Razor Leaf - Grass",  
+				"17 Screech - Normal",
+				"20 Knock Off - Dark",  
+				"24 Slam - Normal",  
+				"28 Uproar - Normal",  
+				"32 Wood Hammer - Grass",  
+				"36 Endeavor - Normal"
+			],
+			"stage": 1
+		},
+		{
+			"number": 811,
+			"image": "811",
+			"audio": "811",
+			"species": "Thwackey",
+			"type": "Grass",
+			"hp": 7,
+			"atk": 9,
+			"def": 7,
+			"spatk": 6,
+			"spdef": 6,
+			"spd": 8,
+			"size": "2’ 4” / 0.7m (Small)",
+			"weight": "30.9 lbs / 14kg (2)",
+			"gender": "87.5% M / 12.5% F",
+			"egg": "Field / Plant",
+			"diet": "Herbivore",
+			"habitat": "Forest, Rainforest",
+			"legendary": false,
+			"entry": "d	The faster a Thwackey can beat out a rhythm with its two sticks, the more respect it wins from its peers.",
+			"basicAbilities": [
+				"Overgrow",
+				"Vital Spirit"
+			],
+			"advancedAbilities": [
+				"Drown Out",
+				"Celebrate"
+			],
+			"highAbilities": [
+				"Grassy Surge"
+			],
+			"athleticsDie": 4,
+			"athleticsBonus": 0,
+			"acrobaticsDie": 4,
+			"acrobaticsBonus": 2,
+			"combatDie": 3,
+			"combatBonus": 0,
+			"stealthDie": 3,
+			"stealthBonus": 1,
+			"perceptionDie": 3,
+			"perceptionBonus": 0,
+			"focusDie": 4,
+			"focusBonus": 2,
+			"capabilities": [
+				"Overland 7", 
+				"Swim 4", 
+				"Jump 3/3", 
+				"Power 3", 
+				"Naturewalk (Forest)", 
+				"Pack Mon", 
+				"Underdog"
+			],
+			"evolutions": [
+				"1 - Grookey", 
+				"2 - Thwackey Minimum 15", 
+				"3 - Rillaboom Minimum 30"
+			],
+			"moves": [
+				"1 Double Hit - Normal",
+				"6 Branch Poke - Grass",
+				"8 Taunt - Dark",
+				"12 Razor Leaf - Grass",  
+				"19 Screech - Normal",
+				"24 Knock Off - Dark",
+				"30 Slam - Normal",
+				"36 Uproar - Normal",  
+				"42 Wood Hammer - Grass",  
+				"48 Endeavor - Normal"
+			],
+			"stage": 2
+		},
+		{
+			"number": 812,
+			"image": "812",
+			"audio": "812",
+			"species": "Rillaboom",
+			"type": "Grass",
+			"hp": 10,
+			"atk": 13,
+			"def": 9,
+			"spatk": 6,
+			"spdef": 7,
+			"spd": 9,
+			"size": "6’ 11” / 2.1m (Large)",
+			"weight": "198.4 lbs / 90kg (4)",
+			"gender": "87.5% M / 12.5% F",
+			"egg": "Field / Plant",
+			"diet": "Herbivore",
+			"habitat": "Forest, Rainforest",
+			"legendary": false,
+			"entry": "By drumming, it taps into the power of its special tree stump. The roots of the stump follow its direction in battle.",
+			"basicAbilities": [
+				"Overgrow",
+				"Vital Spirit"
+			],
+			"advancedAbilities": [
+				"Drown Out",
+				"Abominable"
+			],
+			"highAbilities": [
+				"Grassy Surge"
+			],
+			"athleticsDie": 6,
+			"athleticsBonus": 0,
+			"acrobaticsDie": 4,
+			"acrobaticsBonus": 2,
+			"combatDie": 5,
+			"combatBonus": 0,
+			"stealthDie": 2,
+			"stealthBonus": 0,
+			"perceptionDie": 4,
+			"perceptionBonus": 0,
+			"focusDie": 5,
+			"focusBonus": 2,
+			"capabilities": [
+				"Overland 8", 
+				"Swim 5", 
+				"Jump 3/3", 
+				"Power 8", 
+				"Naturewalk (Forest)", 
+				"Pack Mon"
+			],
+			"evolutions": [
+				"1 - Grookey", 
+				"2 - Thwackey Minimum 15", 
+				"3 - Rillaboom Minimum 30"
+			],
+			"moves": [
+				"1 Drum Beating - Grass",  
+				"6 Branch Poke - Grass",  
+				"8 Taunt - Dark",  
+				"12 Razor Leaf - Grass",  
+				"19 Screech - Normal",  
+				"24 Knock Off - Dark",  
+				"30 Slam - Normal",  
+				"38 Uproar - Normal",  
+				"46 Wood Hammer - Grass",  
+				"54 Endeavor - Normal",  
+				"62 Boomburst - Normal"
+			],
+			"stage": 3
 		}
 	]
 }

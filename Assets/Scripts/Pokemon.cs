@@ -257,7 +257,7 @@ Aegislagh Form
 Zygarde Forms 1, complete, ultra
 Minior Forms (1-7)
 Giga Melmetal
-All Galar Pokemon
+All Galar Pokemon ********
 Giga Corvinight
 Giga 826
 Giga Dreadnaw
