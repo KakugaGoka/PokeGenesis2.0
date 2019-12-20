@@ -1,14 +1,18 @@
 ﻿using System.IO;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PokedexManager : MonoBehaviour
 {
     static public Pokemon[] pokedex;
+    static public PokemonType[] types;
 
     // Start is called before the first frame update
     void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
+
         // Load Pokemon From JSON
         TextAsset pokemonString = Resources.Load<TextAsset>("JSON/Pokemon");
         pokedex = JsonHelper.FromJson<Pokemon>(pokemonString.text);
@@ -16,13 +20,11 @@ public class PokedexManager : MonoBehaviour
 
         // Load in Types from JSON
         TextAsset jsonString = Resources.Load<TextAsset>("JSON/PokemonTypes");
-        PokemonType[] pokemonTypes = JsonHelper.FromJson<PokemonType>(jsonString.text);
-        Debug.Log(pokemonTypes.Length);
+        types = JsonHelper.FromJson<PokemonType>(jsonString.text);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeScene(int sceneID)
     {
-        
+        SceneManager.LoadScene(sceneID);
     }
 }
