@@ -60,7 +60,9 @@ public class Pokemon {
         basicAbilites,
         advancedAbilities,
         highAbilities,
-        moves;
+        moves,
+        knownMoves,
+        currentAbilities;
 
     public Pokemon(string _image,
             string _audio,

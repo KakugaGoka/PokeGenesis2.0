@@ -22,7 +22,7 @@ public class PokedexController : MonoBehaviour {
     private void GetPokemonToView(string query) {
         pokemonInView = new List<Pokemon>();
         foreach (Pokemon pokemon in PokedexManager.pokedex) {
-            if (pokemon.species.Contains(query)) {
+            if (pokemon.species.ToLower().Contains(query.ToLower())) {
                 pokemonInView.Add(pokemon);
             }
         }
