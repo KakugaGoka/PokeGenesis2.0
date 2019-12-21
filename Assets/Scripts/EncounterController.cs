@@ -72,4 +72,8 @@ public class EncounterController : MonoBehaviour {
             }
         }
     }
+
+    public void OnSelected(Pokemon pokemon) {
+        //Look in PokedexController for example of how to set this up.
+    }
 }

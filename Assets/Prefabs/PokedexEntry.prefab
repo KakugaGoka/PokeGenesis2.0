@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 6077127903145834627}
   - component: {fileID: 6209676747246869272}
   m_Layer: 0
-  m_Name: Pokedex Entry
+  m_Name: PokedexEntry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -326,6 +326,8 @@ MonoBehaviour:
     advancedAbilities: []
     highAbilities: []
     moves: []
+    knownMoves: []
+    currentAbilities: []
 --- !u!222 &6209676747246869272
 CanvasRenderer:
   m_ObjectHideFlags: 0
