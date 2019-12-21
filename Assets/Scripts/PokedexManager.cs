@@ -3,14 +3,19 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PokedexManager : MonoBehaviour
-{
+public class PokedexManager : MonoBehaviour {
+    static public PokedexManager manager;
     static public Pokemon[] pokedex;
     static public PokemonType[] types;
 
     // Start is called before the first frame update
-    void Awake()
-    {
+    void Awake() {
+        if (manager == null) {
+            manager = this;
+        } else {
+            Destroy(this.gameObject);
+        }
+
         DontDestroyOnLoad(this.gameObject);
 
         // Load Pokemon From JSON
@@ -23,8 +28,7 @@ public class PokedexManager : MonoBehaviour
         types = JsonHelper.FromJson<PokemonType>(jsonString.text);
     }
 
-    public void ChangeScene(int sceneID)
-    {
+    public void ChangeScene(int sceneID) {
         SceneManager.LoadScene(sceneID);
     }
 }

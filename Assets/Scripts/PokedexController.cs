@@ -1,21 +1,43 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PokedexController : MonoBehaviour
-{
+public class PokedexController : MonoBehaviour {
     public GameObject pokedexPrefab;
     public GameObject contentPanel;
 
-    private void Start()
-    {
+    private List<Pokemon> pokemonInView = new List<Pokemon>();
+
+    private void Start() {
+        GetPokemonToView("");
+        EnumerateScrollView();
+    }
+
+    public void Search() {
+        InputField searchInput = GameObject.Find("Search Field").GetComponent<InputField>();
+        GetPokemonToView(searchInput.text);
+        EnumerateScrollView();
+    }
+
+    private void GetPokemonToView(string query) {
+        pokemonInView = new List<Pokemon>();
+        foreach (Pokemon pokemon in PokedexManager.pokedex) {
+            if (pokemon.species.Contains(query)) {
+                pokemonInView.Add(pokemon);
+            }
+        }
+    }
+
+    private void EnumerateScrollView() {
+        // Clear any entries so not to duplicate.
+        for (int i = 0; i < contentPanel.transform.childCount; i++) {
+            Destroy(contentPanel.transform.GetChild(i).gameObject);
+        }
+
         // Get the name field so to set a default pokemon to it. 
         Text nameField = GameObject.Find("Name Field").GetComponent<Text>();
 
-        foreach (Pokemon pokemon in PokedexManager.pokedex)
-        {
+        foreach (Pokemon pokemon in pokemonInView) {
             GameObject newPokemon = Instantiate(pokedexPrefab) as GameObject;
             PokedexEntry controller = newPokemon.GetComponent<PokedexEntry>();
             controller.pokemon = pokemon;
@@ -25,13 +47,12 @@ public class PokedexController : MonoBehaviour
             pokemon.sprite = Resources.Load<Sprite>("Icons/" + pokemon.image);
 
             if (pokemon.sprite != null)
-                controller.image.sprite = pokemon.sprite;
+                controller.sprite.sprite = pokemon.sprite;
             else
                 Debug.LogError("Pokemon Sprite could not be loaded from: Icons/" + pokemon.image);
 
             // Set default if there isn't already one
-            if (nameField.text == "")
-            {
+            if (nameField.text == "") {
                 controller.OnSelected();
             }
         }

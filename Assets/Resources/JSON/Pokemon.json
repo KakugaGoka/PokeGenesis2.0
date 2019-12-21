@@ -63716,11 +63716,11 @@
 			"focusBonus": 2,
 			"capabilities": [
 				"Overland 5",
-				"Swim 3", 
-				"Jump 2/2", 
-				"Power 2", 
-				"Naturewalk (Forest)", 
-				"Pack Mon", 
+				"Swim 3",
+				"Jump 2/2",
+				"Power 2",
+				"Naturewalk (Forest)",
+				"Pack Mon",
 				"Underdog"
 			],
 			"evolutions": [
@@ -63730,15 +63730,15 @@
 			],
 			"moves": [
 				"1 Scratch - Normal",
-				"1 Growl - Normal",  
-				"6 Branch Poke - Grass",  
+				"1 Growl - Normal",
+				"6 Branch Poke - Grass",
 				"8 Taunt - Dark",
-				"12 Razor Leaf - Grass",  
+				"12 Razor Leaf - Grass",
 				"17 Screech - Normal",
-				"20 Knock Off - Dark",  
-				"24 Slam - Normal",  
-				"28 Uproar - Normal",  
-				"32 Wood Hammer - Grass",  
+				"20 Knock Off - Dark",
+				"24 Slam - Normal",
+				"28 Uproar - Normal",
+				"32 Wood Hammer - Grass",
 				"36 Endeavor - Normal"
 			],
 			"stage": 1
@@ -63762,7 +63762,7 @@
 			"diet": "Herbivore",
 			"habitat": "Forest, Rainforest",
 			"legendary": false,
-			"entry": "d	The faster a Thwackey can beat out a rhythm with its two sticks, the more respect it wins from its peers.",
+			"entry": "The faster a Thwackey can beat out a rhythm with its two sticks, the more respect it wins from its peers.",
 			"basicAbilities": [
 				"Overgrow",
 				"Vital Spirit"
@@ -63787,29 +63787,29 @@
 			"focusDie": 4,
 			"focusBonus": 2,
 			"capabilities": [
-				"Overland 7", 
-				"Swim 4", 
-				"Jump 3/3", 
-				"Power 3", 
-				"Naturewalk (Forest)", 
-				"Pack Mon", 
+				"Overland 7",
+				"Swim 4",
+				"Jump 3/3",
+				"Power 3",
+				"Naturewalk (Forest)",
+				"Pack Mon",
 				"Underdog"
 			],
 			"evolutions": [
-				"1 - Grookey", 
-				"2 - Thwackey Minimum 15", 
+				"1 - Grookey",
+				"2 - Thwackey Minimum 15",
 				"3 - Rillaboom Minimum 30"
 			],
 			"moves": [
 				"1 Double Hit - Normal",
 				"6 Branch Poke - Grass",
 				"8 Taunt - Dark",
-				"12 Razor Leaf - Grass",  
+				"12 Razor Leaf - Grass",
 				"19 Screech - Normal",
 				"24 Knock Off - Dark",
 				"30 Slam - Normal",
-				"36 Uproar - Normal",  
-				"42 Wood Hammer - Grass",  
+				"36 Uproar - Normal",
+				"42 Wood Hammer - Grass",
 				"48 Endeavor - Normal"
 			],
 			"stage": 2
@@ -63858,29 +63858,29 @@
 			"focusDie": 5,
 			"focusBonus": 2,
 			"capabilities": [
-				"Overland 8", 
-				"Swim 5", 
-				"Jump 3/3", 
-				"Power 8", 
-				"Naturewalk (Forest)", 
+				"Overland 8",
+				"Swim 5",
+				"Jump 3/3",
+				"Power 8",
+				"Naturewalk (Forest)",
 				"Pack Mon"
 			],
 			"evolutions": [
-				"1 - Grookey", 
-				"2 - Thwackey Minimum 15", 
+				"1 - Grookey",
+				"2 - Thwackey Minimum 15",
 				"3 - Rillaboom Minimum 30"
 			],
 			"moves": [
-				"1 Drum Beating - Grass",  
-				"6 Branch Poke - Grass",  
-				"8 Taunt - Dark",  
-				"12 Razor Leaf - Grass",  
-				"19 Screech - Normal",  
-				"24 Knock Off - Dark",  
-				"30 Slam - Normal",  
-				"38 Uproar - Normal",  
-				"46 Wood Hammer - Grass",  
-				"54 Endeavor - Normal",  
+				"1 Drum Beating - Grass",
+				"6 Branch Poke - Grass",
+				"8 Taunt - Dark",
+				"12 Razor Leaf - Grass",
+				"19 Screech - Normal",
+				"24 Knock Off - Dark",
+				"30 Slam - Normal",
+				"38 Uproar - Normal",
+				"46 Wood Hammer - Grass",
+				"54 Endeavor - Normal",
 				"62 Boomburst - Normal"
 			],
 			"stage": 3

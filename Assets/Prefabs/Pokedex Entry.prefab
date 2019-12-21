@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3336687403074736396}
   - component: {fileID: 7492344547881319594}
-  - component: {fileID: 6017561802620589534}
+  - component: {fileID: 7379790429421878187}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687534460112019943}
   m_CullTransparentMesh: 0
---- !u!114 &6017561802620589534
+--- !u!114 &7379790429421878187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,12 +275,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26eb7fb3a4af9ce47b3e46ec717f1521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 6017561802620589534}
+  sprite: {fileID: 7379790429421878187}
   species: {fileID: 3810275129505466570}
   background: {fileID: 724777543031377638}
   backgroundTint: {r: 1, g: 1, b: 1, a: 0.14901961}
   pokemon:
     sprite: {fileID: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
     image: 
     audio: 
     species: 
@@ -317,6 +318,8 @@ MonoBehaviour:
     focusBonus: 0
     techEduBonus: 0
     legendary: 0
+    shiny: 0
+    colorHasBeenSet: 0
     evolutions: []
     capabilities: []
     basicAbilites: []

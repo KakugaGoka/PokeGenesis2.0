@@ -2,9 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PokedexEntry : MonoBehaviour
-{
-    public Image image;
+public class PokedexEntry : MonoBehaviour {
+    public Image sprite;
     public Text species;
     public Button background;
     public Color backgroundTint;
@@ -13,8 +12,7 @@ public class PokedexEntry : MonoBehaviour
     public Pokemon pokemon;
 
 
-    public void OnSelected()
-    {
+    public void OnSelected() {
         Text nameField = GameObject.Find("Name Field").GetComponent<Text>();
         Text numField = GameObject.Find("Number Field").GetComponent<Text>();
         Text typeField = GameObject.Find("Types Field").GetComponent<Text>();
@@ -29,41 +27,41 @@ public class PokedexEntry : MonoBehaviour
         Text entryField = GameObject.Find("Entry Field").GetComponent<Text>();
         //AudioSource pokemonCry = GameObject.Find("Cry Button").GetComponent<AudioSource>();
 
-        nameField.text = pokemon.species == null ? 
-            "Unkown" : 
+        nameField.text = pokemon.species == null ?
+            "Unkown" :
             pokemon.species;
-        numField.text = pokemon.number == 0 ? 
-            "???" : 
+        numField.text = pokemon.number == 0 ?
+            "???" :
             "#" + pokemon.number.ToString();
-        typeField.text = pokemon.type == null ? 
-            "Unkown" : 
+        typeField.text = pokemon.type == null ?
+            "Unkown" :
             pokemon.type;
-        regionField.text = pokemon.region == null ? 
-            "Unkown" : 
+        regionField.text = pokemon.region == null ?
+            "Unkown" :
             pokemon.region;
-        sizeField.text = pokemon.size == null ? 
-            "Unkown" : 
+        sizeField.text = pokemon.size == null ?
+            "Unkown" :
             pokemon.size;
-        weightField.text = pokemon.weight == null ? 
-            "Unkown" : 
+        weightField.text = pokemon.weight == null ?
+            "Unkown" :
             pokemon.weight;
-        genderField.text = pokemon.gender == null ? 
-            "Unkown" : 
+        genderField.text = pokemon.gender == null ?
+            "Unkown" :
             pokemon.gender;
-        eggField.text = pokemon.egg == null ? 
-            "Unkown" : 
+        eggField.text = pokemon.egg == null ?
+            "Unkown" :
             pokemon.egg;
-        hatchField.text = pokemon.hatch == null ? 
-            "None" : 
+        hatchField.text = pokemon.hatch == null ?
+            "None" :
             pokemon.hatch;
-        dietField.text = pokemon.diet == null ? 
-            "Unkown" : 
+        dietField.text = pokemon.diet == null ?
+            "Unkown" :
             pokemon.diet;
-        habitatField.text = pokemon.habitat == null ? 
-            "Unkown" : 
+        habitatField.text = pokemon.habitat == null ?
+            "Unkown" :
             pokemon.habitat;
-        entryField.text = pokemon.entry == null ? 
-            "No entry found..." : 
+        entryField.text = pokemon.entry == null ?
+            "No entry found..." :
             pokemon.entry;
 
         //if (pokemon.audio != null)

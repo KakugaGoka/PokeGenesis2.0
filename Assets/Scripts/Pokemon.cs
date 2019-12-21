@@ -3,15 +3,17 @@ using System.IO;
 using UnityEngine;
 
 [Serializable]
-public class Pokemon
-{
+public class Pokemon {
     public Sprite
         sprite;
 
-    public string 
+    public Color
+        color;
+
+    public string
         image,
         audio,
-        species, 
+        species,
         region,
         type,
         size,
@@ -23,7 +25,7 @@ public class Pokemon
         habitat,
         entry;
 
-    public int  
+    public int
         number,
         hp,
         atk,
@@ -48,7 +50,9 @@ public class Pokemon
         techEduBonus;
 
     public bool
-        legendary;
+        legendary,
+        shiny,
+        colorHasBeenSet;
 
     public string[]
         evolutions,
@@ -56,7 +60,7 @@ public class Pokemon
         basicAbilites,
         advancedAbilities,
         highAbilities,
-        moves; 
+        moves;
 
     public Pokemon(string _image,
             string _audio,
@@ -100,8 +104,10 @@ public class Pokemon
             string[] _advancedAbilites,
             string[] _highAbilities,
             string[] _moves
-        )
-    {
+        ) {
+        shiny = false;
+        colorHasBeenSet = false;
+        color = new Vector4(1, 1, 1, 1);
         image = _image;
         audio = _audio;
         number = _number;
