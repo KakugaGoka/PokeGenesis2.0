@@ -1,0 +1,1918 @@
+﻿{
+	"Items": [
+		{
+			"name": "Big Root",
+			"image": "Big_Root",
+			"desc": "HP stealing moves restore double HP. Cannot be used by Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Bright Powder",
+			"image": "Bright_Powder",
+			"desc": "+2 to Speed Evasion. Cannot be used by Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Contest Accessory",
+			"image": "Contest_Accessory",
+			"desc": "The user rolls +2d6 during the Introduction Stage of a Contest. Cannot be used by Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Yellow Scarf",
+			"image": "Yellow_Scarf",
+			"desc": "When held, once per Contest, the holder may re-roll any 1s made when using a Tough Move. Cannot be used by Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Red Scarf",
+			"image": "Red_Scarf",
+			"desc": "When held, once per Contest, the holder may re-roll any 1s made when using a Cool Move. Cannot be used by Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Pink Scarf",
+			"image": "Pink_Scarf",
+			"desc": "When held, once per Contest, the holder may re-roll any 1s made when using a Cute Move. Cannot be used by Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Green Scarf",
+			"image": "Green_Scarf",
+			"desc": "When held, once per Contest, the holder may re-roll any 1s made when using a Smart Move. Cannot be used by Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Blue Scarf",
+			"image": "Blue_Scarf",
+			"desc": "When held, once per Contest, the holder may re-roll any 1s made when using a Beauty Move. Cannot be used by Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Everstone",
+			"image": "Everstone",
+			"desc": "Evolution is prevented for the holder. Cannot be used by Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Go-Goggles",
+			"image": "Go-Goggles",
+			"desc": "The user does not take damage from Sandstorm. Head Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Iron Ball",
+			"image": "Iron_Ball",
+			"desc": "The Holder's Speed is halved, and any immunity to Ground Type is lost. Hand Item for Trainers. Standard Action to drop.",
+			"tier": "1"
+		},
+		{
+			"name": "Lagging Tail",
+			"image": "Lagging_Tail",
+			"desc": "The Lagging Items are tied to a specific Stat. When held, they set that Stat to -4 Combat Stages. Cannot be used by Trainers. Standard Action to drop.",
+			"tier": "1"
+		},
+		{
+			"name": "Safety Goggles",
+			"image": "Safety_Goggles",
+			"desc": "The holder is immune to Moves with the Powder Keyword. Accessory or Head Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Black Belt",
+			"image": "Black_Belt",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Fighting-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Black Glasses",
+			"image": "Black_Glasses",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Dark-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Charcoal",
+			"image": "Charcoal",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Fire-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Dragon Fang",
+			"image": "Dragon_Fang",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Dragon-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Hard Stone",
+			"image": "Hard_Stone",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Rock-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Magnet",
+			"image": "Magnet",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Electric-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Metal Coat",
+			"image": "Metal_Coat",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Steel-Type Moves performed by the user. Accessory Item for Trainers. Can be used by Onix and Scyther to evolve.",
+			"tier": "1"
+		},
+		{
+			"name": "Miracle Seed",
+			"image": "Miracle_Seed",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Grass-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Mystic Water",
+			"image": "Mystic_Water",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Water-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Poison Barb",
+			"image": "Poison_Barb",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Poison-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Sharp Beak",
+			"image": "Sharp_Beak",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Flying-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Silk Scarf",
+			"image": "Silk_Scarf",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Fairy-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Silver Powder",
+			"image": "Silver_Powder",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Bug-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Soft Sand",
+			"image": "Soft_Sand",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Ground-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Spell Tag",
+			"image": "Spell_Tag",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Ghost-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Never Melt Ice",
+			"image": "Never_Melt Ice",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Ice-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Twisted Spoon",
+			"image": "Twisted_Spoon",
+			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Psychic-Type Moves performed by the user. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "Winter Cloak",
+			"image": "Winter_Cloak",
+			"desc": "The user does not take damage from Hail. Accessory Item for Trainers.",
+			"tier": "1"
+		},
+		{
+			"name": "HP Down",
+			"image": "HP_Down",
+			"desc": "Lowers the user's HP Base Stat 1.",
+			"tier": "1"
+		},
+		{
+			"name": "Anti-Protein",
+			"image": "Anti-Protein",
+			"desc": "Lowers the user's Attack Base Stat 1.",
+			"tier": "1"
+		},
+		{
+			"name": "Anti-Iron",
+			"image": "Anti-Iron",
+			"desc": "Lowers the user's Defense Base Stat 1.",
+			"tier": "1"
+		},
+		{
+			"name": "Anti-Calcium",
+			"image": "Anti-Calcium",
+			"desc": "Lowers the user's Special Attack Base Stat 1.",
+			"tier": "1"
+		},
+		{
+			"name": "Anti-Zinc",
+			"image": "Anti-Zinc",
+			"desc": "Lowers the user's Special Defense Base Stat 1.",
+			"tier": "1"
+		},
+		{
+			"name": "Anti-Carbos",
+			"image": "Anti-Carbos",
+			"desc": "Lowers the user's Speed Base Stat 1.",
+			"tier": "1"
+		},
+		{
+			"name": "Blue Shard",
+			"image": "Blue_Shard",
+			"desc": "A bit of colored energized crystal used for various crafting purposes. Blue Shards are associated with Water, Ice, and Flying types.",
+			"tier": "1"
+		},
+		{
+			"name": "Green Shard",
+			"image": "Green_Shard",
+			"desc": "A bit of colored energized crystal used for various crafting purposes. Green Shards are associated with Bug, Grass, and Ground types.",
+			"tier": "1"
+		},
+		{
+			"name": "Red Shard",
+			"image": "Red_Shard",
+			"desc": "A bit of colored energized crystal used for various crafting purposes. Red Shards are associated with Fire, Fairy, and Psychic types.",
+			"tier": "1"
+		},
+		{
+			"name": "Yellow Shard",
+			"image": "Yellow_Shard",
+			"desc": "A bit of colored energized crystal used for various crafting purposes. Yellow Shards are associated with Electric, Rock, and Steel types.",
+			"tier": "1"
+		},
+		{
+			"name": "Orange Shard",
+			"image": "Orange_Shard",
+			"desc": "A bit of colored energized crystal used for various crafting purposes. Orange Shards are associated with Normal, Fighting, and Dragon types.",
+			"tier": "1"
+		},
+		{
+			"name": "Violet Shard",
+			"image": "Violet_Shard",
+			"desc": "A bit of colored energized crystal used for various crafting purposes. Violet Shards are associated with Poison, Dark, and Ghost types.",
+			"tier": "1"
+		},
+		{
+			"name": "X Attack",
+			"image": "X_Attack",
+			"desc": "Increases the Pokemon's Attack by two Combat Stages",
+			"tier": "1"
+		},
+		{
+			"name": "X Defend",
+			"image": "X_Defend",
+			"desc": "Increases the Pokemon's Defense by two Combat Stages",
+			"tier": "1"
+		},
+		{
+			"name": "X Special",
+			"image": "X_Special",
+			"desc": "Increases the Pokemon's Special Attack by two Combat Stages",
+			"tier": "1"
+		},
+		{
+			"name": "X Sp. Def",
+			"image": "X_Sp. Def",
+			"desc": "Increases the Pokemon's Special Defense by two Combat Stages",
+			"tier": "1"
+		},
+		{
+			"name": "X Speed",
+			"image": "X_Speed",
+			"desc": "Increases the Pokemon's Speed by two Combat Stages",
+			"tier": "1"
+		},
+		{
+			"name": "Dire Hit",
+			"image": "Dire_Hit",
+			"desc": "Increases Critical Hit Range of all moves by +2.",
+			"tier": "1"
+		},
+		{
+			"name": "X Accuracy",
+			"image": "X_Accuracy",
+			"desc": "Increases Accuracy by +2",
+			"tier": "1"
+		},
+		{
+			"name": "Guard Spec.",
+			"image": "Guard_Spec.",
+			"desc": "Prevents reduction of Combat Stages or Accuracy on the Pokemon for 5 Turns",
+			"tier": "1"
+		},
+		{
+			"name": "Potion",
+			"image": "Potion",
+			"desc": "Heals 20 Hit Points",
+			"tier": "1"
+		},
+		{
+			"name": "Super Potion",
+			"image": "Super_Potion",
+			"desc": "Heals 35 Hit Points",
+			"tier": "1"
+		},
+		{
+			"name": "Hyper Potion",
+			"image": "Hyper_Potion",
+			"desc": "Heals 70 Hit Points",
+			"tier": "1"
+		},
+		{
+			"name": "Antidote",
+			"image": "Antidote",
+			"desc": "Cures Poison",
+			"tier": "1"
+		},
+		{
+			"name": "Paralyze Heal",
+			"image": "Paralyze_Heal",
+			"desc": "Cures Paralysis",
+			"tier": "1"
+		},
+		{
+			"name": "Burn Heal",
+			"image": "Burn_Heal",
+			"desc": "Cures Burns",
+			"tier": "1"
+		},
+		{
+			"name": "Ice Heal",
+			"image": "Ice_Heal",
+			"desc": "Cures Freezing",
+			"tier": "1"
+		},
+		{
+			"name": "Full Heal",
+			"image": "Full_Heal",
+			"desc": "Cures all Persistent Status Afflictions",
+			"tier": "1"
+		},
+		{
+			"name": "Full Restore",
+			"image": "Full_Restore",
+			"desc": "Heals a Pokemon for 80 Hit Points and cures any Status Afflictions",
+			"tier": "1"
+		},
+		{
+			"name": "Revive",
+			"image": "Revive",
+			"desc": "Revives fainted Pokemon and sets to 20 Hit Points",
+			"tier": "1"
+		},
+		{
+			"name": "Fresh Water",
+			"image": "Fresh_Water",
+			"desc": "Heals 20 Hit Points.",
+			"tier": "1"
+		},
+		{
+			"name": "Shuckle's Berry Juice",
+			"image": "Shuckle's_Berry Juice",
+			"desc": "Heals 30 Hit Points.",
+			"tier": "1"
+		},
+		{
+			"name": "Super Soda Pop",
+			"image": "Super_Soda Pop",
+			"desc": "Heals 30 Hit Points.",
+			"tier": "1"
+		},
+		{
+			"name": "Sparkling Lemonade",
+			"image": "Sparkling_Lemonade",
+			"desc": "Heals 50 Hit Points.",
+			"tier": "1"
+		},
+		{
+			"name": "MooMoo Milk",
+			"image": "MooMoo_Milk",
+			"desc": "Heals 80 Hit Points.",
+			"tier": "1"
+		},
+		{
+			"name": "Candy Bar",
+			"image": "Candy_Bar",
+			"desc": "Snack. Grants a Digestion Buff that heals 5 Hit Points.",
+			"tier": "1"
+		},
+		{
+			"name": "Honey",
+			"image": "Honey",
+			"desc": "Snack. Grants a Digestion Buff that heals 5 Hit Points. May be used as Bait",
+			"tier": "1"
+		},
+		{
+			"name": "Leftovers",
+			"image": "Leftovers",
+			"desc": "Snack. When their Digestion Buff is traded in, the user recovers 1/16th of their max Hit Points at the beginning of each turn for the rest of the encounter.",
+			"tier": "1"
+		},
+		{
+			"name": "Black Sludge",
+			"image": "Black_Sludge",
+			"desc": "Poison-Type Pokemon may consume the Black Sludge as a Snack Item; when the Digestion Buff is traded in, they recover 1/8th of their Max Hit Points at the beginning of each turn for the rest of the encounter.",
+			"tier": "1"
+		},
+		{
+			"name": "Energy Powder",
+			"image": "Energy_Powder",
+			"desc": "Heals 25 Hit Points - Repulsive",
+			"tier": "1"
+		},
+		{
+			"name": "Heal Powder",
+			"image": "Heal_Powder",
+			"desc": "Cure all Persistent Status Afflictions - Repulsive",
+			"tier": "1"
+		},
+		{
+			"name": "Repel",
+			"image": "Repel",
+			"desc": "Lasts 1 hour; causes Pokemon of level 15 or lower to flee",
+			"tier": "1"
+		},
+		{
+			"name": "Super Repel",
+			"image": "Super_Repel",
+			"desc": "Lasts 2 hour; causes Pokemon of level 25 or lower to flee",
+			"tier": "1"
+		},
+		{
+			"name": "Basic Ball",
+			"image": "Basic_Ball",
+			"desc": "Basic Poke Ball; often called just a “Poke Ball”",
+			"tier": "1"
+		},
+		{
+			"name": "Safari Ball",
+			"image": "Safari_Ball",
+			"desc": "Used during Safari hunts",
+			"tier": "1"
+		},
+		{
+			"name": "Premier Ball",
+			"image": "Premier_Ball",
+			"desc": "Given as promotional balls during sales",
+			"tier": "1"
+		},
+		{
+			"name": "Cherish Ball",
+			"image": "Cherish_Ball",
+			"desc": "A decorative Poke Ball often given out during special events",
+			"tier": "1"
+		},
+		{
+			"name": "Park Ball",
+			"image": "Park_Ball",
+			"desc": "Used during Safari hunts",
+			"tier": "1"
+		},
+		{
+			"name": "Sport Ball",
+			"image": "Sport_Ball",
+			"desc": "Used during Safari hunts",
+			"tier": "1"
+		},
+		{
+			"name": "Cheri Berry",
+			"image": "Cheri_Berry",
+			"desc": "Cures Paralysis, Cool Poffin Ingredient",
+			"tier": "1"
+		},
+		{
+			"name": "Chesto Berry",
+			"image": "Chesto_Berry",
+			"desc": "Cures Sleep, Beauty Poffin Ingredient",
+			"tier": "1"
+		},
+		{
+			"name": "Pecha Berry",
+			"image": "Pecha_Berry",
+			"desc": "Cures Poison, Cute Poffin Ingredient",
+			"tier": "1"
+		},
+		{
+			"name": "Rawst Berry",
+			"image": "Rawst_Berry",
+			"desc": "Cures Burn, Smart Poffin Ingredient",
+			"tier": "1"
+		},
+		{
+			"name": "Aspear Berry",
+			"image": "Aspear_Berry",
+			"desc": "Cures Freeze, Tough Poffin Ingredient",
+			"tier": "1"
+		},
+		{
+			"name": "Oran Berry",
+			"image": "Oran_Berry",
+			"desc": "Restores 5 Hit Points",
+			"tier": "1"
+		},
+		{
+			"name": "Persim Berry",
+			"image": "Persim_Berry",
+			"desc": "Cures Confusion",
+			"tier": "1"
+		},
+		{
+			"name": "Razz Berry",
+			"image": "Razz_Berry",
+			"desc": "Cool Poffin Ingredient",
+			"tier": "1"
+		},
+		{
+			"name": "Bluk Berry",
+			"image": "Bluk_Berry",
+			"desc": "Beauty Poffin Ingredient",
+			"tier": "1"
+		},
+		{
+			"name": "Nanab Berry",
+			"image": "Nanab_Berry",
+			"desc": "Cute Poffin Ingredient",
+			"tier": "1"
+		},
+		{
+			"name": "Wepear Berry",
+			"image": "Wepear_Berry",
+			"desc": "Smart Poffin Ingredient",
+			"tier": "1"
+		},
+		{
+			"name": "Choice Band",
+			"image": "Choice_Band",
+			"desc": "While worn, Attack is +2 Combat Stages instead of 0. However, the user is Suppressed and cannot be cured until the end of Combat, even if the item is removed. Cannot be used by Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Choice Specs",
+			"image": "Choice_Specs",
+			"desc": "While worn, Special Attack is +2 Combat Stages instead of 0. However, the user is Suppressed and cannot be cured until the end of Combat, even if the item is removed. Cannot be used by Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Choice Scarf",
+			"image": "Choice_Scarf",
+			"desc": "While worn, Speed is +2 Combat Stages instead of 0. However, the user is Suppressed and cannot be cured until the end of Combat, even if the item is removed. Cannot be used by Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Expert Belt",
+			"image": "Expert_Belt",
+			"desc": "Whenever the holder deals Super Effective Damage, they deal an additional 5 damage (this damage is not multiplied). Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Flame Orb",
+			"image": "Flame_Orb",
+			"desc": "Induces burn on holder. Off-Hand Item for Trainers. Standard Action to drop.",
+			"tier": "2"
+		},
+		{
+			"name": "King's Rock",
+			"image": "King's_Rock",
+			"desc": "Attacks cause Flinch on a roll of 19+. This does not stack with any abilities, moves, or effects that extend flinch rate. Head Item for Trainers. Can be used by Slowpoke and Poliwhirl to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Full Incense",
+			"image": "Full_Incense",
+			"desc": "The holder gains the Stall ability. Cannot be used by Trainers. Causes Snorlax to be able to produce a Munchlax Egg",
+			"tier": "2"
+		},
+		{
+			"name": "Luck Incense",
+			"image": "Luck_Incense",
+			"desc": "When held, it grants +1 Bonus to all Accuracy Rolls. A roll of 1 always misses. Cannot be used by Trainers. Causes Chansey and Blissey to be able to produce a Happiny Egg",
+			"tier": "2"
+		},
+		{
+			"name": "Lax Incense",
+			"image": "Lax_Incense",
+			"desc": "When held, it grants +1 to all Stat Evasions. Cannot be used by Trainers. Causes Wobbuffet to be able to produce a Wynaut Egg",
+			"tier": "2"
+		},
+		{
+			"name": "Odd Incense",
+			"image": "Odd_Incense",
+			"desc": "When held, it grants +2 to the Damage Base of Psychic-Type Move. Cannot be used by Trainers. Causes Mr. Mime to be able to produce a Mime Jr. Egg",
+			"tier": "2"
+		},
+		{
+			"name": "Pure Incense",
+			"image": "Pure_Incense",
+			"desc": "When held, The user cannot be Slowed, Stuck, or Trapped.The user does not provoke Attacks of Opportunity by Shifting. Cannot be used by Trainers. Causes Chimecho to be able to produce a Chingling Egg",
+			"tier": "2"
+		},
+		{
+			"name": "Rock Incense",
+			"image": "Rock_Incense",
+			"desc": "When held, it grants +2 to the Damage Base of Rock-Type Moves. Cannot be used by Trainers. Causes SudoWoodo to be able to produce a Bonsly Egg",
+			"tier": "2"
+		},
+		{
+			"name": "Rose Incense",
+			"image": "Rose_Incense",
+			"desc": "When held, it grants +2 to the Damage Base of Grass-Type Moves. Cannot be used by Trainers. Causes Roselia and Roserade to be able to produce a Budew Egg",
+			"tier": "2"
+		},
+		{
+			"name": "Sea Incense",
+			"image": "Sea_Incense",
+			"desc": "When held, it grants +2 to the Damage Base of Water-Type Moves. Cannot be used by Trainers. Causes Maril and Azumaril to be able to produce a Azurill Egg",
+			"tier": "2"
+		},
+		{
+			"name": "Wave Incense",
+			"image": "Wave_Incense",
+			"desc": "When held, it grants +2 to the Damage Base of Water-Type Moves. Cannot be used by Trainers. Causes Mantine to be able to produce a Mantyke Egg",
+			"tier": "2"
+		},
+		{
+			"name": "Life Orb",
+			"image": "Life_Orb",
+			"desc": "Whenever the holder deals direct damage, increase the damage by +5, and then the holder loses Hit Points equal to 1/16th of their Max Hit Points. Off-Hand Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Razor Claw",
+			"image": "Razor_Claw",
+			"desc": "The holder's damaging attacks have their Critical Hit Range extended by +1. Can be used by Sneasel to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Razor Fang",
+			"image": "Razor_Fang",
+			"desc": "The holder's damaging attacks cause an Injury on a roll of 19+. Accessory Item for Trainers. Can be used by Gilgar to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Shock Collar",
+			"image": "Shock_Collar",
+			"desc": "Comes with a remote activator, which when pressed, causes the Pokemon or Trainer wearing the shock collar to lose Hit Points equal to 1/6th of their Max Hit Points. This may be used to activate the �Press� Feature.",
+			"tier": "2"
+		},
+		{
+			"name": "Draco Brace",
+			"image": "Draco_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Dragon-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Dread Brace",
+			"image": "Dread_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Dark-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Earth Brace",
+			"image": "Earth_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Ground-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Flame Brace",
+			"image": "Flame_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Fire-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Icicle Brace",
+			"image": "Icicle_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Ice-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Insect Brace",
+			"image": "Insect_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Bug-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Iron Brace",
+			"image": "Iron_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Steel-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Meadow Brace",
+			"image": "Meadow_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Grass-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Mind Brace",
+			"image": "Mind_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Psychic-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Pixie Brace",
+			"image": "Pixie_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Fairy-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Sky Brace",
+			"image": "Sky_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Flying-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Splash Brace",
+			"image": "Splash_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Water-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Spooky Brace",
+			"image": "Spooky_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Ghost-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Stone Brace",
+			"image": "Stone_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Rock-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Toxic Brace",
+			"image": "Toxic_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Poison-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Zap Brace",
+			"image": "Zap_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Electric-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Fist Brace",
+			"image": "Fist_Brace",
+			"desc": "When held, it grants the holder 15 Damage Reduction against Fighting-Type Moves. Accessory Item for Trainers.",
+			"tier": "2"
+		},
+		{
+			"name": "Fire Stone",
+			"image": "Fire_Stone",
+			"desc": "A peculiar stone that can make certain species of Pokemon evolve. The stone has a fiery orange heart.",
+			"tier": "2"
+		},
+		{
+			"name": "Water Stone",
+			"image": "Water_Stone",
+			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It is the blue of a pool of clear water.",
+			"tier": "2"
+		},
+		{
+			"name": "Thunder Stone",
+			"image": "Thunder_Stone",
+			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It has a distinct thunderbolt pattern.",
+			"tier": "2"
+		},
+		{
+			"name": "Leaf Stone",
+			"image": "Leaf_Stone",
+			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It has an unmistakable leaf pattern.",
+			"tier": "2"
+		},
+		{
+			"name": "Moon Stone",
+			"image": "Moon_Stone",
+			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It is as black as the night sky.",
+			"tier": "2"
+		},
+		{
+			"name": "Sun Stone",
+			"image": "Sun_Stone",
+			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It burns as red as the evening sun.",
+			"tier": "2"
+		},
+		{
+			"name": "Shiny Stone",
+			"image": "Shiny_Stone",
+			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It shines with a dazzling light.",
+			"tier": "2"
+		},
+		{
+			"name": "Dusk Stone",
+			"image": "Dusk_Stone",
+			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It holds shadows as dark as can be.",
+			"tier": "2"
+		},
+		{
+			"name": "Dawn Stone",
+			"image": "Dawn_Stone",
+			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It sparkles like a glittering eye.",
+			"tier": "2"
+		},
+		{
+			"name": "Deep Sea Scale",
+			"image": "Deep_Sea Scale",
+			"desc": "An item to be held by Clamperl. This scale shines with a faint pink and raises the holder's Sp. Def stat.",
+			"tier": "2"
+		},
+		{
+			"name": "Deep Sea Tooth",
+			"image": "Deep_Sea Tooth",
+			"desc": "An item to be held by Clamperl. This fang gleams a sharp silver and raises the holder's Sp. Atk stat.",
+			"tier": "2"
+		},
+		{
+			"name": "Dragon Scale",
+			"image": "Dragon_Scale",
+			"desc": "Boosts the power of Dragon-type moves by 10% when held. Can be used by Seadra to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Dubious Disc",
+			"image": "Dubious_Disc",
+			"desc": "A transparent device overflowing with dubious data. Its producer is unknown. Can be used by Porygon2 to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Electirizer",
+			"image": "Electirizer",
+			"desc": "A box packed with a tremendous amount of electric energy. It's loved by a certain Pokemon. Can be used by Electabuzz to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Magmarizer",
+			"image": "Magmarizer",
+			"desc": "A box packed with a tremendous amount of magma energy. It's loved by a certain Pokemon. Can be used by Magmar to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Prism Scale",
+			"image": "Prism_Scale",
+			"desc": "A mysterious scale that causes Feebas to evolve. It shines in rainbow colors.",
+			"tier": "2"
+		},
+		{
+			"name": "Protector",
+			"image": "Protector",
+			"desc": "A protective item of some sort. It is extremely stiff and heavy. It's loved by a certain Pokemon. Can be used by Rhydon to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Reaper Cloth",
+			"image": "Reaper_Cloth",
+			"desc": "A cloth imbued with horrifyingly strong spiritual energy. It's loved by a certain Pokemon. Can be used by Dusclops to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Sachet",
+			"image": "Sachet",
+			"desc": "A sachet filled with fragrant perfumes that are just slightly too overwhelming. Yet it's loved by a certain Pokemon. Can be used by Spritzee to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Up-Grade",
+			"image": "Up-Grade",
+			"desc": "A transparent device somehow filled with all sorts of data. It was produced by Silph Co. Can be used by Porygon to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Whipped Dream",
+			"image": "Whipped_Dream",
+			"desc": "A soft and sweet treat made of fluffy, puffy, whipped and whirled cream. It's loved by a certain Pokemon. Can be used by Swirlix to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Oval Stone",
+			"image": "Oval_Stone",
+			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It's as round as a Pokemon Egg. Can be used by Happiny to evolve.",
+			"tier": "2"
+		},
+		{
+			"name": "Heart Scale",
+			"image": "Heart_Scale",
+			"desc": "This tiny rainbow scale from a Luvdisc is valued by Apothecary Researchers, because it can be used to create the Heart Booster vitamin.",
+			"tier": "2"
+		},
+		{
+			"name": "Red Apricorn",
+			"image": "Red_Apricorn",
+			"desc": "Used to make a Level Ball",
+			"tier": "2"
+		},
+		{
+			"name": "Yellow Apricorn",
+			"image": "Yellow_Apricorn",
+			"desc": "Used to make a Moon Ball",
+			"tier": "2"
+		},
+		{
+			"name": "Blue Apricorn",
+			"image": "Blue_Apricorn",
+			"desc": "Used to make a Lure Ball",
+			"tier": "2"
+		},
+		{
+			"name": "Green Apricorn",
+			"image": "Green_Apricorn",
+			"desc": "Used to make a Friend Ball",
+			"tier": "2"
+		},
+		{
+			"name": "Pink Apricorn",
+			"image": "Pink_Apricorn",
+			"desc": "Used to make a Love Ball",
+			"tier": "2"
+		},
+		{
+			"name": "White Apricorn",
+			"image": "White_Apricorn",
+			"desc": "Used to make a Fast Ball",
+			"tier": "2"
+		},
+		{
+			"name": "Black Apricorn",
+			"image": "Black_Apricorn",
+			"desc": "Used to make a Heavy Ball",
+			"tier": "2"
+		},
+		{
+			"name": "Energy Root",
+			"image": "Energy_Root",
+			"desc": "Heals 70 Hit Points - Repulsive",
+			"tier": "2"
+		},
+		{
+			"name": "Revival Herb",
+			"image": "Revival_Herb",
+			"desc": "Revives Pokemon and sets to 50% Hit Points - Repulsive",
+			"tier": "2"
+		},
+		{
+			"name": "Mental Herb",
+			"image": "Mental_Herb",
+			"desc": "Cures all Volatile Status Effects.",
+			"tier": "2"
+		},
+		{
+			"name": "Power Herb",
+			"image": "Power_Herb",
+			"desc": "Eliminates the Set-Up turn of Moves with the Set-Up Keyword.",
+			"tier": "2"
+		},
+		{
+			"name": "White Herb",
+			"image": "White_Herb",
+			"desc": "Any negative Combat Stages are set to 0.",
+			"tier": "2"
+		},
+		{
+			"name": "Pearl",
+			"image": "Pearl",
+			"desc": "Can be sold for $1400.",
+			"tier": "2"
+		},
+		{
+			"name": "Stardust",
+			"image": "Stardust",
+			"desc": "Can be sold for $2000.",
+			"tier": "2"
+		},
+		{
+			"name": "Relic Copper",
+			"image": "Relic_Copper",
+			"desc": "Can be sold for $1000.",
+			"tier": "2"
+		},
+		{
+			"name": "Relic Vase",
+			"image": "Relic_Vase",
+			"desc": "The right person may want this.",
+			"tier": "2"
+		},
+		{
+			"name": "Relic Statue",
+			"image": "Relic_Statue",
+			"desc": "The right person may want this.",
+			"tier": "2"
+		},
+		{
+			"name": "Relic Band",
+			"image": "Relic_Band",
+			"desc": "The right person may want this.",
+			"tier": "2"
+		},
+		{
+			"name": "Repel",
+			"image": "Repel",
+			"desc": "Lasts 5 hour; causes Pokemon of level 35 or lower to flee.",
+			"tier": "2"
+		},
+		{
+			"name": "Great Ball",
+			"image": "Great_Ball",
+			"desc": "A better Poke Ball with no special effects.",
+			"tier": "2"
+		},
+		{
+			"name": "Level Ball",
+			"image": "Level_Ball",
+			"desc": "-20 Modifier if the target is under half the level your active Pokémon is.",
+			"tier": "2"
+		},
+		{
+			"name": "Lure Ball",
+			"image": "Lure_Ball",
+			"desc": "-20 Modifier if the target was baited into the encounter with food.",
+			"tier": "2"
+		},
+		{
+			"name": "Moon Ball",
+			"image": "Moon_Ball",
+			"desc": "-20 Modifier if the target evolves with an Evolution Stone.",
+			"tier": "2"
+		},
+		{
+			"name": "Friend Ball",
+			"image": "Friend_Ball",
+			"desc": "A caught Pokémon will start with +1 Loyalty.",
+			"tier": "2"
+		},
+		{
+			"name": "Love Ball",
+			"image": "Love_Ball",
+			"desc": "-30 Modifier if the user has an active Pokémon that is of the same evolutionary line as the target, and the opposite gender.",
+			"tier": "2"
+		},
+		{
+			"name": "Heavy Ball",
+			"image": "Heavy_Ball",
+			"desc": "-5 Modifier for each Weight Class the target is above 1.",
+			"tier": "2"
+		},
+		{
+			"name": "Fast Ball",
+			"image": "Fast_Ball",
+			"desc": "-20 Modifier if the target has a Movement Capability above 7.",
+			"tier": "2"
+		},
+		{
+			"name": "Repeat Ball",
+			"image": "Repeat_Ball",
+			"desc": "-20 Modifier if you already own a Pokemon of the target’s species.",
+			"tier": "2"
+		},
+		{
+			"name": "Timer Ball",
+			"image": "Timer_Ball",
+			"desc": "-5 to the Modifier after every round since the beginning of the encounter, until the Modifier is -20.",
+			"tier": "2"
+		},
+		{
+			"name": "Nest Ball",
+			"image": "Nest_Ball",
+			"desc": ".20 Modifier if the target is under level 10.",
+			"tier": "2"
+		},
+		{
+			"name": "Net Ball",
+			"image": "Net_Ball",
+			"desc": "-20 Modifier, if the target is Water or Bug type.",
+			"tier": "2"
+		},
+		{
+			"name": "Dive Ball",
+			"image": "Dive_Ball",
+			"desc": "-20 Modifier, if the target was found underwater or underground.",
+			"tier": "2"
+		},
+		{
+			"name": "Luxury Ball",
+			"image": "Luxury_Ball",
+			"desc": "A caught Pokemon is easily pleased and starts with a raised happiness.",
+			"tier": "2"
+		},
+		{
+			"name": "Heal Ball",
+			"image": "Heal_Ball",
+			"desc": "A caught Pokemon will heal to Max HP immediately upon capture.",
+			"tier": "2"
+		},
+		{
+			"name": "Quick Ball",
+			"image": "Quick_Ball",
+			"desc": "+5 to Modifier after 1 round of the encounter, +10 to Modifier after round 2, +20 to modifier after round 3.",
+			"tier": "2"
+		},
+		{
+			"name": "Dusk Ball",
+			"image": "Dusk_Ball",
+			"desc": "-20 Modifier if it is dark, or if there is very little light out, when used.",
+			"tier": "2"
+		},
+		{
+			"name": "Pinap Berry",
+			"image": "Pinap_Berry",
+			"desc": "Tough Poffin Ingredient.",
+			"tier": "2"
+		},
+		{
+			"name": "Lum Berry",
+			"image": "Lum_Berry",
+			"desc": "Cures any single status ailment.",
+			"tier": "2"
+		},
+		{
+			"name": "Sitrus Berry",
+			"image": "Sitrus_Berry",
+			"desc": "Restores 15 Hit Points",
+			"tier": "2"
+		},
+		{
+			"name": "Figy Berry",
+			"image": "Figy_Berry",
+			"desc": "Spicy Treat, Cool Poffin Ingredient.",
+			"tier": "2"
+		},
+		{
+			"name": "Wiki Berry",
+			"image": "Wiki_Berry",
+			"desc": "Dry Treat, Beauty Poffin Ingredient.",
+			"tier": "2"
+		},
+		{
+			"name": "Mago Berry",
+			"image": "Mago_Berry",
+			"desc": "Sweet Treat, Cute Poffin Ingredient.",
+			"tier": "2"
+		},
+		{
+			"name": "Aguav Berry",
+			"image": "Aguav_Berry",
+			"desc": "Bitter Treat, Smart Poffin Ingredient.",
+			"tier": "2"
+		},
+		{
+			"name": "Iapapa Berry",
+			"image": "Iapapa_Berry",
+			"desc": "Sour Treat, Tough Poffin Ingredient.",
+			"tier": "2"
+		},
+		{
+			"name": "Liechi Berry",
+			"image": "Liechi_Berry",
+			"desc": "+1 Attack CS.",
+			"tier": "2"
+		},
+		{
+			"name": "Ganlon Berry",
+			"image": "Ganlon_Berry",
+			"desc": "+1 Defense CS.",
+			"tier": "2"
+		},
+		{
+			"name": "Salac Berry",
+			"image": "Salac_Berry",
+			"desc": "+1 Speed CS.",
+			"tier": "2"
+		},
+		{
+			"name": "Petaya Berry",
+			"image": "Petaya_Berry",
+			"desc": "+1 Special Attack CS.",
+			"tier": "2"
+		},
+		{
+			"name": "Apicot Berry",
+			"image": "Apicot_Berry",
+			"desc": "+1 Special Defense CS.",
+			"tier": "2"
+		},
+		{
+			"name": "Lansat Berry",
+			"image": "Lansat_Berry",
+			"desc": "Increases Critical Range by +1 for the remainder of the encounter.",
+			"tier": "2"
+		},
+		{
+			"name": "Starf Berry",
+			"image": "Starf_Berry",
+			"desc": "+2 CS to a random Stat. May be used only at 25% HP or lower.",
+			"tier": "2"
+		},
+		{
+			"name": "Enigma Berry",
+			"image": "Enigma_Berry",
+			"desc": "User gains Temporary HP equal to 1/6th of their Max HP when hit by a Super Effective Move.",
+			"tier": "2"
+		},
+		{
+			"name": "Micle Berry",
+			"image": "Micle_Berry",
+			"desc": "Increases Accuracy by +1.",
+			"tier": "2"
+		},
+		{
+			"name": "Jaboca Berry",
+			"image": "Jaboca_Berry",
+			"desc": "Foe dealing Physical Damage to the user loses 1/8 of their Maximum HP.",
+			"tier": "2"
+		},
+		{
+			"name": "Rowap Berry",
+			"image": "Rowap_Berry",
+			"desc": "Foe dealing Special Damage to the user loses 1/8 of their Maximum HP.",
+			"tier": "2"
+		},
+		{
+			"name": "Cornn Berry",
+			"image": "Cornn_Berry",
+			"desc": "Cures Disabled Condition.",
+			"tier": "2"
+		},
+		{
+			"name": "Magost Berry",
+			"image": "Magost_Berry",
+			"desc": "Cures Enraged condition.",
+			"tier": "2"
+		},
+		{
+			"name": "Rabuta Berry",
+			"image": "Rabuta_Berry",
+			"desc": "Cures Suppressed condition.",
+			"tier": "2"
+		},
+		{
+			"name": "Nomel Berry",
+			"image": "Nomel_Berry",
+			"desc": "Cures Infatuated condition.",
+			"tier": "2"
+		},
+		{
+			"name": "Spelon Berry",
+			"image": "Spelon_Berry",
+			"desc": "Cool or Beauty Poffin Ingredient.",
+			"tier": "2"
+		},
+		{
+			"name": "Pamtre Berry",
+			"image": "Pamtre_Berry",
+			"desc": "Cute or Beauty Poffin Ingredient.",
+			"tier": "2"
+		},
+		{
+			"name": "Watmel Berry",
+			"image": "Watmel_Berry",
+			"desc": "Cute or Smart Poffin Ingredient.",
+			"tier": "2"
+		},
+		{
+			"name": "Durin Berry",
+			"image": "Durin_Berry",
+			"desc": "Smart or Tough Poffin Ingredient.",
+			"tier": "2"
+		},
+		{
+			"name": "Belue Berry",
+			"image": "Belue_Berry",
+			"desc": "Cool or Tough Poffin Ingredient.",
+			"tier": "2"
+		},
+		{
+			"name": "Fluffy Tail",
+			"image": "Fluffy_Tail",
+			"desc": "A toy that attracts the attention of a Pokemon. It guarantees escape from any battle with wild Pokemon.",
+			"tier": "2"
+		},
+		{
+			"name": "Poke Toy",
+			"image": "Poke_Toy",
+			"desc": "A toy that attracts the attention of a Pokemon. It guarantees escape from any battle with wild Pokemon.",
+			"tier": "2"
+		},
+		{
+			"name": "Poke Doll",
+			"image": "Poke_Doll",
+			"desc": "A doll that attracts the attention of a Pokemon. It guarantees escape from any battle with wild Pokemon.",
+			"tier": "2"
+		},
+		{
+			"name": "Eviolite",
+			"image": "Eviolite",
+			"desc": "Only affects not-fully-evolved Pokemon of a single family, decided when the Eviolite is made. Grants a +5 Bonus to two different Stats, after Combat Stages, decided when the Eviolite is made. Prevents Pokemon from evolving when held. Cannot be used by Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Focus Band",
+			"image": "Focus_Band",
+			"desc": "Whenever the user faints, roll 1d20. Once a Scene on a result of 16+, the holder does not faint, and is left with 1 Hit Point. Accessory Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Focus Sash",
+			"image": "Focus_Sash",
+			"desc": "Once a Scene, if damage from a Move would take Focus Sash's holder's Hit Points from Max to 0 or less, Focus Sash's holder instead has 1 Hit Point remaining. Accessory Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Shock Collar (Grounded)",
+			"image": "Shock_Collar (Grounded)",
+			"desc": "Comes with a remote activator, which when pressed, causes the Pokemon or Trainer wearing the shock collar to lose Hit Points equal to 1/6th of their Max Hit Points. This may be used to activate the �Press� Feature. This collar works on Ground-Type Pokemon.",
+			"tier": "3"
+		},
+		{
+			"name": "Quick Claw",
+			"image": "Quick_Claw",
+			"desc": "The user adds +10 to their Initiative. Accessory Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Shell Bell",
+			"image": "Shell_Bell",
+			"desc": "Whenever the user damages a foe, they gain a Tick of Temporary Hit Points. Accessory Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "HP Booster",
+			"image": "HP_Booster",
+			"desc": "When held, the default Stage of HP is +1 Combat Stage instead of 0. Accessory Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Attack Booster",
+			"image": "Attack_Booster",
+			"desc": "When held, the default Stage of Attack is +1 Combat Stage instead of 0. Accessory Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Defense Booster",
+			"image": "Defense_Booster",
+			"desc": "When held, the default Stage of Defense is +1 Combat Stage instead of 0. Accessory Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Special Attack Booster",
+			"image": "Special_Attack Booster",
+			"desc": "When held, the default Stage of Special Attack +1 Combat Stage instead of 0. Accessory Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Special Defense Booster",
+			"image": "Special_Defense Booster",
+			"desc": "When held, the default Stage of Special Defense +1 Combat Stage instead of 0. Accessory Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Speed Booster",
+			"image": "Speed_Booster",
+			"desc": "When held, the default Stage of Speed +1 Combat Stage instead of 0. Accessory Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Accuracy Booster",
+			"image": "Accuracy_Booster",
+			"desc": "When held, it gives +1 for Accuracy and Evasion. Accessory Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Toxic Orb",
+			"image": "Toxic_Orb",
+			"desc": "Induces Poison on holder. Off-Hand Item for Trainers. Standard Action to drop.",
+			"tier": "3"
+		},
+		{
+			"name": "Bug Gem",
+			"image": "Bug_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Bug-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Dark Gem",
+			"image": "Dark_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Dark-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Dragon Gem",
+			"image": "Dragon_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Dragon-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Electric Gem",
+			"image": "Electric_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Electric-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Fairy Gem",
+			"image": "Fairy_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Fairy-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Fighting Gem",
+			"image": "Fighting_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Fighting-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Fire Gem",
+			"image": "Fire_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Fire-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Flying Gem",
+			"image": "Flying_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Flying-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Ghost Gem",
+			"image": "Ghost_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Ghost-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Grass Gem",
+			"image": "Grass_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Grass-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Ground Gem",
+			"image": "Ground_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Ground-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Ice Gem",
+			"image": "Ice_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Ice-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Normal Gem",
+			"image": "Normal_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Normal-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Poison Gem",
+			"image": "Poison_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Poison-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Psychic Gem",
+			"image": "Psychic_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Psychic-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Rock Gem",
+			"image": "Rock_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Rock-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Steel Gem",
+			"image": "Steel_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Steel-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Water Gem",
+			"image": "Water_Gem",
+			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Water-Type. Off-hand or Accessory Slot Item for Trainers",
+			"tier": "3"
+		},
+		{
+			"name": "Draco Plate",
+			"image": "Draco_Plate",
+			"desc": "When held, it act as both a Dragon Fang and a Draco Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Dread Plate",
+			"image": "Dread_Plate",
+			"desc": "When held, it act as both a Black Glasses and a Dread Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Earth Plate",
+			"image": "Earth_Plate",
+			"desc": "When held, it act as both a Soft Sand and an Earth Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Fist Plate",
+			"image": "Fist_Plate",
+			"desc": "When held, it act as both a Black Belt and a Fist Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Flame Plate",
+			"image": "Flame_Plate",
+			"desc": "When held, it act as both a Charcoal and a Flame Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Icicle Plate",
+			"image": "Icicle_Plate",
+			"desc": "When held, it act as both a Never Melt Ice and an Icicle Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Insect Plate",
+			"image": "Insect_Plate",
+			"desc": "When held, it act as both a Silver Powder and an Insect Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Iron Plate",
+			"image": "Iron_Plate",
+			"desc": "When held, it act as both a Metal Coat and an Iron Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Meadow Plate",
+			"image": "Meadow_Plate",
+			"desc": "When held, it act as both a Miracle Seed and a Meadow Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Mind Plate",
+			"image": "Mind_Plate",
+			"desc": "When held, it act as both a Twisted Spoon and a Mind Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Pixie Plate",
+			"image": "Pixie_Plate",
+			"desc": "When held, it act as both a Silk Scarf and a Pixie Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Sky Plate",
+			"image": "Sky_Plate",
+			"desc": "When held, it act as both a Sharp Beak and a Sky Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Splash Plate",
+			"image": "Splash_Plate",
+			"desc": "When held, it act as both a Mystic Water and a Splash Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Spooky Plate",
+			"image": "Spooky_Plate",
+			"desc": "When held, it act as both a Spell Tag and a Spooky Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Stone Plate",
+			"image": "Stone_Plate",
+			"desc": "When held, it act as both a Hard Stone and a Stone Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Toxic Plate",
+			"image": "Toxic_Plate",
+			"desc": "When held, it act as both a Poison Barb and a Toxic Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Zap Plate",
+			"image": "Zap_Plate",
+			"desc": "When held, it act as both a Magnet and a Zap Brace. Accessory Slot Item for Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Metal Powder",
+			"image": "Metal_Powder",
+			"desc": "When held by an untransformed Ditto, increases both Defense and Special Defense by +2 Combat Stages. Cannot be used by Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Rare Leek",
+			"image": "Rare_Leek",
+			"desc": "When held by a Farfetch'd, this rare Leek increase the holder's critical range by 2. Rare Leeks are Wielded. Cannot be used by Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Thick Club",
+			"image": "Thick_Club",
+			"desc": "When held by a Cubone or Marowak, this rare, dense bone grants the Pure Power Ability. Thick Clubs are Wielded. Cannot be used by Trainers.",
+			"tier": "3"
+		},
+		{
+			"name": "Pink Pearl",
+			"image": "Pink_Pearl",
+			"desc": "Acts as a Psychic Type Booster. If held by a Spoink, it also acts as a Special Attack Stat Booster.",
+			"tier": "3"
+		},
+		{
+			"name": "HP Up",
+			"image": "HP_Up",
+			"desc": "Raise the user's HP Base Stat 1.",
+			"tier": "3"
+		},
+		{
+			"name": "Protein",
+			"image": "Protein",
+			"desc": "Raise the user's Attack Base Stat 1.",
+			"tier": "3"
+		},
+		{
+			"name": "Iron",
+			"image": "Iron",
+			"desc": "Raise the user's Defense Base Stat 1.",
+			"tier": "3"
+		},
+		{
+			"name": "Calcium",
+			"image": "Calcium",
+			"desc": "Raise the user's Special Attack Base Stat 1.",
+			"tier": "3"
+		},
+		{
+			"name": "Zinc",
+			"image": "Zinc",
+			"desc": "Raise the user's Special Defense Base Stat 1.",
+			"tier": "3"
+		},
+		{
+			"name": "Carbos",
+			"image": "Carbos",
+			"desc": "Raise the user's Speed Base Stat 1.",
+			"tier": "3"
+		},
+		{
+			"name": "Heart Booster",
+			"image": "Heart_Booster",
+			"desc": "The Pokemon gains 2 Tutor Points. Use only one per Pokemon.",
+			"tier": "3"
+		},
+		{
+			"name": "PP Up",
+			"image": "PP_Up",
+			"desc": "Raise one of the user's Move's Frequency one level. Use only one per Pokemon.",
+			"tier": "3"
+		},
+		{
+			"name": "Tiny Mushroom",
+			"image": "Tiny_Mushroom",
+			"desc": "The user loses 5 HP, and gains +1 Combat Stage in a random Stat.",
+			"tier": "3"
+		},
+		{
+			"name": "Big Mushroom",
+			"image": "Big_Mushroom",
+			"desc": "The user becomes Poisoned; if they do, they gain +1 Combat Stage in two random Stats.",
+			"tier": "3"
+		},
+		{
+			"name": "Balm Mushroom",
+			"image": "Balm_Mushroom",
+			"desc": "The user is cured of Burn, Paralysis, or Poison. If they are, they lose 1 Combat Stage in a random Stat.",
+			"tier": "3"
+		},
+		{
+			"name": "Nugget",
+			"image": "Nugget",
+			"desc": "Can be sold for $10000.",
+			"tier": "3"
+		},
+		{
+			"name": "Big Pearl",
+			"image": "Big_Pearl",
+			"desc": "Can be sold for $7500.",
+			"tier": "3"
+		},
+		{
+			"name": "Star Piece",
+			"image": "Star_Piece",
+			"desc": "Can be sold for $9800.",
+			"tier": "3"
+		},
+		{
+			"name": "Relic Silver",
+			"image": "Relic_Silver",
+			"desc": "Can be sold for $5000.",
+			"tier": "3"
+		},
+		{
+			"name": "Relic Gold",
+			"image": "Relic_Gold",
+			"desc": "Can be sold for $10000.",
+			"tier": "3"
+		},
+		{
+			"name": "Ultra Ball",
+			"image": "Ultra_Ball",
+			"desc": "The best generic Poke Ball",
+			"tier": "3"
+		},
+		{
+			"name": "Leppa Berry",
+			"image": "Leppa_Berry",
+			"desc": "Restores a Scene Move",
+			"tier": "3"
+		},
+		{
+			"name": "Pomeg Berry",
+			"image": "Pomeg_Berry",
+			"desc": "HP Suppressant",
+			"tier": "3"
+		},
+		{
+			"name": "Kelpsy Berry",
+			"image": "Kelpsy_Berry",
+			"desc": "Attack Suppressant",
+			"tier": "3"
+		},
+		{
+			"name": "Qualot Berry",
+			"image": "Qualot_Berry",
+			"desc": "Defense Suppressant",
+			"tier": "3"
+		},
+		{
+			"name": "Hondew Berry",
+			"image": "Hondew_Berry",
+			"desc": "Special Attack Suppressant",
+			"tier": "3"
+		},
+		{
+			"name": "Grepa Berry",
+			"image": "Grepa_Berry",
+			"desc": "Special Defense Suppressant",
+			"tier": "3"
+		},
+		{
+			"name": "Tamato Berry",
+			"image": "Tamato_Berry",
+			"desc": "Speed Suppressant",
+			"tier": "3"
+		},
+		{
+			"name": "Occa Berry",
+			"image": "Occa_Berry",
+			"desc": "Weakens foe’s super effective Fire-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Passho Berry",
+			"image": "Passho_Berry",
+			"desc": "Weakens foe’s super effective Water-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Wacan Berry",
+			"image": "Wacan_Berry",
+			"desc": "Weakens foe’s super effective Electric-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Rindo Berry",
+			"image": "Rindo_Berry",
+			"desc": "Weakens foe’s super effective Grass-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Yache Berry",
+			"image": "Yache_Berry",
+			"desc": "Weakens foe’s super effective Ice-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Chople Berry",
+			"image": "Chople_Berry",
+			"desc": "Weakens foe’s super effective Fighting-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Kebia Berry",
+			"image": "Kebia_Berry",
+			"desc": "Weakens foe’s super effective Poison-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Shuca Berry",
+			"image": "Shuca_Berry",
+			"desc": "Weakens foe’s super effective Ground-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Coba Berry",
+			"image": "Coba_Berry",
+			"desc": "Weakens foe’s super effective Flying-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Payapa Berry",
+			"image": "Payapa_Berry",
+			"desc": "Weakens foe’s super effective Psychic-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Tanga Berry",
+			"image": "Tanga_Berry",
+			"desc": "Weakens foe’s super effective Bug-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Charti Berry",
+			"image": "Charti_Berry",
+			"desc": "Weakens foe’s super effective Rock-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Kasib Berry",
+			"image": "Kasib_Berry",
+			"desc": "Weakens foe’s super effective Ghost-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Haban Berry",
+			"image": "Haban_Berry",
+			"desc": "Weakens foe’s super effective Dragon-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Colbur Berry",
+			"image": "Colbur_Berry",
+			"desc": "Weakens foe’s super effective Dark-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Babiri Berry",
+			"image": "Babiri_Berry",
+			"desc": "Weakens foe’s super effective Steel-type move",
+			"tier": "3"
+		},
+		{
+			"name": "Chilan Berry",
+			"image": "Chilan_Berry",
+			"desc": "Weakens foe’s Normal type move",
+			"tier": "3"
+		},
+		{
+			"name": "Roseli Berry",
+			"image": "Roseli_Berry",
+			"desc": "Weakens foe’s super effective Fairytype move",
+			"tier": "3"
+		},
+		{
+			"name": "Custap Berry",
+			"image": "Custap_Berry",
+			"desc": "Grants the Priority keyword to any Move. May only be used at 25% HP or lower",
+			"tier": "3"
+		},
+		{
+			"name": "Kee Berry",
+			"image": "Kee_Berry",
+			"desc": "+1 Defense CS. Activates as a Free Action when hit by a Physical Move",
+			"tier": "3"
+		},
+		{
+			"name": "Maranga Berry",
+			"image": "Maranga_Berry",
+			"desc": "+1 Special Defense CS. Activates as a Free Action when hit by a Special Move",
+			"tier": "3"
+		},
+		{
+			"name": "Rare Candy",
+			"image": "Rare_Candy",
+			"desc": "These very rare treats, When ingested by a Pokemon, grant the eater enough experience to reach its next Level. Pokemon may benefit from up to five Rare Candies in their lifetime.",
+			"tier": "4"
+		},
+		{
+			"name": "Pearl String",
+			"image": "Pearl_String",
+			"desc": "Can be sold for $25000.",
+			"tier": "4"
+		},
+		{
+			"name": "Big Nugget",
+			"image": "Big_Nugget",
+			"desc": "Can be sold for $30000.",
+			"tier": "4"
+		},
+		{
+			"name": "Comet Shard",
+			"image": "Comet_Shard",
+			"desc": "Can be sold for $60000.",
+			"tier": "4"
+		}
+	]
+}

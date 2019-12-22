@@ -1,0 +1,184 @@
+﻿{
+	"Items": [
+		{
+			"name": "Cuddly",
+			"up": "hp",
+			"down": "atk"
+		},
+		{
+			"name": "Distracted",
+			"up": "hp",
+			"down": "def"
+		},
+		{
+			"name": "Proud",
+			"up": "hp",
+			"down": "spatk"
+		},
+		{
+			"name": "Decisive",
+			"up": "hp",
+			"down": "spdef"
+		},
+		{
+			"name": "Patient",
+			"up": "hp",
+			"down": "spd"
+		},
+		{
+			"name": "Desperate",
+			"up": "atk",
+			"down": "hp"
+		},
+		{
+			"name": "Lonely",
+			"up": "atk",
+			"down": "def"
+		},
+		{
+			"name": "Adamant",
+			"up": "atk",
+			"down": "spatk"
+		},
+		{
+			"name": "Naughty",
+			"up": "atk",
+			"down": "spdef"
+		},
+		{
+			"name": "Brave",
+			"up": "atk",
+			"down": "spd"
+		},
+		{
+			"name": "Stark",
+			"up": "def",
+			"down": "hp"
+		},
+		{
+			"name": "Bold",
+			"up": "def",
+			"down": "atk"
+		},
+		{
+			"name": "Impish",
+			"up": "def",
+			"down": "spatk"
+		},
+		{
+			"name": "Lax",
+			"up": "def",
+			"down": "spdef"
+		},
+		{
+			"name": "Relaxed",
+			"up": "def",
+			"down": "spd"
+		},
+		{
+			"name": "Curious",
+			"up": "spatk",
+			"down": "hp"
+		},
+		{
+			"name": "Modest",
+			"up": "spatk",
+			"down": "atk"
+		},
+		{
+			"name": "Mild",
+			"up": "spatk",
+			"down": "def"
+		},
+		{
+			"name": "Rash",
+			"up": "spatk",
+			"down": "spdef"
+		},
+		{
+			"name": "Quiet",
+			"up": "spatk",
+			"down": "spd"
+		},
+		{
+			"name": "Dreamy",
+			"up": "spdef",
+			"down": "hp"
+		},
+		{
+			"name": "Calm",
+			"up": "spdef",
+			"down": "atk"
+		},
+		{
+			"name": "Gentle",
+			"up": "spdef",
+			"down": "def"
+		},
+		{
+			"name": "Careful",
+			"up": "spdef",
+			"down": "spatk"
+		},
+		{
+			"name": "Sassy",
+			"up": "spdef",
+			"down": "spd"
+		},
+		{
+			"name": "Skittish",
+			"up": "spd",
+			"down": "hp"
+		},
+		{
+			"name": "Timid",
+			"up": "spd",
+			"down": "atk"
+		},
+		{
+			"name": "Hasty",
+			"up": "spd",
+			"down": "def"
+		},
+		{
+			"name": "Jolly",
+			"up": "spd",
+			"down": "spatk"
+		},
+		{
+			"name": "Naive",
+			"up": "spd",
+			"down": "spdef"
+		},
+		{
+			"name": "Composed",
+			"up": "hp",
+			"down": "hp"
+		},
+		{
+			"name": "Hardy",
+			"up": "atk",
+			"down": "atk"
+		},
+		{
+			"name": "Docile",
+			"up": "def",
+			"down": "def"
+		},
+		{
+			"name": "Bashful",
+			"up": "spatk",
+			"down": "spatk"
+		},
+		{
+			"name": "Quirky",
+			"up": "spdef",
+			"down": "spdef"
+		},
+		{
+			"name": "Serious",
+			"up": "spd",
+			"down": "spd"
+		}
+	]
+}

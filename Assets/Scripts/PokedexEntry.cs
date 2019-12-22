@@ -20,7 +20,7 @@ public class PokedexEntry : MonoBehaviour {
 
         if (SceneManager.GetActiveScene().name.Contains("Encounter")) {
             EncounterController encounterController = GameObject.Find("Scroll View").GetComponent<EncounterController>();
-            encounterController.OnSelected(pokemon);
+            encounterController.OnSelected(pokemon, this.gameObject);
         }
     }
 }

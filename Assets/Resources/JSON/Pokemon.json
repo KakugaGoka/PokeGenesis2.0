@@ -5820,7 +5820,7 @@
 				"23 Poison Tail - Poison",
 				"25 Water Pulse - Water",
 				"28 Double Team - Normal",
-				"32 Toxic Poison",
+				"32 Toxic Poison - Poison",
 				"35 Aqua Tail - Water",
 				"40 Sludge Bomb - Poison",
 				"45 Hydro Pump - Water",
@@ -6441,7 +6441,7 @@
 				"38 Flail - Normal",
 				"42 Misty Terrain - Fairy",
 				"44 Skill Swap - Psychic",
-				"48 Psychic - Pscychic",
+				"48 Psychic - Psychic",
 				"50 Disarming Voice - Fairy",
 				"57 Reflect - Psychic",
 				"64 Psych Up - Normal"
@@ -44300,7 +44300,7 @@
 				"2 - Huntail Holding Deepseatooth Minimum 20"
 			],
 			"moves": [
-				"1 Whirlpool",
+				"1 Whirlpool - Water",
 				"1 Bite - Dark",
 				"5 Screech - Normal",
 				"9 Scary Face - Normal",
@@ -46405,7 +46405,7 @@
 				"9 Rock Polish - Rock",
 				"13 Psywave - Psychic",
 				"16 Embargo - Dark",
-				"21 Rock Slide",
+				"21 Rock Slide - Rock",
 				"25 Cosmic Power - Psychic",
 				"29 Psychic - Psychic",
 				"33 Heal Block - Psychic",
@@ -49548,7 +49548,7 @@
 				"37 Endure - Normal",
 				"40 Close Combat - Fighting",
 				"43 Reversal - Fighting",
-				"46 Heavy Slam - Eteel"
+				"46 Heavy Slam - Steel"
 			],
 			"stage": 1
 		},
@@ -58907,7 +58907,7 @@
 				"19 Ingrain - Grass",
 				"23 Leaf Blade - Grass",
 				"28 Synthesis - Grass",
-				"32 Slash - Slash",
+				"32 Slash - Normal",
 				"37 Sweet Scent - Normal",
 				"41 Solar Beam - Grass",
 				"46 Sunny Day - Fire"
@@ -59123,7 +59123,7 @@
 			"moves": [
 				"1 Absorb - Grass",
 				"4 Astonish - Ghost",
-				"8 Flash - Normsl",
+				"8 Flash - Normal",
 				"11 Moonlight - Fairy",
 				"15 Mega Drain - Grass",
 				"18 Sleep Powder - Grass",
@@ -60622,7 +60622,7 @@
 			],
 			"moves": [
 				"1 Ember - Fire",
-				"1 Tackle - Tackle",
+				"1 Tackle - Normal",
 				"5 Smog - Poison",
 				"9 Protect - Normal",
 				"13 Incinerate - Fire",
@@ -62210,7 +62210,7 @@
 				"3 - Lunala Moon Stone Minimum 55"
 			],
 			"moves": [
-				"1 - Moongeist Beam",
+				"1 Moongeist Beam - Ghost",
 				"1 Cosmic Power - Psychic",
 				"1 Hypnosis - Psychic",
 				"1 Teleport - Psychic",
@@ -62991,7 +62991,7 @@
 				"1 - Necrozma-Ultra"
 			],
 			"moves": [
-				"1 - Prismatic Laser"
+				"1 - Prismatic Laser - Psychic"
 			],
 			"stage": 1
 		},
