@@ -1,8 +1,10 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class EncounterController : MonoBehaviour {
     public GameObject pokedexPrefab;
@@ -16,6 +18,8 @@ public class EncounterController : MonoBehaviour {
     public Dropdown pokemonDropdown;
     public Dropdown stageDropdown;
     public Image heldItemImage;
+    public AudioSource commonCrySource;
+    public AudioSource happyCrySource;
 
     private List<Pokemon> pokemonToEncounter = new List<Pokemon>();
     private List<Pokemon> encounterablePokemon = new List<Pokemon>();
@@ -149,7 +153,27 @@ public class EncounterController : MonoBehaviour {
         stageOptions.Add(new Dropdown.OptionData("Stage 3"));
         stageDropdown.AddOptions(stageOptions);
 
-        heldItemImage.sprite = Resources.Load<Sprite>("ItemIcons/None");
+        heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
+
+        // Verify all pokemon images and cries
+        foreach (Pokemon pokemon in PokedexManager.pokedex) {
+            if (!File.Exists(Application.streamingAssetsPath + "/PokemonIcons/" + pokemon.image + ".png")) {
+                Debug.LogWarning("Image not found for pokemon: " + pokemon.species);
+            }
+            if (!File.Exists(Application.streamingAssetsPath + "/Cries/" + pokemon.happyCry + ".ogg")) {
+                Debug.LogWarning("Happy Cry not found for pokemon: " + pokemon.species);
+            }
+            if (!File.Exists(Application.streamingAssetsPath + "/Cries/" + pokemon.commonCry + ".ogg")) {
+                Debug.LogWarning("Common Cry not found for pokemon: " + pokemon.species);
+            }
+        }
+
+        // Verify all item images
+        foreach (Item item in PokedexManager.items) {
+            if (!File.Exists(Application.streamingAssetsPath + "/ItemIcons/" + item.image + ".png")) {
+                Debug.LogWarning("Image not found for item: " + item.name);
+            }
+        }
     }
 
     private void Update() {
@@ -226,7 +250,7 @@ public class EncounterController : MonoBehaviour {
             controller.species.text = pokemon.species;
             newPokemon.transform.SetParent(contentPanel.transform);
             newPokemon.transform.localScale = Vector3.one;
-            pokemon.sprite = Resources.Load<Sprite>("PokemonIcons/" + pokemon.image);
+            pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
 
             if (pokemon.sprite != null) {
                 controller.sprite.sprite = pokemon.sprite;
@@ -313,11 +337,11 @@ public class EncounterController : MonoBehaviour {
                 name = "None",
                 desc = "",
                 image = "",
-                sprite = Resources.Load<Sprite>("ItemIcons/None")
+                sprite = PokedexManager.LoadSprite("ItemIcons/None")
             };
         } else {
             if (pokemon.heldItem.sprite == null) {
-                pokemon.heldItem.sprite = Resources.Load<Sprite>("ItemIcons/" + pokemon.heldItem.image);
+                pokemon.heldItem.sprite = PokedexManager.LoadSprite("ItemIcons/" + pokemon.heldItem.image);
             }
         }
 
@@ -359,6 +383,32 @@ public class EncounterController : MonoBehaviour {
         sliderLabel.text = "Max Lvl: " + maxLevelSlider.value.ToString();
         if (maxLevelSlider.value < minLevelSlider.value) {
             minLevelSlider.value = maxLevelSlider.value;
+        }
+    }
+
+    public void PlayHappyCry() {
+        if (PokedexManager.currentPokemon == null) {
+            Debug.Log("No pokemon currently selected");
+            return;
+        }
+        if (PokedexManager.currentPokemon.happyAudio != null) {
+            happyCrySource.clip = PokedexManager.currentPokemon.happyAudio;
+            happyCrySource.Play();
+        } else {
+            Debug.LogError("Current Pokemon does not have a registered happy cry");
+        }
+    }
+
+    public void PlayCommonCry() {
+        if (PokedexManager.currentPokemon == null) {
+            Debug.Log("No pokemon currently selected");
+            return;
+        }
+        if (PokedexManager.currentPokemon.commonAudio != null) {
+            commonCrySource.clip = PokedexManager.currentPokemon.commonAudio;
+            commonCrySource.Play();
+        } else {
+            Debug.LogError("Current Pokemon does not have a registered common cry");
         }
     }
 
@@ -411,7 +461,9 @@ public class EncounterController : MonoBehaviour {
                 capabilitiesListField.text = "";
                 heldItemNameField.text = "";
                 heldItemDescriptionField.text = "";
-                heldItemImage.sprite = Resources.Load<Sprite>("ItemIcons/None");
+                heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
+                commonCrySource.clip = null;
+                happyCrySource.clip = null;
             }
         }
     }
@@ -461,6 +513,7 @@ public class EncounterController : MonoBehaviour {
             pokemon.spdefLevel = pokemon.spdef;
             pokemon.spdLevel = pokemon.spd;
 
+            GetCries(pokemon);
             SetBaseRelations(pokemon);
             LevelPokemon(pokemon);
             GetGender(pokemon);
@@ -643,6 +696,43 @@ public class EncounterController : MonoBehaviour {
             if (chance == 0) {
                 chance = UnityEngine.Random.Range(0, PokedexManager.items.Length);
                 pokemon.heldItem = PokedexManager.items[chance];
+            }
+        }
+    }
+
+    void GetCries(Pokemon pokemon) {
+        if (pokemon.commonAudio == null) {
+            string cryLocation = Path.Combine(Application.streamingAssetsPath, "Cries/" + pokemon.commonCry + ".ogg");
+            if (!File.Exists(cryLocation)) {
+                Debug.LogError("Cry could not be found: " + cryLocation);
+            } else {
+                StartCoroutine(LoadClipCoroutine("file:///" + cryLocation, pokemon));
+            }
+        }
+        if (pokemon.happyAudio == null) {
+            string cryLocation = Path.Combine(Application.streamingAssetsPath, "Cries/" + pokemon.happyCry + ".ogg");
+            if (!File.Exists(cryLocation)) {
+                Debug.LogError("Cry could not be found: " + cryLocation);
+            } else {
+                StartCoroutine(LoadClipCoroutine("file:///" + cryLocation, pokemon, true));
+            }
+        }
+    }
+
+    IEnumerator<UnityWebRequestAsyncOperation> LoadClipCoroutine(string file, Pokemon pokemon, bool happy = false) {
+        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(file, AudioType.OGGVORBIS)) {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError) {
+                Debug.Log(www.error);
+            } else {
+                AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
+                Debug.Log(clip.name + " has a length of: " + clip.length);
+                if (happy) { 
+                    pokemon.happyAudio = clip; 
+                } else { 
+                    pokemon.commonAudio = clip; 
+                }
             }
         }
     }

@@ -66,9 +66,14 @@ public class Pokemon {
     public Item
         heldItem;
 
+    public AudioClip
+        commonAudio,
+        happyAudio;
+
     public string
         image,
-        audio,
+        commonCry,
+        happyCry,
         species,
         region,
         type,

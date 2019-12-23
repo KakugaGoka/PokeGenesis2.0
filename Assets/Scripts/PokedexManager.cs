@@ -25,32 +25,32 @@ public class PokedexManager : MonoBehaviour {
         DontDestroyOnLoad(this.gameObject);
 
         // Load Pokemon From JSON
-        TextAsset pokemonString = Resources.Load<TextAsset>("JSON/Pokemon");
-        pokedex = JsonHelper.FromJson<Pokemon>(pokemonString.text);
+        string pokemonString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"));
+        pokedex = JsonHelper.FromJson<Pokemon>(pokemonString);
         pokedex = pokedex.OrderBy(x => x.number).ToArray();
         Debug.Log("Pokedex Count: " + pokedex.Count());
 
         // Load in Types from JSON
-        TextAsset typesString = Resources.Load<TextAsset>("JSON/PokemonTypes");
-        types = JsonHelper.FromJson<PokemonType>(typesString.text);
+        string typesString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/PokemonTypes.json"));
+        types = JsonHelper.FromJson<PokemonType>(typesString);
         types = types.OrderBy(x => x.typeName).ToArray();
         Debug.Log("Types Count: " + types.Count());
 
         // Load in Natures from JSON
-        TextAsset naturesString = Resources.Load<TextAsset>("JSON/Natures");
-        natures = JsonHelper.FromJson<Nature>(naturesString.text);
+        string naturesString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Natures.json"));
+        natures = JsonHelper.FromJson<Nature>(naturesString);
         natures = natures.OrderBy(x => x.name).ToArray();
         Debug.Log("Natures Count: " + natures.Count());
 
         // Load in Habitats from JSON
-        TextAsset habitatsString = Resources.Load<TextAsset>("JSON/Habitats");
-        habitats = JsonHelper.FromJson<string>(habitatsString.text);
+        string habitatsString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Habitats.json"));
+        habitats = JsonHelper.FromJson<string>(habitatsString);
         habitats = habitats.OrderBy(x => x).ToArray();
         Debug.Log("Habitats Count: " + habitats.Count());
 
         // Load in Items from JSON
-        TextAsset itemsString = Resources.Load<TextAsset>("JSON/Items");
-        Item[] tempItems = JsonHelper.FromJson<Item>(itemsString.text);
+        string itemsString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Items.json"));
+        Item[] tempItems = JsonHelper.FromJson<Item>(itemsString);
         List<Item> itemsList = new List<Item>();
         for (int i = 0; i < tempItems.Length; i++) {
             if (tempItems[i].tier == 1) {
@@ -75,5 +75,19 @@ public class PokedexManager : MonoBehaviour {
 
     public void ChangeScene(int sceneID) {
         SceneManager.LoadScene(sceneID);
+    }
+
+    static public Sprite LoadSprite(string path) {
+        string fullPath = Path.Combine(Application.streamingAssetsPath, path + ".png");
+        if (!File.Exists(fullPath)) {
+            Debug.LogError("Faield to load sprite at: " + fullPath);
+            return null;
+        }
+        byte[] bytes = File.ReadAllBytes(fullPath);
+        Texture2D texture = new Texture2D(1, 1);
+        texture.LoadImage(bytes);
+        Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(texture.width / 2, texture.height / 2));
+
+        return sprite;
     }
 }
