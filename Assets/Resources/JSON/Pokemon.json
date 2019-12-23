@@ -25,7 +25,7 @@
 				"2 - Ivysaur Minimum 15",
 				"3 - Venusaur Minimum 30"
 			],
-			"basicAbilites": [
+			"basicAbilities": [
 				"Chlorophyll",
 				"Overgrow"
 			],
@@ -5073,7 +5073,7 @@
 				"19  Air Cutter - Flying",
 				"24  Swift - Normal",
 				"27  Poison Fang - Poison",
-				"32  Mean Look",
+				"32  Mean Look - Normal",
 				"35  Acrobatics - Flying",
 				"40  Haze - Ice",
 				"43  Venoshock - Poison",
@@ -9119,7 +9119,7 @@
 				"16 Sing - Normal",
 				"21 Teeter Dance - Normal",
 				"26 Acrobatics - Flying",
-				"31 Psybeam - Psybeam",
+				"31 Psybeam - Psychic",
 				"36 Echoed Voice - Normal",
 				"43 U-turn - Bug",
 				"50 Wake up Slap - Fighting",
@@ -41354,7 +41354,7 @@
 				"33 Crunch - Dark",
 				"37 Scary Face - Normal",
 				"41 Discharge - Electric",
-				"45 Wild Charge - Charge"
+				"45 Wild Charge - Electric"
 			],
 			"stage": 1
 		},
@@ -57483,12 +57483,12 @@
 				"Dancer"
 			],
 			"advancedAbilities": [
-				"Early Bird",
-				"Flame Body"
+				"Adaptibility",
+				"Spinning Dance",
+				"Revelation"
 			],
-			"highAbilites": [
-				"Celebrate",
-				"Spinning Dance"
+			"highAbilities": [
+				"Competitive"
 			],
 			"athleticsDie": 2,
 			"athleticsBonus": 2,
@@ -57559,12 +57559,12 @@
 				"Dancer"
 			],
 			"advancedAbilities": [
-				"Early Bird",
-				"Cute Charm"
+				"Adaptibility",
+				"Spinning Dance",
+				"Revelation"
 			],
-			"highAbilites": [
-				"Celebrate",
-				"Spinning Dance"
+			"highAbilities": [
+				"Competitive"
 			],
 			"athleticsDie": 2,
 			"athleticsBonus": 2,
@@ -57635,12 +57635,12 @@
 				"Dancer"
 			],
 			"advancedAbilities": [
-				"Early Bird",
-				"Static"
+				"Adaptibility",
+				"Spinning Dance",
+				"Revelation"
 			],
-			"highAbilites": [
-				"Celebrate",
-				"Spinning Dance"
+			"highAbilities": [
+				"Competitive"
 			],
 			"athleticsDie": 2,
 			"athleticsBonus": 2,
@@ -57711,12 +57711,12 @@
 				"Dancer"
 			],
 			"advancedAbilities": [
-				"Early Bird",
-				"Cursed Body"
+				"Adaptibility",
+				"Spinning Dance",
+				"Revelation"
 			],
-			"highAbilites": [
-				"Celebrate",
-				"Spinning Dance"
+			"highAbilities": [
+				"Competitive"
 			],
 			"athleticsDie": 2,
 			"athleticsBonus": 2,
@@ -60396,22 +60396,21 @@
 				"1 Tackle - Normal",
 				"5 Rage - Normal",
 				"10 Pursuit - Dark",
-				"15 Imprison",
-				"20 Aerial Ace",
-				"25 Crush Claw",
-				"30 Scary Face",
-				"35 X-Scissor",
-				"40 Take Down",
-				"42 Multi-Attack",
-				"45 Metal Sound",
-				"50 Iron Head",
-				"55 Double Hit",
-				"60 Air Slash",
-				"65 Punishment",
-				"70 Razor Wind",
-				"75 Tri Attack",
-				"80 Double-Edge",
-				"85 Parting Shot"
+				"20 Aerial Ace - Flying",
+				"25 Crush Claw - Normal",
+				"30 Scary Face - Normal",
+				"35 X-Scissor - Bug",
+				"40 Take Down - Normal",
+				"42 Multi-Attack - Normal",
+				"45 Metal Sound - Steel",
+				"50 Iron Head - Steel",
+				"55 Double Hit - Normal",
+				"60 Air Slash - Flying",
+				"65 Punishment - Dark",
+				"70 Razor Wind - Normal",
+				"75 Tri Attack - Normal",
+				"80 Double-Edge - Normal",
+				"85 Parting Shot - Dark"
 			],
 			"stage": 2
 		},
@@ -60894,7 +60893,7 @@
 				"Sap Sipper",
 				"Cloud Nine"
 			],
-			"highAbilites": [
+			"highAbilities": [
 				"Enduring Rage",
 				"Prime Fury"
 			],
@@ -62098,7 +62097,7 @@
 				"Defiant",
 				"Forewarn"
 			],
-			"highAbilites": [
+			"highAbilities": [
 				"Regal Challenge",
 				"Sunglow"
 			],
@@ -62177,7 +62176,7 @@
 				"Competitive",
 				"Forewarn"
 			],
-			"highAbilites": [
+			"highAbilities": [
 				"Soulstealer",
 				"Starlight"
 			],
@@ -62835,7 +62834,7 @@
 				"1 - Necrozma (Dawn Wings)"
 			],
 			"moves": [
-				"1 - Moongeist Beam",
+				"1 Moongeist Beam - Ghost",
 				"1 Cosmic Power - Psychic",
 				"1 Hypnosis - Psychic",
 				"1 Teleport - Psychic",

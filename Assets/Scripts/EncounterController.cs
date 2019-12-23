@@ -14,6 +14,7 @@ public class EncounterController : MonoBehaviour {
     public Dropdown natureDropdown;
     public Dropdown typeDropdown;
     public Dropdown pokemonDropdown;
+    public Dropdown stageDropdown;
     public Image heldItemImage;
 
     private List<Pokemon> pokemonToEncounter = new List<Pokemon>();
@@ -65,7 +66,10 @@ public class EncounterController : MonoBehaviour {
         highAbilityField,
         levelField,
         movesListField,
-        heldItemDescriptionField;
+        skillsListField,
+        capabilitiesListField,
+        heldItemDescriptionField,
+        heldItemNameField;
 
     private void Start() {
         nameField = GameObject.Find("Name Field").GetComponent<InputField>();
@@ -105,7 +109,10 @@ public class EncounterController : MonoBehaviour {
         highAbilityField = GameObject.Find("High Ability Field").GetComponent<InputField>();
         levelField = GameObject.Find("Level Field").GetComponent<InputField>();
         movesListField = GameObject.Find("Moves List Field").GetComponent<InputField>();
+        skillsListField = GameObject.Find("Skills List Field").GetComponent<InputField>();
+        capabilitiesListField = GameObject.Find("Capabilities List Field").GetComponent<InputField>();
         heldItemDescriptionField = GameObject.Find("Held Item Description Field").GetComponent<InputField>();
+        heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<InputField>();
 
         List<Dropdown.OptionData> habitatOptions = new List<Dropdown.OptionData>();
         habitatOptions.Add(new Dropdown.OptionData("Any Habitat"));
@@ -134,6 +141,13 @@ public class EncounterController : MonoBehaviour {
             pokemonOptions.Add(new Dropdown.OptionData(pokemon.species));
         }
         pokemonDropdown.AddOptions(pokemonOptions);
+
+        List<Dropdown.OptionData> stageOptions = new List<Dropdown.OptionData>();
+        stageOptions.Add(new Dropdown.OptionData("Any Stage"));
+        stageOptions.Add(new Dropdown.OptionData("Stage 1"));
+        stageOptions.Add(new Dropdown.OptionData("Stage 2"));
+        stageOptions.Add(new Dropdown.OptionData("Stage 3"));
+        stageDropdown.AddOptions(stageOptions);
 
         heldItemImage.sprite = Resources.Load<Sprite>("ItemIcons/None");
     }
@@ -173,8 +187,16 @@ public class EncounterController : MonoBehaviour {
             if (type != "Any Type" && !pokemon.type.Contains(type)) {
                 continue;
             }
+            string stage = stageDropdown.options[stageDropdown.value].text;
+            if (stage == "Stage 1" && pokemon.stage != 1) {
+                continue;
+            } else if (stage == "Stage 2" && pokemon.stage != 2) {
+                continue;
+            } else if (stage == "Stage 3" && pokemon.stage != 3) {
+                continue;
+            }
             string species = pokemonDropdown.options[pokemonDropdown.value].text;
-            if (species != "Any Pokemon" && !pokemon.species.Contains(species)) {
+            if (species != "Any Pokemon" && species != pokemon.species) {
                 continue;
             }
             encounterablePokemon.Add(pokemon);
@@ -282,17 +304,41 @@ public class EncounterController : MonoBehaviour {
         movesListField.text = "";
         if (pokemon.knownMoveList.Length > 0) {
             for (int i = pokemon.knownMoveList.Length - 1; i >= 0; i--) {
-                movesListField.text += pokemon.knownMoveList[i].level + " " + pokemon.knownMoveList[i].name + Environment.NewLine;
+                movesListField.text += pokemon.knownMoveList[i].name + Environment.NewLine;
             }
         }
 
-        pokemon.heldItem.sprite = pokemon.heldItem == null ? Resources.Load<Sprite>("ItemIcons/None") : Resources.Load<Sprite>("ItemIcons/" + pokemon.heldItem.image);
-        if (pokemon.heldItem.sprite == null) {
-            Debug.LogError("Cannot Find Image: " + pokemon.heldItem.image);
+        if (pokemon.heldItem.name == null) {
+            pokemon.heldItem = new Item() {
+                name = "None",
+                desc = "",
+                image = "",
+                sprite = Resources.Load<Sprite>("ItemIcons/None")
+            };
         } else {
-            heldItemImage.sprite = pokemon.heldItem.sprite;
+            if (pokemon.heldItem.sprite == null) {
+                pokemon.heldItem.sprite = Resources.Load<Sprite>("ItemIcons/" + pokemon.heldItem.image);
+            }
         }
-        heldItemDescriptionField.text = pokemon.heldItem == null ? "No held item." : pokemon.heldItem.desc;
+
+        heldItemImage.sprite = pokemon.heldItem.sprite;
+        heldItemNameField.text = pokemon.heldItem == null ? "None" : pokemon.heldItem.name;
+        heldItemDescriptionField.text = pokemon.heldItem == null ? "" : pokemon.heldItem.desc;
+
+        skillsListField.text = "Athl " + pokemon.athleticsDie.ToString() + "d6+" + pokemon.athleticsBonus.ToString() + Environment.NewLine +
+            "Acro " + pokemon.acrobaticsDie.ToString() + "d6+" + pokemon.acrobaticsBonus.ToString() + Environment.NewLine +
+            "Combat " + pokemon.combatDie.ToString() + "d6+" + pokemon.combatBonus.ToString() + Environment.NewLine +
+            "Focus " + pokemon.focusDie.ToString() + "d6+" + pokemon.focusBonus.ToString() + Environment.NewLine +
+            "Percep " + pokemon.perceptionDie.ToString() + "d6+" + pokemon.perceptionBonus.ToString() + Environment.NewLine +
+            "Stealth " + pokemon.stealthDie.ToString() + "d6+" + pokemon.stealthBonus.ToString() + Environment.NewLine +
+            "Edu:Tech " + pokemon.techEduDie.ToString() + "d6+" + pokemon.techEduBonus.ToString();
+
+        capabilitiesListField.text = "";
+        if (pokemon.capabilities.Length > 0) {
+            for (int i = 0; i < pokemon.capabilities.Length; i++) {
+                capabilitiesListField.text += pokemon.capabilities[i] + Environment.NewLine;
+            }
+        }
     }
 
     public void UpdateEncounterSliderNumber() {
@@ -360,6 +406,12 @@ public class EncounterController : MonoBehaviour {
                 advanceAbilityField.text = "";
                 highAbilityField.text = "";
                 levelField.text = "";
+                movesListField.text = "";
+                skillsListField.text = "";
+                capabilitiesListField.text = "";
+                heldItemNameField.text = "";
+                heldItemDescriptionField.text = "";
+                heldItemImage.sprite = Resources.Load<Sprite>("ItemIcons/None");
             }
         }
     }
@@ -575,6 +627,9 @@ public class EncounterController : MonoBehaviour {
         foreach (Move move in pokemon.movesList) {
             if (pokemon.level >= move.level) {
                 knownMoveList.Add(move);
+            }
+            if (knownMoveList.Count() > 7) {
+                knownMoveList.RemoveAt(0);
             }
         }
         pokemon.knownMoveList = knownMoveList.ToArray();
