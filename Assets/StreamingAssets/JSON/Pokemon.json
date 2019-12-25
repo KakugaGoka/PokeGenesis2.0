@@ -2,8 +2,7 @@
 	"Items": [{
 			"number": 1,
 			"image": "001",
-			"commonCry": "001_Common",
-			"happyCry": "001_Happy",
+			"cry": "001",
 			"species": "Bulbasaur",
 			"type": "Grass / Poison",
 			"hp": 5,
@@ -78,8 +77,7 @@
 		{
 			"number": 2,
 			"image": "002",
-			"commonCry": "002_Common",
-			"happyCry": "002_Happy",
+			"cry": "002",
 			"species": "Ivysaur",
 			"type": "Grass / Poison",
 			"hp": 6,
@@ -152,8 +150,7 @@
 		{
 			"number": 3,
 			"image": "003",
-			"commonCry": "003_Common",
-			"happyCry": "003_Happy",
+			"cry": "003",
 			"species": "Venusaur",
 			"type": "Grass / Poison",
 			"hp": 8,
@@ -228,8 +225,7 @@
 		{
 			"number": 4,
 			"image": "004",
-			"commonCry": "004_Common",
-			"happyCry": "004_Happy",
+			"cry": "004",
 			"species": "Charmander",
 			"type": "Fire",
 			"hp": 4,
@@ -304,8 +300,7 @@
 		{
 			"number": 5,
 			"image": "005",
-			"commonCry": "005_Common",
-			"happyCry": "005_Happy",
+			"cry": "005",
 			"species": "Charmeleon",
 			"type": "Fire",
 			"hp": 6,
@@ -377,8 +372,7 @@
 		{
 			"number": 6,
 			"image": "006",
-			"commonCry": "006_Common",
-			"happyCry": "006_Happy",
+			"cry": "006",
 			"species": "Charizard",
 			"type": "Fire / Flying",
 			"hp": 8,
@@ -455,8 +449,7 @@
 		{
 			"number": 7,
 			"image": "007",
-			"commonCry": "007_Common",
-			"happyCry": "007_Happy",
+			"cry": "007",
 			"species": "Squirtle",
 			"type": "Water",
 			"hp": 4,
@@ -531,8 +524,7 @@
 		{
 			"number": 8,
 			"image": "008",
-			"commonCry": "008_Common",
-			"happyCry": "008_Happy",
+			"cry": "008",
 			"species": "Wartortle",
 			"type": "Water",
 			"hp": 6,
@@ -606,8 +598,7 @@
 		{
 			"number": 9,
 			"image": "009",
-			"commonCry": "009_Common",
-			"happyCry": "009_Happy",
+			"cry": "009",
 			"species": "Blastoise",
 			"type": "Water",
 			"hp": 8,
@@ -681,8 +672,7 @@
 		{
 			"number": 10,
 			"image": "010",
-			"commonCry": "010_Common",
-			"happyCry": "010_Happy",
+			"cry": "010",
 			"species": "Caterpie",
 			"type": "Bug",
 			"hp": 5,
@@ -748,8 +738,7 @@
 		{
 			"number": 11,
 			"image": "011",
-			"commonCry": "011_Common",
-			"happyCry": "011_Happy",
+			"cry": "011",
 			"species": "Metapod",
 			"type": "Bug",
 			"hp": 5,
@@ -810,8 +799,7 @@
 		}, {
 			"number": 12,
 			"image": "012",
-			"commonCry": "012_Common",
-			"happyCry": "012_Happy",
+			"cry": "012",
 			"species": "Butterfree",
 			"type": "Bug / Flying",
 			"hp": 6,
@@ -888,8 +876,7 @@
 		}, {
 			"number": 13,
 			"image": "013",
-			"commonCry": "013_Common",
-			"happyCry": "013_Happy",
+			"cry": "013",
 			"species": "Weedle",
 			"type": "Bug / Poison",
 			"hp": 4,
@@ -954,8 +941,7 @@
 		}, {
 			"number": 14,
 			"image": "014",
-			"commonCry": "014_Common",
-			"happyCry": "014_Happy",
+			"cry": "014",
 			"species": "Kakuna",
 			"type": "Bug / Poison",
 			"hp": 5,
@@ -1016,8 +1002,7 @@
 		}, {
 			"number": 15,
 			"image": "015",
-			"commonCry": "015_Common",
-			"happyCry": "015_Happy",
+			"cry": "015",
 			"species": "Beedrill",
 			"type": "Bug / Poison",
 			"hp": 7,
@@ -1088,8 +1073,7 @@
 		}, {
 			"number": 16,
 			"image": "016",
-			"commonCry": "016_Common",
-			"happyCry": "016_Happy",
+			"cry": "016",
 			"species": "Pidgey",
 			"type": "Normal / Flying",
 			"hp": 4,
@@ -1163,8 +1147,7 @@
 		}, {
 			"number": 17,
 			"image": "017",
-			"commonCry": "017_Common",
-			"happyCry": "017_Happy",
+			"cry": "017",
 			"species": "Pidgeotto",
 			"type": "Normal / Flying",
 			"hp": 6,
@@ -1236,8 +1219,7 @@
 		}, {
 			"number": 18,
 			"image": "018",
-			"commonCry": "018_Common",
-			"happyCry": "018_Happy",
+			"cry": "018",
 			"species": "Pidgeot",
 			"type": "Normal / Flying",
 			"hp": 8,
@@ -1310,8 +1292,7 @@
 		}, {
 			"number": 19,
 			"image": "019",
-			"commonCry": "019_Common",
-			"happyCry": "019_Happy",
+			"cry": "019",
 			"species": "Rattata",
 			"type": "Normal",
 			"hp": 3,
@@ -1384,8 +1365,7 @@
 		}, {
 			"number": 20,
 			"image": "020",
-			"commonCry": "020_Common",
-			"happyCry": "020_Happy",
+			"cry": "020",
 			"species": "Raticate",
 			"type": "Normal",
 			"hp": 6,
@@ -1457,8 +1437,7 @@
 		}, {
 			"number": 21,
 			"image": "021",
-			"commonCry": "021_Common",
-			"happyCry": "021_Happy",
+			"cry": "021",
 			"species": "Spearow",
 			"type": "Normal / Flying",
 			"hp": 4,
@@ -1528,8 +1507,7 @@
 		}, {
 			"number": 22,
 			"image": "022",
-			"commonCry": "022_Common",
-			"happyCry": "022_Happy",
+			"cry": "022",
 			"species": "Fearow",
 			"type": "Normal / Flying",
 			"hp": 7,
@@ -1598,8 +1576,7 @@
 		}, {
 			"number": 23,
 			"image": "023",
-			"commonCry": "023_Common",
-			"happyCry": "023_Happy",
+			"cry": "023",
 			"species": "Ekans",
 			"type": "Poison",
 			"hp": 4,
@@ -1677,8 +1654,7 @@
 		}, {
 			"number": 24,
 			"image": "024",
-			"commonCry": "024_Common",
-			"happyCry": "024_Happy",
+			"cry": "024",
 			"species": "Arbok",
 			"type": "Poison",
 			"hp": 6,
@@ -1754,8 +1730,7 @@
 		}, {
 			"number": 25,
 			"image": "025",
-			"commonCry": "025_Common",
-			"happyCry": "025_Happy",
+			"cry": "025",
 			"species": "Pikachu",
 			"type": "Electric",
 			"hp": 4,
@@ -1830,8 +1805,7 @@
 		}, {
 			"number": 26,
 			"image": "026",
-			"commonCry": "026_Common",
-			"happyCry": "026_Happy",
+			"cry": "026",
 			"species": "Raichu",
 			"type": "Electric",
 			"hp": 6,
@@ -1906,8 +1880,7 @@
 		}, {
 			"number": 27,
 			"image": "027",
-			"commonCry": "027_Common",
-			"happyCry": "027_Happy",
+			"cry": "027",
 			"species": "Sandshrew",
 			"type": "Ground",
 			"hp": 5,
@@ -1984,8 +1957,7 @@
 		}, {
 			"number": 28,
 			"image": "028",
-			"commonCry": "028_Common",
-			"happyCry": "028_Happy",
+			"cry": "028",
 			"species": "Sandslash",
 			"type": "Ground",
 			"hp": 8,
@@ -2061,8 +2033,7 @@
 		}, {
 			"number": 30,
 			"image": "030",
-			"commonCry": "030_Common",
-			"happyCry": "030_Happy",
+			"cry": "030",
 			"species": "Nidorina",
 			"type": "Poison",
 			"hp": 7,
@@ -2133,8 +2104,7 @@
 		}, {
 			"number": 31,
 			"image": "031",
-			"commonCry": "031_Common",
-			"happyCry": "031_Happy",
+			"cry": "031",
 			"species": "Nidoqueen",
 			"type": "Poison / Ground",
 			"hp": 9,
@@ -2211,8 +2181,7 @@
 		}, {
 			"number": 32,
 			"image": "032",
-			"commonCry": "032_Common",
-			"happyCry": "032_Happy",
+			"cry": "032",
 			"species": "Nidoran(m)",
 			"type": "Poison",
 			"hp": 5,
@@ -2288,8 +2257,7 @@
 		}, {
 			"number": 33,
 			"image": "033",
-			"commonCry": "033_Common",
-			"happyCry": "033_Happy",
+			"cry": "033",
 			"species": "Nidorino",
 			"type": "Poison",
 			"hp": 6,
@@ -2360,8 +2328,7 @@
 		}, {
 			"number": 34,
 			"image": "034",
-			"commonCry": "034_Common",
-			"happyCry": "034_Happy",
+			"cry": "034",
 			"species": "Nidoking",
 			"type": "Poison / Ground",
 			"hp": 8,
@@ -2438,8 +2405,7 @@
 		}, {
 			"number": 35,
 			"image": "035",
-			"commonCry": "035_Common",
-			"happyCry": "035_Happy",
+			"cry": "035",
 			"species": "Clefairy",
 			"type": "Fairy",
 			"hp": 7,
@@ -2517,8 +2483,7 @@
 		}, {
 			"number": 36,
 			"image": "036",
-			"commonCry": "036_Common",
-			"happyCry": "036_Happy",
+			"cry": "036",
 			"species": "Clefable",
 			"type": "Fairy",
 			"hp": 10,
@@ -2595,8 +2560,7 @@
 		}, {
 			"number": 37,
 			"image": "037",
-			"commonCry": "037_Common",
-			"happyCry": "037_Happy",
+			"cry": "037",
 			"species": "Vulpix",
 			"type": "Fire",
 			"hp": 4,
@@ -2676,8 +2640,7 @@
 		}, {
 			"number": 38,
 			"image": "038",
-			"commonCry": "038_Common",
-			"happyCry": "038_Happy",
+			"cry": "038",
 			"species": "Ninetales",
 			"type": "Fire",
 			"hp": 7,
@@ -2755,8 +2718,7 @@
 		}, {
 			"number": 39,
 			"image": "039",
-			"commonCry": "039_Common",
-			"happyCry": "039_Happy",
+			"cry": "039",
 			"species": "Jigglypuff",
 			"type": "Normal / Fairy",
 			"hp": 12,
@@ -2831,8 +2793,7 @@
 		}, {
 			"number": 40,
 			"image": "040",
-			"commonCry": "040_Common",
-			"happyCry": "040_Happy",
+			"cry": "040",
 			"species": "Wigglytuff",
 			"type": "Normal / Fairy",
 			"hp": 14,
@@ -2907,8 +2868,7 @@
 		}, {
 			"number": 41,
 			"image": "041",
-			"commonCry": "041_Common",
-			"happyCry": "041_Happy",
+			"cry": "041",
 			"species": "Zubat",
 			"type": "Poison / Flying",
 			"hp": 4,
@@ -2985,8 +2945,7 @@
 		}, {
 			"number": 718,
 			"image": "718",
-			"commonCry": "718_Common",
-			"happyCry": "718_Happy",
+			"cry": "718",
 			"species": "Zygarde",
 			"type": "Dragon / Ground",
 			"hp": 11,
@@ -3065,8 +3024,7 @@
 		}, {
 			"number": 717,
 			"image": "717",
-			"commonCry": "717_Common",
-			"happyCry": "717_Happy",
+			"cry": "717",
 			"species": "Yveltal",
 			"type": "Dark / Flying",
 			"hp": 13,
@@ -3145,8 +3103,7 @@
 		}, {
 			"number": 716,
 			"image": "716",
-			"commonCry": "716_Common",
-			"happyCry": "716_Happy",
+			"cry": "716",
 			"species": "Xerneas",
 			"type": "Fairy",
 			"hp": 13,
@@ -3224,8 +3181,7 @@
 		}, {
 			"number": 715,
 			"image": "715",
-			"commonCry": "715_Common",
-			"happyCry": "715_Happy",
+			"cry": "715",
 			"species": "Noivern",
 			"type": "Flying / Dragon",
 			"hp": 9,
@@ -3303,8 +3259,7 @@
 		}, {
 			"number": 714,
 			"image": "714",
-			"commonCry": "714_Common",
-			"happyCry": "714_Happy",
+			"cry": "714",
 			"species": "Noibat",
 			"type": "Flying / Dragon",
 			"hp": 4,
@@ -3380,8 +3335,7 @@
 		}, {
 			"number": 712,
 			"image": "712",
-			"commonCry": "712_Common",
-			"happyCry": "712_Happy",
+			"cry": "712",
 			"species": "Bergmite",
 			"type": "Ice",
 			"hp": 6,
@@ -3456,8 +3410,7 @@
 		}, {
 			"number": 713,
 			"image": "713",
-			"commonCry": "713_Common",
-			"happyCry": "713_Happy",
+			"cry": "713",
 			"species": "Avalugg",
 			"type": "Ice",
 			"hp": 10,
@@ -3534,8 +3487,7 @@
 		}, {
 			"number": 709,
 			"image": "709",
-			"commonCry": "709_Common",
-			"happyCry": "709_Happy",
+			"cry": "709",
 			"species": "Trevenant",
 			"type": "Ghost / Grass",
 			"hp": 9,
@@ -3609,8 +3561,7 @@
 		}, {
 			"number": 708,
 			"image": "708",
-			"commonCry": "708_Common",
-			"happyCry": "708_Happy",
+			"cry": "708",
 			"species": "Phantump",
 			"type": "Ghost / Grass",
 			"hp": 4,
@@ -3687,8 +3638,7 @@
 		}, {
 			"number": 707,
 			"image": "707",
-			"commonCry": "707_Common",
-			"happyCry": "707_Happy",
+			"cry": "707",
 			"species": "Klefki",
 			"type": "Steel / Fairy",
 			"hp": 6,
@@ -3762,8 +3712,7 @@
 		}, {
 			"number": 706,
 			"image": "706",
-			"commonCry": "706_Common",
-			"happyCry": "706_Happy",
+			"cry": "706",
 			"species": "Goodra",
 			"type": "Dragon",
 			"hp": 9,
@@ -3835,8 +3784,7 @@
 		}, {
 			"number": 705,
 			"image": "705",
-			"commonCry": "705_Common",
-			"happyCry": "705_Happy",
+			"cry": "705",
 			"species": "Sligoo",
 			"type": "Dragon",
 			"hp": 7,
@@ -3907,8 +3855,7 @@
 		}, {
 			"number": 704,
 			"image": "704",
-			"commonCry": "704_Common",
-			"happyCry": "704_Happy",
+			"cry": "704",
 			"species": "Goomy",
 			"type": "Dragon",
 			"hp": 5,
@@ -3979,8 +3926,7 @@
 		}, {
 			"number": 710,
 			"image": "710",
-			"commonCry": "710_Common",
-			"happyCry": "710_Happy",
+			"cry": "710",
 			"species": "Pumpkaboo (average)",
 			"type": "Ghost / Grass",
 			"hp": 5,
@@ -4058,8 +4004,7 @@
 		}, {
 			"number": 710,
 			"image": "710",
-			"commonCry": "710_Common",
-			"happyCry": "710_Happy",
+			"cry": "710",
 			"species": "Pumpkaboo (small)",
 			"type": "Ghost / Grass",
 			"hp": 4,
@@ -4137,8 +4082,7 @@
 		}, {
 			"number": 710,
 			"image": "710",
-			"commonCry": "710_Common",
-			"happyCry": "710_Happy",
+			"cry": "710",
 			"species": "Pumpkaboo (large)",
 			"type": "Ghost / Grass",
 			"hp": 5,
@@ -4216,8 +4160,7 @@
 		}, {
 			"number": 710,
 			"image": "710",
-			"commonCry": "710_Common",
-			"happyCry": "710_Happy",
+			"cry": "710",
 			"species": "Pumpkaboo (super)",
 			"type": "Ghost / Grass",
 			"hp": 6,
@@ -4295,8 +4238,7 @@
 		}, {
 			"number": 711,
 			"image": "711",
-			"commonCry": "711_Common",
-			"happyCry": "711_Happy",
+			"cry": "711",
 			"species": "Gourgeist (average)",
 			"type": "Ghost / Grass",
 			"hp": 7,
@@ -4376,8 +4318,7 @@
 		}, {
 			"number": 711,
 			"image": "711",
-			"commonCry": "711_Common",
-			"happyCry": "711_Happy",
+			"cry": "711",
 			"species": "Gourgeist (small)",
 			"type": "Ghost / Grass",
 			"hp": 6,
@@ -4457,8 +4398,7 @@
 		}, {
 			"number": 711,
 			"image": "711",
-			"commonCry": "711_Common",
-			"happyCry": "711_Happy",
+			"cry": "711",
 			"species": "Gourgeist (large)",
 			"type": "Ghost / Grass",
 			"hp": 8,
@@ -4538,8 +4478,7 @@
 		}, {
 			"number": 711,
 			"image": "711",
-			"commonCry": "711_Common",
-			"happyCry": "711_Happy",
+			"cry": "711",
 			"species": "Gourgeist (super)",
 			"type": "Ghost / Grass",
 			"hp": 9,
@@ -4619,8 +4558,7 @@
 		}, {
 			"number": 701,
 			"image": "701",
-			"commonCry": "701_Common",
-			"happyCry": "701_Happy",
+			"cry": "701",
 			"species": "Hawlucha",
 			"type": "Fighting / Flying",
 			"hp": 8,
@@ -4695,8 +4633,7 @@
 		}, {
 			"number": 702,
 			"image": "702",
-			"commonCry": "702_Common",
-			"happyCry": "702_Happy",
+			"cry": "702",
 			"species": "Dedenne",
 			"type": "Electric /Fairy",
 			"hp": 7,
@@ -4771,8 +4708,7 @@
 		}, {
 			"number": 703,
 			"image": "703",
-			"commonCry": "703_Common",
-			"happyCry": "703_Happy",
+			"cry": "703",
 			"species": "Carbink",
 			"type": "Rock / Fairy",
 			"hp": 5,
@@ -4846,8 +4782,7 @@
 		}, {
 			"number": 700,
 			"image": "700",
-			"commonCry": "700_Common",
-			"happyCry": "700_Happy",
+			"cry": "700",
 			"species": "Sylveon",
 			"type": "Fairy",
 			"hp": 10,
@@ -4918,8 +4853,7 @@
 		}, {
 			"number": 699,
 			"image": "699",
-			"commonCry": "699_Common",
-			"happyCry": "699_Happy",
+			"cry": "699",
 			"species": "Aurorus",
 			"type": "Rock / Ice",
 			"hp": 12,
@@ -4997,8 +4931,7 @@
 		}, {
 			"number": 698,
 			"image": "698",
-			"commonCry": "698_Common",
-			"happyCry": "698_Happy",
+			"cry": "698",
 			"species": "Amaura",
 			"type": "Rock / Ice",
 			"hp": 8,
@@ -5077,8 +5010,7 @@
 		}, {
 			"number": 42,
 			"image": "042",
-			"commonCry": "042_Common",
-			"happyCry": "042_Happy",
+			"cry": "042",
 			"species": "Golbat",
 			"type": "Poison / Flying",
 			"hp": 8,
@@ -5152,8 +5084,7 @@
 		}, {
 			"number": 43,
 			"image": "043",
-			"commonCry": "043_Common",
-			"happyCry": "043_Happy",
+			"cry": "043",
 			"species": "Oddish",
 			"type": "Grass / Poison",
 			"hp": 5,
@@ -5230,8 +5161,7 @@
 		}, {
 			"number": 44,
 			"image": "044",
-			"commonCry": "044_Common",
-			"happyCry": "044_Happy",
+			"cry": "044",
 			"species": "Gloom",
 			"type": "Grass / Poison",
 			"hp": 6,
@@ -5305,8 +5235,7 @@
 		}, {
 			"number": 45,
 			"image": "045",
-			"commonCry": "045_Common",
-			"happyCry": "045_Happy",
+			"cry": "045",
 			"species": "Vileplume",
 			"type": "Grass / Poison",
 			"hp": 8,
@@ -5379,8 +5308,7 @@
 		}, {
 			"number": 697,
 			"image": "697",
-			"commonCry": "697_Common",
-			"happyCry": "697_Happy",
+			"cry": "697",
 			"species": "Tyrantrum",
 			"type": "Rock / Dragon",
 			"hp": 8,
@@ -5458,8 +5386,7 @@
 		}, {
 			"number": 696,
 			"image": "696",
-			"commonCry": "696_Common",
-			"happyCry": "696_Happy",
+			"cry": "696",
 			"species": "Tyrunt",
 			"type": "Rock / Dragon",
 			"hp": 6,
@@ -5533,8 +5460,7 @@
 		}, {
 			"number": 695,
 			"image": "695",
-			"commonCry": "695_Common",
-			"happyCry": "695_Happy",
+			"cry": "695",
 			"species": "Heliolisk",
 			"type": "Electric / Normal",
 			"hp": 6,
@@ -5605,8 +5531,7 @@
 		}, {
 			"number": 694,
 			"image": "694",
-			"commonCry": "694_Common",
-			"happyCry": "694_Happy",
+			"cry": "694",
 			"species": "Helioptile",
 			"type": "Electric / Normal",
 			"hp": 4,
@@ -5679,8 +5604,7 @@
 		}, {
 			"number": 693,
 			"image": "693",
-			"commonCry": "693_Common",
-			"happyCry": "693_Happy",
+			"cry": "693",
 			"species": "Clawitzer",
 			"type": "Water",
 			"hp": 7,
@@ -5755,8 +5679,7 @@
 		}, {
 			"number": 692,
 			"image": "692",
-			"commonCry": "692_Common",
-			"happyCry": "692_Happy",
+			"cry": "692",
 			"species": "Clauncher",
 			"type": "Water",
 			"hp": 5,
@@ -5830,8 +5753,7 @@
 		}, {
 			"number": 691,
 			"image": "691",
-			"commonCry": "691_Common",
-			"happyCry": "691_Happy",
+			"cry": "691",
 			"species": "Dragalge",
 			"type": "Poison / Dragon",
 			"hp": 7,
@@ -5910,8 +5832,7 @@
 		}, {
 			"number": 690,
 			"image": "690",
-			"commonCry": "690_Common",
-			"happyCry": "690_Happy",
+			"cry": "690",
 			"species": "Skrelp",
 			"type": "Poison / Water",
 			"hp": 5,
@@ -5989,8 +5910,7 @@
 		}, {
 			"number": 689,
 			"image": "689",
-			"commonCry": "689_Common",
-			"happyCry": "689_Happy",
+			"cry": "689",
 			"species": "Barbaracle",
 			"type": "Rock / Water",
 			"hp": 7,
@@ -6066,8 +5986,7 @@
 		}, {
 			"number": 688,
 			"image": "688",
-			"commonCry": "688_Common",
-			"happyCry": "688_Happy",
+			"cry": "688",
 			"species": "Binacle",
 			"type": "Rock / Water",
 			"hp": 4,
@@ -6145,8 +6064,7 @@
 		}, {
 			"number": 687,
 			"image": "687",
-			"commonCry": "687_Common",
-			"happyCry": "687_Happy",
+			"cry": "687",
 			"species": "Malamar",
 			"type": "Dark / Psychic",
 			"hp": 9,
@@ -6226,8 +6144,7 @@
 		}, {
 			"number": 686,
 			"image": "686",
-			"commonCry": "686_Common",
-			"happyCry": "686_Happy",
+			"cry": "686",
 			"species": "Inkay",
 			"type": "Dark / Psychic",
 			"hp": 5,
@@ -6309,8 +6226,7 @@
 		}, {
 			"number": 685,
 			"image": "685",
-			"commonCry": "685_Common",
-			"happyCry": "685_Happy",
+			"cry": "685",
 			"species": "Slurpuff",
 			"type": "Fairy",
 			"hp": 8,
@@ -6383,8 +6299,7 @@
 		}, {
 			"number": 684,
 			"image": "684",
-			"commonCry": "684_Common",
-			"happyCry": "684_Happy",
+			"cry": "684",
 			"species": "Swirlix",
 			"type": "Fairy",
 			"hp": 6,
@@ -6459,8 +6374,7 @@
 		}, {
 			"number": 683,
 			"image": "683",
-			"commonCry": "683_Common",
-			"happyCry": "683_Happy",
+			"cry": "683",
 			"species": "Aromatisse",
 			"type": "Fairy",
 			"hp": 10,
@@ -6536,8 +6450,7 @@
 		}, {
 			"number": 682,
 			"image": "682",
-			"commonCry": "682_Common",
-			"happyCry": "682_Happy",
+			"cry": "682",
 			"species": "Spritzee",
 			"type": "Fairy",
 			"hp": 8,
@@ -6613,8 +6526,7 @@
 		}, {
 			"number": 681,
 			"image": "681",
-			"commonCry": "681_Common",
-			"happyCry": "681_Happy",
+			"cry": "681",
 			"species": "Aegislash",
 			"type": "Steel / Ghost",
 			"hp": 6,
@@ -6691,8 +6603,7 @@
 		}, {
 			"number": 680,
 			"image": "680",
-			"commonCry": "680_Common",
-			"happyCry": "680_Happy",
+			"cry": "680",
 			"species": "Doublade",
 			"type": "Steel / Ghost",
 			"hp": 6,
@@ -6769,8 +6680,7 @@
 		}, {
 			"number": 679,
 			"image": "679",
-			"commonCry": "679_Common",
-			"happyCry": "679_Happy",
+			"cry": "679",
 			"species": "Honedge",
 			"type": "Steel / Ghost",
 			"hp": 5,
@@ -6849,8 +6759,7 @@
 		}, {
 			"number": 677,
 			"image": "677",
-			"commonCry": "677_Common",
-			"happyCry": "677_Happy",
+			"cry": "677",
 			"species": "Espurr",
 			"type": "Psychic",
 			"hp": 6,
@@ -6920,8 +6829,7 @@
 		}, {
 			"number": 676,
 			"image": "676",
-			"commonCry": "676_Common",
-			"happyCry": "676_Happy",
+			"cry": "676",
 			"species": "Furfrou",
 			"type": "Normal",
 			"hp": 8,
@@ -6990,8 +6898,7 @@
 		}, {
 			"number": 675,
 			"image": "675",
-			"commonCry": "675_Common",
-			"happyCry": "675_Happy",
+			"cry": "675",
 			"species": "Pangoro",
 			"type": "Fighting / Dark",
 			"hp": 9,
@@ -7065,8 +6972,7 @@
 		}, {
 			"number": 674,
 			"image": "674",
-			"commonCry": "674_Common",
-			"happyCry": "674_Happy",
+			"cry": "674",
 			"species": "Pancham",
 			"type": "Fighting",
 			"hp": 7,
@@ -7139,8 +7045,7 @@
 		}, {
 			"number": 673,
 			"image": "673",
-			"commonCry": "673_Common",
-			"happyCry": "673_Happy",
+			"cry": "673",
 			"species": "Gogoat",
 			"type": "Grass",
 			"hp": 12,
@@ -7216,8 +7121,7 @@
 		}, {
 			"number": 672,
 			"image": "672",
-			"commonCry": "672_Common",
-			"happyCry": "672_Happy",
+			"cry": "672",
 			"species": "Skiddo",
 			"type": "Grass",
 			"hp": 7,
@@ -7291,8 +7195,7 @@
 		}, {
 			"number": 678,
 			"image": "678_Female",
-			"commonCry": "678_Common",
-			"happyCry": "678_Happy",
+			"cry": "678",
 			"species": "Meowstic (female)",
 			"type": "Psychic",
 			"hp": 7,
@@ -7368,8 +7271,7 @@
 		}, {
 			"number": 678,
 			"image": "678_Male",
-			"commonCry": "678_Common",
-			"happyCry": "678_Happy",
+			"cry": "678",
 			"species": "Meowstic (male)",
 			"type": "Psychic",
 			"hp": 7,
@@ -7445,8 +7347,7 @@
 		}, {
 			"number": 671,
 			"image": "671",
-			"commonCry": "671_Common",
-			"happyCry": "671_Happy",
+			"cry": "671",
 			"species": "Florges",
 			"type": "Fairy",
 			"hp": 8,
@@ -7520,8 +7421,7 @@
 		}, {
 			"number": 670,
 			"image": "670",
-			"commonCry": "670_Common",
-			"happyCry": "670_Happy",
+			"cry": "670",
 			"species": "Floette",
 			"type": "Fairy",
 			"hp": 5,
@@ -7596,8 +7496,7 @@
 		}, {
 			"number": 669,
 			"image": "669",
-			"commonCry": "669_Common",
-			"happyCry": "669_Happy",
+			"cry": "669",
 			"species": "Flabébé",
 			"type": "Fairy",
 			"hp": 4,
@@ -7673,8 +7572,7 @@
 		}, {
 			"number": 668,
 			"image": "668",
-			"commonCry": "668_Common",
-			"happyCry": "668_Happy",
+			"cry": "668",
 			"species": "Pyroar",
 			"type": "Fire / Normal",
 			"hp": 9,
@@ -7750,8 +7648,7 @@
 		}, {
 			"number": 667,
 			"image": "667",
-			"commonCry": "667_Common",
-			"happyCry": "667_Happy",
+			"cry": "667",
 			"species": "Litleo",
 			"type": "Fire / Normal",
 			"hp": 6,
@@ -7827,8 +7724,7 @@
 		}, {
 			"number": 666,
 			"image": "666",
-			"commonCry": "666_Common",
-			"happyCry": "666_Happy",
+			"cry": "666",
 			"species": "Vivillon",
 			"type": "Bug / Flying",
 			"hp": 8,
@@ -7900,8 +7796,7 @@
 		}, {
 			"number": 665,
 			"image": "665",
-			"commonCry": "665_Common",
-			"happyCry": "665_Happy",
+			"cry": "665",
 			"species": "Spewpa",
 			"type": "Bug",
 			"hp": 5,
@@ -7963,8 +7858,7 @@
 		}, {
 			"number": 664,
 			"image": "664",
-			"commonCry": "664_Common",
-			"happyCry": "664_Happy",
+			"cry": "664",
 			"species": "Scatterbug",
 			"type": "Bug",
 			"hp": 4,
@@ -8029,8 +7923,7 @@
 		}, {
 			"number": 663,
 			"image": "663",
-			"commonCry": "663_Common",
-			"happyCry": "663_Happy",
+			"cry": "663",
 			"species": "Talonflame",
 			"type": "Fire / Flying",
 			"hp": 8,
@@ -8106,8 +7999,7 @@
 		}, {
 			"number": 662,
 			"image": "662",
-			"commonCry": "662_Common",
-			"happyCry": "662_Happy",
+			"cry": "662",
 			"species": "Fletchinder",
 			"type": "Fire / Flying",
 			"hp": 6,
@@ -8182,8 +8074,7 @@
 		}, {
 			"number": 661,
 			"image": "661",
-			"commonCry": "661_Common",
-			"happyCry": "661_Happy",
+			"cry": "661",
 			"species": "Fletchling",
 			"type": "Normal / Flying",
 			"hp": 5,
@@ -8257,8 +8148,7 @@
 		}, {
 			"number": 660,
 			"image": "660",
-			"commonCry": "660_Common",
-			"happyCry": "660_Happy",
+			"cry": "660",
 			"species": "Diggersby",
 			"type": "Normal / Ground",
 			"hp": 9,
@@ -8335,8 +8225,7 @@
 		}, {
 			"number": 659,
 			"image": "659",
-			"commonCry": "659_Common",
-			"happyCry": "659_Happy",
+			"cry": "659",
 			"species": "Bunnelby",
 			"type": "Normal",
 			"hp": 4,
@@ -8410,8 +8299,7 @@
 		}, {
 			"number": 658,
 			"image": "658",
-			"commonCry": "658_Common",
-			"happyCry": "658_Happy",
+			"cry": "658",
 			"species": "Greninja",
 			"type": "Water / Dark",
 			"hp": 7,
@@ -8490,8 +8378,7 @@
 		}, {
 			"number": 657,
 			"image": "657",
-			"commonCry": "657_Common",
-			"happyCry": "657_Happy",
+			"cry": "657",
 			"species": "Frogadier",
 			"type": "Water",
 			"hp": 5,
@@ -8568,8 +8455,7 @@
 		}, {
 			"number": 656,
 			"image": "656",
-			"commonCry": "656_Common",
-			"happyCry": "656_Happy",
+			"cry": "656",
 			"species": "Froakie",
 			"type": "Water",
 			"hp": 4,
@@ -8646,8 +8532,7 @@
 		}, {
 			"number": 655,
 			"image": "655",
-			"commonCry": "655_Common",
-			"happyCry": "655_Happy",
+			"cry": "655",
 			"species": "Delphox",
 			"type": "Fire / Psychic",
 			"hp": 8,
@@ -8727,8 +8612,7 @@
 		}, {
 			"number": 654,
 			"image": "654",
-			"commonCry": "654_Common",
-			"happyCry": "654_Happy",
+			"cry": "654",
 			"species": "Braixen",
 			"type": "Fire",
 			"hp": 6,
@@ -8805,8 +8689,7 @@
 		}, {
 			"number": 653,
 			"image": "653",
-			"commonCry": "653_Common",
-			"happyCry": "653_Happy",
+			"cry": "653",
 			"species": "Fennekin",
 			"type": "Fire",
 			"hp": 4,
@@ -8882,8 +8765,7 @@
 		}, {
 			"number": 652,
 			"image": "652",
-			"commonCry": "652_Common",
-			"happyCry": "652_Happy",
+			"cry": "652",
 			"species": "Chesnaught",
 			"type": "Grass / Fighting",
 			"hp": 9,
@@ -8958,8 +8840,7 @@
 		}, {
 			"number": 651,
 			"image": "651",
-			"commonCry": "651_Common",
-			"happyCry": "651_Happy",
+			"cry": "651",
 			"species": "Quilladin",
 			"type": "Grass",
 			"hp": 6,
@@ -9032,8 +8913,7 @@
 		}, {
 			"number": 650,
 			"image": "650",
-			"commonCry": "650_Common",
-			"happyCry": "650_Happy",
+			"cry": "650",
 			"species": "Chespin",
 			"type": "Grass",
 			"hp": 6,
@@ -9107,8 +8987,7 @@
 		}, {
 			"number": 649,
 			"image": "649",
-			"commonCry": "649_Common",
-			"happyCry": "649_Happy",
+			"cry": "649",
 			"species": "Genesect",
 			"type": "Bug / Steel",
 			"hp": 7,
@@ -9183,8 +9062,7 @@
 		}, {
 			"number": 648,
 			"image": "648_Step",
-			"commonCry": "648_Common",
-			"happyCry": "648_Happy",
+			"cry": "648",
 			"species": "Meloetta (Step Form)",
 			"type": "Normal / Psychic",
 			"hp": 10,
@@ -9255,8 +9133,7 @@
 		}, {
 			"number": 648,
 			"image": "648",
-			"commonCry": "648_Common",
-			"happyCry": "648_Happy",
+			"cry": "648",
 			"species": "Meloetta (Aria Form)",
 			"type": "Normal / Psychic",
 			"hp": 10,
@@ -9327,8 +9204,7 @@
 		}, {
 			"number": 647,
 			"image": "647",
-			"commonCry": "647_Common",
-			"happyCry": "647_Happy",
+			"cry": "647",
 			"species": "Keldeo",
 			"type": "Water / Fighting",
 			"hp": 9,
@@ -9401,8 +9277,7 @@
 		}, {
 			"number": 646,
 			"image": "646",
-			"commonCry": "646_Common",
-			"happyCry": "646_Happy",
+			"cry": "646",
 			"species": "Kyurem",
 			"type": "Dragon / Ice",
 			"hp": 13,
@@ -9479,8 +9354,7 @@
 		}, {
 			"number": 646,
 			"image": "646_Black",
-			"commonCry": "646_Common",
-			"happyCry": "646_Happy",
+			"cry": "646_Black",
 			"species": "Black Kyurem",
 			"type": "Dragon / Ice",
 			"hp": 13,
@@ -9556,8 +9430,7 @@
 		}, {
 			"number": 646,
 			"image": "646_White",
-			"commonCry": "646_Common",
-			"happyCry": "646_Happy",
+			"cry": "646_White",
 			"species": "White Kyurem",
 			"type": "Dragon / Ice",
 			"hp": 13,
@@ -9633,8 +9506,7 @@
 		}, {
 			"number": 645,
 			"image": "645_Therian",
-			"commonCry": "645_Common",
-			"happyCry": "645_Happy",
+			"cry": "645",
 			"species": "Landorus (Therian Form)",
 			"type": "Ground / Flying",
 			"hp": 9,
@@ -9710,8 +9582,7 @@
 		}, {
 			"number": 645,
 			"image": "645",
-			"commonCry": "645_Common",
-			"happyCry": "645_Happy",
+			"cry": "645",
 			"species": "Landorus (Incarnate Form)",
 			"type": "Ground / Flying",
 			"hp": 9,
@@ -9787,8 +9658,7 @@
 		}, {
 			"number": 644,
 			"image": "644",
-			"commonCry": "644_Common",
-			"happyCry": "644_Happy",
+			"cry": "644",
 			"species": "Zekrom",
 			"type": "Dragon / Electric",
 			"hp": 10,
@@ -9865,8 +9735,7 @@
 		}, {
 			"number": 643,
 			"image": "643",
-			"commonCry": "643_Common",
-			"happyCry": "643_Happy",
+			"cry": "643",
 			"species": "Reshiram",
 			"type": "Dragon / Fire",
 			"hp": 10,
@@ -9944,8 +9813,7 @@
 		}, {
 			"number": 642,
 			"image": "642",
-			"commonCry": "642_Common",
-			"happyCry": "642_Happy",
+			"cry": "642",
 			"species": "Thundurus (Incarnate Form)",
 			"type": "Electric / Flying",
 			"hp": 8,
@@ -10021,8 +9889,7 @@
 		}, {
 			"number": 642,
 			"image": "642_Therian",
-			"commonCry": "642_Common",
-			"happyCry": "642_Happy",
+			"cry": "642",
 			"species": "Thundurus (Therian Form)",
 			"type": "Electric / Flying",
 			"hp": 8,
@@ -10100,8 +9967,7 @@
 		}, {
 			"number": 641,
 			"image": "641",
-			"commonCry": "641_Common",
-			"happyCry": "641_Happy",
+			"cry": "641",
 			"species": "Tornadus (Incarnate Form)",
 			"type": "Flying",
 			"hp": 8,
@@ -10177,8 +10043,7 @@
 		}, {
 			"number": 641,
 			"image": "641_Therian",
-			"commonCry": "641_Common",
-			"happyCry": "641_Happy",
+			"cry": "641",
 			"species": "Tornadus (Therian Form)",
 			"type": "Flying",
 			"hp": 8,
@@ -10256,8 +10121,7 @@
 		}, {
 			"number": 640,
 			"image": "640",
-			"commonCry": "640_Common",
-			"happyCry": "640_Happy",
+			"cry": "640",
 			"species": "Virizion",
 			"type": "Grass / Fighting",
 			"hp": 9,
@@ -10329,8 +10193,7 @@
 		}, {
 			"number": 46,
 			"image": "046",
-			"commonCry": "046_Common",
-			"happyCry": "046_Happy",
+			"cry": "046",
 			"species": "Paras",
 			"type": "Bug / Grass",
 			"hp": 4,
@@ -10405,8 +10268,7 @@
 		}, {
 			"number": 47,
 			"image": "047",
-			"commonCry": "047_Common",
-			"happyCry": "047_Happy",
+			"cry": "047",
 			"species": "Parasect",
 			"type": "Bug / Grass",
 			"hp": 6,
@@ -10481,8 +10343,7 @@
 		}, {
 			"number": 48,
 			"image": "048",
-			"commonCry": "048_Common",
-			"happyCry": "048_Happy",
+			"cry": "048",
 			"species": "Venonat",
 			"type": "Bug / Poison",
 			"hp": 6,
@@ -10556,8 +10417,7 @@
 		}, {
 			"number": 49,
 			"image": "049",
-			"commonCry": "049_Common",
-			"happyCry": "049_Happy",
+			"cry": "049",
 			"species": "Venomoth",
 			"type": "Bug / Poison",
 			"hp": 7,
@@ -10628,8 +10488,7 @@
 		}, {
 			"number": 50,
 			"image": "050",
-			"commonCry": "050_Common",
-			"happyCry": "050_Happy",
+			"cry": "050",
 			"species": "Diglett",
 			"type": "Ground",
 			"hp": 1,
@@ -10702,8 +10561,7 @@
 		}, {
 			"number": 51,
 			"image": "051",
-			"commonCry": "051_Common",
-			"happyCry": "051_Happy",
+			"cry": "051",
 			"species": "Dugtrio",
 			"type": "Ground",
 			"hp": 4,
@@ -10775,8 +10633,7 @@
 		}, {
 			"number": 52,
 			"image": "052",
-			"commonCry": "052_Common",
-			"happyCry": "052_Happy",
+			"cry": "052",
 			"species": "Meowth",
 			"type": "Normal",
 			"hp": 4,
@@ -10853,8 +10710,7 @@
 		}, {
 			"number": 53,
 			"image": "053",
-			"commonCry": "053_Common",
-			"happyCry": "053_Happy",
+			"cry": "053",
 			"species": "Persian",
 			"type": "Normal",
 			"hp": 7,
@@ -10928,8 +10784,7 @@
 		}, {
 			"number": 54,
 			"image": "054",
-			"commonCry": "054_Common",
-			"happyCry": "054_Happy",
+			"cry": "054",
 			"species": "Psyduck",
 			"type": "Water",
 			"hp": 5,
@@ -11004,8 +10859,7 @@
 		}, {
 			"number": 55,
 			"image": "055",
-			"commonCry": "055_Common",
-			"happyCry": "055_Happy",
+			"cry": "055",
 			"species": "Golduck",
 			"type": "Water",
 			"hp": 8,
@@ -11078,8 +10932,7 @@
 		}, {
 			"number": 56,
 			"image": "056",
-			"commonCry": "056_Common",
-			"happyCry": "056_Happy",
+			"cry": "056",
 			"species": "Mankey",
 			"type": "Fighting",
 			"hp": 4,
@@ -11153,8 +11006,7 @@
 		}, {
 			"number": 57,
 			"image": "057",
-			"commonCry": "057_Common",
-			"happyCry": "057_Happy",
+			"cry": "057",
 			"species": "Primeape",
 			"type": "Fighting",
 			"hp": 7,
@@ -11223,8 +11075,7 @@
 		}, {
 			"number": 58,
 			"image": "058",
-			"commonCry": "058_Common",
-			"happyCry": "058_Happy",
+			"cry": "058",
 			"species": "Growlithe",
 			"type": "Fire",
 			"hp": 6,
@@ -11302,8 +11153,7 @@
 		}, {
 			"number": 59,
 			"image": "059",
-			"commonCry": "059_Common",
-			"happyCry": "059_Happy",
+			"cry": "059",
 			"species": "Arcanine",
 			"type": "Fire",
 			"hp": 9,
@@ -11382,8 +11232,7 @@
 		}, {
 			"number": 60,
 			"image": "060",
-			"commonCry": "060_Common",
-			"happyCry": "060_Happy",
+			"cry": "060",
 			"species": "Poliwag",
 			"type": "Water",
 			"hp": 4,
@@ -11459,8 +11308,7 @@
 		}, {
 			"number": 61,
 			"image": "061",
-			"commonCry": "061_Common",
-			"happyCry": "061_Happy",
+			"cry": "061",
 			"species": "Poliwhirl",
 			"type": "Water",
 			"hp": 7,
@@ -11534,8 +11382,7 @@
 		}, {
 			"number": 62,
 			"image": "062",
-			"commonCry": "062_Common",
-			"happyCry": "062_Happy",
+			"cry": "062",
 			"species": "Poliwrath",
 			"type": "Water / Fighting",
 			"hp": 9,
@@ -11610,8 +11457,7 @@
 		}, {
 			"number": 63,
 			"image": "063",
-			"commonCry": "063_Common",
-			"happyCry": "063_Happy",
+			"cry": "063",
 			"species": "Abra",
 			"type": "Psychic",
 			"hp": 3,
@@ -11675,8 +11521,7 @@
 		}, {
 			"number": 64,
 			"image": "064",
-			"commonCry": "064_Common",
-			"happyCry": "064_Happy",
+			"cry": "064",
 			"species": "Kadabra",
 			"type": "Psychic",
 			"hp": 4,
@@ -11751,8 +11596,7 @@
 		}, {
 			"number": 65,
 			"image": "065",
-			"commonCry": "065_Common",
-			"happyCry": "065_Happy",
+			"cry": "065",
 			"species": "Alakazam",
 			"type": "Psychic",
 			"hp": 6,
@@ -11826,8 +11670,7 @@
 		}, {
 			"number": 66,
 			"image": "066",
-			"commonCry": "066_Common",
-			"happyCry": "066_Happy",
+			"cry": "066",
 			"species": "Machop",
 			"type": "Fighting",
 			"hp": 7,
@@ -11904,8 +11747,7 @@
 		}, {
 			"number": 67,
 			"image": "067",
-			"commonCry": "067_Common",
-			"happyCry": "067_Happy",
+			"cry": "067",
 			"species": "Machoke",
 			"type": "Fighting",
 			"hp": 8,
@@ -11979,8 +11821,7 @@
 		}, {
 			"number": 68,
 			"image": "068",
-			"commonCry": "068_Common",
-			"happyCry": "068_Happy",
+			"cry": "068",
 			"species": "Machamp",
 			"type": "Fighting",
 			"hp": 9,
@@ -12053,8 +11894,7 @@
 		}, {
 			"number": 69,
 			"image": "069",
-			"commonCry": "069_Common",
-			"happyCry": "069_Happy",
+			"cry": "069",
 			"species": "Bellsprout",
 			"type": "Grass / Poison",
 			"hp": 5,
@@ -12128,8 +11968,7 @@
 		}, {
 			"number": 70,
 			"image": "070",
-			"commonCry": "070_Common",
-			"happyCry": "070_Happy",
+			"cry": "070",
 			"species": "Weepinbell",
 			"type": "Grass / Poison",
 			"hp": 7,
@@ -12200,8 +12039,7 @@
 		}, {
 			"number": 71,
 			"image": "071",
-			"commonCry": "071_Common",
-			"happyCry": "071_Happy",
+			"cry": "071",
 			"species": "Victreebel",
 			"type": "Grass / Poison",
 			"hp": 8,
@@ -12274,8 +12112,7 @@
 		}, {
 			"number": 72,
 			"image": "072",
-			"commonCry": "072_Common",
-			"happyCry": "072_Happy",
+			"cry": "072",
 			"species": "Tentacool",
 			"type": "Water / Poison",
 			"hp": 4,
@@ -12353,8 +12190,7 @@
 		}, {
 			"number": 73,
 			"image": "073",
-			"commonCry": "073_Common",
-			"happyCry": "073_Happy",
+			"cry": "073",
 			"species": "Tentacruel",
 			"type": "Water / Poison",
 			"hp": 8,
@@ -12430,8 +12266,7 @@
 		}, {
 			"number": 74,
 			"image": "074",
-			"commonCry": "074_Common",
-			"happyCry": "074_Happy",
+			"cry": "074",
 			"species": "Geodude",
 			"type": "Rock / Ground",
 			"hp": 4,
@@ -12509,8 +12344,7 @@
 		}, {
 			"number": 75,
 			"image": "075",
-			"commonCry": "075_Common",
-			"happyCry": "075_Happy",
+			"cry": "075",
 			"species": "Graveler",
 			"type": "Rock / Ground",
 			"hp": 6,
@@ -12586,8 +12420,7 @@
 		}, {
 			"number": 639,
 			"image": "639",
-			"commonCry": "639_Common",
-			"happyCry": "639_Happy",
+			"cry": "639",
 			"species": "Terrakion",
 			"type": "Rock / Fighting",
 			"hp": 9,
@@ -12661,8 +12494,7 @@
 		}, {
 			"number": 637,
 			"image": "637",
-			"commonCry": "637_Common",
-			"happyCry": "637_Happy",
+			"cry": "637",
 			"species": "Volcarona",
 			"type": "Bug / Fire",
 			"hp": 9,
@@ -12735,8 +12567,7 @@
 		}, {
 			"number": 636,
 			"image": "636",
-			"commonCry": "636_Common",
-			"happyCry": "636_Happy",
+			"cry": "636",
 			"species": "Larvesta",
 			"type": "Bug / Fire",
 			"hp": 6,
@@ -12810,8 +12641,7 @@
 		}, {
 			"number": 635,
 			"image": "635",
-			"commonCry": "635_Common",
-			"happyCry": "635_Happy",
+			"cry": "635",
 			"species": "Hydreigon",
 			"type": "Dark / Dragon",
 			"hp": 9,
@@ -12887,8 +12717,7 @@
 		}, {
 			"number": 634,
 			"image": "634",
-			"commonCry": "634_Common",
-			"happyCry": "634_Happy",
+			"cry": "634",
 			"species": "Zweuilous",
 			"type": "Dark / Dragon",
 			"hp": 7,
@@ -12962,8 +12791,7 @@
 		}, {
 			"number": 633,
 			"image": "633",
-			"commonCry": "633_Common",
-			"happyCry": "633_Happy",
+			"cry": "633",
 			"species": "Deino",
 			"type": "Dark / Dragon",
 			"hp": 5,
@@ -13041,8 +12869,7 @@
 		}, {
 			"number": 632,
 			"image": "632",
-			"commonCry": "632_Common",
-			"happyCry": "632_Happy",
+			"cry": "632",
 			"species": "Durant",
 			"type": "Bug / Steel",
 			"hp": 6,
@@ -13114,8 +12941,7 @@
 		}, {
 			"number": 631,
 			"image": "631",
-			"commonCry": "631_Common",
-			"happyCry": "631_Happy",
+			"cry": "631",
 			"species": "Heatmor",
 			"type": "Fire",
 			"hp": 9,
@@ -13192,8 +13018,7 @@
 		}, {
 			"number": 630,
 			"image": "630",
-			"commonCry": "630_Common",
-			"happyCry": "630_Happy",
+			"cry": "630",
 			"species": "Mandibuzz",
 			"type": "Dark / Flying",
 			"hp": 11,
@@ -13267,8 +13092,7 @@
 		}, {
 			"number": 629,
 			"image": "629",
-			"commonCry": "629_Common",
-			"happyCry": "629_Happy",
+			"cry": "629",
 			"species": "Vullaby",
 			"type": "Dark / Flying",
 			"hp": 7,
@@ -13345,8 +13169,7 @@
 		}, {
 			"number": 638,
 			"image": "638",
-			"commonCry": "638_Common",
-			"happyCry": "638_Happy",
+			"cry": "638",
 			"species": "Cobalion",
 			"type": "Steel / Fighting",
 			"hp": 9,
@@ -13418,8 +13241,7 @@
 		}, {
 			"number": 628,
 			"image": "628",
-			"commonCry": "628_Common",
-			"happyCry": "628_Happy",
+			"cry": "628",
 			"species": "Braviary",
 			"type": "Normal / Flying",
 			"hp": 10,
@@ -13491,8 +13313,7 @@
 		}, {
 			"number": 627,
 			"image": "627",
-			"commonCry": "627_Common",
-			"happyCry": "627_Happy",
+			"cry": "627",
 			"species": "Rufflet",
 			"type": "Normal / Flying",
 			"hp": 7,
@@ -13567,8 +13388,7 @@
 		}, {
 			"number": 626,
 			"image": "626",
-			"commonCry": "626_Common",
-			"happyCry": "626_Happy",
+			"cry": "626",
 			"species": "Bouffalant",
 			"type": "Normal",
 			"hp": 10,
@@ -13640,8 +13460,7 @@
 		}, {
 			"number": 625,
 			"image": "625",
-			"commonCry": "625_Common",
-			"happyCry": "625_Happy",
+			"cry": "625",
 			"species": "Bisharp",
 			"type": "Dark / Steel",
 			"hp": 7,
@@ -13716,8 +13535,7 @@
 		}, {
 			"number": 624,
 			"image": "624",
-			"commonCry": "624_Common",
-			"happyCry": "624_Happy",
+			"cry": "624",
 			"species": "Pawniard",
 			"type": "Dark / Steel",
 			"hp": 5,
@@ -13795,8 +13613,7 @@
 		}, {
 			"number": 623,
 			"image": "623",
-			"commonCry": "623_Common",
-			"happyCry": "623_Happy",
+			"cry": "623",
 			"species": "Golurk",
 			"type": "Ground / Ghost",
 			"hp": 9,
@@ -13869,8 +13686,7 @@
 		}, {
 			"number": 622,
 			"image": "622",
-			"commonCry": "622_Common",
-			"happyCry": "622_Happy",
+			"cry": "622",
 			"species": "Golett",
 			"type": "Ground / Ghost",
 			"hp": 6,
@@ -13943,8 +13759,7 @@
 		}, {
 			"number": 621,
 			"image": "621",
-			"commonCry": "621_Common",
-			"happyCry": "621_Happy",
+			"cry": "621",
 			"species": "Druddigon",
 			"type": "Dragon",
 			"hp": 8,
@@ -14021,8 +13836,7 @@
 		}, {
 			"number": 620,
 			"image": "620",
-			"commonCry": "620_Common",
-			"happyCry": "620_Happy",
+			"cry": "620",
 			"species": "Mienshao",
 			"type": "Fighting",
 			"hp": 7,
@@ -14094,8 +13908,7 @@
 		}, {
 			"number": 619,
 			"image": "619",
-			"commonCry": "619_Common",
-			"happyCry": "619_Happy",
+			"cry": "619",
 			"species": "Mienfoo",
 			"type": "Fighting",
 			"hp": 5,
@@ -14170,8 +13983,7 @@
 		}, {
 			"number": 618,
 			"image": "618",
-			"commonCry": "618_Common",
-			"happyCry": "618_Happy",
+			"cry": "618",
 			"species": "Stunfisk",
 			"type": "Ground / Electric",
 			"hp": 11,
@@ -14247,8 +14059,7 @@
 		}, {
 			"number": 617,
 			"image": "617",
-			"commonCry": "617_Common",
-			"happyCry": "617_Happy",
+			"cry": "617",
 			"species": "Accelgor",
 			"type": "Bug",
 			"hp": 8,
@@ -14319,8 +14130,7 @@
 		}, {
 			"number": 616,
 			"image": "616",
-			"commonCry": "616_Common",
-			"happyCry": "616_Happy",
+			"cry": "616",
 			"species": "Shelmet",
 			"type": "Bug",
 			"hp": 5,
@@ -14394,8 +14204,7 @@
 		}, {
 			"number": 615,
 			"image": "615",
-			"commonCry": "615_Common",
-			"happyCry": "615_Happy",
+			"cry": "615",
 			"species": "Cryogonal",
 			"type": "Ice",
 			"hp": 7,
@@ -14474,8 +14283,7 @@
 		}, {
 			"number": 614,
 			"image": "614",
-			"commonCry": "614_Common",
-			"happyCry": "614_Happy",
+			"cry": "614",
 			"species": "Beartic",
 			"type": "Ice",
 			"hp": 10,
@@ -14549,8 +14357,7 @@
 		}, {
 			"number": 613,
 			"image": "613",
-			"commonCry": "613_Common",
-			"happyCry": "613_Happy",
+			"cry": "613",
 			"species": "Chubchoo",
 			"type": "Ice",
 			"hp": 6,
@@ -14627,8 +14434,7 @@
 		}, {
 			"number": 612,
 			"image": "612",
-			"commonCry": "612_Common",
-			"happyCry": "612_Happy",
+			"cry": "612",
 			"species": "Haxorus",
 			"type": "Dragon",
 			"hp": 8,
@@ -14701,8 +14507,7 @@
 		}, {
 			"number": 611,
 			"image": "611",
-			"commonCry": "611_Common",
-			"happyCry": "611_Happy",
+			"cry": "611",
 			"species": "Fraxure",
 			"type": "Dragon",
 			"hp": 7,
@@ -14776,8 +14581,7 @@
 		}, {
 			"number": 610,
 			"image": "610",
-			"commonCry": "610_Common",
-			"happyCry": "610_Happy",
+			"cry": "610",
 			"species": "Axew",
 			"type": "Dragon",
 			"hp": 5,
@@ -14853,8 +14657,7 @@
 		}, {
 			"number": 609,
 			"image": "609",
-			"commonCry": "609_Common",
-			"happyCry": "609_Happy",
+			"cry": "609",
 			"species": "Chandelure",
 			"type": "Ghost / Fire",
 			"hp": 6,
@@ -14935,8 +14738,7 @@
 		}, {
 			"number": 608,
 			"image": "608",
-			"commonCry": "608_Common",
-			"happyCry": "608_Happy",
+			"cry": "608",
 			"species": "Lampent",
 			"type": "Ghost / Fire",
 			"hp": 6,
@@ -15018,8 +14820,7 @@
 		}, {
 			"number": 607,
 			"image": "607",
-			"commonCry": "607_Common",
-			"happyCry": "607_Happy",
+			"cry": "607",
 			"species": "Litwick",
 			"type": "Ghost / Fire",
 			"hp": 5,
@@ -15104,8 +14905,7 @@
 		}, {
 			"number": 606,
 			"image": "606",
-			"commonCry": "606_Common",
-			"happyCry": "606_Happy",
+			"cry": "606",
 			"species": "Beheeyem",
 			"type": "Psychic",
 			"hp": 8,
@@ -15181,8 +14981,7 @@
 		}, {
 			"number": 605,
 			"image": "605",
-			"commonCry": "605_Common",
-			"happyCry": "605_Happy",
+			"cry": "605",
 			"species": "Elgyem",
 			"type": "Psychic",
 			"hp": 6,
@@ -15260,8 +15059,7 @@
 		}, {
 			"number": 604,
 			"image": "604",
-			"commonCry": "604_Common",
-			"happyCry": "604_Happy",
+			"cry": "604",
 			"species": "Eelektross",
 			"type": "Electric",
 			"hp": 9,
@@ -15333,8 +15131,7 @@
 		}, {
 			"number": 603,
 			"image": "603",
-			"commonCry": "603_Common",
-			"happyCry": "603_Happy",
+			"cry": "603",
 			"species": "Eelektrik",
 			"type": "Electric",
 			"hp": 7,
@@ -15407,8 +15204,7 @@
 		}, {
 			"number": 602,
 			"image": "602",
-			"commonCry": "602_Common",
-			"happyCry": "602_Happy",
+			"cry": "602",
 			"species": "Tynamo",
 			"type": "Electric",
 			"hp": 4,
@@ -15475,8 +15271,7 @@
 		}, {
 			"number": 601,
 			"image": "601",
-			"commonCry": "601_Common",
-			"happyCry": "601_Happy",
+			"cry": "601",
 			"species": "Klinklang",
 			"type": "Steel",
 			"hp": 6,
@@ -15551,8 +15346,7 @@
 		}, {
 			"number": 600,
 			"image": "600",
-			"commonCry": "600_Common",
-			"happyCry": "600_Happy",
+			"cry": "600",
 			"species": "Klang",
 			"type": "Steel",
 			"hp": 6,
@@ -15626,8 +15420,7 @@
 		}, {
 			"number": 599,
 			"image": "599",
-			"commonCry": "599_Common",
-			"happyCry": "599_Happy",
+			"cry": "599",
 			"species": "Klink",
 			"type": "Steel",
 			"hp": 4,
@@ -15703,8 +15496,7 @@
 		}, {
 			"number": 598,
 			"image": "598",
-			"commonCry": "598_Common",
-			"happyCry": "598_Happy",
+			"cry": "598",
 			"species": "Ferrothorn",
 			"type": "Grass / Steel",
 			"hp": 7,
@@ -15775,8 +15567,7 @@
 		}, {
 			"number": 597,
 			"image": "597",
-			"commonCry": "597_Common",
-			"happyCry": "597_Happy",
+			"cry": "597",
 			"species": "Ferroseed",
 			"type": "Grass / Steel",
 			"hp": 4,
@@ -15850,8 +15641,7 @@
 		}, {
 			"number": 596,
 			"image": "596",
-			"commonCry": "596_Common",
-			"happyCry": "596_Happy",
+			"cry": "596",
 			"species": "Galvantula",
 			"type": "Bug / Electric",
 			"hp": 7,
@@ -15925,8 +15715,7 @@
 		}, {
 			"number": 595,
 			"image": "595",
-			"commonCry": "595_Common",
-			"happyCry": "595_Happy",
+			"cry": "595",
 			"species": "Joltik",
 			"type": "Bug / Electric",
 			"hp": 5,
@@ -16004,8 +15793,7 @@
 		}, {
 			"number": 594,
 			"image": "594",
-			"commonCry": "594_Common",
-			"happyCry": "594_Happy",
+			"cry": "594",
 			"species": "Alomomola",
 			"type": "Water",
 			"hp": 17,
@@ -16080,8 +15868,7 @@
 		}, {
 			"number": 593,
 			"image": "593",
-			"commonCry": "593_Common",
-			"happyCry": "593_Happy",
+			"cry": "593",
 			"species": "Jellicent",
 			"type": "Water / Ghost",
 			"hp": 10,
@@ -16154,8 +15941,7 @@
 		}, {
 			"number": 592,
 			"image": "592",
-			"commonCry": "592_Common",
-			"happyCry": "592_Happy",
+			"cry": "592",
 			"species": "Frillish",
 			"type": "Water / Ghost",
 			"hp": 6,
@@ -16232,8 +16018,7 @@
 		}, {
 			"number": 591,
 			"image": "591",
-			"commonCry": "591_Common",
-			"happyCry": "591_Happy",
+			"cry": "591",
 			"species": "Amoonguss",
 			"type": "Grass / Poison",
 			"hp": 11,
@@ -16307,8 +16092,7 @@
 		}, {
 			"number": 590,
 			"image": "590",
-			"commonCry": "590_Common",
-			"happyCry": "590_Happy",
+			"cry": "590",
 			"species": "Foongus",
 			"type": "Grass / Poison",
 			"hp": 7,
@@ -16384,8 +16168,7 @@
 		}, {
 			"number": 589,
 			"image": "589",
-			"commonCry": "589_Common",
-			"happyCry": "589_Happy",
+			"cry": "589",
 			"species": "Escavalier",
 			"type": "Bug / Steel",
 			"hp": 7,
@@ -16461,8 +16244,7 @@
 		}, {
 			"number": 588,
 			"image": "588",
-			"commonCry": "588_Common",
-			"happyCry": "588_Happy",
+			"cry": "588",
 			"species": "Karrablast",
 			"type": "Bug / Steel",
 			"hp": 5,
@@ -16536,8 +16318,7 @@
 		}, {
 			"number": 587,
 			"image": "587",
-			"commonCry": "587_Common",
-			"happyCry": "587_Happy",
+			"cry": "587",
 			"species": "Emolga",
 			"type": "Electric / Flying",
 			"hp": 6,
@@ -16612,8 +16393,7 @@
 		}, {
 			"number": 586,
 			"image": "586",
-			"commonCry": "586_Common",
-			"happyCry": "586_Happy",
+			"cry": "586",
 			"species": "Sawsbuck",
 			"type": "Normal / Grass",
 			"hp": 8,
@@ -16685,8 +16465,7 @@
 		}, {
 			"number": 585,
 			"image": "585",
-			"commonCry": "585_Common",
-			"happyCry": "585_Happy",
+			"cry": "585",
 			"species": "Deerling",
 			"type": "Normal / Grass",
 			"hp": 6,
@@ -16760,8 +16539,7 @@
 		}, {
 			"number": 76,
 			"image": "076",
-			"commonCry": "076_Common",
-			"happyCry": "076_Happy",
+			"cry": "076",
 			"species": "Golem",
 			"type": "Rock / Ground",
 			"hp": 8,
@@ -16836,8 +16614,7 @@
 		}, {
 			"number": 77,
 			"image": "077",
-			"commonCry": "077_Common",
-			"happyCry": "077_Happy",
+			"cry": "077",
 			"species": "Ponyta",
 			"type": "Fire",
 			"hp": 5,
@@ -16912,8 +16689,7 @@
 		}, {
 			"number": 78,
 			"image": "078",
-			"commonCry": "078_Common",
-			"happyCry": "078_Happy",
+			"cry": "078",
 			"species": "Rapidash",
 			"type": "Fire",
 			"hp": 7,
@@ -16986,8 +16762,7 @@
 		}, {
 			"number": 79,
 			"image": "079",
-			"commonCry": "079_Common",
-			"happyCry": "079_Happy",
+			"cry": "079",
 			"species": "Slowpoke",
 			"type": "Water / Psychic",
 			"hp": 9,
@@ -17064,8 +16839,7 @@
 		}, {
 			"number": 80,
 			"image": "080",
-			"commonCry": "080_Common",
-			"happyCry": "080_Happy",
+			"cry": "080",
 			"species": "Slowbro",
 			"type": "Water / Psychic",
 			"hp": 10,
@@ -17136,8 +16910,7 @@
 		}, {
 			"number": 81,
 			"image": "081",
-			"commonCry": "081_Common",
-			"happyCry": "081_Happy",
+			"cry": "081",
 			"species": "Magnemite",
 			"type": "Electric / Steel",
 			"hp": 3,
@@ -17217,8 +16990,7 @@
 		}, {
 			"number": 82,
 			"image": "082",
-			"commonCry": "082_Common",
-			"happyCry": "082_Happy",
+			"cry": "082",
 			"species": "Magneton",
 			"type": "Electric / Steel",
 			"hp": 5,
@@ -17296,8 +17068,7 @@
 		}, {
 			"number": 83,
 			"image": "083",
-			"commonCry": "083_Common",
-			"happyCry": "083_Happy",
+			"cry": "083",
 			"species": "Farfetch'd",
 			"type": "Normal / Flying",
 			"hp": 5,
@@ -17372,8 +17143,7 @@
 		}, {
 			"number": 84,
 			"image": "084",
-			"commonCry": "084_Common",
-			"happyCry": "084_Happy",
+			"cry": "084",
 			"species": "Doduo",
 			"type": "Normal / Flying",
 			"hp": 4,
@@ -17448,8 +17218,7 @@
 		{
 			"number": 85,
 			"image": "085",
-			"commonCry": "085_Common",
-			"happyCry": "085_Happy",
+			"cry": "085",
 			"species": "Dodrio",
 			"type": "Normal / Flying",
 			"hp": 6,
@@ -17522,8 +17291,7 @@
 		{
 			"number": 86,
 			"image": "086",
-			"commonCry": "086_Common",
-			"happyCry": "086_Happy",
+			"cry": "086",
 			"species": "Seel",
 			"type": "Water",
 			"hp": 7,
@@ -17600,8 +17368,7 @@
 		{
 			"number": 87,
 			"image": "087",
-			"commonCry": "087_Common",
-			"happyCry": "087_Happy",
+			"cry": "087",
 			"species": "Dewgong",
 			"type": "Water / Ice",
 			"hp": 9,
@@ -17677,8 +17444,7 @@
 		{
 			"number": 88,
 			"image": "088",
-			"commonCry": "088_Common",
-			"happyCry": "088_Happy",
+			"cry": "088",
 			"species": "Grimer",
 			"type": "Poison",
 			"hp": 8,
@@ -17756,8 +17522,7 @@
 		{
 			"number": 89,
 			"image": "089",
-			"commonCry": "089_Common",
-			"happyCry": "089_Happy",
+			"cry": "089",
 			"species": "Muk",
 			"type": "Poison",
 			"hp": 11,
@@ -17832,8 +17597,7 @@
 		{
 			"number": 90,
 			"image": "090",
-			"commonCry": "090_Common",
-			"happyCry": "090_Happy",
+			"cry": "090",
 			"species": "Shellder",
 			"type": "Water",
 			"hp": 3,
@@ -17909,8 +17673,7 @@
 		{
 			"number": 91,
 			"image": "091",
-			"commonCry": "091_Common",
-			"happyCry": "091_Happy",
+			"cry": "091",
 			"species": "Cloyster",
 			"type": "Water / Ice",
 			"hp": 5,
@@ -17972,8 +17735,7 @@
 		{
 			"number": 92,
 			"image": "092",
-			"commonCry": "092_Common",
-			"happyCry": "092_Happy",
+			"cry": "092",
 			"species": "Gastly",
 			"type": "Ghost / Poison",
 			"hp": 3,
@@ -18053,8 +17815,7 @@
 		{
 			"number": 93,
 			"image": "093",
-			"commonCry": "093_Common",
-			"happyCry": "093_Happy",
+			"cry": "093",
 			"species": "Haunter",
 			"type": "Ghost / Poison",
 			"hp": 5,
@@ -18132,8 +17893,7 @@
 		{
 			"number": 94,
 			"image": "094",
-			"commonCry": "094_Common",
-			"happyCry": "094_Happy",
+			"cry": "094",
 			"species": "Gengar",
 			"type": "Ghost / Poison",
 			"hp": 6,
@@ -18211,8 +17971,7 @@
 		{
 			"number": 95,
 			"image": "095",
-			"commonCry": "095_Common",
-			"happyCry": "095_Happy",
+			"cry": "095",
 			"species": "Onix",
 			"type": "Rock / Ground",
 			"hp": 4,
@@ -18297,8 +18056,7 @@
 		{
 			"number": 96,
 			"image": "096",
-			"commonCry": "096_Common",
-			"happyCry": "096_Happy",
+			"cry": "096",
 			"species": "Drowzee",
 			"type": "Psychic",
 			"hp": 6,
@@ -18375,8 +18133,7 @@
 		{
 			"number": 97,
 			"image": "097",
-			"commonCry": "097_Common",
-			"happyCry": "097_Happy",
+			"cry": "097",
 			"species": "Hypno",
 			"type": "Psychic",
 			"hp": 9,
@@ -18450,8 +18207,7 @@
 		{
 			"number": 98,
 			"image": "098",
-			"commonCry": "098_Common",
-			"happyCry": "098_Happy",
+			"cry": "098",
 			"species": "Krabby",
 			"type": "Water",
 			"hp": 3,
@@ -18527,8 +18283,7 @@
 		{
 			"number": 99,
 			"image": "099",
-			"commonCry": "099_Common",
-			"happyCry": "099_Happy",
+			"cry": "099",
 			"species": "Kingler",
 			"type": "Water",
 			"hp": 6,
@@ -18600,8 +18355,7 @@
 		{
 			"number": 100,
 			"image": "100",
-			"commonCry": "100_Common",
-			"happyCry": "100_Happy",
+			"cry": "100",
 			"species": "Voltorb",
 			"type": "Electric",
 			"hp": 4,
@@ -18680,8 +18434,7 @@
 		{
 			"number": 101,
 			"image": "101",
-			"commonCry": "101_Common",
-			"happyCry": "101_Happy",
+			"cry": "101",
 			"species": "Electrode",
 			"type": "Electric",
 			"hp": 6,
@@ -18756,8 +18509,7 @@
 		{
 			"number": 102,
 			"image": "102",
-			"commonCry": "102_Common",
-			"happyCry": "102_Happy",
+			"cry": "102",
 			"species": "Exeggcute",
 			"type": "Grass / Psychic",
 			"hp": 6,
@@ -18831,8 +18583,7 @@
 		{
 			"number": 103,
 			"image": "103",
-			"commonCry": "103_Common",
-			"happyCry": "103_Happy",
+			"cry": "103",
 			"species": "Exeggutor",
 			"type": "Grass / Psychic",
 			"hp": 10,
@@ -18909,8 +18660,7 @@
 		{
 			"number": 104,
 			"image": "104",
-			"commonCry": "104_Common",
-			"happyCry": "104_Happy",
+			"cry": "104",
 			"species": "Cubone",
 			"type": "Ground",
 			"hp": 5,
@@ -18987,8 +18737,7 @@
 		{
 			"number": 105,
 			"image": "105",
-			"commonCry": "105_Common",
-			"happyCry": "105_Happy",
+			"cry": "105",
 			"species": "Marowak",
 			"type": "Ground",
 			"hp": 6,
@@ -19063,8 +18812,7 @@
 		{
 			"number": 106,
 			"image": "106",
-			"commonCry": "106_Common",
-			"happyCry": "106_Happy",
+			"cry": "106",
 			"species": "Hitmonlee",
 			"type": "Fighting",
 			"hp": 5,
@@ -19137,8 +18885,7 @@
 		{
 			"number": 107,
 			"image": "107",
-			"commonCry": "107_Common",
-			"happyCry": "107_Happy",
+			"cry": "107",
 			"species": "Hitmonchan",
 			"type": "Fighting",
 			"hp": 5,
@@ -19210,8 +18957,7 @@
 		{
 			"number": 108,
 			"image": "108",
-			"commonCry": "108_Common",
-			"happyCry": "108_Happy",
+			"cry": "108",
 			"species": "Lickitung",
 			"type": "Normal",
 			"hp": 9,
@@ -19287,8 +19033,7 @@
 		{
 			"number": 109,
 			"image": "109",
-			"commonCry": "109_Common",
-			"happyCry": "109_Happy",
+			"cry": "109",
 			"species": "Koffing",
 			"type": "Poison",
 			"hp": 4,
@@ -19364,8 +19109,7 @@
 		{
 			"number": 110,
 			"image": "110",
-			"commonCry": "110_Common",
-			"happyCry": "110_Happy",
+			"cry": "110",
 			"species": "Weezing",
 			"type": "Poison",
 			"hp": 7,
@@ -19437,8 +19181,7 @@
 		{
 			"number": 111,
 			"image": "111",
-			"commonCry": "111_Common",
-			"happyCry": "111_Happy",
+			"cry": "111",
 			"species": "Rhyhorn",
 			"type": "Ground / Rock",
 			"hp": 8,
@@ -19516,8 +19259,7 @@
 		{
 			"number": 112,
 			"image": "112",
-			"commonCry": "112_Common",
-			"happyCry": "112_Happy",
+			"cry": "112",
 			"species": "Rhydon",
 			"type": "Ground / Rock",
 			"hp": 11,
@@ -19592,8 +19334,7 @@
 		{
 			"number": 113,
 			"image": "113",
-			"commonCry": "113_Common",
-			"happyCry": "113_Happy",
+			"cry": "113",
 			"species": "Chansey",
 			"type": "Normal",
 			"hp": 25,
@@ -19666,8 +19407,7 @@
 		{
 			"number": 114,
 			"image": "114",
-			"commonCry": "114_Common",
-			"happyCry": "114_Happy",
+			"cry": "114",
 			"species": "Tangela",
 			"type": "Grass",
 			"hp": 7,
@@ -19747,8 +19487,7 @@
 		{
 			"number": 115,
 			"image": "115",
-			"commonCry": "115_Common",
-			"happyCry": "115_Happy",
+			"cry": "115",
 			"species": "Kangaskhan",
 			"type": "Normal",
 			"hp": 11,
@@ -19821,8 +19560,7 @@
 		{
 			"number": 116,
 			"image": "116",
-			"commonCry": "116_Common",
-			"happyCry": "116_Happy",
+			"cry": "116",
 			"species": "Horsea",
 			"type": "Water",
 			"hp": 3,
@@ -19897,8 +19635,7 @@
 		{
 			"number": 117,
 			"image": "117",
-			"commonCry": "117_Common",
-			"happyCry": "117_Happy",
+			"cry": "117",
 			"species": "Seadra",
 			"type": "Water",
 			"hp": 6,
@@ -19970,8 +19707,7 @@
 		{
 			"number": 118,
 			"image": "118",
-			"commonCry": "118_Common",
-			"happyCry": "118_Happy",
+			"cry": "118",
 			"species": "Goldeen",
 			"type": "Water",
 			"hp": 5,
@@ -20047,8 +19783,7 @@
 		{
 			"number": 119,
 			"image": "119",
-			"commonCry": "119_Common",
-			"happyCry": "119_Happy",
+			"cry": "119",
 			"species": "Seaking",
 			"type": "Water",
 			"hp": 8,
@@ -20119,8 +19854,7 @@
 		{
 			"number": 120,
 			"image": "120",
-			"commonCry": "120_Common",
-			"happyCry": "120_Happy",
+			"cry": "120",
 			"species": "Staryu",
 			"type": "Water",
 			"hp": 3,
@@ -20201,8 +19935,7 @@
 		{
 			"number": 121,
 			"image": "121",
-			"commonCry": "121_Common",
-			"happyCry": "121_Happy",
+			"cry": "121",
 			"species": "Starmie",
 			"type": "Water",
 			"hp": 6,
@@ -20279,8 +20012,7 @@
 		{
 			"number": 122,
 			"image": "122",
-			"commonCry": "122_Common",
-			"happyCry": "122_Happy",
+			"cry": "122",
 			"species": "Mr. Mime",
 			"type": "Psychic / Fairy",
 			"hp": 4,
@@ -20355,8 +20087,7 @@
 		{
 			"number": 123,
 			"image": "123",
-			"commonCry": "123_Common",
-			"happyCry": "123_Happy",
+			"cry": "123",
 			"species": "Scyther",
 			"type": "Bug / Flying",
 			"hp": 7,
@@ -20435,8 +20166,7 @@
 		{
 			"number": 124,
 			"image": "124",
-			"commonCry": "124_Common",
-			"happyCry": "124_Happy",
+			"cry": "124",
 			"species": "Jynx",
 			"type": "Ice / Psychic",
 			"hp": 7,
@@ -20511,8 +20241,7 @@
 		{
 			"number": 125,
 			"image": "125",
-			"commonCry": "125_Common",
-			"happyCry": "125_Happy",
+			"cry": "125",
 			"species": "Electabuzz",
 			"type": "Electric",
 			"hp": 7,
@@ -20584,8 +20313,7 @@
 		{
 			"number": 126,
 			"image": "126",
-			"commonCry": "126_Common",
-			"happyCry": "126_Happy",
+			"cry": "126",
 			"species": "Magmar",
 			"type": "Fire",
 			"hp": 7,
@@ -20660,8 +20388,7 @@
 		{
 			"number": 127,
 			"image": "127",
-			"commonCry": "127_Common",
-			"happyCry": "127_Happy",
+			"cry": "127",
 			"species": "Pinsir",
 			"type": "Bug",
 			"hp": 7,
@@ -20735,8 +20462,7 @@
 		{
 			"number": 128,
 			"image": "128",
-			"commonCry": "128_Common",
-			"happyCry": "128_Happy",
+			"cry": "128",
 			"species": "Tauros",
 			"type": "Normal",
 			"hp": 8,
@@ -20809,8 +20535,7 @@
 		{
 			"number": 129,
 			"image": "129",
-			"commonCry": "129_Common",
-			"happyCry": "129_Happy",
+			"cry": "129",
 			"species": "Magikarp",
 			"type": "Water",
 			"hp": 2,
@@ -20874,8 +20599,7 @@
 		{
 			"number": 130,
 			"image": "130",
-			"commonCry": "130_Common",
-			"happyCry": "130_Happy",
+			"cry": "130",
 			"species": "Gyarados",
 			"type": "Water / Flying",
 			"hp": 10,
@@ -20948,8 +20672,7 @@
 		{
 			"number": 131,
 			"image": "131",
-			"commonCry": "131_Common",
-			"happyCry": "131_Happy",
+			"cry": "131",
 			"species": "Lapras",
 			"type": "Water / Ice",
 			"hp": 13,
@@ -21025,8 +20748,7 @@
 		{
 			"number": 132,
 			"image": "132",
-			"commonCry": "132_Common",
-			"happyCry": "132_Happy",
+			"cry": "132",
 			"species": "Ditto",
 			"type": "Normal",
 			"hp": 5,
@@ -21088,8 +20810,7 @@
 		{
 			"number": 133,
 			"image": "133",
-			"commonCry": "133_Common",
-			"happyCry": "133_Happy",
+			"cry": "133",
 			"species": "Eevee",
 			"type": "Normal",
 			"hp": 6,
@@ -21170,8 +20891,7 @@
 		{
 			"number": 134,
 			"image": "134",
-			"commonCry": "134_Common",
-			"happyCry": "134_Happy",
+			"cry": "134",
 			"species": "Vaporeon",
 			"type": "Water",
 			"hp": 13,
@@ -21243,8 +20963,7 @@
 		{
 			"number": 135,
 			"image": "135",
-			"commonCry": "135_Common",
-			"happyCry": "135_Happy",
+			"cry": "135",
 			"species": "Jolteon",
 			"type": "Electric",
 			"hp": 7,
@@ -21314,8 +21033,7 @@
 		{
 			"number": 136,
 			"image": "136",
-			"commonCry": "136_Common",
-			"happyCry": "136_Happy",
+			"cry": "136",
 			"species": "Flareon",
 			"type": "Fire",
 			"hp": 7,
@@ -21386,8 +21104,7 @@
 		{
 			"number": 137,
 			"image": "137",
-			"commonCry": "137_Common",
-			"happyCry": "137_Happy",
+			"cry": "137",
 			"species": "Porygon",
 			"type": "Normal",
 			"hp": 7,
@@ -21465,8 +21182,7 @@
 		{
 			"number": 138,
 			"image": "138",
-			"commonCry": "138_Common",
-			"happyCry": "138_Happy",
+			"cry": "138",
 			"species": "Omanyte",
 			"type": "Rock / Water",
 			"hp": 4,
@@ -21541,8 +21257,7 @@
 		{
 			"number": 139,
 			"image": "139",
-			"commonCry": "139_Common",
-			"happyCry": "139_Happy",
+			"cry": "139",
 			"species": "Omastar",
 			"type": "Rock / Water",
 			"hp": 7,
@@ -21614,8 +21329,7 @@
 		{
 			"number": 140,
 			"image": "140",
-			"commonCry": "140_Common",
-			"happyCry": "140_Happy",
+			"cry": "140",
 			"species": "Kabuto",
 			"type": "Rock / Water",
 			"hp": 3,
@@ -21689,8 +21403,7 @@
 		{
 			"number": 141,
 			"image": "141",
-			"commonCry": "141_Common",
-			"happyCry": "141_Happy",
+			"cry": "141",
 			"species": "Kabutops",
 			"type": "Rock / Water",
 			"hp": 6,
@@ -21760,8 +21473,7 @@
 		{
 			"number": 142,
 			"image": "142",
-			"commonCry": "142_Common",
-			"happyCry": "142_Happy",
+			"cry": "142",
 			"species": "Aerodactyl",
 			"type": "Rock / Flying",
 			"hp": 8,
@@ -21833,8 +21545,7 @@
 		{
 			"number": 143,
 			"image": "143",
-			"commonCry": "143_Common",
-			"happyCry": "143_Happy",
+			"cry": "143",
 			"species": "Snorlax",
 			"type": "Normal",
 			"hp": 16,
@@ -21908,8 +21619,7 @@
 		{
 			"number": 144,
 			"image": "144",
-			"commonCry": "144_Common",
-			"happyCry": "144_Happy",
+			"cry": "144",
 			"species": "Articuno",
 			"type": "Ice / Flying",
 			"hp": 9,
@@ -21986,8 +21696,7 @@
 		{
 			"number": 145,
 			"image": "145",
-			"commonCry": "145_Common",
-			"happyCry": "145_Happy",
+			"cry": "145",
 			"species": "Zapdos",
 			"type": "Electric / Flying",
 			"hp": 9,
@@ -22064,8 +21773,7 @@
 		{
 			"number": 146,
 			"image": "146",
-			"commonCry": "146_Common",
-			"happyCry": "146_Happy",
+			"cry": "146",
 			"species": "Moltres",
 			"type": "Fire / Flying",
 			"hp": 9,
@@ -22143,8 +21851,7 @@
 		{
 			"number": 147,
 			"image": "147",
-			"commonCry": "147_Common",
-			"happyCry": "147_Happy",
+			"cry": "147",
 			"species": "Dratini",
 			"type": "Dragon",
 			"hp": 4,
@@ -22218,8 +21925,7 @@
 		{
 			"number": 148,
 			"image": "148",
-			"commonCry": "148_Common",
-			"happyCry": "148_Happy",
+			"cry": "148",
 			"species": "Dragonair",
 			"type": "Dragon",
 			"hp": 6,
@@ -22291,8 +21997,7 @@
 		{
 			"number": 149,
 			"image": "149",
-			"commonCry": "149_Common",
-			"happyCry": "149_Happy",
+			"cry": "149",
 			"species": "Dragonite",
 			"type": "Dragon / Flying",
 			"hp": 9,
@@ -22367,8 +22072,7 @@
 		{
 			"number": 150,
 			"image": "150",
-			"commonCry": "150_Common",
-			"happyCry": "150_Happy",
+			"cry": "150",
 			"species": "Mewtwo",
 			"type": "Psychic",
 			"hp": 11,
@@ -22449,8 +22153,7 @@
 		{
 			"number": 151,
 			"image": "151",
-			"commonCry": "151_Common",
-			"happyCry": "151_Happy",
+			"cry": "151",
 			"species": "Mew",
 			"type": "Psychic",
 			"hp": 10,
@@ -22527,8 +22230,7 @@
 		{
 			"number": 152,
 			"image": "152",
-			"commonCry": "152_Common",
-			"happyCry": "152_Happy",
+			"cry": "152",
 			"species": "Chikorita",
 			"type": "Grass",
 			"hp": 5,
@@ -22603,8 +22305,7 @@
 		{
 			"number": 153,
 			"image": "153",
-			"commonCry": "153_Common",
-			"happyCry": "153_Happy",
+			"cry": "153",
 			"species": "Bayleef",
 			"type": "Grass",
 			"hp": 6,
@@ -22677,8 +22378,7 @@
 		{
 			"number": 154,
 			"image": "154",
-			"commonCry": "154_Common",
-			"happyCry": "154_Happy",
+			"cry": "154",
 			"species": "Meganium",
 			"type": "Grass",
 			"hp": 8,
@@ -22752,8 +22452,7 @@
 		{
 			"number": 155,
 			"image": "155",
-			"commonCry": "155_Common",
-			"happyCry": "155_Happy",
+			"cry": "155",
 			"species": "Cyndaquil",
 			"type": "Fire",
 			"hp": 4,
@@ -22833,8 +22532,7 @@
 		{
 			"number": 156,
 			"image": "156",
-			"commonCry": "156_Common",
-			"happyCry": "156_Happy",
+			"cry": "156",
 			"species": "Quilava",
 			"type": "Fire",
 			"hp": 6,
@@ -22911,8 +22609,7 @@
 		{
 			"number": 157,
 			"image": "157",
-			"commonCry": "157_Common",
-			"happyCry": "157_Happy",
+			"cry": "157",
 			"species": "Typhlosion",
 			"type": "Fire",
 			"hp": 8,
@@ -22987,8 +22684,7 @@
 		{
 			"number": 158,
 			"image": "158",
-			"commonCry": "158_Common",
-			"happyCry": "158_Happy",
+			"cry": "158",
 			"species": "Totodile",
 			"type": "Water",
 			"hp": 5,
@@ -23066,8 +22762,7 @@
 		{
 			"number": 159,
 			"image": "159",
-			"commonCry": "159_Common",
-			"happyCry": "159_Happy",
+			"cry": "159",
 			"species": "Croconaw",
 			"type": "Water",
 			"hp": 7,
@@ -23142,8 +22837,7 @@
 		{
 			"number": 160,
 			"image": "160",
-			"commonCry": "160_Common",
-			"happyCry": "160_Happy",
+			"cry": "160",
 			"species": "Feraligatr",
 			"type": "Water",
 			"hp": 9,
@@ -23218,8 +22912,7 @@
 		{
 			"number": 161,
 			"image": "161",
-			"commonCry": "161_Common",
-			"happyCry": "161_Happy",
+			"cry": "161",
 			"species": "Sentret",
 			"type": "Normal",
 			"hp": 4,
@@ -23293,8 +22986,7 @@
 		{
 			"number": 162,
 			"image": "162",
-			"commonCry": "162_Common",
-			"happyCry": "162_Happy",
+			"cry": "162",
 			"species": "Furret",
 			"type": "Normal",
 			"hp": 9,
@@ -23366,8 +23058,7 @@
 		{
 			"number": 163,
 			"image": "163",
-			"commonCry": "163_Common",
-			"happyCry": "163_Happy",
+			"cry": "163",
 			"species": "Hoothoot",
 			"type": "Normal / Flying",
 			"hp": 6,
@@ -23445,8 +23136,7 @@
 		{
 			"number": 164,
 			"image": "164",
-			"commonCry": "164_Common",
-			"happyCry": "164_Happy",
+			"cry": "164",
 			"species": "Noctowl",
 			"type": "Normal / Flying",
 			"hp": 10,
@@ -23520,8 +23210,7 @@
 		{
 			"number": 165,
 			"image": "165",
-			"commonCry": "165_Common",
-			"happyCry": "165_Happy",
+			"cry": "165",
 			"species": "Ledyba",
 			"type": "Bug / Flying",
 			"hp": 4,
@@ -23596,8 +23285,7 @@
 		{
 			"number": 166,
 			"image": "166",
-			"commonCry": "166_Common",
-			"happyCry": "166_Happy",
+			"cry": "166",
 			"species": "Ledian",
 			"type": "Bug / Flying",
 			"hp": 6,
@@ -23670,8 +23358,7 @@
 		{
 			"number": 167,
 			"image": "167",
-			"commonCry": "167_Common",
-			"happyCry": "167_Happy",
+			"cry": "167",
 			"species": "Spinarak",
 			"type": "Bug / Poison",
 			"hp": 4,
@@ -23749,8 +23436,7 @@
 		{
 			"number": 168,
 			"image": "168",
-			"commonCry": "168_Common",
-			"happyCry": "168_Happy",
+			"cry": "168",
 			"species": "Ariados",
 			"type": "Bug / Poison",
 			"hp": 7,
@@ -23825,8 +23511,7 @@
 		{
 			"number": 169,
 			"image": "169",
-			"commonCry": "169_Common",
-			"happyCry": "169_Happy",
+			"cry": "169",
 			"species": "Crobat",
 			"type": "Poison / Flying",
 			"hp": 9,
@@ -23904,8 +23589,7 @@
 		{
 			"number": 170,
 			"image": "170",
-			"commonCry": "170_Common",
-			"happyCry": "170_Happy",
+			"cry": "170",
 			"species": "Chinchou",
 			"type": "Water / Electric",
 			"hp": 8,
@@ -23987,8 +23671,7 @@
 		{
 			"number": 171,
 			"image": "171",
-			"commonCry": "171_Common",
-			"happyCry": "171_Happy",
+			"cry": "171",
 			"species": "Lanturn",
 			"type": "Water / Electric",
 			"hp": 13,
@@ -24069,8 +23752,7 @@
 		{
 			"number": 172,
 			"image": "172",
-			"commonCry": "172_Common",
-			"happyCry": "172_Happy",
+			"cry": "172",
 			"species": "Pichu",
 			"type": "Electric",
 			"hp": 2,
@@ -24138,8 +23820,7 @@
 		{
 			"number": 173,
 			"image": "173",
-			"commonCry": "173_Common",
-			"happyCry": "173_Happy",
+			"cry": "173",
 			"species": "Cleffa",
 			"type": "Fairy",
 			"hp": 5,
@@ -24207,8 +23888,7 @@
 		{
 			"number": 175,
 			"image": "175",
-			"commonCry": "175_Common",
-			"happyCry": "175_Happy",
+			"cry": "175",
 			"species": "Togepi",
 			"type": "Fairy",
 			"hp": 4,
@@ -24283,8 +23963,7 @@
 		{
 			"number": 176,
 			"image": "176",
-			"commonCry": "176_Common",
-			"happyCry": "176_Happy",
+			"cry": "176",
 			"species": "Togetic",
 			"type": "Fairy / Flying",
 			"hp": 6,
@@ -24359,8 +24038,7 @@
 		{
 			"number": 174,
 			"image": "174",
-			"commonCry": "174_Common",
-			"happyCry": "174_Happy",
+			"cry": "174",
 			"species": "Igglybuff",
 			"type": "Normal / Fairy",
 			"hp": 9,
@@ -24428,8 +24106,7 @@
 		{
 			"number": 177,
 			"image": "177",
-			"commonCry": "177_Common",
-			"happyCry": "177_Happy",
+			"cry": "177",
 			"species": "Natu",
 			"type": "Psychic / Flying",
 			"hp": 4,
@@ -24505,8 +24182,7 @@
 		{
 			"number": 178,
 			"image": "178",
-			"commonCry": "178_Common",
-			"happyCry": "178_Happy",
+			"cry": "178",
 			"species": "Xatu",
 			"type": "Psychic / Flying",
 			"hp": 7,
@@ -24581,8 +24257,7 @@
 		{
 			"number": 179,
 			"image": "179",
-			"commonCry": "179_Common",
-			"happyCry": "179_Happy",
+			"cry": "179",
 			"species": "Mareep",
 			"type": "Electric",
 			"hp": 6,
@@ -24660,8 +24335,7 @@
 		{
 			"number": 180,
 			"image": "180",
-			"commonCry": "180_Common",
-			"happyCry": "180_Happy",
+			"cry": "180",
 			"species": "Flaaffy",
 			"type": "Electric",
 			"hp": 7,
@@ -24735,8 +24409,7 @@
 		{
 			"number": 181,
 			"image": "181",
-			"commonCry": "181_Common",
-			"happyCry": "181_Happy",
+			"cry": "181",
 			"species": "Ampharos",
 			"type": "Electric",
 			"hp": 9,
@@ -24811,8 +24484,7 @@
 		{
 			"number": 182,
 			"image": "182",
-			"commonCry": "182_Common",
-			"happyCry": "182_Happy",
+			"cry": "182",
 			"species": "Bellossom",
 			"type": "Grass",
 			"hp": 8,
@@ -24886,8 +24558,7 @@
 		{
 			"number": 183,
 			"image": "183",
-			"commonCry": "183_Common",
-			"happyCry": "183_Happy",
+			"cry": "183",
 			"species": "Marill",
 			"type": "Water / Fairy",
 			"hp": 7,
@@ -24962,8 +24633,7 @@
 		{
 			"number": 184,
 			"image": "184",
-			"commonCry": "184_Common",
-			"happyCry": "184_Happy",
+			"cry": "184",
 			"species": "Azumarill",
 			"type": "Water / Fairy",
 			"hp": 10,
@@ -25038,8 +24708,7 @@
 		{
 			"number": 185,
 			"image": "185",
-			"commonCry": "185_Common",
-			"happyCry": "185_Happy",
+			"cry": "185",
 			"species": "Sudowoodo",
 			"type": "Rock",
 			"hp": 7,
@@ -25113,8 +24782,7 @@
 		{
 			"number": 186,
 			"image": "186",
-			"commonCry": "186_Common",
-			"happyCry": "186_Happy",
+			"cry": "186",
 			"species": "Politoed",
 			"type": "Water",
 			"hp": 9,
@@ -25191,8 +24859,7 @@
 		{
 			"number": 187,
 			"image": "187",
-			"commonCry": "187_Common",
-			"happyCry": "187_Happy",
+			"cry": "187",
 			"species": "Hoppip",
 			"type": "Grass / Flying",
 			"hp": 4,
@@ -25273,8 +24940,7 @@
 		{
 			"number": 188,
 			"image": "188",
-			"commonCry": "188_Common",
-			"happyCry": "188_Happy",
+			"cry": "188",
 			"species": "Skiploom",
 			"type": "Grass / Flying",
 			"hp": 6,
@@ -25353,8 +25019,7 @@
 		{
 			"number": 189,
 			"image": "189",
-			"commonCry": "189_Common",
-			"happyCry": "189_Happy",
+			"cry": "189",
 			"species": "Jumpluff",
 			"type": "Grass / Flying",
 			"hp": 8,
@@ -25432,8 +25097,7 @@
 		{
 			"number": 190,
 			"image": "190",
-			"commonCry": "190_Common",
-			"happyCry": "190_Happy",
+			"cry": "190",
 			"species": "Aipom",
 			"type": "Normal",
 			"hp": 6,
@@ -25507,8 +25171,7 @@
 		{
 			"number": 191,
 			"image": "191",
-			"commonCry": "191_Common",
-			"happyCry": "191_Happy",
+			"cry": "191",
 			"species": "Sunkern",
 			"type": "Grass",
 			"hp": 3,
@@ -25585,8 +25248,7 @@
 		{
 			"number": 584,
 			"image": "584",
-			"commonCry": "584_Common",
-			"happyCry": "584_Happy",
+			"cry": "584",
 			"species": "Vanilluxe",
 			"type": "Ice",
 			"hp": 7,
@@ -25662,8 +25324,7 @@
 		{
 			"number": 583,
 			"image": "583",
-			"commonCry": "583_Common",
-			"happyCry": "583_Happy",
+			"cry": "583",
 			"species": "Vanillish",
 			"type": "Ice",
 			"hp": 5,
@@ -25740,8 +25401,7 @@
 		{
 			"number": 582,
 			"image": "582",
-			"commonCry": "582_Common",
-			"happyCry": "582_Happy",
+			"cry": "582",
 			"species": "Vanillite",
 			"type": "Ice",
 			"hp": 4,
@@ -25820,8 +25480,7 @@
 		{
 			"number": 581,
 			"image": "581",
-			"commonCry": "581_Common",
-			"happyCry": "581_Happy",
+			"cry": "581",
 			"species": "Swanna",
 			"type": "Water / Flying",
 			"hp": 8,
@@ -25895,8 +25554,7 @@
 		{
 			"number": 580,
 			"image": "580",
-			"commonCry": "580_Common",
-			"happyCry": "580_Happy",
+			"cry": "580",
 			"species": "Ducklett",
 			"type": "Water / Flying",
 			"hp": 6,
@@ -25972,8 +25630,7 @@
 		{
 			"number": 579,
 			"image": "579",
-			"commonCry": "579_Common",
-			"happyCry": "579_Happy",
+			"cry": "579",
 			"species": "Reuniclus",
 			"type": "Psychic",
 			"hp": 11,
@@ -26050,8 +25707,7 @@
 		{
 			"number": 578,
 			"image": "578",
-			"commonCry": "578_Common",
-			"happyCry": "578_Happy",
+			"cry": "578",
 			"species": "Duosion",
 			"type": "Psychic",
 			"hp": 7,
@@ -26128,8 +25784,7 @@
 		{
 			"number": 577,
 			"image": "577",
-			"commonCry": "577_Common",
-			"happyCry": "577_Happy",
+			"cry": "577",
 			"species": "Solosis",
 			"type": "Psychic",
 			"hp": 5,
@@ -26207,8 +25862,7 @@
 		{
 			"number": 576,
 			"image": "576",
-			"commonCry": "576_Common",
-			"happyCry": "576_Happy",
+			"cry": "576",
 			"species": "Gothitelle",
 			"type": "Psychic",
 			"hp": 7,
@@ -26284,8 +25938,7 @@
 		{
 			"number": 575,
 			"image": "575",
-			"commonCry": "575_Common",
-			"happyCry": "575_Happy",
+			"cry": "575",
 			"species": "Gothorita",
 			"type": "Psychic",
 			"hp": 6,
@@ -26362,8 +26015,7 @@
 		{
 			"number": 574,
 			"image": "574",
-			"commonCry": "574_Common",
-			"happyCry": "574_Happy",
+			"cry": "574",
 			"species": "Gothita",
 			"type": "574",
 			"hp": 5,
@@ -26443,8 +26095,7 @@
 		{
 			"number": 573,
 			"image": "573",
-			"commonCry": "573_Common",
-			"happyCry": "573_Happy",
+			"cry": "573",
 			"species": "Cinccino",
 			"type": "Normal",
 			"hp": 8,
@@ -26520,8 +26171,7 @@
 		{
 			"number": 572,
 			"image": "572",
-			"commonCry": "572_Common",
-			"happyCry": "572_Happy",
+			"cry": "572",
 			"species": "Minccino",
 			"type": "Normal",
 			"hp": 6,
@@ -26599,8 +26249,7 @@
 		{
 			"number": 571,
 			"image": "571",
-			"commonCry": "571_Common",
-			"happyCry": "571_Happy",
+			"cry": "571",
 			"species": "Zoroark",
 			"type": "Dark",
 			"hp": 6,
@@ -26678,8 +26327,7 @@
 		{
 			"number": 570,
 			"image": "570",
-			"commonCry": "570_Common",
-			"happyCry": "570_Happy",
+			"cry": "570",
 			"species": "Zorua",
 			"type": "Dark",
 			"hp": 4,
@@ -26760,8 +26408,7 @@
 		{
 			"number": 569,
 			"image": "569",
-			"commonCry": "569_Common",
-			"happyCry": "569_Happy",
+			"cry": "569",
 			"species": "Garbodor",
 			"type": "Poison",
 			"hp": 8,
@@ -26836,8 +26483,7 @@
 		{
 			"number": 568,
 			"image": "568",
-			"commonCry": "568_Common",
-			"happyCry": "568_Happy",
+			"cry": "568",
 			"species": "Trubbish",
 			"type": "Poison",
 			"hp": 5,
@@ -26915,8 +26561,7 @@
 		{
 			"number": 567,
 			"image": "567",
-			"commonCry": "567_Common",
-			"happyCry": "567_Happy",
+			"cry": "567",
 			"species": "Archeops",
 			"type": "Rock / Flying",
 			"hp": 8,
@@ -26991,8 +26636,7 @@
 		{
 			"number": 566,
 			"image": "566",
-			"commonCry": "566_Common",
-			"happyCry": "566_Happy",
+			"cry": "566",
 			"species": "Archen",
 			"type": "Rock / Flying",
 			"hp": 6,
@@ -27071,8 +26715,7 @@
 		{
 			"number": 565,
 			"image": "565",
-			"commonCry": "565_Common",
-			"happyCry": "565_Happy",
+			"cry": "565",
 			"species": "Carracosta",
 			"type": "Water / Rock",
 			"hp": 7,
@@ -27147,8 +26790,7 @@
 		{
 			"number": 564,
 			"image": "564",
-			"commonCry": "564_Common",
-			"happyCry": "564_Happy",
+			"cry": "564",
 			"species": "Tirtouga",
 			"type": "Water, Rock",
 			"hp": 6,
@@ -27226,8 +26868,7 @@
 		{
 			"number": 563,
 			"image": "563",
-			"commonCry": "563_Common",
-			"happyCry": "563_Happy",
+			"cry": "563",
 			"species": "Cofagrigus",
 			"type": "Ghost",
 			"hp": 6,
@@ -27303,8 +26944,7 @@
 		{
 			"number": 562,
 			"image": "562",
-			"commonCry": "562_Common",
-			"happyCry": "562_Happy",
+			"cry": "562",
 			"species": "Yamask",
 			"type": "Ghost",
 			"hp": 4,
@@ -27381,8 +27021,7 @@
 		{
 			"number": 561,
 			"image": "561",
-			"commonCry": "561_Common",
-			"happyCry": "561_Happy",
+			"cry": "561",
 			"species": "Sigilyph",
 			"type": "Psychic / Flying",
 			"hp": 7,
@@ -27460,8 +27099,7 @@
 		{
 			"number": 560,
 			"image": "560",
-			"commonCry": "560_Common",
-			"happyCry": "560_Happy",
+			"cry": "560",
 			"species": "Scrafty",
 			"type": "Dark / Fighting",
 			"hp": 7,
@@ -27536,8 +27174,7 @@
 		{
 			"number": 559,
 			"image": "559",
-			"commonCry": "559_Common",
-			"happyCry": "559_Happy",
+			"cry": "559",
 			"species": "Scraggy",
 			"type": "Dark / Fighting",
 			"hp": 5,
@@ -27616,8 +27253,7 @@
 		{
 			"number": 558,
 			"image": "558",
-			"commonCry": "558_Common",
-			"happyCry": "558_Happy",
+			"cry": "558",
 			"species": "Crustle",
 			"type": "Bug / Rock",
 			"hp": 7,
@@ -27691,8 +27327,7 @@
 		{
 			"number": 557,
 			"image": "557",
-			"commonCry": "557_Common",
-			"happyCry": "557_Happy",
+			"cry": "557",
 			"species": "Dwebble",
 			"type": "Bug / Rock",
 			"hp": 5,
@@ -27768,8 +27403,7 @@
 		{
 			"number": 556,
 			"image": "556",
-			"commonCry": "556_Common",
-			"happyCry": "556_Happy",
+			"cry": "556",
 			"species": "Maractus",
 			"type": "Grass",
 			"hp": 8,
@@ -27845,8 +27479,7 @@
 		{
 			"number": 555,
 			"image": "555",
-			"commonCry": "555_Common",
-			"happyCry": "555_Happy",
+			"cry": "555",
 			"species": "Darmanitan",
 			"type": "Fire",
 			"hp": 11,
@@ -27923,8 +27556,7 @@
 		{
 			"number": 554,
 			"image": "554",
-			"commonCry": "554_Common",
-			"happyCry": "554_Happy",
+			"cry": "554",
 			"species": "Darumaka",
 			"type": "Fire",
 			"hp": 7,
@@ -28002,8 +27634,7 @@
 		{
 			"number": 553,
 			"image": "553",
-			"commonCry": "553_Common",
-			"happyCry": "553_Happy",
+			"cry": "553",
 			"species": "Krookodile",
 			"type": "Ground / Dark",
 			"hp": 10,
@@ -28081,8 +27712,7 @@
 		{
 			"number": 552,
 			"image": "552",
-			"commonCry": "552_Common",
-			"happyCry": "552_Happy",
+			"cry": "552",
 			"species": "Krokorok",
 			"type": "Ground / Dark",
 			"hp": 6,
@@ -28160,8 +27790,7 @@
 		{
 			"number": 551,
 			"image": "551",
-			"commonCry": "551_Common",
-			"happyCry": "551_Happy",
+			"cry": "551",
 			"species": "Sandile",
 			"type": "Ground / Dark",
 			"hp": 5,
@@ -28242,8 +27871,7 @@
 		{
 			"number": 549,
 			"image": "549",
-			"commonCry": "549_Common",
-			"happyCry": "549_Happy",
+			"cry": "549",
 			"species": "Lilligant",
 			"type": "Grass",
 			"hp": 7,
@@ -28322,8 +27950,7 @@
 		{
 			"number": 548,
 			"image": "548",
-			"commonCry": "548_Common",
-			"happyCry": "548_Happy",
+			"cry": "548",
 			"species": "Petilil",
 			"type": "Grass",
 			"hp": 5,
@@ -28400,8 +28027,7 @@
 		{
 			"number": 547,
 			"image": "547",
-			"commonCry": "547_Common",
-			"happyCry": "547_Happy",
+			"cry": "547",
 			"species": "Whimsicott",
 			"type": "Grass / Fairy",
 			"hp": 6,
@@ -28482,8 +28108,7 @@
 		{
 			"number": 546,
 			"image": "546",
-			"commonCry": "546_Common",
-			"happyCry": "546_Happy",
+			"cry": "546",
 			"species": "Cottonee",
 			"type": "Grass / Fairy",
 			"hp": 4,
@@ -28561,8 +28186,7 @@
 		{
 			"number": 545,
 			"image": "545",
-			"commonCry": "545_Common",
-			"happyCry": "545_Happy",
+			"cry": "545",
 			"species": "Scolipede",
 			"type": "Bug / Poison",
 			"hp": 6,
@@ -28637,8 +28261,7 @@
 		{
 			"number": 544,
 			"image": "544",
-			"commonCry": "544_Common",
-			"happyCry": "544_Happy",
+			"cry": "544",
 			"species": "Whirlipede",
 			"type": "Bug / Poison",
 			"hp": 4,
@@ -28711,8 +28334,7 @@
 		{
 			"number": 543,
 			"image": "543",
-			"commonCry": "543_Common",
-			"happyCry": "543_Happy",
+			"cry": "543",
 			"species": "Venipede",
 			"type": "Bug / Poison",
 			"hp": 3,
@@ -28787,8 +28409,7 @@
 		{
 			"number": 542,
 			"image": "542",
-			"commonCry": "542_Common",
-			"happyCry": "542_Happy",
+			"cry": "542",
 			"species": "Leavanny",
 			"type": "Bug / Grass",
 			"hp": 8,
@@ -28861,8 +28482,7 @@
 		{
 			"number": 541,
 			"image": "541",
-			"commonCry": "541_Common",
-			"happyCry": "541_Happy",
+			"cry": "541",
 			"species": "Swadloon",
 			"type": "Bug / Grass",
 			"hp": 6,
@@ -28926,8 +28546,7 @@
 		{
 			"number": 540,
 			"image": "540",
-			"commonCry": "540_Common",
-			"happyCry": "540_Happy",
+			"cry": "540",
 			"species": "Sewaddle",
 			"type": "Bug / Grass",
 			"hp": 5,
@@ -28998,8 +28617,7 @@
 		{
 			"number": 550,
 			"image": "550_Blue",
-			"commonCry": "550_Common",
-			"happyCry": "550_Happy",
+			"cry": "550",
 			"species": "Basculin (Blue)",
 			"type": "Water",
 			"hp": 7,
@@ -29075,8 +28693,7 @@
 		{
 			"number": 550,
 			"image": "550_Red",
-			"commonCry": "550_Common",
-			"happyCry": "550_Happy",
+			"cry": "550",
 			"species": "Basculin (Red)",
 			"type": "Water",
 			"hp": 7,
@@ -29152,8 +28769,7 @@
 		{
 			"number": 539,
 			"image": "539",
-			"commonCry": "539_Common",
-			"happyCry": "539_Happy",
+			"cry": "539",
 			"species": "Sawk",
 			"type": "Fighting",
 			"hp": 8,
@@ -29225,8 +28841,7 @@
 		{
 			"number": 538,
 			"image": "538",
-			"commonCry": "538_Common",
-			"happyCry": "538_Happy",
+			"cry": "538",
 			"species": "Throh",
 			"type": "Fighting",
 			"hp": 12,
@@ -29298,8 +28913,7 @@
 		{
 			"number": 537,
 			"image": "537",
-			"commonCry": "537_Common",
-			"happyCry": "537_Happy",
+			"cry": "537",
 			"species": "Seismitoad",
 			"type": "Water / Ground",
 			"hp": 11,
@@ -29374,8 +28988,7 @@
 		{
 			"number": 536,
 			"image": "536",
-			"commonCry": "536_Common",
-			"happyCry": "536_Happy",
+			"cry": "536",
 			"species": "Palpitoad",
 			"type": "Water / Ground",
 			"hp": 8,
@@ -29448,8 +29061,7 @@
 		{
 			"number": 535,
 			"image": "535",
-			"commonCry": "535_Common",
-			"happyCry": "535_Happy",
+			"cry": "535",
 			"species": "Tympole",
 			"type": "Water",
 			"hp": 5,
@@ -29525,8 +29137,7 @@
 		{
 			"number": 534,
 			"image": "534",
-			"commonCry": "534_Common",
-			"happyCry": "534_Happy",
+			"cry": "534",
 			"species": "Conkeldurr",
 			"type": "Fighting",
 			"hp": 11,
@@ -29600,8 +29211,7 @@
 		{
 			"number": 533,
 			"image": "533",
-			"commonCry": "533_Common",
-			"happyCry": "533_Happy",
+			"cry": "533",
 			"species": "Gurdurr",
 			"type": "Fighting",
 			"hp": 9,
@@ -29676,8 +29286,7 @@
 		{
 			"number": 532,
 			"image": "532",
-			"commonCry": "532_Common",
-			"happyCry": "532_Happy",
+			"cry": "532",
 			"species": "Timburr",
 			"type": "Fighting",
 			"hp": 8,
@@ -29755,8 +29364,7 @@
 		{
 			"number": 531,
 			"image": "531",
-			"commonCry": "531_Common",
-			"happyCry": "531_Happy",
+			"cry": "531",
 			"species": "Audino",
 			"type": "Normal",
 			"hp": 10,
@@ -29831,8 +29439,7 @@
 		{
 			"number": 530,
 			"image": "530",
-			"commonCry": "530_Common",
-			"happyCry": "530_Happy",
+			"cry": "530",
 			"species": "Excadrill",
 			"type": "Ground / Steel",
 			"hp": 11,
@@ -29907,8 +29514,7 @@
 		{
 			"number": 529,
 			"image": "529",
-			"commonCry": "529_Common",
-			"happyCry": "529_Happy",
+			"cry": "529",
 			"species": "Drilbur",
 			"type": "Ground",
 			"hp": 6,
@@ -29985,8 +29591,7 @@
 		{
 			"number": 528,
 			"image": "528",
-			"commonCry": "528_Common",
-			"happyCry": "528_Happy",
+			"cry": "528",
 			"species": "Swoobat",
 			"type": "Psychic / Flying",
 			"hp": 7,
@@ -30061,8 +29666,7 @@
 		{
 			"number": 527,
 			"image": "527",
-			"commonCry": "527_Common",
-			"happyCry": "527_Happy",
+			"cry": "527",
 			"species": "Woobat",
 			"type": "Psychic / Flying",
 			"hp": 6,
@@ -30138,8 +29742,7 @@
 		{
 			"number": 526,
 			"image": "526",
-			"commonCry": "526_Common",
-			"happyCry": "526_Happy",
+			"cry": "526",
 			"species": "Gigalith",
 			"type": "Rock",
 			"hp": 9,
@@ -30213,8 +29816,7 @@
 		{
 			"number": 525,
 			"image": "525",
-			"commonCry": "525_Common",
-			"happyCry": "525_Happy",
+			"cry": "525",
 			"species": "Boldore",
 			"type": "Rock",
 			"hp": 7,
@@ -30287,8 +29889,7 @@
 		{
 			"number": 524,
 			"image": "524",
-			"commonCry": "524_Common",
-			"happyCry": "524_Happy",
+			"cry": "524",
 			"species": "Roggenrola",
 			"type": "Rock",
 			"hp": 6,
@@ -30362,8 +29963,7 @@
 		{
 			"number": 523,
 			"image": "523",
-			"commonCry": "523_Common",
-			"happyCry": "523_Happy",
+			"cry": "523",
 			"species": "Zebstrika",
 			"type": "Electric",
 			"hp": 8,
@@ -30437,8 +30037,7 @@
 		{
 			"number": 522,
 			"image": "522",
-			"commonCry": "522_Common",
-			"happyCry": "522_Happy",
+			"cry": "522",
 			"species": "Blitzle",
 			"type": "Electric",
 			"hp": 5,
@@ -30513,8 +30112,7 @@
 		{
 			"number": 518,
 			"image": "518",
-			"commonCry": "518_Common",
-			"happyCry": "518_Happy",
+			"cry": "518",
 			"species": "Musharna",
 			"type": "Psychic",
 			"hp": 12,
@@ -30592,8 +30190,7 @@
 		{
 			"number": 517,
 			"image": "517",
-			"commonCry": "517_Common",
-			"happyCry": "517_Happy",
+			"cry": "517",
 			"species": "Munna",
 			"type": "Psychic",
 			"hp": 8,
@@ -30673,8 +30270,7 @@
 		{
 			"number": 516,
 			"image": "516",
-			"commonCry": "516_Common",
-			"happyCry": "516_Happy",
+			"cry": "516",
 			"species": "Simipour",
 			"type": "Water",
 			"hp": 8,
@@ -30747,8 +30343,7 @@
 		{
 			"number": 515,
 			"image": "515",
-			"commonCry": "515_Common",
-			"happyCry": "515_Happy",
+			"cry": "515",
 			"species": "Panpour",
 			"type": "Water",
 			"hp": 5,
@@ -30824,8 +30419,7 @@
 		{
 			"number": 514,
 			"image": "514",
-			"commonCry": "514_Common",
-			"happyCry": "514_Happy",
+			"cry": "514",
 			"species": "Simisear",
 			"type": "Fire",
 			"hp": 8,
@@ -30898,8 +30492,7 @@
 		{
 			"number": 513,
 			"image": "513",
-			"commonCry": "513_Common",
-			"happyCry": "513_Happy",
+			"cry": "513",
 			"species": "Pansear",
 			"type": "Fire",
 			"hp": 5,
@@ -30975,8 +30568,7 @@
 		{
 			"number": 512,
 			"image": "512",
-			"commonCry": "512_Common",
-			"happyCry": "512_Happy",
+			"cry": "512",
 			"species": "Simisage",
 			"type": "Grass",
 			"hp": 8,
@@ -31048,8 +30640,7 @@
 		{
 			"number": 511,
 			"image": "511",
-			"commonCry": "511_Common",
-			"happyCry": "511_Happy",
+			"cry": "511",
 			"species": "Pansage",
 			"type": "Grass",
 			"hp": 5,
@@ -31125,8 +30716,7 @@
 		{
 			"number": 510,
 			"image": "510",
-			"commonCry": "510_Common",
-			"happyCry": "510_Happy",
+			"cry": "510",
 			"species": "Liepard",
 			"type": "Dark",
 			"hp": 6,
@@ -31203,8 +30793,7 @@
 		{
 			"number": 509,
 			"image": "509",
-			"commonCry": "509_Common",
-			"happyCry": "509_Happy",
+			"cry": "509",
 			"species": "Purrloin",
 			"type": "Dark",
 			"hp": 4,
@@ -31283,8 +30872,7 @@
 		{
 			"number": 508,
 			"image": "508",
-			"commonCry": "508_Common",
-			"happyCry": "508_Happy",
+			"cry": "508",
 			"species": "Stoutland",
 			"type": "Normal",
 			"hp": 9,
@@ -31356,8 +30944,7 @@
 		{
 			"number": 507,
 			"image": "507",
-			"commonCry": "507_Common",
-			"happyCry": "507_Happy",
+			"cry": "507",
 			"species": "Herdier",
 			"type": "Normal",
 			"hp": 7,
@@ -31430,8 +31017,7 @@
 		{
 			"number": 506,
 			"image": "506",
-			"commonCry": "506_Common",
-			"happyCry": "506_Happy",
+			"cry": "506",
 			"species": "Lillipup",
 			"type": "Normal",
 			"hp": 5,
@@ -31508,8 +31094,7 @@
 		{
 			"number": 504,
 			"image": "504",
-			"commonCry": "504_Common",
-			"happyCry": "504_Happy",
+			"cry": "504",
 			"species": "Patrat",
 			"type": "Normal",
 			"hp": 5,
@@ -31585,8 +31170,7 @@
 		{
 			"number": 505,
 			"image": "505",
-			"commonCry": "505_Common",
-			"happyCry": "505_Happy",
+			"cry": "505",
 			"species": "Watchog",
 			"type": "Normal",
 			"hp": 6,
@@ -31661,8 +31245,7 @@
 		{
 			"number": 503,
 			"image": "503",
-			"commonCry": "503_Common",
-			"happyCry": "503_Happy",
+			"cry": "503",
 			"species": "Samurott",
 			"type": "Water",
 			"hp": 10,
@@ -31738,8 +31321,7 @@
 		{
 			"number": 502,
 			"image": "502",
-			"commonCry": "502_Common",
-			"happyCry": "502_Happy",
+			"cry": "502",
 			"species": "Dewott",
 			"type": "Water",
 			"hp": 8,
@@ -31815,8 +31397,7 @@
 		{
 			"number": 501,
 			"image": "501",
-			"commonCry": "501_Common",
-			"happyCry": "501_Happy",
+			"cry": "501",
 			"species": "Oshawott",
 			"type": "Water",
 			"hp": 6,
@@ -31894,8 +31475,7 @@
 		{
 			"number": 500,
 			"image": "500",
-			"commonCry": "500_Common",
-			"happyCry": "500_Happy",
+			"cry": "500",
 			"species": "Emboar",
 			"type": "Fire / Fighting",
 			"hp": 11,
@@ -31972,8 +31552,7 @@
 		{
 			"number": 499,
 			"image": "499",
-			"commonCry": "499_Common",
-			"happyCry": "499_Happy",
+			"cry": "499",
 			"species": "Pignite",
 			"type": "Fire / Fighting",
 			"hp": 9,
@@ -32051,8 +31630,7 @@
 		{
 			"number": 498,
 			"image": "498",
-			"commonCry": "498_Common",
-			"happyCry": "498_Happy",
+			"cry": "498",
 			"species": "Tepig",
 			"type": "Fire",
 			"hp": 7,
@@ -32131,8 +31709,7 @@
 		{
 			"number": 497,
 			"image": "497",
-			"commonCry": "497_Common",
-			"happyCry": "497_Happy",
+			"cry": "497",
 			"species": "Serperior",
 			"type": "Grass",
 			"hp": 8,
@@ -32206,8 +31783,7 @@
 		{
 			"number": 496,
 			"image": "496",
-			"commonCry": "496_Common",
-			"happyCry": "496_Happy",
+			"cry": "496",
 			"species": "Servine",
 			"type": "Grass",
 			"hp": 6,
@@ -32282,8 +31858,7 @@
 		{
 			"number": 495,
 			"image": "495",
-			"commonCry": "495_Common",
-			"happyCry": "495_Happy",
+			"cry": "495",
 			"species": "Snivy",
 			"type": "Grass",
 			"hp": 5,
@@ -32360,8 +31935,7 @@
 		{
 			"number": 519,
 			"image": "519",
-			"commonCry": "519_Common",
-			"happyCry": "519_Happy",
+			"cry": "519",
 			"species": "Pidove",
 			"type": "Normal / Flying",
 			"hp": 5,
@@ -32438,8 +32012,7 @@
 		{
 			"number": 520,
 			"image": "520",
-			"commonCry": "520_Common",
-			"happyCry": "520_Happy",
+			"cry": "520",
 			"species": "Tranquill",
 			"type": "Normal / Flying",
 			"hp": 6,
@@ -32514,8 +32087,7 @@
 		{
 			"number": 521,
 			"image": "521_Male",
-			"commonCry": "521_Common",
-			"happyCry": "521_Happy",
+			"cry": "521",
 			"species": "Unfezant (Male)",
 			"type": "Normal / Flying",
 			"hp": 8,
@@ -32589,8 +32161,7 @@
 		{
 			"number": 521,
 			"image": "521_Female",
-			"commonCry": "521_Common",
-			"happyCry": "521_Happy",
+			"cry": "521",
 			"species": "Unfezant (Female)",
 			"type": "Normal / Flying",
 			"hp": 8,
@@ -32664,8 +32235,7 @@
 		{
 			"number": 494,
 			"image": "494",
-			"commonCry": "494_Common",
-			"happyCry": "494_Happy",
+			"cry": "494",
 			"species": "Victini",
 			"type": "Psychic / Fire",
 			"hp": 10,
@@ -32744,8 +32314,7 @@
 		{
 			"number": 493,
 			"image": "493",
-			"commonCry": "493_Common",
-			"happyCry": "493_Happy",
+			"cry": "493",
 			"species": "Arceus",
 			"type": "Normal",
 			"hp": 12,
@@ -32824,8 +32393,7 @@
 		{
 			"number": 492,
 			"image": "492_Land",
-			"commonCry": "492_Common",
-			"happyCry": "492_Happy",
+			"cry": "492_Land",
 			"species": "Shaymin (Land Form)",
 			"type": "Grass",
 			"hp": 10,
@@ -32901,8 +32469,7 @@
 		{
 			"number": 492,
 			"image": "492_Sky",
-			"commonCry": "492_Common",
-			"happyCry": "492_Happy",
+			"cry": "492_Sky",
 			"species": "Shaymin (Sky Form)",
 			"type": "Grass / Flying",
 			"hp": 10,
@@ -32975,8 +32542,7 @@
 		{
 			"number": 491,
 			"image": "491",
-			"commonCry": "491_Common",
-			"happyCry": "491_Happy",
+			"cry": "491",
 			"species": "Darkrai",
 			"type": "Dark",
 			"hp": 7,
@@ -33056,8 +32622,7 @@
 		{
 			"number": 490,
 			"image": "490",
-			"commonCry": "490_Common",
-			"happyCry": "490_Happy",
+			"cry": "490",
 			"species": "Manaphy",
 			"type": "Water",
 			"hp": 10,
@@ -33132,8 +32697,7 @@
 		{
 			"number": 489,
 			"image": "489",
-			"commonCry": "489_Common",
-			"happyCry": "489_Happy",
+			"cry": "489",
 			"species": "Phione",
 			"type": "Water",
 			"hp": 8,
@@ -33205,8 +32769,7 @@
 		{
 			"number": 488,
 			"image": "488",
-			"commonCry": "488_Common",
-			"happyCry": "488_Happy",
+			"cry": "488",
 			"species": "Cresselia",
 			"type": "Psychic",
 			"hp": 12,
@@ -33282,8 +32845,7 @@
 		{
 			"number": 487,
 			"image": "487_Origin",
-			"commonCry": "487_Common",
-			"happyCry": "487_Happy",
+			"cry": "487_Origin",
 			"species": "Giratina (Origin Form)",
 			"type": "Ghost / Dragon",
 			"hp": 15,
@@ -33362,8 +32924,7 @@
 		{
 			"number": 487,
 			"image": "487",
-			"commonCry": "487_Common",
-			"happyCry": "487_Happy",
+			"cry": "487",
 			"species": "Giratina (Altered Form)",
 			"type": "Ghost / Dragon",
 			"hp": 15,
@@ -33441,8 +33002,7 @@
 		{
 			"number": 486,
 			"image": "486",
-			"commonCry": "486_Common",
-			"happyCry": "486_Happy",
+			"cry": "486",
 			"species": "Regigigas",
 			"type": "Normal",
 			"hp": 11,
@@ -33513,8 +33073,7 @@
 		{
 			"number": 485,
 			"image": "485",
-			"commonCry": "485_Common",
-			"happyCry": "485_Happy",
+			"cry": "485",
 			"species": "Heatran",
 			"type": "Fire / Steel",
 			"hp": 9,
@@ -33591,8 +33150,7 @@
 		{
 			"number": 484,
 			"image": "484",
-			"commonCry": "484_Common",
-			"happyCry": "484_Happy",
+			"cry": "484",
 			"species": "Palkia",
 			"type": "Water / Dragon",
 			"hp": 9,
@@ -33668,8 +33226,7 @@
 		{
 			"number": 481,
 			"image": "481",
-			"commonCry": "481_Common",
-			"happyCry": "481_Happy",
+			"cry": "481",
 			"species": "Mesprit",
 			"type": "Psychic",
 			"hp": 8,
@@ -33742,8 +33299,7 @@
 		{
 			"number": 483,
 			"image": "483",
-			"commonCry": "483_Common",
-			"happyCry": "483_Happy",
+			"cry": "483",
 			"species": "Dialga",
 			"type": "Steel / Dragon",
 			"hp": 10,
@@ -33819,8 +33375,7 @@
 		{
 			"number": 482,
 			"image": "482",
-			"commonCry": "482_Common",
-			"happyCry": "482_Happy",
+			"cry": "482",
 			"species": "Azelf",
 			"type": "Psychic",
 			"hp": 8,
@@ -33893,8 +33448,7 @@
 		{
 			"number": 480,
 			"image": "480",
-			"commonCry": "480_Common",
-			"happyCry": "480_Happy",
+			"cry": "480",
 			"species": "Uxie",
 			"type": "Psychic",
 			"hp": 8,
@@ -33967,8 +33521,7 @@
 		{
 			"number": 479,
 			"image": "479",
-			"commonCry": "479_Common",
-			"happyCry": "479_Happy",
+			"cry": "479",
 			"species": "Rotom (Normal)",
 			"type": "Electric / Ghost",
 			"hp": 5,
@@ -34049,8 +33602,7 @@
 		{
 			"number": 479,
 			"image": "479_Heat",
-			"commonCry": "479_Common",
-			"happyCry": "479_Happy",
+			"cry": "479",
 			"species": "Rotom (Heat)",
 			"type": "Electric / Fire",
 			"hp": 5,
@@ -34128,8 +33680,7 @@
 		{
 			"number": 479,
 			"image": "479_Wash",
-			"commonCry": "479_Common",
-			"happyCry": "479_Happy",
+			"cry": "479",
 			"species": "Rotom (Wash)",
 			"type": "Electric / Water",
 			"hp": 5,
@@ -34208,8 +33759,7 @@
 		{
 			"number": 479,
 			"image": "479_Frost",
-			"commonCry": "479_Common",
-			"happyCry": "479_Happy",
+			"cry": "479",
 			"species": "Rotom (Frost)",
 			"type": "Electric / Ice",
 			"hp": 5,
@@ -34288,8 +33838,7 @@
 		{
 			"number": 479,
 			"image": "479_Fan",
-			"commonCry": "479_Common",
-			"happyCry": "479_Happy",
+			"cry": "479",
 			"species": "Rotom (Fan)",
 			"type": "Electric / Flying",
 			"hp": 5,
@@ -34368,8 +33917,7 @@
 		{
 			"number": 479,
 			"image": "479_Mow",
-			"commonCry": "479_Common",
-			"happyCry": "479_Happy",
+			"cry": "479",
 			"species": "Rotom (Mow)",
 			"type": "Electric / Grass",
 			"hp": 5,
@@ -34447,8 +33995,7 @@
 		{
 			"number": 478,
 			"image": "478",
-			"commonCry": "478_Common",
-			"happyCry": "478_Happy",
+			"cry": "478",
 			"species": "Froslass",
 			"type": "Ice / Ghost",
 			"hp": 7,
@@ -34524,8 +34071,7 @@
 		{
 			"number": 477,
 			"image": "477",
-			"commonCry": "477_Common",
-			"happyCry": "477_Happy",
+			"cry": "477",
 			"species": "Dusknoir",
 			"type": "Ghost",
 			"hp": 5,
@@ -34602,8 +34148,7 @@
 		{
 			"number": 356,
 			"image": "356",
-			"commonCry": "356_Common",
-			"happyCry": "356_Happy",
+			"cry": "356",
 			"species": "Dusclops",
 			"type": "Ghost",
 			"hp": 4,
@@ -34680,8 +34225,7 @@
 		{
 			"number": 355,
 			"image": "355",
-			"commonCry": "355_Common",
-			"happyCry": "355_Happy",
+			"cry": "355",
 			"species": "Duskull",
 			"type": "Ghost",
 			"hp": 2,
@@ -34760,8 +34304,7 @@
 		{
 			"number": 476,
 			"image": "476",
-			"commonCry": "476_Common",
-			"happyCry": "476_Happy",
+			"cry": "476",
 			"species": "Probopass",
 			"type": "Rock / Steel",
 			"hp": 6,
@@ -34836,8 +34379,7 @@
 		{
 			"number": 475,
 			"image": "475",
-			"commonCry": "475_Common",
-			"happyCry": "475_Happy",
+			"cry": "475",
 			"species": "Gallade",
 			"type": "Psychic / Fighting",
 			"hp": 7,
@@ -34914,8 +34456,7 @@
 		{
 			"number": 474,
 			"image": "474",
-			"commonCry": "474_Common",
-			"happyCry": "474_Happy",
+			"cry": "474",
 			"species": "Porygon-Z",
 			"type": "Normal",
 			"hp": 9,
@@ -34989,8 +34530,7 @@
 		{
 			"number": 473,
 			"image": "473",
-			"commonCry": "473_Common",
-			"happyCry": "473_Happy",
+			"cry": "473",
 			"species": "Mamoswine",
 			"type": "Ice / Ground",
 			"hp": 11,
@@ -35066,8 +34606,7 @@
 		{
 			"number": 472,
 			"image": "472",
-			"commonCry": "472_Common",
-			"happyCry": "472_Happy",
+			"cry": "472",
 			"species": "Gliscor",
 			"type": "Ground / Flying",
 			"hp": 8,
@@ -35141,8 +34680,7 @@
 		{
 			"number": 471,
 			"image": "471",
-			"commonCry": "471_Common",
-			"happyCry": "471_Happy",
+			"cry": "471",
 			"species": "Glaceon",
 			"type": "Ice",
 			"hp": 7,
@@ -35213,8 +34751,7 @@
 		{
 			"number": 470,
 			"image": "470",
-			"commonCry": "470_Common",
-			"happyCry": "470_Happy",
+			"cry": "470",
 			"species": "Leafeon",
 			"type": "Grass",
 			"hp": 7,
@@ -35284,8 +34821,7 @@
 		{
 			"number": 469,
 			"image": "469",
-			"commonCry": "469_Common",
-			"happyCry": "469_Happy",
+			"cry": "469",
 			"species": "Yanmega",
 			"type": "Bug / Flying",
 			"hp": 9,
@@ -35360,8 +34896,7 @@
 		{
 			"number": 468,
 			"image": "468",
-			"commonCry": "468_Common",
-			"happyCry": "468_Happy",
+			"cry": "468",
 			"species": "Togekiss",
 			"type": "Fairy / Flying",
 			"hp": 9,
@@ -35436,8 +34971,7 @@
 		{
 			"number": 467,
 			"image": "467",
-			"commonCry": "467_Common",
-			"happyCry": "467_Happy",
+			"cry": "467",
 			"species": "Magmortar",
 			"type": "Fire",
 			"hp": 8,
@@ -35513,8 +35047,7 @@
 		{
 			"number": 466,
 			"image": "466",
-			"commonCry": "466_Common",
-			"happyCry": "466_Happy",
+			"cry": "466",
 			"species": "Electivire",
 			"type": "Electric",
 			"hp": 8,
@@ -35588,8 +35121,7 @@
 		{
 			"number": 465,
 			"image": "465",
-			"commonCry": "465_Common",
-			"happyCry": "465_Happy",
+			"cry": "465",
 			"species": "Tangrowth",
 			"type": "Grass",
 			"hp": 10,
@@ -35666,8 +35198,7 @@
 		{
 			"number": 464,
 			"image": "464",
-			"commonCry": "464_Common",
-			"happyCry": "464_Happy",
+			"cry": "464",
 			"species": "Rhyperior",
 			"type": "Ground / Rock",
 			"hp": 12,
@@ -35744,8 +35275,7 @@
 		{
 			"number": 463,
 			"image": "463",
-			"commonCry": "463_Common",
-			"happyCry": "463_Happy",
+			"cry": "463",
 			"species": "Lickilicky",
 			"type": "Normal",
 			"hp": 11,
@@ -35819,8 +35349,7 @@
 		{
 			"number": 462,
 			"image": "462",
-			"commonCry": "462_Common",
-			"happyCry": "462_Happy",
+			"cry": "462",
 			"species": "Magnezone",
 			"type": "Electric / Steel",
 			"hp": 7,
@@ -35898,8 +35427,7 @@
 		{
 			"number": 461,
 			"image": "461",
-			"commonCry": "461_Common",
-			"happyCry": "461_Happy",
+			"cry": "461",
 			"species": "Weavile",
 			"type": "Dark / Ice",
 			"hp": 7,
@@ -35972,8 +35500,7 @@
 		{
 			"number": 460,
 			"image": "460",
-			"commonCry": "460_Common",
-			"happyCry": "460_Happy",
+			"cry": "460",
 			"species": "Abomasnow",
 			"type": "Grass / Ice",
 			"hp": 9,
@@ -36043,8 +35570,7 @@
 		{
 			"number": 459,
 			"image": "459",
-			"commonCry": "459_Common",
-			"happyCry": "459_Happy",
+			"cry": "459",
 			"species": "Snover",
 			"type": "Grass / Ice",
 			"hp": 6,
@@ -36117,8 +35643,7 @@
 		{
 			"number": 458,
 			"image": "458",
-			"commonCry": "458_Common",
-			"happyCry": "458_Happy",
+			"cry": "458",
 			"species": "Mantyke",
 			"type": "Water / Flying",
 			"hp": 5,
@@ -36195,8 +35720,7 @@
 		{
 			"number": 457,
 			"image": "457",
-			"commonCry": "457_Common",
-			"happyCry": "457_Happy",
+			"cry": "457",
 			"species": "Lumineon",
 			"type": "Water",
 			"hp": 7,
@@ -36269,8 +35793,7 @@
 		{
 			"number": 456,
 			"image": "456",
-			"commonCry": "456_Common",
-			"happyCry": "456_Happy",
+			"cry": "456",
 			"species": "Finneon",
 			"type": "Water",
 			"hp": 5,
@@ -36346,8 +35869,7 @@
 		{
 			"number": 455,
 			"image": "455",
-			"commonCry": "455_Common",
-			"happyCry": "455_Happy",
+			"cry": "455",
 			"species": "Carnivine",
 			"type": "Grass",
 			"hp": 7,
@@ -36421,8 +35943,7 @@
 		{
 			"number": 454,
 			"image": "454",
-			"commonCry": "454_Common",
-			"happyCry": "454_Happy",
+			"cry": "454",
 			"species": "Toxicroak",
 			"type": "Poison / Fighting",
 			"hp": 8,
@@ -36494,8 +36015,7 @@
 		{
 			"number": 453,
 			"image": "453",
-			"commonCry": "453_Common",
-			"happyCry": "453_Happy",
+			"cry": "453",
 			"species": "Croagunk",
 			"type": "Poison / Fighting",
 			"hp": 5,
@@ -36570,8 +36090,7 @@
 		{
 			"number": 452,
 			"image": "452",
-			"commonCry": "452_Common",
-			"happyCry": "452_Happy",
+			"cry": "452",
 			"species": "Drapion",
 			"type": "Poison / Dark",
 			"hp": 7,
@@ -36644,8 +36163,7 @@
 		{
 			"number": 451,
 			"image": "451",
-			"commonCry": "451_Common",
-			"happyCry": "451_Happy",
+			"cry": "451",
 			"species": "Skorupi",
 			"type": "Poison / Bug",
 			"hp": 4,
@@ -36722,8 +36240,7 @@
 		{
 			"number": 450,
 			"image": "450",
-			"commonCry": "450_Common",
-			"happyCry": "450_Happy",
+			"cry": "450",
 			"species": "Hippowdon",
 			"type": "Ground",
 			"hp": 10,
@@ -36793,8 +36310,7 @@
 		{
 			"number": 449,
 			"image": "449",
-			"commonCry": "449_Common",
-			"happyCry": "449_Happy",
+			"cry": "449",
 			"species": "Hippopotas",
 			"type": "Ground",
 			"hp": 7,
@@ -36866,8 +36382,7 @@
 		{
 			"number": 448,
 			"image": "448",
-			"commonCry": "448_Common",
-			"happyCry": "448_Happy",
+			"cry": "448",
 			"species": "Lucario",
 			"type": "Fighting / Steel",
 			"hp": 7,
@@ -36940,8 +36455,7 @@
 		{
 			"number": 447,
 			"image": "447",
-			"commonCry": "447_Common",
-			"happyCry": "447_Happy",
+			"cry": "447",
 			"species": "Riolu",
 			"type": "Fighting",
 			"hp": 4,
@@ -37010,8 +36524,7 @@
 		{
 			"number": 446,
 			"image": "446",
-			"commonCry": "446_Common",
-			"happyCry": "446_Happy",
+			"cry": "446",
 			"species": "Munchlax",
 			"type": "Normal",
 			"hp": 14,
@@ -37088,8 +36601,7 @@
 		{
 			"number": 445,
 			"image": "445",
-			"commonCry": "445_Common",
-			"happyCry": "445_Happy",
+			"cry": "445",
 			"species": "Garchomp",
 			"type": "Dragon / Ground",
 			"hp": 11,
@@ -37162,8 +36674,7 @@
 		{
 			"number": 444,
 			"image": "444",
-			"commonCry": "444_Common",
-			"happyCry": "444_Happy",
+			"cry": "444",
 			"species": "Gabite",
 			"type": "Dragon / Ground",
 			"hp": 7,
@@ -37234,8 +36745,7 @@
 		{
 			"number": 443,
 			"image": "443",
-			"commonCry": "443_Common",
-			"happyCry": "443_Happy",
+			"cry": "443",
 			"species": "Gible",
 			"type": "Dragon / Ground",
 			"hp": 6,
@@ -37307,8 +36817,7 @@
 		{
 			"number": 442,
 			"image": "442",
-			"commonCry": "442_Common",
-			"happyCry": "442_Happy",
+			"cry": "442",
 			"species": "Spiritomb",
 			"type": "Ghost / Dark",
 			"hp": 5,
@@ -37383,8 +36892,7 @@
 		{
 			"number": 441,
 			"image": "441",
-			"commonCry": "441_Common",
-			"happyCry": "441_Happy",
+			"cry": "441",
 			"species": "Chatot",
 			"type": "Normal / Flying",
 			"hp": 8,
@@ -37459,8 +36967,7 @@
 		{
 			"number": 440,
 			"image": "440",
-			"commonCry": "440_Common",
-			"happyCry": "440_Happy",
+			"cry": "440",
 			"species": "Happiny",
 			"type": "Normal",
 			"hp": 10,
@@ -37527,8 +37034,7 @@
 		{
 			"number": 439,
 			"image": "439",
-			"commonCry": "439_Common",
-			"happyCry": "439_Happy",
+			"cry": "439",
 			"species": "Mime Jr.",
 			"type": "Psychic / Fairy",
 			"hp": 2,
@@ -37605,8 +37111,7 @@
 		{
 			"number": 438,
 			"image": "438",
-			"commonCry": "438_Common",
-			"happyCry": "438_Happy",
+			"cry": "438",
 			"species": "Bonsly",
 			"type": "Rock",
 			"hp": 5,
@@ -37679,8 +37184,7 @@
 		{
 			"number": 437,
 			"image": "437",
-			"commonCry": "437_Common",
-			"happyCry": "437_Happy",
+			"cry": "437",
 			"species": "Bronzong",
 			"type": "Steel / Psychic",
 			"hp": 7,
@@ -37754,8 +37258,7 @@
 		{
 			"number": 436,
 			"image": "436",
-			"commonCry": "436_Common",
-			"happyCry": "436_Happy",
+			"cry": "436",
 			"species": "Bronzor",
 			"type": "Steel / Psychic",
 			"hp": 6,
@@ -37832,8 +37335,7 @@
 		{
 			"number": 435,
 			"image": "435",
-			"commonCry": "435_Common",
-			"happyCry": "435_Happy",
+			"cry": "435",
 			"species": "Skuntank",
 			"type": "Poison / Dark",
 			"hp": 10,
@@ -37905,8 +37407,7 @@
 		{
 			"number": 434,
 			"image": "434",
-			"commonCry": "434_Common",
-			"happyCry": "434_Happy",
+			"cry": "434",
 			"species": "Stunky",
 			"type": "Poison / Dark",
 			"hp": 6,
@@ -37981,8 +37482,7 @@
 		{
 			"number": 433,
 			"image": "433",
-			"commonCry": "433_Common",
-			"happyCry": "433_Happy",
+			"cry": "433",
 			"species": "Chingling",
 			"type": "Psychic",
 			"hp": 5,
@@ -38051,8 +37551,7 @@
 		{
 			"number": 192,
 			"image": "192",
-			"commonCry": "192_Common",
-			"happyCry": "192_Happy",
+			"cry": "192",
 			"species": "Sunflora",
 			"type": "Grass",
 			"hp": 8,
@@ -38126,8 +37625,7 @@
 		{
 			"number": 193,
 			"image": "193",
-			"commonCry": "193_Common",
-			"happyCry": "193_Happy",
+			"cry": "193",
 			"species": "Yanma",
 			"type": "Bug / Flying",
 			"hp": 7,
@@ -38203,8 +37701,7 @@
 		{
 			"number": 194,
 			"image": "194",
-			"commonCry": "194_Common",
-			"happyCry": "194_Happy",
+			"cry": "194",
 			"species": "Wooper",
 			"type": "Water / Ground",
 			"hp": 6,
@@ -38279,8 +37776,7 @@
 		{
 			"number": 195,
 			"image": "195",
-			"commonCry": "195_Common",
-			"happyCry": "195_Happy",
+			"cry": "195",
 			"species": "Quagsire",
 			"type": "Water / Ground",
 			"hp": 10,
@@ -38353,8 +37849,7 @@
 		{
 			"number": 196,
 			"image": "196",
-			"commonCry": "196_Common",
-			"happyCry": "196_Happy",
+			"cry": "196",
 			"species": "Espeon",
 			"type": "Psychic",
 			"hp": 7,
@@ -38426,8 +37921,7 @@
 		{
 			"number": 197,
 			"image": "197",
-			"commonCry": "197_Common",
-			"happyCry": "197_Happy",
+			"cry": "197",
 			"species": "Umbreon",
 			"type": "Dark",
 			"hp": 10,
@@ -38498,8 +37992,7 @@
 		{
 			"number": 198,
 			"image": "198",
-			"commonCry": "198_Common",
-			"happyCry": "198_Happy",
+			"cry": "198",
 			"species": "Murkrow",
 			"type": "Dark / Flying",
 			"hp": 6,
@@ -38577,8 +38070,7 @@
 		{
 			"number": 199,
 			"image": "199",
-			"commonCry": "199_Common",
-			"happyCry": "199_Happy",
+			"cry": "199",
 			"species": "Slowking",
 			"type": "Water / Psychic",
 			"hp": 10,
@@ -38652,8 +38144,7 @@
 		{
 			"number": 200,
 			"image": "200",
-			"commonCry": "200_Common",
-			"happyCry": "200_Happy",
+			"cry": "200",
 			"species": "Misdreavus",
 			"type": "Ghost",
 			"hp": 6,
@@ -38731,8 +38222,7 @@
 		{
 			"number": 201,
 			"image": "201",
-			"commonCry": "201_Common",
-			"happyCry": "201_Happy",
+			"cry": "201",
 			"species": "Unown",
 			"type": "Psychic",
 			"hp": 5,
@@ -38794,8 +38284,7 @@
 		{
 			"number": 202,
 			"image": "202",
-			"commonCry": "202_Common",
-			"happyCry": "202_Happy",
+			"cry": "202",
 			"species": "Wobbuffet",
 			"type": "Psychic",
 			"hp": 19,
@@ -38856,8 +38345,7 @@
 		{
 			"number": 203,
 			"image": "203",
-			"commonCry": "203_Common",
-			"happyCry": "203_Happy",
+			"cry": "203",
 			"species": "Girafarig",
 			"type": "Normal / Psycic",
 			"hp": 7,
@@ -38929,8 +38417,7 @@
 		{
 			"number": 204,
 			"image": "204",
-			"commonCry": "204_Common",
-			"happyCry": "204_Happy",
+			"cry": "204",
 			"species": "Pineco",
 			"type": "Bug",
 			"hp": 5,
@@ -39006,8 +38493,7 @@
 		{
 			"number": 205,
 			"image": "205",
-			"commonCry": "205_Common",
-			"happyCry": "205_Happy",
+			"cry": "205",
 			"species": "Forretress",
 			"type": "Bug / Steel",
 			"hp": 8,
@@ -39084,8 +38570,7 @@
 		{
 			"number": 206,
 			"image": "206",
-			"commonCry": "206_Common",
-			"happyCry": "206_Happy",
+			"cry": "206",
 			"species": "Dunsparce",
 			"type": "Normal",
 			"hp": 10,
@@ -39163,8 +38648,7 @@
 		{
 			"number": 207,
 			"image": "207",
-			"commonCry": "207_Common",
-			"happyCry": "207_Happy",
+			"cry": "207",
 			"species": "Gligar",
 			"type": "Ground / Flying",
 			"hp": 7,
@@ -39239,8 +38723,7 @@
 		{
 			"number": 208,
 			"image": "208",
-			"commonCry": "208_Common",
-			"happyCry": "208_Happy",
+			"cry": "208",
 			"species": "Steelix",
 			"type": "Steel / Ground",
 			"hp": 8,
@@ -39319,8 +38802,7 @@
 		{
 			"number": 209,
 			"image": "209",
-			"commonCry": "209_Common",
-			"happyCry": "209_Happy",
+			"cry": "209",
 			"species": "Snubbull",
 			"type": "Fairy",
 			"hp": 6,
@@ -39393,8 +38875,7 @@
 		{
 			"number": 210,
 			"image": "210",
-			"commonCry": "210_Common",
-			"happyCry": "210_Happy",
+			"cry": "210",
 			"species": "Granbull",
 			"type": "Fairy",
 			"hp": 9,
@@ -39461,8 +38942,7 @@
 		{
 			"number": 211,
 			"image": "211",
-			"commonCry": "211_Common",
-			"happyCry": "211_Happy",
+			"cry": "211",
 			"species": "Qwilfish",
 			"type": "Water / Poison",
 			"hp": 7,
@@ -39540,8 +39020,7 @@
 		{
 			"number": 212,
 			"image": "212",
-			"commonCry": "212_Common",
-			"happyCry": "212_Happy",
+			"cry": "212",
 			"species": "Scizor",
 			"type": "Bug / Steel",
 			"hp": 7,
@@ -39617,8 +39096,7 @@
 		{
 			"number": 213,
 			"image": "213",
-			"commonCry": "213_Common",
-			"happyCry": "213_Happy",
+			"cry": "213",
 			"species": "Shuckle",
 			"type": "Bug / Rock",
 			"hp": 2,
@@ -39695,8 +39173,7 @@
 		{
 			"number": 432,
 			"image": "432",
-			"commonCry": "432_Common",
-			"happyCry": "432_Happy",
+			"cry": "432",
 			"species": "Purugly",
 			"type": "Normal",
 			"hp": 7,
@@ -39769,8 +39246,7 @@
 		{
 			"number": 431,
 			"image": "431",
-			"commonCry": "431_Common",
-			"happyCry": "431_Happy",
+			"cry": "431",
 			"species": "Glameow",
 			"type": "Normal",
 			"hp": 5,
@@ -39845,8 +39321,7 @@
 		{
 			"number": 430,
 			"image": "430",
-			"commonCry": "430_Common",
-			"happyCry": "430_Happy",
+			"cry": "430",
 			"species": "Honchkrow",
 			"type": "Dark / Flying",
 			"hp": 10,
@@ -39926,8 +39401,7 @@
 		{
 			"number": 429,
 			"image": "429",
-			"commonCry": "429_Common",
-			"happyCry": "429_Happy",
+			"cry": "429",
 			"species": "Mismagius",
 			"type": "Ghost",
 			"hp": 6,
@@ -40003,8 +39477,7 @@
 		{
 			"number": 428,
 			"image": "428",
-			"commonCry": "428_Common",
-			"happyCry": "428_Happy",
+			"cry": "428",
 			"species": "Lopunny",
 			"type": "Normal",
 			"hp": 7,
@@ -40075,8 +39548,7 @@
 		{
 			"number": 427,
 			"image": "427",
-			"commonCry": "427_Common",
-			"happyCry": "427_Happy",
+			"cry": "427",
 			"species": "Buneary",
 			"type": "Normal",
 			"hp": 6,
@@ -40153,8 +39625,7 @@
 		{
 			"number": 426,
 			"image": "426",
-			"commonCry": "426_Common",
-			"happyCry": "426_Happy",
+			"cry": "426",
 			"species": "Drifblim",
 			"type": "Ghost / Flying",
 			"hp": 15,
@@ -40230,8 +39701,7 @@
 		{
 			"number": 425,
 			"image": "425",
-			"commonCry": "425_Common",
-			"happyCry": "425_Happy",
+			"cry": "425",
 			"species": "Drifloon",
 			"type": "Ghost / Flying",
 			"hp": 9,
@@ -40310,8 +39780,7 @@
 		{
 			"number": 424,
 			"image": "424",
-			"commonCry": "424_Common",
-			"happyCry": "424_Happy",
+			"cry": "424",
 			"species": "Ambipom",
 			"type": "Normal",
 			"hp": 8,
@@ -40381,8 +39850,7 @@
 		{
 			"number": 423,
 			"image": "423",
-			"commonCry": "423_Common",
-			"happyCry": "423_Happy",
+			"cry": "423",
 			"species": "Gastrodon",
 			"type": "Water / Ground",
 			"hp": 11,
@@ -40452,8 +39920,7 @@
 		{
 			"number": 422,
 			"image": "422",
-			"commonCry": "422_Common",
-			"happyCry": "422_Happy",
+			"cry": "422",
 			"species": "Shellos",
 			"type": "Water",
 			"hp": 8,
@@ -40526,8 +39993,7 @@
 		{
 			"number": 421,
 			"image": "421",
-			"commonCry": "421_Common",
-			"happyCry": "421_Happy",
+			"cry": "421",
 			"species": "Cherrim",
 			"type": "Grass",
 			"hp": 7,
@@ -40597,8 +40063,7 @@
 		{
 			"number": 420,
 			"image": "420",
-			"commonCry": "420_Common",
-			"happyCry": "420_Happy",
+			"cry": "420",
 			"species": "Cherubi",
 			"type": "Grass",
 			"hp": 5,
@@ -40670,8 +40135,7 @@
 		{
 			"number": 419,
 			"image": "419",
-			"commonCry": "419_Common",
-			"happyCry": "419_Happy",
+			"cry": "419",
 			"species": "Floatzel",
 			"type": "Water",
 			"hp": 9,
@@ -40743,8 +40207,7 @@
 		{
 			"number": 418,
 			"image": "418",
-			"commonCry": "418_Common",
-			"happyCry": "418_Happy",
+			"cry": "418",
 			"species": "Buizel",
 			"type": "Water",
 			"hp": 6,
@@ -40819,8 +40282,7 @@
 		{
 			"number": 417,
 			"image": "417",
-			"commonCry": "417_Common",
-			"happyCry": "417_Happy",
+			"cry": "417",
 			"species": "Pachirisu",
 			"type": "Electric",
 			"hp": 6,
@@ -40895,8 +40357,7 @@
 		{
 			"number": 416,
 			"image": "416",
-			"commonCry": "416_Common",
-			"happyCry": "416_Happy",
+			"cry": "416",
 			"species": "Vespiquen",
 			"type": "Bug / Flying",
 			"hp": 7,
@@ -40970,8 +40431,7 @@
 		{
 			"number": 415,
 			"image": "415",
-			"commonCry": "415_Common",
-			"happyCry": "415_Happy",
+			"cry": "415",
 			"species": "Combee",
 			"type": "Bug / Flying",
 			"hp": 3,
@@ -41036,8 +40496,7 @@
 		{
 			"number": 414,
 			"image": "414",
-			"commonCry": "414_Common",
-			"happyCry": "414_Happy",
+			"cry": "414",
 			"species": "Mothim",
 			"type": "Bug / Flying",
 			"hp": 7,
@@ -41111,8 +40570,7 @@
 		{
 			"number": 413,
 			"image": "413",
-			"commonCry": "413_Common",
-			"happyCry": "413_Happy",
+			"cry": "413",
 			"species": "Wormadam (Plant Cloak)",
 			"type": "Bug / Grass",
 			"hp": 6,
@@ -41186,8 +40644,7 @@
 		{
 			"number": 412,
 			"image": "412",
-			"commonCry": "412_Common",
-			"happyCry": "412_Happy",
+			"cry": "412",
 			"species": "Burmy",
 			"type": "Bug",
 			"hp": 4,
@@ -41255,8 +40712,7 @@
 		{
 			"number": 411,
 			"image": "411",
-			"commonCry": "411_Common",
-			"happyCry": "411_Happy",
+			"cry": "411",
 			"species": "Bastiodon",
 			"type": "Rock / Steel",
 			"hp": 6,
@@ -41326,8 +40782,7 @@
 		{
 			"number": 410,
 			"image": "410",
-			"commonCry": "410_Common",
-			"happyCry": "410_Happy",
+			"cry": "410",
 			"species": "Shieldon",
 			"type": "Rock / Steel",
 			"hp": 3,
@@ -41399,8 +40854,7 @@
 		{
 			"number": 409,
 			"image": "409",
-			"commonCry": "409_Common",
-			"happyCry": "409_Happy",
+			"cry": "409",
 			"species": "Rampardos",
 			"type": "Rock",
 			"hp": 10,
@@ -41469,8 +40923,7 @@
 		{
 			"number": 408,
 			"image": "408",
-			"commonCry": "408_Common",
-			"happyCry": "408_Happy",
+			"cry": "408",
 			"species": "Cranidos",
 			"type": "Rock",
 			"hp": 7,
@@ -41541,8 +40994,7 @@
 		{
 			"number": 407,
 			"image": "407",
-			"commonCry": "407_Common",
-			"happyCry": "407_Happy",
+			"cry": "407",
 			"species": "Roserade",
 			"type": "Grass / Poison",
 			"hp": 6,
@@ -41617,8 +41069,7 @@
 		{
 			"number": 406,
 			"image": "406",
-			"commonCry": "406_Common",
-			"happyCry": "406_Happy",
+			"cry": "406",
 			"species": "Budew",
 			"type": "Grass / Poison",
 			"hp": 4,
@@ -41685,8 +41136,7 @@
 		{
 			"number": 405,
 			"image": "405",
-			"commonCry": "405_Common",
-			"happyCry": "405_Happy",
+			"cry": "405",
 			"species": "Luxray",
 			"type": "Electric",
 			"hp": 8,
@@ -41762,8 +41212,7 @@
 		{
 			"number": 404,
 			"image": "404",
-			"commonCry": "404_Common",
-			"happyCry": "404_Happy",
+			"cry": "404",
 			"species": "Luxio",
 			"type": "Electric",
 			"hp": 6,
@@ -41836,8 +41285,7 @@
 		{
 			"number": 403,
 			"image": "403",
-			"commonCry": "403_Common",
-			"happyCry": "403_Happy",
+			"cry": "403",
 			"species": "Shinx",
 			"type": "Electric",
 			"hp": 5,
@@ -41913,8 +41361,7 @@
 		{
 			"number": 402,
 			"image": "402",
-			"commonCry": "402_Common",
-			"happyCry": "402_Happy",
+			"cry": "402",
 			"species": "Kricketune",
 			"type": "Bug",
 			"hp": 8,
@@ -41986,8 +41433,7 @@
 		{
 			"number": 401,
 			"image": "401",
-			"commonCry": "401_Common",
-			"happyCry": "401_Happy",
+			"cry": "401",
 			"species": "Kricketot",
 			"type": "Bug",
 			"hp": 4,
@@ -42051,8 +41497,7 @@
 		{
 			"number": 400,
 			"image": "400",
-			"commonCry": "400_Common",
-			"happyCry": "400_Happy",
+			"cry": "400",
 			"species": "Bibarel",
 			"type": "Normal / Water",
 			"hp": 8,
@@ -42124,8 +41569,7 @@
 		{
 			"number": 399,
 			"image": "399",
-			"commonCry": "399_Common",
-			"happyCry": "399_Happy",
+			"cry": "399",
 			"species": "Bidoof",
 			"type": "Normal",
 			"hp": 6,
@@ -42197,8 +41641,7 @@
 		{
 			"number": 398,
 			"image": "398",
-			"commonCry": "398_Common",
-			"happyCry": "398_Happy",
+			"cry": "398",
 			"species": "Staraptor",
 			"type": "Normal / Flying",
 			"hp": 9,
@@ -42270,8 +41713,7 @@
 		{
 			"number": 397,
 			"image": "397",
-			"commonCry": "397_Common",
-			"happyCry": "397_Happy",
+			"cry": "397",
 			"species": "Staravia",
 			"type": "Normal / Flying",
 			"hp": 6,
@@ -42341,8 +41783,7 @@
 		{
 			"number": 396,
 			"image": "396",
-			"commonCry": "396_Common",
-			"happyCry": "396_Happy",
+			"cry": "396",
 			"species": "Starly",
 			"type": "Normal / Flying",
 			"hp": 4,
@@ -42415,8 +41856,7 @@
 		{
 			"number": 395,
 			"image": "395",
-			"commonCry": "395_Common",
-			"happyCry": "395_Happy",
+			"cry": "395",
 			"species": "Empoleon",
 			"type": "Water / Steel",
 			"hp": 8,
@@ -42490,8 +41930,7 @@
 		{
 			"number": 394,
 			"image": "394",
-			"commonCry": "394_Common",
-			"happyCry": "394_Happy",
+			"cry": "394",
 			"species": "Prinplup",
 			"type": "Water",
 			"hp": 6,
@@ -42565,8 +42004,7 @@
 		{
 			"number": 393,
 			"image": "393",
-			"commonCry": "393_Common",
-			"happyCry": "393_Happy",
+			"cry": "393",
 			"species": "Piplup",
 			"type": "Water",
 			"hp": 5,
@@ -42641,8 +42079,7 @@
 		{
 			"number": 392,
 			"image": "392",
-			"commonCry": "392_Common",
-			"happyCry": "392_Happy",
+			"cry": "392",
 			"species": "Infernape",
 			"type": "Fire / Fighting",
 			"hp": 8,
@@ -42716,8 +42153,7 @@
 		{
 			"number": 391,
 			"image": "391",
-			"commonCry": "391_Common",
-			"happyCry": "391_Happy",
+			"cry": "391",
 			"species": "Monferno",
 			"type": "Fire / Fighting",
 			"hp": 6,
@@ -42792,8 +42228,7 @@
 		{
 			"number": 390,
 			"image": "390",
-			"commonCry": "390_Common",
-			"happyCry": "390_Happy",
+			"cry": "390",
 			"species": "Chimchar",
 			"type": "Fire",
 			"hp": 4,
@@ -42869,8 +42304,7 @@
 		{
 			"number": 389,
 			"image": "389",
-			"commonCry": "389_Common",
-			"happyCry": "389_Happy",
+			"cry": "389",
 			"species": "Torterra",
 			"type": "Grass / Ground",
 			"hp": 10,
@@ -42944,8 +42378,7 @@
 		{
 			"number": 388,
 			"image": "388",
-			"commonCry": "388_Common",
-			"happyCry": "388_Happy",
+			"cry": "388",
 			"species": "Grotle",
 			"type": "Grass",
 			"hp": 8,
@@ -43016,8 +42449,7 @@
 		{
 			"number": 387,
 			"image": "387",
-			"commonCry": "387_Common",
-			"happyCry": "387_Happy",
+			"cry": "387",
 			"species": "Turtwig",
 			"type": "Grass",
 			"hp": 6,
@@ -43091,8 +42523,7 @@
 		{
 			"number": 386,
 			"image": "386",
-			"commonCry": "386_Common",
-			"happyCry": "386_Happy",
+			"cry": "386",
 			"species": "Deoxys (Normal Form)",
 			"type": "Psychic",
 			"hp": 5,
@@ -43167,8 +42598,7 @@
 		{
 			"number": 386,
 			"image": "386_Attack",
-			"commonCry": "386_Common",
-			"happyCry": "386_Happy",
+			"cry": "386",
 			"species": "Deoxys (Attack Form)",
 			"type": "Psychic",
 			"hp": 5,
@@ -43243,8 +42673,7 @@
 		{
 			"number": 386,
 			"image": "386_Defense",
-			"commonCry": "386_Common",
-			"happyCry": "386_Happy",
+			"cry": "386",
 			"species": "Deoxys (Defense Form)",
 			"type": "Psychic",
 			"hp": 5,
@@ -43321,8 +42750,7 @@
 		{
 			"number": 386,
 			"image": "386_Speed",
-			"commonCry": "386_Common",
-			"happyCry": "386_Happy",
+			"cry": "386",
 			"species": "Deoxys (Speed Form)",
 			"type": "Psychic",
 			"hp": 5,
@@ -43397,8 +42825,7 @@
 		{
 			"number": 413,
 			"image": "413_Sand",
-			"commonCry": "413_Common",
-			"happyCry": "413_Happy",
+			"cry": "413",
 			"species": "Wormadam (Sandy Cloak)",
 			"type": "Bug / Ground",
 			"hp": 7,
@@ -43472,8 +42899,7 @@
 		{
 			"number": 413,
 			"image": "413_Trash",
-			"commonCry": "413_Common",
-			"happyCry": "413_Happy",
+			"cry": "413",
 			"species": "Wormadam (Trash Cloak)",
 			"type": "Bug / Steel",
 			"hp": 6,
@@ -43546,8 +42972,7 @@
 		{
 			"number": 384,
 			"image": "384",
-			"commonCry": "384_Common",
-			"happyCry": "384_Happy",
+			"cry": "384",
 			"species": "Rayquaza",
 			"type": "Dragon / Flying",
 			"hp": 11,
@@ -43625,8 +43050,7 @@
 		{
 			"number": 383,
 			"image": "383",
-			"commonCry": "383_Common",
-			"happyCry": "383_Happy",
+			"cry": "383",
 			"species": "Groudon",
 			"type": "Ground",
 			"hp": 10,
@@ -43706,8 +43130,7 @@
 		{
 			"number": 382,
 			"image": "382",
-			"commonCry": "382_Common",
-			"happyCry": "382_Happy",
+			"cry": "382",
 			"species": "Kyogre",
 			"type": "Water",
 			"hp": 10,
@@ -43783,8 +43206,7 @@
 		{
 			"number": 381,
 			"image": "381",
-			"commonCry": "381_Common",
-			"happyCry": "381_Happy",
+			"cry": "381",
 			"species": "Latios",
 			"type": "Dragon / Psychic",
 			"hp": 8,
@@ -43866,8 +43288,7 @@
 		{
 			"number": 380,
 			"image": "380",
-			"commonCry": "380_Common",
-			"happyCry": "380_Happy",
+			"cry": "380",
 			"species": "Latias",
 			"type": "Dragon / Psychic",
 			"hp": 8,
@@ -43949,8 +43370,7 @@
 		{
 			"number": 379,
 			"image": "379",
-			"commonCry": "379_Common",
-			"happyCry": "379_Happy",
+			"cry": "379",
 			"species": "Registeel",
 			"type": "Steel",
 			"hp": 8,
@@ -44025,8 +43445,7 @@
 		{
 			"number": 378,
 			"image": "378",
-			"commonCry": "378_Common",
-			"happyCry": "378_Happy",
+			"cry": "378",
 			"species": "Regice",
 			"type": "Ice",
 			"hp": 8,
@@ -44099,8 +43518,7 @@
 		{
 			"number": 377,
 			"image": "377",
-			"commonCry": "377_Common",
-			"happyCry": "377_Happy",
+			"cry": "377",
 			"species": "Regirock",
 			"type": "Rock",
 			"hp": 8,
@@ -44174,8 +43592,7 @@
 		{
 			"number": 376,
 			"image": "376",
-			"commonCry": "376_Common",
-			"happyCry": "376_Happy",
+			"cry": "376",
 			"species": "Metagross",
 			"type": "Steel / Psychic",
 			"hp": 8,
@@ -44249,8 +43666,7 @@
 		{
 			"number": 375,
 			"image": "375",
-			"commonCry": "375_Common",
-			"happyCry": "375_Happy",
+			"cry": "375",
 			"species": "Metang",
 			"type": "Steel / Psychic",
 			"hp": 6,
@@ -44324,8 +43740,7 @@
 		{
 			"number": 374,
 			"image": "374",
-			"commonCry": "374_Common",
-			"happyCry": "374_Happy",
+			"cry": "374",
 			"species": "Beldum",
 			"type": "Steel / Psychic",
 			"hp": 4,
@@ -44388,8 +43803,7 @@
 		{
 			"number": 373,
 			"image": "373",
-			"commonCry": "373_Common",
-			"happyCry": "373_Happy",
+			"cry": "373",
 			"species": "Salamence",
 			"type": "Dragon / Flying",
 			"hp": 10,
@@ -44463,8 +43877,7 @@
 		{
 			"number": 372,
 			"image": "372",
-			"commonCry": "372_Common",
-			"happyCry": "372_Happy",
+			"cry": "372",
 			"species": "Shelgon",
 			"type": "Dragon",
 			"hp": 7,
@@ -44536,8 +43949,7 @@
 		{
 			"number": 371,
 			"image": "371",
-			"commonCry": "371_Common",
-			"happyCry": "371_Happy",
+			"cry": "371",
 			"species": "Bagon",
 			"type": "Dragon",
 			"hp": 5,
@@ -44610,8 +44022,7 @@
 		{
 			"number": 370,
 			"image": "370",
-			"commonCry": "370_Common",
-			"happyCry": "370_Happy",
+			"cry": "370",
 			"species": "Luvdisc",
 			"type": "Water",
 			"hp": 4,
@@ -44687,8 +44098,7 @@
 		{
 			"number": 369,
 			"image": "369",
-			"commonCry": "369_Common",
-			"happyCry": "369_Happy",
+			"cry": "369",
 			"species": "Relicanth",
 			"type": "Water / Rock",
 			"hp": 10,
@@ -44761,8 +44171,7 @@
 		{
 			"number": 368,
 			"image": "368",
-			"commonCry": "368_Common",
-			"happyCry": "368_Happy",
+			"cry": "368",
 			"species": "Gorebyss",
 			"type": "Water",
 			"hp": 6,
@@ -44837,8 +44246,7 @@
 		{
 			"number": 367,
 			"image": "367",
-			"commonCry": "367_Common",
-			"happyCry": "367_Happy",
+			"cry": "367",
 			"species": "Huntail",
 			"type": "Water",
 			"hp": 6,
@@ -44913,8 +44321,7 @@
 		{
 			"number": 366,
 			"image": "366",
-			"commonCry": "366_Common",
-			"happyCry": "366_Happy",
+			"cry": "366",
 			"species": "Clamperl",
 			"type": "Water",
 			"hp": 4,
@@ -44982,8 +44389,7 @@
 		{
 			"number": 365,
 			"image": "365",
-			"commonCry": "365_Common",
-			"happyCry": "365_Happy",
+			"cry": "365",
 			"species": "Walrein",
 			"type": "Ice / Water",
 			"hp": 11,
@@ -45058,8 +44464,7 @@
 		{
 			"number": 364,
 			"image": "364",
-			"commonCry": "364_Common",
-			"happyCry": "364_Happy",
+			"cry": "364",
 			"species": "Sealeo",
 			"type": "Ice / Water",
 			"hp": 9,
@@ -45131,8 +44536,7 @@
 		{
 			"number": 363,
 			"image": "363",
-			"commonCry": "363_Common",
-			"happyCry": "363_Happy",
+			"cry": "363",
 			"species": "Spheal",
 			"type": "Ice / Water",
 			"hp": 7,
@@ -45208,8 +44612,7 @@
 		{
 			"number": 362,
 			"image": "362",
-			"commonCry": "362_Common",
-			"happyCry": "362_Happy",
+			"cry": "362",
 			"species": "Glalie",
 			"type": "Ice",
 			"hp": 8,
@@ -45283,8 +44686,7 @@
 		{
 			"number": 361,
 			"image": "361",
-			"commonCry": "361_Common",
-			"happyCry": "361_Happy",
+			"cry": "361",
 			"species": "Snorunt",
 			"type": "Ice",
 			"hp": 5,
@@ -45360,8 +44762,7 @@
 		{
 			"number": 360,
 			"image": "360",
-			"commonCry": "360_Common",
-			"happyCry": "360_Happy",
+			"cry": "360",
 			"species": "Wynaut",
 			"type": "Psychic",
 			"hp": 10,
@@ -45427,8 +44828,7 @@
 		{
 			"number": 359,
 			"image": "359",
-			"commonCry": "359_Common",
-			"happyCry": "359_Happy",
+			"cry": "359",
 			"species": "Absol",
 			"type": "Dark",
 			"hp": 7,
@@ -45508,8 +44908,7 @@
 		{
 			"number": 358,
 			"image": "358",
-			"commonCry": "358_Common",
-			"happyCry": "358_Happy",
+			"cry": "358",
 			"species": "Chimecho",
 			"type": "Psychic",
 			"hp": 7,
@@ -45583,8 +44982,7 @@
 		{
 			"number": 357,
 			"image": "357",
-			"commonCry": "357_Common",
-			"happyCry": "357_Happy",
+			"cry": "357",
 			"species": "Tropius",
 			"type": "Grass / Flying",
 			"hp": 10,
@@ -45662,8 +45060,7 @@
 		{
 			"number": 354,
 			"image": "354",
-			"commonCry": "354_Common",
-			"happyCry": "354_Happy",
+			"cry": "354",
 			"species": "Banette",
 			"type": "Ghost",
 			"hp": 6,
@@ -45741,8 +45138,7 @@
 		{
 			"number": 353,
 			"image": "353",
-			"commonCry": "353_Common",
-			"happyCry": "353_Happy",
+			"cry": "353",
 			"species": "Shuppet",
 			"type": "Ghost",
 			"hp": 4,
@@ -45822,8 +45218,7 @@
 		{
 			"number": 352,
 			"image": "352",
-			"commonCry": "352_Common",
-			"happyCry": "352_Happy",
+			"cry": "352",
 			"species": "Kecleon",
 			"type": "Normal",
 			"hp": 6,
@@ -45900,8 +45295,7 @@
 		{
 			"number": 351,
 			"image": "351",
-			"commonCry": "351_Common",
-			"happyCry": "351_Happy",
+			"cry": "351",
 			"species": "Castform",
 			"type": "Normal",
 			"hp": 7,
@@ -45974,8 +45368,7 @@
 		{
 			"number": 350,
 			"image": "350",
-			"commonCry": "350_Common",
-			"happyCry": "350_Happy",
+			"cry": "350",
 			"species": "Milotic",
 			"type": "Water",
 			"hp": 10,
@@ -46051,8 +45444,7 @@
 		{
 			"number": 349,
 			"image": "349",
-			"commonCry": "349_Common",
-			"happyCry": "349_Happy",
+			"cry": "349",
 			"species": "Feebas",
 			"type": "Water",
 			"hp": 2,
@@ -46118,8 +45510,7 @@
 		{
 			"number": 348,
 			"image": "348",
-			"commonCry": "348_Common",
-			"happyCry": "348_Happy",
+			"cry": "348",
 			"species": "Armaldo",
 			"type": "Rock / Bug",
 			"hp": 8,
@@ -46191,8 +45582,7 @@
 		{
 			"number": 347,
 			"image": "347",
-			"commonCry": "347_Common",
-			"happyCry": "347_Happy",
+			"cry": "347",
 			"species": "Anorith",
 			"type": "Rock / Bug",
 			"hp": 5,
@@ -46269,8 +45659,7 @@
 		{
 			"number": 346,
 			"image": "346",
-			"commonCry": "346_Common",
-			"happyCry": "346_Happy",
+			"cry": "346",
 			"species": "Cradily",
 			"type": "Rock / Grass",
 			"hp": 9,
@@ -46341,8 +45730,7 @@
 		{
 			"number": 345,
 			"image": "345",
-			"commonCry": "345_Common",
-			"happyCry": "345_Happy",
+			"cry": "345",
 			"species": "Lileep",
 			"type": "Rock / Grass",
 			"hp": 7,
@@ -46417,8 +45805,7 @@
 		{
 			"number": 344,
 			"image": "344",
-			"commonCry": "344_Common",
-			"happyCry": "344_Happy",
+			"cry": "344",
 			"species": "Claydol",
 			"type": "Ground / Psychic",
 			"hp": 6,
@@ -46495,8 +45882,7 @@
 		{
 			"number": 343,
 			"image": "343",
-			"commonCry": "343_Common",
-			"happyCry": "343_Happy",
+			"cry": "343",
 			"species": "Baltoy",
 			"type": "Ground / Psychic",
 			"hp": 4,
@@ -46575,8 +45961,7 @@
 		{
 			"number": 342,
 			"image": "342",
-			"commonCry": "342_Common",
-			"happyCry": "342_Happy",
+			"cry": "342",
 			"species": "Crawdaunt",
 			"type": "Water / Dark",
 			"hp": 6,
@@ -46651,8 +46036,7 @@
 		{
 			"number": 341,
 			"image": "341",
-			"commonCry": "341_Common",
-			"happyCry": "341_Happy",
+			"cry": "341",
 			"species": "Corphish",
 			"type": "Water",
 			"hp": 4,
@@ -46728,8 +46112,7 @@
 		{
 			"number": 340,
 			"image": "340",
-			"commonCry": "340_Common",
-			"happyCry": "340_Happy",
+			"cry": "340",
 			"species": "Whiscash",
 			"type": "Water / Ground",
 			"hp": 11,
@@ -46806,8 +46189,7 @@
 		{
 			"number": 339,
 			"image": "339",
-			"commonCry": "339_Common",
-			"happyCry": "339_Happy",
+			"cry": "339",
 			"species": "Barboach",
 			"type": "Water / Ground",
 			"hp": 5,
@@ -46885,8 +46267,7 @@
 		{
 			"number": 338,
 			"image": "338",
-			"commonCry": "338_Common",
-			"happyCry": "338_Happy",
+			"cry": "338",
 			"species": "Solrock",
 			"type": "Rock / Psychic",
 			"hp": 7,
@@ -46962,8 +46343,7 @@
 		{
 			"number": 337,
 			"image": "337",
-			"commonCry": "337_Common",
-			"happyCry": "337_Happy",
+			"cry": "337",
 			"species": "Lunatone",
 			"type": "Rock / Psychic",
 			"hp": 7,
@@ -47039,8 +46419,7 @@
 		{
 			"number": 336,
 			"image": "336",
-			"commonCry": "336_Common",
-			"happyCry": "336_Happy",
+			"cry": "336",
 			"species": "Seviper",
 			"type": "Poison",
 			"hp": 7,
@@ -47117,8 +46496,7 @@
 		{
 			"number": 335,
 			"image": "335",
-			"commonCry": "335_Common",
-			"happyCry": "335_Happy",
+			"cry": "335",
 			"species": "Zangoose",
 			"type": "Normal",
 			"hp": 7,
@@ -47192,8 +46570,7 @@
 		{
 			"number": 334,
 			"image": "334",
-			"commonCry": "334_Common",
-			"happyCry": "334_Happy",
+			"cry": "334",
 			"species": "Altaria",
 			"type": "Dragon / Flying",
 			"hp": 8,
@@ -47269,8 +46646,7 @@
 		{
 			"number": 333,
 			"image": "333",
-			"commonCry": "333_Common",
-			"happyCry": "333_Happy",
+			"cry": "333",
 			"species": "Swablu",
 			"type": "Normal / Flying",
 			"hp": 5,
@@ -47348,8 +46724,7 @@
 		{
 			"number": 332,
 			"image": "332",
-			"commonCry": "332_Common",
-			"happyCry": "332_Happy",
+			"cry": "332",
 			"species": "Cacturne",
 			"type": "Grass / Dark",
 			"hp": 7,
@@ -47425,8 +46800,7 @@
 		{
 			"number": 331,
 			"image": "331",
-			"commonCry": "331_Common",
-			"happyCry": "331_Happy",
+			"cry": "331",
 			"species": "Cacnea",
 			"type": "Grass",
 			"hp": 5,
@@ -47503,8 +46877,7 @@
 		{
 			"number": 330,
 			"image": "330",
-			"commonCry": "330_Common",
-			"happyCry": "330_Happy",
+			"cry": "330",
 			"species": "Flygon",
 			"type": "Ground / Dragon",
 			"hp": 8,
@@ -47584,8 +46957,7 @@
 		{
 			"number": 329,
 			"image": "329",
-			"commonCry": "329_Common",
-			"happyCry": "329_Happy",
+			"cry": "329",
 			"species": "Vibrava",
 			"type": "Ground / Dragon",
 			"hp": 5,
@@ -47665,8 +47037,7 @@
 		{
 			"number": 328,
 			"image": "328",
-			"commonCry": "328_Common",
-			"happyCry": "328_Happy",
+			"cry": "328",
 			"species": "Trapinch",
 			"type": "Ground",
 			"hp": 5,
@@ -47745,8 +47116,7 @@
 		{
 			"number": 327,
 			"image": "327",
-			"commonCry": "327_Common",
-			"happyCry": "327_Happy",
+			"cry": "327",
 			"species": "Spinda",
 			"type": "Normal",
 			"hp": 6,
@@ -47817,8 +47187,7 @@
 		{
 			"number": 326,
 			"image": "326",
-			"commonCry": "326_Common",
-			"happyCry": "326_Happy",
+			"cry": "326",
 			"species": "Grumpig",
 			"type": "Psychic",
 			"hp": 8,
@@ -47891,8 +47260,7 @@
 		{
 			"number": 325,
 			"image": "325",
-			"commonCry": "325_Common",
-			"happyCry": "325_Happy",
+			"cry": "325",
 			"species": "Spoink",
 			"type": "Psychic",
 			"hp": 6,
@@ -47967,8 +47335,7 @@
 		{
 			"number": 324,
 			"image": "324",
-			"commonCry": "324_Common",
-			"happyCry": "324_Happy",
+			"cry": "324",
 			"species": "Torkoal",
 			"type": "Fire",
 			"hp": 7,
@@ -48044,8 +47411,7 @@
 		{
 			"number": 323,
 			"image": "323",
-			"commonCry": "323_Common",
-			"happyCry": "323_Happy",
+			"cry": "323",
 			"species": "Camerupt",
 			"type": "Fire / Ground",
 			"hp": 7,
@@ -48121,8 +47487,7 @@
 		{
 			"number": 322,
 			"image": "322",
-			"commonCry": "322_Common",
-			"happyCry": "322_Happy",
+			"cry": "322",
 			"species": "Numel",
 			"type": "Fire / Ground",
 			"hp": 6,
@@ -48198,8 +47563,7 @@
 		{
 			"number": 321,
 			"image": "321",
-			"commonCry": "321_Common",
-			"happyCry": "321_Happy",
+			"cry": "321",
 			"species": "Wailord",
 			"type": "Water",
 			"hp": 17,
@@ -48276,8 +47640,7 @@
 		{
 			"number": 320,
 			"image": "320",
-			"commonCry": "320_Common",
-			"happyCry": "320_Happy",
+			"cry": "320",
 			"species": "Wailmer",
 			"type": "Water",
 			"hp": 13,
@@ -48355,8 +47718,7 @@
 		{
 			"number": 319,
 			"image": "319",
-			"commonCry": "319_Common",
-			"happyCry": "319_Happy",
+			"cry": "319",
 			"species": "Sharpedo",
 			"type": "Water / Dark",
 			"hp": 7,
@@ -48432,8 +47794,7 @@
 		{
 			"number": 318,
 			"image": "318",
-			"commonCry": "318_Common",
-			"happyCry": "318_Happy",
+			"cry": "318",
 			"species": "Carvanha",
 			"type": "Water / Dark",
 			"hp": 5,
@@ -48510,8 +47871,7 @@
 		{
 			"number": 317,
 			"image": "317",
-			"commonCry": "317_Common",
-			"happyCry": "317_Happy",
+			"cry": "317",
 			"species": "Swalot",
 			"type": "Poison",
 			"hp": 10,
@@ -48588,8 +47948,7 @@
 		{
 			"number": 316,
 			"image": "316",
-			"commonCry": "316_Common",
-			"happyCry": "316_Happy",
+			"cry": "316",
 			"species": "Gulpin",
 			"type": "Poison",
 			"hp": 7,
@@ -48667,8 +48026,7 @@
 		{
 			"number": 315,
 			"image": "315",
-			"commonCry": "315_Common",
-			"happyCry": "315_Happy",
+			"cry": "315",
 			"species": "Roselia",
 			"type": "Grass / Poison",
 			"hp": 5,
@@ -48744,8 +48102,7 @@
 		{
 			"number": 314,
 			"image": "314",
-			"commonCry": "314_Common",
-			"happyCry": "314_Happy",
+			"cry": "314",
 			"species": "Illumise",
 			"type": "Bug",
 			"hp": 7,
@@ -48821,8 +48178,7 @@
 		{
 			"number": 313,
 			"image": "313",
-			"commonCry": "313_Common",
-			"happyCry": "313_Happy",
+			"cry": "313",
 			"species": "Volbeat",
 			"type": "Bug",
 			"hp": 7,
@@ -48898,8 +48254,7 @@
 		{
 			"number": 312,
 			"image": "312",
-			"commonCry": "312_Common",
-			"happyCry": "312_Happy",
+			"cry": "312",
 			"species": "Minun",
 			"type": "Electric",
 			"hp": 6,
@@ -48979,8 +48334,7 @@
 		{
 			"number": 311,
 			"image": "311",
-			"commonCry": "311_Common",
-			"happyCry": "311_Happy",
+			"cry": "311",
 			"species": "Plusle",
 			"type": "Electric",
 			"hp": 6,
@@ -49060,8 +48414,7 @@
 		{
 			"number": 310,
 			"image": "310",
-			"commonCry": "310_Common",
-			"happyCry": "310_Happy",
+			"cry": "310",
 			"species": "Manectric",
 			"type": "Electric",
 			"hp": 7,
@@ -49134,8 +48487,7 @@
 		{
 			"number": 309,
 			"image": "309",
-			"commonCry": "309_Common",
-			"happyCry": "309_Happy",
+			"cry": "309",
 			"species": "Electrike",
 			"type": "Electric",
 			"hp": 4,
@@ -49211,8 +48563,7 @@
 		{
 			"number": 308,
 			"image": "308",
-			"commonCry": "308_Common",
-			"happyCry": "308_Happy",
+			"cry": "308",
 			"species": "Medicham",
 			"type": "Fighting / Psychic",
 			"hp": 6,
@@ -49287,8 +48638,7 @@
 		{
 			"number": 307,
 			"image": "307",
-			"commonCry": "307_Common",
-			"happyCry": "307_Happy",
+			"cry": "307",
 			"species": "Meditite",
 			"type": "Fighting / Psychic",
 			"hp": 3,
@@ -49364,8 +48714,7 @@
 		{
 			"number": 306,
 			"image": "306",
-			"commonCry": "306_Common",
-			"happyCry": "306_Happy",
+			"cry": "306",
 			"species": "Aggron",
 			"type": "Steel / Rock",
 			"hp": 7,
@@ -49440,8 +48789,7 @@
 		{
 			"number": 305,
 			"image": "305",
-			"commonCry": "305_Common",
-			"happyCry": "305_Happy",
+			"cry": "305",
 			"species": "Lairon",
 			"type": "Steel / Rock",
 			"hp": 6,
@@ -49517,8 +48865,7 @@
 		{
 			"number": 304,
 			"image": "304",
-			"commonCry": "304_Common",
-			"happyCry": "304_Happy",
+			"cry": "304",
 			"species": "Aron",
 			"type": "Steel / Rock",
 			"hp": 5,
@@ -49597,8 +48944,7 @@
 		{
 			"number": 303,
 			"image": "303",
-			"commonCry": "303_Common",
-			"happyCry": "303_Happy",
+			"cry": "303",
 			"species": "Mawile",
 			"type": "Steel / Fairy",
 			"hp": 5,
@@ -49672,8 +49018,7 @@
 		{
 			"number": 302,
 			"image": "302",
-			"commonCry": "302_Common",
-			"happyCry": "302_Happy",
+			"cry": "302",
 			"species": "Sableye",
 			"type": "Dark / Ghost",
 			"hp": 5,
@@ -49756,8 +49101,7 @@
 		{
 			"number": 301,
 			"image": "301",
-			"commonCry": "301_Common",
-			"happyCry": "301_Happy",
+			"cry": "301",
 			"species": "Delcatty",
 			"type": "Normal",
 			"hp": 7,
@@ -49836,8 +49180,7 @@
 		{
 			"number": 300,
 			"image": "300",
-			"commonCry": "300_Common",
-			"happyCry": "300_Happy",
+			"cry": "300",
 			"species": "Skitty",
 			"type": "Normal",
 			"hp": 5,
@@ -49917,8 +49260,7 @@
 		{
 			"number": 299,
 			"image": "299",
-			"commonCry": "299_Common",
-			"happyCry": "299_Happy",
+			"cry": "299",
 			"species": "Nosepass",
 			"type": "Rock",
 			"hp": 3,
@@ -49994,8 +49336,7 @@
 		{
 			"number": 298,
 			"image": "298",
-			"commonCry": "298_Common",
-			"happyCry": "298_Happy",
+			"cry": "298",
 			"species": "Azurill",
 			"type": "Normal / Fairy",
 			"hp": 5,
@@ -50067,8 +49408,7 @@
 		{
 			"number": 297,
 			"image": "297",
-			"commonCry": "297_Common",
-			"happyCry": "297_Happy",
+			"cry": "297",
 			"species": "Hariyama",
 			"type": "Fighting",
 			"hp": 14,
@@ -50139,8 +49479,7 @@
 		{
 			"number": 296,
 			"image": "296",
-			"commonCry": "296_Common",
-			"happyCry": "296_Happy",
+			"cry": "296",
 			"species": "Makuhita",
 			"type": "Fighting",
 			"hp": 7,
@@ -50216,8 +49555,7 @@
 		{
 			"number": 295,
 			"image": "295",
-			"commonCry": "295_Common",
-			"happyCry": "295_Happy",
+			"cry": "295",
 			"species": "Exploud",
 			"type": "Normal",
 			"hp": 10,
@@ -50292,8 +49630,7 @@
 		{
 			"number": 294,
 			"image": "294",
-			"commonCry": "294_Common",
-			"happyCry": "294_Happy",
+			"cry": "294",
 			"species": "Loudred",
 			"type": "Normal",
 			"hp": 8,
@@ -50368,8 +49705,7 @@
 		{
 			"number": 293,
 			"image": "293",
-			"commonCry": "293_Common",
-			"happyCry": "293_Happy",
+			"cry": "293",
 			"species": "Whismur",
 			"type": "Normal",
 			"hp": 6,
@@ -50443,8 +49779,7 @@
 		{
 			"number": 292,
 			"image": "292",
-			"commonCry": "292_Common",
-			"happyCry": "292_Happy",
+			"cry": "292",
 			"species": "Shedinja",
 			"type": "Bug / Ghost",
 			"hp": 0,
@@ -50520,8 +49855,7 @@
 		{
 			"number": 291,
 			"image": "291",
-			"commonCry": "291_Common",
-			"happyCry": "291_Happy",
+			"cry": "291",
 			"species": "Ninjask",
 			"type": "Bug / Flying",
 			"hp": 6,
@@ -50593,8 +49927,7 @@
 		{
 			"number": 290,
 			"image": "290",
-			"commonCry": "290_Common",
-			"happyCry": "290_Happy",
+			"cry": "290",
 			"species": "Nincada",
 			"type": "Bug / Ground",
 			"hp": 3,
@@ -50668,8 +50001,7 @@
 		{
 			"number": 289,
 			"image": "289",
-			"commonCry": "289_Common",
-			"happyCry": "289_Happy",
+			"cry": "289",
 			"species": "Slaking",
 			"type": "Normal",
 			"hp": 15,
@@ -50741,8 +50073,7 @@
 		{
 			"number": 214,
 			"image": "214",
-			"commonCry": "214_Common",
-			"happyCry": "214_Happy",
+			"cry": "214",
 			"species": "Heracross",
 			"type": "Bug / Fighting",
 			"hp": 8,
@@ -50814,8 +50145,7 @@
 		{
 			"number": 215,
 			"image": "215",
-			"commonCry": "215_Common",
-			"happyCry": "215_Happy",
+			"cry": "215",
 			"species": "Sneasel",
 			"type": "Dark / Ice",
 			"hp": 6,
@@ -50893,8 +50223,7 @@
 		{
 			"number": 216,
 			"image": "216",
-			"commonCry": "216_Common",
-			"happyCry": "216_Happy",
+			"cry": "216",
 			"species": "Teddiursa",
 			"type": "Normal",
 			"hp": 6,
@@ -50969,8 +50298,7 @@
 		{
 			"number": 217,
 			"image": "217",
-			"commonCry": "217_Common",
-			"happyCry": "217_Happy",
+			"cry": "217",
 			"species": "Ursaring",
 			"type": "Normal",
 			"hp": 9,
@@ -51038,8 +50366,7 @@
 		{
 			"number": 218,
 			"image": "218",
-			"commonCry": "218_Common",
-			"happyCry": "218_Happy",
+			"cry": "218",
 			"species": "Slugma",
 			"type": "Fire",
 			"hp": 4,
@@ -51118,8 +50445,7 @@
 		{
 			"number": 219,
 			"image": "219",
-			"commonCry": "219_Common",
-			"happyCry": "219_Happy",
+			"cry": "219",
 			"species": "Magcargo",
 			"type": "Fire / Rock",
 			"hp": 5,
@@ -51196,8 +50522,7 @@
 		{
 			"number": 220,
 			"image": "220",
-			"commonCry": "220_Common",
-			"happyCry": "220_Happy",
+			"cry": "220",
 			"species": "Swinub",
 			"type": "Ice / Ground",
 			"hp": 5,
@@ -51273,8 +50598,7 @@
 		{
 			"number": 221,
 			"image": "221",
-			"commonCry": "221_Common",
-			"happyCry": "221_Happy",
+			"cry": "221",
 			"species": "Piloswine",
 			"type": "Ice / Ground",
 			"hp": 10,
@@ -51348,8 +50672,7 @@
 		{
 			"number": 288,
 			"image": "288",
-			"commonCry": "288_Common",
-			"happyCry": "288_Happy",
+			"cry": "288",
 			"species": "Vigoroth",
 			"type": "Normal",
 			"hp": 8,
@@ -51418,8 +50741,7 @@
 		{
 			"number": 287,
 			"image": "287",
-			"commonCry": "287_Common",
-			"happyCry": "287_Happy",
+			"cry": "287",
 			"species": "Slakoth",
 			"type": "Normal",
 			"hp": 6,
@@ -51491,8 +50813,7 @@
 		{
 			"number": 286,
 			"image": "286",
-			"commonCry": "286_Common",
-			"happyCry": "286_Happy",
+			"cry": "286",
 			"species": "Breloom",
 			"type": "Grass / Fighting",
 			"hp": 6,
@@ -51563,8 +50884,7 @@
 		{
 			"number": 285,
 			"image": "285",
-			"commonCry": "285_Common",
-			"happyCry": "285_Happy",
+			"cry": "285",
 			"species": "Shroomish",
 			"type": "Grass",
 			"hp": 6,
@@ -51638,8 +50958,7 @@
 		{
 			"number": 284,
 			"image": "284",
-			"commonCry": "284_Common",
-			"happyCry": "284_Happy",
+			"cry": "284",
 			"species": "Masquerain",
 			"type": "Bug / Flying",
 			"hp": 7,
@@ -51710,8 +51029,7 @@
 		{
 			"number": 283,
 			"image": "283",
-			"commonCry": "283_Common",
-			"happyCry": "283_Happy",
+			"cry": "283",
 			"species": "Surskit",
 			"type": "Bug / Water",
 			"hp": 4,
@@ -51784,8 +51102,7 @@
 		{
 			"number": 282,
 			"image": "282",
-			"commonCry": "282_Common",
-			"happyCry": "282_Happy",
+			"cry": "282",
 			"species": "Gardevoir",
 			"type": "Psychic / Fairy",
 			"hp": 7,
@@ -51864,8 +51181,7 @@
 		{
 			"number": 281,
 			"image": "281",
-			"commonCry": "281_Common",
-			"happyCry": "281_Happy",
+			"cry": "281",
 			"species": "Kirlia",
 			"type": "Psychic / Fairy",
 			"hp": 4,
@@ -51944,8 +51260,7 @@
 		{
 			"number": 280,
 			"image": "280",
-			"commonCry": "280_Common",
-			"happyCry": "280_Happy",
+			"cry": "280",
 			"species": "Ralts",
 			"type": "Psychic / Fairy",
 			"hp": 3,
@@ -52026,8 +51341,7 @@
 		{
 			"number": 279,
 			"image": "279",
-			"commonCry": "279_Common",
-			"happyCry": "279_Happy",
+			"cry": "279",
 			"species": "Pelipper",
 			"type": "Water / Flying",
 			"hp": 6,
@@ -52101,8 +51415,7 @@
 		{
 			"number": 278,
 			"image": "278",
-			"commonCry": "278_Common",
-			"happyCry": "278_Happy",
+			"cry": "278",
 			"species": "Wingull",
 			"type": "Water / Flying",
 			"hp": 4,
@@ -52176,8 +51489,7 @@
 		{
 			"number": 277,
 			"image": "277",
-			"commonCry": "277_Common",
-			"happyCry": "277_Happy",
+			"cry": "277",
 			"species": "Swellow",
 			"type": "Normal / Flying",
 			"hp": 6,
@@ -52246,8 +51558,7 @@
 		{
 			"number": 276,
 			"image": "276",
-			"commonCry": "276_Common",
-			"happyCry": "276_Happy",
+			"cry": "276",
 			"species": "Taillow",
 			"type": "Normal / Flying",
 			"hp": 4,
@@ -52319,8 +51630,7 @@
 		{
 			"number": 275,
 			"image": "275",
-			"commonCry": "275_Common",
-			"happyCry": "275_Happy",
+			"cry": "275",
 			"species": "Shiftry",
 			"type": "Grass / Dark",
 			"hp": 9,
@@ -52392,8 +51702,7 @@
 		{
 			"number": 274,
 			"image": "274",
-			"commonCry": "274_Common",
-			"happyCry": "274_Happy",
+			"cry": "274",
 			"species": "Nuzleaf",
 			"type": "Grass / Dark",
 			"hp": 7,
@@ -52465,8 +51774,7 @@
 		{
 			"number": 273,
 			"image": "273",
-			"commonCry": "273_Common",
-			"happyCry": "273_Happy",
+			"cry": "273",
 			"species": "Seedot",
 			"type": "Grass",
 			"hp": 4,
@@ -52534,8 +51842,7 @@
 		{
 			"number": 272,
 			"image": "272",
-			"commonCry": "272_Common",
-			"happyCry": "272_Happy",
+			"cry": "272",
 			"species": "Ludicolo",
 			"type": "Water / Grass",
 			"hp": 8,
@@ -52607,8 +51914,7 @@
 		{
 			"number": 271,
 			"image": "271",
-			"commonCry": "271_Common",
-			"happyCry": "271_Happy",
+			"cry": "271",
 			"species": "Lombre",
 			"type": "Water / Grass",
 			"hp": 6,
@@ -52681,8 +51987,7 @@
 		{
 			"number": 270,
 			"image": "270",
-			"commonCry": "270_Common",
-			"happyCry": "270_Happy",
+			"cry": "270",
 			"species": "Lotad",
 			"type": "Water / Grass",
 			"hp": 4,
@@ -52756,8 +52061,7 @@
 		{
 			"number": 269,
 			"image": "269",
-			"commonCry": "269_Common",
-			"happyCry": "269_Happy",
+			"cry": "269",
 			"species": "Dustox",
 			"type": "Bug / Poison",
 			"hp": 6,
@@ -52830,8 +52134,7 @@
 		{
 			"number": 268,
 			"image": "268",
-			"commonCry": "268_Common",
-			"happyCry": "268_Happy",
+			"cry": "268",
 			"species": "Cascoon",
 			"type": "Bug",
 			"hp": 5,
@@ -52893,8 +52196,7 @@
 		{
 			"number": 267,
 			"image": "267",
-			"commonCry": "267_Common",
-			"happyCry": "267_Happy",
+			"cry": "267",
 			"species": "Beautifly",
 			"type": "Bug / Flying",
 			"hp": 6,
@@ -52968,8 +52270,7 @@
 		{
 			"number": 266,
 			"image": "266",
-			"commonCry": "266_Common",
-			"happyCry": "266_Happy",
+			"cry": "266",
 			"species": "Silcoon",
 			"type": "Bug",
 			"hp": 5,
@@ -53031,8 +52332,7 @@
 		{
 			"number": 265,
 			"image": "265",
-			"commonCry": "265_Common",
-			"happyCry": "265_Happy",
+			"cry": "265",
 			"species": "Wurmple",
 			"type": "Bug",
 			"hp": 5,
@@ -53103,8 +52403,7 @@
 		{
 			"number": 264,
 			"image": "264",
-			"commonCry": "264_Common",
-			"happyCry": "264_Happy",
+			"cry": "264",
 			"species": "Linoone",
 			"type": "Normal",
 			"hp": 8,
@@ -53178,8 +52477,7 @@
 		{
 			"number": 263,
 			"image": "263",
-			"commonCry": "263_Common",
-			"happyCry": "263_Happy",
+			"cry": "263",
 			"species": "Zigzagoon",
 			"type": "Normal",
 			"hp": 4,
@@ -53255,8 +52553,7 @@
 		{
 			"number": 262,
 			"image": "262",
-			"commonCry": "262_Common",
-			"happyCry": "262_Happy",
+			"cry": "262",
 			"species": "Mightyena",
 			"type": "Dark",
 			"hp": 7,
@@ -53332,8 +52629,7 @@
 		{
 			"number": 261,
 			"image": "261",
-			"commonCry": "261_Common",
-			"happyCry": "261_Happy",
+			"cry": "261",
 			"species": "Poochyena",
 			"type": "Dark",
 			"hp": 4,
@@ -53409,8 +52705,7 @@
 		{
 			"number": 260,
 			"image": "260",
-			"commonCry": "260_Common",
-			"happyCry": "260_Happy",
+			"cry": "260",
 			"species": "Swampert",
 			"type": "Water / Ground",
 			"hp": 10,
@@ -53485,8 +52780,7 @@
 		{
 			"number": 259,
 			"image": "259",
-			"commonCry": "259_Common",
-			"happyCry": "259_Happy",
+			"cry": "259",
 			"species": "Marshtomp",
 			"type": "Water / Ground",
 			"hp": 7,
@@ -53561,8 +52855,7 @@
 		{
 			"number": 258,
 			"image": "258",
-			"commonCry": "258_Common",
-			"happyCry": "258_Happy",
+			"cry": "258",
 			"species": "Mudkip",
 			"type": "Water",
 			"hp": 5,
@@ -53639,8 +52932,7 @@
 		{
 			"number": 257,
 			"image": "257",
-			"commonCry": "257_Common",
-			"happyCry": "257_Happy",
+			"cry": "257",
 			"species": "Blaziken",
 			"type": "Fire / Fighting",
 			"hp": 8,
@@ -53714,8 +53006,7 @@
 		{
 			"number": 256,
 			"image": "256",
-			"commonCry": "256_Common",
-			"happyCry": "256_Happy",
+			"cry": "256",
 			"species": "Combusken",
 			"type": "Fire / Fighting",
 			"hp": 6,
@@ -53789,8 +53080,7 @@
 		{
 			"number": 255,
 			"image": "255",
-			"commonCry": "255_Common",
-			"happyCry": "255_Happy",
+			"cry": "255",
 			"species": "Torchic",
 			"type": "Fire",
 			"hp": 5,
@@ -53864,8 +53154,7 @@
 		{
 			"number": 254,
 			"image": "254",
-			"commonCry": "254_Common",
-			"happyCry": "254_Happy",
+			"cry": "254",
 			"species": "Sceptile",
 			"type": "Grass",
 			"hp": 7,
@@ -53941,8 +53230,7 @@
 		{
 			"number": 253,
 			"image": "253",
-			"commonCry": "253_Common",
-			"happyCry": "253_Happy",
+			"cry": "253",
 			"species": "Grovyle",
 			"type": "Grass",
 			"hp": 5,
@@ -54018,8 +53306,7 @@
 		{
 			"number": 252,
 			"image": "252",
-			"commonCry": "252_Common",
-			"happyCry": "252_Happy",
+			"cry": "252",
 			"species": "Treecko",
 			"type": "Grass",
 			"hp": 4,
@@ -54095,8 +53382,7 @@
 		{
 			"number": 251,
 			"image": "251",
-			"commonCry": "251_Common",
-			"happyCry": "251_Happy",
+			"cry": "251",
 			"species": "Celebi",
 			"type": "Psychic / Grass",
 			"hp": 10,
@@ -54174,8 +53460,7 @@
 		{
 			"number": 250,
 			"image": "250",
-			"commonCry": "250_Common",
-			"happyCry": "250_Happy",
+			"cry": "250",
 			"species": "Ho-Oh",
 			"type": "Fire / Flying",
 			"hp": 11,
@@ -54256,8 +53541,7 @@
 		{
 			"number": 249,
 			"image": "249",
-			"commonCry": "249_Common",
-			"happyCry": "249_Happy",
+			"cry": "249",
 			"species": "Lugia",
 			"type": "Psychic / Flying",
 			"hp": 11,
@@ -54340,8 +53624,7 @@
 		{
 			"number": 245,
 			"image": "245",
-			"commonCry": "245_Common",
-			"happyCry": "245_Happy",
+			"cry": "245",
 			"species": "Suicune",
 			"type": "Water",
 			"hp": 10,
@@ -54417,8 +53700,7 @@
 		{
 			"number": 246,
 			"image": "246",
-			"commonCry": "246_Common",
-			"happyCry": "246_Happy",
+			"cry": "246",
 			"species": "Larvitar",
 			"type": "Rock / Ground",
 			"hp": 5,
@@ -54493,8 +53775,7 @@
 		{
 			"number": 247,
 			"image": "247",
-			"commonCry": "247_Common",
-			"happyCry": "247_Happy",
+			"cry": "247",
 			"species": "Pupitar",
 			"type": "Rock / Ground",
 			"hp": 7,
@@ -54566,8 +53847,7 @@
 		{
 			"number": 248,
 			"image": "248",
-			"commonCry": "248_Common",
-			"happyCry": "248_Happy",
+			"cry": "248",
 			"species": "Tyranitar",
 			"type": "Rock / Dark",
 			"hp": 10,
@@ -54640,8 +53920,7 @@
 		{
 			"number": 244,
 			"image": "244",
-			"commonCry": "244_Common",
-			"happyCry": "244_Happy",
+			"cry": "244",
 			"species": "Entei",
 			"type": "Fire",
 			"hp": 12,
@@ -54717,8 +53996,7 @@
 		{
 			"number": 243,
 			"image": "243",
-			"commonCry": "243_Common",
-			"happyCry": "243_Happy",
+			"cry": "243",
 			"species": "Raikou",
 			"type": "Electric",
 			"hp": 9,
@@ -54793,8 +54071,7 @@
 		{
 			"number": 242,
 			"image": "242",
-			"commonCry": "242_Common",
-			"happyCry": "242_Happy",
+			"cry": "242",
 			"species": "Blissey",
 			"type": "Normal",
 			"hp": 26,
@@ -54867,8 +54144,7 @@
 		{
 			"number": 241,
 			"image": "241",
-			"commonCry": "241_Common",
-			"happyCry": "241_Happy",
+			"cry": "241",
 			"species": "Miltank",
 			"type": "Normal",
 			"hp": 10,
@@ -54939,8 +54215,7 @@
 		{
 			"number": 240,
 			"image": "240",
-			"commonCry": "240_Common",
-			"happyCry": "240_Happy",
+			"cry": "240",
 			"species": "Magby",
 			"type": "Fire",
 			"hp": 5,
@@ -55016,8 +54291,7 @@
 		{
 			"number": 239,
 			"image": "239",
-			"commonCry": "239_Common",
-			"happyCry": "239_Happy",
+			"cry": "239",
 			"species": "Elekid",
 			"type": "Electric",
 			"hp": 5,
@@ -55093,8 +54367,7 @@
 		{
 			"number": 238,
 			"image": "238",
-			"commonCry": "238_Common",
-			"happyCry": "238_Happy",
+			"cry": "238",
 			"species": "Smoochum",
 			"type": "Ice / Psychic",
 			"hp": 5,
@@ -55168,8 +54441,7 @@
 		{
 			"number": 237,
 			"image": "237",
-			"commonCry": "237_Common",
-			"happyCry": "237_Happy",
+			"cry": "237",
 			"species": "Hitmontop",
 			"type": "Fighting",
 			"hp": 5,
@@ -55240,8 +54512,7 @@
 		{
 			"number": 236,
 			"image": "236",
-			"commonCry": "236_Common",
-			"happyCry": "236_Happy",
+			"cry": "236",
 			"species": "Tyrogue",
 			"type": "Fighting",
 			"hp": 4,
@@ -55306,8 +54577,7 @@
 		{
 			"number": 235,
 			"image": "235",
-			"commonCry": "235_Common",
-			"happyCry": "235_Happy",
+			"cry": "235",
 			"species": "Smeargle",
 			"type": "Normal",
 			"hp": 6,
@@ -55377,8 +54647,7 @@
 		{
 			"number": 234,
 			"image": "234",
-			"commonCry": "234_Common",
-			"happyCry": "234_Happy",
+			"cry": "234",
 			"species": "Stantler",
 			"type": "Normal",
 			"hp": 7,
@@ -55451,8 +54720,7 @@
 		{
 			"number": 233,
 			"image": "233",
-			"commonCry": "233_Common",
-			"happyCry": "233_Happy",
+			"cry": "233",
 			"species": "Porygon2",
 			"type": "Normal",
 			"hp": 9,
@@ -55526,8 +54794,7 @@
 		{
 			"number": 232,
 			"image": "232",
-			"commonCry": "232_Common",
-			"happyCry": "232_Happy",
+			"cry": "232",
 			"species": "Donphan",
 			"type": "Ground",
 			"hp": 9,
@@ -55597,8 +54864,7 @@
 		{
 			"number": 231,
 			"image": "231",
-			"commonCry": "231_Common",
-			"happyCry": "231_Happy",
+			"cry": "231",
 			"species": "Phanpy",
 			"type": "Ground",
 			"hp": 9,
@@ -55672,8 +54938,7 @@
 		{
 			"number": 230,
 			"image": "230",
-			"commonCry": "230_Common",
-			"happyCry": "230_Happy",
+			"cry": "230",
 			"species": "Kingdra",
 			"type": "Water / Dragon",
 			"hp": 8,
@@ -55746,8 +55011,7 @@
 		{
 			"number": 229,
 			"image": "229",
-			"commonCry": "229_Common",
-			"happyCry": "229_Happy",
+			"cry": "229",
 			"species": "Houndoom",
 			"type": "Dark / Fire",
 			"hp": 8,
@@ -55821,8 +55085,7 @@
 		{
 			"number": 228,
 			"image": "228",
-			"commonCry": "228_Common",
-			"happyCry": "228_Happy",
+			"cry": "228",
 			"species": "Houndour",
 			"type": "Dark / Fire",
 			"hp": 5,
@@ -55900,8 +55163,7 @@
 		{
 			"number": 227,
 			"image": "227",
-			"commonCry": "227_Common",
-			"happyCry": "227_Happy",
+			"cry": "227",
 			"species": "Skarmory",
 			"type": "Steel / Flying",
 			"hp": 7,
@@ -55976,8 +55238,7 @@
 		{
 			"number": 226,
 			"image": "226",
-			"commonCry": "226_Common",
-			"happyCry": "226_Happy",
+			"cry": "226",
 			"species": "Mantine",
 			"type": "Water / Flying",
 			"hp": 7,
@@ -56052,8 +55313,7 @@
 		{
 			"number": 225,
 			"image": "225",
-			"commonCry": "225_Common",
-			"happyCry": "225_Happy",
+			"cry": "225",
 			"species": "Delibird",
 			"type": "Ice / Flying",
 			"hp": 5,
@@ -56114,8 +55374,7 @@
 		{
 			"number": 224,
 			"image": "224",
-			"commonCry": "224_Common",
-			"happyCry": "224_Happy",
+			"cry": "224",
 			"species": "Octillery",
 			"type": "Water",
 			"hp": 8,
@@ -56189,8 +55448,7 @@
 		{
 			"number": 223,
 			"image": "223",
-			"commonCry": "223_Common",
-			"happyCry": "223_Happy",
+			"cry": "223",
 			"species": "Remoraid",
 			"type": "Water",
 			"hp": 4,
@@ -56265,8 +55523,7 @@
 		{
 			"number": 222,
 			"image": "222",
-			"commonCry": "222_Common",
-			"happyCry": "222_Happy",
+			"cry": "222",
 			"species": "Corsola",
 			"type": "Water / Rock",
 			"hp": 6,
@@ -56344,8 +55601,7 @@
 		{
 			"number": 385,
 			"image": "385",
-			"commonCry": "385_Common",
-			"happyCry": "385_Happy",
+			"cry": "385",
 			"species": "Jirachi",
 			"type": "Steel / Psychic",
 			"hp": 10,
@@ -56423,8 +55679,7 @@
 		{
 			"number": 719,
 			"image": "719",
-			"commonCry": "719_Common",
-			"happyCry": "719_Happy",
+			"cry": "719",
 			"species": "Diancie",
 			"type": "Rock / Fairy",
 			"hp": 5,
@@ -56503,8 +55758,7 @@
 		{
 			"number": 720,
 			"image": "720",
-			"commonCry": "720_Common",
-			"happyCry": "720_Happy",
+			"cry": "720",
 			"species": "Hoopa Confined",
 			"type": "Psychic / Ghost",
 			"hp": 8,
@@ -56584,8 +55838,7 @@
 		{
 			"number": 720,
 			"image": "720_Unbound",
-			"commonCry": "720_Common",
-			"happyCry": "720_Happy",
+			"cry": "720_Unbound",
 			"species": "Hoopa Unbound",
 			"type": "Psychic / Dark",
 			"hp": 8,
@@ -56663,8 +55916,7 @@
 		{
 			"number": 721,
 			"image": "721",
-			"commonCry": "721_Common",
-			"happyCry": "721_Happy",
+			"cry": "721",
 			"species": "Volcanion",
 			"type": "Fire/Water",
 			"hp": 8,
@@ -56740,8 +55992,7 @@
 		{
 			"number": 722,
 			"image": "722",
-			"commonCry": "722_Common",
-			"happyCry": "722_Happy",
+			"cry": "722",
 			"species": "Rowlet",
 			"type": "Grass/Flying",
 			"hp": 7,
@@ -56820,8 +56071,7 @@
 		{
 			"number": 723,
 			"image": "723",
-			"commonCry": "723_Common",
-			"happyCry": "723_Happy",
+			"cry": "723",
 			"species": "Dartrix",
 			"type": "Grass/Flying",
 			"hp": 8,
@@ -56900,8 +56150,7 @@
 		{
 			"number": 724,
 			"image": "724",
-			"commonCry": "724_Common",
-			"happyCry": "724_Happy",
+			"cry": "724",
 			"species": "Decidueye",
 			"type": "Grass / Ghost",
 			"hp": 8,
@@ -56981,8 +56230,7 @@
 		{
 			"number": 725,
 			"image": "725",
-			"commonCry": "725_Common",
-			"happyCry": "725_Happy",
+			"cry": "725",
 			"species": "Litten",
 			"type": "Fire",
 			"hp": 5,
@@ -57061,8 +56309,7 @@
 		{
 			"number": 726,
 			"image": "726",
-			"commonCry": "726_Common",
-			"happyCry": "726_Happy",
+			"cry": "726",
 			"species": "Torracat",
 			"type": "Fire",
 			"hp": 7,
@@ -57140,8 +56387,7 @@
 		{
 			"number": 727,
 			"image": "727",
-			"commonCry": "727_Common",
-			"happyCry": "727_Happy",
+			"cry": "727",
 			"species": "Incineroar",
 			"type": "Fire / Dark",
 			"hp": 10,
@@ -57220,8 +56466,7 @@
 		{
 			"number": 728,
 			"image": "728",
-			"commonCry": "728_Common",
-			"happyCry": "728_Happy",
+			"cry": "728",
 			"species": "Popplio",
 			"type": "Water",
 			"hp": 5,
@@ -57298,8 +56543,7 @@
 		{
 			"number": 729,
 			"image": "729",
-			"commonCry": "729_Common",
-			"happyCry": "729_Happy",
+			"cry": "729",
 			"species": "Brionne",
 			"type": "Water",
 			"hp": 6,
@@ -57375,8 +56619,7 @@
 		{
 			"number": 730,
 			"image": "730",
-			"commonCry": "730_Common",
-			"happyCry": "730_Happy",
+			"cry": "730",
 			"species": "Primarina",
 			"type": "Water / Fairy",
 			"hp": 8,
@@ -57453,8 +56696,7 @@
 		{
 			"number": 731,
 			"image": "731",
-			"commonCry": "731_Common",
-			"happyCry": "731_Happy",
+			"cry": "731",
 			"species": "Pikipek",
 			"type": "Normal / Flying",
 			"hp": 4,
@@ -57531,8 +56773,7 @@
 		{
 			"number": 732,
 			"image": "732",
-			"commonCry": "732_Common",
-			"happyCry": "732_Happy",
+			"cry": "732",
 			"species": "Trumbeak",
 			"type": "Normal / Flying",
 			"hp": 5,
@@ -57608,8 +56849,7 @@
 		{
 			"number": 733,
 			"image": "733",
-			"commonCry": "733_Common",
-			"happyCry": "733_Happy",
+			"cry": "733",
 			"species": "Toucannon",
 			"type": "Normal / Flying",
 			"hp": 8,
@@ -57685,8 +56925,7 @@
 		{
 			"number": 734,
 			"image": "734",
-			"commonCry": "734_Common",
-			"happyCry": "734_Happy",
+			"cry": "734",
 			"species": "Yungoos",
 			"type": "Normal",
 			"hp": 5,
@@ -57765,8 +57004,7 @@
 		{
 			"number": 735,
 			"image": "735",
-			"commonCry": "735_Common",
-			"happyCry": "735_Happy",
+			"cry": "735",
 			"species": "Gumshoos",
 			"type": "Normal",
 			"hp": 9,
@@ -57844,8 +57082,7 @@
 		{
 			"number": 736,
 			"image": "736",
-			"commonCry": "736_Common",
-			"happyCry": "736_Happy",
+			"cry": "736",
 			"species": "Grubbin",
 			"type": "Bug",
 			"hp": 5,
@@ -57919,8 +57156,7 @@
 		{
 			"number": 737,
 			"image": "737",
-			"commonCry": "737_Common",
-			"happyCry": "737_Happy",
+			"cry": "737",
 			"species": "Charjabug",
 			"type": "Bug",
 			"hp": 6,
@@ -57999,8 +57235,7 @@
 		{
 			"number": 738,
 			"image": "738",
-			"commonCry": "738_Common",
-			"happyCry": "738_Happy",
+			"cry": "738",
 			"species": "Vikavolt",
 			"type": "Bug / Electric",
 			"hp": 8,
@@ -58080,8 +57315,7 @@
 		{
 			"number": 739,
 			"image": "739",
-			"commonCry": "739_Common",
-			"happyCry": "739_Happy",
+			"cry": "739",
 			"species": "Crabrawler",
 			"type": "Fighting",
 			"hp": 5,
@@ -58154,8 +57388,7 @@
 		{
 			"number": 740,
 			"image": "740",
-			"commonCry": "740_Common",
-			"happyCry": "740_Happy",
+			"cry": "740",
 			"species": "Crabominable",
 			"type": "Fighting / Ice",
 			"hp": 10,
@@ -58228,8 +57461,7 @@
 		{
 			"number": 741,
 			"image": "741_Baile",
-			"commonCry": "741_Common",
-			"happyCry": "741_Happy",
+			"cry": "741_Baile",
 			"species": "Oricorio (Baile)",
 			"type": "Fire/Flying",
 			"hp": 8,
@@ -58305,8 +57537,7 @@
 		{
 			"number": 741,
 			"image": "741_Pau",
-			"commonCry": "741_Common",
-			"happyCry": "741_Happy",
+			"cry": "741_Pau",
 			"species": "Oricorio (Pau)",
 			"type": "Psychic/Flying",
 			"hp": 8,
@@ -58382,8 +57613,7 @@
 		{
 			"number": 741,
 			"image": "741_Pom",
-			"commonCry": "741_Common",
-			"happyCry": "741_Happy",
+			"cry": "741_Pom",
 			"species": "Oricorio (Pom Pom)",
 			"type": "Electric/Flying",
 			"hp": 8,
@@ -58459,8 +57689,7 @@
 		{
 			"number": 741,
 			"image": "741_Sensu",
-			"commonCry": "741_Common",
-			"happyCry": "741_Happy",
+			"cry": "741_Sensu",
 			"species": "Oricorio (Sensu)",
 			"type": "Ghost/Flying",
 			"hp": 8,
@@ -58536,8 +57765,7 @@
 		{
 			"number": 742,
 			"image": "742",
-			"commonCry": "742_Common",
-			"happyCry": "742_Happy",
+			"cry": "742",
 			"species": "Cutiefly",
 			"type": "Bug / Fairy",
 			"hp": 4,
@@ -58610,8 +57838,7 @@
 		{
 			"number": 743,
 			"image": "743",
-			"commonCry": "743_Common",
-			"happyCry": "743_Happy",
+			"cry": "743",
 			"species": "Ribombee",
 			"type": "Bug / Fairy",
 			"hp": 6,
@@ -58684,8 +57911,7 @@
 		{
 			"number": 744,
 			"image": "744",
-			"commonCry": "744_Common",
-			"happyCry": "744_Happy",
+			"cry": "744",
 			"species": "Rockruff",
 			"type": "Rock",
 			"hp": 5,
@@ -58766,8 +57992,7 @@
 		{
 			"number": 745,
 			"image": "745_Midday",
-			"commonCry": "745_Common",
-			"happyCry": "745_Happy",
+			"cry": "745_Midday",
 			"species": "Lycanroc Midday",
 			"type": "Rock",
 			"hp": 8,
@@ -58847,8 +58072,7 @@
 		{
 			"number": 745,
 			"image": "745_Midnight",
-			"commonCry": "745_Common",
-			"happyCry": "745_Happy",
+			"cry": "745_Midnight",
 			"species": "Lycanroc Midnight",
 			"type": "Rock",
 			"hp": 9,
@@ -58930,8 +58154,7 @@
 		{
 			"number": 745,
 			"image": "745_Dusk",
-			"commonCry": "745_Common",
-			"happyCry": "745_Happy",
+			"cry": "745_Dusk",
 			"species": "Lycanroc Dusk",
 			"type": "Rock",
 			"hp": 8,
@@ -59011,8 +58234,7 @@
 		{
 			"number": 746,
 			"image": "746",
-			"commonCry": "746_Common",
-			"happyCry": "746_Happy",
+			"cry": "746",
 			"species": "Wishiwashi",
 			"type": "Water",
 			"hp": 5,
@@ -59089,8 +58311,7 @@
 		{
 			"number": 746,
 			"image": "746_School",
-			"commonCry": "746_Common",
-			"happyCry": "746_Happy",
+			"cry": "746_School",
 			"species": "Wishiwashi (School)",
 			"type": "Water",
 			"hp": 5,
@@ -59166,8 +58387,7 @@
 		{
 			"number": 747,
 			"image": "747",
-			"commonCry": "747_Common",
-			"happyCry": "747_Happy",
+			"cry": "747",
 			"species": "Mareanie",
 			"type": "Poison/Water",
 			"hp": 5,
@@ -59243,8 +58463,7 @@
 		{
 			"number": 748,
 			"image": "748",
-			"commonCry": "748_Common",
-			"happyCry": "748_Happy",
+			"cry": "748",
 			"species": "Toxapex",
 			"type": "Poison/Water",
 			"hp": 5,
@@ -59320,8 +58539,7 @@
 		{
 			"number": 749,
 			"image": "749",
-			"commonCry": "749_Common",
-			"happyCry": "749_Happy",
+			"cry": "749",
 			"species": "Mudbray",
 			"type": "Ground",
 			"hp": 7,
@@ -59395,8 +58613,7 @@
 		{
 			"number": 750,
 			"image": "750",
-			"commonCry": "750_Common",
-			"happyCry": "750_Happy",
+			"cry": "750",
 			"species": "Mudsdale",
 			"type": "Ground",
 			"hp": 10,
@@ -59470,8 +58687,7 @@
 		{
 			"number": 751,
 			"image": "751",
-			"commonCry": "751_Common",
-			"happyCry": "751_Happy",
+			"cry": "751",
 			"species": "Dewpider",
 			"type": "Water/Bug",
 			"hp": 4,
@@ -59549,8 +58765,7 @@
 		{
 			"number": 752,
 			"image": "752",
-			"commonCry": "752_Common",
-			"happyCry": "752_Happy",
+			"cry": "752",
 			"species": "Araquanid",
 			"type": "Water/Bug",
 			"hp": 7,
@@ -59629,8 +58844,7 @@
 		{
 			"number": 753,
 			"image": "753",
-			"commonCry": "753_Common",
-			"happyCry": "753_Happy",
+			"cry": "753",
 			"species": "Fomantis",
 			"type": "Grass",
 			"hp": 4,
@@ -59703,8 +58917,7 @@
 		{
 			"number": 754,
 			"image": "754",
-			"commonCry": "754_Common",
-			"happyCry": "754_Happy",
+			"cry": "754",
 			"species": "Lurantis",
 			"type": "Grass",
 			"hp": 7,
@@ -59778,8 +58991,7 @@
 		{
 			"number": 755,
 			"image": "755",
-			"commonCry": "755_Common",
-			"happyCry": "755_Happy",
+			"cry": "755",
 			"species": "Morelull",
 			"type": "Grass/Fairy",
 			"hp": 4,
@@ -59854,8 +59066,7 @@
 		{
 			"number": 756,
 			"image": "756",
-			"commonCry": "756_Common",
-			"happyCry": "756_Happy",
+			"cry": "756",
 			"species": "Shiinotic",
 			"type": "Grass/Fairy",
 			"hp": 6,
@@ -59930,8 +59141,7 @@
 		{
 			"number": 757,
 			"image": "757",
-			"commonCry": "757_Common",
-			"happyCry": "757_Happy",
+			"cry": "757",
 			"species": "Salandit",
 			"type": "Poison/Fire",
 			"hp": 5,
@@ -60007,8 +59217,7 @@
 		{
 			"number": 758,
 			"image": "758",
-			"commonCry": "758_Common",
-			"happyCry": "758_Happy",
+			"cry": "758",
 			"species": "Salazzle",
 			"type": "Poison/Fire",
 			"hp": 7,
@@ -60089,8 +59298,7 @@
 		{
 			"number": 759,
 			"image": "759",
-			"commonCry": "759_Common",
-			"happyCry": "759_Happy",
+			"cry": "759",
 			"species": "Stufful",
 			"type": "Normal/Fighting",
 			"hp": 7,
@@ -60163,8 +59371,7 @@
 		{
 			"number": 760,
 			"image": "760",
-			"commonCry": "760_Common",
-			"happyCry": "760_Happy",
+			"cry": "760",
 			"species": "Bewear",
 			"type": "Normal/Fighting",
 			"hp": 12,
@@ -60236,8 +59443,7 @@
 		{
 			"number": 761,
 			"image": "761",
-			"commonCry": "761_Common",
-			"happyCry": "761_Happy",
+			"cry": "761",
 			"species": "Bounsweet",
 			"type": "Grass",
 			"hp": 4,
@@ -60308,8 +59514,7 @@
 		{
 			"number": 762,
 			"image": "762",
-			"commonCry": "762_Common",
-			"happyCry": "762_Happy",
+			"cry": "762",
 			"species": "Steenee",
 			"type": "Grass",
 			"hp": 5,
@@ -60384,8 +59589,7 @@
 		{
 			"number": 763,
 			"image": "763",
-			"commonCry": "763_Common",
-			"happyCry": "763_Happy",
+			"cry": "763",
 			"species": "Tsareena",
 			"type": "Grass",
 			"hp": 7,
@@ -60461,8 +59665,7 @@
 		{
 			"number": 764,
 			"image": "764",
-			"commonCry": "764_Common",
-			"happyCry": "764_Happy",
+			"cry": "764",
 			"species": "Comfey",
 			"type": "Fairy",
 			"hp": 5,
@@ -60539,8 +59742,7 @@
 		{
 			"number": 765,
 			"image": "765",
-			"commonCry": "765_Common",
-			"happyCry": "765_Happy",
+			"cry": "765",
 			"species": "Oranguru",
 			"type": "Normal/Psychic",
 			"hp": 9,
@@ -60614,8 +59816,7 @@
 		{
 			"number": 766,
 			"image": "766",
-			"commonCry": "766_Common",
-			"happyCry": "766_Happy",
+			"cry": "766",
 			"species": "Passimian",
 			"type": "Fighting",
 			"hp": 10,
@@ -60689,8 +59890,7 @@
 		{
 			"number": 767,
 			"image": "767",
-			"commonCry": "767_Common",
-			"happyCry": "767_Happy",
+			"cry": "767",
 			"species": "Wimpod",
 			"type": "Bug/Water",
 			"hp": 3,
@@ -60752,8 +59952,7 @@
 		{
 			"number": 768,
 			"image": "768",
-			"commonCry": "768_Common",
-			"happyCry": "768_Happy",
+			"cry": "768",
 			"species": "Golisopod",
 			"type": "Bug/Water",
 			"hp": 8,
@@ -60826,8 +60025,7 @@
 		{
 			"number": 769,
 			"image": "769",
-			"commonCry": "769_Common",
-			"happyCry": "769_Happy",
+			"cry": "769",
 			"species": "Sandygast",
 			"type": "Ghost/Ground",
 			"hp": 6,
@@ -60902,8 +60100,7 @@
 		{
 			"number": 770,
 			"image": "770",
-			"commonCry": "770_Common",
-			"happyCry": "770_Happy",
+			"cry": "770",
 			"species": "Palossand",
 			"type": "Ghost/Ground",
 			"hp": 9,
@@ -60977,8 +60174,7 @@
 		{
 			"number": 771,
 			"image": "771",
-			"commonCry": "771_Common",
-			"happyCry": "771_Happy",
+			"cry": "771",
 			"species": "Pyukumuku",
 			"type": "Water",
 			"hp": 6,
@@ -61056,8 +60252,7 @@
 		{
 			"number": 772,
 			"image": "772",
-			"commonCry": "772_Common",
-			"happyCry": "772_Happy",
+			"cry": "772",
 			"species": "Type: Null",
 			"type": "Normal",
 			"hp": 10,
@@ -61135,8 +60330,7 @@
 		{
 			"number": 773,
 			"image": "773",
-			"commonCry": "773_Common",
-			"happyCry": "773_Happy",
+			"cry": "773",
 			"species": "Silvally",
 			"type": "Normal",
 			"hp": 10,
@@ -61223,8 +60417,7 @@
 		{
 			"number": 774,
 			"image": "774",
-			"commonCry": "774_Common",
-			"happyCry": "774_Happy",
+			"cry": "774",
 			"species": "Minior",
 			"type": "Rock/Flying",
 			"hp": 6,
@@ -61300,8 +60493,7 @@
 		{
 			"number": 775,
 			"image": "775",
-			"commonCry": "775_Common",
-			"happyCry": "775_Happy",
+			"cry": "775",
 			"species": "Komala",
 			"type": "Normal",
 			"hp": 7,
@@ -61373,8 +60565,7 @@
 		{
 			"number": 776,
 			"image": "776",
-			"commonCry": "776_Common",
-			"happyCry": "776_Happy",
+			"cry": "776",
 			"species": "Turtonator",
 			"type": "Fire/Dragon",
 			"hp": 6,
@@ -61450,8 +60641,7 @@
 		{
 			"number": 777,
 			"image": "777",
-			"commonCry": "777_Common",
-			"happyCry": "777_Happy",
+			"cry": "777",
 			"species": "Togedemaru",
 			"type": "Electric/Steel",
 			"hp": 7,
@@ -61526,8 +60716,7 @@
 		{
 			"number": 778,
 			"image": "778",
-			"commonCry": "778_Common",
-			"happyCry": "778_Happy",
+			"cry": "778",
 			"species": "Mimikyu",
 			"type": "Ghost/Fairy",
 			"hp": 6,
@@ -61606,8 +60795,7 @@
 		{
 			"number": 779,
 			"image": "779",
-			"commonCry": "779_Common",
-			"happyCry": "779_Happy",
+			"cry": "779",
 			"species": "Bruxish",
 			"type": "Water/Psychic",
 			"hp": 7,
@@ -61680,8 +60868,7 @@
 		{
 			"number": 780,
 			"image": "780",
-			"commonCry": "780_Common",
-			"happyCry": "780_Happy",
+			"cry": "780",
 			"species": "Drampa",
 			"type": "Normal/Dragon",
 			"hp": 8,
@@ -61756,8 +60943,7 @@
 		{
 			"number": 781,
 			"image": "781",
-			"commonCry": "781_Common",
-			"happyCry": "781_Happy",
+			"cry": "781",
 			"species": "Dhelmise",
 			"type": "Ghost/Grass",
 			"hp": 7,
@@ -61836,8 +61022,7 @@
 		{
 			"number": 782,
 			"image": "782",
-			"commonCry": "782_Common",
-			"happyCry": "782_Happy",
+			"cry": "782",
 			"species": "Jangmo-o",
 			"type": "Dragon",
 			"hp": 5,
@@ -61911,8 +61096,7 @@
 		{
 			"number": 783,
 			"image": "783",
-			"commonCry": "783_Common",
-			"happyCry": "783_Happy",
+			"cry": "783",
 			"species": "Hakamo-o",
 			"type": "Dragon/Fighting",
 			"hp": 6,
@@ -61989,8 +61173,7 @@
 		{
 			"number": 784,
 			"image": "784",
-			"commonCry": "784_Common",
-			"happyCry": "784_Happy",
+			"cry": "784",
 			"species": "Kommo-o",
 			"type": "Dragon/Fighting",
 			"hp": 8,
@@ -62068,8 +61251,7 @@
 		{
 			"number": 19,
 			"image": "019_Alola",
-			"commonCry": "019_Common",
-			"happyCry": "019_Happy",
+			"cry": "019",
 			"species": "Alolan Rattata",
 			"type": "Dark/Normal",
 			"hp": 3,
@@ -62144,8 +61326,7 @@
 		{
 			"number": 20,
 			"image": "020_Alola",
-			"commonCry": "020_Common",
-			"happyCry": "020_Happy",
+			"cry": "020",
 			"species": "Alolan Raticate",
 			"type": "Dark/Normal",
 			"hp": 8,
@@ -62223,8 +61404,7 @@
 		{
 			"number": 88,
 			"image": "088_Alola",
-			"commonCry": "088_Common",
-			"happyCry": "088_Happy",
+			"cry": "088",
 			"species": "Alolan Grimer",
 			"type": "Poison/Dark",
 			"hp": 8,
@@ -62303,8 +61483,7 @@
 		{
 			"number": 29,
 			"image": "029",
-			"commonCry": "029_Common",
-			"happyCry": "029_Happy",
+			"cry": "029",
 			"species": "Nidoran (f)",
 			"type": "Poison",
 			"hp": 6,
@@ -62379,8 +61558,7 @@
 		{
 			"number": 799,
 			"image": "799",
-			"commonCry": "799_Common",
-			"happyCry": "799_Happy",
+			"cry": "799",
 			"species": "Guzzlord",
 			"type": "Dark/Dragon",
 			"hp": 22,
@@ -62456,8 +61634,7 @@
 		{
 			"number": 785,
 			"image": "785",
-			"commonCry": "785_Common",
-			"happyCry": "785_Happy",
+			"cry": "785",
 			"species": "Tapu Koko",
 			"type": "Electric/Fairy",
 			"hp": 7,
@@ -62535,8 +61712,7 @@
 		{
 			"number": 786,
 			"image": "786",
-			"commonCry": "786_Common",
-			"happyCry": "786_Happy",
+			"cry": "786",
 			"species": "Tapu Lele",
 			"type": "Psychic/Fairy",
 			"hp": 7,
@@ -62614,8 +61790,7 @@
 		{
 			"number": 787,
 			"image": "787",
-			"commonCry": "787_Common",
-			"happyCry": "787_Happy",
+			"cry": "787",
 			"species": "Tapu Bulu",
 			"type": "Grass/Fairy",
 			"hp": 7,
@@ -62693,8 +61868,7 @@
 		{
 			"number": 788,
 			"image": "788",
-			"commonCry": "788_Common",
-			"happyCry": "788_Happy",
+			"cry": "788",
 			"species": "Tapu Fini",
 			"type": "Water/Fairy",
 			"hp": 7,
@@ -62773,8 +61947,7 @@
 		{
 			"number": 789,
 			"image": "789",
-			"commonCry": "789_Common",
-			"happyCry": "789_Happy",
+			"cry": "789",
 			"species": "Cosmog",
 			"type": "Psychic",
 			"hp": 4,
@@ -62837,8 +62010,7 @@
 		{
 			"number": 790,
 			"image": "790",
-			"commonCry": "790_Common",
-			"happyCry": "790_Happy",
+			"cry": "790",
 			"species": "Cosmoem",
 			"type": "Psychic",
 			"hp": 4,
@@ -62901,8 +62073,7 @@
 		{
 			"number": 791,
 			"image": "791",
-			"commonCry": "791_Common",
-			"happyCry": "791_Happy",
+			"cry": "791",
 			"species": "Solgaleo",
 			"type": "Psychic/Steel",
 			"hp": 14,
@@ -62981,8 +62152,7 @@
 		{
 			"number": 792,
 			"image": "792",
-			"commonCry": "792_Common",
-			"happyCry": "792_Happy",
+			"cry": "792",
 			"species": "Lunala",
 			"type": "Psychic/Ghost",
 			"hp": 14,
@@ -63062,8 +62232,7 @@
 		{
 			"number": 793,
 			"image": "793",
-			"commonCry": "793_Common",
-			"happyCry": "793_Happy",
+			"cry": "793",
 			"species": "Nihilego",
 			"type": "Rock/Poison",
 			"hp": 11,
@@ -63142,8 +62311,7 @@
 		{
 			"number": 794,
 			"image": "794",
-			"commonCry": "794_Common",
-			"happyCry": "794_Happy",
+			"cry": "794",
 			"species": "Buzzwole",
 			"type": "Bug/Fighting",
 			"hp": 11,
@@ -63219,8 +62387,7 @@
 		{
 			"number": 795,
 			"image": "795",
-			"commonCry": "795_Common",
-			"happyCry": "795_Happy",
+			"cry": "795",
 			"species": "Pheromosa",
 			"type": "Bug/Fighting",
 			"hp": 7,
@@ -63295,8 +62462,7 @@
 		{
 			"number": 796,
 			"image": "796",
-			"commonCry": "796_Common",
-			"happyCry": "796_Happy",
+			"cry": "796",
 			"species": "Xurkitree",
 			"type": "Electric",
 			"hp": 8,
@@ -63373,8 +62539,7 @@
 		{
 			"number": 797,
 			"image": "797",
-			"commonCry": "797_Common",
-			"happyCry": "797_Happy",
+			"cry": "797",
 			"species": "Celesteela",
 			"type": "Steel/Flying",
 			"hp": 10,
@@ -63450,8 +62615,7 @@
 		{
 			"number": 798,
 			"image": "798",
-			"commonCry": "798_Common",
-			"happyCry": "798_Happy",
+			"cry": "798",
 			"species": "Kartana",
 			"type": "Grass/Steel",
 			"hp": 6,
@@ -63528,8 +62692,7 @@
 		{
 			"number": 800,
 			"image": "800",
-			"commonCry": "800_Common",
-			"happyCry": "800_Happy",
+			"cry": "800",
 			"species": "Necrozma",
 			"type": "Psychic",
 			"hp": 10,
@@ -63610,8 +62773,7 @@
 		{
 			"number": 800,
 			"image": "800_Dawn",
-			"commonCry": "800_Common",
-			"happyCry": "800_Happy",
+			"cry": "800_Dawn",
 			"species": "Necrozma (Dawn Wings)",
 			"type": "Psychic/Ghost",
 			"hp": 10,
@@ -63695,8 +62857,7 @@
 		{
 			"number": 800,
 			"image": "800_Dusk",
-			"commonCry": "800_Common",
-			"happyCry": "800_Happy",
+			"cry": "800_Dusk",
 			"species": "Necrozma (Dusk Mane)",
 			"type": "Psychic/Steel",
 			"hp": 10,
@@ -63779,8 +62940,7 @@
 		{
 			"number": 800,
 			"image": "800_Ultra",
-			"commonCry": "800_Common",
-			"happyCry": "800_Happy",
+			"cry": "800_Ultra",
 			"species": "Necrozma (Ultra)",
 			"type": "Psychic/Dragon",
 			"hp": 10,
@@ -63837,8 +62997,7 @@
 		{
 			"number": 801,
 			"image": "801",
-			"commonCry": "801_Common",
-			"happyCry": "801_Happy",
+			"cry": "801",
 			"species": "Magearna",
 			"type": "Steel/Fairy",
 			"hp": 8,
@@ -63917,8 +63076,7 @@
 		{
 			"number": 802,
 			"image": "802",
-			"commonCry": "802_Common",
-			"happyCry": "802_Happy",
+			"cry": "802",
 			"species": "Marshadow",
 			"type": "Fighting/Ghost",
 			"hp": 9,
@@ -64002,8 +63160,7 @@
 		{
 			"number": 803,
 			"image": "803",
-			"commonCry": "803_Common",
-			"happyCry": "803_Happy",
+			"cry": "803",
 			"species": "Poipole",
 			"type": "Poison",
 			"hp": 7,
@@ -64074,8 +63231,7 @@
 		{
 			"number": 804,
 			"image": "804",
-			"commonCry": "804_Common",
-			"happyCry": "804_Happy",
+			"cry": "804",
 			"species": "Naganadel",
 			"type": "Poison/Dragon",
 			"hp": 7,
@@ -64149,8 +63305,7 @@
 		{
 			"number": 805,
 			"image": "805",
-			"commonCry": "805_Common",
-			"happyCry": "805_Happy",
+			"cry": "805",
 			"species": "Stakataka",
 			"type": "Rock/Steel",
 			"hp": 6,
@@ -64220,8 +63375,7 @@
 		{
 			"number": 806,
 			"image": "806",
-			"commonCry": "806_Common",
-			"happyCry": "806_Happy",
+			"cry": "806",
 			"species": "Blacephalon",
 			"type": "Fire/Ghost",
 			"hp": 5,
@@ -64290,8 +63444,7 @@
 		{
 			"number": 807,
 			"image": "807",
-			"commonCry": "807_Common",
-			"happyCry": "807_Happy",
+			"cry": "807",
 			"species": "Zeraora",
 			"type": "Electric",
 			"hp": 9,
@@ -64369,8 +63522,7 @@
 		{
 			"number": 808,
 			"image": "808",
-			"commonCry": "808_Common",
-			"happyCry": "808_Happy",
+			"cry": "808",
 			"species": "Meltan",
 			"type": "Steel",
 			"hp": 5,
@@ -64443,8 +63595,7 @@
 		{
 			"number": 809,
 			"image": "809",
-			"commonCry": "809_Common",
-			"happyCry": "809_Happy",
+			"cry": "809",
 			"species": "Melmetal",
 			"type": "Steel",
 			"hp": 14,
@@ -64521,8 +63672,7 @@
 		{
 			"number": 810,
 			"image": "810",
-			"commonCry": "810_Common",
-			"happyCry": "810_Happy",
+			"cry": "810",
 			"species": "Grookey",
 			"type": "Grass",
 			"hp": 5,
@@ -64595,8 +63745,7 @@
 		{
 			"number": 811,
 			"image": "811",
-			"commonCry": "811_Common",
-			"happyCry": "811_Happy",
+			"cry": "811",
 			"species": "Thwackey",
 			"type": "Grass",
 			"hp": 7,
@@ -64667,8 +63816,7 @@
 		{
 			"number": 812,
 			"image": "812",
-			"commonCry": "812_Common",
-			"happyCry": "812_Happy",
+			"cry": "812",
 			"species": "Rillaboom",
 			"type": "Grass",
 			"hp": 10,

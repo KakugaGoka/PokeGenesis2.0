@@ -67,13 +67,11 @@ public class Pokemon {
         heldItem;
 
     public AudioClip
-        commonAudio,
-        happyAudio;
+        cryAudio;
 
     public string
         image,
-        commonCry,
-        happyCry,
+        cry,
         species,
         region,
         type,
@@ -126,12 +124,36 @@ public class Pokemon {
         stealthBonus,
         perceptionBonus,
         focusBonus,
-        techEduBonus;
+        techEduBonus,
+        injuries,
+        captureRate;
 
     public bool
-        legendary,
-        shiny,
-        colorHasBeenSet;
+        legendary,      // -30 CR
+        shiny,          // -10 CR
+        colorHasBeenSet,
+        // Conditions
+        asleep,         // +5 CR
+        badlyAsleep,
+        blind, 
+        totallyBlind,
+        burned,         // +10 CR
+        confused,       // +5 CR
+        cursed,         // +5 CR
+        disabled,       // +5 CR
+        enraged,        // +5 CR
+        flinched,       // +5 CR
+        frozen,         // +10 CR
+        infatuated,     // +5 CR
+        paralyzed,      // +10 CR
+        poisoned,       // +10 CR
+        badlyPoisoned,
+        slowed,         // +5 CR
+        stuck,          // +10 CR
+        suppressed,     // +5 CR
+        trapped,
+        tripped,
+        vulnerable;
 
     public string[]
         evolutions,

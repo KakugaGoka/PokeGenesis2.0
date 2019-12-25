@@ -18,8 +18,7 @@ public class EncounterController : MonoBehaviour {
     public Dropdown pokemonDropdown;
     public Dropdown stageDropdown;
     public Image heldItemImage;
-    public AudioSource commonCrySource;
-    public AudioSource happyCrySource;
+    public AudioSource cryAudioSource;
 
     private List<Pokemon> pokemonToEncounter = new List<Pokemon>();
     private List<Pokemon> encounterablePokemon = new List<Pokemon>();
@@ -31,6 +30,29 @@ public class EncounterController : MonoBehaviour {
         allowLegendaries,
         allowHeldItems,
         alwaysHoldItem;
+    
+    private Toggle
+        blindedToggle,
+        totallyBlindedToggle,
+        burnedToggle,
+        confusedToggle,
+        cursedToggle,
+        disabledToggle,
+        enragedToggle,
+        flinchedToggle,
+        frozenToggle,
+        infatuatedToggle,
+        paralyzedToggle,
+        poisonedToggle,
+        badlyPoisonedToggle,
+        asleepToggle,
+        badlyAsleepToggle,
+        slowedToggle,
+        stuckToggle,
+        suppressedToggle,
+        trappedToggle,
+        trippedToggle,
+        vulnerableToggle;
 
     private InputField
         nameField,
@@ -73,7 +95,8 @@ public class EncounterController : MonoBehaviour {
         skillsListField,
         capabilitiesListField,
         heldItemDescriptionField,
-        heldItemNameField;
+        heldItemNameField,
+        captureRateField;
 
     private void Start() {
         nameField = GameObject.Find("Name Field").GetComponent<InputField>();
@@ -117,6 +140,29 @@ public class EncounterController : MonoBehaviour {
         capabilitiesListField = GameObject.Find("Capabilities List Field").GetComponent<InputField>();
         heldItemDescriptionField = GameObject.Find("Held Item Description Field").GetComponent<InputField>();
         heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<InputField>();
+        captureRateField = GameObject.Find("Capture Rate Field").GetComponent<InputField>();
+
+        blindedToggle = GameObject.Find("Blinded Toggle").GetComponent<Toggle>();
+        totallyBlindedToggle = GameObject.Find("Totally Blinded Toggle").GetComponent<Toggle>();
+        burnedToggle = GameObject.Find("Burned Toggle").GetComponent<Toggle>();
+        confusedToggle = GameObject.Find("Confused Toggle").GetComponent<Toggle>();
+        cursedToggle = GameObject.Find("Cursed Toggle").GetComponent<Toggle>();
+        disabledToggle = GameObject.Find("Disabled Toggle").GetComponent<Toggle>();
+        enragedToggle = GameObject.Find("Enraged Toggle").GetComponent<Toggle>();
+        flinchedToggle = GameObject.Find("Flinched Toggle").GetComponent<Toggle>();
+        frozenToggle = GameObject.Find("Frozen Toggle").GetComponent<Toggle>();
+        infatuatedToggle = GameObject.Find("Infatuated Toggle").GetComponent<Toggle>();
+        paralyzedToggle = GameObject.Find("Paralyzed Toggle").GetComponent<Toggle>();
+        poisonedToggle = GameObject.Find("Poisoned Toggle").GetComponent<Toggle>();
+        badlyPoisonedToggle = GameObject.Find("Badly Poisoned Toggle").GetComponent<Toggle>();
+        asleepToggle = GameObject.Find("Sleeping Toggle").GetComponent<Toggle>();
+        badlyAsleepToggle = GameObject.Find("Heavily Sleeping Toggle").GetComponent<Toggle>();
+        slowedToggle = GameObject.Find("Slowed Toggle").GetComponent<Toggle>();
+        stuckToggle = GameObject.Find("Stuck Toggle").GetComponent<Toggle>();
+        suppressedToggle = GameObject.Find("Suppressed Toggle").GetComponent<Toggle>();
+        trappedToggle = GameObject.Find("Trapped Toggle").GetComponent<Toggle>();
+        trippedToggle = GameObject.Find("Tripped Toggle").GetComponent<Toggle>();
+        vulnerableToggle = GameObject.Find("Vulnerable Toggle").GetComponent<Toggle>();
 
         List<Dropdown.OptionData> habitatOptions = new List<Dropdown.OptionData>();
         habitatOptions.Add(new Dropdown.OptionData("Any Habitat"));
@@ -160,11 +206,15 @@ public class EncounterController : MonoBehaviour {
             if (!File.Exists(Application.streamingAssetsPath + "/PokemonIcons/" + pokemon.image + ".png")) {
                 Debug.LogWarning("Image not found for pokemon: " + pokemon.species);
             }
-            if (!File.Exists(Application.streamingAssetsPath + "/Cries/" + pokemon.happyCry + ".ogg")) {
-                Debug.LogWarning("Happy Cry not found for pokemon: " + pokemon.species);
+            if (!File.Exists(Application.streamingAssetsPath + "/Cries/" + pokemon.cry + ".ogg")) {
+                Debug.LogWarning( "Cry not found for pokemon: " + pokemon.species);
             }
-            if (!File.Exists(Application.streamingAssetsPath + "/Cries/" + pokemon.commonCry + ".ogg")) {
-                Debug.LogWarning("Common Cry not found for pokemon: " + pokemon.species);
+            foreach (string evo in pokemon.evolutions) {
+                try {
+                    int maxStage = int.Parse(evo[0].ToString());
+                } catch {
+                    Debug.LogWarning("Pokemon evolution is not formated correctly: " + evo);
+                }
             }
         }
 
@@ -325,6 +375,28 @@ public class EncounterController : MonoBehaviour {
 
         levelField.text = pokemon.level.ToString();
 
+        blindedToggle.isOn = pokemon.blind;
+        totallyBlindedToggle.isOn = pokemon.totallyBlind;
+        burnedToggle.isOn = pokemon.burned;
+        confusedToggle.isOn = pokemon.confused;
+        cursedToggle.isOn = pokemon.cursed;
+        disabledToggle.isOn = pokemon.disabled;
+        enragedToggle.isOn = pokemon.enraged;
+        flinchedToggle.isOn = pokemon.flinched;
+        frozenToggle.isOn = pokemon.frozen;
+        infatuatedToggle.isOn = pokemon.infatuated;
+        paralyzedToggle.isOn = pokemon.paralyzed;
+        poisonedToggle.isOn = pokemon.poisoned;
+        badlyPoisonedToggle.isOn = pokemon.badlyPoisoned;
+        asleepToggle.isOn = pokemon.asleep;
+        badlyAsleepToggle.isOn = pokemon.badlyAsleep;
+        slowedToggle.isOn = pokemon.slowed;
+        stuckToggle.isOn = pokemon.stuck;
+        suppressedToggle.isOn = pokemon.suppressed;
+        trappedToggle.isOn = pokemon.trapped;
+        trippedToggle.isOn = pokemon.tripped;
+        vulnerableToggle.isOn = pokemon.vulnerable;
+
         movesListField.text = "";
         if (pokemon.knownMoveList.Length > 0) {
             for (int i = pokemon.knownMoveList.Length - 1; i >= 0; i--) {
@@ -363,6 +435,8 @@ public class EncounterController : MonoBehaviour {
                 capabilitiesListField.text += pokemon.capabilities[i] + Environment.NewLine;
             }
         }
+
+        captureRateField.text = pokemon.captureRate.ToString() + " or less";
     }
 
     public void UpdateEncounterSliderNumber() {
@@ -386,27 +460,14 @@ public class EncounterController : MonoBehaviour {
         }
     }
 
-    public void PlayHappyCry() {
+    public void PlayPokemonCry() {
         if (PokedexManager.currentPokemon == null) {
             Debug.Log("No pokemon currently selected");
             return;
         }
-        if (PokedexManager.currentPokemon.happyAudio != null) {
-            happyCrySource.clip = PokedexManager.currentPokemon.happyAudio;
-            happyCrySource.Play();
-        } else {
-            Debug.LogError("Current Pokemon does not have a registered happy cry");
-        }
-    }
-
-    public void PlayCommonCry() {
-        if (PokedexManager.currentPokemon == null) {
-            Debug.Log("No pokemon currently selected");
-            return;
-        }
-        if (PokedexManager.currentPokemon.commonAudio != null) {
-            commonCrySource.clip = PokedexManager.currentPokemon.commonAudio;
-            commonCrySource.Play();
+        if (PokedexManager.currentPokemon.cryAudio != null) {
+            cryAudioSource.clip = PokedexManager.currentPokemon.cryAudio;
+            cryAudioSource.Play();
         } else {
             Debug.LogError("Current Pokemon does not have a registered common cry");
         }
@@ -462,8 +523,28 @@ public class EncounterController : MonoBehaviour {
                 heldItemNameField.text = "";
                 heldItemDescriptionField.text = "";
                 heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
-                commonCrySource.clip = null;
-                happyCrySource.clip = null;
+                cryAudioSource.clip = null;
+                blindedToggle.isOn = false;
+                totallyBlindedToggle.isOn = false;
+                burnedToggle.isOn = false;
+                confusedToggle.isOn = false;
+                cursedToggle.isOn = false;
+                disabledToggle.isOn = false;
+                enragedToggle.isOn = false;
+                flinchedToggle.isOn = false;
+                frozenToggle.isOn = false;
+                infatuatedToggle.isOn = false;
+                paralyzedToggle.isOn = false;
+                poisonedToggle.isOn = false;
+                badlyPoisonedToggle.isOn = false;
+                asleepToggle.isOn = false;
+                badlyAsleepToggle.isOn = false;
+                slowedToggle.isOn = false;
+                stuckToggle.isOn = false;
+                suppressedToggle.isOn = false;
+                trappedToggle.isOn = false;
+                trippedToggle.isOn = false;
+                vulnerableToggle.isOn = false;
             }
         }
     }
@@ -495,8 +576,85 @@ public class EncounterController : MonoBehaviour {
             pokemon.currentHealth = int.Parse(currentHealthField.text);
             pokemon.maxHealth = pokemon.level + (pokemon.hpLevel * 3) + 10;
 
+            GetCaptureRate(pokemon);
+
             OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
-        } catch { }
+        } catch { Debug.Log("Failed to update stats!"); }
+    }
+
+    [SerializeField]
+    public enum Condition {
+        blinded = 0, 
+        totallyBlinded,
+        burned,
+        confused,
+        cursed,
+        disabled,
+        enraged,
+        flinched,
+        frozen,
+        infatuated,
+        paralyzed,
+        poisoned,
+        badlyPoisoned,
+        sleeping,
+        badlySleeping,
+        slowed,
+        stuck,
+        suppressed,
+        trapped,
+        tripped,
+        vulnerable
+    }
+
+    [SerializeField]
+    public void SetCondition(int condition) {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        if ((Condition)condition == Condition.blinded) {
+            pokemon.blind = blindedToggle.isOn;
+        } else if ((Condition)condition == Condition.totallyBlinded) {
+            pokemon.totallyBlind = totallyBlindedToggle.isOn;
+        } else if ((Condition)condition == Condition.burned) {
+            pokemon.burned = burnedToggle.isOn;
+        } else if ((Condition)condition == Condition.confused) {
+            pokemon.confused = confusedToggle.isOn;
+        } else if ((Condition)condition == Condition.cursed) {
+            pokemon.cursed = cursedToggle.isOn;
+        } else if ((Condition)condition == Condition.disabled) {
+            pokemon.disabled = disabledToggle.isOn;
+        } else if ((Condition)condition == Condition.enraged) {
+            pokemon.enraged = enragedToggle.isOn;
+        } else if ((Condition)condition == Condition.flinched) {
+            pokemon.flinched = flinchedToggle.isOn;
+        } else if ((Condition)condition == Condition.frozen) {
+            pokemon.frozen = frozenToggle.isOn;
+        } else if ((Condition)condition == Condition.infatuated) {
+            pokemon.infatuated = infatuatedToggle.isOn;
+        } else if ((Condition)condition == Condition.paralyzed) {
+            pokemon.paralyzed = paralyzedToggle.isOn;
+        } else if ((Condition)condition == Condition.poisoned) {
+            pokemon.poisoned = poisonedToggle.isOn;
+        } else if ((Condition)condition == Condition.badlyPoisoned) {
+            pokemon.badlyPoisoned = badlyPoisonedToggle.isOn;
+        } else if ((Condition)condition == Condition.sleeping) {
+            pokemon.asleep = asleepToggle.isOn;
+        } else if ((Condition)condition == Condition.badlySleeping) {
+            pokemon.badlyAsleep = badlyAsleepToggle.isOn;
+        } else if ((Condition)condition == Condition.slowed) {
+            pokemon.slowed = slowedToggle.isOn;
+        } else if ((Condition)condition == Condition.stuck) {
+            pokemon.stuck = stuckToggle.isOn;
+        } else if ((Condition)condition == Condition.suppressed) {
+            pokemon.suppressed = suppressedToggle.isOn;
+        } else if ((Condition)condition == Condition.trapped) {
+            pokemon.trapped = trappedToggle.isOn;
+        } else if ((Condition)condition == Condition.tripped) {
+            pokemon.tripped = trippedToggle.isOn;
+        } else if ((Condition)condition == Condition.vulnerable) {
+            pokemon.vulnerable = vulnerableToggle.isOn;
+        }
+        GetCaptureRate(PokedexManager.currentPokemon);
+        OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
     }
 
     void AddPokemon(float numberToEncounter) {
@@ -513,6 +671,9 @@ public class EncounterController : MonoBehaviour {
             pokemon.spdefLevel = pokemon.spdef;
             pokemon.spdLevel = pokemon.spd;
 
+            pokemon.maxHealth = pokemon.level + (pokemon.hpLevel * 3) + 10;
+            pokemon.currentHealth = pokemon.maxHealth;
+
             GetCries(pokemon);
             SetBaseRelations(pokemon);
             LevelPokemon(pokemon);
@@ -521,9 +682,7 @@ public class EncounterController : MonoBehaviour {
             GetNature(pokemon);
             GetMoves(pokemon);
             GetHeldItem(pokemon);
-
-            pokemon.maxHealth = pokemon.level + (pokemon.hpLevel * 3) + 10;
-            pokemon.currentHealth = pokemon.maxHealth;
+            GetCaptureRate(pokemon);
 
             if (allowShinies) {
                 int shinyChance = UnityEngine.Random.Range(0, 8192);
@@ -700,26 +859,64 @@ public class EncounterController : MonoBehaviour {
         }
     }
 
+    void GetCaptureRate(Pokemon pokemon) {
+        pokemon.captureRate = 100 - (pokemon.level * 2);
+
+        float health = (float)pokemon.currentHealth / (float)pokemon.maxHealth;
+        Debug.Log(health);
+        if (health > 0.75) {
+            pokemon.captureRate += -30;
+        } else if (health > 0.5) {
+            pokemon.captureRate += -15;
+        } else if (health > 0.25) {
+            pokemon.captureRate += 0;
+        } else {
+            pokemon.captureRate += 15;
+        }
+
+        int maxStage = int.Parse(pokemon.evolutions[pokemon.evolutions.Length - 1][0].ToString());
+        if (maxStage - pokemon.stage == 0) {
+            pokemon.captureRate += -10;
+        } else if (maxStage - pokemon.stage == 1) {
+            pokemon.captureRate += 0;
+        } else if (maxStage - pokemon.stage == 2) {
+            pokemon.captureRate += 10;
+        }
+
+        if (pokemon.shiny) { pokemon.captureRate += -10; }
+        if (pokemon.legendary) { pokemon.captureRate += -30; }
+
+        if (pokemon.burned) { pokemon.captureRate += 10; }
+        if (pokemon.frozen) { pokemon.captureRate += 10; }
+        if (pokemon.paralyzed) { pokemon.captureRate += 10; }
+        if (pokemon.poisoned) { pokemon.captureRate += 10; }
+        if (pokemon.stuck) { pokemon.captureRate += 10; }
+
+        if (pokemon.confused) { pokemon.captureRate += 5; }
+        if (pokemon.cursed) { pokemon.captureRate += 5; }
+        if (pokemon.disabled) { pokemon.captureRate += 5; }
+        if (pokemon.enraged) { pokemon.captureRate += 5; }
+        if (pokemon.flinched) { pokemon.captureRate += 5; }
+        if (pokemon.infatuated) { pokemon.captureRate += 5; }
+        if (pokemon.asleep) { pokemon.captureRate += 5; }
+        if (pokemon.suppressed) { pokemon.captureRate += 5; }
+        if (pokemon.slowed) { pokemon.captureRate += 5; }
+
+        pokemon.captureRate += 5 * pokemon.injuries;
+    }
+
     void GetCries(Pokemon pokemon) {
-        if (pokemon.commonAudio == null) {
-            string cryLocation = Path.Combine(Application.streamingAssetsPath, "Cries/" + pokemon.commonCry + ".ogg");
+        if (pokemon.cryAudio == null) {
+            string cryLocation = Path.Combine(Application.streamingAssetsPath, "Cries/" + pokemon.cry + ".ogg");
             if (!File.Exists(cryLocation)) {
                 Debug.LogError("Cry could not be found: " + cryLocation);
             } else {
                 StartCoroutine(LoadClipCoroutine("file:///" + cryLocation, pokemon));
             }
         }
-        if (pokemon.happyAudio == null) {
-            string cryLocation = Path.Combine(Application.streamingAssetsPath, "Cries/" + pokemon.happyCry + ".ogg");
-            if (!File.Exists(cryLocation)) {
-                Debug.LogError("Cry could not be found: " + cryLocation);
-            } else {
-                StartCoroutine(LoadClipCoroutine("file:///" + cryLocation, pokemon, true));
-            }
-        }
     }
 
-    IEnumerator<UnityWebRequestAsyncOperation> LoadClipCoroutine(string file, Pokemon pokemon, bool happy = false) {
+    IEnumerator<UnityWebRequestAsyncOperation> LoadClipCoroutine(string file, Pokemon pokemon) {
         using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(file, AudioType.OGGVORBIS)) {
             yield return www.SendWebRequest();
 
@@ -728,11 +925,7 @@ public class EncounterController : MonoBehaviour {
             } else {
                 AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
                 Debug.Log(clip.name + " has a length of: " + clip.length);
-                if (happy) { 
-                    pokemon.happyAudio = clip; 
-                } else { 
-                    pokemon.commonAudio = clip; 
-                }
+                pokemon.cryAudio = clip; 
             }
         }
     }

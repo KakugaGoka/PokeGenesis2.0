@@ -265,20 +265,20 @@
 			"tier": "1"
 		},
 		{
-			"name": "X Defend",
-			"image": "X_Defend",
+			"name": "X Defense",
+			"image": "X_Defense",
 			"desc": "Increases the Pokemon's Defense by two Combat Stages",
 			"tier": "1"
 		},
 		{
-			"name": "X Special",
-			"image": "X_Special",
+			"name": "X Sp. Atk",
+			"image": "X_Sp._Atk",
 			"desc": "Increases the Pokemon's Special Attack by two Combat Stages",
 			"tier": "1"
 		},
 		{
 			"name": "X Sp. Def",
-			"image": "X_Sp. Def",
+			"image": "X_Sp._Def",
 			"desc": "Increases the Pokemon's Special Defense by two Combat Stages",
 			"tier": "1"
 		},
@@ -374,19 +374,19 @@
 		},
 		{
 			"name": "Shuckle's Berry Juice",
-			"image": "Shuckle's_Berry_Juice",
+			"image": "Berry_Juice",
 			"desc": "Heals 30 Hit Points.",
 			"tier": "1"
 		},
 		{
 			"name": "Super Soda Pop",
-			"image": "Super_Soda_Pop",
+			"image": "Soda_Pop",
 			"desc": "Heals 30 Hit Points.",
 			"tier": "1"
 		},
 		{
 			"name": "Sparkling Lemonade",
-			"image": "Sparkling_Lemonade",
+			"image": "Lemonade",
 			"desc": "Heals 50 Hit Points.",
 			"tier": "1"
 		},
@@ -398,7 +398,7 @@
 		},
 		{
 			"name": "Candy Bar",
-			"image": "Candy_Bar",
+			"image": "Rage_Candy_Bar",
 			"desc": "Snack. Grants a Digestion Buff that heals 5 Hit Points.",
 			"tier": "1"
 		},
@@ -818,13 +818,13 @@
 		},
 		{
 			"name": "Deep Sea Scale",
-			"image": "Deep_Sea Scale",
+			"image": "Deep_Sea_Scale",
 			"desc": "An item to be held by Clamperl. This scale shines with a faint pink and raises the holder's Sp. Def stat.",
 			"tier": "2"
 		},
 		{
 			"name": "Deep Sea Tooth",
-			"image": "Deep_Sea Tooth",
+			"image": "Deep_Sea_Tooth",
 			"desc": "An item to be held by Clamperl. This fang gleams a sharp silver and raises the holder's Sp. Atk stat.",
 			"tier": "2"
 		},
@@ -1604,7 +1604,7 @@
 		},
 		{
 			"name": "Rare Leek",
-			"image": "Rare_Leek",
+			"image": "Leek",
 			"desc": "When held by a Farfetch'd, this rare Leek increase the holder's critical range by 2. Rare Leeks are Wielded. Cannot be used by Trainers.",
 			"tier": "3"
 		},
