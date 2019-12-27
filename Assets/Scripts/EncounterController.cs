@@ -224,6 +224,16 @@ public class EncounterController : MonoBehaviour {
                 Debug.LogWarning("Image not found for item: " + item.name);
             }
         }
+
+        // Load temp pokemon if they exist. 
+        var myFiles = Directory.EnumerateFiles(Application.streamingAssetsPath + "/tmp/", "*.json", SearchOption.TopDirectoryOnly);
+
+        foreach (var file in myFiles) {
+            Pokemon pokemon = Pokemon.FromJson(file);
+            pokemonToEncounter.Add(pokemon);
+            GetMoves(pokemon);
+            CreateListItem(pokemon);
+        }
     }
 
     private void Update() {
@@ -294,29 +304,33 @@ public class EncounterController : MonoBehaviour {
         AddPokemon(encounterSlider.value);
 
         foreach(Pokemon pokemon in pokemonToEncounter) {
-            GameObject newPokemon = Instantiate(pokedexPrefab) as GameObject;
-            PokedexEntry controller = newPokemon.GetComponent<PokedexEntry>();
-            controller.pokemon = pokemon;
-            controller.species.text = pokemon.species;
-            newPokemon.transform.SetParent(contentPanel.transform);
-            newPokemon.transform.localScale = Vector3.one;
-            pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
+            CreateListItem(pokemon);
+        }
+    }
 
-            if (pokemon.sprite != null) {
-                controller.sprite.sprite = pokemon.sprite;
-                if (pokemon.shiny) {
-                    if (!pokemon.colorHasBeenSet) {
-                        float h = UnityEngine.Random.Range(0.0f, 1.0f);
-                        float s = 0.5f;
-                        float v = 1.0f;
-                        pokemon.color = Color.HSVToRGB(h, s, v);
-                        pokemon.colorHasBeenSet = true;
-                    }
-                    controller.sprite.color = pokemon.color;
+    public void CreateListItem(Pokemon pokemon) {
+        GameObject newPokemon = Instantiate(pokedexPrefab) as GameObject;
+        PokedexEntry controller = newPokemon.GetComponent<PokedexEntry>();
+        controller.pokemon = pokemon;
+        controller.species.text = pokemon.species;
+        newPokemon.transform.SetParent(contentPanel.transform);
+        newPokemon.transform.localScale = Vector3.one;
+        pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
+
+        if (pokemon.sprite != null) {
+            controller.sprite.sprite = pokemon.sprite;
+            if (pokemon.shiny) {
+                if (!pokemon.colorHasBeenSet) {
+                    float h = UnityEngine.Random.Range(0.0f, 1.0f);
+                    float s = 0.5f;
+                    float v = 1.0f;
+                    pokemon.color = Color.HSVToRGB(h, s, v);
+                    pokemon.colorHasBeenSet = true;
                 }
-            } else {
-                Debug.LogError("Pokemon Sprite could not be loaded from: Icons/" + pokemon.image);
+                controller.sprite.color = pokemon.color;
             }
+        } else {
+            Debug.LogError("Pokemon Sprite could not be loaded from: Icons/" + pokemon.image);
         }
     }
 
@@ -404,7 +418,7 @@ public class EncounterController : MonoBehaviour {
             }
         }
 
-        if (pokemon.heldItem.name == null) {
+        if (pokemon.heldItem.name == null || pokemon.heldItem.name == "None" || pokemon.heldItem.name == "") {
             pokemon.heldItem = new Item() {
                 name = "None",
                 desc = "",
@@ -412,9 +426,7 @@ public class EncounterController : MonoBehaviour {
                 sprite = PokedexManager.LoadSprite("ItemIcons/None")
             };
         } else {
-            if (pokemon.heldItem.sprite == null) {
-                pokemon.heldItem.sprite = PokedexManager.LoadSprite("ItemIcons/" + pokemon.heldItem.image);
-            }
+            pokemon.heldItem.sprite = PokedexManager.LoadSprite("ItemIcons/" + pokemon.heldItem.image);
         }
 
         heldItemImage.sprite = pokemon.heldItem.sprite;
@@ -477,6 +489,7 @@ public class EncounterController : MonoBehaviour {
         if (PokedexManager.currentEntry != null) {
             Destroy(PokedexManager.currentEntry);
             pokemonToEncounter.Remove(PokedexManager.currentPokemon);
+            File.Delete(PokedexManager.currentPokemon.savePath);
             PokedexManager.currentPokemon = null;
             PokedexManager.currentEntry = null;
             if (pokemonToEncounter.Count > 0) {
@@ -579,32 +592,7 @@ public class EncounterController : MonoBehaviour {
             GetCaptureRate(pokemon);
 
             OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
-        } catch { Debug.Log("Failed to update stats!"); }
-    }
-
-    [SerializeField]
-    public enum Condition {
-        blinded = 0, 
-        totallyBlinded,
-        burned,
-        confused,
-        cursed,
-        disabled,
-        enraged,
-        flinched,
-        frozen,
-        infatuated,
-        paralyzed,
-        poisoned,
-        badlyPoisoned,
-        sleeping,
-        badlySleeping,
-        slowed,
-        stuck,
-        suppressed,
-        trapped,
-        tripped,
-        vulnerable
+        } catch { Debug.Log("Failed to update stats! Could not parse input as integers."); }
     }
 
     [SerializeField]
@@ -660,7 +648,7 @@ public class EncounterController : MonoBehaviour {
     void AddPokemon(float numberToEncounter) {
         for (float i = 0; i < numberToEncounter; i += 1) {
             int index = UnityEngine.Random.Range(0, encounterablePokemon.Count);
-            pokemonToEncounter.Add(encounterablePokemon[index]);
+            pokemonToEncounter.Add(encounterablePokemon[index].Clone());
 
             Pokemon pokemon = pokemonToEncounter[pokemonToEncounter.Count - 1];
 
@@ -691,6 +679,11 @@ public class EncounterController : MonoBehaviour {
             } else {
                 pokemon.shiny = false;
             }
+
+            try {
+                string path = Path.Combine(Application.streamingAssetsPath, "tmp/", pokemon.level + "_" + pokemon.species + ".json");
+                pokemon.ToJson(path);
+            } catch { Debug.Log("Failed to save out " + pokemon.species); }
         }
     }
 

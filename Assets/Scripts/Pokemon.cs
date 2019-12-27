@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class BaseRelations {
@@ -33,11 +35,36 @@ public class Move {
     }
 }
 
+[SerializeField]
+public enum Condition {
+    blinded = 0,
+    totallyBlinded,
+    burned,
+    confused,
+    cursed,
+    disabled,
+    enraged,
+    flinched,
+    frozen,
+    infatuated,
+    paralyzed,
+    poisoned,
+    badlyPoisoned,
+    sleeping,
+    badlySleeping,
+    slowed,
+    stuck,
+    suppressed,
+    trapped,
+    tripped,
+    vulnerable
+}
+
 [Serializable]
 public class Item {
     public Sprite
         sprite;
-
+    
     public string
         name,
         desc,
@@ -70,6 +97,7 @@ public class Pokemon {
         cryAudio;
 
     public string
+        savePath,
         image,
         cry,
         species,
@@ -166,6 +194,37 @@ public class Pokemon {
 
     public Nature
         nature;
+
+    public void ToJson(string path) {
+        string data = JsonUtility.ToJson(this, true);
+        string finalPath = ValidatePath(path);
+        this.savePath = finalPath;
+        File.WriteAllText(finalPath, data);
+        Debug.Log("Pokemon saved to: " + finalPath);
+    }
+
+    public static Pokemon FromJson(string path) {
+        string data = File.ReadAllText(path);
+        return JsonUtility.FromJson<Pokemon>(data);
+    }
+
+    private string ValidatePath(string path, int iteration = 0) {
+        string newPath = path;
+        if (File.Exists(path)) {
+            bool match = Regex.IsMatch(newPath, @"_[\d-]*[\d-]");
+            if (match == true) {
+                newPath = Regex.Replace(newPath, @"_[\d-]*[\d-]", "");
+                Debug.Log(newPath);
+            }
+            newPath = ValidatePath(newPath.Replace(".json", "_" + iteration.ToString() + ".json"), iteration+1);
+        }
+        return newPath;
+    }
+
+    public Pokemon Clone() {
+        string data = JsonUtility.ToJson(this);
+        return JsonUtility.FromJson<Pokemon>(data);
+    }
 }
 /*
 Giga Charizard

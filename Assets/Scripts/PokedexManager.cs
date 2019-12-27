@@ -80,7 +80,7 @@ public class PokedexManager : MonoBehaviour {
     static public Sprite LoadSprite(string path) {
         string fullPath = Path.Combine(Application.streamingAssetsPath, path + ".png");
         if (!File.Exists(fullPath)) {
-            Debug.LogError("Faield to load sprite at: " + fullPath);
+            Debug.LogError("Failed to load sprite at: " + fullPath);
             return null;
         }
         byte[] bytes = File.ReadAllBytes(fullPath);
@@ -89,5 +89,14 @@ public class PokedexManager : MonoBehaviour {
         Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(texture.width / 2, texture.height / 2));
 
         return sprite;
+    }
+
+    private void OnApplicationQuit() {
+        // Purge temp pokemon if they exist. 
+        var myFiles = Directory.EnumerateFiles(Application.streamingAssetsPath + "/tmp/", "*.json", SearchOption.TopDirectoryOnly);
+
+        foreach (var file in myFiles) {
+            File.Delete(file);
+        }
     }
 }
