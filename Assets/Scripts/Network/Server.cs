@@ -11,7 +11,7 @@ public class Server : MonoBehaviour {
     // The id we use to identify our messages and register the handler
     short messageID = 1000;
 
-    public bool startServer = false;
+    public bool startServer = true;
     public bool serverStarted = false;
 
     public void Start() {
@@ -27,6 +27,7 @@ public class Server : MonoBehaviour {
         if (startServer && !serverStarted) {
             CreateServer();
             serverStarted = true;
+            startServer = false;
         }
     }
 
@@ -72,13 +73,7 @@ public class Server : MonoBehaviour {
 
     void OnClientConnected(NetworkMessage netMessage) {
         // Do stuff when a client connects to this server
-
-        // Send a thank you message to the client that just connected
-        NetworkPokemon messageContainer = new NetworkPokemon();
-        messageContainer.message = JsonUtility.ToJson(PokedexManager.currentPokemon, true);
-
-        // This sends a message to a specific client, using the connectionId
-        NetworkServer.SendToClient(netMessage.conn.connectionId, messageID, messageContainer);
+        Debug.Log("Recieving Pokemon...");
     }
 
     void OnClientDisconnected(NetworkMessage netMessage) {
@@ -93,6 +88,13 @@ public class Server : MonoBehaviour {
         Pokemon pokemon = JsonUtility.FromJson<Pokemon>(objectMessage.message);
         pokemon.ToJson(Path.Combine(Application.streamingAssetsPath, pokemon.savePath));
         Debug.Log("Message received: " + pokemon.species);
+
+        // Send a thank you message to the client that just connected
+        NetworkPokemon messageContainer = new NetworkPokemon();
+        messageContainer.message = "Pokemon Recieved!";
+
+        // This sends a message to a specific client, using the connectionId
+        NetworkServer.SendToClient(netMessage.conn.connectionId, messageID, messageContainer);
 
     }
 }

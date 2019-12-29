@@ -28,4 +28,12 @@ public class PokedexEntry : MonoBehaviour {
             sheetController.OnSelected(pokemon, this.gameObject);
         }
     }
+
+    public void SetNormalColor(Color color) {
+        if (PokedexManager.currentEntry != null) {
+            var colors = background.colors;
+            colors.normalColor = color;
+            background.colors = colors;
+        }
+    }
 }

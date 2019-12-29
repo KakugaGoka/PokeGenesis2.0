@@ -337,6 +337,7 @@ public class EncounterController : MonoBehaviour {
     public void OnSelected(Pokemon pokemon, GameObject entry) {
         PokedexManager.currentPokemon = pokemon;
         PokedexManager.currentEntry = entry;
+        entry.GetComponentInChildren<Button>().Select();
 
         nameField.text = pokemon.species == null ? "Unkown" : pokemon.species;
         typeField.text = pokemon.type == null ? "Unkown" : pokemon.type;

@@ -54,7 +54,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 687534460112019943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -63,8 +63,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -74,6 +72,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3666908944479784167
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,17 +128,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3666908944479784167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.101960786}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -149,6 +146,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &724777543031377638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3666908944479784167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -170,19 +168,22 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.078431375}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.2}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_DisabledColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.2}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 7038449136850647376}
@@ -200,8 +201,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5872624402897464418
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +251,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5872624402897464418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
@@ -282,8 +281,16 @@ MonoBehaviour:
   pokemon:
     sprite: {fileID: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
+    heldItem:
+      sprite: {fileID: 0}
+      name: 
+      desc: 
+      image: 
+      tier: 0
+    cryAudio: {fileID: 0}
+    savePath: 
     image: 
-    audio: 
+    cry: 
     species: 
     region: 
     type: 
@@ -295,13 +302,31 @@ MonoBehaviour:
     diet: 
     habitat: 
     entry: 
+    basicAbility: 
+    advancedAbility: 
+    highAbility: 
     number: 0
+    level: 0
     hp: 0
     atk: 0
     def: 0
     spatk: 0
     spdef: 0
     spd: 0
+    hpLevel: 0
+    atkLevel: 0
+    defLevel: 0
+    spatkLevel: 0
+    spdefLevel: 0
+    spdLevel: 0
+    hpCS: 0
+    atkCS: 0
+    defCS: 0
+    spatkCS: 0
+    spdefCS: 0
+    spdCS: 0
+    maxHealth: 0
+    currentHealth: 0
     stage: 0
     athleticsDie: 0
     acrobaticsDie: 0
@@ -317,17 +342,43 @@ MonoBehaviour:
     perceptionBonus: 0
     focusBonus: 0
     techEduBonus: 0
+    injuries: 0
+    captureRate: 0
     legendary: 0
     shiny: 0
     colorHasBeenSet: 0
+    asleep: 0
+    badlyAsleep: 0
+    blind: 0
+    totallyBlind: 0
+    burned: 0
+    confused: 0
+    cursed: 0
+    disabled: 0
+    enraged: 0
+    flinched: 0
+    frozen: 0
+    infatuated: 0
+    paralyzed: 0
+    poisoned: 0
+    badlyPoisoned: 0
+    slowed: 0
+    stuck: 0
+    suppressed: 0
+    trapped: 0
+    tripped: 0
+    vulnerable: 0
     evolutions: []
     capabilities: []
-    basicAbilites: []
+    basicAbilities: []
     advancedAbilities: []
     highAbilities: []
     moves: []
-    knownMoves: []
     currentAbilities: []
+    nature:
+      name: 
+      up: 
+      down: 
 --- !u!222 &6209676747246869272
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -390,7 +441,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8139486594210206132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -399,8 +450,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14

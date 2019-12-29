@@ -10,7 +10,6 @@ public class SheetController : MonoBehaviour {
     public GameObject contentPanel;
     public AudioSource cryAudioSource;
     public Image heldItemImage;
-    public Client client;
 
     public int capturedJSONCount = 0;
 
@@ -81,11 +80,9 @@ public class SheetController : MonoBehaviour {
         capabilitiesListField,
         heldItemDescriptionField,
         heldItemNameField,
-        myNameField,
         tradeNameField;
 
     private void Start() {
-        myNameField = GameObject.Find("My Name Field").GetComponent<InputField>();
         tradeNameField = GameObject.Find("Trade Name Field").GetComponent<InputField>();
         nameField = GameObject.Find("Name Field").GetComponent<InputField>();
         nameField = GameObject.Find("Name Field").GetComponent<InputField>();
@@ -188,6 +185,9 @@ public class SheetController : MonoBehaviour {
             EncounterController.GetMoves(pokemon);
             CreateListItem(pokemon);
         }
+
+        Server.server.startServer = true;
+        Server.server.serverStarted = false;
     }
 
     private void Update() {
@@ -242,6 +242,7 @@ public class SheetController : MonoBehaviour {
     public void OnSelected(Pokemon pokemon, GameObject entry) {
         PokedexManager.currentPokemon = pokemon;
         PokedexManager.currentEntry = entry;
+        entry.GetComponentInChildren<Button>().Select();
 
         nameField.text = pokemon.species == null ? "Unkown" : pokemon.species;
         typeField.text = pokemon.type == null ? "Unkown" : pokemon.type;
@@ -432,16 +433,7 @@ public class SheetController : MonoBehaviour {
     }
 
     public void TradePokemon() {
-
-    }
-
-    public void RequestTrade() {
-        if (!Client.client.clientStarted)
-            Server.server.startServer = true;
-    }
-
-    public void AcknowledgeTradeRequest() {
-        if (!Server.server.serverStarted)
-            Client.client.startClient = true;
+        Client.client.ip = tradeNameField.text;
+        Client.client.startClient = true;
     }
 }

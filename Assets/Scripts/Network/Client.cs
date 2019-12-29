@@ -7,7 +7,7 @@ public class Client : MonoBehaviour {
 
     public static Client client;
     int port = 9999;
-    string ip = "127.0.0.1";
+    public string ip = "127.0.0.1";
 
     // The id we use to identify our messages and register the handler
     short messageID = 1000;
@@ -31,6 +31,7 @@ public class Client : MonoBehaviour {
         if (startClient && !clientStarted) {
             CreateClient();
             clientStarted = true;
+            startClient = false;
         }
     }
 
@@ -64,6 +65,7 @@ public class Client : MonoBehaviour {
 
     void OnConnected(NetworkMessage message) {
         // Do stuff when connected to the server
+        Debug.Log("Sending Pokemon...");
 
         NetworkPokemon messageContainer = new NetworkPokemon();
         messageContainer.message = JsonUtility.ToJson(PokedexManager.currentPokemon, true);
@@ -74,6 +76,8 @@ public class Client : MonoBehaviour {
 
     void OnDisconnected(NetworkMessage message) {
         // Do stuff when disconnected to the server
+        clientStarted = false;
+        myClient = null;
     }
 
     // Message received from the server
@@ -82,8 +86,8 @@ public class Client : MonoBehaviour {
         // The client and server can be on different projects, as long as the MyNetworkMessage or the class you are using have the same implementation on both projects
         // The first thing we do is deserialize the message to our custom type
         var objectMessage = netMessage.ReadMessage<NetworkPokemon>();
-        Pokemon pokemon = JsonUtility.FromJson<Pokemon>(objectMessage.message);
-        pokemon.ToJson(Path.Combine(Application.streamingAssetsPath, pokemon.savePath));
-        Debug.Log("Message received: " + pokemon.species);
+        if (objectMessage.message == "Pokemon Recieved!") {
+            File.Delete(Path.Combine(Application.streamingAssetsPath, PokedexManager.currentPokemon.savePath));
+        }
     }
 }
