@@ -2,6 +2,8 @@
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 public class BaseRelations {
@@ -199,7 +201,7 @@ public class Pokemon {
         string data = JsonUtility.ToJson(this, true);
         string finalPath = ValidatePath(path);
         this.savePath = finalPath;
-        File.WriteAllText(finalPath, data);
+        File.WriteAllText(Path.Combine(Application.streamingAssetsPath, finalPath), data);
         Debug.Log("Pokemon saved to: " + finalPath);
     }
 

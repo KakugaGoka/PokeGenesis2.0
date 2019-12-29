@@ -22,5 +22,10 @@ public class PokedexEntry : MonoBehaviour {
             EncounterController encounterController = GameObject.Find("Scroll View").GetComponent<EncounterController>();
             encounterController.OnSelected(pokemon, this.gameObject);
         }
+
+        if (SceneManager.GetActiveScene().name.Contains("Sheet")) {
+            SheetController sheetController = GameObject.Find("Scroll View").GetComponent<SheetController>();
+            sheetController.OnSelected(pokemon, this.gameObject);
+        }
     }
 }

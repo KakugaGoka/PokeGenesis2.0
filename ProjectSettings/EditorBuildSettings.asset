@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DesktopEncounter.unity
     guid: 636a9bc6d2c635945b1f4e24ad6c2ee4
+  - enabled: 1
+    path: Assets/Scenes/DesktopSheet.unity
+    guid: dd408ac6a03a6fd49afe2183e70ac291
   m_configObjects: {}

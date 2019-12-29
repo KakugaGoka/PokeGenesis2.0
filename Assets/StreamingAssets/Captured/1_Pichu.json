@@ -1,0 +1,142 @@
+{
+    "sprite": {
+        "instanceID": -27658
+    },
+    "color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+    },
+    "heldItem": {
+        "sprite": {
+            "instanceID": -27668
+        },
+        "name": "None",
+        "desc": "",
+        "image": "",
+        "tier": 0
+    },
+    "cryAudio": {
+        "instanceID": -27664
+    },
+    "savePath": "Captured/1_Pichu.json",
+    "image": "172",
+    "cry": "172",
+    "species": "Pichu",
+    "region": "",
+    "type": "Electric",
+    "size": "1’ 0” / 0.3m (Small)",
+    "weight": "4.4 lbs. / 2kg (1)",
+    "gender": "Female",
+    "egg": "Field / Fairy",
+    "hatch": "4 Days",
+    "diet": "Herbivore",
+    "habitat": "Forest, Grassland, Urban",
+    "entry": "Pichu charges itself with electricity more easily on days with thunderclouds or when the air is very dry. You can hear the crackling of static electricity coming off this Pokémon.",
+    "basicAbility": "Cute Charm",
+    "advancedAbility": "None",
+    "highAbility": "None",
+    "number": 172,
+    "level": 1,
+    "hp": 2,
+    "atk": 4,
+    "def": 2,
+    "spatk": 4,
+    "spdef": 4,
+    "spd": 6,
+    "hpLevel": 3,
+    "atkLevel": 5,
+    "defLevel": 2,
+    "spatkLevel": 6,
+    "spdefLevel": 4,
+    "spdLevel": 12,
+    "hpCS": 0,
+    "atkCS": 0,
+    "defCS": 0,
+    "spatkCS": 0,
+    "spdefCS": 0,
+    "spdCS": 0,
+    "maxHealth": 16,
+    "currentHealth": 16,
+    "stage": 1,
+    "athleticsDie": 2,
+    "acrobaticsDie": 3,
+    "combatDie": 1,
+    "stealthDie": 3,
+    "perceptionDie": 2,
+    "focusDie": 2,
+    "techEduDie": 0,
+    "athleticsBonus": 0,
+    "acrobaticsBonus": 0,
+    "combatBonus": 0,
+    "stealthBonus": 2,
+    "perceptionBonus": 0,
+    "focusBonus": 1,
+    "techEduBonus": 0,
+    "injuries": 0,
+    "captureRate": 78,
+    "legendary": false,
+    "shiny": false,
+    "colorHasBeenSet": false,
+    "asleep": false,
+    "badlyAsleep": false,
+    "blind": false,
+    "totallyBlind": false,
+    "burned": false,
+    "confused": false,
+    "cursed": false,
+    "disabled": false,
+    "enraged": false,
+    "flinched": false,
+    "frozen": false,
+    "infatuated": false,
+    "paralyzed": false,
+    "poisoned": false,
+    "badlyPoisoned": false,
+    "slowed": false,
+    "stuck": false,
+    "suppressed": false,
+    "trapped": false,
+    "tripped": false,
+    "vulnerable": false,
+    "evolutions": [
+        "1 - Pichu",
+        "2 - Pikachu Minimum 10",
+        "3 - Raichu Thunderstone"
+    ],
+    "capabilities": [
+        "Overland 3",
+        "Swim 1",
+        "Jump 1/2",
+        "Power 1",
+        "Zapper",
+        "Underdog",
+        "Naturewalk (Forest, Urban)"
+    ],
+    "basicAbilities": [
+        "Static",
+        "Cute Charm"
+    ],
+    "advancedAbilities": [
+        "Lightning Rod",
+        "Sprint"
+    ],
+    "highAbilities": [
+        "Sequence"
+    ],
+    "moves": [
+        "1 Charm - Fairy",
+        "1 Thunder Shock - Electric",
+        "5 Tail Whip - Normal",
+        "10 Sweet Kiss - Fairy",
+        "13 Nasty Plot - Dark",
+        "18 Thunder Wave - Electric"
+    ],
+    "currentAbilities": [],
+    "nature": {
+        "name": "Proud",
+        "up": "hp",
+        "down": "spatk"
+    }
+}

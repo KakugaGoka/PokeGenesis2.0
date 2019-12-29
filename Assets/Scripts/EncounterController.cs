@@ -485,11 +485,21 @@ public class EncounterController : MonoBehaviour {
         }
     }
 
+    public void CaptureCurrentSelected() {
+        Debug.Log(PokedexManager.currentPokemon.savePath);
+        string newPath = PokedexManager.currentPokemon.savePath.Replace("tmp/", "Captured/");
+        Debug.Log(newPath);
+        Pokemon pokemon = PokedexManager.currentPokemon.Clone();
+        pokemon.savePath = newPath;
+        pokemon.ToJson(pokemon.savePath);
+        DeleteCurrentSelected();
+    }
+
     public void DeleteCurrentSelected() {
         if (PokedexManager.currentEntry != null) {
             Destroy(PokedexManager.currentEntry);
             pokemonToEncounter.Remove(PokedexManager.currentPokemon);
-            File.Delete(PokedexManager.currentPokemon.savePath);
+            File.Delete(Path.Combine(Application.streamingAssetsPath, PokedexManager.currentPokemon.savePath));
             PokedexManager.currentPokemon = null;
             PokedexManager.currentEntry = null;
             if (pokemonToEncounter.Count > 0) {
@@ -592,6 +602,7 @@ public class EncounterController : MonoBehaviour {
             GetCaptureRate(pokemon);
 
             OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
+            pokemon.ToJson(pokemon.savePath);
         } catch { Debug.Log("Failed to update stats! Could not parse input as integers."); }
     }
 
@@ -643,6 +654,7 @@ public class EncounterController : MonoBehaviour {
         }
         GetCaptureRate(PokedexManager.currentPokemon);
         OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
+        pokemon.ToJson(pokemon.savePath);
     }
 
     void AddPokemon(float numberToEncounter) {
@@ -681,7 +693,7 @@ public class EncounterController : MonoBehaviour {
             }
 
             try {
-                string path = Path.Combine(Application.streamingAssetsPath, "tmp/", pokemon.level + "_" + pokemon.species + ".json");
+                string path = Path.Combine("tmp/", pokemon.level + "_" + pokemon.species + ".json");
                 pokemon.ToJson(path);
             } catch { Debug.Log("Failed to save out " + pokemon.species); }
         }
@@ -808,7 +820,7 @@ public class EncounterController : MonoBehaviour {
         }
     }
 
-    void GetMoves(Pokemon pokemon) {
+    public static void GetMoves(Pokemon pokemon) {
         List<Move> moveList = new List<Move>();
         List<Move> knownMoveList = new List<Move>();
         foreach (string move in pokemon.moves) {
