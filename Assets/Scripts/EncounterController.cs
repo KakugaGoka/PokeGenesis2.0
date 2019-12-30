@@ -20,7 +20,6 @@ public class EncounterController : MonoBehaviour {
     public Image heldItemImage;
     public AudioSource cryAudioSource;
 
-    private List<Pokemon> pokemonToEncounter = new List<Pokemon>();
     private List<Pokemon> encounterablePokemon = new List<Pokemon>();
 
     private bool
@@ -216,6 +215,11 @@ public class EncounterController : MonoBehaviour {
                     Debug.LogWarning("Pokemon evolution is not formated correctly: " + evo);
                 }
             }
+            try {
+                int testFinalEvo = int.Parse(pokemon.evolutions[pokemon.evolutions.Length - 1][0].ToString());
+            } catch {
+                Debug.LogWarning("Final Stage imroperly formatted for: " + pokemon.species);
+            }
         }
 
         // Verify all item images
@@ -230,18 +234,24 @@ public class EncounterController : MonoBehaviour {
 
         foreach (var file in myFiles) {
             Pokemon pokemon = Pokemon.FromJson(file);
-            pokemonToEncounter.Add(pokemon);
+            PokedexManager.pokemonToEncounter.Add(pokemon);
             GetMoves(pokemon);
             CreateListItem(pokemon);
         }
     }
 
     private void Update() {
-        if (pokemonToEncounter.Count > 0 && PokedexManager.currentEntry == null) {
+        if (PokedexManager.pokemonToEncounter.Count > 0 && PokedexManager.currentEntry == null) {
             try {
                 GameObject nextEntry = GameObject.Find("Encounter Content").transform.GetChild(0).gameObject;
                 OnSelected(nextEntry.GetComponent<PokedexEntry>().pokemon, nextEntry);
-            } catch { }
+            } catch {
+                ClearFields();
+            }
+        }
+
+        if (nameField.text != "" && PokedexManager.currentEntry == null) {
+            ClearFields();
         }
     }
 
@@ -291,7 +301,7 @@ public class EncounterController : MonoBehaviour {
         }
 
         if (!appendScan) {
-            pokemonToEncounter = new List<Pokemon>();
+            PokedexManager.pokemonToEncounter = new List<Pokemon>();
         }
 
         // Clear out the old prefabs so that all UI items are correct ad their are no duplicates.
@@ -303,7 +313,7 @@ public class EncounterController : MonoBehaviour {
         // Add a number of new pokemon to the list equal to the slider value.
         AddPokemon(encounterSlider.value);
 
-        foreach(Pokemon pokemon in pokemonToEncounter) {
+        foreach(Pokemon pokemon in PokedexManager.pokemonToEncounter) {
             CreateListItem(pokemon);
         }
     }
@@ -335,11 +345,9 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void OnSelected(Pokemon pokemon, GameObject entry) {
-        PokedexManager.currentPokemon = pokemon;
-        PokedexManager.currentEntry = entry;
-        entry.GetComponentInChildren<Button>().Select();
+        PokedexManager.AssignCurrentPokemonAndEntry(entry);
 
-        nameField.text = pokemon.species == null ? "Unkown" : pokemon.species;
+        nameField.text = pokemon.name == null || pokemon.name == "" ? pokemon.species == null || pokemon.species == "" ? "???" : pokemon.species : pokemon.name;
         typeField.text = pokemon.type == null ? "Unkown" : pokemon.type;
         sizeField.text = pokemon.size == null ? "Unkown" : pokemon.size;
         weightField.text = pokemon.weight == null ? "Unkown" : pokemon.weight;
@@ -376,6 +384,13 @@ public class EncounterController : MonoBehaviour {
         int spatkStage = pokemon.spatkLevel / 10;
         int spdefStage = pokemon.spdefLevel / 10;
         int spdStage = pokemon.spdLevel / 10;
+
+        if (hpStage == 0) { hpStage = 1; }
+        if (atkStage == 0) { hpStage = 1; }
+        if (defStage == 0) { hpStage = 1; }
+        if (spatkStage == 0) { hpStage = 1; }
+        if (spdefStage == 0) { hpStage = 1; }
+        if (spdStage == 0) { hpStage = 1; }
 
         hpTotalField.text = (pokemon.hpLevel + (pokemon.hpCS * hpStage)).ToString();
         atkTotalField.text = (pokemon.atkLevel + (pokemon.atkCS * atkStage)).ToString();
@@ -493,89 +508,86 @@ public class EncounterController : MonoBehaviour {
         Pokemon pokemon = PokedexManager.currentPokemon.Clone();
         pokemon.savePath = newPath;
         pokemon.ToJson(pokemon.savePath);
-        DeleteCurrentSelected();
+        PokedexManager.manager.DeleteCurrentPokemonAndEntry();
     }
 
-    public void DeleteCurrentSelected() {
-        if (PokedexManager.currentEntry != null) {
-            Destroy(PokedexManager.currentEntry);
-            pokemonToEncounter.Remove(PokedexManager.currentPokemon);
-            File.Delete(Path.Combine(Application.streamingAssetsPath, PokedexManager.currentPokemon.savePath));
-            PokedexManager.currentPokemon = null;
-            PokedexManager.currentEntry = null;
-            if (pokemonToEncounter.Count > 0) {
-                GameObject nextEntry = GameObject.Find("Encounter Content").transform.GetChild(0).gameObject;
-                OnSelected(nextEntry.GetComponent<PokedexEntry>().pokemon, nextEntry);
-            } else {
-                nameField.text = "";
-                typeField.text = "";
-                sizeField.text = "";
-                weightField.text = "";
-                genderField.text = "";
-                natureField.text = "";
-                hpBaseField.text = "";
-                atkBaseField.text = "";
-                defBaseField.text = "";
-                spatkBaseField.text = "";
-                spdefBaseField.text = "";
-                spdBaseField.text = "";
-                hpLevelField.text = "";
-                atkLevelField.text = "";
-                defLevelField.text = "";
-                spatkLevelField.text = "";
-                spdefLevelField.text = "";
-                spdLevelField.text = "";
-                hpCSField.text = "";
-                atkCSField.text = "";
-                defCSField.text = "";
-                spatkCSField.text = "";
-                spdefCSField.text = "";
-                spdCSField.text = "";
-                hpTotalField.text = "";
-                atkTotalField.text = "";
-                defTotalField.text = "";
-                spatkTotalField.text = "";
-                spdefTotalField.text = "";
-                spdTotalField.text = "";
-                basicAbilityField.text = "";
-                advanceAbilityField.text = "";
-                highAbilityField.text = "";
-                levelField.text = "";
-                movesListField.text = "";
-                skillsListField.text = "";
-                capabilitiesListField.text = "";
-                heldItemNameField.text = "";
-                heldItemDescriptionField.text = "";
-                heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
-                cryAudioSource.clip = null;
-                blindedToggle.isOn = false;
-                totallyBlindedToggle.isOn = false;
-                burnedToggle.isOn = false;
-                confusedToggle.isOn = false;
-                cursedToggle.isOn = false;
-                disabledToggle.isOn = false;
-                enragedToggle.isOn = false;
-                flinchedToggle.isOn = false;
-                frozenToggle.isOn = false;
-                infatuatedToggle.isOn = false;
-                paralyzedToggle.isOn = false;
-                poisonedToggle.isOn = false;
-                badlyPoisonedToggle.isOn = false;
-                asleepToggle.isOn = false;
-                badlyAsleepToggle.isOn = false;
-                slowedToggle.isOn = false;
-                stuckToggle.isOn = false;
-                suppressedToggle.isOn = false;
-                trappedToggle.isOn = false;
-                trippedToggle.isOn = false;
-                vulnerableToggle.isOn = false;
-            }
-        }
+    public void ClearFields() {
+        nameField.text = "";
+        typeField.text = "";
+        sizeField.text = "";
+        weightField.text = "";
+        genderField.text = "";
+        natureField.text = "";
+        hpBaseField.text = "";
+        atkBaseField.text = "";
+        defBaseField.text = "";
+        spatkBaseField.text = "";
+        spdefBaseField.text = "";
+        spdBaseField.text = "";
+        hpLevelField.text = "";
+        atkLevelField.text = "";
+        defLevelField.text = "";
+        spatkLevelField.text = "";
+        spdefLevelField.text = "";
+        spdLevelField.text = "";
+        hpCSField.text = "";
+        atkCSField.text = "";
+        defCSField.text = "";
+        spatkCSField.text = "";
+        spdefCSField.text = "";
+        spdCSField.text = "";
+        hpTotalField.text = "";
+        atkTotalField.text = "";
+        defTotalField.text = "";
+        spatkTotalField.text = "";
+        spdefTotalField.text = "";
+        spdTotalField.text = "";
+        basicAbilityField.text = "";
+        advanceAbilityField.text = "";
+        highAbilityField.text = "";
+        levelField.text = "";
+        movesListField.text = "";
+        skillsListField.text = "";
+        capabilitiesListField.text = "";
+        heldItemNameField.text = "";
+        heldItemDescriptionField.text = "";
+        heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
+        cryAudioSource.clip = null;
+        blindedToggle.isOn = false;
+        totallyBlindedToggle.isOn = false;
+        burnedToggle.isOn = false;
+        confusedToggle.isOn = false;
+        cursedToggle.isOn = false;
+        disabledToggle.isOn = false;
+        enragedToggle.isOn = false;
+        flinchedToggle.isOn = false;
+        frozenToggle.isOn = false;
+        infatuatedToggle.isOn = false;
+        paralyzedToggle.isOn = false;
+        poisonedToggle.isOn = false;
+        badlyPoisonedToggle.isOn = false;
+        asleepToggle.isOn = false;
+        badlyAsleepToggle.isOn = false;
+        slowedToggle.isOn = false;
+        stuckToggle.isOn = false;
+        suppressedToggle.isOn = false;
+        trappedToggle.isOn = false;
+        trippedToggle.isOn = false;
+        vulnerableToggle.isOn = false;
     }
 
     public void SetStats() {
         Pokemon pokemon = PokedexManager.currentPokemon;
         try {
+            if (nameField.text != pokemon.species) {
+                pokemon.name = nameField.text;
+            }
+
+            pokemon.type = typeField.text;
+            pokemon.size = sizeField.text;
+            pokemon.weight = weightField.text;
+            pokemon.gender = genderField.text;
+
             pokemon.hp = int.Parse(hpBaseField.text);
             pokemon.atk = int.Parse(atkBaseField.text);
             pokemon.def = int.Parse(defBaseField.text);
@@ -604,7 +616,10 @@ public class EncounterController : MonoBehaviour {
 
             OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
             pokemon.ToJson(pokemon.savePath);
-        } catch { Debug.Log("Failed to update stats! Could not parse input as integers."); }
+        } catch {
+            string errorMessage = "Failed to assign all values properly. Please check last input.";
+            PokedexManager.manager.CreateWarningDialog(errorMessage);
+        }
     }
 
     [SerializeField]
@@ -661,9 +676,9 @@ public class EncounterController : MonoBehaviour {
     void AddPokemon(float numberToEncounter) {
         for (float i = 0; i < numberToEncounter; i += 1) {
             int index = UnityEngine.Random.Range(0, encounterablePokemon.Count);
-            pokemonToEncounter.Add(encounterablePokemon[index].Clone());
+            PokedexManager.pokemonToEncounter.Add(encounterablePokemon[index].Clone());
 
-            Pokemon pokemon = pokemonToEncounter[pokemonToEncounter.Count - 1];
+            Pokemon pokemon = PokedexManager.pokemonToEncounter[PokedexManager.pokemonToEncounter.Count - 1];
 
             pokemon.hpLevel = pokemon.hp;
             pokemon.atkLevel = pokemon.atk;
@@ -880,7 +895,9 @@ public class EncounterController : MonoBehaviour {
             pokemon.captureRate += 15;
         }
 
-        int maxStage = int.Parse(pokemon.evolutions[pokemon.evolutions.Length - 1][0].ToString());
+        string finalStage = pokemon.evolutions[pokemon.evolutions.Length - 1][0].ToString();
+        Debug.Log("Final Stage: " + finalStage);
+        int maxStage = int.Parse(finalStage);
         if (maxStage - pokemon.stage == 0) {
             pokemon.captureRate += -10;
         } else if (maxStage - pokemon.stage == 1) {

@@ -3593,8 +3593,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1645379380}
-        m_MethodName: DeleteCurrentSelected
+      - m_Target: {fileID: 2997982142605151178, guid: df187368d8977b44ba846a2b50c4e440,
+          type: 3}
+        m_MethodName: DeleteCurrentPokemonAndEntry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

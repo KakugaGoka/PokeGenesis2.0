@@ -6,14 +6,15 @@ using UnityEngine.UI;
 
 public class SheetController : MonoBehaviour {
 
+    // Known bugs:
+    // NetworkServer need to not be started if there is no internet. Need a check for this. 
+
     public GameObject pokedexPrefab;
     public GameObject contentPanel;
     public AudioSource cryAudioSource;
     public Image heldItemImage;
 
     public int capturedJSONCount = 0;
-
-    private List<Pokemon> pokemonToEncounter = new List<Pokemon>();
 
     private Toggle
         blindedToggle,
@@ -150,7 +151,7 @@ public class SheetController : MonoBehaviour {
         vulnerableToggle = GameObject.Find("Vulnerable Toggle").GetComponent<Toggle>();
 
         heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
-
+#if DEBUG
         // Verify all pokemon images and cries
         foreach (Pokemon pokemon in PokedexManager.pokedex) {
             if (!File.Exists(Application.streamingAssetsPath + "/PokemonIcons/" + pokemon.image + ".png")) {
@@ -174,6 +175,7 @@ public class SheetController : MonoBehaviour {
                 Debug.LogWarning("Image not found for item: " + item.name);
             }
         }
+#endif
 
         // Load temp pokemon if they exist. 
         var myFiles = Directory.GetFiles(Application.streamingAssetsPath + "/Captured/", "*.json", SearchOption.TopDirectoryOnly);
@@ -181,7 +183,7 @@ public class SheetController : MonoBehaviour {
 
         foreach (var file in myFiles) {
             Pokemon pokemon = Pokemon.FromJson(file);
-            pokemonToEncounter.Add(pokemon);
+            PokedexManager.pokemonToEncounter.Add(pokemon);
             EncounterController.GetMoves(pokemon);
             CreateListItem(pokemon);
         }
@@ -191,22 +193,29 @@ public class SheetController : MonoBehaviour {
     }
 
     private void Update() {
-        if (pokemonToEncounter.Count > 0 && PokedexManager.currentEntry == null) {
+        if (PokedexManager.pokemonToEncounter.Count > 0 && PokedexManager.currentEntry == null) {
             try {
                 GameObject nextEntry = GameObject.Find("Encounter Content").transform.GetChild(0).gameObject;
                 OnSelected(nextEntry.GetComponent<PokedexEntry>().pokemon, nextEntry);
-            } catch { }
+            } catch {
+                ClearFields();            
+            }
         }
+
+        if (nameField.text != "" && PokedexManager.currentEntry == null) {
+            ClearFields();
+        }
+
         var myFiles = Directory.GetFiles(Application.streamingAssetsPath + "/Captured/", "*.json", SearchOption.TopDirectoryOnly);
         if (capturedJSONCount != myFiles.Length) {
             capturedJSONCount = myFiles.Length;
-            pokemonToEncounter = new List<Pokemon>(); 
+            PokedexManager.pokemonToEncounter = new List<Pokemon>(); 
             for (int i = 0; i < contentPanel.transform.childCount; i++) {
                 Destroy(contentPanel.transform.GetChild(i).gameObject);
             }
             foreach (var file in myFiles) {
                 Pokemon pokemon = Pokemon.FromJson(file);
-                pokemonToEncounter.Add(pokemon);
+                PokedexManager.pokemonToEncounter.Add(pokemon);
                 EncounterController.GetMoves(pokemon);
                 CreateListItem(pokemon);
             }
@@ -235,16 +244,15 @@ public class SheetController : MonoBehaviour {
                 controller.sprite.color = pokemon.color;
             }
         } else {
-            Debug.LogError("Pokemon Sprite could not be loaded from: Icons/" + pokemon.image);
+            string errorMessage = "Pokemon Sprite could not be loaded from: Icons/" + pokemon.image;
+            PokedexManager.manager.CreateWarningDialog(errorMessage);
         }
     }
 
     public void OnSelected(Pokemon pokemon, GameObject entry) {
-        PokedexManager.currentPokemon = pokemon;
-        PokedexManager.currentEntry = entry;
-        entry.GetComponentInChildren<Button>().Select();
+        PokedexManager.AssignCurrentPokemonAndEntry(entry);
 
-        nameField.text = pokemon.species == null ? "Unkown" : pokemon.species;
+        nameField.text = pokemon.name == null || pokemon.name == "" ? pokemon.species == null || pokemon.species == "" ? "???" : pokemon.species : pokemon.name;
         typeField.text = pokemon.type == null ? "Unkown" : pokemon.type;
         sizeField.text = pokemon.size == null ? "Unkown" : pokemon.size;
         weightField.text = pokemon.weight == null ? "Unkown" : pokemon.weight;
@@ -355,85 +363,76 @@ public class SheetController : MonoBehaviour {
         }
     }
 
-    public void DeleteCurrentSelected() {
-        if (PokedexManager.currentEntry != null) {
-            Destroy(PokedexManager.currentEntry);
-            pokemonToEncounter.Remove(PokedexManager.currentPokemon);
-            File.Delete(PokedexManager.currentPokemon.savePath);
-            PokedexManager.currentPokemon = null;
-            PokedexManager.currentEntry = null;
-            if (pokemonToEncounter.Count > 0) {
-                GameObject nextEntry = GameObject.Find("Encounter Content").transform.GetChild(0).gameObject;
-                OnSelected(nextEntry.GetComponent<PokedexEntry>().pokemon, nextEntry);
-            } else {
-                nameField.text = "";
-                typeField.text = "";
-                sizeField.text = "";
-                weightField.text = "";
-                genderField.text = "";
-                natureField.text = "";
-                hpBaseField.text = "";
-                atkBaseField.text = "";
-                defBaseField.text = "";
-                spatkBaseField.text = "";
-                spdefBaseField.text = "";
-                spdBaseField.text = "";
-                hpLevelField.text = "";
-                atkLevelField.text = "";
-                defLevelField.text = "";
-                spatkLevelField.text = "";
-                spdefLevelField.text = "";
-                spdLevelField.text = "";
-                hpCSField.text = "";
-                atkCSField.text = "";
-                defCSField.text = "";
-                spatkCSField.text = "";
-                spdefCSField.text = "";
-                spdCSField.text = "";
-                hpTotalField.text = "";
-                atkTotalField.text = "";
-                defTotalField.text = "";
-                spatkTotalField.text = "";
-                spdefTotalField.text = "";
-                spdTotalField.text = "";
-                basicAbilityField.text = "";
-                advanceAbilityField.text = "";
-                highAbilityField.text = "";
-                levelField.text = "";
-                movesListField.text = "";
-                skillsListField.text = "";
-                capabilitiesListField.text = "";
-                heldItemNameField.text = "";
-                heldItemDescriptionField.text = "";
-                heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
-                cryAudioSource.clip = null;
-                blindedToggle.isOn = false;
-                totallyBlindedToggle.isOn = false;
-                burnedToggle.isOn = false;
-                confusedToggle.isOn = false;
-                cursedToggle.isOn = false;
-                disabledToggle.isOn = false;
-                enragedToggle.isOn = false;
-                flinchedToggle.isOn = false;
-                frozenToggle.isOn = false;
-                infatuatedToggle.isOn = false;
-                paralyzedToggle.isOn = false;
-                poisonedToggle.isOn = false;
-                badlyPoisonedToggle.isOn = false;
-                asleepToggle.isOn = false;
-                badlyAsleepToggle.isOn = false;
-                slowedToggle.isOn = false;
-                stuckToggle.isOn = false;
-                suppressedToggle.isOn = false;
-                trappedToggle.isOn = false;
-                trippedToggle.isOn = false;
-                vulnerableToggle.isOn = false;
-            }
-        }
+    public void ClearFields() {
+        nameField.text = "";
+        typeField.text = "";
+        sizeField.text = "";
+        weightField.text = "";
+        genderField.text = "";
+        natureField.text = "";
+        hpBaseField.text = "";
+        atkBaseField.text = "";
+        defBaseField.text = "";
+        spatkBaseField.text = "";
+        spdefBaseField.text = "";
+        spdBaseField.text = "";
+        hpLevelField.text = "";
+        atkLevelField.text = "";
+        defLevelField.text = "";
+        spatkLevelField.text = "";
+        spdefLevelField.text = "";
+        spdLevelField.text = "";
+        hpCSField.text = "";
+        atkCSField.text = "";
+        defCSField.text = "";
+        spatkCSField.text = "";
+        spdefCSField.text = "";
+        spdCSField.text = "";
+        hpTotalField.text = "";
+        atkTotalField.text = "";
+        defTotalField.text = "";
+        spatkTotalField.text = "";
+        spdefTotalField.text = "";
+        spdTotalField.text = "";
+        basicAbilityField.text = "";
+        advanceAbilityField.text = "";
+        highAbilityField.text = "";
+        levelField.text = "";
+        movesListField.text = "";
+        skillsListField.text = "";
+        capabilitiesListField.text = "";
+        heldItemNameField.text = "";
+        heldItemDescriptionField.text = "";
+        heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
+        cryAudioSource.clip = null;
+        blindedToggle.isOn = false;
+        totallyBlindedToggle.isOn = false;
+        burnedToggle.isOn = false;
+        confusedToggle.isOn = false;
+        cursedToggle.isOn = false;
+        disabledToggle.isOn = false;
+        enragedToggle.isOn = false;
+        flinchedToggle.isOn = false;
+        frozenToggle.isOn = false;
+        infatuatedToggle.isOn = false;
+        paralyzedToggle.isOn = false;
+        poisonedToggle.isOn = false;
+        badlyPoisonedToggle.isOn = false;
+        asleepToggle.isOn = false;
+        badlyAsleepToggle.isOn = false;
+        slowedToggle.isOn = false;
+        stuckToggle.isOn = false;
+        suppressedToggle.isOn = false;
+        trappedToggle.isOn = false;
+        trippedToggle.isOn = false;
+        vulnerableToggle.isOn = false;
     }
 
     public void TradePokemon() {
         Client.client.ip = tradeNameField.text;
-        Client.client.startClient = true;
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        string name = pokemon.name == null || pokemon.name == "" ? pokemon.species == null || pokemon.species == "" ? "???" : pokemon.species : pokemon.name;
+        string message = "Are you sure you wish to send " + name + " to " + tradeNameField.text + "?";
+        PokedexManager.manager.CreateConfirmationDialog(message, ConfirmationType.trade);
     }
 }

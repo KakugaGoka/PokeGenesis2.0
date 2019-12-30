@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PokedexManager : MonoBehaviour {
@@ -14,6 +14,10 @@ public class PokedexManager : MonoBehaviour {
     static public Item[] items;
     static public Pokemon currentPokemon;
     static public GameObject currentEntry;
+    static public List<Pokemon> pokemonToEncounter = new List<Pokemon>();
+
+    public GameObject warningBox;
+    public GameObject confirmationBox;
 
     // Start is called before the first frame update
     void Awake() {
@@ -99,5 +103,54 @@ public class PokedexManager : MonoBehaviour {
         foreach (var file in myFiles) {
             File.Delete(file);
         }
+    }
+
+    static public void AssignCurrentPokemonAndEntry(GameObject entry) {
+        if (currentEntry != null) {
+            Button oldButton = currentEntry.GetComponent<PokedexEntry>().background;
+            Color unset = new Vector4(1, 1, 1, 0);
+            SetButtonColors(oldButton, unset);
+        }
+        Button newButton = entry.GetComponent<PokedexEntry>().background;
+        Color toset = new Vector4(1, 0, 0, 1);
+        SetButtonColors(newButton, toset);
+        PokedexEntry dexEntry = entry.GetComponent<PokedexEntry>();
+        currentPokemon = dexEntry.pokemon;
+        currentEntry = entry;
+    }
+
+    public void DeleteCurrentPokemonAndEntry() {
+        if (currentEntry != null) {
+            Destroy(currentEntry);
+            pokemonToEncounter.Remove(currentPokemon);
+            File.Delete(Path.Combine(Application.streamingAssetsPath, PokedexManager.currentPokemon.savePath));
+            currentPokemon = null;
+            currentEntry = null;
+        }
+    }
+
+    static public void SetButtonColors(Button button, Color color) {
+        var colors = button.colors;
+        colors.normalColor = color;
+        colors.highlightedColor = color;
+        colors.selectedColor = color;
+        colors.pressedColor = color;
+        button.colors = colors;
+    }
+
+
+    public void CreateWarningDialog(string message) {
+        GameObject dialog = Instantiate(warningBox);
+        DialogController dialogController = dialog.GetComponent<DialogController>();
+        dialogController.messageBox.text = message;
+        Debug.LogWarning(message);
+    }
+
+    public void CreateConfirmationDialog(string message, ConfirmationType confirmation) {
+        GameObject dialog = Instantiate(confirmationBox);
+        DialogController dialogController = dialog.GetComponent<DialogController>();
+        dialogController.messageBox.text = message;
+        dialogController.confirmationType = confirmation;
+        Debug.LogWarning(message);
     }
 }

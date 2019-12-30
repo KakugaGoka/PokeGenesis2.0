@@ -103,6 +103,7 @@ public class Pokemon {
         image,
         cry,
         species,
+        name,
         region,
         type,
         size,

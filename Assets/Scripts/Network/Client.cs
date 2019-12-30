@@ -88,6 +88,9 @@ public class Client : MonoBehaviour {
         var objectMessage = netMessage.ReadMessage<NetworkPokemon>();
         if (objectMessage.message == "Pokemon Recieved!") {
             File.Delete(Path.Combine(Application.streamingAssetsPath, PokedexManager.currentPokemon.savePath));
+            myClient.Disconnect();
+            clientStarted = false;
+            startClient = false;
         }
     }
 }

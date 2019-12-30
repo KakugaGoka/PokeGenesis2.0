@@ -87,7 +87,8 @@ public class Server : MonoBehaviour {
         var objectMessage = netMessage.ReadMessage<NetworkPokemon>();
         Pokemon pokemon = JsonUtility.FromJson<Pokemon>(objectMessage.message);
         pokemon.ToJson(Path.Combine(Application.streamingAssetsPath, pokemon.savePath));
-        Debug.Log("Message received: " + pokemon.species);
+        string debugMessage = "Pokemon received: " + pokemon.species;
+        PokedexManager.manager.CreateWarningDialog(debugMessage);
 
         // Send a thank you message to the client that just connected
         NetworkPokemon messageContainer = new NetworkPokemon();
