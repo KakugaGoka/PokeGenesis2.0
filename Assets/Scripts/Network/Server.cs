@@ -24,10 +24,12 @@ public class Server : MonoBehaviour {
     }
 
     public void Update() {
-        if (startServer && !serverStarted) {
-            CreateServer();
-            serverStarted = true;
-            startServer = false;
+        if (PokedexManager.networkAvailable) {
+            if (startServer && !serverStarted) {
+                CreateServer();
+                serverStarted = true;
+                startServer = false;
+            }
         }
     }
 

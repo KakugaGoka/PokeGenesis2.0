@@ -81,9 +81,11 @@ public class SheetController : MonoBehaviour {
         capabilitiesListField,
         heldItemDescriptionField,
         heldItemNameField,
-        tradeNameField;
+        tradeNameField,
+        myNameField;
 
     private void Start() {
+        myNameField = GameObject.Find("My Name Field").GetComponent<InputField>();
         tradeNameField = GameObject.Find("Trade Name Field").GetComponent<InputField>();
         nameField = GameObject.Find("Name Field").GetComponent<InputField>();
         nameField = GameObject.Find("Name Field").GetComponent<InputField>();
@@ -252,6 +254,7 @@ public class SheetController : MonoBehaviour {
 
     public void OnSelected(Pokemon pokemon, GameObject entry) {
         PokedexManager.AssignCurrentPokemonAndEntry(entry);
+        myNameField.text = PokedexManager.GetLocalIPAddress();
 
         nameField.text = pokemon.name == null || pokemon.name == "" ? pokemon.species == null || pokemon.species == "" ? "???" : pokemon.species : pokemon.name;
         typeField.text = pokemon.type == null ? "Unkown" : pokemon.type;

@@ -15,6 +15,7 @@ public class PokedexManager : MonoBehaviour {
     static public Pokemon currentPokemon;
     static public GameObject currentEntry;
     static public List<Pokemon> pokemonToEncounter = new List<Pokemon>();
+    static public bool networkAvailable = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
 
     public GameObject warningBox;
     public GameObject confirmationBox;
@@ -138,6 +139,18 @@ public class PokedexManager : MonoBehaviour {
         button.colors = colors;
     }
 
+    static public string GetLocalIPAddress() {
+        if (networkAvailable) {
+            var host = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
+            foreach (var ip in host.AddressList) {
+                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork) {
+                    return ip.ToString();
+                }
+            }
+            Debug.LogError("No network adapters with an IPv4 address in the system!");
+        }
+        return "No network available";
+    }
 
     public void CreateWarningDialog(string message) {
         GameObject dialog = Instantiate(warningBox);
