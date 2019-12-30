@@ -11,7 +11,7 @@ public class Server : MonoBehaviour {
     // The id we use to identify our messages and register the handler
     short messageID = 1000;
 
-    public bool startServer = true;
+    public bool startServer = false;
     public bool serverStarted = false;
 
     public void Start() {

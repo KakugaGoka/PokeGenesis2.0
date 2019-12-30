@@ -192,7 +192,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2165245533955107497}
-        m_MethodName: Close
+        m_MethodName: Confirm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -547,6 +547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageBox: {fileID: 6121704989027024678}
   cameraForDialog: {fileID: 0}
+  confirmationType: 0
 --- !u!1 &6121704988411410519
 GameObject:
   m_ObjectHideFlags: 0

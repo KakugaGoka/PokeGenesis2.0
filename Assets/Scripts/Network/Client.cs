@@ -49,7 +49,7 @@ public class Client : MonoBehaviour {
         // Register the handlers for the different network messages
         RegisterHandlers();
 
-        Debug.Log("Connecting to Server...");
+        Debug.Log("Connecting to Server using " + ip + "...");
         // Connect to the server
         myClient.Connect(ip, port);
     }
