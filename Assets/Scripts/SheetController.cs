@@ -395,6 +395,8 @@ public class SheetController : MonoBehaviour {
         spatkTotalField.text = "";
         spdefTotalField.text = "";
         spdTotalField.text = "";
+        currentHealthField.text = "";
+        maxHealthField.text = "";
         basicAbilityField.text = "";
         advanceAbilityField.text = "";
         highAbilityField.text = "";
