@@ -188,8 +188,9 @@ public class SheetController : MonoBehaviour {
             CreateListItem(pokemon);
         }
 
-        Server.server.startServer = true;
-        Server.server.serverStarted = false;
+        if (!Server.server.serverStarted) {
+            Server.server.startServer = true;
+        }
     }
 
     private void Update() {

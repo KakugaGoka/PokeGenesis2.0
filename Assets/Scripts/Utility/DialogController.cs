@@ -20,12 +20,13 @@ public class DialogController : MonoBehaviour
         switch (confirmationType) {
             case ConfirmationType.trade:
                 Client.client.startClient = true;
+                Destroy(this.gameObject);
                 return;
             case ConfirmationType.delete:
                 //TODO
+                Destroy(this.gameObject);
                 return;
         }
-
     }
 }
 
