@@ -15,7 +15,7 @@ public class PokedexManager : MonoBehaviour {
     static public Pokemon currentPokemon;
     static public GameObject currentEntry;
     static public List<Pokemon> pokemonToEncounter = new List<Pokemon>();
-    static public bool networkAvailable = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
+    static public bool networkAvailable;
 
     public GameObject warningBox;
     public GameObject confirmationBox;
@@ -29,6 +29,14 @@ public class PokedexManager : MonoBehaviour {
         }
 
         DontDestroyOnLoad(this.gameObject);
+
+        if (!Directory.Exists(Path.Combine(Application.streamingAssetsPath, "Captured/"))) {
+            Directory.CreateDirectory(Path.Combine(Application.streamingAssetsPath, "Captured/"));
+        }
+
+        if (!Directory.Exists(Path.Combine(Application.streamingAssetsPath, "tmp/"))) {
+            Directory.CreateDirectory(Path.Combine(Application.streamingAssetsPath, "tmp/"));
+        }
 
         // Load Pokemon From JSON
         string pokemonString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"));
@@ -77,6 +85,10 @@ public class PokedexManager : MonoBehaviour {
         }
         items = itemsList.ToArray();
         Debug.Log("Items Count: " + items.Count());
+    }
+
+    private void Update() {
+        networkAvailable = Application.internetReachability != NetworkReachability.NotReachable;
     }
 
     public void ChangeScene(int sceneID) {

@@ -193,6 +193,7 @@ public class SheetController : MonoBehaviour {
         if (!Server.server.serverStarted) {
             Server.server.startServer = true;
         }
+        myNameField.text = PokedexManager.GetLocalIPAddress();
     }
 
     private void Update() {
