@@ -1,6 +1,41 @@
 ﻿{
 	"Items": [
 		{
+			"number": "A1",
+			"name": "Cut",
+			"type": "Normal"
+		},
+		{
+			"number": "A2",
+			"name": "Fly",
+			"type": "Flying"
+		},
+		{
+			"number": "A3",
+			"name": "Surf",
+			"type": "Water"
+		},
+		{
+			"number": "A4",
+			"name": "Strength",
+			"type": "Normal"
+		},
+		{
+			"number": "A5",
+			"name": "Waterfall",
+			"type": "Water"
+		},
+		{
+			"number": "A6",
+			"name": "Rock Smash",
+			"type": "Fighting"
+		},
+		{
+			"number": "A7",
+			"name": "Dive",
+			"type": "Water"
+		},
+		{
 			"number": "1",
 			"name": "Hone Claws",
 			"type": "Dark"

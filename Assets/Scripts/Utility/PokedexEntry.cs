@@ -8,6 +8,7 @@ public class PokedexEntry : MonoBehaviour {
     public Text species;
     public Button background;
     public Color backgroundTint;
+    public GameObject shiny;
 
     [HideInInspector]
     public Pokemon pokemon;

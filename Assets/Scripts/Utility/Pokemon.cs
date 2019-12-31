@@ -20,6 +20,14 @@ public class BaseRelations {
     }
 }
 
+[Serializable]
+public class TM {
+    public string
+        name,
+        number,
+        type;
+}
+
 public class Move {
     public string
         name;
@@ -88,9 +96,6 @@ public class Pokemon {
 
     public Sprite
         sprite;
-
-    public Color
-        color;
 
     public Item
         heldItem;
@@ -162,7 +167,6 @@ public class Pokemon {
     public bool
         legendary,      // -30 CR
         shiny,          // -10 CR
-        colorHasBeenSet,
         // Conditions
         asleep,         // +5 CR
         badlyAsleep,

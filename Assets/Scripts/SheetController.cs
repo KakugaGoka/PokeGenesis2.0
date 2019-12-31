@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class SheetController : MonoBehaviour {
 
@@ -76,9 +77,34 @@ public class SheetController : MonoBehaviour {
         advanceAbilityField,
         highAbilityField,
         levelField,
-        movesListField,
-        skillsListField,
-        capabilitiesListField,
+        movesListField0,
+        movesListField1,
+        movesListField2,
+        movesListField3,
+        movesListField4,
+        movesListField5,
+        skillsListField0,
+        skillsListField1,
+        skillsListField2,
+        skillsListField3,
+        skillsListField4,
+        skillsListField5,
+        skillsListField6,
+        capabilitiesListField0,
+        capabilitiesListField1,
+        capabilitiesListField2,
+        capabilitiesListField3,
+        capabilitiesListField4,
+        capabilitiesListField5,
+        capabilitiesListField6,
+        capabilitiesListField7,
+        capabilitiesListField8,
+        capabilitiesListField9,
+        capabilitiesListField10,
+        capabilitiesListField11,
+        capabilitiesListField12,
+        capabilitiesListField13,
+        capabilitiesListField14,
         heldItemDescriptionField,
         heldItemNameField,
         tradeNameField,
@@ -124,9 +150,34 @@ public class SheetController : MonoBehaviour {
         advanceAbilityField = GameObject.Find("Advanced Ability Field").GetComponent<InputField>();
         highAbilityField = GameObject.Find("High Ability Field").GetComponent<InputField>();
         levelField = GameObject.Find("Level Field").GetComponent<InputField>();
-        movesListField = GameObject.Find("Moves List Field").GetComponent<InputField>();
-        skillsListField = GameObject.Find("Skills List Field").GetComponent<InputField>();
-        capabilitiesListField = GameObject.Find("Capabilities List Field").GetComponent<InputField>();
+        movesListField0 = GameObject.Find("Moves List Field 0").GetComponent<InputField>();
+        movesListField1 = GameObject.Find("Moves List Field 1").GetComponent<InputField>();
+        movesListField2 = GameObject.Find("Moves List Field 2").GetComponent<InputField>();
+        movesListField3 = GameObject.Find("Moves List Field 3").GetComponent<InputField>();
+        movesListField4 = GameObject.Find("Moves List Field 4").GetComponent<InputField>();
+        movesListField5 = GameObject.Find("Moves List Field 5").GetComponent<InputField>();
+        skillsListField0 = GameObject.Find("Skills List Field 0").GetComponent<InputField>();
+        skillsListField1 = GameObject.Find("Skills List Field 1").GetComponent<InputField>();
+        skillsListField2 = GameObject.Find("Skills List Field 2").GetComponent<InputField>();
+        skillsListField3 = GameObject.Find("Skills List Field 3").GetComponent<InputField>();
+        skillsListField4 = GameObject.Find("Skills List Field 4").GetComponent<InputField>();
+        skillsListField5 = GameObject.Find("Skills List Field 5").GetComponent<InputField>();
+        skillsListField6 = GameObject.Find("Skills List Field 6").GetComponent<InputField>();
+        capabilitiesListField0 = GameObject.Find("Capabilities List Field 0").GetComponent<InputField>();
+        capabilitiesListField1 = GameObject.Find("Capabilities List Field 1").GetComponent<InputField>();
+        capabilitiesListField2 = GameObject.Find("Capabilities List Field 2").GetComponent<InputField>();
+        capabilitiesListField3 = GameObject.Find("Capabilities List Field 3").GetComponent<InputField>();
+        capabilitiesListField4 = GameObject.Find("Capabilities List Field 4").GetComponent<InputField>();
+        capabilitiesListField5 = GameObject.Find("Capabilities List Field 5").GetComponent<InputField>();
+        capabilitiesListField6 = GameObject.Find("Capabilities List Field 6").GetComponent<InputField>();
+        capabilitiesListField7 = GameObject.Find("Capabilities List Field 7").GetComponent<InputField>();
+        capabilitiesListField8 = GameObject.Find("Capabilities List Field 8").GetComponent<InputField>();
+        capabilitiesListField9 = GameObject.Find("Capabilities List Field 9").GetComponent<InputField>();
+        capabilitiesListField10 = GameObject.Find("Capabilities List Field 10").GetComponent<InputField>();
+        capabilitiesListField11 = GameObject.Find("Capabilities List Field 11").GetComponent<InputField>();
+        capabilitiesListField12 = GameObject.Find("Capabilities List Field 12").GetComponent<InputField>();
+        capabilitiesListField13 = GameObject.Find("Capabilities List Field 13").GetComponent<InputField>();
+        capabilitiesListField14 = GameObject.Find("Capabilities List Field 14").GetComponent<InputField>();
         heldItemDescriptionField = GameObject.Find("Held Item Description Field").GetComponent<InputField>();
         heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<InputField>();
 
@@ -238,14 +289,7 @@ public class SheetController : MonoBehaviour {
         if (pokemon.sprite != null) {
             controller.sprite.sprite = pokemon.sprite;
             if (pokemon.shiny) {
-                if (!pokemon.colorHasBeenSet) {
-                    float h = UnityEngine.Random.Range(0.0f, 1.0f);
-                    float s = 0.5f;
-                    float v = 1.0f;
-                    pokemon.color = Color.HSVToRGB(h, s, v);
-                    pokemon.colorHasBeenSet = true;
-                }
-                controller.sprite.color = pokemon.color;
+                controller.shiny.SetActive(true);
             }
         } else {
             string errorMessage = "Pokemon Sprite could not be loaded from: Icons/" + pokemon.image;
@@ -330,12 +374,12 @@ public class SheetController : MonoBehaviour {
         trippedToggle.isOn = pokemon.tripped;
         vulnerableToggle.isOn = pokemon.vulnerable;
 
-        movesListField.text = "";
-        if (pokemon.knownMoveList.Length > 0) {
-            for (int i = pokemon.knownMoveList.Length - 1; i >= 0; i--) {
-                movesListField.text += pokemon.knownMoveList[i].name + Environment.NewLine;
-            }
-        }
+        movesListField0.text = pokemon.knownMoveList.Length > 0 ? pokemon.knownMoveList[0].name : "";
+        movesListField1.text = pokemon.knownMoveList.Length > 1 ? pokemon.knownMoveList[1].name : "";
+        movesListField2.text = pokemon.knownMoveList.Length > 2 ? pokemon.knownMoveList[2].name : "";
+        movesListField3.text = pokemon.knownMoveList.Length > 3 ? pokemon.knownMoveList[3].name : "";
+        movesListField4.text = pokemon.knownMoveList.Length > 4 ? pokemon.knownMoveList[4].name : "";
+        movesListField5.text = pokemon.knownMoveList.Length > 5 ? pokemon.knownMoveList[5].name : "";
 
         if (pokemon.heldItem.name == null || pokemon.heldItem.name == "None" || pokemon.heldItem.name == "") {
             pokemon.heldItem = new Item() {
@@ -352,20 +396,29 @@ public class SheetController : MonoBehaviour {
         heldItemNameField.text = pokemon.heldItem == null ? "None" : pokemon.heldItem.name;
         heldItemDescriptionField.text = pokemon.heldItem == null ? "" : pokemon.heldItem.desc;
 
-        skillsListField.text = "Athl " + pokemon.athleticsDie.ToString() + "d6+" + pokemon.athleticsBonus.ToString() + Environment.NewLine +
-            "Acro " + pokemon.acrobaticsDie.ToString() + "d6+" + pokemon.acrobaticsBonus.ToString() + Environment.NewLine +
-            "Combat " + pokemon.combatDie.ToString() + "d6+" + pokemon.combatBonus.ToString() + Environment.NewLine +
-            "Focus " + pokemon.focusDie.ToString() + "d6+" + pokemon.focusBonus.ToString() + Environment.NewLine +
-            "Percep " + pokemon.perceptionDie.ToString() + "d6+" + pokemon.perceptionBonus.ToString() + Environment.NewLine +
-            "Stealth " + pokemon.stealthDie.ToString() + "d6+" + pokemon.stealthBonus.ToString() + Environment.NewLine +
-            "Edu:Tech " + pokemon.techEduDie.ToString() + "d6+" + pokemon.techEduBonus.ToString();
+        skillsListField0.text = "Athl " + pokemon.athleticsDie.ToString() + "d6+" + pokemon.athleticsBonus.ToString();
+        skillsListField1.text = "Acro " + pokemon.acrobaticsDie.ToString() + "d6+" + pokemon.acrobaticsBonus.ToString();
+        skillsListField2.text = "Combat " + pokemon.combatDie.ToString() + "d6+" + pokemon.combatBonus.ToString();
+        skillsListField3.text = "Focus " + pokemon.focusDie.ToString() + "d6+" + pokemon.focusBonus.ToString();
+        skillsListField4.text = "Percep " + pokemon.perceptionDie.ToString() + "d6+" + pokemon.perceptionBonus.ToString();
+        skillsListField5.text = "Stealth " + pokemon.stealthDie.ToString() + "d6+" + pokemon.stealthBonus.ToString();
+        skillsListField6.text = "Edu:Tech " + pokemon.techEduDie.ToString() + "d6+" + pokemon.techEduBonus.ToString();
 
-        capabilitiesListField.text = "";
-        if (pokemon.capabilities.Length > 0) {
-            for (int i = 0; i < pokemon.capabilities.Length; i++) {
-                capabilitiesListField.text += pokemon.capabilities[i] + Environment.NewLine;
-            }
-        }
+        capabilitiesListField0.text = pokemon.capabilities.Length > 0 ? pokemon.capabilities[0] : "";
+        capabilitiesListField1.text = pokemon.capabilities.Length > 1 ? pokemon.capabilities[1] : "";
+        capabilitiesListField2.text = pokemon.capabilities.Length > 2 ? pokemon.capabilities[2] : "";
+        capabilitiesListField3.text = pokemon.capabilities.Length > 3 ? pokemon.capabilities[3] : "";
+        capabilitiesListField4.text = pokemon.capabilities.Length > 4 ? pokemon.capabilities[4] : "";
+        capabilitiesListField5.text = pokemon.capabilities.Length > 5 ? pokemon.capabilities[5] : "";
+        capabilitiesListField6.text = pokemon.capabilities.Length > 6 ? pokemon.capabilities[6] : "";
+        capabilitiesListField7.text = pokemon.capabilities.Length > 7 ? pokemon.capabilities[7] : "";
+        capabilitiesListField8.text = pokemon.capabilities.Length > 8 ? pokemon.capabilities[8] : "";
+        capabilitiesListField9.text = pokemon.capabilities.Length > 9 ? pokemon.capabilities[9] : "";
+        capabilitiesListField10.text = pokemon.capabilities.Length > 10 ? pokemon.capabilities[10] : "";
+        capabilitiesListField11.text = pokemon.capabilities.Length > 11 ? pokemon.capabilities[11] : "";
+        capabilitiesListField12.text = pokemon.capabilities.Length > 12 ? pokemon.capabilities[12] : "";
+        capabilitiesListField13.text = pokemon.capabilities.Length > 13 ? pokemon.capabilities[13] : "";
+        capabilitiesListField14.text = pokemon.capabilities.Length > 14 ? pokemon.capabilities[14] : "";
     }
 
     public void ClearFields() {
@@ -405,9 +458,34 @@ public class SheetController : MonoBehaviour {
         advanceAbilityField.text = "";
         highAbilityField.text = "";
         levelField.text = "";
-        movesListField.text = "";
-        skillsListField.text = "";
-        capabilitiesListField.text = "";
+        movesListField0.text = "";
+        movesListField1.text = "";
+        movesListField2.text = "";
+        movesListField3.text = "";
+        movesListField4.text = "";
+        movesListField5.text = "";
+        skillsListField0.text = "";
+        skillsListField1.text = "";
+        skillsListField2.text = "";
+        skillsListField3.text = "";
+        skillsListField4.text = "";
+        skillsListField5.text = "";
+        skillsListField6.text = "";
+        capabilitiesListField0.text = "";
+        capabilitiesListField1.text = "";
+        capabilitiesListField2.text = "";
+        capabilitiesListField3.text = "";
+        capabilitiesListField4.text = "";
+        capabilitiesListField5.text = "";
+        capabilitiesListField6.text = "";
+        capabilitiesListField7.text = "";
+        capabilitiesListField8.text = "";
+        capabilitiesListField9.text = "";
+        capabilitiesListField10.text = "";
+        capabilitiesListField11.text = "";
+        capabilitiesListField12.text = "";
+        capabilitiesListField13.text = "";
+        capabilitiesListField14.text = "";
         heldItemNameField.text = "";
         heldItemDescriptionField.text = "";
         heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
@@ -441,5 +519,49 @@ public class SheetController : MonoBehaviour {
         string name = pokemon.name == null || pokemon.name == "" ? pokemon.species == null || pokemon.species == "" ? "???" : pokemon.species : pokemon.name;
         string message = "Are you sure you wish to send " + name + " to " + tradeNameField.text + "?";
         PokedexManager.manager.CreateConfirmationDialog(message, ConfirmationType.trade);
+    }
+
+    public void PlayPokemonCry() {
+        if (PokedexManager.currentPokemon == null) {
+            Debug.Log("No pokemon currently selected");
+            return;
+        }
+        if (PokedexManager.currentPokemon.cryAudio != null) {
+            cryAudioSource.clip = PokedexManager.currentPokemon.cryAudio;
+            cryAudioSource.Play();
+        } else {
+            GetCries(PokedexManager.currentPokemon);
+            if (PokedexManager.currentPokemon.cryAudio != null) {
+                cryAudioSource.clip = PokedexManager.currentPokemon.cryAudio;
+                cryAudioSource.Play();
+            } else {
+                Debug.LogError("The current pokemon does not have a proper cry set up: " + PokedexManager.currentPokemon.species);
+            }
+        }
+    }
+
+    void GetCries(Pokemon pokemon) {
+        if (pokemon.cryAudio == null) {
+            string cryLocation = Path.Combine(Application.streamingAssetsPath, "Cries/" + pokemon.cry + ".ogg");
+            if (!File.Exists(cryLocation)) {
+                Debug.LogError("Cry could not be found: " + cryLocation);
+            } else {
+                StartCoroutine(LoadClipCoroutine("file:///" + cryLocation, pokemon));
+            }
+        }
+    }
+
+    IEnumerator<UnityWebRequestAsyncOperation> LoadClipCoroutine(string file, Pokemon pokemon) {
+        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(file, AudioType.OGGVORBIS)) {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError) {
+                Debug.Log(www.error);
+            } else {
+                AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
+                Debug.Log(clip.name + " has a length of: " + clip.length);
+                pokemon.cryAudio = clip;
+            }
+        }
     }
 }

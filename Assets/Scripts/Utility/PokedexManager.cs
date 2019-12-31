@@ -12,6 +12,7 @@ public class PokedexManager : MonoBehaviour {
     static public Nature[] natures;
     static public string[] habitats;
     static public Item[] items;
+    static public TM[] TMs;
     static public Pokemon currentPokemon;
     static public GameObject currentEntry;
     static public List<Pokemon> pokemonToEncounter = new List<Pokemon>();
@@ -43,6 +44,14 @@ public class PokedexManager : MonoBehaviour {
         pokedex = JsonHelper.FromJson<Pokemon>(pokemonString);
         pokedex = pokedex.OrderBy(x => x.number).ToArray();
         Debug.Log("Pokedex Count: " + pokedex.Count());
+
+        int capabilityCount = 0;
+        foreach (var pokemon in pokedex) {
+            if (pokemon.capabilities.Count() > capabilityCount) {
+                capabilityCount = pokemon.capabilities.Count();
+            }
+        }
+        Debug.Log("Highest Capability Count: " + capabilityCount.ToString());
 
         // Load in Types from JSON
         string typesString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/PokemonTypes.json"));
@@ -85,6 +94,11 @@ public class PokedexManager : MonoBehaviour {
         }
         items = itemsList.ToArray();
         Debug.Log("Items Count: " + items.Count());
+
+        string tmString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/TMs.json"));
+        TMs = JsonHelper.FromJson<TM>(tmString);
+        TMs = TMs.OrderBy(x => x.number).ToArray();
+        Debug.Log("TM Count: " + TMs.Count());
     }
 
     private void Update() {
