@@ -21,6 +21,13 @@ public class BaseRelations {
 }
 
 [Serializable]
+public class Info {
+    public string
+        name,
+        description;
+}
+
+[Serializable]
 public class TM {
     public string
         name,
@@ -28,11 +35,31 @@ public class TM {
         type;
 }
 
+[Serializable]
+public class Ability {
+    public string
+        name,
+        freq,
+        effect,
+        target,
+        trigger;
+}
+
+[Serializable]
 public class Move {
     public string
-        name;
+        name,
+        typeName,
+        freq,
+        damageClass,
+        range,
+        effects,
+        contestType,
+        contestEffect;
 
     public int
+        ac,
+        db,
         level;
 
     public PokemonType
@@ -196,8 +223,7 @@ public class Pokemon {
         basicAbilities,
         advancedAbilities,
         highAbilities,
-        moves,
-        currentAbilities;
+        moves;
 
     public Nature
         nature;

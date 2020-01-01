@@ -1,0 +1,324 @@
+{
+	"Items": [
+		{
+			"description": "Power represents a Pokémon or Trainer’s physical\nstrength. The chart below shows how much weight\na Pokémon or Trainer can bear, depending on their\npower value.\nPower   Heavy     Staggering   Drag\nValue    Lifting         Limit         Limit\n  1         2-5 lb.           10 lb.        20 lb.\n  2         20-30 lb.       60 lb.        120 lb.\n  3         35-50 lb.       100 lb.      200 lb.\n  4         45-70 lb.       140 lb.      280 lb.\n  5         60-90 lb.       180 lb.      360 lb.\n  6         75-115 lb.      230 lb.     460 lb.\n  7         100-140 lb.    300 lb.     600 lb.\n  8         120-190 lb.    380 lb.     760 lb.\n  9         150-240 lb.    480 lb.     960 lb.\n  10       200-300 lb.    600 lb.     1200 lb.\n  11       250-375 lb.    750 lb.     1500 lb.\n  12       350-450 lb.    900 lb.     1800 lb.\n  13       450-525 lb.   1050 lb.    2100 lb.\n  14       500-600 lb.   1200 lb.    2400 lb.\n  15       550-675 lb.   1350 lb.    2700 lb.\n  16       600-750 lb.   1500 lb.    3000 lb.",
+			"name": "Power"
+		},
+		{
+			"description": "There are two kinds of Jumps – Long Jumps and High \nJumps. Long Jumps measure how far a Pokémon or \nTrainer can Jump, while High Jumps measure how high. \nEach Pokémon or Trainer has a specific value \nassociated which each of these; this value is \nrepresented in meters and measures how far they can \njump without making a check.",
+			"name": "Jump"
+		},
+		{
+			"description": "The Burrow Capability determines how much\na Pokémon can shift each turn while underground.\nThe holes dug are only as large as the Pokémon who\nburrows. If a Pokémon learns the Move Dig and does\nnot have the Burrow Capability, they gain Burrow 3. If\nthey already have the Burrow Capability, the Burrow\nvalue is raised 3. A Pokémon or Trainer ending its turn\nunderground must spend a Standard Action to remain\nunderground. If a Pokémon or Trainer has already spent\nits Standard Action on a round it ends underground, it\ninstead forfeits its next Standard Action.",
+			"name": "Burrow"
+		},
+		{
+			"description": "Overland is a Movement Capability that\ndefines how many meters the Pokémon may shift while\non dry land. Most Pokémon and Trainers will use\nOverland as their primary movement capability.",
+			"name": "Overland"
+		},
+		{
+			"description": "The Sky Speed determines how many meters a\nPokémon may shift in the air. If a Pokémon learns the\nMove Fly and does not have the Sky Capability, they\ngain Sky 4. If they already have the Sky Capability, the\nSky value is raised by 4.",
+			"name": "Sky"
+		},
+		{
+			"description": "Swim is a Movement Capability that defines\nhow quickly the Pokémon can move underwater. If a\nPokémon learns the Move Dive and does not have the\nSwim Capability, they gain Swim 3. If they already have\nthe Underwater Capability, the Swim value is raised 3.",
+			"name": "Swim"
+		},
+		{
+			"description": "Levitate is a Movement Capability that defines\nhow quickly the Pokémon moves while floating or\nlevitating. When using the Levitate Capability, the\nmaximum height off the ground the Pokémon can\nachieve is equal to half of their Levitate Capability. If a\nPokémon gains the Levitate ability and does not have\nthe Levitate Capability, they gain Levitate 4. If they\nalready have the Levitate Capability, the Levitate value\nis raised 2.",
+			"name": "Levitate"
+		},
+		{
+			"description": "Teleporter is a Movement Capability that\ndefines how far the Pokémon can travel by teleportation.\nOnly one teleport action can be taken during a round\nof combat. The Pokémon must have line of sight to the\nlocation they wish to teleport to, and they must end each\nteleport action touching a surface (ie it is not possible to\n‘chain’ teleports in order to fly). If a Pokémon also has\nthe Sky or Levitate Capability, they may Teleport into\nSky spaces (only to spaces within their maximum height\nfor Levitate). Teleporter cannot be increased by taking\na Sprint Action. If a Pokémon learns the move Teleport\nand does not have the Teleporter Capability they\ngain Teleporter 4. If they already have the Teleporter\nCapability, the Teleporter value is raised 4.",
+			"name": "Teleporter"
+		},
+		{
+			"description": "This Pokémon may serve as a mount for\nthe specified number of average Trainers regardless of \nPower Capability and ignoring penalties for weight carried. \nThis Capability fails to function if significant weight is \nadded in addition to the Trainer(s).",
+			"name": "Mountable"
+		},
+		{
+			"description": "Pokemon who are Alluring smell\nvery pleasant. Once per day, they may act as\nif they were a Bait Item. If a Pokemon learns\nthe Move Sweet Scent and does not \nhave the Alluring Capability, they gain the \nAlluring Capability,",
+			"name": "Alluring"
+		},
+		{
+			"description": "Pokemon that are Amorphous have\nan inconsistent shape. They can flatten and \nreform themselves like putty. They can stretch\nout their body material and condense\nthemselves as well. They're able to squeeze\nthrough tight spaces, such as under a door.,",
+			"name": "Amorphous"
+		},
+		{
+			"description": "These Trainers and Pokemon \ncan read the Auras of other living beings.\nEach Aura conveys two pieces of information.\nFirst, its hue or color reveals something\nabout the personality of the target. The\nhue of an Aura may change over time if\nan individual undergoes significant \nchanges in personality or worldview. \nSecond, Auras also appear brightened\nor darkened at times. Brightened auras\ncan reflect good moods and intentions,\nwhereas darkened auras can reflect a\nsour mood or deceptive and negative\nintentions.,",
+			"name": "Aura Reader"
+		},
+		{
+			"description": "Pokemon and Trainers\nwith Aura Pulse are blessed by a great \npower. They can project their thoughts\nusing Aura, straight into the minds of\nthose they wish to communicate with. \nThey can read the surface thoughts of\nminds in return, but only minds that \nopen up to them willingly.,",
+			"name": "Aura Pulse"
+		},
+		{
+			"description": "Zubat, Deino, and Deino's\nEvolutions are blind, but can generally\nfunction through increased senses —\nBlindsense can take the form of\necholocation, increased hearing,\nenhanced sense of smell, a\nsupernatural awareness of the\nenvironment, and more. It is,\nhowever, unable to distinguish\ncolors or exact forms (reading\nwords on a book would be impossible,\nfor example). Pokemon and Trainers\nwith Blindsense can function even in\ncomplete darkness, as if they had\nDarkvision, and they can never be\nBlinded.,",
+			"name": "Blindsense"
+		},
+		{
+			"description": "When a Pokemon with \nBloom, Cherrim, is in Sunny weather\nit transforms; changing its\nappearance from the closed bud,\npurple-petal form into the pink\nopen flower form.,",
+			"name": "Bloom"
+		},
+		{
+			"description": "Pokemon with Blender\nare capable of changing their\ncolor to match their surroundings.\nAs a Shift Action, they may increase\ntheir Evasion by +2 against Melee \nattacks and by +4 against Ranged a\nttacks until the end of their \nnext turn. This Capability \nmay be performed At-Will.,",
+			"name": "Blender"
+		},
+		{
+			"description": "Pokemon with the \nChilled Capability are always cold.,",
+			"name": "Chilled"
+		},
+		{
+			"description": "A Pokemon with the \nDarkvision Capability never has \ntheir vision hampered by a loss\nof light. They can even see in \ntotal darkness and are never \nBlind or affected by Total \nBlindness due to low-light \nconditions.,",
+			"name": "Darkvision"
+		},
+		{
+			"description": "A Pokemon with the \nDead Silent capability does not \nbreathe or have a heartbeat, and \ndoes not shuffle or make noise as\nthey walk unless they wish to.,",
+			"name": "Dead Silent"
+		},
+		{
+			"description": "Rayquaza may Mega-Evolve \nwithout holding a Mega Stone as long\nas it knows the Move Dragon Ascent.,",
+			"name": "Delta Evolution"
+		},
+		{
+			"description": "A Pokemon of at least \nLevel 20 who has the Dream Mist \nCapability can produce Dream Mist\nonce a day as an Extended Action. \nDream Mist may be collected with\na Collection Jar.,",
+			"name": "Dream Mist"
+		},
+		{
+			"description": "Pokemon with the \nDream Reader Capability may \nview the dreams of Sleeping \nPokemon and Trainers. If the \nPokemon or Trainer was put \nto Sleep with a Dream Mist\nitem, they may also form a \nmoving image of the dream \nfrom the Dream Mist in the \ntarget, allowing others to \nget a brief glance of the \ncontents of the dream. \nPokemon with this Capability \ncannot read the dreams of \ntargets with the Mindlock\nCapability.,",
+			"name": "Dream Reader"
+		},
+		{
+			"description": "A Pokemon with Egg\nWarmer may heat up an egg once\nper 24 hours. Roll 1d10; on a \nresult of 1, nothing happens;\non a result of 2-10, the egg's \nhatch time is reduced, in hours,\nby the number rolled.,",
+			"name": "Egg Warmer"
+		},
+		{
+			"description": "The Pokemon's Struggle Attacks may\nbe Fire-Typed if they wish. They may also add\ntheir Special Attack instead of their Attack\nand have the attack deal Special Damage,\nif they wish. Multiple Fire-Type Moves\ngrant Firestarter.,",
+			"name": "Firestarter"
+		},
+		{
+			"description": "Once a day, a Pokemon of at \nleast Level 20 with this Capability may\nbe allowed to roam freely in a City or\nTown for at least one hour. The user \nthen returns with an amount of money\nequal to its Level multiplied by 1d10.\nIf the user is a Pokemon with a \nLoyalty of 1 or 0, it may not return\nand instead run away.,",
+			"name": "Fortune"
+		},
+		{
+			"description": "The Pokemon's Struggle Attacks\nmay be Water-Typed if they wish. They may \nalso add their Special Attack instead of\ntheir Attack and have the attack deal \nSpecial Damage, if they wish. Multiple \nWater-Type Moves grant Fountain.,",
+			"name": "Fountain"
+		},
+		{
+			"description": "The Pokemon's struggle \nAttacks may be Ice- Typed if they wish. \nThey may also add their Special Attack \ninstead of their Attack and have the \nattack deal Special Damage, if they wish. \nMultiple Ice-Type Moves grant Freezer.,",
+			"name": "Freezer"
+		},
+		{
+			"description": "Pokemon of at least Level 20 \nwith the Gather Unown Capability can summon \na random Unown once a week as a Standard \nAction. The Unown has a Level of 2d8, \nbut it cannot exceed the user's Level. \nThey are not immediately hostile.,",
+			"name": "Gather Unown"
+		},
+		{
+			"description": "A Gilled Pokemon can \nbreathe underwater. It never needs\nto come up for air and can remain\nunderwater for as long as it wants to.,",
+			"name": "Gilled"
+		},
+		{
+			"description": "A Pokemon with the Glow \nCapability can emit light from a part\nof its body. Depending on the variety\nof wild Pokemon nearby, it might attract \nPokemon or ward them away. If a Pokemon \nlearns the Move Flash, Eerie Impulse, \nor Tail Glow and does not have the Glow\nCapability, they gain Glow.,",
+			"name": "Glow"
+		},
+		{
+			"description": "A Pokemon with the \nGroundshaper Capability can \ntransform the terrain around\nthem to create Rough Terrain\nor Slow Terrain or Terrain\nthat is both, or flatten out \nRough Terrain to create Basic \nTerrain. Using this Capability \nis an At-Will Standard Action \nthat affects all cardinally \nadjacent squares. All squares\nneed not be affected in the\nsame way, and the user may \nchoose not to affect certain \nsquares at all if they wish.",
+			"name": "Groundshaper"
+		},
+		{
+			"description": "The Pokemon's Struggle Attacks \nmay be Flying- Typed if they wish. They may \nalso add their Special Attack instead of \ntheir Attack and have the attack deal Special\nDamage, if they wish. Multiple Flying-Type \nMoves grant Guster.,",
+			"name": "Guster"
+		},
+		{
+			"description": "Pokemon of at least Level 30\nwith this Capability can produce a Heart\nScale item once a week as an Extended\nAction.,",
+			"name": "Heart Gift"
+		},
+		{
+			"description": "A Pokemon with the Heater\nCapability is always warm.,",
+			"name": "Heater"
+		},
+		{
+			"description": "Pokemon of at least Level\n20 with this Capability may produce a \nRevival Herb once a day as an Extended \nAction. This Herb may be harvested by a \nTrainer.,",
+			"name": "Herb Growth"
+		},
+		{
+			"description": "Once a day, Pokemon with \nthis Capability can find a Honey item \nas an Extended Action if they are allowed \ntime in an environment with abundant \nplant life. Honey may be collected \nwith a Collection Jar.,",
+			"name": "Honey Gather"
+		},
+		{
+			"description": "Pokemon with the \nIllusionist Capability can create \nminor visual Illusions as a Standard \nAction. These may be no more than \nhalf a meter in any dimension and \nproduce no sensory sensations \noutside of sight. Any physical \ncontact noticeably disrupts an \nIllusion, and all other effects \nthat see through Illusions can do \nso. Otherwise, the Illusion appears \nlife-like and can be made to move, \nthough it cannot move further than \nthe user's Focus Rank in meters away \nfrom the user. Actively manipulating the \nIllusion requires constant attention \nfrom the user. For minor effects such as \nmaking an illusionary flame dance, this \nrequires the user to constantly spend \nits Swift Actions. For more major effects \nsuch as animating an illusionary skeleton, \nthe user must constantly spend Standard Actions. \nIf a Pokemon gains the Illusion Ability and does \nnot have the Illusionist Capability, they gain \nIllusionist.,",
+			"name": "Illusionist"
+		},
+		{
+			"description": "A Pokemon with the capability \nInflatable can expand its size up to 125% of\nits normal size as a Standard Action.\nWhile Inflated, a Pokemon \ndoes not change its weight. When Inflated, \nPokemon gain a -1 Penalty to Evasion, but \nbecome Blocking Terrain; you may not target \nthrough an Inflated Pokemon. Returning to \nnormal size is a Shift Action. If a Pokemon \nlearns the Move Growth or Stockpile and does \nnot have the Inflatable Capability, they gain\nInflatable.,",
+			"name": "Inflatable"
+		},
+		{
+			"description": "Pokemon who have the Invisibility \nCapability can turn invisible as a Shift Action. \nPokemon may not perform Moves while invisible. \nWhile invisible, you must roll +4 during Accuracy \nChecks to hit the Pokemon. When a Pokemon turns\ninvisible, they can only remain invisible for up\nto 4 minutes or can turn visible again as a\nFree Action. After becoming visible, they must\nwait two plus the number of minutes they spent\ninvisible before turning invisible again.,",
+			"name": "Invisibility"
+		},
+		{
+			"description": "When Shuckle is holding a berry,\nafter 24 hours of that Berry going unused, it\nwill be turned into Berry Juice and stored in\nthe Shuckle's shell. Shuckle may use Berry Juice \nas a Snack Item; if the juice is bottled, other \nPokemon and Trainers may drink the Berry Juice \nas a Refreshment. If a Berry Juice item is left\nin the Shuckle's shell unused for two weeks it \nsolidifies and turns into a Rare Candy.,",
+			"name": "Juicer"
+		},
+		{
+			"description": "Spiritomb carries around with it \nan Odd Keystone. Trainers may collect additional \nOdd Keystones as they travel. They may then \nsynchronize them with a Spiritomb for the \ncost of 2 Tutor Points. A Spiritomb may then \nfreely teleport between any Odd Keystones \nwithin 10 meters as a Standard Action.,",
+			"name": "Keystone Warp"
+		},
+		{
+			"description": "Unown with the Letter Press \ncapability may be combined with other Unown, \ncreating a Prime Unown, or adding to an \nexisting Prime Unown. The first four times \nyou add an Unown to a Prime Unown, including \nthe creation of the Prime Unown, add 5 points \nto any one of the Prime Unown's Base stats. \nCombined Unown may retain different instances \nof Hidden Power from each individual Unown, \nup the normal Move List limit. When combining \nUnown with the Letter Press capability, for \neach instance of Hidden Power, choose whether \nit will operate on Attack stat or Special \nAttack stat. This choice is permanent. Unowns \ncombined with Letter Press can be kept in a \nsingle Poke Ball, essentially becoming a single \nPokemon. Once combined with Letter Press, \nUnowns cannot be separated. Prime Unown lose \nthe Underdog Capability.,",
+			"name": "Letter Press"
+		},
+		{
+			"description": "In addition to being a Pokemon,\nHonedge and its evolutionary relatives also \ncount as equipment and may be used as such \nif the Pokemon is willing. Honedge may be \nused as a Small Melee Weapon. Doublade may \nbe used as two Small Melee Weapons; when \none is held in each hand, the user gains +2 \nto Evasion. Aegislash may be used as a Small \nMelee Weapon and a Light Shield. When Fainted, \nthese Pokemon may still be used as inanimate \npieces of equipment, but all rolls made with \nthem take a -2 penalty. If the Living Weapon \nis also being used as an active Pokemon, the \nWielder and the Living Weapon use the Wielder's \nMovement Speed to shift during each of their turns,\nand the total amount Shifted during the round cannot\nexceed the Wielder's Movement Speed. While wielded,\nthe Living Weapon may impart its wielder benefits\nas if it were a Simple or Fine Weapon, as long as\nthe wielder has the requisite Combat Skill Rank.\nA Honedge counts as a Simple Weapon and grants the\nAdept Move Wounding Strike. A Do blade counts as a\nSimple Weapon and Grants the Adept Move Double Swipe.\nAn Aegislash counts as a Fine Weapon and grants the\nAdept Move Wounding Strike and the Master Move Bleed!\nWhile used as a Living Weapon, the Pokemon also adds\nthese Moves to its own Move List, so long as their\nwielder qualifies to access them. Either the Living Weapon\nor the Wielder can disengage as a Swift Action during\ntheir turn to Shift and attack separately. Re-engaging \nis a Standard Action that may be taken by either party. \nWhile Wielded, a Living Weapon cannot benefit from its \nNo Guard Ability, and an Aegislash is automatically\nin Blade forme.,",
+			"name": "Living Weapon"
+		},
+		{
+			"description": "Magnetic Pokemon can lightly manipulate \nmagnetic fields. With this, they can repel or attract\niron and/or steel, holding it to their body or pushing\nit away. Through this magnetic manipulation, they can\nalso feel magnetic fields and discern magnetic north.\nIf a Pokemon learns the Move Magnet Rise or Magnet\nBomb, or gains the Magnet Pull Ability, and does not\nhave the Magnetic Capability, they gain Magnetic.,",
+			"name": "Magnetic"
+		},
+		{
+			"description": "Kangaskhan is always born with the\nBaby Template (see Optional Rules), subtracting\n5 from each of its Base Stats. While Kangaskhan\nhave the Baby Template, they live in their mother's\npouch and will not willingly leave it for long;\ntheir bond is so strong, that both Pokemon are\nable to be captured in a single Pokeball during\nthis time. While Kangaskhan has the Baby Template,\nit cannot be Commanded to fight or take any action.\nMother Kangaskhan with a Baby in their pouch are\nexceptional at protecting their babies; attacks cannot\ntarget Kangaskhan inside their mother's pouch while\nshe is conscious. Trainers raising a Kangaskhan may\nchoose to have their Mother Kangaskhan gain 20% less \nexperience from any sources and give that Experience\nto the baby instead. Once a Baby Kangaskhan reaches \nlevel 25 and loses the Baby Template, it exits its \nmother's pouch permanently. If its mother had a \nloyalty higher than 1, it will allow itself to be \neasily caught by its Trainer.,",
+			"name": "Marsupial"
+		},
+		{
+			"description": "The Pokemon's struggle Attacks may \nbe Rock-Typed if they wish. They may also add \ntheir Special Attack instead of their Attack \nand have the attack deal Special Damage, if \nthey wish. Multiple Rock-Type Moves grant \nMaterializer.,",
+			"name": "Materializer"
+		},
+		{
+			"description": "The user may produce a MooMoo \nMilk Item once a day as an Extended Action \nas long as they are at least Level 20. \nMooMoo Milk may be collected with a\nCollection Jar.,",
+			"name": "Milk Collection"
+		},
+		{
+			"description": "Pokemon who have the Capability\nMind Lock cannot have their minds read by \nTelepathy, are immune to the Move Mind Reader, \ncannot have their emotions calmed with \nGentle Vibe, and Telepathic Warning cannot\ntrigger on their attacks. The Dream Reader\nCapability cannot read their dreams.,",
+			"name": "Mind Lock"
+		},
+		{
+			"description": "This Pokemon may serve as a mount \nfor X average Trainers regardless of Power \nCapability and ignoring penalties for weight\ncarried. This Capability fails to function \nif significant weight is added in addition \nto the Trainer(s). Note that this Capability\nis meant to be used as a guideline, not a \nhard and fast rule. Feel free to adjust \nwhich Pokemon can be ridden as fits your\ncampaign.,",
+			"name": "Mountable X"
+		},
+		{
+			"description": "Pokemon of at least Level 20 with\nthis Capability can produce a mushroom item once\na day as an Extended Action. Roll 1d20 when \nthis Capability is used. On a roll of 1-12,\na Tiny Mushroom is produced. On a roll of 13-18,\na Big Mushroom is produced. On a roll of 19-20, \na Balm Mushroom is produced.,",
+			"name": "Mushroom Harvest"
+		},
+		{
+			"description": "Naturewalk is always listed with\nTerrain types in parentheses, such as Naturewalk\n(Forest and Grassland). Pokemon with Naturewalk \ntreat all listed terrains as Basic Terrain.,",
+			"name": "Naturewalk"
+		},
+		{
+			"description": "A Pokemon with\nPack Mon instinctively\nbelong to a rigid pack\nstructure, and are naturally\ninclined to the top of that\nstructure. Wild Pokemon\nthat are of this Pokemon's \nunevolved form or at\nleast 10 levels lower than\nthe user will instantly\nobey the user's commands;\nshowing a Pokemon with\nPack Mon to a group of \nWilds will put them at a Fearful\ndisposition. However, \ntwo Pack Mons of the same species\nand within 10 Levels of\neach other will fight for\ndominance of the group.\nIf a Wild Pack Leader is ten \nlevels higher than your Pokemon,\nit will expect your \nPokemon to obey it, and may attack \nif it does not.,",
+			"name": "Pack Mon"
+		},
+		{
+			"description": "When a Pokemon with \nthis Capability Evolves,\nit loses this Capability and\ncreates a Pink Pearl Held Item.,",
+			"name": "Pearl Creation"
+		},
+		{
+			"description": "A Pokemon with Phasing \nmay Shift through \nSlow Terrain without their Speed\nCapabilities being affected.\nAs a Standard action, they may\nturn completely Intangible. \nWhile Intangible, they cannot be \ntargeted by Moves or attacks,\ncannot perform Standard Actions,\nand lose a Tick of Hit \nPoints at the end of each round.\nWhile Intangible,\nthey may pass through solid walls\nand all other blocking \nterrain during their Shift Action.\nBecoming Tangible \nagain is a Shift Action.,",
+			"name": "Phasing"
+		},
+		{
+			"description": "Pokemon with the Planter Capability\ncan act as a Portable Grower, holding one plant\nat a time. Pokemon with this Capability may be \nlimited in what they can grow. In these cases,\nthey will have parentheses on their Planter \nCapability denoting what they can grow.\nFor example, Planter (Berries) would allow\nthe Pokemon to grow Berry plants only.,",
+			"name": "Planter"
+		},
+		{
+			"description": "Pokemon with this Capability\nhave a supernatural sense for natural\ndisasters such as earthquakes, floods,\nand volcanic eruptions. The magnitude of\nthe impending disaster and its proximity to\nthe Pokemon both affect how often they get \nthis sense before a disaster and how long in\nadvance the warning is. Closer and bigger \ndisasters tend to have a greater effect \nand may alert the Pokemon to the specific\narea where a disaster will occur days in\nadvance, while lesser disasters may simply\ngive the Pokemon an odd sense of unease \nseveral hours before they hit.,",
+			"name": "Premonition"
+		},
+		{
+			"description": "A Pokemon with Reach has the\nRange of their Melee attacks increased\nbased on their size category; Small and\nMedium Pokemon may make Melee attacks\nfrom up to 2 meters away, and Large and\nbigger Pokemon may make Melee attacks\nfrom up to 3 meters away. Pokemon with\nReach are either really large or have\na stretchy limb with which they can\nstrike foes from a distance.,",
+			"name": "Reach"
+		},
+		{
+			"description": "Gengar can melt into \nshadows to remain unseen as a Standard\nAction. While doing so, Gengar receives \na +4 bonus to Stealth rolls, gains +1 to\nits evasion, and can travel along a surface as \nif completely flat. Gengar may also ride along\non a living creature's shadow, moving along with\nit as the creature moves. Gengar may not use\nStandard Actions while melded into shadow.\nReforming is a Shift Action.,",
+			"name": "Shadow Meld"
+		},
+		{
+			"description": "Pokemon with this Capability \ncan change their shape at will, taking on\ndifferent forms as a Standard Action.\nWhen using this Capability, the user cannot\nincrease or decrease its total mass by more\nthan 50%, and they cannot replicate complex\nmachines such as computers or phones. They \nmay take on the appearance of these devices, \nbut they will appear simplified in comparison.\nThey can, however, transform into other moving \nforms such as acting as someone's prosthetic\nlimb, a living lever or pulley system, or\na Pokemon comparable in size. Note in this\nlast case that the Shapeshifter doesn't\ngain any qualities of that Pokemon without \nactually using the Move Transform! Anyone\nclosely examining a Shapeshifter Pokemon \nmay determine its true nature with a \nPerception Check opposed by the Pokemon's \nStealth. If a Pokemon learns the Move \nTransform and does not have the Shapeshifter \nCapability, they gain Shapeshifter.,",
+			"name": "Shapeshifter"
+		},
+		{
+			"description": "A Pokemon with the capability \nShrinkable can shrink its size up to 25% of its \nnormal size as a Standard Action, but this does\nnot change its weight. While Shrunken, a Pokemon\nmay not perform Standard Actions except to\nreturn to normal size, and gains a +4 bonus\nto Evasion. Using Shrinkable is not the same\nas using the Move Minimize, but if a Pokemon \nlearns the Move Minimize and does not\nhave the Shrinkable\nCapability, they gain Shrinkable.,",
+			"name": "Shrinkable"
+		},
+		{
+			"description": "Shedinja is a unique Pokemon.\nIts default Ability will always be Wonder\nGuard and Shedinja's Max Hit Points is \nalways 1. You may not add to a \nShedinja's Hit Point stat, and \nShedinja may not have Temporary \nHit Points. However, Shedinja \ncan't die and never gains Injuries. \nGiven an Extended Rest, Shedinja \nalways recovers to 1 Hit Point \nregardless of natural healing \nrate and how many Hit Points \nit had previously.,",
+			"name": "Soulless"
+		},
+		{
+			"description": "Wurmple evolves \nbased on its Nature; if it has a \nNature that raises Attack, Special A\nttack, or Speed, it evolves into \nSilcoon. If it has a Nature that \nraises HP, Defense, or Special \nDefense, it evolves into Cascoon.,",
+			"name": "Split Evolution"
+		},
+		{
+			"description": "Once per week, Pokemon \nwith the Sprouter capability can \nrapidly influence the growth of \nplants and flora around them. \nAs a Standard Action, they may \ncause a plant around them to bloom, \nand potentially grow up to 1 \nmeter in any direction. Sprouter \nmay cause planted Berries to \ninstantly give yield.,",
+			"name": "Sprouter"
+		},
+		{
+			"description": "A Pokemon with the Stealth \nCapability are excellent at approaching\nthe enemy for an up close assault.\nWhile Shifting, unless they purposely\nwant to, Stealth Pokemon do not make\nany noise. Unless a Pokemon with \nStealth has used a Ranged Move \nduring the current round or the round \nprevious, Ranged Moves may not target\nthem if the line of sight drawn goes \nthrough Rough Terrain or if the Pokemon \nis on Rough Terrain.,",
+			"name": "Stealth"
+		},
+		{
+			"description": "Telekinetic Pokemon and \nTrainers can move objects with their\nmind. They can lift things with \nTelekinesis as if they were using a\nPower Capability equal to their Focus\nRank. When lifting Staggering Weights\nwith Telekinesis, they roll Focus instead \nof Athletics, and the DC is 10 instead of 4. \nThey can target objects up to 8 meters away. \nCount the combined weight of all objects \nwhen determining whether they can lift \nall of them. Using this Capability to \nlift the user's Drag Weight or greater \nleaves discoverable psychic residue. \nAdditionally, the user may use Struggle\nAttacks at a range of X, where X is the \nuser's Focus Rank. These Struggle Attack\ns deal Normal-Type Damage as usual, but \nthe user may add their Special Attack \ninstead of their Attack and have the\nattack deal Special Damage, if they wish.\nThe user may perform the Disarm, Trip, and\nPush Maneuvers at the range of your Telekinetic \nCapability and using the Focus Skill for all\nopposed rolls. When the Push Maneuver is used \nthis way, the user does not repeat the Push but\ninstead Pushes the target a number of meters \nequal to half their Focus Rank. If a\nPokemon learns the Move Psychic or\nTelekinesis and does not have th\ne Telekinetic Capability, they gain\nTelekinetic.,",
+			"name": "Telekinetic"
+		},
+		{
+			"description": "A Telepathic Pokemon can read the \nsurface thoughts of people and other Pokemon X\nmeters away where X is Focus Rank doubled\n. Pokemon with Telepathy can project their \nthoughts to the minds of other Trainers or\nPokemon with Telepathy. Trainers with Telepathy\ncan project their thoughts to the minds of any\nTrainer or Pokemon. Telepathy can be used to read \nonly one target at a time but can project to on a \nnumber of separate targets at once equal to half \nthe user's Focus Rank. Telepathy may be used to \nread minds with or without making the target aware \nof the attempt. Unwilling targets and targets that\nare unaware automatically resist the Telepathy\nattempt; the user and target roll opposed\nFocus Checks to determine if the Telepathy \nattempt is successful. A failure imposes a\ncumulative -3 penalty to future checks to \nuse Telepathy on that target for the next\n24 hours. Using Telepathy on an Unwilling\ntarget leaves discoverable psychic residue.,",
+			"name": "Telepath"
+		},
+		{
+			"description": "Pokemon with the Threaded Capability\nmay make a Threaded Shift as a Shift Action.\nA Threaded Shift is when a Pokemon targets \nan object and shoots a strong, thin line of\nsilk, or extends a vine from themselves, and\nthen quickly retracts that silk, or vine, \npulling itself towards the object if the\nPokemon is lighter than the object, or pulling\nthe object towards the Pokemon if it is \nlighter than the user. Threaded has a\nrange of 4 meters. If you target an\nunwilling Pokemon or Trainer with threaded,\nThreaded requires an AC 6 Status Attack\nto use. If a Pokemon learns the Move\nSpider Web, String Shot, Vine Whip or\nPower Whip and does not have the \nThreaded Capability, they gain Threaded.,",
+			"name": "Threaded"
+		},
+		{
+			"description": "Pokemon with the Tracker Capability \nhave a strong sense of smell that they can use\nto follow other Pokemon or people. If the\nPokemon has smelt whom they want to track in\nthe past day, or one of their personal\nbelongings, they can pursue that prey with \na Perception check of 8 or better. To pick-up \na random scent from nothing, a Perception check \nof 14 or better will allow the Pokemon to follow\nthat scent. To pick-up a specific scent from\nnothing, a Perception check of 20 will allow\nthe Pokemon to follow that scent. A Pokemon\nmay only make these checks once per hour.\nIf a Pokemon learns the Move Odor Sleuth \nand does not have the Tracker Capability, \nthey gain Tracker.,",
+			"name": "Tracker"
+		},
+		{
+			"description": "Pokemon with the Tremorsense Capability can \nsense the location, size, and shape of objects in the\nground around them for up to 5 meters, almost as if\nthey could see through the ground.,",
+			"name": "Tremorsense"
+		},
+		{
+			"description": "This capability denotes Pokemon\nwho qualify for the Underdog Class's effects.\nThey are Pokemon species with a Base Stat \ntotal of 45 or less. Some exceptions apply.,",
+			"name": "Underdog"
+		},
+		{
+			"description": "The Pokemon never loses Loyalty\nfrom using Self-Destruct or Explosion.,",
+			"name": "Volatile Bomb"
+		},
+		{
+			"description": "Wallclimber Pokemon often \nhave suction cups, hooks, or other means\nof easily scaling walls or other vertical\nsurfaces. They may travel along a wall or\nceiling at a rate of half of their\nOverland Capability.,",
+			"name": "Wallclimber"
+		},
+		{
+			"description": "Castform's appearance\nchanges with the weather around it.\nIt changes to its orange form in Sunny weather,\nits blue and grey form in Raining weather,\nits light blue form when it's Hailing,\na rocky brown form in a Sandstorm.,",
+			"name": "Weathershape"
+		},
+		{
+			"description": "Pokemon with the Wielder Capability\ngain a +2 bonus to Disarming and cannot \nhave their natural weapons disarmed or removed\nby moves such as Thief, Covet, Switcheroo,\nand Trick. Small Pokemon with this capability \nmay additionally wield man-made Small Melee \nweapons, gaining all normal benefits.\nMedium and higher size category Pokemon \nmay wield Large Melee weapons. These weapons \noccupy the Pokemon's Held Item slot when\nWielded. Pokemon Wielding Weapons can \nonly ever get access to Adept Combat Rank\nMoves from Weapons, even if their Combat\nSkill would allow them to qualify for higher.,",
+			"name": "Wielder"
+		},
+		{
+			"description": "Wired Pokemon have a special relation\nto electronic devices. They can enter machines and\ntravel through connected electronics through \nany cords that connect them instantly. If\nused by a Rotom, Rotom may take control of \nthe machine from within, gaining a Move chosen\nby your GM based on the machine.,",
+			"name": "Wired"
+		},
+		{
+			"description": "Pokemon and Trainers with the \nX-Ray Vision Capability can see through walls\nand solid objects up to a foot in thickness.\nObjects seen through X-Ray vision are seen\nas white shapes and outlines without much \ndetailed definition. The effectiveness of\nX-Ray Vision depends on the object's material.\nAnything thin from paper to light wood to most\nresidential drywall allows clear X-Ray Vision\nthrough it, while lead and tungsten would block\nX-Ray Vision entirely.,",
+			"name": "X-Ray Vision"
+		},
+		{
+			"description": "The user's struggle Attacks may be \nElectric- Typed if they wish. They may also add \ntheir Special Attack instead of their Attack \nand have the attack deal Special Damage,\nif they wish. Multiple Electric-Type\nMoves grant Zapper.,",
+			"name": "Zapper"
+		},
+		{
+			"description": "The user is capable of\nchanging formes through a Move, Ability,\nor other effect. Keep a set of Base Stats\nfor each of the user's forme. All Formes\nmust have the same total HP Stat value.\nIf anything (such as an Ability, Nature, Vitamin, etc.)\nalters the user's base stats, all forms are\naffected in the same way.,",
+			"name": "Forme Change"
+		},
+		{
+			"description": "The user knows how to make \nuseful accessories from mere common \nleaves, seeds, and other mundane plant \nmaterials. Once per day as an extended \naction, the user may craft a Grass or B\nug Type Booster or Brace. These Held \nItems last the rest of the day and then \ndegrade.,",
+			"name": "Leaf Crafter"
+		},
+		{
+			"description": "Up to three times per \nday as an Extended Action, the \nuser may apply Mulch to a yielding \nplant.",
+			"name": "Gardener"
+		}
+	]
+}

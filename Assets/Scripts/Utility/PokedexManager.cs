@@ -13,6 +13,11 @@ public class PokedexManager : MonoBehaviour {
     static public string[] habitats;
     static public Item[] items;
     static public TM[] TMs;
+    static public Ability[] abilities;
+    static public Move[] moves;
+    static public Info[] skillsInfo;
+    static public Info[] capabilitiesInfo;
+
     static public Pokemon currentPokemon;
     static public GameObject currentEntry;
     static public List<Pokemon> pokemonToEncounter = new List<Pokemon>();
@@ -99,6 +104,26 @@ public class PokedexManager : MonoBehaviour {
         TMs = JsonHelper.FromJson<TM>(tmString);
         TMs = TMs.OrderBy(x => x.number).ToArray();
         Debug.Log("TM Count: " + TMs.Count());
+
+        string abilityString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Abilities.json"));
+        abilities = JsonHelper.FromJson<Ability>(abilityString);
+        abilities = abilities.OrderBy(x => x.name).ToArray();
+        Debug.Log("Ability Count: " + abilities.Count());
+
+        string moveString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Moves.json"));
+        moves = JsonHelper.FromJson<Move>(moveString);
+        moves = moves.OrderBy(x => x.name).ToArray();
+        Debug.Log("Move Count: " + TMs.Count());
+
+        string skillString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Skills.json"));
+        skillsInfo = JsonHelper.FromJson<Info>(skillString);
+        skillsInfo = skillsInfo.OrderBy(x => x.name).ToArray();
+        Debug.Log("Skill Info Count: " + skillsInfo.Count());
+
+        string capabilityString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Capabilities.json"));
+        capabilitiesInfo = JsonHelper.FromJson<Info>(capabilityString);
+        capabilitiesInfo = capabilitiesInfo.OrderBy(x => x.name).ToArray();
+        Debug.Log("Capability Info Count: " + capabilitiesInfo.Count());
     }
 
     private void Update() {

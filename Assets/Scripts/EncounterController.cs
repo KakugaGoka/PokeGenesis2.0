@@ -256,7 +256,7 @@ public class EncounterController : MonoBehaviour {
                 Debug.LogWarning("Image not found for pokemon: " + pokemon.species);
             }
             if (!File.Exists(Application.streamingAssetsPath + "/Cries/" + pokemon.cry + ".ogg")) {
-                Debug.LogWarning( "Cry not found for pokemon: " + pokemon.species);
+                Debug.LogWarning("Cry not found for pokemon: " + pokemon.species);
             }
             foreach (string evo in pokemon.evolutions) {
                 try {
@@ -272,6 +272,49 @@ public class EncounterController : MonoBehaviour {
             }
         }
 
+        // Verify all pokemon moves
+        foreach (Pokemon pokemon in PokedexManager.pokedex) {
+            pokemon.level = 100;
+            GetMoves(pokemon);
+            foreach (Move move in pokemon.movesList) {
+                bool nameFound = false;
+                foreach (Move registeredMove in PokedexManager.moves) {
+                    if (move.name == registeredMove.name) {
+                        nameFound = true;
+                    }
+                }
+                if (!nameFound) {
+                    Debug.LogWarning("Move not found: " + move.name);
+                }
+            }
+        }
+
+        // Verify all pokemon abilites
+        foreach (Pokemon pokemon in PokedexManager.pokedex) {
+            List<string> abilities = pokemon.basicAbilities.ToList();
+            try {
+                foreach (var item in pokemon.advancedAbilities) {
+                    abilities.Add(item);
+                }
+            } catch { Debug.LogWarning("Pokemon does not have advanced abilities: " + pokemon.species); }
+            try {
+            foreach (var item in pokemon.highAbilities) {
+                    abilities.Add(item);
+            }
+            } catch { Debug.LogWarning("Pokemon does not have high abilities: " + pokemon.species); }
+            foreach (string ability in abilities) {
+                bool nameFound = false;
+                foreach (Ability registeredAbility in PokedexManager.abilities) {
+                    if (ability == registeredAbility.name) {
+                        nameFound = true;
+                    }
+                }
+                if (!nameFound) {
+                    Debug.LogWarning("Ability not found: " + ability);
+                }
+            }
+        }
+
         // Verify all item images
         foreach (Item item in PokedexManager.items) {
             if (!File.Exists(Application.streamingAssetsPath + "/ItemIcons/" + item.image + ".png")) {
@@ -281,7 +324,7 @@ public class EncounterController : MonoBehaviour {
 
         // Load temp pokemon if they exist. 
         var myFiles = Directory.EnumerateFiles(Application.streamingAssetsPath + "/tmp/", "*.json", SearchOption.TopDirectoryOnly);
-
+        PokedexManager.pokemonToEncounter = new List<Pokemon>();
         foreach (var file in myFiles) {
             Pokemon pokemon = Pokemon.FromJson(file);
             PokedexManager.pokemonToEncounter.Add(pokemon);
@@ -783,6 +826,7 @@ public class EncounterController : MonoBehaviour {
 
             try {
                 string path = Path.Combine("tmp/", pokemon.level + "_" + pokemon.species + ".json");
+                pokemon.savePath = path;
                 pokemon.ToJson(path);
             } catch { Debug.Log("Failed to save out " + pokemon.species); }
         }
@@ -949,7 +993,7 @@ public class EncounterController : MonoBehaviour {
         List<Move> knownMoveList = new List<Move>();
         foreach (string move in pokemon.moves) {
             try {
-                string[] moveSplit = move.Split('-');
+                string[] moveSplit = move.Split(new string[] { " - " }, StringSplitOptions.None);
                 string type = moveSplit[moveSplit.Length - 1].Trim();
                 string[] levelAndName = moveSplit[0].Split(' ');
                 int level = int.Parse(levelAndName[0].Trim());
