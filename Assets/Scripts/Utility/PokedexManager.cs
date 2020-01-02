@@ -25,6 +25,7 @@ public class PokedexManager : MonoBehaviour {
 
     public GameObject warningBox;
     public GameObject confirmationBox;
+    public GameObject tooltipBox;
 
     // Start is called before the first frame update
     void Awake() {
@@ -215,6 +216,13 @@ public class PokedexManager : MonoBehaviour {
         DialogController dialogController = dialog.GetComponent<DialogController>();
         dialogController.messageBox.text = message;
         dialogController.confirmationType = confirmation;
-        Debug.LogWarning(message);
+        Debug.Log(message);
+    }
+
+    public void CreateTooltipDialog(string message) {
+        GameObject dialog = Instantiate(tooltipBox);
+        DialogController dialogController = dialog.GetComponent<DialogController>();
+        dialogController.messageBox.text = message;
+        Debug.Log(message);
     }
 }

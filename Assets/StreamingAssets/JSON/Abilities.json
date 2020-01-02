@@ -168,7 +168,7 @@
       "name": "Celebrate",
       "freq": "At-Will - Swift Action",
       "trigger": "The user hits a foe with a damaging attack",
-      "effect": "The user may immediately Disengage as a Free Action.\nBonus: Whenever the user Disengages for any reason, they may Shift 2 meters instead of 1."
+      "effect": "The user may immediately Disengage as a Free Action. Bonus: Whenever the user Disengages for any reason, they may Shift 2 meters instead of 1."
     },
     {
       "name": "Cherry Power",
@@ -209,7 +209,7 @@
     {
       "name": "Color Theory",
       "freq": "Static",
-      "effect": "pon gaining this ability at Birth, the user rolls 1d12 to determine the color of their tail secretions.\n1 = Red; 2 = Red-Orange; 3 = Orange; 4 = Yellow-Orange; 5 = Yellow; 6 = Yellow-Green; 7 = Green; 8 = Blue-Green; 9 = Blue; 10 = Blue-Violet; 11 = Violet; 12 = Red-Violet.\n\nRed is tied to Attack, Orange is tied to Defense, Yellow is tied to Special Attack, Green is tied to Special Defense, Blue is tied to Speed, Violet is tied to HP. Users with a \"Pure\" Color (Red, Orange, Yellow, etc) gain a +6 Bonus to the Base Stat tied to their color. Users with a \"Mixed\" Color (Red-Orange, Yellow-Orange, etc) gain a +3 Bonus to each Stat tied to the color."
+      "effect": "pon gaining this ability at Birth, the user rolls 1d12 to determine the color of their tail secretions. 1 = Red; 2 = Red-Orange; 3 = Orange; 4 = Yellow-Orange; 5 = Yellow; 6 = Yellow-Green; 7 = Green; 8 = Blue-Green; 9 = Blue; 10 = Blue-Violet; 11 = Violet; 12 = Red-Violet.  Red is tied to Attack, Orange is tied to Defense, Yellow is tied to Special Attack, Green is tied to Special Defense, Blue is tied to Speed, Violet is tied to HP. Users with a \"Pure\" Color (Red, Orange, Yellow, etc) gain a +6 Bonus to the Base Stat tied to their color. Users with a \"Mixed\" Color (Red-Orange, Yellow-Orange, etc) gain a +3 Bonus to each Stat tied to the color."
     },
     {
       "name": "Competitive",
@@ -256,7 +256,7 @@
       "name": "Cruelty",
       "freq": "Scene — Swift Action",
       "trigger": "The user hits a foe with a damaging attack",
-      "effect": "After Damage is Resolved, the foe gains an Injury. The user is then informed of the total number of Injuries currently on the target, and may use that number to \"purchase\" the effects listed below.\n» 1 Injury: The target loses 2 Hit Points. May be \"purchased\" multiple times.\n» 1 Injury: The target is Slowed.\n» 2 Injuries: Until the end of the encounter, the target may not gain Hit Points or Temporary Hit Points from any source. This effect ends if the target is switched out or Takes a Breather."
+      "effect": "After Damage is Resolved, the foe gains an Injury. The user is then informed of the total number of Injuries currently on the target, and may use that number to \"purchase\" the effects listed below. » 1 Injury: The target loses 2 Hit Points. May be \"purchased\" multiple times. » 1 Injury: The target is Slowed. » 2 Injuries: Until the end of the encounter, the target may not gain Hit Points or Temporary Hit Points from any source. This effect ends if the target is switched out or Takes a Breather."
     },
     {
       "name": "Crush Trap",
@@ -285,7 +285,7 @@
     {
       "name": "Damp",
       "freq": "Static",
-      "effect": "Whenever anyone within 10 meters would use the Moves Self-Destruct or Explosion or activate the Aftermath Ability, those effects fail and instead do nothing.\nBonus: The user gains a +1d10 Bonus to Damage Rolls with Water-Typed Moves."
+      "effect": "Whenever anyone within 10 meters would use the Moves Self-Destruct or Explosion or activate the Aftermath Ability, those effects fail and instead do nothing. Bonus: The user gains a +1d10 Bonus to Damage Rolls with Water-Typed Moves."
     },
     {
       "name": "Danger Syrup",
@@ -422,7 +422,7 @@
     {
       "name": "Electrodash",
       "freq": "Scene x2 — Swift Action",
-      "effect": "The user may make a Sprint Action as a Free Action.\nBonus: The user may free itself from the Stuck condition as a Shift Action. The user does not provoke Attacks of Opportunity when Sprinting."
+      "effect": "The user may make a Sprint Action as a Free Action. Bonus: The user may free itself from the Stuck condition as a Shift Action. The user does not provoke Attacks of Opportunity when Sprinting."
     },
     {
       "name": "Enduring Rage",
@@ -437,7 +437,7 @@
     {
       "name": "Fabulous Trim",
       "freq": "Static",
-      "effect": "Furfrou's Ability depends on its current hairstyle. A Furfrou's hairstyle can be changed as an Extended Action at an appropriate hair parlor.\nStar Trim: Celebrate\nDiamond Trim: Defiant\nHeart Trim: Cute Tears\nPharaoh Trim: Sand Veil\nKabuki Trim: Inner Focus\nLa Reine Trim: Intimidate\nMatron Trim: Friend Guard\nDandy Trim: Moxie\nDebutante Trim: Confidence"
+      "effect": "Furfrou's Ability depends on its current hairstyle. A Furfrou's hairstyle can be changed as an Extended Action at an appropriate hair parlor. Star Trim: Celebrate Diamond Trim: Defiant Heart Trim: Cute Tears Pharaoh Trim: Sand Veil Kabuki Trim: Inner Focus La Reine Trim: Intimidate Matron Trim: Friend Guard Dandy Trim: Moxie Debutante Trim: Confidence"
     },
     {
       "name": "Fade Away",
@@ -595,7 +595,7 @@
     {
       "name": "Grass Pelt",
       "freq": "Scene - Swift Action",
-      "effect": "The user gains two ticks worth of Temporary Hit Points.\nBonus:When standing on any grassy or leafy terrain that is either Slow or Rough Terrain, the user gains +5 Damage Reduction. Defensive."
+      "effect": "The user gains two ticks worth of Temporary Hit Points. Bonus:When standing on any grassy or leafy terrain that is either Slow or Rough Terrain, the user gains +5 Damage Reduction. Defensive."
     },
     {
       "name": "Guts",
@@ -683,7 +683,7 @@
     {
       "name": "Ice Body",
       "freq": "Daily x5 - Swift Action",
-      "effect": "The user gains a Tick of Hit Points. Ice Body may only be used while the user is under 50% Hit Points or in Hailing Weather.\nBonus: The user is immune to Hit Point loss from Hail"
+      "effect": "The user gains a Tick of Hit Points. Ice Body may only be used while the user is under 50% Hit Points or in Hailing Weather. Bonus: The user is immune to Hit Point loss from Hail"
     },
     {
       "name": "Ice Shield",
@@ -762,7 +762,7 @@
       "name": "Kampfgeist",
       "freq": "Scene - Free Action",
       "trigger": "The user takes Bug, Dark, or Rock-Type Damage",
-      "effect": "The triggering damage is resisted one step further.\nBonus:The user gains STAB on Fighting-Type Moves."
+      "effect": "The triggering damage is resisted one step further. Bonus:The user gains STAB on Fighting-Type Moves."
     },
     {
       "name": "Keen Eye",
@@ -787,7 +787,7 @@
     {
       "name": "Leaf Gift",
       "freq": "Daily — Extended Action",
-      "effect": "The user is adept at crafting clothes for itself out of common leaves. As an extended action, the user may craft a Leaf Suit listed below by activating this Ability; each suit has different effects on the user. The user may only wear one Leaf Suit at a time; building a new suit destroys previous suits.\n\nNourishing Suit - Effect: Grants the Sun Blanket and Leaf Guard Abilities.\nHeavy Suit - Effect: Grants the Sturdy and Overcoat Abilities.\nVibrant Suit - Effect: Grants the Chlorophyll and Photosynthesis Abilities."
+      "effect": "The user is adept at crafting clothes for itself out of common leaves. As an extended action, the user may craft a Leaf Suit listed below by activating this Ability; each suit has different effects on the user. The user may only wear one Leaf Suit at a time; building a new suit destroys previous suits. Nourishing Suit - Effect: Grants the Sun Blanket and Leaf Guard Abilities. Heavy Suit - Effect: Grants the Sturdy and Overcoat Abilities. Vibrant Suit - Effect: Grants the Chlorophyll and Photosynthesis Abilities."
     },
     {
       "name": "Leaf Guard",
@@ -823,7 +823,7 @@
       "name": "Lightning Rod",
       "freq": "Scene — Free Action",
       "trigger": "A ranged Electric Type Move is used within 10 Meters of the user.",
-      "effect": "The Move is turned into a 1-Target Move and is re-directed at the user without fail, and cannot miss. This negates Lock-On or Mind Reader. The user's Special Attack is then raised by +1 Combat Stage.\nThe user is immune to the damage and effects of Electric Type attacks. Defensive."
+      "effect": "The Move is turned into a 1-Target Move and is re-directed at the user without fail, and cannot miss. This negates Lock-On or Mind Reader. The user's Special Attack is then raised by +1 Combat Stage. The user is immune to the damage and effects of Electric Type attacks. Defensive."
     },
     {
       "name": "Limber",
@@ -871,13 +871,13 @@
     {
       "name": "Magma Armor",
       "freq": "Static",
-      "effect": "Whenever a foe hits you with a Melee Attack or ends their turn grappling you, they lose a tick of Hit Points. Foes immune to Burn do not suffer this effect.\nBonus: The user cannot be Frozen. Defensive."
+      "effect": "Whenever a foe hits you with a Melee Attack or ends their turn grappling you, they lose a tick of Hit Points. Foes immune to Burn do not suffer this effect. Bonus: The user cannot be Frozen. Defensive."
     },
     {
       "name": "Magnet Pull",
       "freq": "Scene x3 — Swift Action",
       "target": "A Steel-Type Pokémon within 6 meters",
-      "effect": " Pick Two Effects:\n- The target is pushed or pulled X meters directly away or towards the user. X is up to 6 meters minus the target's Weight Class.\n- Until the end of the user's next turn, the target may not move more then 6 meters away from the user .\n- Until the end of the user's next turn, the target may not move closer than 3 meters ot the user."
+      "effect": " Pick Two Effects: - The target is pushed or pulled X meters directly away or towards the user. X is up to 6 meters minus the target's Weight Class. - Until the end of the user's next turn, the target may not move more then 6 meters away from the user. - Until the end of the user's next turn, the target may not move closer than 3 meters ot the user."
     },
     {
       "name": "Marvel Scale",
@@ -1098,7 +1098,7 @@
     {
       "name": "Poltergeist",
       "freq": "Static",
-      "effect": "Rotom gains an Ability depending on what Form it has taken. If Rotom is level 40 or higher, it also may use a Move based on its Forme as if it that Move was on their Move List.\n Standard Rotom: Levitate, No Move\nHeat Rotom: Flash Fire, Overheat\nWash Rotom: Water Absorb, Hydro Pump\nFrost Rotom: Winter's Kiss, Blizzard\nFan Rotom: Windveiled, Hurricane\nMow Rotom: Sap Sipper, Leaf Storm"
+      "effect": "Rotom gains an Ability depending on what Form it has taken. If Rotom is level 40 or higher, it also may use a Move based on its Forme as if it that Move was on their Move List.  Standard Rotom: Levitate, No Move Heat Rotom: Flash Fire, Overheat Wash Rotom: Water Absorb, Hydro Pump Frost Rotom: Winter's Kiss, Blizzard Fan Rotom: Windveiled, Hurricane Mow Rotom: Sap Sipper, Leaf Storm"
     },
     {
       "name": "Polycephaly",
@@ -1229,7 +1229,7 @@
       "name": "Rocket",
       "freq": "Scene — Free Action",
       "trigger": "A Round Begins",
-      "effect": "The user may take their turn at the top of the round. Priority, Interrupt, or Reaction Moves or Abilities cannot be declared in response to the user's turn.\nThe user's Sky capability is increased by +2"
+      "effect": "The user may take their turn at the top of the round. Priority, Interrupt, or Reaction Moves or Abilities cannot be declared in response to the user's turn. The user's Sky capability is increased by +2"
     },
     {
       "name": "Root Down",
@@ -1250,17 +1250,17 @@
     {
       "name": "Sand Force",
       "freq": "Static",
-      "effect": "While on sandy terrain or in Sandstorms, the user's Ground, Rock, and Steel-Typed damaging moves deal +5 Damage.\nBonus: The user is immune to Hit Point loss from Sandstorms."
+      "effect": "While on sandy terrain or in Sandstorms, the user's Ground, Rock, and Steel-Typed damaging moves deal +5 Damage. Bonus: The user is immune to Hit Point loss from Sandstorms."
     },
     {
       "name": "Sand Rush",
       "freq": "Scene",
-      "effect": "While in Sandstorming Weather or under 50% Max Hit Points, the user's Initiative is doubled.\nBonus: The user is immune to Hit Point loss from Sandstorms."
+      "effect": "While in Sandstorming Weather or under 50% Max Hit Points, the user's Initiative is doubled. Bonus: The user is immune to Hit Point loss from Sandstorms."
     },
     {
       "name": "Sand Stream",
       "freq": "Scene x3 — Swift Action",
-      "effect": "The Weather changes to a Sandstorm for 1 full round.\nThe user is immune to Hit Point loss from Sandstorms."
+      "effect": "The Weather changes to a Sandstorm for 1 full round. The user is immune to Hit Point loss from Sandstorms."
     },
     {
       "name": "Sand Veil",
@@ -1291,7 +1291,7 @@
     {
       "name": "Serpent's Mark",
       "freq": "Static",
-      "effect": "Arbok's Advanced and High Abilities depend on the Arbok's hood pattern. To determine its pattern, roll 1d6 upon evolution or upon generation. If an Arbok is bred, it will have the same pattern as its parent. If both parents are Arboks with different patterns, flip a coin to decide which pattern is inherited.\nPattern Name - Adv Ability / High Ability\nAttack Pattern - Strong Jaw / Guts\nCrush Pattern - Crush Trap / Frisk\nFear Pattern - Unnerve / Regal Challenge\nLife Pattern - Regenerator / Defy Death\nSpeed Pattern - Run Away / Speed Boost\nStealth Pattern - Infiltrator / Ambush"
+      "effect": "Arbok's Advanced and High Abilities depend on the Arbok's hood pattern. To determine its pattern, roll 1d6 upon evolution or upon generation. If an Arbok is bred, it will have the same pattern as its parent. If both parents are Arboks with different patterns, flip a coin to decide which pattern is inherited.\n\nPattern Name - Adv Ability / High Ability\nAttack Pattern - Strong Jaw / Guts\nCrush Pattern - Crush Trap / Frisk\nFear Pattern - Unnerve / Regal Challenge\nLife Pattern - Regenerator / Defy Death\nSpeed Pattern - Run Away / Speed Boost\nStealth Pattern - Infiltrator / Ambush"
     },
     {
       "name": "Shackle",
@@ -1435,7 +1435,7 @@
       "name": "Sprint",
       "freq": "Scene - Swift Action",
       "trigger": "The user uses the Sprint Action during Combat",
-      "effect": "The user gains +2 Speed Combat Stages.\nBonus: The user's Overland Speed is increased by +2."
+      "effect": "The user gains +2 Speed Combat Stages. Bonus: The user's Overland Speed is increased by +2."
     },
     {
       "name": "Static",
@@ -1488,7 +1488,7 @@
       "name": "Storm Drain",
       "freq": "Scene — Free Action",
       "trigger": "A ranged Water Type Move is used within 10 Meters of the user.",
-      "effect": "The Move is turned into a 1-Target Move and is re-directed at the user without fail, and cannot miss. This negates Lock-On or Mind Reader. the user's Special Attack is then raised by +1 Combat Stage.\nBonus: The user is immune to the damage and effects of Water Type attacks. Defensive."
+      "effect": "The Move is turned into a 1-Target Move and is re-directed at the user without fail, and cannot miss. This negates Lock-On or Mind Reader. the user's Special Attack is then raised by +1 Combat Stage. Bonus: The user is immune to the damage and effects of Water Type attacks. Defensive."
     },
     {
       "name": "Strange Tempo",
@@ -1508,13 +1508,13 @@
     {
       "name": "Suction Cups",
       "freq": "At-Will - Shift Action",
-      "effect": "The user gains +5 Damage Reduction for 1 full round.\nBonus:The user is immune to Push effects. Defensive."
+      "effect": "The user gains +5 Damage Reduction for 1 full round. Bonus:The user is immune to Push effects. Defensive."
     },
     {
       "name": "Sumo Stance",
       "freq": "At-Will - Shift Action",
       "trigger": "The user hits a foe with a Melee Attack",
-      "effect": "The triggering foe is Pushed 1 meter away from the user and the user is immune to Push Effects for 1 full round.\nBonus: The user's Weight Class is increased by +1."
+      "effect": "The triggering foe is Pushed 1 meter away from the user and the user is immune to Push Effects for 1 full round. Bonus: The user's Weight Class is increased by +1."
     },
     {
       "name": "Sun Blanket",
@@ -1638,7 +1638,7 @@
     {
       "name": "Toxic Boost",
       "freq": "Static",
-      "effect": "The user gains +3 Attack and Special Attack Combat Stages. Toxic Boost may only be used while Poisoned or Badly Poisoned.\nSpecial:If the user has the Immunity Ability, they can still become Poisoned and Badly Poisoned but do not lose Hit Points from these conditions."
+      "effect": "The user gains +3 Attack and Special Attack Combat Stages. Toxic Boost may only be used while Poisoned or Badly Poisoned. Special:If the user has the Immunity Ability, they can still become Poisoned and Badly Poisoned but do not lose Hit Points from these conditions."
     },
     {
       "name": "Trace",
@@ -1876,12 +1876,12 @@
       "name": "Full Guard",
       "freq": "Scene — Swift Action",
       "trigger": "You take Damage while having Temporary Hit Points",
-      "effect": "You resist the triggering Damage one step further.\nBonus: Whenever you take Super-Effective Damage and you have no Temporary Hit Points, you gain a tick of Temporary Hit Points. Defensive."
+      "effect": "You resist the triggering Damage one step further. Bonus: Whenever you take Super-Effective Damage and you have no Temporary Hit Points, you gain a tick of Temporary Hit Points. Defensive."
     },
     {
       "name": "Giver",
       "freq": "Scene x2 - Swift Action",
-      "effect": "Connection - Present. After rolling to determine Present's Damage Base, you may choose to ignore the roll and act as if you had rolled a 1 or a 5.\nBonus: The user may know any number of TM and Tutor Moves, instead of a maximum of three."
+      "effect": "Connection - Present. After rolling to determine Present's Damage Base, you may choose to ignore the roll and act as if you had rolled a 1 or a 5. Bonus: The user may know any number of TM and Tutor Moves, instead of a maximum of three."
     },
     {
       "name": "Heliovolt",
@@ -2013,7 +2013,7 @@
     {
       "name": "Seasonal",
       "freq": "Static",
-      "effect": "The user gains an Ability based on the season.\nSpring: Run Away\nSummer: Grass Pelt\n Autumn: Rivalry\nWinter: Thick Fat"
+      "effect": "The user gains an Ability based on the season. Spring: Run Away Summer: Grass Pelt Autumn: Rivalry Winter: Thick Fat"
     },
     {
       "name": "Shadow Shield",
@@ -2106,7 +2106,7 @@
       "name": "Tonguelash",
       "freq": "Scene x2 — Free Action",
       "trigger": "The user hits a target with Lick",
-      "effect": "Connection — Lick. Lick automatically Paralyzes and Flinches its target.\nBonus: The user may use Lick as if it was Normal-Typed."
+      "effect": "Connection — Lick. Lick automatically Paralyzes and Flinches its target. Bonus: The user may use Lick as if it was Normal-Typed."
     },
     {
       "name": "Toxic Relationship",
@@ -2284,7 +2284,7 @@
     {
       "name": "Anchored",
       "freq": "Static",
-      "effect": "Dhelmise has an Anchor token on the field, which occupies one square as if it is Medium sized but is otherwise ignored for cover and targeting. Dhelmise cannot move or be moved more than 3 meters away from its Anchor, willingly or otherwise. The Anchor token itself cannot be pushed, pulled, or moved against Dhelmise's will in any way. Dhelmise may shift their Anchor Token as a Swift Action, moving it to any open space within 3 meters of itself. \nBonus: When the user Shifts the Anchor, it may immediately afterwards originate an attack from its Anchor if it has the appropriate action available, giving that attack the following properties: the attack's range changes to Melee, 1 Target, the attack deals +2d6 damage, and the attack's Class changes to Physical if it wasn't already."
+      "effect": "Dhelmise has an Anchor token on the field, which occupies one square as if it is Medium sized but is otherwise ignored for cover and targeting. Dhelmise cannot move or be moved more than 3 meters away from its Anchor, willingly or otherwise. The Anchor token itself cannot be pushed, pulled, or moved against Dhelmise's will in any way. Dhelmise may shift their Anchor Token as a Swift Action, moving it to any open space within 3 meters of itself. Bonus: When the user Shifts the Anchor, it may immediately afterwards originate an attack from its Anchor if it has the appropriate action available, giving that attack the following properties: the attack's range changes to Melee, 1 Target, the attack deals +2d6 damage, and the attack's Class changes to Physical if it wasn't already."
     },
     {
       "name": "Wily",

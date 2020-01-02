@@ -7,9 +7,10 @@ public class Tooltip : MonoBehaviour
     public InputField inputField;
 
     public void ShowMoveToolTip() {
+        if (inputField.text == null || inputField.text == "" || inputField.text == "None") { return; }
         foreach (var move in PokedexManager.moves) {
             if (move.name == inputField.text) {
-                PokedexManager.manager.CreateWarningDialog(MoveToolTip(move));
+                PokedexManager.manager.CreateTooltipDialog(MoveToolTip(move));
                 return;
             }
         }
@@ -43,9 +44,10 @@ public class Tooltip : MonoBehaviour
     }
 
     public void ShowAbilityToolTip() {
+        if (inputField.text == null || inputField.text == "" || inputField.text == "None") { return; }
         foreach (var ability in PokedexManager.abilities) {
             if (ability.name == inputField.text) {
-                PokedexManager.manager.CreateWarningDialog(AbilityToolTip(ability));
+                PokedexManager.manager.CreateTooltipDialog(AbilityToolTip(ability));
                 return;
             }
         }
@@ -84,37 +86,37 @@ public class Tooltip : MonoBehaviour
         switch (skill) {
             case Skill.athletics:
                 foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Athletics") { PokedexManager.manager.CreateWarningDialog(SKillToolTip(info)); }
+                    if (info.name == "Athletics") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
                 }
                 return;
             case Skill.acrobatics:
                 foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Acrobatics") { PokedexManager.manager.CreateWarningDialog(SKillToolTip(info)); }
+                    if (info.name == "Acrobatics") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
                 }
                 return;
             case Skill.combat:
                 foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Combat") { PokedexManager.manager.CreateWarningDialog(SKillToolTip(info)); }
+                    if (info.name == "Combat") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
                 }
                 return;
             case Skill.focus:
                 foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Focus") { PokedexManager.manager.CreateWarningDialog(SKillToolTip(info)); }
+                    if (info.name == "Focus") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
                 }
                 return;
             case Skill.perception:
                 foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Perception") { PokedexManager.manager.CreateWarningDialog(SKillToolTip(info)); }
+                    if (info.name == "Perception") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
                 }
                 return;
             case Skill.stealth:
                 foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Stealth") { PokedexManager.manager.CreateWarningDialog(SKillToolTip(info)); }
+                    if (info.name == "Stealth") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
                 }
                 return;
             case Skill.techEdu:
                 foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Technology Education") { PokedexManager.manager.CreateWarningDialog(SKillToolTip(info)); }
+                    if (info.name == "Technology Education") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
                 }
                 return;
         }
@@ -124,6 +126,25 @@ public class Tooltip : MonoBehaviour
         string toolTip = "Name: " + skill.name;
         if (skill.description != null) {
             toolTip += Environment.NewLine + "Description: " + skill.description;
+        }
+        return toolTip;
+    }
+
+    public void ShowCapabilityToolTip() {
+        if (inputField.text == null || inputField.text == "" || inputField.text == "None") { return; }
+        foreach (var capability in PokedexManager.capabilitiesInfo) {
+            if (inputField.text.Contains(capability.name)) {
+                PokedexManager.manager.CreateTooltipDialog(CapabilityToolTip(capability, inputField.text));
+                return;
+            }
+        }
+        PokedexManager.manager.CreateWarningDialog("Capability is not registered in Capabilities.json: '" + inputField.text + "'");
+    }
+
+    public string CapabilityToolTip(Info capability, string yourCapability) {
+        string toolTip = "Name: " + yourCapability;
+        if (capability.description != null) {
+            toolTip += Environment.NewLine + "Description: " + capability.description;
         }
         return toolTip;
     }
