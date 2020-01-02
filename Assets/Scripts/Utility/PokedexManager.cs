@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 public class PokedexManager : MonoBehaviour {
@@ -17,6 +18,7 @@ public class PokedexManager : MonoBehaviour {
     static public Move[] moves;
     static public Info[] skillsInfo;
     static public Info[] capabilitiesInfo;
+    static public Info[] conditionsInfo;
 
     static public Pokemon currentPokemon;
     static public GameObject currentEntry;
@@ -125,6 +127,11 @@ public class PokedexManager : MonoBehaviour {
         capabilitiesInfo = JsonHelper.FromJson<Info>(capabilityString);
         capabilitiesInfo = capabilitiesInfo.OrderBy(x => x.name).ToArray();
         Debug.Log("Capability Info Count: " + capabilitiesInfo.Count());
+
+        string conditionString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Conditions.json"));
+        conditionsInfo = JsonHelper.FromJson<Info>(conditionString);
+        conditionsInfo = conditionsInfo.OrderBy(x => x.name).ToArray();
+        Debug.Log("Condition Info Count: " + conditionsInfo.Count());
     }
 
     private void Update() {
@@ -182,6 +189,26 @@ public class PokedexManager : MonoBehaviour {
         }
     }
 
+    public void CaptureCurrentSelected() {
+        Debug.Log(PokedexManager.currentPokemon.savePath);
+        string newPath = PokedexManager.currentPokemon.savePath.Replace("tmp/", "Captured/");
+        Debug.Log(newPath);
+        Pokemon pokemon = PokedexManager.currentPokemon.Clone();
+        pokemon.savePath = newPath;
+        pokemon.ToJson(pokemon.savePath);
+        PokedexManager.manager.DeleteCurrentPokemonAndEntry();
+    }
+
+    public void ReleaseCurrentSelected() {
+        Debug.Log(PokedexManager.currentPokemon.savePath);
+        string newPath = PokedexManager.currentPokemon.savePath.Replace("Captured/", "tmp/");
+        Debug.Log(newPath);
+        Pokemon pokemon = PokedexManager.currentPokemon.Clone();
+        pokemon.savePath = newPath;
+        pokemon.ToJson(pokemon.savePath);
+        PokedexManager.manager.DeleteCurrentPokemonAndEntry();
+    }
+
     static public void SetButtonColors(Button button, Color color) {
         var colors = button.colors;
         colors.normalColor = color;
@@ -224,5 +251,28 @@ public class PokedexManager : MonoBehaviour {
         DialogController dialogController = dialog.GetComponent<DialogController>();
         dialogController.messageBox.text = message;
         Debug.Log(message);
+    }
+
+    static public int GetMaxHealth(Pokemon pokemon) {
+        int health = pokemon.level + (pokemon.hpLevel * 3) + 10;
+        return health;
+    }
+
+    public void LoadClip(string file, Pokemon pokemon) {
+        StartCoroutine(LoadClipCoroutine(file, pokemon));
+    }
+
+    private IEnumerator<UnityWebRequestAsyncOperation> LoadClipCoroutine(string file, Pokemon pokemon) {
+        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(file, AudioType.OGGVORBIS)) {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError) {
+                Debug.Log(www.error);
+            } else {
+                AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
+                Debug.Log(clip.name + " has a length of: " + clip.length);
+                pokemon.cryAudio = clip;
+            }
+        }
     }
 }

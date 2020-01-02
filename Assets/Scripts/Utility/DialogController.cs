@@ -23,7 +23,15 @@ public class DialogController : MonoBehaviour
                 Destroy(this.gameObject);
                 return;
             case ConfirmationType.delete:
-                //TODO
+                PokedexManager.manager.DeleteCurrentPokemonAndEntry();
+                Destroy(this.gameObject);
+                return;
+            case ConfirmationType.capture:
+                PokedexManager.manager.CaptureCurrentSelected();
+                Destroy(this.gameObject);
+                return;
+            case ConfirmationType.release:
+                PokedexManager.manager.ReleaseCurrentSelected();
                 Destroy(this.gameObject);
                 return;
         }
@@ -33,4 +41,6 @@ public class DialogController : MonoBehaviour
 public enum ConfirmationType {
     trade = 0,
     delete, 
+    capture,
+    release
 }

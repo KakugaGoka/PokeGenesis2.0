@@ -4,17 +4,18 @@ using UnityEngine.UI;
 
 public class Tooltip : MonoBehaviour
 {
-    public InputField inputField;
-
     public void ShowMoveToolTip() {
-        if (inputField.text == null || inputField.text == "" || inputField.text == "None") { return; }
+        Dropdown dropdown = GameObject.Find("Moves Dropdown").GetComponent<Dropdown>();
+        if (dropdown.options.Count < 1) { return; }
+        string currentValue = dropdown.options[dropdown.value].text;
+        if (currentValue == null || currentValue == "" || currentValue == "None") { return; }
         foreach (var move in PokedexManager.moves) {
-            if (move.name == inputField.text) {
+            if (move.name == currentValue) {
                 PokedexManager.manager.CreateTooltipDialog(MoveToolTip(move));
                 return;
             }
         }
-        PokedexManager.manager.CreateWarningDialog("Move is not registered in Moves.json: '" + inputField.text + "'");
+        PokedexManager.manager.CreateWarningDialog("Move is not registered in Moves.json: '" + currentValue + "'");
     }
 
     public string MoveToolTip(Move move) {
@@ -26,7 +27,11 @@ public class Tooltip : MonoBehaviour
             toolTip += Environment.NewLine + "AC: " + move.ac;
         }
         if (move.db != 0) {
-            toolTip += Environment.NewLine + "DB: " + move.db;
+            int db = move.db;
+            if (PokedexManager.currentPokemon.type.Contains(move.typeName)) {
+                db++;
+            }
+            toolTip += Environment.NewLine + "DB: " + db;
         }
         if (move.effects != null) {
             toolTip += Environment.NewLine + "Effect: " + move.effects;
@@ -44,14 +49,17 @@ public class Tooltip : MonoBehaviour
     }
 
     public void ShowAbilityToolTip() {
-        if (inputField.text == null || inputField.text == "" || inputField.text == "None") { return; }
+        Dropdown dropdown = GameObject.Find("Abilities Dropdown").GetComponent<Dropdown>();
+        if (dropdown.options.Count < 1) { return; }
+        string currentValue = dropdown.options[dropdown.value].text;
+        if (currentValue == null || currentValue == "" || currentValue == "None") { return; }
         foreach (var ability in PokedexManager.abilities) {
-            if (ability.name == inputField.text) {
+            if (ability.name == currentValue) {
                 PokedexManager.manager.CreateTooltipDialog(AbilityToolTip(ability));
                 return;
             }
         }
-        PokedexManager.manager.CreateWarningDialog("Ability is not registered in Ability.json: '" + inputField.text + "'");
+        PokedexManager.manager.CreateWarningDialog("Ability is not registered in Ability.json: '" + currentValue + "'");
     }
 
     public string AbilityToolTip(Ability ability) {
@@ -81,44 +89,38 @@ public class Tooltip : MonoBehaviour
         techEdu
     }
 
-    public void ShowSkillToolTip(int skillNumber) {
-        Skill skill = (Skill)skillNumber;
-        switch (skill) {
-            case Skill.athletics:
-                foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Athletics") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
-                }
-                return;
-            case Skill.acrobatics:
-                foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Acrobatics") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
-                }
-                return;
-            case Skill.combat:
-                foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Combat") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
-                }
-                return;
-            case Skill.focus:
-                foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Focus") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
-                }
-                return;
-            case Skill.perception:
-                foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Perception") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
-                }
-                return;
-            case Skill.stealth:
-                foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Stealth") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
-                }
-                return;
-            case Skill.techEdu:
-                foreach (var info in PokedexManager.skillsInfo) {
-                    if (info.name == "Technology Education") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
-                }
-                return;
+    public void ShowSkillToolTip() {
+        Dropdown dropdown = GameObject.Find("Skills Dropdown").GetComponent<Dropdown>();
+        if (dropdown.options.Count < 1) { return; }
+        string currentValue = dropdown.options[dropdown.value].text;
+        if (currentValue.Contains("Athl")) {
+            foreach (var info in PokedexManager.skillsInfo) {
+                if (info.name == "Athletics") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
+            }
+        } else if(currentValue.Contains("Acro")) {
+            foreach (var info in PokedexManager.skillsInfo) {
+                if (info.name == "Acrobatics") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
+            }
+        } else if (currentValue.Contains("Combat")) {
+            foreach (var info in PokedexManager.skillsInfo) {
+                if (info.name == "Combat") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
+            }
+        } else if (currentValue.Contains("Focus")) {
+            foreach (var info in PokedexManager.skillsInfo) {
+                if (info.name == "Focus") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
+            }
+        } else if (currentValue.Contains("Percep")) {
+            foreach (var info in PokedexManager.skillsInfo) {
+                if (info.name == "Perception") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
+            }
+        } else if (currentValue.Contains("Stealth")) {
+            foreach (var info in PokedexManager.skillsInfo) {
+                if (info.name == "Stealth") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
+            }
+        } else if (currentValue.Contains("Tech")) {
+            foreach (var info in PokedexManager.skillsInfo) {
+                if (info.name == "Technology Education") { PokedexManager.manager.CreateTooltipDialog(SKillToolTip(info)); }
+            }
         }
     }
 
@@ -131,20 +133,65 @@ public class Tooltip : MonoBehaviour
     }
 
     public void ShowCapabilityToolTip() {
-        if (inputField.text == null || inputField.text == "" || inputField.text == "None") { return; }
+        Dropdown dropdown = GameObject.Find("Capabilities Dropdown").GetComponent<Dropdown>();
+        if (dropdown.options.Count < 1) { return; }
+        string currentValue = dropdown.options[dropdown.value].text;
+        if (currentValue == null || currentValue == "" || currentValue == "None") { return; }
         foreach (var capability in PokedexManager.capabilitiesInfo) {
-            if (inputField.text.Contains(capability.name)) {
-                PokedexManager.manager.CreateTooltipDialog(CapabilityToolTip(capability, inputField.text));
+            if (currentValue.Contains(capability.name)) {
+                PokedexManager.manager.CreateTooltipDialog(CapabilityToolTip(capability, currentValue));
                 return;
             }
         }
-        PokedexManager.manager.CreateWarningDialog("Capability is not registered in Capabilities.json: '" + inputField.text + "'");
+        PokedexManager.manager.CreateWarningDialog("Capability is not registered in Capabilities.json: '" + currentValue + "'");
     }
 
     public string CapabilityToolTip(Info capability, string yourCapability) {
         string toolTip = "Name: " + yourCapability;
         if (capability.description != null) {
             toolTip += Environment.NewLine + "Description: " + capability.description;
+        }
+        return toolTip;
+    }
+
+    public void ShowConditionToolTip() {
+        Dropdown dropdown = GameObject.Find("Conditions Dropdown").GetComponent<Dropdown>();
+        if (dropdown.options.Count < 1) { return; }
+        string currentValue = dropdown.options[dropdown.value].text;
+        if (currentValue == null || currentValue == "" || currentValue == "None") { return; }
+        foreach (var condition in PokedexManager.conditionsInfo) {
+            if (currentValue == condition.name) {
+                PokedexManager.manager.CreateTooltipDialog(ConditionToolTip(condition));
+                return;
+            }
+        }
+        PokedexManager.manager.CreateWarningDialog("Capability is not registered in Capabilities.json: '" + currentValue + "'");
+    }
+
+    public string ConditionToolTip(Info condition) {
+        string toolTip = "Name: " + condition.name;
+        if (condition.description != null) {
+            toolTip += Environment.NewLine + "Description: " + condition.description;
+        }
+        return toolTip;
+    }
+
+    public void ShowItemToolTip() {
+        InputField inputField = GameObject.Find("Held Item Name Field").GetComponent<InputField>();
+        if (inputField.text == null || inputField.text == "" || inputField.text == "None") { return; }
+        foreach (var item in PokedexManager.items) {
+            if (inputField.text == item.name) {
+                PokedexManager.manager.CreateTooltipDialog(ItemToolTip(item));
+                return;
+            }
+        }
+        PokedexManager.manager.CreateWarningDialog("Capability is not registered in Capabilities.json: '" + inputField.text + "'");
+    }
+
+    public string ItemToolTip(Item item) {
+        string toolTip = "Name: " + item.name;
+        if (item.desc != null) {
+            toolTip += Environment.NewLine + "Description: " + item.desc;
         }
         return toolTip;
     }

@@ -1,10 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Networking;
 
 public class EncounterController : MonoBehaviour {
     public GameObject pokedexPrefab;
@@ -12,7 +10,6 @@ public class EncounterController : MonoBehaviour {
     public Slider encounterSlider;
     public Slider minLevelSlider;
     public Slider maxLevelSlider;
-    public Dropdown habitatDropdown;
     public Image heldItemImage;
     public AudioSource cryAudioSource;
 
@@ -26,7 +23,7 @@ public class EncounterController : MonoBehaviour {
         allowHeldItems,
         alwaysHoldItem;
 
-    public Dropdown
+    private Dropdown
         abilityDropdown,
         capabilityDropdown,
         skillDropdown,
@@ -35,7 +32,8 @@ public class EncounterController : MonoBehaviour {
         natureDropdown,
         typeDropdown,
         pokemonDropdown,
-        stageDropdown;
+        stageDropdown,
+        habitatDropdown;
 
     private Toggle
         conditionToggle;
@@ -74,7 +72,6 @@ public class EncounterController : MonoBehaviour {
         currentHealthField,
         maxHealthField,
         levelField,
-        heldItemDescriptionField,
         heldItemNameField,
         captureRateField;
 
@@ -112,7 +109,6 @@ public class EncounterController : MonoBehaviour {
         currentHealthField = GameObject.Find("Current Health Field").GetComponent<InputField>();
         maxHealthField = GameObject.Find("Max Health Field").GetComponent<InputField>();
         levelField = GameObject.Find("Level Field").GetComponent<InputField>();
-        heldItemDescriptionField = GameObject.Find("Held Item Description Field").GetComponent<InputField>();
         heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<InputField>();
         captureRateField = GameObject.Find("Capture Rate Field").GetComponent<InputField>();
 
@@ -122,8 +118,8 @@ public class EncounterController : MonoBehaviour {
         capabilityDropdown = GameObject.Find("Capabilities Dropdown").GetComponent<Dropdown>();
         abilityDropdown = GameObject.Find("Abilities Dropdown").GetComponent<Dropdown>();
         skillDropdown = GameObject.Find("Skills Dropdown").GetComponent<Dropdown>();
-        conditionDropdown = GameObject.Find("Conditons Dropdown").GetComponent<Dropdown>();
-        natureDropdown = GameObject.Find("Conditons Dropdown").GetComponent<Dropdown>();
+        conditionDropdown = GameObject.Find("Conditions Dropdown").GetComponent<Dropdown>();
+        natureDropdown = GameObject.Find("Nature Dropdown").GetComponent<Dropdown>();
         habitatDropdown = GameObject.Find("Habitat Dropdown").GetComponent<Dropdown>();
         stageDropdown = GameObject.Find("Stage Dropdown").GetComponent<Dropdown>();
         pokemonDropdown = GameObject.Find("Pokemon Dropdown").GetComponent<Dropdown>();
@@ -191,7 +187,7 @@ public class EncounterController : MonoBehaviour {
         // Verify all pokemon moves
         foreach (Pokemon pokemon in PokedexManager.pokedex) {
             pokemon.level = 100;
-            GetMoves(pokemon);
+            pokemon.GetMoves();
             foreach (Move move in pokemon.movesList) {
                 bool nameFound = false;
                 foreach (Move registeredMove in PokedexManager.moves) {
@@ -244,7 +240,7 @@ public class EncounterController : MonoBehaviour {
         foreach (var file in myFiles) {
             Pokemon pokemon = Pokemon.FromJson(file);
             PokedexManager.pokemonToEncounter.Add(pokemon);
-            GetMoves(pokemon);
+            pokemon.GetMoves();
             CreateListItem(pokemon);
         }
     }
@@ -331,7 +327,7 @@ public class EncounterController : MonoBehaviour {
         GameObject newPokemon = Instantiate(pokedexPrefab) as GameObject;
         PokedexEntry controller = newPokemon.GetComponent<PokedexEntry>();
         controller.pokemon = pokemon;
-        controller.species.text = pokemon.species;
+        controller.species.text = pokemon.CheckForNickname();
         newPokemon.transform.SetParent(contentPanel.transform);
         newPokemon.transform.localScale = Vector3.one;
         pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
@@ -350,7 +346,7 @@ public class EncounterController : MonoBehaviour {
     public void OnSelected(Pokemon pokemon, GameObject entry) {
         PokedexManager.AssignCurrentPokemonAndEntry(entry);
 
-        nameField.text = pokemon.name == null || pokemon.name == "" ? pokemon.species == null || pokemon.species == "" ? "???" : pokemon.species : pokemon.name;
+        nameField.text = pokemon.CheckForNickname();
         typeField.text = pokemon.type == null ? "Unkown" : pokemon.type;
         sizeField.text = pokemon.size == null ? "Unkown" : pokemon.size;
         weightField.text = pokemon.weight == null ? "Unkown" : pokemon.weight;
@@ -416,7 +412,7 @@ public class EncounterController : MonoBehaviour {
             capabilityList.Add(new Dropdown.OptionData(item));
         }
         capabilityDropdown.ClearOptions();
-        capabilityDropdown.AddOptions(abilitiesList);
+        capabilityDropdown.AddOptions(capabilityList);
 
         List<Dropdown.OptionData> conditionsList = new List<Dropdown.OptionData>();
         conditionsList.Add(new Dropdown.OptionData("Blinded"));
@@ -442,6 +438,7 @@ public class EncounterController : MonoBehaviour {
         conditionsList.Add(new Dropdown.OptionData("Vulnerable"));
         conditionDropdown.ClearOptions();
         conditionDropdown.AddOptions(conditionsList);
+        GetCondition();
 
         List<Dropdown.OptionData> moveList = new List<Dropdown.OptionData>();
         foreach (var item in pokemon.knownMoveList) {
@@ -474,7 +471,6 @@ public class EncounterController : MonoBehaviour {
 
         heldItemImage.sprite = pokemon.heldItem.sprite;
         heldItemNameField.text = pokemon.heldItem == null ? "None" : pokemon.heldItem.name;
-        heldItemDescriptionField.text = pokemon.heldItem == null ? "" : pokemon.heldItem.desc;
 
         captureRateField.text = pokemon.captureRate.ToString() + " or less";
     }
@@ -513,14 +509,18 @@ public class EncounterController : MonoBehaviour {
         }
     }
 
-    public void CaptureCurrentSelected() {
-        Debug.Log(PokedexManager.currentPokemon.savePath);
-        string newPath = PokedexManager.currentPokemon.savePath.Replace("tmp/", "Captured/");
-        Debug.Log(newPath);
-        Pokemon pokemon = PokedexManager.currentPokemon.Clone();
-        pokemon.savePath = newPath;
-        pokemon.ToJson(pokemon.savePath);
-        PokedexManager.manager.DeleteCurrentPokemonAndEntry();
+    public void DeletePokemon() {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        string name = pokemon.CheckForNickname();
+        string message = "Are you sure you wish to remove " + name + " from the encounter list?";
+        PokedexManager.manager.CreateConfirmationDialog(message, ConfirmationType.delete);
+    }
+
+    public void CapturePokemon() {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        string name = pokemon.CheckForNickname();
+        string message = "Are you sure you wish to capture " + name + "?";
+        PokedexManager.manager.CreateConfirmationDialog(message, ConfirmationType.capture);
     }
 
     public void ClearFields() {
@@ -556,70 +556,22 @@ public class EncounterController : MonoBehaviour {
         spdTotalField.text = "";
         currentHealthField.text = "";
         maxHealthField.text = "";
-        basicAbilityField.text = "";
-        advanceAbilityField.text = "";
-        highAbilityField.text = "";
         levelField.text = "";
-        movesListField0.text = "";
-        movesListField1.text = "";
-        movesListField2.text = "";
-        movesListField3.text = "";
-        movesListField4.text = "";
-        movesListField5.text = "";
-        skillsListField0.text = "";
-        skillsListField1.text = "";
-        skillsListField2.text = "";
-        skillsListField3.text = "";
-        skillsListField4.text = "";
-        skillsListField5.text = "";
-        skillsListField6.text = "";
-        capabilitiesListField0.text = "";
-        capabilitiesListField1.text = "";
-        capabilitiesListField2.text = "";
-        capabilitiesListField3.text = "";
-        capabilitiesListField4.text = "";
-        capabilitiesListField5.text = "";
-        capabilitiesListField6.text = "";
-        capabilitiesListField7.text = "";
-        capabilitiesListField8.text = "";
-        capabilitiesListField9.text = "";
-        capabilitiesListField10.text = "";
-        capabilitiesListField11.text = "";
-        capabilitiesListField12.text = "";
-        capabilitiesListField13.text = "";
-        capabilitiesListField14.text = "";
         heldItemNameField.text = "";
-        heldItemDescriptionField.text = "";
         heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
         cryAudioSource.clip = null;
-        blindedToggle.isOn = false;
-        totallyBlindedToggle.isOn = false;
-        burnedToggle.isOn = false;
-        confusedToggle.isOn = false;
-        cursedToggle.isOn = false;
-        disabledToggle.isOn = false;
-        enragedToggle.isOn = false;
-        flinchedToggle.isOn = false;
-        frozenToggle.isOn = false;
-        infatuatedToggle.isOn = false;
-        paralyzedToggle.isOn = false;
-        poisonedToggle.isOn = false;
-        badlyPoisonedToggle.isOn = false;
-        asleepToggle.isOn = false;
-        badlyAsleepToggle.isOn = false;
-        slowedToggle.isOn = false;
-        stuckToggle.isOn = false;
-        suppressedToggle.isOn = false;
-        trappedToggle.isOn = false;
-        trippedToggle.isOn = false;
-        vulnerableToggle.isOn = false;
+        moveDropdown.ClearOptions();
+        skillDropdown.ClearOptions();
+        capabilityDropdown.ClearOptions();
+        abilityDropdown.ClearOptions();
+        conditionDropdown.ClearOptions();
     }
 
     public void SetStats() {
         Pokemon pokemon = PokedexManager.currentPokemon;
         try {
             if (nameField.text != pokemon.species) {
-                pokemon.name = nameField.text;
+                pokemon.nickname = nameField.text;
             }
 
             pokemon.type = typeField.text;
@@ -649,9 +601,11 @@ public class EncounterController : MonoBehaviour {
             pokemon.spdCS = int.Parse(spdCSField.text);
 
             pokemon.currentHealth = int.Parse(currentHealthField.text);
-            pokemon.maxHealth = pokemon.level + (pokemon.hpLevel * 3) + 10;
+            pokemon.maxHealth = PokedexManager.GetMaxHealth(pokemon);
 
-            GetCaptureRate(pokemon);
+            pokemon.heldItem.name = heldItemNameField.text;
+
+            pokemon.GetCaptureRate();
 
             OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
             pokemon.ToJson(pokemon.savePath);
@@ -661,53 +615,143 @@ public class EncounterController : MonoBehaviour {
         }
     }
 
-    [SerializeField]
-    public void SetCondition(int condition) {
+    public void GetCondition() {
         Pokemon pokemon = PokedexManager.currentPokemon;
-        if ((Condition)condition == Condition.blinded) {
-            pokemon.blind = blindedToggle.isOn;
-        } else if ((Condition)condition == Condition.totallyBlinded) {
-            pokemon.totallyBlind = totallyBlindedToggle.isOn;
-        } else if ((Condition)condition == Condition.burned) {
-            pokemon.burned = burnedToggle.isOn;
-        } else if ((Condition)condition == Condition.confused) {
-            pokemon.confused = confusedToggle.isOn;
-        } else if ((Condition)condition == Condition.cursed) {
-            pokemon.cursed = cursedToggle.isOn;
-        } else if ((Condition)condition == Condition.disabled) {
-            pokemon.disabled = disabledToggle.isOn;
-        } else if ((Condition)condition == Condition.enraged) {
-            pokemon.enraged = enragedToggle.isOn;
-        } else if ((Condition)condition == Condition.flinched) {
-            pokemon.flinched = flinchedToggle.isOn;
-        } else if ((Condition)condition == Condition.frozen) {
-            pokemon.frozen = frozenToggle.isOn;
-        } else if ((Condition)condition == Condition.infatuated) {
-            pokemon.infatuated = infatuatedToggle.isOn;
-        } else if ((Condition)condition == Condition.paralyzed) {
-            pokemon.paralyzed = paralyzedToggle.isOn;
-        } else if ((Condition)condition == Condition.poisoned) {
-            pokemon.poisoned = poisonedToggle.isOn;
-        } else if ((Condition)condition == Condition.badlyPoisoned) {
-            pokemon.badlyPoisoned = badlyPoisonedToggle.isOn;
-        } else if ((Condition)condition == Condition.sleeping) {
-            pokemon.asleep = asleepToggle.isOn;
-        } else if ((Condition)condition == Condition.badlySleeping) {
-            pokemon.badlyAsleep = badlyAsleepToggle.isOn;
-        } else if ((Condition)condition == Condition.slowed) {
-            pokemon.slowed = slowedToggle.isOn;
-        } else if ((Condition)condition == Condition.stuck) {
-            pokemon.stuck = stuckToggle.isOn;
-        } else if ((Condition)condition == Condition.suppressed) {
-            pokemon.suppressed = suppressedToggle.isOn;
-        } else if ((Condition)condition == Condition.trapped) {
-            pokemon.trapped = trappedToggle.isOn;
-        } else if ((Condition)condition == Condition.tripped) {
-            pokemon.tripped = trippedToggle.isOn;
-        } else if ((Condition)condition == Condition.vulnerable) {
-            pokemon.vulnerable = vulnerableToggle.isOn;
+        switch (conditionDropdown.options[conditionDropdown.value].text) {
+            case "Blinded":
+                conditionToggle.isOn = pokemon.blind;
+                return;
+            case "Totally Blinded":
+                conditionToggle.isOn = pokemon.totallyBlind;
+                return;
+            case "Burned":
+                conditionToggle.isOn = pokemon.burned;
+                return;
+            case "Confused":
+                conditionToggle.isOn = pokemon.confused;
+                return;
+            case "Cursed":
+                conditionToggle.isOn = pokemon.cursed;
+                return;
+            case "Disabled":
+                conditionToggle.isOn = pokemon.disabled;
+                return;
+            case "Enraged":
+                conditionToggle.isOn = pokemon.enraged;
+                return;
+            case "Flinched":
+                conditionToggle.isOn = pokemon.flinched;
+                return;
+            case "Frozen":
+                conditionToggle.isOn = pokemon.frozen;
+                return;
+            case "Infatuated":
+                conditionToggle.isOn = pokemon.infatuated;
+                return;
+            case "Paralyzed":
+                conditionToggle.isOn = pokemon.paralyzed;
+                return;
+            case "Poisoned":
+                conditionToggle.isOn = pokemon.poisoned;
+                return;
+            case "Badly Poisoned":
+                conditionToggle.isOn = pokemon.badlyPoisoned;
+                return;
+            case "Sleeping":
+                conditionToggle.isOn = pokemon.asleep;
+                return;
+            case "Heavily Sleeping":
+                conditionToggle.isOn = pokemon.badlyAsleep;
+                return;
+            case "Slowed":
+                conditionToggle.isOn = pokemon.slowed;
+                return;
+            case "Stuck":
+                conditionToggle.isOn = pokemon.stuck;
+                return;
+            case "Suppressed":
+                conditionToggle.isOn = pokemon.suppressed;
+                return;
+            case "Trapped":
+                conditionToggle.isOn = pokemon.trapped;
+                return;
+            case "Tripped":
+                conditionToggle.isOn = pokemon.tripped;
+                return;
+            case "Vulnerable":
+                conditionToggle.isOn = pokemon.vulnerable;
+                return;
         }
-        GetCaptureRate(PokedexManager.currentPokemon);
+    }
+
+    public void SetCondition() {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        switch (conditionDropdown.options[conditionDropdown.value].text) {
+            case "Blinded":
+                pokemon.blind = conditionToggle.isOn;
+                return;
+            case "Totally Blinded":
+                pokemon.totallyBlind = conditionToggle.isOn;
+                return;
+            case "Burned":
+                pokemon.burned = conditionToggle.isOn;
+                return;
+            case "Confused":
+                pokemon.confused = conditionToggle.isOn;
+                return;
+            case "Cursed":
+                pokemon.cursed = conditionToggle.isOn;
+                return;
+            case "Disabled":
+                pokemon.disabled = conditionToggle.isOn;
+                return;
+            case "Enraged":
+                pokemon.enraged = conditionToggle.isOn;
+                return;
+            case "Flinched":
+                pokemon.flinched = conditionToggle.isOn;
+                return;
+            case "Frozen":
+                pokemon.frozen = conditionToggle.isOn;
+                return;
+            case "Infatuated":
+                pokemon.infatuated = conditionToggle.isOn;
+                return;
+            case "Paralyzed":
+                pokemon.paralyzed = conditionToggle.isOn;
+                return;
+            case "Poisoned":
+                pokemon.poisoned = conditionToggle.isOn;
+                return;
+            case "Badly Poisoned":
+                pokemon.badlyPoisoned = conditionToggle.isOn;
+                return;
+            case "Sleeping":
+                pokemon.asleep = conditionToggle.isOn;
+                return;
+            case "Heavily Sleeping":
+                pokemon.badlyAsleep = conditionToggle.isOn;
+                return;
+            case "Slowed":
+                pokemon.slowed = conditionToggle.isOn;
+                return;
+            case "Stuck":
+                pokemon.stuck = conditionToggle.isOn;
+                return;
+            case "Suppressed":
+                pokemon.suppressed = conditionToggle.isOn;
+                return;
+            case "Trapped":
+                pokemon.trapped = conditionToggle.isOn;
+                return;
+            case "Tripped":
+                pokemon.tripped = conditionToggle.isOn;
+                return;
+            case "Vulnerable":
+                pokemon.vulnerable = conditionToggle.isOn;
+                return;
+        }
+        PokedexManager.currentPokemon.GetCaptureRate();
         OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
         pokemon.ToJson(pokemon.savePath);
     }
@@ -716,8 +760,10 @@ public class EncounterController : MonoBehaviour {
         for (float i = 0; i < numberToEncounter; i += 1) {
             int index = UnityEngine.Random.Range(0, encounterablePokemon.Count);
             PokedexManager.pokemonToEncounter.Add(encounterablePokemon[index].Clone());
-
             Pokemon pokemon = PokedexManager.pokemonToEncounter[PokedexManager.pokemonToEncounter.Count - 1];
+
+            string natureString = natureDropdown.options[natureDropdown.value].text;
+            int levelToApply = (int)UnityEngine.Random.Range(minLevelSlider.value, maxLevelSlider.value);
 
             pokemon.hpLevel = pokemon.hp;
             pokemon.atkLevel = pokemon.atk;
@@ -726,298 +772,28 @@ public class EncounterController : MonoBehaviour {
             pokemon.spdefLevel = pokemon.spdef;
             pokemon.spdLevel = pokemon.spd;
 
-            pokemon.maxHealth = pokemon.level + (pokemon.hpLevel * 3) + 10;
-            pokemon.currentHealth = pokemon.maxHealth;
+            pokemon.GetCries();
+            pokemon.SetBaseRelations();
+            pokemon.LevelPokemon(levelToApply);
+            pokemon.GetGender();
+            pokemon.GetAbilities();
+            pokemon.GetSkills();
+            pokemon.GetNature(natureString);
+            pokemon.GetMoves();
+            if (allowShinies) pokemon.GetShiny(alwaysShiny);
+            if (allowHeldItems) pokemon.GetHeldItem(alwaysHoldItem);
 
-            GetCries(pokemon);
-            SetBaseRelations(pokemon);
-            LevelPokemon(pokemon);
-            GetGender(pokemon);
-            GetAbilities(pokemon);
-            GetNature(pokemon);
-            GetMoves(pokemon);
-            GetShiny(pokemon);
-            GetHeldItem(pokemon);
-            GetCaptureRate(pokemon);
+            pokemon.maxHealth = PokedexManager.GetMaxHealth(pokemon);
+            pokemon.currentHealth = pokemon.maxHealth;
+            pokemon.loyalty = 2;
+
+            pokemon.GetCaptureRate();
 
             try {
                 string path = Path.Combine("tmp/", pokemon.level + "_" + pokemon.species + ".json");
                 pokemon.savePath = path;
                 pokemon.ToJson(path);
             } catch { Debug.Log("Failed to save out " + pokemon.species); }
-        }
-    }
-
-    void LevelPokemon(Pokemon pokemon) {
-        pokemon.level = Mathf.RoundToInt(UnityEngine.Random.Range(minLevelSlider.value, maxLevelSlider.value));
-        int points = 10 + (pokemon.level - 1);
-
-        for (int i = 0; i < points; i++) {
-            int stat = UnityEngine.Random.Range(0, 6);
-            if (stat < 5) {
-                if (pokemon.baseRelations[stat].value >= pokemon.baseRelations[stat + 1].value) {
-                    AdjustStatByName(pokemon, pokemon.baseRelations[stat].name);
-                } else {
-                    i--;
-                }
-            } else {
-                AdjustStatByName(pokemon, pokemon.baseRelations[stat].name);
-            }
-        }
-    }
-
-    void AdjustStatByName(Pokemon pokemon, string name) {
-        if (name == "HP") {
-            pokemon.hpLevel++;
-        } else if (name == "ATK") {
-            pokemon.atkLevel++;
-        } else if (name == "DEF") {
-            pokemon.defLevel++;
-        } else if (name == "SPATK") {
-            pokemon.spatkLevel++;
-        } else if (name == "SPDEF") {
-            pokemon.spdefLevel++;
-        } else if (name == "SPD") {
-            pokemon.spdLevel++;
-        } else {
-            Debug.LogError("ATTRIBUTE NAME NOT FOUND: " + name);
-        }
-    }
-
-    void SetBaseRelations(Pokemon pokemon) {
-        pokemon.baseRelations = new BaseRelations[] {
-            new BaseRelations("HP", pokemon.hp),
-            new BaseRelations("ATK", pokemon.atk),
-            new BaseRelations("DEF", pokemon.def),
-            new BaseRelations("SPATK", pokemon.spatk),
-            new BaseRelations("SPDEF", pokemon.spdef),
-            new BaseRelations("SPD", pokemon.spd),
-        };
-
-        pokemon.baseRelations = pokemon.baseRelations.OrderBy(x => x.value).ToArray();
-
-        for (int i = 0; i < pokemon.baseRelations.Length; i++) {
-            pokemon.baseRelations[i].position = i;
-        }
-    }
-
-    void GetShiny(Pokemon pokemon) {
-        if (allowShinies) {
-            int shinyChance = UnityEngine.Random.Range(0, 8192);
-            if (alwaysShiny) { shinyChance = 0; }
-            pokemon.shiny = shinyChance == 0 ? true : false;
-        } else {
-            pokemon.shiny = false;
-        }
-
-        if (pokemon.shiny) {
-            PokemonType shinyType = PokedexManager.types[UnityEngine.Random.Range(0, PokedexManager.types.Length)];
-            string[] types = pokemon.type.Split('/');
-            if (shinyType.typeName == types[0].Trim()) {
-                pokemon.type = types[0].Trim();
-            } else {
-                pokemon.type = types[0].Trim() + " / " + shinyType.typeName;
-            }
-
-            List<TM> typeTMs = new List<TM>();
-            foreach (var item in PokedexManager.TMs) {
-                if (shinyType.typeName == item.type) {
-                    typeTMs.Add(item);
-                }
-            }
-            List<Move> shinyMoves = pokemon.knownMoveList.ToList();
-            TM chosenTM = typeTMs[UnityEngine.Random.Range(0, typeTMs.Count())];
-            Move chosenMove = new Move(chosenTM.name, 1, chosenTM.type);
-            shinyMoves.Add(chosenMove);
-            if (shinyMoves.Count() > 6) {
-                shinyMoves.RemoveAt(0);
-            }
-            pokemon.knownMoveList = shinyMoves.ToArray();
-        }
-    }
-
-    void GetGender(Pokemon pokemon) {
-        string[] genderSplit = pokemon.gender.Split(' ');
-        if (genderSplit.Count() == 5) {
-            float male = float.Parse(genderSplit[0].Replace("%", ""));
-
-            float chance = UnityEngine.Random.Range(0, 101);
-            if (chance > male) {
-                pokemon.gender = "Female";
-            } else {
-                pokemon.gender = "Male";
-            }
-        }
-    }
-
-    void GetAbilities(Pokemon pokemon) {
-        int choice = UnityEngine.Random.Range(0, pokemon.basicAbilities.Length);
-        pokemon.basicAbility = pokemon.basicAbilities.Length == 0 ? "None" : pokemon.basicAbilities[choice];
-        if (pokemon.level >= 20) {
-            choice = UnityEngine.Random.Range(0, pokemon.advancedAbilities.Length);
-            pokemon.advancedAbility = pokemon.advancedAbilities.Length == 0 ? "None" : pokemon.advancedAbilities[choice];
-            if (pokemon.level >= 40) {
-                choice = UnityEngine.Random.Range(0, pokemon.highAbilities.Length);
-                pokemon.highAbility = pokemon.highAbilities.Length == 0 ? "None" : pokemon.highAbilities[choice];
-            } else {
-                pokemon.highAbility = "None";
-            }
-        } else {
-            pokemon.advancedAbility = "None";
-            pokemon.highAbility = "None";
-        }
-    }
-
-    void GetNature(Pokemon pokemon) {
-        string natureString = natureDropdown.options[natureDropdown.value].text;
-        Nature nature;
-        if (natureString != "Any Nature") {
-            nature = PokedexManager.natures.First(x => x.name == natureString);
-        } else {
-            nature = PokedexManager.natures[UnityEngine.Random.Range(0, PokedexManager.natures.Length)];
-        }
-        pokemon.nature = nature;
-        ModifyBaseStatForNature(pokemon);
-        ModifyBaseStatForNature(pokemon, true);
-    }
-
-    void ModifyBaseStatForNature(Pokemon pokemon, bool decrease = false) {
-        int value = 2;
-        if (decrease) {
-            value *= -1;
-            string name = pokemon.nature.down.ToLower();
-        } else {
-            string name = pokemon.nature.up.ToLower();
-        }
-        if (name == "hp") {
-            pokemon.hp += value / 2;
-        } else if (name == "atk") {
-            pokemon.atk += value;
-        } else if (name == "def") {
-            pokemon.def += value;
-        } else if (name == "spatk") {
-            pokemon.spatk += value;
-        } else if (name == "spdef") {
-            pokemon.spdef += value;
-        } else if (name == "spd") {
-            pokemon.spd += value;
-        }
-    }
-
-    public static void GetMoves(Pokemon pokemon) {
-        List<Move> moveList = new List<Move>();
-        List<Move> knownMoveList = new List<Move>();
-        foreach (string move in pokemon.moves) {
-            try {
-                string[] moveSplit = move.Split(new string[] { " - " }, StringSplitOptions.None);
-                string type = moveSplit[moveSplit.Length - 1].Trim();
-                string[] levelAndName = moveSplit[0].Split(' ');
-                int level = int.Parse(levelAndName[0].Trim());
-                string name = "";
-                for (int i = 1; i < levelAndName.Length; i++) {
-                    name += " " + levelAndName[i];
-                }
-                name = name.Trim();
-                moveList.Add(new Move(name, level, type));
-            } catch {
-                Debug.Log(move);
-            }
-        }
-        pokemon.movesList = moveList.ToArray();
-        pokemon.movesList = pokemon.movesList.OrderBy(x => x.level).ToArray();
-        foreach (Move move in pokemon.movesList) {
-            if (pokemon.level >= move.level) {
-                knownMoveList.Add(move);
-            }
-            if (knownMoveList.Count() > 7) {
-                knownMoveList.RemoveAt(0);
-            }
-        }
-        pokemon.knownMoveList = knownMoveList.ToArray();
-        pokemon.knownMoveList = pokemon.knownMoveList.OrderBy(x => x.level).ToArray();
-    }
-
-    void GetHeldItem(Pokemon pokemon) {
-        if (allowHeldItems) {
-            int chance = UnityEngine.Random.Range(0, 10);
-            if (alwaysHoldItem) { chance = 0; }
-            if (chance == 0) {
-                chance = UnityEngine.Random.Range(0, PokedexManager.items.Length);
-                pokemon.heldItem = PokedexManager.items[chance];
-            }
-        }
-    }
-
-    void GetCaptureRate(Pokemon pokemon) {
-        pokemon.captureRate = 100 - (pokemon.level * 2);
-
-        float health = (float)pokemon.currentHealth / (float)pokemon.maxHealth;
-        Debug.Log(health);
-        if (health > 0.75) {
-            pokemon.captureRate += -30;
-        } else if (health > 0.5) {
-            pokemon.captureRate += -15;
-        } else if (health > 0.25) {
-            pokemon.captureRate += 0;
-        } else {
-            pokemon.captureRate += 15;
-        }
-
-        string finalStage = pokemon.evolutions[pokemon.evolutions.Length - 1][0].ToString();
-        Debug.Log("Final Stage: " + finalStage);
-        int maxStage = int.Parse(finalStage);
-        if (maxStage - pokemon.stage == 0) {
-            pokemon.captureRate += -10;
-        } else if (maxStage - pokemon.stage == 1) {
-            pokemon.captureRate += 0;
-        } else if (maxStage - pokemon.stage == 2) {
-            pokemon.captureRate += 10;
-        }
-
-        if (pokemon.shiny) { pokemon.captureRate += -10; }
-        if (pokemon.legendary) { pokemon.captureRate += -30; }
-
-        if (pokemon.burned) { pokemon.captureRate += 10; }
-        if (pokemon.frozen) { pokemon.captureRate += 10; }
-        if (pokemon.paralyzed) { pokemon.captureRate += 10; }
-        if (pokemon.poisoned) { pokemon.captureRate += 10; }
-        if (pokemon.stuck) { pokemon.captureRate += 10; }
-
-        if (pokemon.confused) { pokemon.captureRate += 5; }
-        if (pokemon.cursed) { pokemon.captureRate += 5; }
-        if (pokemon.disabled) { pokemon.captureRate += 5; }
-        if (pokemon.enraged) { pokemon.captureRate += 5; }
-        if (pokemon.flinched) { pokemon.captureRate += 5; }
-        if (pokemon.infatuated) { pokemon.captureRate += 5; }
-        if (pokemon.asleep) { pokemon.captureRate += 5; }
-        if (pokemon.suppressed) { pokemon.captureRate += 5; }
-        if (pokemon.slowed) { pokemon.captureRate += 5; }
-
-        pokemon.captureRate += 5 * pokemon.injuries;
-    }
-
-    void GetCries(Pokemon pokemon) {
-        if (pokemon.cryAudio == null) {
-            string cryLocation = Path.Combine(Application.streamingAssetsPath, "Cries/" + pokemon.cry + ".ogg");
-            if (!File.Exists(cryLocation)) {
-                Debug.LogError("Cry could not be found: " + cryLocation);
-            } else {
-                StartCoroutine(LoadClipCoroutine("file:///" + cryLocation, pokemon));
-            }
-        }
-    }
-
-    IEnumerator<UnityWebRequestAsyncOperation> LoadClipCoroutine(string file, Pokemon pokemon) {
-        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(file, AudioType.OGGVORBIS)) {
-            yield return www.SendWebRequest();
-
-            if (www.isNetworkError) {
-                Debug.Log(www.error);
-            } else {
-                AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
-                Debug.Log(clip.name + " has a length of: " + clip.length);
-                pokemon.cryAudio = clip; 
-            }
         }
     }
 }

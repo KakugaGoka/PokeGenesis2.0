@@ -17,28 +17,15 @@ public class SheetController : MonoBehaviour {
 
     public int capturedJSONCount = 0;
 
+    private Dropdown
+        abilityDropdown,
+        capabilityDropdown,
+        skillDropdown,
+        moveDropdown,
+        conditionDropdown;
+
     private Toggle
-        blindedToggle,
-        totallyBlindedToggle,
-        burnedToggle,
-        confusedToggle,
-        cursedToggle,
-        disabledToggle,
-        enragedToggle,
-        flinchedToggle,
-        frozenToggle,
-        infatuatedToggle,
-        paralyzedToggle,
-        poisonedToggle,
-        badlyPoisonedToggle,
-        asleepToggle,
-        badlyAsleepToggle,
-        slowedToggle,
-        stuckToggle,
-        suppressedToggle,
-        trappedToggle,
-        trippedToggle,
-        vulnerableToggle;
+        conditionToggle;
 
     private InputField
         nameField,
@@ -73,42 +60,11 @@ public class SheetController : MonoBehaviour {
         spdTotalField,
         currentHealthField,
         maxHealthField,
-        basicAbilityField,
-        advanceAbilityField,
-        highAbilityField,
         levelField,
-        movesListField0,
-        movesListField1,
-        movesListField2,
-        movesListField3,
-        movesListField4,
-        movesListField5,
-        skillsListField0,
-        skillsListField1,
-        skillsListField2,
-        skillsListField3,
-        skillsListField4,
-        skillsListField5,
-        skillsListField6,
-        capabilitiesListField0,
-        capabilitiesListField1,
-        capabilitiesListField2,
-        capabilitiesListField3,
-        capabilitiesListField4,
-        capabilitiesListField5,
-        capabilitiesListField6,
-        capabilitiesListField7,
-        capabilitiesListField8,
-        capabilitiesListField9,
-        capabilitiesListField10,
-        capabilitiesListField11,
-        capabilitiesListField12,
-        capabilitiesListField13,
-        capabilitiesListField14,
-        heldItemDescriptionField,
         heldItemNameField,
         tradeNameField,
-        myNameField;
+        myNameField,
+        loyaltyField;
 
     private void Start() {
         myNameField = GameObject.Find("My Name Field").GetComponent<InputField>();
@@ -146,62 +102,17 @@ public class SheetController : MonoBehaviour {
         spdTotalField = GameObject.Find("SPD Total Field").GetComponent<InputField>();
         currentHealthField = GameObject.Find("Current Health Field").GetComponent<InputField>();
         maxHealthField = GameObject.Find("Max Health Field").GetComponent<InputField>();
-        basicAbilityField = GameObject.Find("Basic Ability Field").GetComponent<InputField>();
-        advanceAbilityField = GameObject.Find("Advanced Ability Field").GetComponent<InputField>();
-        highAbilityField = GameObject.Find("High Ability Field").GetComponent<InputField>();
         levelField = GameObject.Find("Level Field").GetComponent<InputField>();
-        movesListField0 = GameObject.Find("Moves List Field 0").GetComponent<InputField>();
-        movesListField1 = GameObject.Find("Moves List Field 1").GetComponent<InputField>();
-        movesListField2 = GameObject.Find("Moves List Field 2").GetComponent<InputField>();
-        movesListField3 = GameObject.Find("Moves List Field 3").GetComponent<InputField>();
-        movesListField4 = GameObject.Find("Moves List Field 4").GetComponent<InputField>();
-        movesListField5 = GameObject.Find("Moves List Field 5").GetComponent<InputField>();
-        skillsListField0 = GameObject.Find("Skills List Field 0").GetComponent<InputField>();
-        skillsListField1 = GameObject.Find("Skills List Field 1").GetComponent<InputField>();
-        skillsListField2 = GameObject.Find("Skills List Field 2").GetComponent<InputField>();
-        skillsListField3 = GameObject.Find("Skills List Field 3").GetComponent<InputField>();
-        skillsListField4 = GameObject.Find("Skills List Field 4").GetComponent<InputField>();
-        skillsListField5 = GameObject.Find("Skills List Field 5").GetComponent<InputField>();
-        skillsListField6 = GameObject.Find("Skills List Field 6").GetComponent<InputField>();
-        capabilitiesListField0 = GameObject.Find("Capabilities List Field 0").GetComponent<InputField>();
-        capabilitiesListField1 = GameObject.Find("Capabilities List Field 1").GetComponent<InputField>();
-        capabilitiesListField2 = GameObject.Find("Capabilities List Field 2").GetComponent<InputField>();
-        capabilitiesListField3 = GameObject.Find("Capabilities List Field 3").GetComponent<InputField>();
-        capabilitiesListField4 = GameObject.Find("Capabilities List Field 4").GetComponent<InputField>();
-        capabilitiesListField5 = GameObject.Find("Capabilities List Field 5").GetComponent<InputField>();
-        capabilitiesListField6 = GameObject.Find("Capabilities List Field 6").GetComponent<InputField>();
-        capabilitiesListField7 = GameObject.Find("Capabilities List Field 7").GetComponent<InputField>();
-        capabilitiesListField8 = GameObject.Find("Capabilities List Field 8").GetComponent<InputField>();
-        capabilitiesListField9 = GameObject.Find("Capabilities List Field 9").GetComponent<InputField>();
-        capabilitiesListField10 = GameObject.Find("Capabilities List Field 10").GetComponent<InputField>();
-        capabilitiesListField11 = GameObject.Find("Capabilities List Field 11").GetComponent<InputField>();
-        capabilitiesListField12 = GameObject.Find("Capabilities List Field 12").GetComponent<InputField>();
-        capabilitiesListField13 = GameObject.Find("Capabilities List Field 13").GetComponent<InputField>();
-        capabilitiesListField14 = GameObject.Find("Capabilities List Field 14").GetComponent<InputField>();
-        heldItemDescriptionField = GameObject.Find("Held Item Description Field").GetComponent<InputField>();
         heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<InputField>();
+        loyaltyField = GameObject.Find("Loyalty Field").GetComponent<InputField>();
 
-        blindedToggle = GameObject.Find("Blinded Toggle").GetComponent<Toggle>();
-        totallyBlindedToggle = GameObject.Find("Totally Blinded Toggle").GetComponent<Toggle>();
-        burnedToggle = GameObject.Find("Burned Toggle").GetComponent<Toggle>();
-        confusedToggle = GameObject.Find("Confused Toggle").GetComponent<Toggle>();
-        cursedToggle = GameObject.Find("Cursed Toggle").GetComponent<Toggle>();
-        disabledToggle = GameObject.Find("Disabled Toggle").GetComponent<Toggle>();
-        enragedToggle = GameObject.Find("Enraged Toggle").GetComponent<Toggle>();
-        flinchedToggle = GameObject.Find("Flinched Toggle").GetComponent<Toggle>();
-        frozenToggle = GameObject.Find("Frozen Toggle").GetComponent<Toggle>();
-        infatuatedToggle = GameObject.Find("Infatuated Toggle").GetComponent<Toggle>();
-        paralyzedToggle = GameObject.Find("Paralyzed Toggle").GetComponent<Toggle>();
-        poisonedToggle = GameObject.Find("Poisoned Toggle").GetComponent<Toggle>();
-        badlyPoisonedToggle = GameObject.Find("Badly Poisoned Toggle").GetComponent<Toggle>();
-        asleepToggle = GameObject.Find("Sleeping Toggle").GetComponent<Toggle>();
-        badlyAsleepToggle = GameObject.Find("Heavily Sleeping Toggle").GetComponent<Toggle>();
-        slowedToggle = GameObject.Find("Slowed Toggle").GetComponent<Toggle>();
-        stuckToggle = GameObject.Find("Stuck Toggle").GetComponent<Toggle>();
-        suppressedToggle = GameObject.Find("Suppressed Toggle").GetComponent<Toggle>();
-        trappedToggle = GameObject.Find("Trapped Toggle").GetComponent<Toggle>();
-        trippedToggle = GameObject.Find("Tripped Toggle").GetComponent<Toggle>();
-        vulnerableToggle = GameObject.Find("Vulnerable Toggle").GetComponent<Toggle>();
+        conditionToggle = GameObject.Find("Condition Toggle").GetComponent<Toggle>();
+
+        moveDropdown = GameObject.Find("Moves Dropdown").GetComponent<Dropdown>();
+        capabilityDropdown = GameObject.Find("Capabilities Dropdown").GetComponent<Dropdown>();
+        abilityDropdown = GameObject.Find("Abilities Dropdown").GetComponent<Dropdown>();
+        skillDropdown = GameObject.Find("Skills Dropdown").GetComponent<Dropdown>();
+        conditionDropdown = GameObject.Find("Conditions Dropdown").GetComponent<Dropdown>();
 
         heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
 #if DEBUG
@@ -237,7 +148,8 @@ public class SheetController : MonoBehaviour {
         foreach (var file in myFiles) {
             Pokemon pokemon = Pokemon.FromJson(file);
             PokedexManager.pokemonToEncounter.Add(pokemon);
-            EncounterController.GetMoves(pokemon);
+            pokemon.GetMoves();
+            pokemon.GetCries();
             CreateListItem(pokemon);
         }
 
@@ -271,7 +183,8 @@ public class SheetController : MonoBehaviour {
             foreach (var file in myFiles) {
                 Pokemon pokemon = Pokemon.FromJson(file);
                 PokedexManager.pokemonToEncounter.Add(pokemon);
-                EncounterController.GetMoves(pokemon);
+                pokemon.GetMoves();
+                pokemon.GetCries();
                 CreateListItem(pokemon);
             }
         }
@@ -281,7 +194,7 @@ public class SheetController : MonoBehaviour {
         GameObject newPokemon = Instantiate(pokedexPrefab) as GameObject;
         PokedexEntry controller = newPokemon.GetComponent<PokedexEntry>();
         controller.pokemon = pokemon;
-        controller.species.text = pokemon.species;
+        controller.species.text = pokemon.CheckForNickname();
         newPokemon.transform.SetParent(contentPanel.transform);
         newPokemon.transform.localScale = Vector3.one;
         pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
@@ -301,7 +214,7 @@ public class SheetController : MonoBehaviour {
         PokedexManager.AssignCurrentPokemonAndEntry(entry);
         myNameField.text = PokedexManager.GetLocalIPAddress();
 
-        nameField.text = pokemon.name == null || pokemon.name == "" ? pokemon.species == null || pokemon.species == "" ? "???" : pokemon.species : pokemon.name;
+        nameField.text = pokemon.CheckForNickname();
         typeField.text = pokemon.type == null ? "Unkown" : pokemon.type;
         sizeField.text = pokemon.size == null ? "Unkown" : pokemon.size;
         weightField.text = pokemon.weight == null ? "Unkown" : pokemon.weight;
@@ -346,40 +259,54 @@ public class SheetController : MonoBehaviour {
         spdefTotalField.text = (pokemon.spdefLevel + (pokemon.spdefCS * spdefStage)).ToString();
         spdTotalField.text = (pokemon.spdLevel + (pokemon.spdCS * spdStage)).ToString();
 
-        basicAbilityField.text = pokemon.basicAbility;
-        advanceAbilityField.text = pokemon.advancedAbility;
-        highAbilityField.text = pokemon.highAbility;
-
         levelField.text = pokemon.level.ToString();
 
-        blindedToggle.isOn = pokemon.blind;
-        totallyBlindedToggle.isOn = pokemon.totallyBlind;
-        burnedToggle.isOn = pokemon.burned;
-        confusedToggle.isOn = pokemon.confused;
-        cursedToggle.isOn = pokemon.cursed;
-        disabledToggle.isOn = pokemon.disabled;
-        enragedToggle.isOn = pokemon.enraged;
-        flinchedToggle.isOn = pokemon.flinched;
-        frozenToggle.isOn = pokemon.frozen;
-        infatuatedToggle.isOn = pokemon.infatuated;
-        paralyzedToggle.isOn = pokemon.paralyzed;
-        poisonedToggle.isOn = pokemon.poisoned;
-        badlyPoisonedToggle.isOn = pokemon.badlyPoisoned;
-        asleepToggle.isOn = pokemon.asleep;
-        badlyAsleepToggle.isOn = pokemon.badlyAsleep;
-        slowedToggle.isOn = pokemon.slowed;
-        stuckToggle.isOn = pokemon.stuck;
-        suppressedToggle.isOn = pokemon.suppressed;
-        trappedToggle.isOn = pokemon.trapped;
-        trippedToggle.isOn = pokemon.tripped;
-        vulnerableToggle.isOn = pokemon.vulnerable;
+        List<Dropdown.OptionData> abilitiesList = new List<Dropdown.OptionData>();
+        if (pokemon.basicAbility != null) { abilitiesList.Add(new Dropdown.OptionData(pokemon.basicAbility)); }
+        if (pokemon.advancedAbility != null) { abilitiesList.Add(new Dropdown.OptionData(pokemon.advancedAbility)); }
+        if (pokemon.highAbility != null) { abilitiesList.Add(new Dropdown.OptionData(pokemon.highAbility)); }
+        abilityDropdown.ClearOptions();
+        abilityDropdown.AddOptions(abilitiesList);
 
-        movesListField0.text = pokemon.knownMoveList.Length > 0 ? pokemon.knownMoveList[0].name : "";
-        movesListField1.text = pokemon.knownMoveList.Length > 1 ? pokemon.knownMoveList[1].name : "";
-        movesListField2.text = pokemon.knownMoveList.Length > 2 ? pokemon.knownMoveList[2].name : "";
-        movesListField3.text = pokemon.knownMoveList.Length > 3 ? pokemon.knownMoveList[3].name : "";
-        movesListField4.text = pokemon.knownMoveList.Length > 4 ? pokemon.knownMoveList[4].name : "";
-        movesListField5.text = pokemon.knownMoveList.Length > 5 ? pokemon.knownMoveList[5].name : "";
+        List<Dropdown.OptionData> capabilityList = new List<Dropdown.OptionData>();
+        foreach (var item in pokemon.capabilities) {
+            capabilityList.Add(new Dropdown.OptionData(item));
+        }
+        capabilityDropdown.ClearOptions();
+        capabilityDropdown.AddOptions(capabilityList);
+
+        List<Dropdown.OptionData> conditionsList = new List<Dropdown.OptionData>();
+        conditionsList.Add(new Dropdown.OptionData("Blinded"));
+        conditionsList.Add(new Dropdown.OptionData("Totally Blinded"));
+        conditionsList.Add(new Dropdown.OptionData("Burned"));
+        conditionsList.Add(new Dropdown.OptionData("Confused"));
+        conditionsList.Add(new Dropdown.OptionData("Cursed"));
+        conditionsList.Add(new Dropdown.OptionData("Disabled"));
+        conditionsList.Add(new Dropdown.OptionData("Enraged"));
+        conditionsList.Add(new Dropdown.OptionData("Flinched"));
+        conditionsList.Add(new Dropdown.OptionData("Frozen"));
+        conditionsList.Add(new Dropdown.OptionData("Infatuated"));
+        conditionsList.Add(new Dropdown.OptionData("Paralyzed"));
+        conditionsList.Add(new Dropdown.OptionData("Poisoned"));
+        conditionsList.Add(new Dropdown.OptionData("Badly Poisoned"));
+        conditionsList.Add(new Dropdown.OptionData("Sleeping"));
+        conditionsList.Add(new Dropdown.OptionData("Heavily Sleeping"));
+        conditionsList.Add(new Dropdown.OptionData("Slowed"));
+        conditionsList.Add(new Dropdown.OptionData("Stuck"));
+        conditionsList.Add(new Dropdown.OptionData("Suppressed"));
+        conditionsList.Add(new Dropdown.OptionData("Trapped"));
+        conditionsList.Add(new Dropdown.OptionData("Tripped"));
+        conditionsList.Add(new Dropdown.OptionData("Vulnerable"));
+        conditionDropdown.ClearOptions();
+        conditionDropdown.AddOptions(conditionsList);
+        GetCondition();
+
+        List<Dropdown.OptionData> moveList = new List<Dropdown.OptionData>();
+        foreach (var item in pokemon.knownMoveList) {
+            moveList.Add(new Dropdown.OptionData(item.name));
+        }
+        moveDropdown.ClearOptions();
+        moveDropdown.AddOptions(moveList);
 
         if (pokemon.heldItem.name == null || pokemon.heldItem.name == "None" || pokemon.heldItem.name == "") {
             pokemon.heldItem = new Item() {
@@ -392,33 +319,20 @@ public class SheetController : MonoBehaviour {
             pokemon.heldItem.sprite = PokedexManager.LoadSprite("ItemIcons/" + pokemon.heldItem.image);
         }
 
+        List<Dropdown.OptionData> skillList = new List<Dropdown.OptionData>();
+        skillList.Add(new Dropdown.OptionData("Athl " + pokemon.athleticsDie.ToString() + "d6+" + pokemon.athleticsBonus.ToString()));
+        skillList.Add(new Dropdown.OptionData("Acro " + pokemon.acrobaticsDie.ToString() + "d6+" + pokemon.acrobaticsBonus.ToString()));
+        skillList.Add(new Dropdown.OptionData("Combat " + pokemon.combatDie.ToString() + "d6+" + pokemon.combatBonus.ToString()));
+        skillList.Add(new Dropdown.OptionData("Focus " + pokemon.focusDie.ToString() + "d6+" + pokemon.focusBonus.ToString()));
+        skillList.Add(new Dropdown.OptionData("Percep " + pokemon.perceptionDie.ToString() + "d6+" + pokemon.perceptionBonus.ToString()));
+        skillList.Add(new Dropdown.OptionData("Stealth " + pokemon.stealthDie.ToString() + "d6+" + pokemon.stealthBonus.ToString()));
+        skillList.Add(new Dropdown.OptionData("Edu:Tech " + pokemon.techEduDie.ToString() + "d6+" + pokemon.techEduBonus.ToString()));
+        skillDropdown.ClearOptions();
+        skillDropdown.AddOptions(skillList);
+
         heldItemImage.sprite = pokemon.heldItem.sprite;
         heldItemNameField.text = pokemon.heldItem == null ? "None" : pokemon.heldItem.name;
-        heldItemDescriptionField.text = pokemon.heldItem == null ? "" : pokemon.heldItem.desc;
-
-        skillsListField0.text = "Athl " + pokemon.athleticsDie.ToString() + "d6+" + pokemon.athleticsBonus.ToString();
-        skillsListField1.text = "Acro " + pokemon.acrobaticsDie.ToString() + "d6+" + pokemon.acrobaticsBonus.ToString();
-        skillsListField2.text = "Combat " + pokemon.combatDie.ToString() + "d6+" + pokemon.combatBonus.ToString();
-        skillsListField3.text = "Focus " + pokemon.focusDie.ToString() + "d6+" + pokemon.focusBonus.ToString();
-        skillsListField4.text = "Percep " + pokemon.perceptionDie.ToString() + "d6+" + pokemon.perceptionBonus.ToString();
-        skillsListField5.text = "Stealth " + pokemon.stealthDie.ToString() + "d6+" + pokemon.stealthBonus.ToString();
-        skillsListField6.text = "Edu:Tech " + pokemon.techEduDie.ToString() + "d6+" + pokemon.techEduBonus.ToString();
-
-        capabilitiesListField0.text = pokemon.capabilities.Length > 0 ? pokemon.capabilities[0] : "";
-        capabilitiesListField1.text = pokemon.capabilities.Length > 1 ? pokemon.capabilities[1] : "";
-        capabilitiesListField2.text = pokemon.capabilities.Length > 2 ? pokemon.capabilities[2] : "";
-        capabilitiesListField3.text = pokemon.capabilities.Length > 3 ? pokemon.capabilities[3] : "";
-        capabilitiesListField4.text = pokemon.capabilities.Length > 4 ? pokemon.capabilities[4] : "";
-        capabilitiesListField5.text = pokemon.capabilities.Length > 5 ? pokemon.capabilities[5] : "";
-        capabilitiesListField6.text = pokemon.capabilities.Length > 6 ? pokemon.capabilities[6] : "";
-        capabilitiesListField7.text = pokemon.capabilities.Length > 7 ? pokemon.capabilities[7] : "";
-        capabilitiesListField8.text = pokemon.capabilities.Length > 8 ? pokemon.capabilities[8] : "";
-        capabilitiesListField9.text = pokemon.capabilities.Length > 9 ? pokemon.capabilities[9] : "";
-        capabilitiesListField10.text = pokemon.capabilities.Length > 10 ? pokemon.capabilities[10] : "";
-        capabilitiesListField11.text = pokemon.capabilities.Length > 11 ? pokemon.capabilities[11] : "";
-        capabilitiesListField12.text = pokemon.capabilities.Length > 12 ? pokemon.capabilities[12] : "";
-        capabilitiesListField13.text = pokemon.capabilities.Length > 13 ? pokemon.capabilities[13] : "";
-        capabilitiesListField14.text = pokemon.capabilities.Length > 14 ? pokemon.capabilities[14] : "";
+        loyaltyField.text = pokemon.loyalty.ToString();
     }
 
     public void ClearFields() {
@@ -454,69 +368,216 @@ public class SheetController : MonoBehaviour {
         spdTotalField.text = "";
         currentHealthField.text = "";
         maxHealthField.text = "";
-        basicAbilityField.text = "";
-        advanceAbilityField.text = "";
-        highAbilityField.text = "";
         levelField.text = "";
-        movesListField0.text = "";
-        movesListField1.text = "";
-        movesListField2.text = "";
-        movesListField3.text = "";
-        movesListField4.text = "";
-        movesListField5.text = "";
-        skillsListField0.text = "";
-        skillsListField1.text = "";
-        skillsListField2.text = "";
-        skillsListField3.text = "";
-        skillsListField4.text = "";
-        skillsListField5.text = "";
-        skillsListField6.text = "";
-        capabilitiesListField0.text = "";
-        capabilitiesListField1.text = "";
-        capabilitiesListField2.text = "";
-        capabilitiesListField3.text = "";
-        capabilitiesListField4.text = "";
-        capabilitiesListField5.text = "";
-        capabilitiesListField6.text = "";
-        capabilitiesListField7.text = "";
-        capabilitiesListField8.text = "";
-        capabilitiesListField9.text = "";
-        capabilitiesListField10.text = "";
-        capabilitiesListField11.text = "";
-        capabilitiesListField12.text = "";
-        capabilitiesListField13.text = "";
-        capabilitiesListField14.text = "";
         heldItemNameField.text = "";
-        heldItemDescriptionField.text = "";
+        loyaltyField.text = "";
         heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
         cryAudioSource.clip = null;
-        blindedToggle.isOn = false;
-        totallyBlindedToggle.isOn = false;
-        burnedToggle.isOn = false;
-        confusedToggle.isOn = false;
-        cursedToggle.isOn = false;
-        disabledToggle.isOn = false;
-        enragedToggle.isOn = false;
-        flinchedToggle.isOn = false;
-        frozenToggle.isOn = false;
-        infatuatedToggle.isOn = false;
-        paralyzedToggle.isOn = false;
-        poisonedToggle.isOn = false;
-        badlyPoisonedToggle.isOn = false;
-        asleepToggle.isOn = false;
-        badlyAsleepToggle.isOn = false;
-        slowedToggle.isOn = false;
-        stuckToggle.isOn = false;
-        suppressedToggle.isOn = false;
-        trappedToggle.isOn = false;
-        trippedToggle.isOn = false;
-        vulnerableToggle.isOn = false;
+        moveDropdown.ClearOptions();
+        skillDropdown.ClearOptions();
+        capabilityDropdown.ClearOptions();
+        abilityDropdown.ClearOptions();
+        conditionDropdown.ClearOptions();
+    }
+
+    public void SetStats() {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        try {
+            if (nameField.text != pokemon.species) {
+                pokemon.nickname = nameField.text;
+            }
+
+            pokemon.type = typeField.text;
+            pokemon.size = sizeField.text;
+            pokemon.weight = weightField.text;
+            pokemon.gender = genderField.text;
+
+            pokemon.hp = int.Parse(hpBaseField.text);
+            pokemon.atk = int.Parse(atkBaseField.text);
+            pokemon.def = int.Parse(defBaseField.text);
+            pokemon.spatk = int.Parse(spatkBaseField.text);
+            pokemon.spdef = int.Parse(spdefBaseField.text);
+            pokemon.spd = int.Parse(spdBaseField.text);
+
+            pokemon.hpLevel = int.Parse(hpLevelField.text);
+            pokemon.atkLevel = int.Parse(atkLevelField.text);
+            pokemon.defLevel = int.Parse(defLevelField.text);
+            pokemon.spatkLevel = int.Parse(spatkLevelField.text);
+            pokemon.spdefLevel = int.Parse(spdefLevelField.text);
+            pokemon.spdLevel = int.Parse(spdLevelField.text);
+
+            pokemon.hpCS = int.Parse(hpCSField.text);
+            pokemon.atkCS = int.Parse(atkCSField.text);
+            pokemon.defCS = int.Parse(defCSField.text);
+            pokemon.spatkCS = int.Parse(spatkCSField.text);
+            pokemon.spdefCS = int.Parse(spdefCSField.text);
+            pokemon.spdCS = int.Parse(spdCSField.text);
+
+            pokemon.currentHealth = int.Parse(currentHealthField.text);
+            pokemon.maxHealth = PokedexManager.GetMaxHealth(pokemon);
+
+            pokemon.heldItem.name = heldItemNameField.text;
+            pokemon.loyalty = int.Parse(loyaltyField.text);
+
+            OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
+            pokemon.ToJson(pokemon.savePath);
+        } catch {
+            string errorMessage = "Failed to assign all values properly. Please check last input.";
+            PokedexManager.manager.CreateWarningDialog(errorMessage);
+        }
+    }
+
+    public void GetCondition() {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        switch (conditionDropdown.options[conditionDropdown.value].text) {
+            case "Blinded":
+                conditionToggle.isOn = pokemon.blind;
+                return;
+            case "Totally Blinded":
+                conditionToggle.isOn = pokemon.totallyBlind;
+                return;
+            case "Burned":
+                conditionToggle.isOn = pokemon.burned;
+                return;
+            case "Confused":
+                conditionToggle.isOn = pokemon.confused;
+                return;
+            case "Cursed":
+                conditionToggle.isOn = pokemon.cursed;
+                return;
+            case "Disabled":
+                conditionToggle.isOn = pokemon.disabled;
+                return;
+            case "Enraged":
+                conditionToggle.isOn = pokemon.enraged;
+                return;
+            case "Flinched":
+                conditionToggle.isOn = pokemon.flinched;
+                return;
+            case "Frozen":
+                conditionToggle.isOn = pokemon.frozen;
+                return;
+            case "Infatuated":
+                conditionToggle.isOn = pokemon.infatuated;
+                return;
+            case "Paralyzed":
+                conditionToggle.isOn = pokemon.paralyzed;
+                return;
+            case "Poisoned":
+                conditionToggle.isOn = pokemon.poisoned;
+                return;
+            case "Badly Poisoned":
+                conditionToggle.isOn = pokemon.badlyPoisoned;
+                return;
+            case "Sleeping":
+                conditionToggle.isOn = pokemon.asleep;
+                return;
+            case "Heavily Sleeping":
+                conditionToggle.isOn = pokemon.badlyAsleep;
+                return;
+            case "Slowed":
+                conditionToggle.isOn = pokemon.slowed;
+                return;
+            case "Stuck":
+                conditionToggle.isOn = pokemon.stuck;
+                return;
+            case "Suppressed":
+                conditionToggle.isOn = pokemon.suppressed;
+                return;
+            case "Trapped":
+                conditionToggle.isOn = pokemon.trapped;
+                return;
+            case "Tripped":
+                conditionToggle.isOn = pokemon.tripped;
+                return;
+            case "Vulnerable":
+                conditionToggle.isOn = pokemon.vulnerable;
+                return;
+        }
+    }
+
+    public void SetCondition() {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        switch (conditionDropdown.options[conditionDropdown.value].text) {
+            case "Blinded":
+                pokemon.blind = conditionToggle.isOn;
+                return;
+            case "Totally Blinded":
+                pokemon.totallyBlind = conditionToggle.isOn;
+                return;
+            case "Burned":
+                pokemon.burned = conditionToggle.isOn;
+                return;
+            case "Confused":
+                pokemon.confused = conditionToggle.isOn;
+                return;
+            case "Cursed":
+                pokemon.cursed = conditionToggle.isOn;
+                return;
+            case "Disabled":
+                pokemon.disabled = conditionToggle.isOn;
+                return;
+            case "Enraged":
+                pokemon.enraged = conditionToggle.isOn;
+                return;
+            case "Flinched":
+                pokemon.flinched = conditionToggle.isOn;
+                return;
+            case "Frozen":
+                pokemon.frozen = conditionToggle.isOn;
+                return;
+            case "Infatuated":
+                pokemon.infatuated = conditionToggle.isOn;
+                return;
+            case "Paralyzed":
+                pokemon.paralyzed = conditionToggle.isOn;
+                return;
+            case "Poisoned":
+                pokemon.poisoned = conditionToggle.isOn;
+                return;
+            case "Badly Poisoned":
+                pokemon.badlyPoisoned = conditionToggle.isOn;
+                return;
+            case "Sleeping":
+                pokemon.asleep = conditionToggle.isOn;
+                return;
+            case "Heavily Sleeping":
+                pokemon.badlyAsleep = conditionToggle.isOn;
+                return;
+            case "Slowed":
+                pokemon.slowed = conditionToggle.isOn;
+                return;
+            case "Stuck":
+                pokemon.stuck = conditionToggle.isOn;
+                return;
+            case "Suppressed":
+                pokemon.suppressed = conditionToggle.isOn;
+                return;
+            case "Trapped":
+                pokemon.trapped = conditionToggle.isOn;
+                return;
+            case "Tripped":
+                pokemon.tripped = conditionToggle.isOn;
+                return;
+            case "Vulnerable":
+                pokemon.vulnerable = conditionToggle.isOn;
+                return;
+        }
+        OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
+        pokemon.ToJson(pokemon.savePath);
+    }
+
+    public void ReleasePokemon() {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        string name = pokemon.CheckForNickname();
+        string message = "Are you sure you wish to release " + name + "? They will appear in the encounter list until removed or this application is closed.";
+        PokedexManager.manager.CreateConfirmationDialog(message, ConfirmationType.release);
     }
 
     public void TradePokemon() {
         Client.client.ip = tradeNameField.text;
         Pokemon pokemon = PokedexManager.currentPokemon;
-        string name = pokemon.name == null || pokemon.name == "" ? pokemon.species == null || pokemon.species == "" ? "???" : pokemon.species : pokemon.name;
+        string name = pokemon.CheckForNickname();
         string message = "Are you sure you wish to send " + name + " to " + tradeNameField.text + "?";
         PokedexManager.manager.CreateConfirmationDialog(message, ConfirmationType.trade);
     }
@@ -530,37 +591,12 @@ public class SheetController : MonoBehaviour {
             cryAudioSource.clip = PokedexManager.currentPokemon.cryAudio;
             cryAudioSource.Play();
         } else {
-            GetCries(PokedexManager.currentPokemon);
+            PokedexManager.currentPokemon.GetCries();
             if (PokedexManager.currentPokemon.cryAudio != null) {
                 cryAudioSource.clip = PokedexManager.currentPokemon.cryAudio;
                 cryAudioSource.Play();
             } else {
                 Debug.LogError("The current pokemon does not have a proper cry set up: " + PokedexManager.currentPokemon.species);
-            }
-        }
-    }
-
-    void GetCries(Pokemon pokemon) {
-        if (pokemon.cryAudio == null) {
-            string cryLocation = Path.Combine(Application.streamingAssetsPath, "Cries/" + pokemon.cry + ".ogg");
-            if (!File.Exists(cryLocation)) {
-                Debug.LogError("Cry could not be found: " + cryLocation);
-            } else {
-                StartCoroutine(LoadClipCoroutine("file:///" + cryLocation, pokemon));
-            }
-        }
-    }
-
-    IEnumerator<UnityWebRequestAsyncOperation> LoadClipCoroutine(string file, Pokemon pokemon) {
-        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(file, AudioType.OGGVORBIS)) {
-            yield return www.SendWebRequest();
-
-            if (www.isNetworkError) {
-                Debug.Log(www.error);
-            } else {
-                AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
-                Debug.Log(clip.name + " has a length of: " + clip.length);
-                pokemon.cryAudio = clip;
             }
         }
     }
