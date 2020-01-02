@@ -13,10 +13,6 @@ public class EncounterController : MonoBehaviour {
     public Slider minLevelSlider;
     public Slider maxLevelSlider;
     public Dropdown habitatDropdown;
-    public Dropdown natureDropdown;
-    public Dropdown typeDropdown;
-    public Dropdown pokemonDropdown;
-    public Dropdown stageDropdown;
     public Image heldItemImage;
     public AudioSource cryAudioSource;
 
@@ -29,29 +25,20 @@ public class EncounterController : MonoBehaviour {
         allowLegendaries,
         allowHeldItems,
         alwaysHoldItem;
-    
+
+    public Dropdown
+        abilityDropdown,
+        capabilityDropdown,
+        skillDropdown,
+        moveDropdown,
+        conditionDropdown,
+        natureDropdown,
+        typeDropdown,
+        pokemonDropdown,
+        stageDropdown;
+
     private Toggle
-        blindedToggle,
-        totallyBlindedToggle,
-        burnedToggle,
-        confusedToggle,
-        cursedToggle,
-        disabledToggle,
-        enragedToggle,
-        flinchedToggle,
-        frozenToggle,
-        infatuatedToggle,
-        paralyzedToggle,
-        poisonedToggle,
-        badlyPoisonedToggle,
-        asleepToggle,
-        badlyAsleepToggle,
-        slowedToggle,
-        stuckToggle,
-        suppressedToggle,
-        trappedToggle,
-        trippedToggle,
-        vulnerableToggle;
+        conditionToggle;
 
     private InputField
         nameField,
@@ -85,39 +72,8 @@ public class EncounterController : MonoBehaviour {
         spdefTotalField,
         spdTotalField,
         currentHealthField,
-        maxHealthField, 
-        basicAbilityField,
-        advanceAbilityField,
-        highAbilityField,
+        maxHealthField,
         levelField,
-        movesListField0,
-        movesListField1,
-        movesListField2,
-        movesListField3,
-        movesListField4,
-        movesListField5,
-        skillsListField0,
-        skillsListField1,
-        skillsListField2,
-        skillsListField3,
-        skillsListField4,
-        skillsListField5,
-        skillsListField6,
-        capabilitiesListField0,
-        capabilitiesListField1,
-        capabilitiesListField2,
-        capabilitiesListField3,
-        capabilitiesListField4,
-        capabilitiesListField5,
-        capabilitiesListField6,
-        capabilitiesListField7,
-        capabilitiesListField8,
-        capabilitiesListField9,
-        capabilitiesListField10,
-        capabilitiesListField11,
-        capabilitiesListField12,
-        capabilitiesListField13,
-        capabilitiesListField14,
         heldItemDescriptionField,
         heldItemNameField,
         captureRateField;
@@ -155,63 +111,23 @@ public class EncounterController : MonoBehaviour {
         spdTotalField = GameObject.Find("SPD Total Field").GetComponent<InputField>();
         currentHealthField = GameObject.Find("Current Health Field").GetComponent<InputField>();
         maxHealthField = GameObject.Find("Max Health Field").GetComponent<InputField>();
-        basicAbilityField = GameObject.Find("Basic Ability Field").GetComponent<InputField>();
-        advanceAbilityField = GameObject.Find("Advanced Ability Field").GetComponent<InputField>();
-        highAbilityField = GameObject.Find("High Ability Field").GetComponent<InputField>();
         levelField = GameObject.Find("Level Field").GetComponent<InputField>();
-        movesListField0 = GameObject.Find("Moves List Field 0").GetComponent<InputField>();
-        movesListField1 = GameObject.Find("Moves List Field 1").GetComponent<InputField>();
-        movesListField2 = GameObject.Find("Moves List Field 2").GetComponent<InputField>();
-        movesListField3 = GameObject.Find("Moves List Field 3").GetComponent<InputField>();
-        movesListField4 = GameObject.Find("Moves List Field 4").GetComponent<InputField>();
-        movesListField5 = GameObject.Find("Moves List Field 5").GetComponent<InputField>();
-        skillsListField0 = GameObject.Find("Skills List Field 0").GetComponent<InputField>();
-        skillsListField1 = GameObject.Find("Skills List Field 1").GetComponent<InputField>();
-        skillsListField2 = GameObject.Find("Skills List Field 2").GetComponent<InputField>();
-        skillsListField3 = GameObject.Find("Skills List Field 3").GetComponent<InputField>();
-        skillsListField4 = GameObject.Find("Skills List Field 4").GetComponent<InputField>();
-        skillsListField5 = GameObject.Find("Skills List Field 5").GetComponent<InputField>();
-        skillsListField6 = GameObject.Find("Skills List Field 6").GetComponent<InputField>();
-        capabilitiesListField0 = GameObject.Find("Capabilities List Field 0").GetComponent<InputField>();
-        capabilitiesListField1 = GameObject.Find("Capabilities List Field 1").GetComponent<InputField>();
-        capabilitiesListField2 = GameObject.Find("Capabilities List Field 2").GetComponent<InputField>();
-        capabilitiesListField3 = GameObject.Find("Capabilities List Field 3").GetComponent<InputField>();
-        capabilitiesListField4 = GameObject.Find("Capabilities List Field 4").GetComponent<InputField>();
-        capabilitiesListField5 = GameObject.Find("Capabilities List Field 5").GetComponent<InputField>();
-        capabilitiesListField6 = GameObject.Find("Capabilities List Field 6").GetComponent<InputField>();
-        capabilitiesListField7 = GameObject.Find("Capabilities List Field 7").GetComponent<InputField>();
-        capabilitiesListField8 = GameObject.Find("Capabilities List Field 8").GetComponent<InputField>();
-        capabilitiesListField9 = GameObject.Find("Capabilities List Field 9").GetComponent<InputField>();
-        capabilitiesListField10 = GameObject.Find("Capabilities List Field 10").GetComponent<InputField>();
-        capabilitiesListField11 = GameObject.Find("Capabilities List Field 11").GetComponent<InputField>();
-        capabilitiesListField12 = GameObject.Find("Capabilities List Field 12").GetComponent<InputField>();
-        capabilitiesListField13 = GameObject.Find("Capabilities List Field 13").GetComponent<InputField>();
-        capabilitiesListField14 = GameObject.Find("Capabilities List Field 14").GetComponent<InputField>();
         heldItemDescriptionField = GameObject.Find("Held Item Description Field").GetComponent<InputField>();
         heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<InputField>();
         captureRateField = GameObject.Find("Capture Rate Field").GetComponent<InputField>();
 
-        blindedToggle = GameObject.Find("Blinded Toggle").GetComponent<Toggle>();
-        totallyBlindedToggle = GameObject.Find("Totally Blinded Toggle").GetComponent<Toggle>();
-        burnedToggle = GameObject.Find("Burned Toggle").GetComponent<Toggle>();
-        confusedToggle = GameObject.Find("Confused Toggle").GetComponent<Toggle>();
-        cursedToggle = GameObject.Find("Cursed Toggle").GetComponent<Toggle>();
-        disabledToggle = GameObject.Find("Disabled Toggle").GetComponent<Toggle>();
-        enragedToggle = GameObject.Find("Enraged Toggle").GetComponent<Toggle>();
-        flinchedToggle = GameObject.Find("Flinched Toggle").GetComponent<Toggle>();
-        frozenToggle = GameObject.Find("Frozen Toggle").GetComponent<Toggle>();
-        infatuatedToggle = GameObject.Find("Infatuated Toggle").GetComponent<Toggle>();
-        paralyzedToggle = GameObject.Find("Paralyzed Toggle").GetComponent<Toggle>();
-        poisonedToggle = GameObject.Find("Poisoned Toggle").GetComponent<Toggle>();
-        badlyPoisonedToggle = GameObject.Find("Badly Poisoned Toggle").GetComponent<Toggle>();
-        asleepToggle = GameObject.Find("Sleeping Toggle").GetComponent<Toggle>();
-        badlyAsleepToggle = GameObject.Find("Heavily Sleeping Toggle").GetComponent<Toggle>();
-        slowedToggle = GameObject.Find("Slowed Toggle").GetComponent<Toggle>();
-        stuckToggle = GameObject.Find("Stuck Toggle").GetComponent<Toggle>();
-        suppressedToggle = GameObject.Find("Suppressed Toggle").GetComponent<Toggle>();
-        trappedToggle = GameObject.Find("Trapped Toggle").GetComponent<Toggle>();
-        trippedToggle = GameObject.Find("Tripped Toggle").GetComponent<Toggle>();
-        vulnerableToggle = GameObject.Find("Vulnerable Toggle").GetComponent<Toggle>();
+        conditionToggle = GameObject.Find("Condition Toggle").GetComponent<Toggle>();
+
+        moveDropdown = GameObject.Find("Moves Dropdown").GetComponent<Dropdown>();
+        capabilityDropdown = GameObject.Find("Capabilities Dropdown").GetComponent<Dropdown>();
+        abilityDropdown = GameObject.Find("Abilities Dropdown").GetComponent<Dropdown>();
+        skillDropdown = GameObject.Find("Skills Dropdown").GetComponent<Dropdown>();
+        conditionDropdown = GameObject.Find("Conditons Dropdown").GetComponent<Dropdown>();
+        natureDropdown = GameObject.Find("Conditons Dropdown").GetComponent<Dropdown>();
+        habitatDropdown = GameObject.Find("Habitat Dropdown").GetComponent<Dropdown>();
+        stageDropdown = GameObject.Find("Stage Dropdown").GetComponent<Dropdown>();
+        pokemonDropdown = GameObject.Find("Pokemon Dropdown").GetComponent<Dropdown>();
+        typeDropdown = GameObject.Find("Type Dropdown").GetComponent<Dropdown>();
 
         List<Dropdown.OptionData> habitatOptions = new List<Dropdown.OptionData>();
         habitatOptions.Add(new Dropdown.OptionData("Any Habitat"));
@@ -486,40 +402,53 @@ public class EncounterController : MonoBehaviour {
         spdefTotalField.text = (pokemon.spdefLevel + (pokemon.spdefCS * spdefStage)).ToString();
         spdTotalField.text = (pokemon.spdLevel + (pokemon.spdCS * spdStage)).ToString();
 
-        basicAbilityField.text = pokemon.basicAbility;
-        advanceAbilityField.text = pokemon.advancedAbility;
-        highAbilityField.text = pokemon.highAbility;
-
         levelField.text = pokemon.level.ToString();
 
-        blindedToggle.isOn = pokemon.blind;
-        totallyBlindedToggle.isOn = pokemon.totallyBlind;
-        burnedToggle.isOn = pokemon.burned;
-        confusedToggle.isOn = pokemon.confused;
-        cursedToggle.isOn = pokemon.cursed;
-        disabledToggle.isOn = pokemon.disabled;
-        enragedToggle.isOn = pokemon.enraged;
-        flinchedToggle.isOn = pokemon.flinched;
-        frozenToggle.isOn = pokemon.frozen;
-        infatuatedToggle.isOn = pokemon.infatuated;
-        paralyzedToggle.isOn = pokemon.paralyzed;
-        poisonedToggle.isOn = pokemon.poisoned;
-        badlyPoisonedToggle.isOn = pokemon.badlyPoisoned;
-        asleepToggle.isOn = pokemon.asleep;
-        badlyAsleepToggle.isOn = pokemon.badlyAsleep;
-        slowedToggle.isOn = pokemon.slowed;
-        stuckToggle.isOn = pokemon.stuck;
-        suppressedToggle.isOn = pokemon.suppressed;
-        trappedToggle.isOn = pokemon.trapped;
-        trippedToggle.isOn = pokemon.tripped;
-        vulnerableToggle.isOn = pokemon.vulnerable;
+        List<Dropdown.OptionData> abilitiesList = new List<Dropdown.OptionData>();
+        if (pokemon.basicAbility != null) { abilitiesList.Add(new Dropdown.OptionData(pokemon.basicAbility)); }
+        if (pokemon.advancedAbility != null) { abilitiesList.Add(new Dropdown.OptionData(pokemon.advancedAbility)); }
+        if (pokemon.highAbility != null) { abilitiesList.Add(new Dropdown.OptionData(pokemon.highAbility)); }
+        abilityDropdown.ClearOptions();
+        abilityDropdown.AddOptions(abilitiesList);
 
-        movesListField0.text = pokemon.knownMoveList.Length > 0 ? pokemon.knownMoveList[0].name : "";
-        movesListField1.text = pokemon.knownMoveList.Length > 1 ? pokemon.knownMoveList[1].name : "";
-        movesListField2.text = pokemon.knownMoveList.Length > 2 ? pokemon.knownMoveList[2].name : "";
-        movesListField3.text = pokemon.knownMoveList.Length > 3 ? pokemon.knownMoveList[3].name : "";
-        movesListField4.text = pokemon.knownMoveList.Length > 4 ? pokemon.knownMoveList[4].name : "";
-        movesListField5.text = pokemon.knownMoveList.Length > 5 ? pokemon.knownMoveList[5].name : "";
+        List<Dropdown.OptionData> capabilityList = new List<Dropdown.OptionData>();
+        foreach (var item in pokemon.capabilities) {
+            capabilityList.Add(new Dropdown.OptionData(item));
+        }
+        capabilityDropdown.ClearOptions();
+        capabilityDropdown.AddOptions(abilitiesList);
+
+        List<Dropdown.OptionData> conditionsList = new List<Dropdown.OptionData>();
+        conditionsList.Add(new Dropdown.OptionData("Blinded"));
+        conditionsList.Add(new Dropdown.OptionData("Totally Blinded"));
+        conditionsList.Add(new Dropdown.OptionData("Burned"));
+        conditionsList.Add(new Dropdown.OptionData("Confused"));
+        conditionsList.Add(new Dropdown.OptionData("Cursed"));
+        conditionsList.Add(new Dropdown.OptionData("Disabled"));
+        conditionsList.Add(new Dropdown.OptionData("Enraged"));
+        conditionsList.Add(new Dropdown.OptionData("Flinched"));
+        conditionsList.Add(new Dropdown.OptionData("Frozen"));
+        conditionsList.Add(new Dropdown.OptionData("Infatuated"));
+        conditionsList.Add(new Dropdown.OptionData("Paralyzed"));
+        conditionsList.Add(new Dropdown.OptionData("Poisoned"));
+        conditionsList.Add(new Dropdown.OptionData("Badly Poisoned"));
+        conditionsList.Add(new Dropdown.OptionData("Sleeping"));
+        conditionsList.Add(new Dropdown.OptionData("Heavily Sleeping"));
+        conditionsList.Add(new Dropdown.OptionData("Slowed"));
+        conditionsList.Add(new Dropdown.OptionData("Stuck"));
+        conditionsList.Add(new Dropdown.OptionData("Suppressed"));
+        conditionsList.Add(new Dropdown.OptionData("Trapped"));
+        conditionsList.Add(new Dropdown.OptionData("Tripped"));
+        conditionsList.Add(new Dropdown.OptionData("Vulnerable"));
+        conditionDropdown.ClearOptions();
+        conditionDropdown.AddOptions(conditionsList);
+
+        List<Dropdown.OptionData> moveList = new List<Dropdown.OptionData>();
+        foreach (var item in pokemon.knownMoveList) {
+            moveList.Add(new Dropdown.OptionData(item.name));
+        }
+        moveDropdown.ClearOptions();
+        moveDropdown.AddOptions(moveList);
 
         if (pokemon.heldItem.name == null || pokemon.heldItem.name == "None" || pokemon.heldItem.name == "") {
             pokemon.heldItem = new Item() {
@@ -532,33 +461,20 @@ public class EncounterController : MonoBehaviour {
             pokemon.heldItem.sprite = PokedexManager.LoadSprite("ItemIcons/" + pokemon.heldItem.image);
         }
 
+        List<Dropdown.OptionData> skillList = new List<Dropdown.OptionData>();
+        skillList.Add(new Dropdown.OptionData("Athl " + pokemon.athleticsDie.ToString() + "d6+" + pokemon.athleticsBonus.ToString()));
+        skillList.Add(new Dropdown.OptionData("Acro " + pokemon.acrobaticsDie.ToString() + "d6+" + pokemon.acrobaticsBonus.ToString()));
+        skillList.Add(new Dropdown.OptionData("Combat " + pokemon.combatDie.ToString() + "d6+" + pokemon.combatBonus.ToString()));
+        skillList.Add(new Dropdown.OptionData("Focus " + pokemon.focusDie.ToString() + "d6+" + pokemon.focusBonus.ToString()));
+        skillList.Add(new Dropdown.OptionData("Percep " + pokemon.perceptionDie.ToString() + "d6+" + pokemon.perceptionBonus.ToString()));
+        skillList.Add(new Dropdown.OptionData("Stealth " + pokemon.stealthDie.ToString() + "d6+" + pokemon.stealthBonus.ToString()));
+        skillList.Add(new Dropdown.OptionData("Edu:Tech " + pokemon.techEduDie.ToString() + "d6+" + pokemon.techEduBonus.ToString()));
+        skillDropdown.ClearOptions();
+        skillDropdown.AddOptions(skillList);
+
         heldItemImage.sprite = pokemon.heldItem.sprite;
         heldItemNameField.text = pokemon.heldItem == null ? "None" : pokemon.heldItem.name;
         heldItemDescriptionField.text = pokemon.heldItem == null ? "" : pokemon.heldItem.desc;
-
-        skillsListField0.text = "Athl " + pokemon.athleticsDie.ToString() + "d6+" + pokemon.athleticsBonus.ToString();
-        skillsListField1.text = "Acro " + pokemon.acrobaticsDie.ToString() + "d6+" + pokemon.acrobaticsBonus.ToString();
-        skillsListField2.text = "Combat " + pokemon.combatDie.ToString() + "d6+" + pokemon.combatBonus.ToString();
-        skillsListField3.text = "Focus " + pokemon.focusDie.ToString() + "d6+" + pokemon.focusBonus.ToString();
-        skillsListField4.text = "Percep " + pokemon.perceptionDie.ToString() + "d6+" + pokemon.perceptionBonus.ToString();
-        skillsListField5.text = "Stealth " + pokemon.stealthDie.ToString() + "d6+" + pokemon.stealthBonus.ToString();
-        skillsListField6.text = "Edu:Tech " + pokemon.techEduDie.ToString() + "d6+" + pokemon.techEduBonus.ToString();
-
-        capabilitiesListField0.text = pokemon.capabilities.Length > 0 ? pokemon.capabilities[0] : "";
-        capabilitiesListField1.text = pokemon.capabilities.Length > 1 ? pokemon.capabilities[1] : "";
-        capabilitiesListField2.text = pokemon.capabilities.Length > 2 ? pokemon.capabilities[2] : "";
-        capabilitiesListField3.text = pokemon.capabilities.Length > 3 ? pokemon.capabilities[3] : "";
-        capabilitiesListField4.text = pokemon.capabilities.Length > 4 ? pokemon.capabilities[4] : "";
-        capabilitiesListField5.text = pokemon.capabilities.Length > 5 ? pokemon.capabilities[5] : "";
-        capabilitiesListField6.text = pokemon.capabilities.Length > 6 ? pokemon.capabilities[6] : "";
-        capabilitiesListField7.text = pokemon.capabilities.Length > 7 ? pokemon.capabilities[7] : "";
-        capabilitiesListField8.text = pokemon.capabilities.Length > 8 ? pokemon.capabilities[8] : "";
-        capabilitiesListField9.text = pokemon.capabilities.Length > 9 ? pokemon.capabilities[9] : "";
-        capabilitiesListField10.text = pokemon.capabilities.Length > 10 ? pokemon.capabilities[10] : "";
-        capabilitiesListField11.text = pokemon.capabilities.Length > 11 ? pokemon.capabilities[11] : "";
-        capabilitiesListField12.text = pokemon.capabilities.Length > 12 ? pokemon.capabilities[12] : "";
-        capabilitiesListField13.text = pokemon.capabilities.Length > 13 ? pokemon.capabilities[13] : "";
-        capabilitiesListField14.text = pokemon.capabilities.Length > 14 ? pokemon.capabilities[14] : "";
 
         captureRateField.text = pokemon.captureRate.ToString() + " or less";
     }
