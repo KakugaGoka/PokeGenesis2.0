@@ -49,3 +49,5 @@ MonoBehaviour:
     type: 3}
   tooltipBox: {fileID: 3842790546776976864, guid: ebcb9f0723dc5244ab7eb62f61e7e1b0,
     type: 3}
+  sendingBox: {fileID: 4354737785043704691, guid: 84414e5c6852c1245b28803a943d74a8,
+    type: 3}

@@ -27,6 +27,10 @@ public class SheetController : MonoBehaviour {
     private Toggle
         conditionToggle;
 
+    private Button
+        megaButton,
+        altMegaButton;
+
     private InputField
         nameField,
         typeField,
@@ -107,6 +111,11 @@ public class SheetController : MonoBehaviour {
         loyaltyField = GameObject.Find("Loyalty Field").GetComponent<InputField>();
 
         conditionToggle = GameObject.Find("Condition Toggle").GetComponent<Toggle>();
+
+        megaButton = GameObject.Find("Mega Button").GetComponent<Button>();
+        altMegaButton = GameObject.Find("Alt Mega Button").GetComponent<Button>();
+        megaButton.interactable = false;
+        altMegaButton.interactable = false;
 
         moveDropdown = GameObject.Find("Moves Dropdown").GetComponent<Dropdown>();
         capabilityDropdown = GameObject.Find("Capabilities Dropdown").GetComponent<Dropdown>();
@@ -197,16 +206,33 @@ public class SheetController : MonoBehaviour {
         controller.species.text = pokemon.CheckForNickname();
         newPokemon.transform.SetParent(contentPanel.transform);
         newPokemon.transform.localScale = Vector3.one;
-        pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
-
-        if (pokemon.sprite != null) {
-            controller.sprite.sprite = pokemon.sprite;
-            if (pokemon.shiny) {
-                controller.shiny.SetActive(true);
+        if (pokemon.mega.inMegaForm) {
+            pokemon.mega.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.mega.image);
+            if (pokemon.mega.sprite != null) {
+                controller.sprite.sprite = pokemon.mega.sprite;
+            } else {
+                string errorMessage = "Pokemon Sprite could not be loaded from: Icons/" + pokemon.mega.image;
+                PokedexManager.manager.CreateWarningDialog(errorMessage);
+            }
+        } else if (pokemon.altMega.inMegaForm) {
+            pokemon.altMega.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.altMega.image);
+            if (pokemon.altMega.sprite != null) {
+                controller.sprite.sprite = pokemon.altMega.sprite;
+            } else {
+                string errorMessage = "Pokemon Sprite could not be loaded from: Icons/" + pokemon.altMega.image;
+                PokedexManager.manager.CreateWarningDialog(errorMessage);
             }
         } else {
-            string errorMessage = "Pokemon Sprite could not be loaded from: Icons/" + pokemon.image;
-            PokedexManager.manager.CreateWarningDialog(errorMessage);
+            pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
+            if (pokemon.sprite != null) {
+                controller.sprite.sprite = pokemon.sprite;
+            } else {
+                string errorMessage = "Pokemon Sprite could not be loaded from: Icons/" + pokemon.image;
+                PokedexManager.manager.CreateWarningDialog(errorMessage);
+            }
+        }
+        if (pokemon.shiny) {
+            controller.shiny.SetActive(true);
         }
     }
 
@@ -215,7 +241,7 @@ public class SheetController : MonoBehaviour {
         myNameField.text = PokedexManager.GetLocalIPAddress();
 
         nameField.text = pokemon.CheckForNickname();
-        typeField.text = pokemon.type == null ? "Unkown" : pokemon.type;
+        typeField.text = pokemon.GetCurrentType();
         sizeField.text = pokemon.size == null ? "Unkown" : pokemon.size;
         weightField.text = pokemon.weight == null ? "Unkown" : pokemon.weight;
         genderField.text = pokemon.gender == null ? "Unkown" : pokemon.gender;
@@ -252,19 +278,28 @@ public class SheetController : MonoBehaviour {
         int spdefStage = pokemon.spdefLevel / 10;
         int spdStage = pokemon.spdLevel / 10;
 
-        hpTotalField.text = (pokemon.hpLevel + (pokemon.hpCS * hpStage)).ToString();
-        atkTotalField.text = (pokemon.atkLevel + (pokemon.atkCS * atkStage)).ToString();
-        defTotalField.text = (pokemon.defLevel + (pokemon.defCS * defStage)).ToString();
-        spatkTotalField.text = (pokemon.spatkLevel + (pokemon.spatkCS * spatkStage)).ToString();
-        spdefTotalField.text = (pokemon.spdefLevel + (pokemon.spdefCS * spdefStage)).ToString();
-        spdTotalField.text = (pokemon.spdLevel + (pokemon.spdCS * spdStage)).ToString();
+        hpTotalField.text = (pokemon.hp + pokemon.hpLevel + (pokemon.hpCS * hpStage)).ToString();
+        atkTotalField.text = (pokemon.atk + pokemon.atkLevel + (pokemon.atkCS * atkStage)).ToString();
+        defTotalField.text = (pokemon.def + pokemon.defLevel + (pokemon.defCS * defStage)).ToString();
+        spatkTotalField.text = (pokemon.spatk + pokemon.spatkLevel + (pokemon.spatkCS * spatkStage)).ToString();
+        spdefTotalField.text = (pokemon.spdef + pokemon.spdefLevel + (pokemon.spdefCS * spdefStage)).ToString();
+        spdTotalField.text = (pokemon.spd + pokemon.spdLevel + (pokemon.spdCS * spdStage)).ToString();
 
         levelField.text = pokemon.level.ToString();
 
+        megaButton.interactable = pokemon.HasMega();
+        if (megaButton.interactable) {
+            megaButton.GetComponentInChildren<Text>().text = pokemon.mega.name;
+        }
+        altMegaButton.interactable = pokemon.HasAltMega();
+        if (altMegaButton.interactable) {
+            altMegaButton.GetComponentInChildren<Text>().text = pokemon.altMega.name;
+        }
+
         List<Dropdown.OptionData> abilitiesList = new List<Dropdown.OptionData>();
-        if (pokemon.basicAbility != null) { abilitiesList.Add(new Dropdown.OptionData(pokemon.basicAbility)); }
-        if (pokemon.advancedAbility != null) { abilitiesList.Add(new Dropdown.OptionData(pokemon.advancedAbility)); }
-        if (pokemon.highAbility != null) { abilitiesList.Add(new Dropdown.OptionData(pokemon.highAbility)); }
+        foreach (var ability in pokemon.currentAbilites) {
+            abilitiesList.Add(new Dropdown.OptionData(ability));
+        }
         abilityDropdown.ClearOptions();
         abilityDropdown.AddOptions(abilitiesList);
 
@@ -378,6 +413,8 @@ public class SheetController : MonoBehaviour {
         capabilityDropdown.ClearOptions();
         abilityDropdown.ClearOptions();
         conditionDropdown.ClearOptions();
+        megaButton.GetComponentInChildren<Text>().text = "";
+        altMegaButton.GetComponentInChildren<Text>().text = "";
     }
 
     public void SetStats() {
@@ -420,7 +457,7 @@ public class SheetController : MonoBehaviour {
             pokemon.loyalty = int.Parse(loyaltyField.text);
 
             OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
-            pokemon.ToJson(pokemon.savePath);
+            pokemon.ToJson(pokemon.savePath, true);
         } catch {
             string errorMessage = "Failed to assign all values properly. Please check last input.";
             PokedexManager.manager.CreateWarningDialog(errorMessage);
@@ -564,7 +601,7 @@ public class SheetController : MonoBehaviour {
                 return;
         }
         OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
-        pokemon.ToJson(pokemon.savePath);
+        pokemon.ToJson(pokemon.savePath, true);
     }
 
     public void ReleasePokemon() {
@@ -575,11 +612,15 @@ public class SheetController : MonoBehaviour {
     }
 
     public void TradePokemon() {
-        Client.client.ip = tradeNameField.text;
-        Pokemon pokemon = PokedexManager.currentPokemon;
-        string name = pokemon.CheckForNickname();
-        string message = "Are you sure you wish to send " + name + " to " + tradeNameField.text + "?";
-        PokedexManager.manager.CreateConfirmationDialog(message, ConfirmationType.trade);
+        if (Client.client.ValidateIPv4(tradeNameField.text)) {
+            Client.client.ip = tradeNameField.text;
+            Pokemon pokemon = PokedexManager.currentPokemon;
+            string name = pokemon.CheckForNickname();
+            string message = "Are you sure you wish to send " + name + " to " + tradeNameField.text + "?";
+            PokedexManager.manager.CreateConfirmationDialog(message, ConfirmationType.trade);
+        } else {
+            PokedexManager.manager.CreateWarningDialog("'" + tradeNameField.text + "' is not a valid IP address.");
+        }
     }
 
     public void PlayPokemonCry() {
@@ -599,5 +640,33 @@ public class SheetController : MonoBehaviour {
                 Debug.LogError("The current pokemon does not have a proper cry set up: " + PokedexManager.currentPokemon.species);
             }
         }
+    }
+
+    public void ToggleMega() {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        Text megaText = megaButton.gameObject.GetComponentInChildren<Text>();
+        if (pokemon.mega.inMegaForm) {
+            megaText.text = "Mega Evolve";
+            pokemon.UnapplyMega();
+        } else {
+            megaText.text = "De-Mega Evolve";
+            pokemon.ApplyMega();
+        }
+        OnSelected(pokemon, PokedexManager.currentEntry);
+        pokemon.ToJson(pokemon.savePath, true);
+    }
+
+    public void ToggleAltMega() {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        Text megaText = altMegaButton.gameObject.GetComponentInChildren<Text>();
+        if (pokemon.altMega.inMegaForm) {
+            megaText.text = "Mega Evolve";
+            pokemon.UnapplyAltMega();
+        } else {
+            megaText.text = "De-Mega Evolve";
+            pokemon.ApplyAltMega();
+        }
+        OnSelected(pokemon, PokedexManager.currentEntry);
+        pokemon.ToJson(pokemon.savePath, true);
     }
 }

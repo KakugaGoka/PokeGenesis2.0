@@ -22,6 +22,29 @@ public class BaseRelations {
 }
 
 [Serializable]
+public class Mega {
+    public Sprite
+        sprite;
+
+    public string
+        name,
+        type,
+        ability,
+        image;
+
+    public int
+        hp,
+        atk,
+        def,
+        spatk,
+        spdef,
+        spd;
+
+    public bool
+        inMegaForm;
+}
+
+[Serializable]
 public class Info {
     public string
         name,
@@ -131,6 +154,10 @@ public class Pokemon {
     public AudioClip
         cryAudio;
 
+    public Mega
+        mega,
+        altMega;
+
     public string
         savePath,
         image,
@@ -225,17 +252,20 @@ public class Pokemon {
         basicAbilities,
         advancedAbilities,
         highAbilities,
+        currentAbilites,
         moves;
 
     public Nature
         nature;
 
-    public void ToJson(string path) {
+    public void ToJson(string path, bool overwrite = false) {
         string data = JsonUtility.ToJson(this, true);
-        string finalPath = ValidatePath(path);
+            string finalPath = path;
+        if (!overwrite) {
+            finalPath = ValidatePath(path);
+        }
         this.savePath = finalPath;
         File.WriteAllText(Path.Combine(Application.streamingAssetsPath, finalPath), data);
-        Debug.Log("Pokemon saved to: " + finalPath);
     }
 
     public static Pokemon FromJson(string path) {
@@ -245,11 +275,10 @@ public class Pokemon {
 
     private string ValidatePath(string path, int iteration = 0) {
         string newPath = path;
-        if (File.Exists(path)) {
+        if (File.Exists(Path.Combine(Application.streamingAssetsPath, path))) {
             bool match = Regex.IsMatch(newPath, @"_[\d-]*[\d-]");
             if (match == true) {
                 newPath = Regex.Replace(newPath, @"_[\d-]*[\d-]", "");
-                Debug.Log(newPath);
             }
             newPath = ValidatePath(newPath.Replace(".json", "_" + iteration.ToString() + ".json"), iteration+1);
         }
@@ -272,9 +301,56 @@ public class Pokemon {
         };
 
         baseRelations = baseRelations.OrderBy(x => x.value).ToArray();
-
+        int position = 0;
         for (int i = 0; i < baseRelations.Length; i++) {
-            baseRelations[i].position = i;
+            if (i == 0) {
+                baseRelations[i].position = position;
+            } else if (baseRelations[i].value > baseRelations[i - 1].value) {
+                position++;
+                baseRelations[i].position = position;
+            } else {
+                baseRelations[i].position = position;
+            }
+        }
+    }
+
+    public void LevelPokemon(int newLevel) {
+        level = newLevel;
+        int points = 10 + (level - 1);
+
+        for (int i = 0; i < points; i++) {
+            int stat = UnityEngine.Random.Range(0, 6);
+            BaseRelations statToAdvance = baseRelations[stat];
+            if (statToAdvance.position < baseRelations[baseRelations.Length - 1].position) {
+                BaseRelations[] relationCheckArray = baseRelations.Where(x => x.position == baseRelations[stat].position + 1).ToArray();
+                BaseRelations relationCheck = relationCheckArray.OrderByDescending(x => x.value).First();
+                if (statToAdvance.value < relationCheck.value - 1) {
+                    AdjustStatByName(statToAdvance);
+                } else {
+                    i--;
+                }
+            } else {
+                AdjustStatByName(statToAdvance);
+            }
+        }
+    }
+
+    private void AdjustStatByName(BaseRelations baseRelation) {
+        baseRelation.value++;
+        if (baseRelation.name == "HP") {
+            hpLevel++;
+        } else if (baseRelation.name == "ATK") {
+            atkLevel++;
+        } else if (baseRelation.name == "DEF") {
+            defLevel++;
+        } else if (baseRelation.name == "SPATK") {
+            spatkLevel++;
+        } else if (baseRelation.name == "SPDEF") {
+            spdefLevel++;
+        } else if (baseRelation.name == "SPD") {
+            spdLevel++;
+        } else {
+            Debug.LogError("ATTRIBUTE NAME NOT FOUND: " + baseRelation.name);
         }
     }
 
@@ -324,21 +400,27 @@ public class Pokemon {
     }
 
     public void GetAbilities() {
+        List<string> newCurrentAbilities = currentAbilites.ToList();
         int choice = UnityEngine.Random.Range(0, basicAbilities.Length);
-        basicAbility = basicAbilities.Length == 0 ? "None" : basicAbilities[choice];
+        if (basicAbilities.Length > 0) {
+            basicAbility = basicAbilities[choice];
+            newCurrentAbilities.Add(basicAbility);
+        }
         if (level >= 20) {
             choice = UnityEngine.Random.Range(0, advancedAbilities.Length);
-            advancedAbility = advancedAbilities.Length == 0 ? "None" : advancedAbilities[choice];
+            if (advancedAbilities.Length > 0) {
+                advancedAbility = advancedAbilities[choice];
+                newCurrentAbilities.Add(advancedAbility);
+            }
             if (level >= 40) {
                 choice = UnityEngine.Random.Range(0, highAbilities.Length);
-                highAbility = highAbilities.Length == 0 ? "None" : highAbilities[choice];
-            } else {
-                highAbility = "None";
-            }
-        } else {
-            advancedAbility = "None";
-            highAbility = "None";
+                if (highAbilities.Length > 0) {
+                    highAbility = highAbilities[choice];
+                    newCurrentAbilities.Add(highAbility);
+                }
+            } 
         }
+        currentAbilites = newCurrentAbilities.ToArray();
     }
 
     public void GetNature(string natureString) {
@@ -350,65 +432,36 @@ public class Pokemon {
         }
         nature = newNature;
         ModifyBaseStatForNature();
-        ModifyBaseStatForNature(true);
     }
 
-    private void ModifyBaseStatForNature(bool decrease = false) {
+    private void ModifyBaseStatForNature() {
         int value = 2;
-        if (decrease) {
-            value *= -1;
-            string name = nature.down.ToLower();
-        } else {
-            string name = nature.up.ToLower();
-        }
-        if (nickname == "hp") {
+        if (nature.up == "hp") {
             hp += value / 2;
-        } else if (nickname == "atk") {
+        } else if (nature.up == "atk") {
             atk += value;
-        } else if (nickname == "def") {
+        } else if (nature.up == "def") {
             def += value;
-        } else if (nickname == "spatk") {
+        } else if (nature.up == "spatk") {
             spatk += value;
-        } else if (nickname == "spdef") {
+        } else if (nature.up == "spdef") {
             spdef += value;
-        } else if (nickname == "spd") {
+        } else if (nature.up == "spd") {
             spd += value;
         }
-    }
-
-    public void LevelPokemon(int newLevel) {
-        level = newLevel;
-        int points = 10 + (level - 1);
-
-        for (int i = 0; i < points; i++) {
-            int stat = UnityEngine.Random.Range(0, 6);
-            if (stat < 5) {
-                if (baseRelations[stat].value >= baseRelations[stat + 1].value) {
-                    AdjustStatByName(baseRelations[stat].name);
-                } else {
-                    i--;
-                }
-            } else {
-                AdjustStatByName(baseRelations[stat].name);
-            }
-        }
-    }
-
-    private void AdjustStatByName(string name) {
-        if (name == "HP") {
-            hpLevel++;
-        } else if (name == "ATK") {
-            atkLevel++;
-        } else if (name == "DEF") {
-            defLevel++;
-        } else if (name == "SPATK") {
-            spatkLevel++;
-        } else if (name == "SPDEF") {
-            spdefLevel++;
-        } else if (name == "SPD") {
-            spdLevel++;
-        } else {
-            Debug.LogError("ATTRIBUTE NAME NOT FOUND: " + name);
+        value = -2;
+        if (nature.down == "hp") {
+            hp += value / 2;
+        } else if (nature.down == "atk") {
+            atk += value;
+        } else if (nature.down == "def") {
+            def += value;
+        } else if (nature.down == "spatk") {
+            spatk += value;
+        } else if (nature.down == "spdef") {
+            spdef += value;
+        } else if (nature.down == "spd") {
+            spd += value;
         }
     }
 
@@ -458,7 +511,6 @@ public class Pokemon {
         captureRate = 100 - (level * 2);
 
         float health = (float)currentHealth / (float)maxHealth;
-        Debug.Log(health);
         if (health > 0.75) {
             captureRate += -30;
         } else if (health > 0.5) {
@@ -513,71 +565,176 @@ public class Pokemon {
     }
 
     public void GetSkills() {
-        List<string> skillsToAdjust = new List<string>();
-        skillsToAdjust.Add("Athl");
-        skillsToAdjust.Add("Acro");
-        skillsToAdjust.Add("Combat");
-        skillsToAdjust.Add("Focus");
-        skillsToAdjust.Add("Percep");
-        skillsToAdjust.Add("Stealth");
-        skillsToAdjust.Add("TechEdu");
+        List<int[]> skillsToAdjust = new List<int[]>();
+        skillsToAdjust.Add(new int[] { 0, athleticsDie });
+        skillsToAdjust.Add(new int[] { 1, acrobaticsDie });
+        skillsToAdjust.Add(new int[] { 2, combatDie });
+        skillsToAdjust.Add(new int[] { 3, focusDie });
+        skillsToAdjust.Add(new int[] { 4, perceptionDie });
+        skillsToAdjust.Add(new int[] { 5, stealthDie });
+        skillsToAdjust.Add(new int[] { 6, techEduDie });
 
-        int numberOfSkillsToSet = UnityEngine.Random.Range(0, 4);
-        Debug.Log("Number of Skills to Set: " + numberOfSkillsToSet.ToString());
+        int count = UnityEngine.Random.Range(0, 4);
+        if (count == 0 ) { return; }
 
-        bool positive = false;
-        for (int i = 0; i < numberOfSkillsToSet * 2; i++) {
-            positive = !positive;
-            int skillIndex = UnityEngine.Random.Range(0, skillsToAdjust.Count());
-            switch (skillsToAdjust[skillIndex]) {
-                case "Athl":
-                    if (athleticsDie < 2 && !positive) { positive = !positive; i--; continue; }
-                    athleticsDie += positive ? 1 : -1;
-                    skillsToAdjust.Remove("Athl");
-                    continue;
-                case "Acro":
-                    if (acrobaticsDie < 2 && !positive) { positive = !positive; i--; continue; }
-                    acrobaticsDie += positive ? 1 : -1;
-                    skillsToAdjust.Remove("Acro");
-                    continue;
-                case "Combat":
-                    if (combatDie < 2 && !positive) { positive = !positive; i--; continue; }
-                    combatDie += positive ? 1 : -1;
-                    skillsToAdjust.Remove("Combat");
-                    continue;
-                case "Focus":
-                    if (focusDie < 2 && !positive) { positive = !positive; i--; continue; }
-                    focusDie += positive ? 1 : -1;
-                    skillsToAdjust.Remove("Focus");
-                    continue;
-                case "Percep":
-                    if (perceptionDie < 2 && !positive) { positive = !positive; i--; continue; }
-                    perceptionDie += positive ? 1 : -1;
-                    skillsToAdjust.Remove("Percep");
-                    continue;
-                case "Stealth":
-                    if (stealthDie < 2 && !positive) { positive = !positive; i--; continue; }
-                    stealthDie += positive ? 1 : -1;
-                    skillsToAdjust.Remove("Stealth");
-                    continue;
-                case "TechEdu":
-                    if (techEduDie == 0) { positive = !positive; i--; continue; }
-                    if (techEduDie < 2 && !positive) { positive = !positive; i--; continue; }
-                    techEduDie += positive ? 1 : -1;
-                    skillsToAdjust.Remove("TechEdu");
-                    continue;
+        for (int i = 0; i < count; i++) {
+            Debug.Log("Skills in list to edit: " + skillsToAdjust.Count());
+            int index0 = UnityEngine.Random.Range(0, skillsToAdjust.Count());
+            int index1 = UnityEngine.Random.Range(0, skillsToAdjust.Count());
+            do {
+                index1 = UnityEngine.Random.Range(0, skillsToAdjust.Count());
+            } while (index0 == index1);
+
+            int[] one = skillsToAdjust[index0];
+            int[] two = skillsToAdjust[index1];
+
+            if (one[1] < 1) {
+                i--;
+                continue;
             }
+
+            SetSkill(false, one);
+            SetSkill(true, two);
+            skillsToAdjust.Remove(one);
+            skillsToAdjust.Remove(two);
+        }
+    }
+
+    public void SetSkill(bool positive, int[] skill) {
+        if (skill[0] == 0) {
+            athleticsDie += positive ? 1 : -1;
+        } else if (skill[0] == 1) {
+            acrobaticsDie += positive ? 1 : -1;
+        } else if (skill[0] == 2) {
+            combatDie += positive ? 1 : -1;
+        } else if (skill[0] == 3) {
+            focusDie += positive ? 1 : -1;
+        } else if (skill[0] == 4) {
+            perceptionDie += positive ? 1 : -1;
+        } else if (skill[0] == 5) {
+            stealthDie += positive ? 1 : -1;
+        } else if (skill[0] == 6) {
+            techEduDie += positive ? 1 : -1;
         }
     }
 
     public string CheckForNickname() {
-        return nickname == null || nickname == "" ? species == null || species == "" ? "???" : species : nickname;
+        if (String.IsNullOrEmpty(nickname)) {
+            if (mega.inMegaForm) {
+                return mega.name;
+            } else if (altMega.inMegaForm) {
+                return altMega.name;
+            } else {
+                return species;
+            }
+        } else {
+            return nickname;
+        }
+    }
+
+    public string GetCurrentType() {
+        if (mega.inMegaForm) {
+            return mega.type;
+        } else if (altMega.inMegaForm) {
+            return altMega.type;
+        } else {
+            return type;
+        }
+    }
+
+    public bool HasMega() {
+        if (String.IsNullOrWhiteSpace(mega.name)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public bool HasAltMega() {
+        if (String.IsNullOrWhiteSpace(altMega.name)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public void ApplyMega() {
+        PokedexEntry entry = PokedexManager.currentEntry.GetComponent<PokedexEntry>();
+        if (altMega.inMegaForm) {
+            UnapplyAltMega();
+        }
+        mega.sprite = PokedexManager.LoadSprite("PokemonIcons/" + mega.image);
+        hpLevel += mega.hp;
+        atkLevel += mega.atk;
+        defLevel += mega.def;
+        spatkLevel += mega.spatk;
+        spdefLevel += mega.spdef;
+        spdLevel += mega.spd;
+        List<string> newCurrentAbilites = currentAbilites.ToList();
+        newCurrentAbilites.Add(mega.ability);
+        currentAbilites = newCurrentAbilites.ToArray();
+        mega.inMegaForm = true;
+        entry.sprite.sprite = mega.sprite;
+        entry.species.text = CheckForNickname();
+    }
+
+    public void UnapplyMega() {
+        PokedexEntry entry = PokedexManager.currentEntry.GetComponent<PokedexEntry>();
+        sprite = PokedexManager.LoadSprite("PokemonIcons/" + image);
+        hpLevel -= mega.hp;
+        atkLevel -= mega.atk;
+        defLevel -= mega.def;
+        spatkLevel -= mega.spatk;
+        spdefLevel -= mega.spdef;
+        spdLevel -= mega.spd;
+        List<string> newCurrentAbilites = currentAbilites.ToList();
+        newCurrentAbilites.Remove(mega.ability);
+        currentAbilites = newCurrentAbilites.ToArray();
+        mega.inMegaForm = false;
+        entry.sprite.sprite = sprite;
+        entry.species.text = CheckForNickname();
+    }
+
+    public void ApplyAltMega() {
+        PokedexEntry entry = PokedexManager.currentEntry.GetComponent<PokedexEntry>();
+        if (mega.inMegaForm) {
+            UnapplyMega();
+        }
+        altMega.sprite = PokedexManager.LoadSprite("PokemonIcons/" + altMega.image);
+        hpLevel += altMega.hp;
+        atkLevel += altMega.atk;
+        defLevel += altMega.def;
+        spatkLevel += altMega.spatk;
+        spdefLevel += altMega.spdef;
+        spdLevel += altMega.spd;
+        List<string> newCurrentAbilites = currentAbilites.ToList();
+        newCurrentAbilites.Add(altMega.ability);
+        currentAbilites = newCurrentAbilites.ToArray();
+        altMega.inMegaForm = true;
+        entry.sprite.sprite = altMega.sprite;
+        entry.species.text = CheckForNickname();
+    }
+
+    public void UnapplyAltMega() {
+        PokedexEntry entry = PokedexManager.currentEntry.GetComponent<PokedexEntry>();
+        sprite = PokedexManager.LoadSprite("PokemonIcons/" + image);
+        hpLevel -= altMega.hp;
+        atkLevel -= altMega.atk;
+        defLevel -= altMega.def;
+        spatkLevel -= altMega.spatk;
+        spdefLevel -= altMega.spdef;
+        spdLevel -= altMega.spd;
+        List<string> newCurrentAbilites = currentAbilites.ToList();
+        newCurrentAbilites.Remove(altMega.ability);
+        currentAbilites = newCurrentAbilites.ToArray();
+        altMega.inMegaForm = false;
+        entry.sprite.sprite = sprite;
+        entry.species.text = CheckForNickname();
     }
 }
 /*
+Mega Blastoise
 Giga Charizard
-Mega Charizard X
-Mega Charizard Y
 Giga Butterfree
 Mega Bedrill
 Mega Pidgeot
@@ -636,7 +793,6 @@ Mega Heracross
 Galar Corsala
 Mega Houndoom
 Mega Tyranitar
-Mega Sceptile
 Mega Blazakin
 Mega Swampert
 Galar Zigzagoon

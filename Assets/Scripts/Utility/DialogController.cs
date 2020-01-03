@@ -4,15 +4,12 @@ using UnityEngine.UI;
 public class DialogController : MonoBehaviour
 {
     public Text messageBox;
-    public Camera cameraForDialog;
     public ConfirmationType confirmationType;
 
-
-    void Start() {
-        cameraForDialog = GameObject.Find("Main Camera").GetComponent<Camera>();
-    }
-
     public void Close() {
+        if (this.gameObject.name.Contains("Sending")) {
+            Client.client.myClient.Disconnect();
+        }
         Destroy(this.gameObject);
     }
 
@@ -34,6 +31,10 @@ public class DialogController : MonoBehaviour
                 PokedexManager.manager.ReleaseCurrentSelected();
                 Destroy(this.gameObject);
                 return;
+            case ConfirmationType.quit:
+                Application.Quit();
+                Destroy(this.gameObject);
+                return;
         }
     }
 }
@@ -42,5 +43,6 @@ public enum ConfirmationType {
     trade = 0,
     delete, 
     capture,
-    release
+    release,
+    quit
 }

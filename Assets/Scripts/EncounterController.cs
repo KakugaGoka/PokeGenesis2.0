@@ -21,7 +21,8 @@ public class EncounterController : MonoBehaviour {
         alwaysShiny,
         allowLegendaries,
         allowHeldItems,
-        alwaysHoldItem;
+        alwaysHoldItem,
+        scanInProgress;
 
     private Dropdown
         abilityDropdown,
@@ -37,6 +38,10 @@ public class EncounterController : MonoBehaviour {
 
     private Toggle
         conditionToggle;
+
+    private Button
+        megaButton,
+        altMegaButton;
 
     private InputField
         nameField,
@@ -113,6 +118,11 @@ public class EncounterController : MonoBehaviour {
         captureRateField = GameObject.Find("Capture Rate Field").GetComponent<InputField>();
 
         conditionToggle = GameObject.Find("Condition Toggle").GetComponent<Toggle>();
+
+        megaButton = GameObject.Find("Mega Button").GetComponent<Button>();
+        altMegaButton = GameObject.Find("Alt Mega Button").GetComponent<Button>();
+        megaButton.interactable = false;
+        altMegaButton.interactable = false;
 
         moveDropdown = GameObject.Find("Moves Dropdown").GetComponent<Dropdown>();
         capabilityDropdown = GameObject.Find("Capabilities Dropdown").GetComponent<Dropdown>();
@@ -261,6 +271,9 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void OnScan() {
+        if (scanInProgress) { return; }
+        Debug.Log("Scan Begin");
+        scanInProgress = true;
         // Get the check box fields to apply to the private bools. 
         appendScan = GameObject.Find("Append to List").GetComponent<Toggle>().isOn;
         allowShinies = GameObject.Find("Allow Shinies").GetComponent<Toggle>().isOn;
@@ -271,6 +284,7 @@ public class EncounterController : MonoBehaviour {
 
         // Clean the lists to ensure proper data is used fro the scans
         encounterablePokemon = new List<Pokemon>();
+        Debug.Log("UI Info Gathered");
 
         // Ensure that no pokemon is added that does not fit the parameters, like legendary or habitat. 
         // This should be pushed into its own function when all of the fields are added so to keep this function clean.
@@ -300,6 +314,7 @@ public class EncounterController : MonoBehaviour {
             }
             encounterablePokemon.Add(pokemon);
         }
+        Debug.Log("Encounterable Pokemon Gathered");
         if (encounterablePokemon.Count() < 1) {
             Debug.LogError("No pokemon to encounter with these settings.");
             return;
@@ -307,6 +322,9 @@ public class EncounterController : MonoBehaviour {
 
         if (!appendScan) {
             PokedexManager.pokemonToEncounter = new List<Pokemon>();
+            foreach (var file in Directory.EnumerateFiles(Path.Combine(Application.streamingAssetsPath, "tmp/"))) {
+                File.Delete(file);
+            }
         }
 
         // Clear out the old prefabs so that all UI items are correct ad their are no duplicates.
@@ -314,6 +332,7 @@ public class EncounterController : MonoBehaviour {
         for (int i = 0; i < contentPanel.transform.childCount; i++) {
             Destroy(contentPanel.transform.GetChild(i).gameObject);
         }
+        Debug.Log("Old Displays Destroyed");
 
         // Add a number of new pokemon to the list equal to the slider value.
         AddPokemon(encounterSlider.value);
@@ -321,6 +340,8 @@ public class EncounterController : MonoBehaviour {
         foreach(Pokemon pokemon in PokedexManager.pokemonToEncounter) {
             CreateListItem(pokemon);
         }
+
+        scanInProgress = false;
     }
 
     public void CreateListItem(Pokemon pokemon) {
@@ -330,24 +351,42 @@ public class EncounterController : MonoBehaviour {
         controller.species.text = pokemon.CheckForNickname();
         newPokemon.transform.SetParent(contentPanel.transform);
         newPokemon.transform.localScale = Vector3.one;
-        pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
-
-        if (pokemon.sprite != null) {
-            controller.sprite.sprite = pokemon.sprite;
-            if (pokemon.shiny) {
-                controller.shiny.SetActive(true);
+        if (pokemon.mega.inMegaForm) {
+            pokemon.mega.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.mega.image);
+            if (pokemon.mega.sprite != null) {
+                controller.sprite.sprite = pokemon.mega.sprite;
+            } else {
+                string errorMessage = "Pokemon Sprite could not be loaded from: Icons/" + pokemon.mega.image;
+                PokedexManager.manager.CreateWarningDialog(errorMessage);
+            }
+        } else if (pokemon.altMega.inMegaForm) {
+            pokemon.altMega.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.altMega.image);
+            if (pokemon.altMega.sprite != null) {
+                controller.sprite.sprite = pokemon.altMega.sprite;
+            } else {
+                string errorMessage = "Pokemon Sprite could not be loaded from: Icons/" + pokemon.altMega.image;
+                PokedexManager.manager.CreateWarningDialog(errorMessage);
             }
         } else {
-            string errorMessage = "Pokemon Sprite could not be loaded from: Icons/" + pokemon.image;
-            PokedexManager.manager.CreateWarningDialog(errorMessage);
+            pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
+            if (pokemon.sprite != null) {
+                controller.sprite.sprite = pokemon.sprite;
+            } else {
+                string errorMessage = "Pokemon Sprite could not be loaded from: Icons/" + pokemon.image;
+                PokedexManager.manager.CreateWarningDialog(errorMessage);
+            }
+        }
+        if (pokemon.shiny) {
+            controller.shiny.SetActive(true);
         }
     }
 
     public void OnSelected(Pokemon pokemon, GameObject entry) {
+        ClearFields();
         PokedexManager.AssignCurrentPokemonAndEntry(entry);
 
         nameField.text = pokemon.CheckForNickname();
-        typeField.text = pokemon.type == null ? "Unkown" : pokemon.type;
+        typeField.text = pokemon.GetCurrentType();
         sizeField.text = pokemon.size == null ? "Unkown" : pokemon.size;
         weightField.text = pokemon.weight == null ? "Unkown" : pokemon.weight;
         genderField.text = pokemon.gender == null ? "Unkown" : pokemon.gender;
@@ -391,19 +430,28 @@ public class EncounterController : MonoBehaviour {
         if (spdefStage == 0) { hpStage = 1; }
         if (spdStage == 0) { hpStage = 1; }
 
-        hpTotalField.text = (pokemon.hpLevel + (pokemon.hpCS * hpStage)).ToString();
-        atkTotalField.text = (pokemon.atkLevel + (pokemon.atkCS * atkStage)).ToString();
-        defTotalField.text = (pokemon.defLevel + (pokemon.defCS * defStage)).ToString();
-        spatkTotalField.text = (pokemon.spatkLevel + (pokemon.spatkCS * spatkStage)).ToString();
-        spdefTotalField.text = (pokemon.spdefLevel + (pokemon.spdefCS * spdefStage)).ToString();
-        spdTotalField.text = (pokemon.spdLevel + (pokemon.spdCS * spdStage)).ToString();
+        hpTotalField.text = (pokemon.hp + pokemon.hpLevel + (pokemon.hpCS * hpStage)).ToString();
+        atkTotalField.text = (pokemon.atk + pokemon.atkLevel + (pokemon.atkCS * atkStage)).ToString();
+        defTotalField.text = (pokemon.def + pokemon.defLevel + (pokemon.defCS * defStage)).ToString();
+        spatkTotalField.text = (pokemon.spatk + pokemon.spatkLevel + (pokemon.spatkCS * spatkStage)).ToString();
+        spdefTotalField.text = (pokemon.spdef + pokemon.spdefLevel + (pokemon.spdefCS * spdefStage)).ToString();
+        spdTotalField.text = (pokemon.spd + pokemon.spdLevel + (pokemon.spdCS * spdStage)).ToString();
 
         levelField.text = pokemon.level.ToString();
 
+        megaButton.interactable = pokemon.HasMega();
+        if (megaButton.interactable) {
+            megaButton.GetComponentInChildren<Text>().text = pokemon.mega.name;
+        }
+        altMegaButton.interactable = pokemon.HasAltMega();
+        if (altMegaButton.interactable) {
+            altMegaButton.GetComponentInChildren<Text>().text = pokemon.altMega.name;
+        }
+
         List<Dropdown.OptionData> abilitiesList = new List<Dropdown.OptionData>();
-        if (pokemon.basicAbility != null) { abilitiesList.Add(new Dropdown.OptionData(pokemon.basicAbility)); }
-        if (pokemon.advancedAbility != null) { abilitiesList.Add(new Dropdown.OptionData(pokemon.advancedAbility)); }
-        if (pokemon.highAbility != null) { abilitiesList.Add(new Dropdown.OptionData(pokemon.highAbility)); }
+        foreach (var ability in pokemon.currentAbilites) {
+            abilitiesList.Add(new Dropdown.OptionData(ability));
+        }
         abilityDropdown.ClearOptions();
         abilityDropdown.AddOptions(abilitiesList);
 
@@ -565,6 +613,8 @@ public class EncounterController : MonoBehaviour {
         capabilityDropdown.ClearOptions();
         abilityDropdown.ClearOptions();
         conditionDropdown.ClearOptions();
+        megaButton.GetComponentInChildren<Text>().text = "";
+        altMegaButton.GetComponentInChildren<Text>().text = "";
     }
 
     public void SetStats() {
@@ -608,7 +658,7 @@ public class EncounterController : MonoBehaviour {
             pokemon.GetCaptureRate();
 
             OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
-            pokemon.ToJson(pokemon.savePath);
+            pokemon.ToJson(pokemon.savePath, true);
         } catch {
             string errorMessage = "Failed to assign all values properly. Please check last input.";
             PokedexManager.manager.CreateWarningDialog(errorMessage);
@@ -753,33 +803,41 @@ public class EncounterController : MonoBehaviour {
         }
         PokedexManager.currentPokemon.GetCaptureRate();
         OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
-        pokemon.ToJson(pokemon.savePath);
+        pokemon.ToJson(pokemon.savePath, true);
     }
 
     void AddPokemon(float numberToEncounter) {
         for (float i = 0; i < numberToEncounter; i += 1) {
-            int index = UnityEngine.Random.Range(0, encounterablePokemon.Count);
+            int index = Random.Range(0, encounterablePokemon.Count);
             PokedexManager.pokemonToEncounter.Add(encounterablePokemon[index].Clone());
             Pokemon pokemon = PokedexManager.pokemonToEncounter[PokedexManager.pokemonToEncounter.Count - 1];
 
             string natureString = natureDropdown.options[natureDropdown.value].text;
-            int levelToApply = (int)UnityEngine.Random.Range(minLevelSlider.value, maxLevelSlider.value);
+            int levelToApply = (int)Random.Range(minLevelSlider.value, maxLevelSlider.value);
 
-            pokemon.hpLevel = pokemon.hp;
-            pokemon.atkLevel = pokemon.atk;
-            pokemon.defLevel = pokemon.def;
-            pokemon.spatkLevel = pokemon.spatk;
-            pokemon.spdefLevel = pokemon.spdef;
-            pokemon.spdLevel = pokemon.spd;
+            pokemon.hpLevel = 0;
+            pokemon.atkLevel = 0;
+            pokemon.defLevel = 0;
+            pokemon.spatkLevel = 0;
+            pokemon.spdefLevel = 0;
+            pokemon.spdLevel = 0;
 
             pokemon.GetCries();
-            pokemon.SetBaseRelations();
-            pokemon.LevelPokemon(levelToApply);
-            pokemon.GetGender();
-            pokemon.GetAbilities();
-            pokemon.GetSkills();
+            Debug.Log("Cries Gathered");
             pokemon.GetNature(natureString);
+            Debug.Log("Nature Gathered");
+            pokemon.SetBaseRelations();
+            Debug.Log("Base Relations Gathered");
+            pokemon.LevelPokemon(levelToApply);
+            Debug.Log("Level Gathered");
+            pokemon.GetGender();
+            Debug.Log("Gender Gathered");
+            pokemon.GetAbilities();
+            Debug.Log("Abilities Gathered");
+            pokemon.GetSkills();
+            Debug.Log("Skills Gathered");
             pokemon.GetMoves();
+            Debug.Log("Moves Gathered");
             if (allowShinies) pokemon.GetShiny(alwaysShiny);
             if (allowHeldItems) pokemon.GetHeldItem(alwaysHoldItem);
 
@@ -795,5 +853,33 @@ public class EncounterController : MonoBehaviour {
                 pokemon.ToJson(path);
             } catch { Debug.Log("Failed to save out " + pokemon.species); }
         }
+    }
+
+    public void ToggleMega() {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        Text megaText = megaButton.gameObject.GetComponentInChildren<Text>();
+        if (pokemon.mega.inMegaForm) {
+            megaText.text = "Mega Evolve";
+            pokemon.UnapplyMega();
+        } else {
+            megaText.text = "De-Mega Evolve";
+            pokemon.ApplyMega();
+        }
+        OnSelected(pokemon, PokedexManager.currentEntry);
+        pokemon.ToJson(pokemon.savePath, true);
+    }
+
+    public void ToggleAltMega() {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        Text megaText = altMegaButton.gameObject.GetComponentInChildren<Text>();
+        if (pokemon.altMega.inMegaForm) {
+            megaText.text = "Mega Evolve";
+            pokemon.UnapplyAltMega();
+        } else {
+            megaText.text = "De-Mega Evolve";
+            pokemon.ApplyAltMega();
+        }
+        OnSelected(pokemon, PokedexManager.currentEntry);
+        pokemon.ToJson(pokemon.savePath, true);
     }
 }

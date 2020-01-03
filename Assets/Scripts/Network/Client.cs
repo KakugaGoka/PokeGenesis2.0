@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -8,12 +10,13 @@ public class Client : MonoBehaviour {
     public static Client client;
     int port = 9999;
     public string ip = "127.0.0.1";
+    public GameObject currentDialog;
 
     // The id we use to identify our messages and register the handler
     short messageID = 1000;
 
     // The network client
-    NetworkClient myClient;
+    public NetworkClient myClient;
 
     public bool startClient = false;
     public bool clientStarted = false;
@@ -49,7 +52,7 @@ public class Client : MonoBehaviour {
         // Register the handlers for the different network messages
         RegisterHandlers();
 
-        Debug.Log("Connecting to Server using " + ip + "...");
+        currentDialog = PokedexManager.manager.CreateSendingDialog("Connecting to Server using " + ip + "...");
         // Connect to the server
         myClient.Connect(ip, port);
     }
@@ -65,7 +68,10 @@ public class Client : MonoBehaviour {
 
     void OnConnected(NetworkMessage message) {
         // Do stuff when connected to the server
-        Debug.Log("Sending Pokemon...");
+        if (currentDialog != null) {
+            Destroy(currentDialog);
+        }
+        currentDialog = PokedexManager.manager.CreateSendingDialog("Sending " + PokedexManager.currentPokemon.CheckForNickname() + " to " + ip);
 
         NetworkPokemon messageContainer = new NetworkPokemon();
         messageContainer.message = JsonUtility.ToJson(PokedexManager.currentPokemon, true);
@@ -76,6 +82,10 @@ public class Client : MonoBehaviour {
 
     void OnDisconnected(NetworkMessage message) {
         // Do stuff when disconnected to the server
+        if (currentDialog != null) {
+            Destroy(currentDialog);
+        }
+        PokedexManager.manager.CreateWarningDialog("Could not connect to " + ip);
         clientStarted = false;
         myClient = null;
     }
@@ -87,10 +97,26 @@ public class Client : MonoBehaviour {
         // The first thing we do is deserialize the message to our custom type
         var objectMessage = netMessage.ReadMessage<NetworkPokemon>();
         if (objectMessage.message == "Pokemon Recieved!") {
+            if (currentDialog != null) {
+                Destroy(currentDialog);
+            }
+            PokedexManager.manager.CreateWarningDialog(PokedexManager.currentPokemon.CheckForNickname() + " was successfully sent to " + ip);
             File.Delete(Path.Combine(Application.streamingAssetsPath, PokedexManager.currentPokemon.savePath));
             myClient.Disconnect();
             clientStarted = false;
             startClient = false;
         }
+    }
+
+    public bool ValidateIPv4(string ipString) {
+        if (String.IsNullOrWhiteSpace(ipString)) {
+            return false;
+        }
+        string[] splitValues = ipString.Split('.');
+        if (splitValues.Length != 4) {
+            return false;
+        }
+        byte tempForParsing;
+        return splitValues.All(r => byte.TryParse(r, out tempForParsing));
     }
 }

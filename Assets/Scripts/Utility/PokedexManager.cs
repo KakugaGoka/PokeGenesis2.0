@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
@@ -28,6 +29,7 @@ public class PokedexManager : MonoBehaviour {
     public GameObject warningBox;
     public GameObject confirmationBox;
     public GameObject tooltipBox;
+    public GameObject sendingBox;
 
     // Start is called before the first frame update
     void Awake() {
@@ -142,6 +144,10 @@ public class PokedexManager : MonoBehaviour {
         SceneManager.LoadScene(sceneID);
     }
 
+    public void Quit() {
+        CreateConfirmationDialog("Are you sure you wish to quit?", ConfirmationType.quit);
+    }
+
     static public Sprite LoadSprite(string path) {
         string fullPath = Path.Combine(Application.streamingAssetsPath, path + ".png");
         if (!File.Exists(fullPath)) {
@@ -231,26 +237,41 @@ public class PokedexManager : MonoBehaviour {
         return "No network available";
     }
 
-    public void CreateWarningDialog(string message) {
+    [Discardable]
+    public GameObject CreateWarningDialog(string message) {
         GameObject dialog = Instantiate(warningBox);
         DialogController dialogController = dialog.GetComponent<DialogController>();
         dialogController.messageBox.text = message;
         Debug.LogWarning(message);
+        return dialog;
     }
 
-    public void CreateConfirmationDialog(string message, ConfirmationType confirmation) {
+    [Discardable]
+    public GameObject CreateConfirmationDialog(string message, ConfirmationType confirmation) {
         GameObject dialog = Instantiate(confirmationBox);
         DialogController dialogController = dialog.GetComponent<DialogController>();
         dialogController.messageBox.text = message;
         dialogController.confirmationType = confirmation;
         Debug.Log(message);
+        return dialog;
     }
 
-    public void CreateTooltipDialog(string message) {
+    [Discardable]
+    public GameObject CreateTooltipDialog(string message) {
         GameObject dialog = Instantiate(tooltipBox);
         DialogController dialogController = dialog.GetComponent<DialogController>();
         dialogController.messageBox.text = message;
         Debug.Log(message);
+        return dialog;
+    }
+
+    [Discardable]
+    public GameObject CreateSendingDialog(string message) {
+        GameObject dialog = Instantiate(sendingBox);
+        DialogController dialogController = dialog.GetComponent<DialogController>();
+        dialogController.messageBox.text = message;
+        Debug.Log(message);
+        return dialog;
     }
 
     static public int GetMaxHealth(Pokemon pokemon) {
