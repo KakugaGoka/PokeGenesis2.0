@@ -297,7 +297,7 @@ public class SheetController : MonoBehaviour {
         }
 
         List<Dropdown.OptionData> abilitiesList = new List<Dropdown.OptionData>();
-        foreach (var ability in pokemon.currentAbilites) {
+        foreach (var ability in pokemon.currentAbilities) {
             abilitiesList.Add(new Dropdown.OptionData(ability));
         }
         abilityDropdown.ClearOptions();

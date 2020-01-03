@@ -252,7 +252,7 @@ public class Pokemon {
         basicAbilities,
         advancedAbilities,
         highAbilities,
-        currentAbilites,
+        currentAbilities,
         moves;
 
     public Nature
@@ -400,7 +400,7 @@ public class Pokemon {
     }
 
     public void GetAbilities() {
-        List<string> newCurrentAbilities = currentAbilites.ToList();
+        List<string> newCurrentAbilities = currentAbilities.ToList();
         int choice = UnityEngine.Random.Range(0, basicAbilities.Length);
         if (basicAbilities.Length > 0) {
             basicAbility = basicAbilities[choice];
@@ -420,7 +420,7 @@ public class Pokemon {
                 }
             } 
         }
-        currentAbilites = newCurrentAbilities.ToArray();
+        currentAbilities = newCurrentAbilities.ToArray();
     }
 
     public void GetNature(string natureString) {
@@ -670,9 +670,9 @@ public class Pokemon {
         spatkLevel += mega.spatk;
         spdefLevel += mega.spdef;
         spdLevel += mega.spd;
-        List<string> newCurrentAbilites = currentAbilites.ToList();
+        List<string> newCurrentAbilites = currentAbilities.ToList();
         newCurrentAbilites.Add(mega.ability);
-        currentAbilites = newCurrentAbilites.ToArray();
+        currentAbilities = newCurrentAbilites.ToArray();
         mega.inMegaForm = true;
         entry.sprite.sprite = mega.sprite;
         entry.species.text = CheckForNickname();
@@ -687,9 +687,9 @@ public class Pokemon {
         spatkLevel -= mega.spatk;
         spdefLevel -= mega.spdef;
         spdLevel -= mega.spd;
-        List<string> newCurrentAbilites = currentAbilites.ToList();
+        List<string> newCurrentAbilites = currentAbilities.ToList();
         newCurrentAbilites.Remove(mega.ability);
-        currentAbilites = newCurrentAbilites.ToArray();
+        currentAbilities = newCurrentAbilites.ToArray();
         mega.inMegaForm = false;
         entry.sprite.sprite = sprite;
         entry.species.text = CheckForNickname();
@@ -707,9 +707,9 @@ public class Pokemon {
         spatkLevel += altMega.spatk;
         spdefLevel += altMega.spdef;
         spdLevel += altMega.spd;
-        List<string> newCurrentAbilites = currentAbilites.ToList();
+        List<string> newCurrentAbilites = currentAbilities.ToList();
         newCurrentAbilites.Add(altMega.ability);
-        currentAbilites = newCurrentAbilites.ToArray();
+        currentAbilities = newCurrentAbilites.ToArray();
         altMega.inMegaForm = true;
         entry.sprite.sprite = altMega.sprite;
         entry.species.text = CheckForNickname();
@@ -724,9 +724,9 @@ public class Pokemon {
         spatkLevel -= altMega.spatk;
         spdefLevel -= altMega.spdef;
         spdLevel -= altMega.spd;
-        List<string> newCurrentAbilites = currentAbilites.ToList();
+        List<string> newCurrentAbilites = currentAbilities.ToList();
         newCurrentAbilites.Remove(altMega.ability);
-        currentAbilites = newCurrentAbilites.ToArray();
+        currentAbilities = newCurrentAbilites.ToArray();
         altMega.inMegaForm = false;
         entry.sprite.sprite = sprite;
         entry.species.text = CheckForNickname();
