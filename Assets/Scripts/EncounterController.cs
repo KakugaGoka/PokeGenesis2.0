@@ -808,8 +808,13 @@ public class EncounterController : MonoBehaviour {
 
     void AddPokemon(float numberToEncounter) {
         for (float i = 0; i < numberToEncounter; i += 1) {
-            int index = Random.Range(0, encounterablePokemon.Count);
-            PokedexManager.pokemonToEncounter.Add(encounterablePokemon[index].Clone());
+            int number = 0;
+            do {
+                number = Random.Range(1, PokedexManager.manager.GetHighestNumberInPokemonArray(encounterablePokemon.ToArray()) + 1);
+            } while (encounterablePokemon.Where(x => x.number == number).Count() < 1);
+            Pokemon[] pokemonList = encounterablePokemon.Where(x => x.number == number).ToArray();
+            int index = Random.Range(0, pokemonList.Count());
+            PokedexManager.pokemonToEncounter.Add(pokemonList[index].Clone());
             Pokemon pokemon = PokedexManager.pokemonToEncounter[PokedexManager.pokemonToEncounter.Count - 1];
 
             string natureString = natureDropdown.options[natureDropdown.value].text;

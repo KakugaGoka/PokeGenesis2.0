@@ -12,6 +12,7 @@ public class AddPokemonController : MonoBehaviour
     private List<Pokemon> pokemonToDex = new List<Pokemon>();
     private InputField[] inputFields;
     private int currentField;
+    private string intWarning = ": Entered value is invalid. Please only enter whole numbers in this field.";
 
     private Toggle
         legendary;
@@ -29,6 +30,7 @@ public class AddPokemonController : MonoBehaviour
         hatch,
         diet,
         habitat,
+        entry,
         hp,
         atk,
         def,
@@ -75,6 +77,7 @@ public class AddPokemonController : MonoBehaviour
         hatch = GameObject.Find("Hatch Field").GetComponent<InputField>();
         diet = GameObject.Find("Diet Field").GetComponent<InputField>();
         habitat = GameObject.Find("Habitat Field").GetComponent<InputField>();
+        entry = GameObject.Find("Entry Field").GetComponent<InputField>();
         hp = GameObject.Find("HP Field").GetComponent<InputField>();
         atk = GameObject.Find("ATK Field").GetComponent<InputField>();
         def = GameObject.Find("DEF Field").GetComponent<InputField>();
@@ -125,6 +128,7 @@ public class AddPokemonController : MonoBehaviour
             hatch,
             diet,
             habitat,
+            entry,
             hp,
             atk,
             def,
@@ -192,6 +196,7 @@ public class AddPokemonController : MonoBehaviour
         hatch.text = "";
         diet.text = "";
         habitat.text = "";
+        entry.text = "";
         hp.text = "";
         atk.text = "";
         def.text = "";
@@ -234,7 +239,11 @@ public class AddPokemonController : MonoBehaviour
         pokemon.species = species.text.Trim();
         pokemon.image = image.text.Trim();
         pokemon.cry = cry.text.Trim();
-        pokemon.number = int.Parse(number.text.Trim());
+        try { pokemon.number = int.Parse(number.text.Trim());
+        } catch {
+            PokedexManager.manager.CreateWarningDialog("Pokemon - Number" + intWarning);
+            return;
+        }
         pokemon.type = type.text.Trim();
         pokemon.size = size.text.Trim();
         pokemon.weight = weight.text.Trim();
@@ -243,35 +252,112 @@ public class AddPokemonController : MonoBehaviour
         pokemon.hatch = hatch.text.Trim();
         pokemon.diet = diet.text.Trim();
         pokemon.habitat = habitat.text.Trim();
-        pokemon.hp = int.Parse(hp.text.Trim());
-        pokemon.atk = int.Parse(atk.text.Trim());
-        pokemon.def = int.Parse(def.text.Trim());
-        pokemon.spatk = int.Parse(spatk.text.Trim());
-        pokemon.spdef = int.Parse(spdef.text.Trim());
-        pokemon.spd = int.Parse(spd.text.Trim());
-        pokemon.stage = int.Parse(stage.text.Trim());
+        pokemon.entry = entry.text.Trim();
+        try { pokemon.hp = int.Parse(hp.text.Trim());
+        } catch {
+            PokedexManager.manager.CreateWarningDialog("Pokemon - HP" + intWarning);
+            return;
+        }
+        try { pokemon.atk = int.Parse(atk.text.Trim());
+        } catch {
+            PokedexManager.manager.CreateWarningDialog("Pokemon - ATK" + intWarning);
+            return;
+        }
+        try { pokemon.def = int.Parse(def.text.Trim());
+        } catch {
+            PokedexManager.manager.CreateWarningDialog("Pokemon - DEF" + intWarning);
+            return;
+        }
+        try { pokemon.spatk = int.Parse(spatk.text.Trim());
+        } catch {
+            PokedexManager.manager.CreateWarningDialog("Pokemon - SPATK" + intWarning);
+            return;
+        }
+        try { pokemon.spdef = int.Parse(spdef.text.Trim());
+        } catch {
+            PokedexManager.manager.CreateWarningDialog("Pokemon - SPDEF" + intWarning);
+            return;
+        }
+        try { pokemon.spd = int.Parse(spd.text.Trim());
+        } catch {
+            PokedexManager.manager.CreateWarningDialog("Pokemon - SPD" + intWarning);
+            return;
+        }
+        try { pokemon.stage = int.Parse(stage.text.Trim());
+        } catch {
+            PokedexManager.manager.CreateWarningDialog("Pokemon - Stage" + intWarning);
+            return;
+        }
         pokemon.legendary = legendary.isOn;
         if (!String.IsNullOrWhiteSpace(megaName1.text)) {
             pokemon.mega.name = megaName1.text.Trim();
             pokemon.mega.type = megaType1.text.Trim();
             pokemon.mega.ability = megaAbility1.text.Trim();
-            pokemon.mega.hp = int.Parse(megaHP1.text.Trim());
-            pokemon.mega.atk = int.Parse(megaATK1.text.Trim());
-            pokemon.mega.def = int.Parse(megaDEF1.text.Trim());
-            pokemon.mega.spatk = int.Parse(megaSPATK1.text.Trim());
-            pokemon.mega.spdef = int.Parse(megaSPDEF1.text.Trim());
-            pokemon.mega.spd = int.Parse(megaSPD1.text.Trim());
+            try { pokemon.mega.hp = int.Parse(megaHP1.text.Trim());
+            } catch {
+                PokedexManager.manager.CreateWarningDialog("Mega 1 - HP" + intWarning);
+                return;
+            }
+            try { pokemon.mega.atk = int.Parse(megaATK1.text.Trim());
+            } catch {
+                PokedexManager.manager.CreateWarningDialog("Mega 1 - ATK" + intWarning);
+                return;
+            }
+            try { pokemon.mega.def = int.Parse(megaDEF1.text.Trim());
+            } catch {
+                PokedexManager.manager.CreateWarningDialog("Mega 1 - DEF" + intWarning);
+                return;
+            }
+            try { pokemon.mega.spatk = int.Parse(megaSPATK1.text.Trim());
+            } catch {
+                PokedexManager.manager.CreateWarningDialog("Mega 1 - SPATK" + intWarning);
+                return;
+            }
+            try { pokemon.mega.spdef = int.Parse(megaSPDEF1.text.Trim());
+            } catch {
+                PokedexManager.manager.CreateWarningDialog("Mega 1 - SPDEF" + intWarning);
+                return;
+            }
+            try { pokemon.mega.spd = int.Parse(megaSPD1.text.Trim());
+            } catch {
+                PokedexManager.manager.CreateWarningDialog("Mega 1 - SPD" + intWarning);
+                return;
+            }
         }
         if (!String.IsNullOrWhiteSpace(megaName2.text.Trim())) {
             pokemon.altMega.name = megaName2.text.Trim();
             pokemon.altMega.type = megaType2.text.Trim();
             pokemon.altMega.ability = megaAbility2.text.Trim();
-            pokemon.altMega.hp = int.Parse(megaHP2.text.Trim());
-            pokemon.altMega.atk = int.Parse(megaATK2.text.Trim());
-            pokemon.altMega.def = int.Parse(megaDEF2.text.Trim());
-            pokemon.altMega.spatk = int.Parse(megaSPATK2.text.Trim());
-            pokemon.altMega.spdef = int.Parse(megaSPDEF2.text.Trim());
-            pokemon.altMega.spd = int.Parse(megaSPD2.text.Trim());
+            try { pokemon.altMega.hp = int.Parse(megaHP2.text.Trim());
+            } catch {
+                PokedexManager.manager.CreateWarningDialog("Mega 2 - HP" + intWarning);
+                return;
+            }
+            try { pokemon.altMega.atk = int.Parse(megaATK2.text.Trim());
+            } catch {
+                PokedexManager.manager.CreateWarningDialog("Mega 2 - ATK" + intWarning);
+                return;
+            }
+            try { pokemon.altMega.def = int.Parse(megaDEF2.text.Trim());
+            } catch {
+                PokedexManager.manager.CreateWarningDialog("Mega 2 - DEF" + intWarning);
+                return;
+            }
+            try { pokemon.altMega.spatk = int.Parse(megaSPATK2.text.Trim());
+            } catch {
+                PokedexManager.manager.CreateWarningDialog("Mega 2 - SPATK" + intWarning);
+                return;
+            }
+            try { pokemon.altMega.spdef = int.Parse(megaSPDEF2.text.Trim());
+            } catch {
+                PokedexManager.manager.CreateWarningDialog("Mega 2 - SPDEF" + intWarning);
+                return;
+            }
+            try { pokemon.altMega.spd = int.Parse(megaSPD2.text.Trim());
+            } catch {
+                PokedexManager.manager.CreateWarningDialog("Mega 2 - SPD" + intWarning);
+                return;
+            }
         }
         pokemon.capabilities = RemoveReturns(capabilities.text.Split(','));
         pokemon.moves = RemoveReturns(moves.text.Split('\n'));
@@ -280,52 +366,60 @@ public class AddPokemonController : MonoBehaviour
         pokemon.advancedAbilities = RemoveReturns(advAbilities.text.Split('\n'));
         pokemon.highAbilities = RemoveReturns(highAbilities.text.Split('\n'));
 
-        string[] skillsArray = skills.text.Split(',');
-        foreach(string skill in skillsArray) {
-            string skillDie;
-            if (skill.Contains("Athl")) {
-                skillDie = skill.Replace("Athl", "").Trim();
-                pokemon.athleticsDie = int.Parse(skillDie[0].ToString());
-                if (skillDie.Contains("+")) {
-                    pokemon.athleticsBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
-                }
-            } else if (skill.Contains("Acro")) {
-                skillDie = skill.Replace("Acro", "").Trim();
-                pokemon.acrobaticsDie = int.Parse(skillDie[0].ToString());
-                if (skillDie.Contains("+")) {
-                    pokemon.acrobaticsBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
-                }
-            } else if (skill.Contains("Combat")) {
-                skillDie = skill.Replace("Combat", "").Trim();
-                pokemon.combatDie = int.Parse(skillDie[0].ToString());
-                if (skillDie.Contains("+")) {
-                    pokemon.combatBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
-                }
-            } else if (skill.Contains("Focus")) {
-                skillDie = skill.Replace("Focus", "").Trim();
-                pokemon.focusDie = int.Parse(skillDie[0].ToString());
-                if (skillDie.Contains("+")) {
-                    pokemon.focusBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
-                }
-            } else if (skill.Contains("Percep")) {
-                skillDie = skill.Replace("Percep", "").Trim();
-                pokemon.perceptionDie = int.Parse(skillDie[0].ToString());
-                if (skillDie.Contains("+")) {
-                    pokemon.perceptionBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
-                }
-            } else if (skill.Contains("Stealth")) {
-                skillDie = skill.Replace("Stealth", "").Trim();
-                pokemon.stealthDie = int.Parse(skillDie[0].ToString());
-                if (skillDie.Contains("+")) {
-                    pokemon.stealthBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
-                }
-            } else if (skill.Contains("Edu: Tech")) {
-                skillDie = skill.Replace("Edu: Tech", "").Trim();
-                pokemon.techEduDie = int.Parse(skillDie[0].ToString());
-                if (skillDie.Contains("+")) {
-                    pokemon.techEduBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
+        try {
+            string[] skillsArray = skills.text.Split(',');
+            foreach (string skill in skillsArray) {
+                string skillDie;
+                if (skill.Contains("Athl")) {
+                    skillDie = skill.Replace("Athl", "").Trim();
+                    pokemon.athleticsDie = int.Parse(skillDie[0].ToString());
+                    if (skillDie.Contains("+")) {
+                        pokemon.athleticsBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
+                    }
+                } else if (skill.Contains("Acro")) {
+                    skillDie = skill.Replace("Acro", "").Trim();
+                    pokemon.acrobaticsDie = int.Parse(skillDie[0].ToString());
+                    if (skillDie.Contains("+")) {
+                        pokemon.acrobaticsBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
+                    }
+                } else if (skill.Contains("Combat")) {
+                    skillDie = skill.Replace("Combat", "").Trim();
+                    pokemon.combatDie = int.Parse(skillDie[0].ToString());
+                    if (skillDie.Contains("+")) {
+                        pokemon.combatBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
+                    }
+                } else if (skill.Contains("Focus")) {
+                    skillDie = skill.Replace("Focus", "").Trim();
+                    pokemon.focusDie = int.Parse(skillDie[0].ToString());
+                    if (skillDie.Contains("+")) {
+                        pokemon.focusBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
+                    }
+                } else if (skill.Contains("Percep")) {
+                    skillDie = skill.Replace("Percep", "").Trim();
+                    pokemon.perceptionDie = int.Parse(skillDie[0].ToString());
+                    if (skillDie.Contains("+")) {
+                        pokemon.perceptionBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
+                    }
+                } else if (skill.Contains("Stealth")) {
+                    skillDie = skill.Replace("Stealth", "").Trim();
+                    pokemon.stealthDie = int.Parse(skillDie[0].ToString());
+                    if (skillDie.Contains("+")) {
+                        pokemon.stealthBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
+                    }
+                } else if (skill.Contains("Edu: Tech")) {
+                    skillDie = skill.Replace("Edu: Tech", "").Trim();
+                    pokemon.techEduDie = int.Parse(skillDie[0].ToString());
+                    if (skillDie.Contains("+")) {
+                        pokemon.techEduBonus = int.Parse(skillDie[skillDie.Length - 1].ToString());
+                    }
+                } else {
+                    PokedexManager.manager.CreateWarningDialog("Pokemon - Skills: Contains a skill entry that does not contina the expected skill name/abbreviation. Please look at your current entry.");
+                    return;
                 }
             }
+        } catch {
+            PokedexManager.manager.CreateWarningDialog("Pokemon - Skills: Failure to process. Please ensure you have copy pasted from the pokedex PDF or that you have entered them in properly");
+            return;
         }
 
         string data = JsonUtility.ToJson(pokemon, true);
@@ -393,6 +487,7 @@ public class AddPokemonController : MonoBehaviour
         data = pokemonJSON.ToString();
 
         File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"), data);
+        PokedexManager.manager.CreateWarningDialog("Pokemon successfully added to the Pokedex!");
     }
 
     public void BackUpPokemonJSON() {

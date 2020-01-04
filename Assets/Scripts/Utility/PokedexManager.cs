@@ -148,6 +148,14 @@ public class PokedexManager : MonoBehaviour {
         CreateConfirmationDialog("Are you sure you wish to quit?", ConfirmationType.quit);
     }
 
+    public int GetHighestNumberInPokemonArray(Pokemon[] pokemonArray) {
+        int maxNumber = 0;
+        foreach (var pokemon in pokemonArray) {
+            if (pokemon.number > maxNumber) { maxNumber = pokemon.number; }
+        }
+        return maxNumber;
+    }
+
     static public Sprite LoadSprite(string path) {
         string fullPath = Path.Combine(Application.streamingAssetsPath, path + ".png");
         if (!File.Exists(fullPath)) {
