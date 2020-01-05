@@ -11,11 +11,13 @@ public class AddPokemonController : MonoBehaviour
 {
     private List<Pokemon> pokemonToDex = new List<Pokemon>();
     private InputField[] inputFields;
-    private int currentField;
+    private int currentField = -1;
     private string intWarning = ": Entered value is invalid. Please only enter whole numbers in this field.";
 
     private Toggle
-        legendary;
+        legendary,
+        megaToggle1,
+        megaToggle2;
 
     private InputField
         number,
@@ -114,58 +116,45 @@ public class AddPokemonController : MonoBehaviour
         megaSPD2 = GameObject.Find("SPD Field Mega 2").GetComponent<InputField>();
 
         legendary = GameObject.Find("Legendary Toggle").GetComponent<Toggle>();
+        megaToggle1 = GameObject.Find("Mega Toggle 1").GetComponent<Toggle>();
+        megaToggle2 = GameObject.Find("Mega Toggle 2").GetComponent<Toggle>();
 
         inputFields = new InputField[] {
-            number,
-            image,
-            cry,
-            species,
-            type,
-            size,
-            weight,
-            gender,
-            egg,
-            hatch,
-            diet,
-            habitat,
-            entry,
-            hp,
-            atk,
-            def,
-            spatk,
-            spdef,
-            spd,
-            stage,
-            moves,
-            capabilities,
-            evolutions,
-            skills,
-            basicAbilities,
-            advAbilities,
-            highAbilities,
-            megaName1,
-            megaType1,
-            megaAbility1,
-            megaHP1,
-            megaATK1,
-            megaDEF1,
-            megaSPATK1,
-            megaSPDEF1,
-            megaSPD1,
-            megaName2,
-            megaType2,
-            megaAbility2,
-            megaHP2,
-            megaATK2,
-            megaDEF2,
-            megaSPATK2,
-            megaSPDEF2,
-            megaSPD2
-        };
+                number,
+                image,
+                cry,
+                species,
+                type,
+                size,
+                weight,
+                gender,
+                egg,
+                hatch,
+                diet,
+                habitat,
+                entry,
+                hp,
+                atk,
+                def,
+                spatk,
+                spdef,
+                spd,
+                stage,
+                moves,
+                capabilities,
+                evolutions,
+                skills,
+                basicAbilities,
+                advAbilities,
+                highAbilities
+            };
     }
 
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Tab)) {
+            if (currentField > 0 && currentField < inputFields.Length) {
+                inputFields[currentField].text = inputFields[currentField].text.Trim();
+            }
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
                 currentField--;
                 if (currentField < 0) {
@@ -179,7 +168,13 @@ public class AddPokemonController : MonoBehaviour
             }
             EventSystem.current.SetSelectedGameObject(inputFields[currentField].gameObject, null);
             inputFields[currentField].OnPointerClick(new PointerEventData(EventSystem.current));
-        }  
+        } else {
+            foreach (InputField field in inputFields) {
+                if (field.isFocused) {
+                    currentField = Array.IndexOf(inputFields, field);
+                }
+            }
+        }
     }
 
     public void ClearFields() {
@@ -235,7 +230,7 @@ public class AddPokemonController : MonoBehaviour
     public void SaveToPokedex() {
         Debug.Log("Saving to Pokedex");
         Pokemon pokemon = new Pokemon();
-
+        
         pokemon.species = species.text.Trim();
         pokemon.image = image.text.Trim();
         pokemon.cry = cry.text.Trim();
@@ -491,7 +486,11 @@ public class AddPokemonController : MonoBehaviour
     }
 
     public void BackUpPokemonJSON() {
-        File.Copy(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"), Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json.bak"));
+        PokedexManager.manager.CreateConfirmationDialog("Are you sure you wish to backup the pokedex in its current state? This will overwrite any current Pokemon.json.bak you have.", ConfirmationType.backup);
+    }
+
+    public void RestorePokedexFromBackupJSON() {
+        PokedexManager.manager.CreateConfirmationDialog("Are you sure you wish to restore the pokedex from the current backup? This cannot be undone.", ConfirmationType.restore);
     }
 
     public string[] RemoveReturns(string[] array) {
@@ -500,5 +499,221 @@ public class AddPokemonController : MonoBehaviour
             list[i] = list[i].Replace("\r", "").Replace("\n", "").Trim();
         }
         return list.ToArray();
+    }
+
+    public void SetTabList() {
+        if (megaToggle1.isOn && megaToggle2.isOn) {
+            megaName1.interactable = true;
+            megaType1.interactable = true;
+            megaAbility1.interactable = true;
+            megaHP1.interactable = true;
+            megaATK1.interactable = true;
+            megaDEF1.interactable = true;
+            megaSPATK1.interactable = true;
+            megaSPDEF1.interactable = true;
+            megaSPD1.interactable = true;
+
+            megaName2.interactable = true;
+            megaType2.interactable = true;
+            megaAbility2.interactable = true;
+            megaHP2.interactable = true;
+            megaATK2.interactable = true;
+            megaDEF2.interactable = true;
+            megaSPATK2.interactable = true;
+            megaSPDEF2.interactable = true;
+            megaSPD2.interactable = true;
+
+            inputFields = new InputField[] {
+                number,
+                image,
+                cry,
+                species,
+                type,
+                size,
+                weight,
+                gender,
+                egg,
+                hatch,
+                diet,
+                habitat,
+                entry,
+                hp,
+                atk,
+                def,
+                spatk,
+                spdef,
+                spd,
+                stage,
+                moves,
+                capabilities,
+                evolutions,
+                skills,
+                basicAbilities,
+                advAbilities,
+                highAbilities,
+                megaName1,
+                megaType1,
+                megaAbility1,
+                megaHP1,
+                megaATK1,
+                megaDEF1,
+                megaSPATK1,
+                megaSPDEF1,
+                megaSPD1,
+                megaName2,
+                megaType2,
+                megaAbility2,
+                megaHP2,
+                megaATK2,
+                megaDEF2,
+                megaSPATK2,
+                megaSPDEF2,
+                megaSPD2
+            };
+        } else if (megaToggle1.isOn) {
+            megaToggle2.interactable = true;
+
+            megaName1.interactable = true;
+            megaType1.interactable = true;
+            megaAbility1.interactable = true;
+            megaHP1.interactable = true;
+            megaATK1.interactable = true;
+            megaDEF1.interactable = true;
+            megaSPATK1.interactable = true;
+            megaSPDEF1.interactable = true;
+            megaSPD1.interactable = true;
+
+            megaName2.interactable = false;
+            megaType2.interactable = false;
+            megaAbility2.interactable = false;
+            megaHP2.interactable = false;
+            megaATK2.interactable = false;
+            megaDEF2.interactable = false;
+            megaSPATK2.interactable = false;
+            megaSPDEF2.interactable = false;
+            megaSPD2.interactable = false;
+
+            megaName2.text = "";
+            megaType2.text = "";
+            megaAbility2.text = "";
+            megaHP2.text = "";
+            megaATK2.text = "";
+            megaDEF2.text = "";
+            megaSPATK2.text = "";
+            megaSPDEF2.text = "";
+            megaSPD2.text = "";
+
+            inputFields = new InputField[] {
+                number,
+                image,
+                cry,
+                species,
+                type,
+                size,
+                weight,
+                gender,
+                egg,
+                hatch,
+                diet,
+                habitat,
+                entry,
+                hp,
+                atk,
+                def,
+                spatk,
+                spdef,
+                spd,
+                stage,
+                moves,
+                capabilities,
+                evolutions,
+                skills,
+                basicAbilities,
+                advAbilities,
+                highAbilities,
+                megaName1,
+                megaType1,
+                megaAbility1,
+                megaHP1,
+                megaATK1,
+                megaDEF1,
+                megaSPATK1,
+                megaSPDEF1,
+                megaSPD1
+            };
+        } else {
+            megaToggle2.isOn = false;
+            megaToggle2.interactable = false;
+
+            megaName1.interactable = false;
+            megaType1.interactable = false;
+            megaAbility1.interactable = false;
+            megaHP1.interactable = false;
+            megaATK1.interactable = false;
+            megaDEF1.interactable = false;
+            megaSPATK1.interactable = false;
+            megaSPDEF1.interactable = false;
+            megaSPD1.interactable = false;
+
+            megaName2.interactable = false;
+            megaType2.interactable = false;
+            megaAbility2.interactable = false;
+            megaHP2.interactable = false;
+            megaATK2.interactable = false;
+            megaDEF2.interactable = false;
+            megaSPATK2.interactable = false;
+            megaSPDEF2.interactable = false;
+            megaSPD2.interactable = false;
+
+            megaName1.text = "";
+            megaType1.text = "";
+            megaAbility1.text = "";
+            megaHP1.text = "";
+            megaATK1.text = "";
+            megaDEF1.text = "";
+            megaSPATK1.text = "";
+            megaSPDEF1.text = "";
+            megaSPD1.text = "";
+
+            megaName2.text = "";
+            megaType2.text = "";
+            megaAbility2.text = "";
+            megaHP2.text = "";
+            megaATK2.text = "";
+            megaDEF2.text = "";
+            megaSPATK2.text = "";
+            megaSPDEF2.text = "";
+            megaSPD2.text = "";
+
+            inputFields = new InputField[] {
+                number,
+                image,
+                cry,
+                species,
+                type,
+                size,
+                weight,
+                gender,
+                egg,
+                hatch,
+                diet,
+                habitat,
+                entry,
+                hp,
+                atk,
+                def,
+                spatk,
+                spdef,
+                spd,
+                stage,
+                moves,
+                capabilities,
+                evolutions,
+                skills,
+                basicAbilities,
+                advAbilities,
+                highAbilities
+            };
+        }
     }
 }

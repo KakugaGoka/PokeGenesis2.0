@@ -670,67 +670,67 @@ public class EncounterController : MonoBehaviour {
         switch (conditionDropdown.options[conditionDropdown.value].text) {
             case "Blinded":
                 conditionToggle.isOn = pokemon.blind;
-                return;
+                break;
             case "Totally Blinded":
                 conditionToggle.isOn = pokemon.totallyBlind;
-                return;
+                break;
             case "Burned":
                 conditionToggle.isOn = pokemon.burned;
-                return;
+                break;
             case "Confused":
                 conditionToggle.isOn = pokemon.confused;
-                return;
+                break;
             case "Cursed":
                 conditionToggle.isOn = pokemon.cursed;
-                return;
+                break;
             case "Disabled":
                 conditionToggle.isOn = pokemon.disabled;
-                return;
+                break;
             case "Enraged":
                 conditionToggle.isOn = pokemon.enraged;
-                return;
+                break;
             case "Flinched":
                 conditionToggle.isOn = pokemon.flinched;
-                return;
+                break;
             case "Frozen":
                 conditionToggle.isOn = pokemon.frozen;
-                return;
+                break;
             case "Infatuated":
                 conditionToggle.isOn = pokemon.infatuated;
-                return;
+                break;
             case "Paralyzed":
                 conditionToggle.isOn = pokemon.paralyzed;
-                return;
+                break;
             case "Poisoned":
                 conditionToggle.isOn = pokemon.poisoned;
-                return;
+                break;
             case "Badly Poisoned":
                 conditionToggle.isOn = pokemon.badlyPoisoned;
-                return;
+                break;
             case "Sleeping":
                 conditionToggle.isOn = pokemon.asleep;
-                return;
+                break;
             case "Heavily Sleeping":
                 conditionToggle.isOn = pokemon.badlyAsleep;
-                return;
+                break;
             case "Slowed":
                 conditionToggle.isOn = pokemon.slowed;
-                return;
+                break;
             case "Stuck":
                 conditionToggle.isOn = pokemon.stuck;
-                return;
+                break;
             case "Suppressed":
                 conditionToggle.isOn = pokemon.suppressed;
-                return;
+                break;
             case "Trapped":
                 conditionToggle.isOn = pokemon.trapped;
-                return;
+                break;
             case "Tripped":
                 conditionToggle.isOn = pokemon.tripped;
-                return;
+                break;
             case "Vulnerable":
                 conditionToggle.isOn = pokemon.vulnerable;
-                return;
+                break;
         }
     }
 
@@ -739,70 +739,70 @@ public class EncounterController : MonoBehaviour {
         switch (conditionDropdown.options[conditionDropdown.value].text) {
             case "Blinded":
                 pokemon.blind = conditionToggle.isOn;
-                return;
+                break;
             case "Totally Blinded":
                 pokemon.totallyBlind = conditionToggle.isOn;
-                return;
+                break;
             case "Burned":
                 pokemon.burned = conditionToggle.isOn;
-                return;
+                break;
             case "Confused":
                 pokemon.confused = conditionToggle.isOn;
-                return;
+                break;
             case "Cursed":
                 pokemon.cursed = conditionToggle.isOn;
-                return;
+                break;
             case "Disabled":
                 pokemon.disabled = conditionToggle.isOn;
-                return;
+                break;
             case "Enraged":
                 pokemon.enraged = conditionToggle.isOn;
-                return;
+                break;
             case "Flinched":
                 pokemon.flinched = conditionToggle.isOn;
-                return;
+                break;
             case "Frozen":
                 pokemon.frozen = conditionToggle.isOn;
-                return;
+                break;
             case "Infatuated":
                 pokemon.infatuated = conditionToggle.isOn;
-                return;
+                break;
             case "Paralyzed":
                 pokemon.paralyzed = conditionToggle.isOn;
-                return;
+                break;
             case "Poisoned":
                 pokemon.poisoned = conditionToggle.isOn;
-                return;
+                break;
             case "Badly Poisoned":
                 pokemon.badlyPoisoned = conditionToggle.isOn;
-                return;
+                break;
             case "Sleeping":
                 pokemon.asleep = conditionToggle.isOn;
-                return;
+                break;
             case "Heavily Sleeping":
                 pokemon.badlyAsleep = conditionToggle.isOn;
-                return;
+                break;
             case "Slowed":
                 pokemon.slowed = conditionToggle.isOn;
-                return;
+                break;
             case "Stuck":
                 pokemon.stuck = conditionToggle.isOn;
-                return;
+                break;
             case "Suppressed":
                 pokemon.suppressed = conditionToggle.isOn;
-                return;
+                break;
             case "Trapped":
                 pokemon.trapped = conditionToggle.isOn;
-                return;
+                break;
             case "Tripped":
                 pokemon.tripped = conditionToggle.isOn;
-                return;
+                break;
             case "Vulnerable":
                 pokemon.vulnerable = conditionToggle.isOn;
-                return;
+                break;
         }
-        PokedexManager.currentPokemon.GetCaptureRate();
-        OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
+        pokemon.GetCaptureRate();
+        captureRateField.text = pokemon.captureRate.ToString() + " or less";
         pokemon.ToJson(pokemon.savePath, true);
     }
 

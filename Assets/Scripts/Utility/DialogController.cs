@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogController : MonoBehaviour
@@ -17,25 +18,28 @@ public class DialogController : MonoBehaviour
         switch (confirmationType) {
             case ConfirmationType.trade:
                 Client.client.startClient = true;
-                Destroy(this.gameObject);
-                return;
+                break;
             case ConfirmationType.delete:
                 PokedexManager.manager.DeleteCurrentPokemonAndEntry();
-                Destroy(this.gameObject);
-                return;
+                break;
             case ConfirmationType.capture:
                 PokedexManager.manager.CaptureCurrentSelected();
-                Destroy(this.gameObject);
-                return;
+                break;
             case ConfirmationType.release:
                 PokedexManager.manager.ReleaseCurrentSelected();
-                Destroy(this.gameObject);
-                return;
+                break;
             case ConfirmationType.quit:
                 Application.Quit();
-                Destroy(this.gameObject);
-                return;
+                break;
+            case ConfirmationType.backup:
+                File.Copy(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"), Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json.bak"));
+                break;
+            case ConfirmationType.restore:
+                File.Delete(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"));
+                File.Copy(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json.bak"), Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"));
+                break;
         }
+        Destroy(this.gameObject);
     }
 }
 
@@ -44,5 +48,7 @@ public enum ConfirmationType {
     delete, 
     capture,
     release,
-    quit
+    quit,
+    backup,
+    restore
 }
