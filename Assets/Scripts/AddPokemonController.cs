@@ -2,6 +2,8 @@
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -12,7 +14,6 @@ public class AddPokemonController : MonoBehaviour
     private List<Pokemon> pokemonToDex = new List<Pokemon>();
     private InputField[] inputFields;
     private int currentField = -1;
-    private string intWarning = ": Entered value is invalid. Please only enter whole numbers in this field.";
 
     private Toggle
         legendary,
@@ -44,9 +45,7 @@ public class AddPokemonController : MonoBehaviour
         capabilities,
         evolutions,
         skills,
-        basicAbilities,
-        advAbilities,
-        highAbilities,
+        abilities,
         megaName1,
         megaType1,
         megaAbility1,
@@ -91,9 +90,7 @@ public class AddPokemonController : MonoBehaviour
         moves = GameObject.Find("Moves Field").GetComponent<InputField>();
         evolutions = GameObject.Find("Evolution Field").GetComponent<InputField>();
         skills = GameObject.Find("Skills Field").GetComponent<InputField>();
-        basicAbilities = GameObject.Find("Basic Ability Field").GetComponent<InputField>();
-        advAbilities = GameObject.Find("Advanced Ability Field").GetComponent<InputField>();
-        highAbilities = GameObject.Find("High Ability Field").GetComponent<InputField>();
+        abilities = GameObject.Find("Ability Field").GetComponent<InputField>();
 
         megaName1 = GameObject.Find("Mega Name Field 1").GetComponent<InputField>();
         megaType1 = GameObject.Find("Mega Type Field 1").GetComponent<InputField>();
@@ -144,9 +141,7 @@ public class AddPokemonController : MonoBehaviour
                 capabilities,
                 evolutions,
                 skills,
-                basicAbilities,
-                advAbilities,
-                highAbilities
+                abilities,
             };
     }
 
@@ -203,9 +198,7 @@ public class AddPokemonController : MonoBehaviour
         capabilities.text = "";
         evolutions.text = "";
         skills.text = "";
-        basicAbilities.text = "";
-        advAbilities.text = "";
-        highAbilities.text = "";
+        abilities.text = "";
         megaName1.text = "";
         megaType1.text = "";
         megaAbility1.text = "";
@@ -230,136 +223,92 @@ public class AddPokemonController : MonoBehaviour
     public void SaveToPokedex() {
         Debug.Log("Saving to Pokedex");
         Pokemon pokemon = new Pokemon();
-        
-        pokemon.species = species.text.Trim();
-        pokemon.image = image.text.Trim();
-        pokemon.cry = cry.text.Trim();
-        try { pokemon.number = int.Parse(number.text.Trim());
+
+        try {
+            pokemon.species = VerifyString(species.text, "Pokemon - Species");
+            pokemon.image = VerifyString(image.text, "Pokemon - Image Name");
+            pokemon.cry = VerifyString(cry.text, "Pokemon - Audio Name");
+            pokemon.type = VerifyString(type.text, "Pokemon - Types");
+            pokemon.size = VerifyString(size.text, "Pokemon - Height");
+            pokemon.weight = VerifyString(weight.text, "Pokemon - Weight");
+            pokemon.gender = VerifyString(gender.text, "Pokemon - Gender");
+            pokemon.egg = VerifyString(egg.text, "Pokemon - Egg");
+            pokemon.hatch = VerifyString(hatch.text, "Pokemon - Hatch");
+            pokemon.diet = VerifyString(diet.text, "Pokemon - Diet");
+            pokemon.habitat = VerifyString(habitat.text, "Pokemon - Habitat");
+            pokemon.entry = VerifyString(entry.text, "Pokemon - Entry");
+
+            pokemon.legendary = legendary.isOn;
+            
+            pokemon.number = VerifyInteger(number.text, "Pokemon - Number");
+            pokemon.hp = VerifyInteger(hp.text, "Pokemon - HP");
+            pokemon.atk = VerifyInteger(atk.text, "Pokemon - ATK");
+            pokemon.def = VerifyInteger(def.text, "Pokemon - DEF");
+            pokemon.spatk = VerifyInteger(spatk.text, "Pokemon - SPATK");
+            pokemon.spdef = VerifyInteger(spdef.text, "Pokemon - SPDEF");
+            pokemon.spd = VerifyInteger(spd.text, "Pokemon - SPD");
+            pokemon.stage = VerifyInteger(stage.text, "Pokemon - Stage");
+
+            if (megaToggle1.isOn) {
+                pokemon.mega.name = VerifyString(megaName1.text, "Mega 1 - Name");
+                pokemon.mega.type = VerifyString(megaType1.text, "Mega 1 - Type");
+                pokemon.mega.ability = VerifyString(megaAbility1.text, "Mega 1 - Ability");
+                pokemon.mega.hp = VerifyInteger(megaHP1.text, "Mega 1 - HP");
+                pokemon.mega.atk = VerifyInteger(megaATK1.text, "Mega 1 - ATK");
+                pokemon.mega.def = VerifyInteger(megaDEF1.text, "Mega 1 - DEF");
+                pokemon.mega.spatk = VerifyInteger(megaSPATK1.text, "Mega 1 - SPATK");
+                pokemon.mega.spdef = VerifyInteger(megaSPDEF1.text, "Mega 1 - SPDEF");
+                pokemon.mega.spd = VerifyInteger(megaSPD1.text, "Mega 1 - SPD");
+            }
+            if (megaToggle2.isOn) {
+                pokemon.altMega.name = VerifyString(megaName2.text, "Mega 2 - Name");
+                pokemon.altMega.type = VerifyString(megaType2.text, "Mega 2 - Type");
+                pokemon.altMega.ability = VerifyString(megaAbility2.text, "Mega 2 - Ability");
+                pokemon.altMega.hp = VerifyInteger(megaHP2.text, "Mega 2 - HP");
+                pokemon.altMega.atk = VerifyInteger(megaATK2.text, "Mega 2 - ATK");
+                pokemon.altMega.def = VerifyInteger(megaDEF2.text, "Mega 2 - DEF");
+                pokemon.altMega.spatk = VerifyInteger(megaSPATK2.text, "Mega 2 - SPATK");
+                pokemon.altMega.spdef = VerifyInteger(megaSPDEF2.text, "Mega 2 - SPDEF");
+                pokemon.altMega.spd = VerifyInteger(megaSPD2.text, "Mega 2 - SPD");
+            }
+
+            VerifyString(capabilities.text, "Pokemon - Capabilities");
+            VerifyString(moves.text, "Pokemon - Moves");
+            VerifyString(evolutions.text, "Pokemon - Evolutions");
+
+            pokemon.capabilities = RemoveReturns(capabilities.text.Split(','));
+            pokemon.moves = RemoveReturns(moves.text.Split('\n'));
+            pokemon.evolutions = RemoveReturns(evolutions.text.Split('\n'));
+
+            VerifyString(abilities.text, "Pokemon - Abilities");
+            string[] cleanAbilities = RemoveReturns(CleanAbilites(abilities.text).Split('\n'));
+
+
+            List<string> basic = new List<string>();
+            List<string> adv = new List<string>();
+            List<string> high = new List<string>();
+
+            foreach (var ability in cleanAbilities) {
+                if (ability.Contains("Basic: ")) {
+                    basic.Add(ability.Replace("Basic: ", ""));
+                } else if (ability.Contains("Adv: ")) {
+                    adv.Add(ability.Replace("Adv: ", ""));
+                } else if (ability.Contains("High: ")) {
+                    high.Add(ability.Replace("High: ", ""));
+                } else {
+                    PokedexManager.manager.CreateWarningDialog("There seems to have been an error in abilities. Please take a look and see if they is any typos.");
+                    return;
+                }
+            }
+
+            pokemon.basicAbilities = basic.ToArray();
+            pokemon.advancedAbilities = adv.ToArray();
+            pokemon.highAbilities = high.ToArray();
+
         } catch {
-            PokedexManager.manager.CreateWarningDialog("Pokemon - Number" + intWarning);
+            // The string/int handler functions will create the user facing error messaging. A bit hacky, but is what I can come up with at 1am...
             return;
         }
-        pokemon.type = type.text.Trim();
-        pokemon.size = size.text.Trim();
-        pokemon.weight = weight.text.Trim();
-        pokemon.gender = gender.text.Trim();
-        pokemon.egg = egg.text.Trim();
-        pokemon.hatch = hatch.text.Trim();
-        pokemon.diet = diet.text.Trim();
-        pokemon.habitat = habitat.text.Trim();
-        pokemon.entry = entry.text.Trim();
-        try { pokemon.hp = int.Parse(hp.text.Trim());
-        } catch {
-            PokedexManager.manager.CreateWarningDialog("Pokemon - HP" + intWarning);
-            return;
-        }
-        try { pokemon.atk = int.Parse(atk.text.Trim());
-        } catch {
-            PokedexManager.manager.CreateWarningDialog("Pokemon - ATK" + intWarning);
-            return;
-        }
-        try { pokemon.def = int.Parse(def.text.Trim());
-        } catch {
-            PokedexManager.manager.CreateWarningDialog("Pokemon - DEF" + intWarning);
-            return;
-        }
-        try { pokemon.spatk = int.Parse(spatk.text.Trim());
-        } catch {
-            PokedexManager.manager.CreateWarningDialog("Pokemon - SPATK" + intWarning);
-            return;
-        }
-        try { pokemon.spdef = int.Parse(spdef.text.Trim());
-        } catch {
-            PokedexManager.manager.CreateWarningDialog("Pokemon - SPDEF" + intWarning);
-            return;
-        }
-        try { pokemon.spd = int.Parse(spd.text.Trim());
-        } catch {
-            PokedexManager.manager.CreateWarningDialog("Pokemon - SPD" + intWarning);
-            return;
-        }
-        try { pokemon.stage = int.Parse(stage.text.Trim());
-        } catch {
-            PokedexManager.manager.CreateWarningDialog("Pokemon - Stage" + intWarning);
-            return;
-        }
-        pokemon.legendary = legendary.isOn;
-        if (!String.IsNullOrWhiteSpace(megaName1.text)) {
-            pokemon.mega.name = megaName1.text.Trim();
-            pokemon.mega.type = megaType1.text.Trim();
-            pokemon.mega.ability = megaAbility1.text.Trim();
-            try { pokemon.mega.hp = int.Parse(megaHP1.text.Trim());
-            } catch {
-                PokedexManager.manager.CreateWarningDialog("Mega 1 - HP" + intWarning);
-                return;
-            }
-            try { pokemon.mega.atk = int.Parse(megaATK1.text.Trim());
-            } catch {
-                PokedexManager.manager.CreateWarningDialog("Mega 1 - ATK" + intWarning);
-                return;
-            }
-            try { pokemon.mega.def = int.Parse(megaDEF1.text.Trim());
-            } catch {
-                PokedexManager.manager.CreateWarningDialog("Mega 1 - DEF" + intWarning);
-                return;
-            }
-            try { pokemon.mega.spatk = int.Parse(megaSPATK1.text.Trim());
-            } catch {
-                PokedexManager.manager.CreateWarningDialog("Mega 1 - SPATK" + intWarning);
-                return;
-            }
-            try { pokemon.mega.spdef = int.Parse(megaSPDEF1.text.Trim());
-            } catch {
-                PokedexManager.manager.CreateWarningDialog("Mega 1 - SPDEF" + intWarning);
-                return;
-            }
-            try { pokemon.mega.spd = int.Parse(megaSPD1.text.Trim());
-            } catch {
-                PokedexManager.manager.CreateWarningDialog("Mega 1 - SPD" + intWarning);
-                return;
-            }
-        }
-        if (!String.IsNullOrWhiteSpace(megaName2.text.Trim())) {
-            pokemon.altMega.name = megaName2.text.Trim();
-            pokemon.altMega.type = megaType2.text.Trim();
-            pokemon.altMega.ability = megaAbility2.text.Trim();
-            try { pokemon.altMega.hp = int.Parse(megaHP2.text.Trim());
-            } catch {
-                PokedexManager.manager.CreateWarningDialog("Mega 2 - HP" + intWarning);
-                return;
-            }
-            try { pokemon.altMega.atk = int.Parse(megaATK2.text.Trim());
-            } catch {
-                PokedexManager.manager.CreateWarningDialog("Mega 2 - ATK" + intWarning);
-                return;
-            }
-            try { pokemon.altMega.def = int.Parse(megaDEF2.text.Trim());
-            } catch {
-                PokedexManager.manager.CreateWarningDialog("Mega 2 - DEF" + intWarning);
-                return;
-            }
-            try { pokemon.altMega.spatk = int.Parse(megaSPATK2.text.Trim());
-            } catch {
-                PokedexManager.manager.CreateWarningDialog("Mega 2 - SPATK" + intWarning);
-                return;
-            }
-            try { pokemon.altMega.spdef = int.Parse(megaSPDEF2.text.Trim());
-            } catch {
-                PokedexManager.manager.CreateWarningDialog("Mega 2 - SPDEF" + intWarning);
-                return;
-            }
-            try { pokemon.altMega.spd = int.Parse(megaSPD2.text.Trim());
-            } catch {
-                PokedexManager.manager.CreateWarningDialog("Mega 2 - SPD" + intWarning);
-                return;
-            }
-        }
-        pokemon.capabilities = RemoveReturns(capabilities.text.Split(','));
-        pokemon.moves = RemoveReturns(moves.text.Split('\n'));
-        pokemon.evolutions = RemoveReturns(evolutions.text.Split('\n'));
-        pokemon.basicAbilities = RemoveReturns(basicAbilities.text.Split('\n'));
-        pokemon.advancedAbilities = RemoveReturns(advAbilities.text.Split('\n'));
-        pokemon.highAbilities = RemoveReturns(highAbilities.text.Split('\n'));
 
         try {
             string[] skillsArray = skills.text.Split(',');
@@ -493,12 +442,50 @@ public class AddPokemonController : MonoBehaviour
         PokedexManager.manager.CreateConfirmationDialog("Are you sure you wish to restore the pokedex from the current backup? This cannot be undone.", ConfirmationType.restore);
     }
 
+    public void MergePokedexWithBackupJSON() {
+        PokedexManager.manager.CreateConfirmationDialog("Are you sure you wish to merge the pokedex with the current backup?", ConfirmationType.merge);
+    }
+
+    [Discardable]
+    public string VerifyString(string text, string errorTitle) {
+        string trimmedText = text.Trim();
+        if (String.IsNullOrWhiteSpace(trimmedText)) {
+            PokedexManager.manager.CreateWarningDialog(errorTitle + ": There is nothing entered in this required field...");
+            throw new ArgumentNullException(trimmedText);
+        }
+        return trimmedText;
+    }
+
+    [Discardable]
+    public int VerifyInteger(string integer, string errorTitle) {
+        string trimmedInteger = integer.Trim();
+        int endInteger = 0;
+        if (String.IsNullOrWhiteSpace(trimmedInteger)) {
+            PokedexManager.manager.CreateWarningDialog(errorTitle + ": There is nothing entered in this required field...");
+            throw new ArgumentNullException("Emtpy or null string passed in a required field");
+        }
+        try {
+            endInteger = int.Parse(trimmedInteger);
+        } catch {
+            PokedexManager.manager.CreateWarningDialog(errorTitle + ": Entered value is invalid. Please only enter whole numbers in this field.");
+            throw new InvalidCastException("Could not cast " + trimmedInteger + " into an integer");
+        }
+        return endInteger;
+    }
+
     public string[] RemoveReturns(string[] array) {
         List<string> list = array.ToList();
         for (int i = 0; i < list.Count(); i++) {
             list[i] = list[i].Replace("\r", "").Replace("\n", "").Trim();
         }
         return list.ToArray();
+    }
+    
+    public string CleanAbilites(string abilities) {
+        abilities = abilities.Replace(" Ability:", ":");
+        if (Regex.IsMatch(abilities, @" Ability *[\d-]:"))
+            abilities = Regex.Replace(abilities, @" Ability *[\d-]:", ":");
+        return abilities;
     }
 
     public void SetTabList() {
@@ -548,9 +535,7 @@ public class AddPokemonController : MonoBehaviour
                 capabilities,
                 evolutions,
                 skills,
-                basicAbilities,
-                advAbilities,
-                highAbilities,
+                abilities,
                 megaName1,
                 megaType1,
                 megaAbility1,
@@ -628,9 +613,7 @@ public class AddPokemonController : MonoBehaviour
                 capabilities,
                 evolutions,
                 skills,
-                basicAbilities,
-                advAbilities,
-                highAbilities,
+                abilities,
                 megaName1,
                 megaType1,
                 megaAbility1,
@@ -710,9 +693,7 @@ public class AddPokemonController : MonoBehaviour
                 capabilities,
                 evolutions,
                 skills,
-                basicAbilities,
-                advAbilities,
-                highAbilities
+                abilities,
             };
         }
     }

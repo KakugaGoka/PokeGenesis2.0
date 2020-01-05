@@ -43,7 +43,7 @@ public class EncounterController : MonoBehaviour {
         megaButton,
         altMegaButton;
 
-    private InputField
+    private UnityEngine.UI.InputField
         nameField,
         typeField,
         sizeField,
@@ -81,41 +81,41 @@ public class EncounterController : MonoBehaviour {
         captureRateField;
 
     private void Start() {
-        nameField = GameObject.Find("Name Field").GetComponent<InputField>();
-        typeField = GameObject.Find("Types Field").GetComponent<InputField>();
-        sizeField = GameObject.Find("Size Field").GetComponent<InputField>();
-        weightField = GameObject.Find("Weight Field").GetComponent<InputField>();
-        genderField = GameObject.Find("Gender Field").GetComponent<InputField>();
-        natureField = GameObject.Find("Nature Field").GetComponent<InputField>();
-        hpBaseField = GameObject.Find("HP Base Field").GetComponent<InputField>();
-        atkBaseField = GameObject.Find("ATK Base Field").GetComponent<InputField>();
-        defBaseField = GameObject.Find("DEF Base Field").GetComponent<InputField>();
-        spatkBaseField = GameObject.Find("SPATK Base Field").GetComponent<InputField>();
-        spdefBaseField = GameObject.Find("SPDEF Base Field").GetComponent<InputField>();
-        spdBaseField = GameObject.Find("SPD Base Field").GetComponent<InputField>();
-        hpLevelField = GameObject.Find("HP Level Field").GetComponent<InputField>();
-        atkLevelField = GameObject.Find("ATK Level Field").GetComponent<InputField>();
-        defLevelField = GameObject.Find("DEF Level Field").GetComponent<InputField>();
-        spatkLevelField = GameObject.Find("SPATK Level Field").GetComponent<InputField>();
-        spdefLevelField = GameObject.Find("SPDEF Level Field").GetComponent<InputField>();
-        spdLevelField = GameObject.Find("SPD Level Field").GetComponent<InputField>();
-        hpCSField = GameObject.Find("HP CS Field").GetComponent<InputField>();
-        atkCSField = GameObject.Find("ATK CS Field").GetComponent<InputField>();
-        defCSField = GameObject.Find("DEF CS Field").GetComponent<InputField>();
-        spatkCSField = GameObject.Find("SPATK CS Field").GetComponent<InputField>();
-        spdefCSField = GameObject.Find("SPDEF CS Field").GetComponent<InputField>();
-        spdCSField = GameObject.Find("SPD CS Field").GetComponent<InputField>();
-        hpTotalField = GameObject.Find("HP Total Field").GetComponent<InputField>();
-        atkTotalField = GameObject.Find("ATK Total Field").GetComponent<InputField>();
-        defTotalField = GameObject.Find("DEF Total Field").GetComponent<InputField>();
-        spatkTotalField = GameObject.Find("SPATK Total Field").GetComponent<InputField>();
-        spdefTotalField = GameObject.Find("SPDEF Total Field").GetComponent<InputField>();
-        spdTotalField = GameObject.Find("SPD Total Field").GetComponent<InputField>();
-        currentHealthField = GameObject.Find("Current Health Field").GetComponent<InputField>();
-        maxHealthField = GameObject.Find("Max Health Field").GetComponent<InputField>();
-        levelField = GameObject.Find("Level Field").GetComponent<InputField>();
-        heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<InputField>();
-        captureRateField = GameObject.Find("Capture Rate Field").GetComponent<InputField>();
+        nameField = GameObject.Find("Name Field").GetComponent<UnityEngine.UI.InputField>();
+        typeField = GameObject.Find("Types Field").GetComponent<UnityEngine.UI.InputField>();
+        sizeField = GameObject.Find("Size Field").GetComponent<UnityEngine.UI.InputField>();
+        weightField = GameObject.Find("Weight Field").GetComponent<UnityEngine.UI.InputField>();
+        genderField = GameObject.Find("Gender Field").GetComponent<UnityEngine.UI.InputField>();
+        natureField = GameObject.Find("Nature Field").GetComponent<UnityEngine.UI.InputField>();
+        hpBaseField = GameObject.Find("HP Base Field").GetComponent<UnityEngine.UI.InputField>();
+        atkBaseField = GameObject.Find("ATK Base Field").GetComponent<UnityEngine.UI.InputField>();
+        defBaseField = GameObject.Find("DEF Base Field").GetComponent<UnityEngine.UI.InputField>();
+        spatkBaseField = GameObject.Find("SPATK Base Field").GetComponent<UnityEngine.UI.InputField>();
+        spdefBaseField = GameObject.Find("SPDEF Base Field").GetComponent<UnityEngine.UI.InputField>();
+        spdBaseField = GameObject.Find("SPD Base Field").GetComponent<UnityEngine.UI.InputField>();
+        hpLevelField = GameObject.Find("HP Level Field").GetComponent<UnityEngine.UI.InputField>();
+        atkLevelField = GameObject.Find("ATK Level Field").GetComponent<UnityEngine.UI.InputField>();
+        defLevelField = GameObject.Find("DEF Level Field").GetComponent<UnityEngine.UI.InputField>();
+        spatkLevelField = GameObject.Find("SPATK Level Field").GetComponent<UnityEngine.UI.InputField>();
+        spdefLevelField = GameObject.Find("SPDEF Level Field").GetComponent<UnityEngine.UI.InputField>();
+        spdLevelField = GameObject.Find("SPD Level Field").GetComponent<UnityEngine.UI.InputField>();
+        hpCSField = GameObject.Find("HP CS Field").GetComponent<UnityEngine.UI.InputField>();
+        atkCSField = GameObject.Find("ATK CS Field").GetComponent<UnityEngine.UI.InputField>();
+        defCSField = GameObject.Find("DEF CS Field").GetComponent<UnityEngine.UI.InputField>();
+        spatkCSField = GameObject.Find("SPATK CS Field").GetComponent<UnityEngine.UI.InputField>();
+        spdefCSField = GameObject.Find("SPDEF CS Field").GetComponent<UnityEngine.UI.InputField>();
+        spdCSField = GameObject.Find("SPD CS Field").GetComponent<UnityEngine.UI.InputField>();
+        hpTotalField = GameObject.Find("HP Total Field").GetComponent<UnityEngine.UI.InputField>();
+        atkTotalField = GameObject.Find("ATK Total Field").GetComponent<UnityEngine.UI.InputField>();
+        defTotalField = GameObject.Find("DEF Total Field").GetComponent<UnityEngine.UI.InputField>();
+        spatkTotalField = GameObject.Find("SPATK Total Field").GetComponent<UnityEngine.UI.InputField>();
+        spdefTotalField = GameObject.Find("SPDEF Total Field").GetComponent<UnityEngine.UI.InputField>();
+        spdTotalField = GameObject.Find("SPD Total Field").GetComponent<UnityEngine.UI.InputField>();
+        currentHealthField = GameObject.Find("Current Health Field").GetComponent<UnityEngine.UI.InputField>();
+        maxHealthField = GameObject.Find("Max Health Field").GetComponent<UnityEngine.UI.InputField>();
+        levelField = GameObject.Find("Level Field").GetComponent<UnityEngine.UI.InputField>();
+        heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<UnityEngine.UI.InputField>();
+        captureRateField = GameObject.Find("Capture Rate Field").GetComponent<UnityEngine.UI.InputField>();
 
         conditionToggle = GameObject.Find("Condition Toggle").GetComponent<Toggle>();
 

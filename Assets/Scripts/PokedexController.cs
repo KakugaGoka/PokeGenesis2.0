@@ -14,7 +14,7 @@ public class PokedexController : MonoBehaviour {
     }
 
     public void Search() {
-        InputField searchInput = GameObject.Find("Search Field").GetComponent<InputField>();
+        UnityEngine.UI.InputField searchInput = GameObject.Find("Search Field").GetComponent<UnityEngine.UI.InputField>();
         GetPokemonToView(searchInput.text);
         EnumerateScrollView();
     }

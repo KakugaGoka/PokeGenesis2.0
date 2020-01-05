@@ -57860,6 +57860,87 @@
       ]
     },
     {
+      "image": "890",
+      "cry": "890",
+      "species": "Eternatus",
+      "type": "Poison / Dragon",
+      "size": "65’ 7” / 20m (Gigantic)",
+      "weight": "2094.4 lbs / 950kg (6)",
+      "gender": "No Gender",
+      "egg": "None",
+      "hatch": "75 Days",
+      "diet": "Nullivore",
+      "habitat": "Space",
+      "entry": "Test",
+      "number": 890,
+      "hp": 14,
+      "atk": 9,
+      "def": 10,
+      "spatk": 15,
+      "spdef": 10,
+      "spd": 13,
+      "stage": 1,
+      "athleticsDie": 5,
+      "acrobaticsDie": 6,
+      "combatDie": 4,
+      "stealthDie": 4,
+      "perceptionDie": 5,
+      "focusDie": 6,
+      "techEduDie": 0,
+      "athleticsBonus": 0,
+      "acrobaticsBonus": 0,
+      "combatBonus": 0,
+      "stealthBonus": 2,
+      "perceptionBonus": 0,
+      "focusBonus": 0,
+      "techEduBonus": 0,
+      "legendary": true,
+      "evolutions": [
+        "1 - Eternatus"
+      ],
+      "capabilities": [
+        "Overland 6",
+        "Swim 8",
+        "Sky 12",
+        "Jump 4/4",
+        "Power 15",
+        "Aura Reader",
+        "Dead Silent",
+        "Glow",
+        "Mountable 10",
+        "Reach",
+        "Telepath"
+      ],
+      "basicAbilities": [
+        "Pressure"
+      ],
+      "advancedAbilities": [
+        "Razor Edge",
+        "Life Force",
+        "Regal Challenge"
+      ],
+      "highAbilities": [
+        "Aura Break"
+      ],
+      "moves": [
+        "1 Poison Tail - Poison",
+        "1 Confuse Ray - Ghost",
+        "1 Dragon Tail - Dragon",
+        "1 Agility - Psychic",
+        "8 Toxic - Poison",
+        "16 Venoshock - Poison",
+        "24 Dragon Dance - Dragon",
+        "32 Cross Poison - Poison",
+        "40 Dragon Pulse - Dragon",
+        "48 Flamethrower - Fire",
+        "56 Dynamax Cannon - Dragon",
+        "64 Cosmic Power - Psychic",
+        "72 Recover - Normal",
+        "80 Hyper Beam - Normal",
+        "88 Eternabeam - Dragon"
+      ]
+    },
+    {
       "image": "105_Alola",
       "cry": "105",
       "species": "Alolan Marowak",
