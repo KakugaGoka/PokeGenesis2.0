@@ -24,6 +24,7 @@ public class AddPokemonController : MonoBehaviour
         number,
         species,
         image,
+        gigaImage,
         cry,
         type,
         size,
@@ -68,6 +69,7 @@ public class AddPokemonController : MonoBehaviour
     private void Start() {
         number = GameObject.Find("Number Field").GetComponent<InputField>();
         image = GameObject.Find("Image Field").GetComponent<InputField>();
+        gigaImage = GameObject.Find("Giga Image Field").GetComponent<InputField>();
         cry = GameObject.Find("Audio Field").GetComponent<InputField>();
         species = GameObject.Find("Name Field").GetComponent<InputField>();
         type = GameObject.Find("Types Field").GetComponent<InputField>();
@@ -119,6 +121,7 @@ public class AddPokemonController : MonoBehaviour
         inputFields = new InputField[] {
                 number,
                 image,
+                gigaImage,
                 cry,
                 species,
                 type,
@@ -175,6 +178,18 @@ public class AddPokemonController : MonoBehaviour
                 } else if (inputFields[currentField] == moves) {
                     moves.text = habitat.text.Replace("Evo", "1");
                     moves.text = habitat.text.Replace("§", "");
+                } else if (inputFields[currentField] == image) {
+                    if (image.text.Contains(".")) {
+                        image.text = image.text.Split('.')[0];
+                    }
+                } else if (inputFields[currentField] == gigaImage) {
+                    if (gigaImage.text.Contains(".")) {
+                        gigaImage.text = gigaImage.text.Split('.')[0];
+                    }
+                } else if (inputFields[currentField] == cry) {
+                    if (cry.text.Contains(".")) {
+                        cry.text = cry.text.Split('.')[0];
+                    }
                 }
                 inputFields[currentField].text = inputFields[currentField].text.Trim();
             }
@@ -205,6 +220,7 @@ public class AddPokemonController : MonoBehaviour
         number.text = "";
         species.text = "";
         image.text = "";
+        gigaImage.text = "";
         cry.text = "";
         type.text = "";
         size.text = "";
@@ -268,11 +284,21 @@ public class AddPokemonController : MonoBehaviour
             diet.text = diet.text.Replace("Diet:", "");
             diet.text = diet.text.Replace("Diet :", "");
             habitat.text = habitat.text.Replace("Habitat:", "");
-            habitat.text = habitat.text.Replace("Habitat :", ""); 
+            habitat.text = habitat.text.Replace("Habitat :", "");
+            if (image.text.Contains(".")) {
+                image.text = image.text.Split('.')[0];
+            }
+            if (gigaImage.text.Contains(".")) {
+                gigaImage.text = gigaImage.text.Split('.')[0];
+            }
+            if (cry.text.Contains(".")) {
+                cry.text = cry.text.Split('.')[0];
+            }
 
             pokemon.species = VerifyString(species.text, "Pokemon - Species");
-            pokemon.image = VerifyString(image.text, "Pokemon - Image Name");
-            pokemon.cry = VerifyString(cry.text, "Pokemon - Audio Name");
+            pokemon.image = VerifyString(image.text, "Pokemon - Image");
+            pokemon.gigaImage = VerifyString(gigaImage.text, "Pokemon - Giga Image");
+            pokemon.cry = VerifyString(cry.text, "Pokemon - Audio");
             pokemon.type = VerifyString(type.text, "Pokemon - Types");
             pokemon.size = VerifyString(size.text, "Pokemon - Height");
             pokemon.weight = VerifyString(weight.text, "Pokemon - Weight");
@@ -757,5 +783,9 @@ public class AddPokemonController : MonoBehaviour
                 abilities,
             };
         }
+    }
+
+    public void ExtensionWarning(string ext) {
+        PokedexManager.manager.CreateWarningDialog("Only give the name of the file here. No extension. Only " + ext + " is supported.");
     }
 }
