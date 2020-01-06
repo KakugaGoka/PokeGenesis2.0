@@ -7,10 +7,40 @@ public class PokedexController : MonoBehaviour {
     public GameObject contentPanel;
 
     private List<Pokemon> pokemonInView = new List<Pokemon>();
+    private Text 
+        nameField,
+        numField,
+        typeField,
+        sizeField,
+        weightField,
+        genderField,
+        eggField,
+        hatchField,
+        dietField,
+        habitatField,
+        entryField;
 
     private void Start() {
+        nameField = GameObject.Find("Name Field").GetComponent<Text>();
+        numField = GameObject.Find("Number Field").GetComponent<Text>();
+        typeField = GameObject.Find("Types Field").GetComponent<Text>();
+        sizeField = GameObject.Find("Size Field").GetComponent<Text>();
+        weightField = GameObject.Find("Weight Field").GetComponent<Text>();
+        genderField = GameObject.Find("Gender Field").GetComponent<Text>();
+        eggField = GameObject.Find("Egg Field").GetComponent<Text>();
+        hatchField = GameObject.Find("Hatch Field").GetComponent<Text>();
+        dietField = GameObject.Find("Diet Field").GetComponent<Text>();
+        habitatField = GameObject.Find("Habitat Field").GetComponent<Text>();
+        entryField = GameObject.Find("Entry Field").GetComponent<Text>();
+
         GetPokemonToView("");
         EnumerateScrollView();
+    }
+
+    private void Update() {
+        if (nameField.text == "" && pokemonInView.Count > 0) {
+            OnSelected(pokemonInView[0]);
+        } 
     }
 
     public void Search() {
@@ -34,9 +64,10 @@ public class PokedexController : MonoBehaviour {
             Destroy(contentPanel.transform.GetChild(i).gameObject);
         }
 
-        // Get the name field so to set a default pokemon to it. 
-        Text nameField = GameObject.Find("Name Field").GetComponent<Text>();
+        StartCoroutine(CreateListItem());
+    }
 
+    private IEnumerator<GameObject> CreateListItem() {
         foreach (Pokemon pokemon in pokemonInView) {
             GameObject newPokemon = Instantiate(pokedexPrefab) as GameObject;
             PokedexEntry controller = newPokemon.GetComponent<PokedexEntry>();
@@ -46,30 +77,16 @@ public class PokedexController : MonoBehaviour {
             newPokemon.transform.localScale = Vector3.one;
             pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
 
-            if (pokemon.sprite != null)
+            if (pokemon.sprite != null) {
                 controller.sprite.sprite = pokemon.sprite;
-            else
+            } else {
                 Debug.LogError("Pokemon Sprite could not be loaded from: Icons/" + pokemon.image);
-
-            // Set default if there isn't already one
-            if (nameField.text == "") {
-                OnSelected(pokemon);
             }
+            yield return newPokemon;
         }
     }
+
     public void OnSelected(Pokemon pokemon) {
-        Text nameField = GameObject.Find("Name Field").GetComponent<Text>();
-        Text numField = GameObject.Find("Number Field").GetComponent<Text>();
-        Text typeField = GameObject.Find("Types Field").GetComponent<Text>();
-        Text regionField = GameObject.Find("Region Field").GetComponent<Text>();
-        Text sizeField = GameObject.Find("Size Field").GetComponent<Text>();
-        Text weightField = GameObject.Find("Weight Field").GetComponent<Text>();
-        Text genderField = GameObject.Find("Gender Field").GetComponent<Text>();
-        Text eggField = GameObject.Find("Egg Field").GetComponent<Text>();
-        Text hatchField = GameObject.Find("Hatch Field").GetComponent<Text>();
-        Text dietField = GameObject.Find("Diet Field").GetComponent<Text>();
-        Text habitatField = GameObject.Find("Habitat Field").GetComponent<Text>();
-        Text entryField = GameObject.Find("Entry Field").GetComponent<Text>();
         //AudioSource pokemonCry = GameObject.Find("Cry Button").GetComponent<AudioSource>();
 
         nameField.text = pokemon.species == null ?
@@ -81,9 +98,6 @@ public class PokedexController : MonoBehaviour {
         typeField.text = pokemon.type == null ?
             "Unkown" :
             pokemon.type;
-        regionField.text = pokemon.region == null ?
-            "Unkown" :
-            pokemon.region;
         sizeField.text = pokemon.size == null ?
             "Unkown" :
             pokemon.size;
@@ -108,10 +122,5 @@ public class PokedexController : MonoBehaviour {
         entryField.text = pokemon.entry == null ?
             "No entry found..." :
             pokemon.entry;
-
-        //if (pokemon.audio != null)
-        //    pokemonCry.clip = Resources.Load<AudioClip>("Audio/" + pokemon.audio);
-        //else
-        //    Debug.LogError("Pokemon Cry could not be loaded from: Audio/Cries/" + pokemon.audio);
     }
 }
