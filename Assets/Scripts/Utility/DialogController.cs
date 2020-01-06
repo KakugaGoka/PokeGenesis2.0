@@ -33,18 +33,18 @@ public class DialogController : MonoBehaviour
                 Application.Quit();
                 break;
             case ConfirmationType.backup:
-                if (File.Exists(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json.bak"))) {
-                    File.Delete(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json.bak"));
+                if (File.Exists(Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json.bak"))) {
+                    File.Delete(Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json.bak"));
                 }
-                File.Copy(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"), Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json.bak"));
+                File.Copy(Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json"), Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json.bak"));
                 break;
             case ConfirmationType.restore:
-                File.Delete(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"));
-                File.Copy(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json.bak"), Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"));
+                File.Delete(Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json"));
+                File.Copy(Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json.bak"), Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json"));
                 break;
             case ConfirmationType.merge:
-                string pokedexString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"));
-                string backupString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json.bak"));
+                string pokedexString = File.ReadAllText(Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json"));
+                string backupString = File.ReadAllText(Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json.bak"));
 
                 JObject pokedexJSON = JObject.Parse(pokedexString);
                 JObject backupJSON = JObject.Parse(backupString);
@@ -54,7 +54,7 @@ public class DialogController : MonoBehaviour
                 });
 
                 string data = pokedexJSON.ToString();
-                File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"), data);
+                File.WriteAllText(Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json"), data);
                 PokedexManager.manager.CreateWarningDialog("Pokedex successfully merged with the backup pokedex data!");
                 break;
 

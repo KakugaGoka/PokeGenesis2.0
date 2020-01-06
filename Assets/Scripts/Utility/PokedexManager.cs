@@ -26,10 +26,14 @@ public class PokedexManager : MonoBehaviour {
     static public List<Pokemon> pokemonToEncounter = new List<Pokemon>();
     static public bool networkAvailable;
 
+    static public string dataPath;
+
     public GameObject warningBox;
     public GameObject confirmationBox;
     public GameObject tooltipBox;
     public GameObject sendingBox;
+
+    private bool readyToLoadJSONs = false;
 
     // Start is called before the first frame update
     void Awake() {
@@ -41,103 +45,104 @@ public class PokedexManager : MonoBehaviour {
 
         DontDestroyOnLoad(this.gameObject);
 
-        if (!Directory.Exists(Path.Combine(Application.streamingAssetsPath, "Captured/"))) {
-            Directory.CreateDirectory(Path.Combine(Application.streamingAssetsPath, "Captured/"));
+#if UNITY_ANDROID
+        dataPath = Application.persistentDataPath;
+        MoveFilesToStorage();
+#else
+        dataPath = Application.streamingAssetsPath;
+        readyToLoadJSONs = true;
+        if (!Directory.Exists(Path.Combine(dataPath, "Captured/"))) {
+            Directory.CreateDirectory(Path.Combine(dataPath, "Captured/"));
         }
-
-        if (!Directory.Exists(Path.Combine(Application.streamingAssetsPath, "tmp/"))) {
-            Directory.CreateDirectory(Path.Combine(Application.streamingAssetsPath, "tmp/"));
+        if (!Directory.Exists(Path.Combine(dataPath, "tmp/"))) {
+            Directory.CreateDirectory(Path.Combine(dataPath, "tmp/"));
         }
-
-        // Load Pokemon From JSON
-        string pokemonString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"));
-        pokedex = JsonHelper.FromJson<Pokemon>(pokemonString);
-        pokedex = pokedex.OrderBy(x => x.number).ToArray();
-        Debug.Log("Pokedex Count: " + pokedex.Count());
-
-        int capabilityCount = 0;
-        foreach (var pokemon in pokedex) {
-            if (pokemon.capabilities.Count() > capabilityCount) {
-                capabilityCount = pokemon.capabilities.Count();
-            }
-        }
-        Debug.Log("Highest Capability Count: " + capabilityCount.ToString());
-
-        // Load in Types from JSON
-        string typesString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/PokemonTypes.json"));
-        types = JsonHelper.FromJson<PokemonType>(typesString);
-        types = types.OrderBy(x => x.typeName).ToArray();
-        Debug.Log("Types Count: " + types.Count());
-
-        // Load in Natures from JSON
-        string naturesString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Natures.json"));
-        natures = JsonHelper.FromJson<Nature>(naturesString);
-        natures = natures.OrderBy(x => x.name).ToArray();
-        Debug.Log("Natures Count: " + natures.Count());
-
-        // Load in Habitats from JSON
-        string habitatsString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Habitats.json"));
-        habitats = JsonHelper.FromJson<string>(habitatsString);
-        habitats = habitats.OrderBy(x => x).ToArray();
-        Debug.Log("Habitats Count: " + habitats.Count());
-
-        // Load in Items from JSON
-        string itemsString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Items.json"));
-        Item[] tempItems = JsonHelper.FromJson<Item>(itemsString);
-        List<Item> itemsList = new List<Item>();
-        for (int i = 0; i < tempItems.Length; i++) {
-            if (tempItems[i].tier == 1) {
-                itemsList.Add(tempItems[i]);
-                itemsList.Add(tempItems[i]);
-                itemsList.Add(tempItems[i]);
-                itemsList.Add(tempItems[i]);
-            } else if (tempItems[i].tier == 2) {
-                itemsList.Add(tempItems[i]);
-                itemsList.Add(tempItems[i]);
-                itemsList.Add(tempItems[i]);
-            } else if (tempItems[i].tier == 3) {
-                itemsList.Add(tempItems[i]);
-                itemsList.Add(tempItems[i]);
-            } else if (tempItems[i].tier == 4) {
-                itemsList.Add(tempItems[i]);
-            }
-        }
-        items = itemsList.ToArray();
-        Debug.Log("Items Count: " + items.Count());
-
-        string tmString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/TMs.json"));
-        TMs = JsonHelper.FromJson<TM>(tmString);
-        TMs = TMs.OrderBy(x => x.number).ToArray();
-        Debug.Log("TM Count: " + TMs.Count());
-
-        string abilityString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Abilities.json"));
-        abilities = JsonHelper.FromJson<Ability>(abilityString);
-        abilities = abilities.OrderBy(x => x.name).ToArray();
-        Debug.Log("Ability Count: " + abilities.Count());
-
-        string moveString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Moves.json"));
-        moves = JsonHelper.FromJson<Move>(moveString);
-        moves = moves.OrderBy(x => x.name).ToArray();
-        Debug.Log("Move Count: " + TMs.Count());
-
-        string skillString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Skills.json"));
-        skillsInfo = JsonHelper.FromJson<Info>(skillString);
-        skillsInfo = skillsInfo.OrderBy(x => x.name).ToArray();
-        Debug.Log("Skill Info Count: " + skillsInfo.Count());
-
-        string capabilityString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Capabilities.json"));
-        capabilitiesInfo = JsonHelper.FromJson<Info>(capabilityString);
-        capabilitiesInfo = capabilitiesInfo.OrderBy(x => x.name).ToArray();
-        Debug.Log("Capability Info Count: " + capabilitiesInfo.Count());
-
-        string conditionString = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Conditions.json"));
-        conditionsInfo = JsonHelper.FromJson<Info>(conditionString);
-        conditionsInfo = conditionsInfo.OrderBy(x => x.name).ToArray();
-        Debug.Log("Condition Info Count: " + conditionsInfo.Count());
+#endif
     }
 
     private void Update() {
         networkAvailable = Application.internetReachability != NetworkReachability.NotReachable;
+        if (readyToLoadJSONs) {
+            // Load Pokemon From JSON
+            string pokemonString = File.ReadAllText(Path.Combine(dataPath, "JSON/Pokemon.json"));
+            pokedex = JsonHelper.FromJson<Pokemon>(pokemonString);
+            pokedex = pokedex.OrderBy(x => x.number).ToArray();
+            Debug.Log("Pokedex Count: " + pokedex.Count());
+
+            // Load in Types from JSON
+            string typesString = File.ReadAllText(Path.Combine(dataPath, "JSON/PokemonTypes.json"));
+            types = JsonHelper.FromJson<PokemonType>(typesString);
+            types = types.OrderBy(x => x.typeName).ToArray();
+            Debug.Log("Types Count: " + types.Count());
+
+            // Load in Natures from JSON
+            string naturesString = File.ReadAllText(Path.Combine(dataPath, "JSON/Natures.json"));
+            natures = JsonHelper.FromJson<Nature>(naturesString);
+            natures = natures.OrderBy(x => x.name).ToArray();
+            Debug.Log("Natures Count: " + natures.Count());
+
+            // Load in Habitats from JSON
+            string habitatsString = File.ReadAllText(Path.Combine(dataPath, "JSON/Habitats.json"));
+            habitats = JsonHelper.FromJson<string>(habitatsString);
+            habitats = habitats.OrderBy(x => x).ToArray();
+            Debug.Log("Habitats Count: " + habitats.Count());
+
+            // Load in Items from JSON
+            string itemsString = File.ReadAllText(Path.Combine(dataPath, "JSON/Items.json"));
+            Item[] tempItems = JsonHelper.FromJson<Item>(itemsString);
+            List<Item> itemsList = new List<Item>();
+            for (int i = 0; i < tempItems.Length; i++) {
+                if (tempItems[i].tier == 1) {
+                    itemsList.Add(tempItems[i]);
+                    itemsList.Add(tempItems[i]);
+                    itemsList.Add(tempItems[i]);
+                    itemsList.Add(tempItems[i]);
+                } else if (tempItems[i].tier == 2) {
+                    itemsList.Add(tempItems[i]);
+                    itemsList.Add(tempItems[i]);
+                    itemsList.Add(tempItems[i]);
+                } else if (tempItems[i].tier == 3) {
+                    itemsList.Add(tempItems[i]);
+                    itemsList.Add(tempItems[i]);
+                } else if (tempItems[i].tier == 4) {
+                    itemsList.Add(tempItems[i]);
+                }
+            }
+            items = itemsList.ToArray();
+            Debug.Log("Items Count: " + items.Count());
+
+            string tmString = File.ReadAllText(Path.Combine(dataPath, "JSON/TMs.json"));
+            TMs = JsonHelper.FromJson<TM>(tmString);
+            TMs = TMs.OrderBy(x => x.number).ToArray();
+            Debug.Log("TM Count: " + TMs.Count());
+
+            string abilityString = File.ReadAllText(Path.Combine(dataPath, "JSON/Abilities.json"));
+            abilities = JsonHelper.FromJson<Ability>(abilityString);
+            abilities = abilities.OrderBy(x => x.name).ToArray();
+            Debug.Log("Ability Count: " + abilities.Count());
+
+            string moveString = File.ReadAllText(Path.Combine(dataPath, "JSON/Moves.json"));
+            moves = JsonHelper.FromJson<Move>(moveString);
+            moves = moves.OrderBy(x => x.name).ToArray();
+            Debug.Log("Move Count: " + TMs.Count());
+
+            string skillString = File.ReadAllText(Path.Combine(dataPath, "JSON/Skills.json"));
+            skillsInfo = JsonHelper.FromJson<Info>(skillString);
+            skillsInfo = skillsInfo.OrderBy(x => x.name).ToArray();
+            Debug.Log("Skill Info Count: " + skillsInfo.Count());
+
+            string capabilityString = File.ReadAllText(Path.Combine(dataPath, "JSON/Capabilities.json"));
+            capabilitiesInfo = JsonHelper.FromJson<Info>(capabilityString);
+            capabilitiesInfo = capabilitiesInfo.OrderBy(x => x.name).ToArray();
+            Debug.Log("Capability Info Count: " + capabilitiesInfo.Count());
+
+            string conditionString = File.ReadAllText(Path.Combine(dataPath, "JSON/Conditions.json"));
+            conditionsInfo = JsonHelper.FromJson<Info>(conditionString);
+            conditionsInfo = conditionsInfo.OrderBy(x => x.name).ToArray();
+            Debug.Log("Condition Info Count: " + conditionsInfo.Count());
+
+            readyToLoadJSONs = false;
+        }
     }
 
     public void ChangeScene(int sceneID) {
@@ -157,7 +162,7 @@ public class PokedexManager : MonoBehaviour {
     }
 
     static public Sprite LoadSprite(string path) {
-        string fullPath = Path.Combine(Application.streamingAssetsPath, path + ".png");
+        string fullPath = Path.Combine(dataPath, path + ".png");
         if (!File.Exists(fullPath)) {
             Debug.LogError("Failed to load sprite at: " + fullPath);
             return null;
@@ -172,7 +177,7 @@ public class PokedexManager : MonoBehaviour {
 
     private void OnApplicationQuit() {
         // Purge temp pokemon if they exist. 
-        var myFiles = Directory.EnumerateFiles(Application.streamingAssetsPath + "/tmp/", "*.json", SearchOption.TopDirectoryOnly);
+        var myFiles = Directory.EnumerateFiles(dataPath + "/tmp/", "*.json", SearchOption.TopDirectoryOnly);
 
         foreach (var file in myFiles) {
             File.Delete(file);
@@ -197,7 +202,7 @@ public class PokedexManager : MonoBehaviour {
         if (currentEntry != null) {
             Destroy(currentEntry);
             pokemonToEncounter.Remove(currentPokemon);
-            File.Delete(Path.Combine(Application.streamingAssetsPath, PokedexManager.currentPokemon.savePath));
+            File.Delete(Path.Combine(dataPath, PokedexManager.currentPokemon.savePath));
             currentPokemon = null;
             currentEntry = null;
         }
@@ -299,4 +304,30 @@ public class PokedexManager : MonoBehaviour {
             }
         }
     }
+
+#if UNITY_ANDROID
+    public IEnumerator<WWW> MoveFilesToStorage() {
+        string fromPath = "jar:file://" + Application.dataPath + "!/assets/";
+        string toPath = Application.persistentDataPath + "/";
+
+        string[] filesNamesToCopy = Directory.GetFiles(fromPath, "", SearchOption.AllDirectories);
+        foreach (string fileName in filesNamesToCopy) {
+            if (!System.IO.File.Exists(toPath + fileName)) {
+                string file = fileName.Replace(fromPath, "");
+                Debug.Log("copying from " + fromPath + file + " to " + toPath);
+                WWW www = new WWW(fromPath + file);
+                yield return www;
+                Debug.Log("yield done");
+                File.WriteAllBytes(toPath + file, www.bytes);
+                Debug.Log("file copy done");
+                www.Dispose();
+                www = null;
+            } else {
+                Debug.Log("file exists! " + toPath + fileName);
+            }
+        }
+        readyToLoadJSONs = true;
+    }
+
+#endif
 }

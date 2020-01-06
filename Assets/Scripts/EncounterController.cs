@@ -177,10 +177,10 @@ public class EncounterController : MonoBehaviour {
 
         // Verify all pokemon images and cries
         foreach (Pokemon pokemon in PokedexManager.pokedex) {
-            if (!File.Exists(Application.streamingAssetsPath + "/PokemonIcons/" + pokemon.image + ".png")) {
+            if (!File.Exists(PokedexManager.dataPath + "/PokemonIcons/" + pokemon.image + ".png")) {
                 Debug.LogWarning("Image not found for pokemon: " + pokemon.species);
             }
-            if (!File.Exists(Application.streamingAssetsPath + "/Cries/" + pokemon.cry + ".ogg")) {
+            if (!File.Exists(PokedexManager.dataPath + "/Cries/" + pokemon.cry + ".ogg")) {
                 Debug.LogWarning("Cry not found for pokemon: " + pokemon.species);
             }
             foreach (string evo in pokemon.evolutions) {
@@ -242,13 +242,13 @@ public class EncounterController : MonoBehaviour {
 
         // Verify all item images
         foreach (Item item in PokedexManager.items) {
-            if (!File.Exists(Application.streamingAssetsPath + "/ItemIcons/" + item.image + ".png")) {
+            if (!File.Exists(PokedexManager.dataPath + "/ItemIcons/" + item.image + ".png")) {
                 Debug.LogWarning("Image not found for item: " + item.name);
             }
         }
 
         // Load temp pokemon if they exist. 
-        var myFiles = Directory.EnumerateFiles(Application.streamingAssetsPath + "/tmp/", "*.json", SearchOption.TopDirectoryOnly);
+        var myFiles = Directory.EnumerateFiles(PokedexManager.dataPath + "/tmp/", "*.json", SearchOption.TopDirectoryOnly);
         PokedexManager.pokemonToEncounter = new List<Pokemon>();
         foreach (var file in myFiles) {
             Pokemon pokemon = Pokemon.FromJson(file);
@@ -325,7 +325,7 @@ public class EncounterController : MonoBehaviour {
 
         if (!appendScan) {
             PokedexManager.pokemonToEncounter = new List<Pokemon>();
-            foreach (var file in Directory.EnumerateFiles(Path.Combine(Application.streamingAssetsPath, "tmp/"))) {
+            foreach (var file in Directory.EnumerateFiles(Path.Combine(PokedexManager.dataPath, "tmp/"))) {
                 File.Delete(file);
             }
         }

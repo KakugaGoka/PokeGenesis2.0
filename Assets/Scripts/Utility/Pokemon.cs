@@ -266,7 +266,7 @@ public class Pokemon {
             finalPath = ValidatePath(path);
         }
         this.savePath = finalPath;
-        File.WriteAllText(Path.Combine(Application.streamingAssetsPath, finalPath), data);
+        File.WriteAllText(Path.Combine(PokedexManager.dataPath, finalPath), data);
     }
 
     public static Pokemon FromJson(string path) {
@@ -276,7 +276,7 @@ public class Pokemon {
 
     private string ValidatePath(string path, int iteration = 0) {
         string newPath = path;
-        if (File.Exists(Path.Combine(Application.streamingAssetsPath, path))) {
+        if (File.Exists(Path.Combine(PokedexManager.dataPath, path))) {
             bool match = Regex.IsMatch(newPath, @"_[\d-]*[\d-]");
             if (match == true) {
                 newPath = Regex.Replace(newPath, @"_[\d-]*[\d-]", "");
@@ -561,7 +561,7 @@ public class Pokemon {
 
     public void GetCries() {
         if (cryAudio == null) {
-            string cryLocation = Path.Combine(Application.streamingAssetsPath, "Cries/" + cry + ".ogg");
+            string cryLocation = Path.Combine(PokedexManager.dataPath, "Cries/" + cry + ".ogg");
             if (!File.Exists(cryLocation)) {
                 Debug.LogError("Cry could not be found: " + cryLocation);
             } else {

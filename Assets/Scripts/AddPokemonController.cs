@@ -297,7 +297,7 @@ public class AddPokemonController : MonoBehaviour
 
             pokemon.species = VerifyString(species.text, "Pokemon - Species");
             pokemon.image = VerifyString(image.text, "Pokemon - Image");
-            pokemon.gigaImage = VerifyString(gigaImage.text, "Pokemon - Giga Image");
+            pokemon.gigaImage = gigaImage.text.Trim();
             pokemon.cry = VerifyString(cry.text, "Pokemon - Audio");
             pokemon.type = VerifyString(type.text, "Pokemon - Types");
             pokemon.size = VerifyString(size.text, "Pokemon - Height");
@@ -500,12 +500,12 @@ public class AddPokemonController : MonoBehaviour
         json.Property("currentAbilities").Remove();
         json.Property("nature").Remove();
 
-        JObject pokemonJSON = JObject.Parse(File.ReadAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json")));
+        JObject pokemonJSON = JObject.Parse(File.ReadAllText(Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json")));
         JArray items = (JArray)pokemonJSON["Items"];
         items.Add(json);
         data = pokemonJSON.ToString();
 
-        File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "JSON/Pokemon.json"), data);
+        File.WriteAllText(Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json"), data);
         PokedexManager.manager.CreateWarningDialog("Pokemon successfully added to the Pokedex!");
     }
 

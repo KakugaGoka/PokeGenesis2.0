@@ -88,7 +88,7 @@ public class Server : MonoBehaviour {
         // The first thing we do is deserialize the message to our custom type
         var objectMessage = netMessage.ReadMessage<NetworkPokemon>();
         Pokemon pokemon = JsonUtility.FromJson<Pokemon>(objectMessage.message);
-        pokemon.ToJson(Path.Combine(Application.streamingAssetsPath, pokemon.savePath));
+        pokemon.ToJson(Path.Combine(PokedexManager.dataPath, pokemon.savePath));
         string debugMessage = "Pokemon received: " + pokemon.species;
         PokedexManager.manager.CreateWarningDialog(debugMessage);
 

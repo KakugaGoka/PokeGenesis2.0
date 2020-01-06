@@ -129,10 +129,10 @@ public class SheetController : MonoBehaviour {
 #if DEBUG
         // Verify all pokemon images and cries
         foreach (Pokemon pokemon in PokedexManager.pokedex) {
-            if (!File.Exists(Application.streamingAssetsPath + "/PokemonIcons/" + pokemon.image + ".png")) {
+            if (!File.Exists(PokedexManager.dataPath + "/PokemonIcons/" + pokemon.image + ".png")) {
                 Debug.LogWarning("Image not found for pokemon: " + pokemon.species);
             }
-            if (!File.Exists(Application.streamingAssetsPath + "/Cries/" + pokemon.cry + ".ogg")) {
+            if (!File.Exists(PokedexManager.dataPath + "/Cries/" + pokemon.cry + ".ogg")) {
                 Debug.LogWarning("Cry not found for pokemon: " + pokemon.species);
             }
             foreach (string evo in pokemon.evolutions) {
@@ -146,14 +146,14 @@ public class SheetController : MonoBehaviour {
 
         // Verify all item images
         foreach (Item item in PokedexManager.items) {
-            if (!File.Exists(Application.streamingAssetsPath + "/ItemIcons/" + item.image + ".png")) {
+            if (!File.Exists(PokedexManager.dataPath + "/ItemIcons/" + item.image + ".png")) {
                 Debug.LogWarning("Image not found for item: " + item.name);
             }
         }
 #endif
 
         // Load temp pokemon if they exist. 
-        var myFiles = Directory.GetFiles(Application.streamingAssetsPath + "/Captured/", "*.json", SearchOption.TopDirectoryOnly);
+        var myFiles = Directory.GetFiles(PokedexManager.dataPath + "/Captured/", "*.json", SearchOption.TopDirectoryOnly);
         capturedJSONCount = myFiles.Length;
 
         foreach (var file in myFiles) {
@@ -184,7 +184,7 @@ public class SheetController : MonoBehaviour {
             ClearFields();
         }
 
-        var myFiles = Directory.GetFiles(Application.streamingAssetsPath + "/Captured/", "*.json", SearchOption.TopDirectoryOnly);
+        var myFiles = Directory.GetFiles(PokedexManager.dataPath + "/Captured/", "*.json", SearchOption.TopDirectoryOnly);
         if (capturedJSONCount != myFiles.Length) {
             capturedJSONCount = myFiles.Length;
             PokedexManager.pokemonToEncounter = new List<Pokemon>(); 
