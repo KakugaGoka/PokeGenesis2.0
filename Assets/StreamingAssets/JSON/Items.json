@@ -578,7 +578,7 @@
 		},
 		{
 			"name": "King's Rock",
-			"image": "King's_Rock",
+			"image": "Kings_Rock",
 			"desc": "Attacks cause Flinch on a roll of 19+. This does not stack with any abilities, moves, or effects that extend flinch rate. Head Item for Trainers. Can be used by Slowpoke and Poliwhirl to evolve.",
 			"tier": "2"
 		},
