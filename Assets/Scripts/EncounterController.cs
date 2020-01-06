@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -77,6 +78,7 @@ public class EncounterController : MonoBehaviour {
         currentHealthField,
         maxHealthField,
         levelField,
+        dynaLevelField,
         heldItemNameField,
         captureRateField;
 
@@ -114,6 +116,7 @@ public class EncounterController : MonoBehaviour {
         currentHealthField = GameObject.Find("Current Health Field").GetComponent<UnityEngine.UI.InputField>();
         maxHealthField = GameObject.Find("Max Health Field").GetComponent<UnityEngine.UI.InputField>();
         levelField = GameObject.Find("Level Field").GetComponent<UnityEngine.UI.InputField>();
+        dynaLevelField = GameObject.Find("Dynamax Level Field").GetComponent<UnityEngine.UI.InputField>();
         heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<UnityEngine.UI.InputField>();
         captureRateField = GameObject.Find("Capture Rate Field").GetComponent<UnityEngine.UI.InputField>();
 
@@ -367,6 +370,20 @@ public class EncounterController : MonoBehaviour {
                 string errorMessage = "Pokemon Sprite could not be loaded from: Icons/" + pokemon.altMega.image;
                 PokedexManager.manager.CreateWarningDialog(errorMessage);
             }
+        } else if (pokemon.isDynamax) {
+            controller.dynaBack.SetActive(true);
+            controller.dynaFront.SetActive(true);
+            if (!String.IsNullOrWhiteSpace(pokemon.gigaImage)) {
+                pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.gigaImage);
+                if (pokemon.sprite != null) {
+                    controller.sprite.sprite = pokemon.sprite;
+                }
+            } else {
+                pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
+                if (pokemon.sprite != null) {
+                    controller.sprite.sprite = pokemon.sprite;
+                }
+            }
         } else {
             pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
             if (pokemon.sprite != null) {
@@ -413,9 +430,6 @@ public class EncounterController : MonoBehaviour {
         spdefCSField.text = pokemon.spdefCS.ToString();
         spdCSField.text = pokemon.spdCS.ToString();
 
-        maxHealthField.text = pokemon.maxHealth.ToString();
-        currentHealthField.text = pokemon.currentHealth.ToString();
-
         int hpStage = pokemon.hpLevel / 10;
         int atkStage = pokemon.atkLevel / 10;
         int defStage = pokemon.defLevel / 10;
@@ -437,7 +451,11 @@ public class EncounterController : MonoBehaviour {
         spdefTotalField.text = (pokemon.spdef + pokemon.spdefLevel + (pokemon.spdefCS * spdefStage)).ToString();
         spdTotalField.text = (pokemon.spd + pokemon.spdLevel + (pokemon.spdCS * spdStage)).ToString();
 
+        maxHealthField.text = pokemon.isDynamax ? pokemon.GetDynaMaxHealth().ToString() : pokemon.GetMaxHealth().ToString();
+        currentHealthField.text = pokemon.currentHealth.ToString();
+
         levelField.text = pokemon.level.ToString();
+        dynaLevelField.text = pokemon.dynamaxLevel.ToString();
 
         megaButton.interactable = pokemon.HasMega();
         if (megaButton.interactable) {
@@ -651,9 +669,11 @@ public class EncounterController : MonoBehaviour {
             pokemon.spdCS = int.Parse(spdCSField.text);
 
             pokemon.currentHealth = int.Parse(currentHealthField.text);
-            pokemon.maxHealth = PokedexManager.GetMaxHealth(pokemon);
+            pokemon.maxHealth = pokemon.isDynamax ? pokemon.GetDynaMaxHealth() : pokemon.GetMaxHealth();
 
             pokemon.heldItem.name = heldItemNameField.text;
+
+            pokemon.dynamaxLevel = int.Parse((dynaLevelField.text));
 
             pokemon.GetCaptureRate();
 
@@ -663,6 +683,30 @@ public class EncounterController : MonoBehaviour {
             string errorMessage = "Failed to assign all values properly. Please check last input.";
             PokedexManager.manager.CreateWarningDialog(errorMessage);
         }
+    }
+
+    public void SetHeldItem() {
+        if (String.IsNullOrWhiteSpace(heldItemNameField.text) || heldItemNameField.text == "None") {
+            return;
+        }
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        bool itemFound = false;
+        foreach (var item in PokedexManager.items) {
+            if (heldItemNameField.text == item.name) {
+                pokemon.heldItem = item;
+                pokemon.heldItem.sprite = PokedexManager.LoadSprite("ItemIcons/" + item.image);
+                if (pokemon.heldItem.sprite == null) {
+                    pokemon.heldItem.sprite = PokedexManager.LoadSprite("ItemIcons/None");
+                }
+                itemFound = true;
+            }
+        }
+        if (!itemFound) {
+            PokedexManager.manager.CreateWarningDialog("This item is not registered in the Items.json: " + heldItemNameField.text);
+            return;
+        }
+        OnSelected(pokemon, PokedexManager.currentEntry);
+        pokemon.ToJson(pokemon.savePath, true);
     }
 
     public void GetCondition() {
@@ -810,15 +854,15 @@ public class EncounterController : MonoBehaviour {
         for (float i = 0; i < numberToEncounter; i += 1) {
             int number = 0;
             do {
-                number = Random.Range(1, PokedexManager.manager.GetHighestNumberInPokemonArray(encounterablePokemon.ToArray()) + 1);
+                number = UnityEngine.Random.Range(1, PokedexManager.manager.GetHighestNumberInPokemonArray(encounterablePokemon.ToArray()) + 1);
             } while (encounterablePokemon.Where(x => x.number == number).Count() < 1);
             Pokemon[] pokemonList = encounterablePokemon.Where(x => x.number == number).ToArray();
-            int index = Random.Range(0, pokemonList.Count());
+            int index = UnityEngine.Random.Range(0, pokemonList.Count());
             PokedexManager.pokemonToEncounter.Add(pokemonList[index].Clone());
             Pokemon pokemon = PokedexManager.pokemonToEncounter[PokedexManager.pokemonToEncounter.Count - 1];
 
             string natureString = natureDropdown.options[natureDropdown.value].text;
-            int levelToApply = (int)Random.Range(minLevelSlider.value, maxLevelSlider.value);
+            int levelToApply = (int)UnityEngine.Random.Range(minLevelSlider.value, maxLevelSlider.value);
 
             pokemon.hpLevel = 0;
             pokemon.atkLevel = 0;
@@ -846,7 +890,7 @@ public class EncounterController : MonoBehaviour {
             if (allowShinies) pokemon.GetShiny(alwaysShiny);
             if (allowHeldItems) pokemon.GetHeldItem(alwaysHoldItem);
 
-            pokemon.maxHealth = PokedexManager.GetMaxHealth(pokemon);
+            pokemon.maxHealth = pokemon.GetMaxHealth();
             pokemon.currentHealth = pokemon.maxHealth;
             pokemon.loyalty = 2;
 
@@ -861,6 +905,7 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void ToggleMega() {
+        SetStats();
         Pokemon pokemon = PokedexManager.currentPokemon;
         Text megaText = megaButton.gameObject.GetComponentInChildren<Text>();
         if (pokemon.mega.inMegaForm) {
@@ -875,6 +920,7 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void ToggleAltMega() {
+        SetStats();
         Pokemon pokemon = PokedexManager.currentPokemon;
         Text megaText = altMegaButton.gameObject.GetComponentInChildren<Text>();
         if (pokemon.altMega.inMegaForm) {
@@ -883,6 +929,18 @@ public class EncounterController : MonoBehaviour {
         } else {
             megaText.text = "De-Mega Evolve";
             pokemon.ApplyAltMega();
+        }
+        OnSelected(pokemon, PokedexManager.currentEntry);
+        pokemon.ToJson(pokemon.savePath, true);
+    }
+
+    public void ToggleDynamax() {
+        SetStats();
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        if (pokemon.isDynamax) {
+            pokemon.UnapplyDynamax();
+        } else {
+            pokemon.ApplyDynamax();
         }
         OnSelected(pokemon, PokedexManager.currentEntry);
         pokemon.ToJson(pokemon.savePath, true);

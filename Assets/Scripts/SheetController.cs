@@ -65,6 +65,7 @@ public class SheetController : MonoBehaviour {
         currentHealthField,
         maxHealthField,
         levelField,
+        dynaLevelField,
         heldItemNameField,
         tradeNameField,
         myNameField,
@@ -107,6 +108,7 @@ public class SheetController : MonoBehaviour {
         currentHealthField = GameObject.Find("Current Health Field").GetComponent<UnityEngine.UI.InputField>();
         maxHealthField = GameObject.Find("Max Health Field").GetComponent<UnityEngine.UI.InputField>();
         levelField = GameObject.Find("Level Field").GetComponent<UnityEngine.UI.InputField>();
+        dynaLevelField = GameObject.Find("Dynamax Level Field").GetComponent<UnityEngine.UI.InputField>();
         heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<UnityEngine.UI.InputField>();
         loyaltyField = GameObject.Find("Loyalty Field").GetComponent<UnityEngine.UI.InputField>();
 
@@ -222,6 +224,20 @@ public class SheetController : MonoBehaviour {
                 string errorMessage = "Pokemon Sprite could not be loaded from: Icons/" + pokemon.altMega.image;
                 PokedexManager.manager.CreateWarningDialog(errorMessage);
             }
+        } else if (pokemon.isDynamax) {
+            controller.dynaBack.SetActive(true);
+            controller.dynaFront.SetActive(true);
+            if (!String.IsNullOrWhiteSpace(pokemon.gigaImage)) {
+                pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.gigaImage);
+                if (pokemon.sprite != null) {
+                    controller.sprite.sprite = pokemon.sprite;
+                }
+            } else {
+                pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
+                if (pokemon.sprite != null) {
+                    controller.sprite.sprite = pokemon.sprite;
+                }
+            }
         } else {
             pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
             if (pokemon.sprite != null) {
@@ -268,7 +284,7 @@ public class SheetController : MonoBehaviour {
         spdefCSField.text = pokemon.spdefCS.ToString();
         spdCSField.text = pokemon.spdCS.ToString();
 
-        maxHealthField.text = pokemon.maxHealth.ToString();
+        maxHealthField.text = pokemon.isDynamax ? pokemon.GetDynaMaxHealth().ToString() : pokemon.GetMaxHealth().ToString();
         currentHealthField.text = pokemon.currentHealth.ToString();
 
         int hpStage = pokemon.hpLevel / 10;
@@ -286,6 +302,7 @@ public class SheetController : MonoBehaviour {
         spdTotalField.text = (pokemon.spd + pokemon.spdLevel + (pokemon.spdCS * spdStage)).ToString();
 
         levelField.text = pokemon.level.ToString();
+        dynaLevelField.text = pokemon.dynamaxLevel.ToString();
 
         megaButton.interactable = pokemon.HasMega();
         if (megaButton.interactable) {
@@ -451,10 +468,13 @@ public class SheetController : MonoBehaviour {
             pokemon.spdCS = int.Parse(spdCSField.text);
 
             pokemon.currentHealth = int.Parse(currentHealthField.text);
-            pokemon.maxHealth = PokedexManager.GetMaxHealth(pokemon);
+            pokemon.maxHealth = pokemon.isDynamax ? pokemon.GetDynaMaxHealth() : pokemon.GetMaxHealth();
 
             pokemon.heldItem.name = heldItemNameField.text;
             pokemon.loyalty = int.Parse(loyaltyField.text);
+
+            pokemon.level = int.Parse((levelField.text));
+            pokemon.dynamaxLevel = int.Parse((dynaLevelField.text));
 
             OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
             pokemon.ToJson(pokemon.savePath, true);
@@ -462,6 +482,47 @@ public class SheetController : MonoBehaviour {
             string errorMessage = "Failed to assign all values properly. Please check last input.";
             PokedexManager.manager.CreateWarningDialog(errorMessage);
         }
+    }
+
+    public void SetNature() {
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        bool natureFound = false;
+        foreach (var nature in PokedexManager.natures) {
+            if (natureField.text == nature.name) {
+                pokemon.ModifyBaseStatForNature(true);
+                pokemon.GetNature(nature.name);
+                natureFound = true;
+            }
+        }
+        if (!natureFound) {
+            PokedexManager.manager.CreateWarningDialog("This nature is not registered in the Natures.json: " + natureField.text);
+        }
+        OnSelected(pokemon, PokedexManager.currentEntry);
+        pokemon.ToJson(pokemon.savePath, true);
+    }
+
+    public void SetHeldItem() {
+        if (String.IsNullOrWhiteSpace(heldItemNameField.text) || heldItemNameField.text == "None") {
+            return;
+        }
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        bool itemFound = false;
+        foreach (var item in PokedexManager.items) {
+            if (heldItemNameField.text == item.name) {
+                pokemon.heldItem = item;
+                pokemon.heldItem.sprite = PokedexManager.LoadSprite("ItemIcons/" + item.image);
+                if (pokemon.heldItem.sprite == null) {
+                    pokemon.heldItem.sprite = PokedexManager.LoadSprite("ItemIcons/None");
+                }
+                itemFound = true;
+            }
+        }
+        if (!itemFound) {
+            PokedexManager.manager.CreateWarningDialog("This item is not registered in the Items.json: " + heldItemNameField.text);
+            return;
+        }
+        OnSelected(pokemon, PokedexManager.currentEntry);
+        pokemon.ToJson(pokemon.savePath, true);
     }
 
     public void GetCondition() {
@@ -643,6 +704,7 @@ public class SheetController : MonoBehaviour {
     }
 
     public void ToggleMega() {
+        SetStats();
         Pokemon pokemon = PokedexManager.currentPokemon;
         Text megaText = megaButton.gameObject.GetComponentInChildren<Text>();
         if (pokemon.mega.inMegaForm) {
@@ -657,6 +719,7 @@ public class SheetController : MonoBehaviour {
     }
 
     public void ToggleAltMega() {
+        SetStats();
         Pokemon pokemon = PokedexManager.currentPokemon;
         Text megaText = altMegaButton.gameObject.GetComponentInChildren<Text>();
         if (pokemon.altMega.inMegaForm) {
@@ -665,6 +728,18 @@ public class SheetController : MonoBehaviour {
         } else {
             megaText.text = "De-Mega Evolve";
             pokemon.ApplyAltMega();
+        }
+        OnSelected(pokemon, PokedexManager.currentEntry);
+        pokemon.ToJson(pokemon.savePath, true);
+    }
+
+    public void ToggleDynamax() {
+        SetStats();
+        Pokemon pokemon = PokedexManager.currentPokemon;
+        if (pokemon.isDynamax) {
+            pokemon.UnapplyDynamax();
+        } else {
+            pokemon.ApplyDynamax();
         }
         OnSelected(pokemon, PokedexManager.currentEntry);
         pokemon.ToJson(pokemon.savePath, true);

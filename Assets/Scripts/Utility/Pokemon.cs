@@ -159,6 +159,7 @@ public class Pokemon {
     public string
         savePath,
         image,
+        gigaImage,
         cry,
         species,
         nickname,
@@ -179,6 +180,7 @@ public class Pokemon {
     public int
         number,
         level,
+        dynamaxLevel,
         loyalty,
         hp,
         atk,
@@ -242,7 +244,8 @@ public class Pokemon {
         suppressed,     // +5 CR
         trapped,
         tripped,
-        vulnerable;
+        vulnerable,
+        isDynamax;
 
     public string[]
         evolutions,
@@ -432,8 +435,8 @@ public class Pokemon {
         ModifyBaseStatForNature();
     }
 
-    private void ModifyBaseStatForNature() {
-        int value = 2;
+    public void ModifyBaseStatForNature(bool remove = false) {
+        int value = remove ? -2 : 2;
         if (nature.up == "hp") {
             hp += value / 2;
         } else if (nature.up == "atk") {
@@ -447,7 +450,7 @@ public class Pokemon {
         } else if (nature.up == "spd") {
             spd += value;
         }
-        value = -2;
+        value *= -1;
         if (nature.down == "hp") {
             hp += value / 2;
         } else if (nature.down == "atk") {
@@ -506,6 +509,11 @@ public class Pokemon {
     }
 
     public void GetCaptureRate() {
+        if (currentHealth <= 0) {
+            captureRate = 0;
+            return;
+        }
+
         captureRate = 100 - (level * 2);
 
         float health = (float)currentHealth / (float)maxHealth;
@@ -640,6 +648,17 @@ public class Pokemon {
         }
     }
 
+    public int GetMaxHealth() {
+        int health = level + ((hp + hpLevel) * 3) + 10;
+        return health;
+    }
+
+    public int GetDynaMaxHealth() {
+        int health = GetMaxHealth();
+        health = (int)(health * Mathf.Clamp(1.5f + (dynamaxLevel * 0.05f), 1.5f, 2.0f)); 
+        return health;
+    }
+
     public bool HasMega() {
         if (String.IsNullOrWhiteSpace(mega.name)) {
             return false;
@@ -660,6 +679,9 @@ public class Pokemon {
         PokedexEntry entry = PokedexManager.currentEntry.GetComponent<PokedexEntry>();
         if (altMega.inMegaForm) {
             UnapplyAltMega();
+        }
+        if (isDynamax) {
+            UnapplyDynamax();
         }
         mega.sprite = PokedexManager.LoadSprite("PokemonIcons/" + mega.image);
         hpLevel += mega.hp;
@@ -698,6 +720,9 @@ public class Pokemon {
         if (mega.inMegaForm) {
             UnapplyMega();
         }
+        if (isDynamax) {
+            UnapplyDynamax();
+        }
         altMega.sprite = PokedexManager.LoadSprite("PokemonIcons/" + altMega.image);
         hpLevel += altMega.hp;
         atkLevel += altMega.atk;
@@ -728,6 +753,40 @@ public class Pokemon {
         altMega.inMegaForm = false;
         entry.sprite.sprite = sprite;
         entry.species.text = CheckForNickname();
+    }
+
+    public void ApplyDynamax() {
+        PokedexEntry entry = PokedexManager.currentEntry.GetComponent<PokedexEntry>();
+        if (mega.inMegaForm) {
+            UnapplyMega();
+        }
+        if (altMega.inMegaForm) {
+            UnapplyAltMega();
+        }
+        if (!String.IsNullOrWhiteSpace(gigaImage)) {
+            sprite = PokedexManager.LoadSprite("PokemonIcons/" + gigaImage);
+        }
+        float hpMultiplier = (float)currentHealth / (float)maxHealth;
+        maxHealth = GetDynaMaxHealth();
+        currentHealth = Mathf.RoundToInt(maxHealth * hpMultiplier);
+        isDynamax = true;
+        entry.sprite.sprite = sprite;
+        entry.species.text = CheckForNickname();
+        entry.dynaBack.SetActive(true);
+        entry.dynaFront.SetActive(true);
+    }
+
+    public void UnapplyDynamax() {
+        PokedexEntry entry = PokedexManager.currentEntry.GetComponent<PokedexEntry>();
+        sprite = PokedexManager.LoadSprite("PokemonIcons/" + image);
+        float hpMultiplier = (float)currentHealth / (float)maxHealth;
+        maxHealth = GetMaxHealth();
+        currentHealth = Mathf.RoundToInt(maxHealth * hpMultiplier);
+        isDynamax = false;
+        entry.sprite.sprite = sprite;
+        entry.species.text = CheckForNickname();
+        entry.dynaBack.SetActive(false);
+        entry.dynaFront.SetActive(false);
     }
 }
 /*

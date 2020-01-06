@@ -282,11 +282,6 @@ public class PokedexManager : MonoBehaviour {
         return dialog;
     }
 
-    static public int GetMaxHealth(Pokemon pokemon) {
-        int health = pokemon.level + (pokemon.hpLevel * 3) + 10;
-        return health;
-    }
-
     public void LoadClip(string file, Pokemon pokemon) {
         StartCoroutine(LoadClipCoroutine(file, pokemon));
     }

@@ -9,6 +9,8 @@ public class PokedexEntry : MonoBehaviour {
     public Button background;
     public Color backgroundTint;
     public GameObject shiny;
+    public GameObject dynaFront;
+    public GameObject dynaBack;
 
     [HideInInspector]
     public Pokemon pokemon;

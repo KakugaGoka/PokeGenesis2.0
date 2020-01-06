@@ -148,6 +148,34 @@ public class AddPokemonController : MonoBehaviour
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Tab)) {
             if (currentField > 0 && currentField < inputFields.Length) {
+                if (inputFields[currentField] == type) {
+                    type.text = type.text.Replace("Type:", "");
+                    type.text = type.text.Replace("Type :", "");
+                } else if (inputFields[currentField] == size) {
+                    size.text = size.text.Replace("Height:", "");
+                    size.text = size.text.Replace("Height :", "");
+                } else if (inputFields[currentField] == weight) {
+                    weight.text = weight.text.Replace("Weight:", "");
+                    weight.text = weight.text.Replace("Weight :", "");
+                } else if (inputFields[currentField] == gender) {
+                    gender.text = gender.text.Replace("Gender Ratio:", "");
+                    gender.text = gender.text.Replace("Gender Ratio :", "");
+                } else if (inputFields[currentField] == egg) {
+                    egg.text = egg.text.Replace("Egg Group:", "");
+                    egg.text = egg.text.Replace("Egg Group :", "");
+                } else if (inputFields[currentField] == hatch) {
+                    hatch.text = hatch.text.Replace("Average Hatch Rate:", "");
+                    hatch.text = hatch.text.Replace("Average Hatch Rate :", "");
+                } else if (inputFields[currentField] == diet) {
+                    diet.text = diet.text.Replace("Diet:", "");
+                    diet.text = diet.text.Replace("Diet :", "");
+                } else if (inputFields[currentField] == habitat) {
+                    habitat.text = habitat.text.Replace("Habitat:", "");
+                    habitat.text = habitat.text.Replace("Habitat :", "");
+                } else if (inputFields[currentField] == moves) {
+                    moves.text = habitat.text.Replace("Evo", "1");
+                    moves.text = habitat.text.Replace("§", "");
+                }
                 inputFields[currentField].text = inputFields[currentField].text.Trim();
             }
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
@@ -225,6 +253,23 @@ public class AddPokemonController : MonoBehaviour
         Pokemon pokemon = new Pokemon();
 
         try {
+            type.text = type.text.Replace("Type:", "");
+            type.text = type.text.Replace("Type :", "");
+            size.text = size.text.Replace("Height:", "");
+            size.text = size.text.Replace("Height :", "");
+            weight.text = weight.text.Replace("Weight:", "");
+            weight.text = weight.text.Replace("Weight :", "");
+            gender.text = gender.text.Replace("Gender Ratio:", "");
+            gender.text = gender.text.Replace("Gender Ratio :", "");
+            hatch.text = hatch.text.Replace("Average Hatch Rate:", "");
+            hatch.text = hatch.text.Replace("Average Hatch Rate :", "");
+            egg.text = egg.text.Replace("Egg Group:", "");
+            egg.text = egg.text.Replace("Egg Group :", "");
+            diet.text = diet.text.Replace("Diet:", "");
+            diet.text = diet.text.Replace("Diet :", "");
+            habitat.text = habitat.text.Replace("Habitat:", "");
+            habitat.text = habitat.text.Replace("Habitat :", ""); 
+
             pokemon.species = VerifyString(species.text, "Pokemon - Species");
             pokemon.image = VerifyString(image.text, "Pokemon - Image Name");
             pokemon.cry = VerifyString(cry.text, "Pokemon - Audio Name");
@@ -273,11 +318,14 @@ public class AddPokemonController : MonoBehaviour
             }
 
             VerifyString(capabilities.text, "Pokemon - Capabilities");
-            VerifyString(moves.text, "Pokemon - Moves");
-            VerifyString(evolutions.text, "Pokemon - Evolutions");
+            pokemon.capabilities = RemoveReturns(CleanCapabilites(capabilities.text));
 
-            pokemon.capabilities = RemoveReturns(capabilities.text.Split(','));
+            moves.text = moves.text.Replace("Evo", "1");
+            moves.text = moves.text.Replace("§", "");
+            VerifyString(moves.text, "Pokemon - Moves");
             pokemon.moves = RemoveReturns(moves.text.Split('\n'));
+
+            VerifyString(evolutions.text, "Pokemon - Evolutions");
             pokemon.evolutions = RemoveReturns(evolutions.text.Split('\n'));
 
             VerifyString(abilities.text, "Pokemon - Abilities");
@@ -383,6 +431,7 @@ public class AddPokemonController : MonoBehaviour
         json.Property("knownMoveList").Remove();
         json.Property("movesList").Remove();
         json.Property("level").Remove();
+        json.Property("dynamaxLevel").Remove();
         json.Property("loyalty").Remove();
         json.Property("hpLevel").Remove();
         json.Property("atkLevel").Remove();
@@ -486,6 +535,18 @@ public class AddPokemonController : MonoBehaviour
         if (Regex.IsMatch(abilities, @" Ability *[\d-]:"))
             abilities = Regex.Replace(abilities, @" Ability *[\d-]:", ":");
         return abilities;
+    }
+
+    public string[] CleanCapabilites(string capabilities) {
+        List<string> capList = capabilities.Split(',').ToList();
+        for (int i = 0; i < capList.Count(); i++) {
+            if (capList[i].Contains("Naturewalk") && !capList[i].Contains(")")) {
+                string natureWalkRepair = capList[i] + "," + capList[i + 1];
+                capList.Remove(capList[i + 1]);
+                capList[i] = natureWalkRepair;
+            }
+        }
+        return capList.ToArray();
     }
 
     public void SetTabList() {

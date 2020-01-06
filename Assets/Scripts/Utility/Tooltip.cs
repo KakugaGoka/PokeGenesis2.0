@@ -177,7 +177,7 @@ public class Tooltip : MonoBehaviour
     }
 
     public void ShowItemToolTip() {
-        InputField inputField = GameObject.Find("Held Item Name Field").GetComponent<InputField>();
+        UnityEngine.UI.InputField inputField = GameObject.Find("Held Item Name Field").GetComponent<UnityEngine.UI.InputField>();
         if (inputField.text == null || inputField.text == "" || inputField.text == "None") { return; }
         foreach (var item in PokedexManager.items) {
             if (inputField.text == item.name) {
