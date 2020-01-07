@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,6 +33,7 @@ public class PokedexManager : MonoBehaviour {
     public GameObject confirmationBox;
     public GameObject tooltipBox;
     public GameObject sendingBox;
+    public GameObject editDialogBox;
 
     private bool readyToLoadJSONs = false;
 
@@ -287,6 +289,14 @@ public class PokedexManager : MonoBehaviour {
         return dialog;
     }
 
+    [Discardable]
+    public GameObject CreateEditDialog(SaveType saveType) {
+        GameObject dialog = Instantiate(editDialogBox);
+        DialogController dialogController = dialog.GetComponent<DialogController>();
+        dialogController.LoadEditDialog(saveType);
+        return dialog;
+    }
+
     public void LoadClip(string file, Pokemon pokemon) {
         StartCoroutine(LoadClipCoroutine(file, pokemon));
     }
@@ -330,4 +340,31 @@ public class PokedexManager : MonoBehaviour {
     }
 
 #endif
+
+    static public string[] RemoveReturns(string[] array) {
+        List<string> list = array.ToList();
+        for (int i = 0; i < list.Count(); i++) {
+            list[i] = list[i].Replace("\r", "").Replace("\n", "").Trim();
+        }
+        return list.ToArray();
+    }
+
+    static public string CleanAbilites(string abilities) {
+        abilities = abilities.Replace(" Ability:", ":");
+        if (Regex.IsMatch(abilities, @" Ability *[\d-]:"))
+            abilities = Regex.Replace(abilities, @" Ability *[\d-]:", ":");
+        return abilities;
+    }
+
+    static public string[] CleanCapabilites(string capabilities, char split) {
+        List<string> capList = capabilities.Split(split).ToList();
+        for (int i = 0; i < capList.Count(); i++) {
+            if (capList[i].Contains("Naturewalk") && !capList[i].Contains(")")) {
+                string natureWalkRepair = capList[i] + "," + capList[i + 1];
+                capList.Remove(capList[i + 1]);
+                capList[i] = natureWalkRepair;
+            }
+        }
+        return capList.ToArray();
+    }
 }

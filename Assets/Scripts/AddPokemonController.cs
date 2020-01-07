@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
@@ -344,18 +342,18 @@ public class AddPokemonController : MonoBehaviour
             }
 
             VerifyString(capabilities.text, "Pokemon - Capabilities");
-            pokemon.capabilities = RemoveReturns(CleanCapabilites(capabilities.text));
+            pokemon.capabilities = PokedexManager.RemoveReturns(PokedexManager.CleanCapabilites(capabilities.text, ','));
 
             moves.text = moves.text.Replace("Evo", "1");
             moves.text = moves.text.Replace("§", "");
             VerifyString(moves.text, "Pokemon - Moves");
-            pokemon.moves = RemoveReturns(moves.text.Split('\n'));
+            pokemon.moves = PokedexManager.RemoveReturns(moves.text.Split('\n'));
 
             VerifyString(evolutions.text, "Pokemon - Evolutions");
-            pokemon.evolutions = RemoveReturns(evolutions.text.Split('\n'));
+            pokemon.evolutions = PokedexManager.RemoveReturns(evolutions.text.Split('\n'));
 
             VerifyString(abilities.text, "Pokemon - Abilities");
-            string[] cleanAbilities = RemoveReturns(CleanAbilites(abilities.text).Split('\n'));
+            string[] cleanAbilities = PokedexManager.RemoveReturns(PokedexManager.CleanAbilites(abilities.text).Split('\n'));
 
 
             List<string> basic = new List<string>();
@@ -546,33 +544,6 @@ public class AddPokemonController : MonoBehaviour
             throw new InvalidCastException("Could not cast " + trimmedInteger + " into an integer");
         }
         return endInteger;
-    }
-
-    public string[] RemoveReturns(string[] array) {
-        List<string> list = array.ToList();
-        for (int i = 0; i < list.Count(); i++) {
-            list[i] = list[i].Replace("\r", "").Replace("\n", "").Trim();
-        }
-        return list.ToArray();
-    }
-    
-    public string CleanAbilites(string abilities) {
-        abilities = abilities.Replace(" Ability:", ":");
-        if (Regex.IsMatch(abilities, @" Ability *[\d-]:"))
-            abilities = Regex.Replace(abilities, @" Ability *[\d-]:", ":");
-        return abilities;
-    }
-
-    public string[] CleanCapabilites(string capabilities) {
-        List<string> capList = capabilities.Split(',').ToList();
-        for (int i = 0; i < capList.Count(); i++) {
-            if (capList[i].Contains("Naturewalk") && !capList[i].Contains(")")) {
-                string natureWalkRepair = capList[i] + "," + capList[i + 1];
-                capList.Remove(capList[i + 1]);
-                capList[i] = natureWalkRepair;
-            }
-        }
-        return capList.ToArray();
     }
 
     public void SetTabList() {

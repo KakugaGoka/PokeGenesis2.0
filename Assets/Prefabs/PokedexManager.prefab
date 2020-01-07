@@ -51,3 +51,5 @@ MonoBehaviour:
     type: 3}
   sendingBox: {fileID: 4354737785043704691, guid: 84414e5c6852c1245b28803a943d74a8,
     type: 3}
+  editDialogBox: {fileID: 7536172299456276388, guid: d439a8b5324a70b4cb63f08c7ff28208,
+    type: 3}

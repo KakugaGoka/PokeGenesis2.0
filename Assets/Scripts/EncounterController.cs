@@ -253,7 +253,6 @@ public class EncounterController : MonoBehaviour {
         foreach (var file in myFiles) {
             Pokemon pokemon = Pokemon.FromJson(file);
             PokedexManager.pokemonToEncounter.Add(pokemon);
-            pokemon.GetMoves();
             CreateListItem(pokemon);
         }
     }
@@ -525,13 +524,27 @@ public class EncounterController : MonoBehaviour {
         }
 
         List<Dropdown.OptionData> skillList = new List<Dropdown.OptionData>();
-        skillList.Add(new Dropdown.OptionData("Athl " + pokemon.athleticsDie.ToString() + "d6+" + pokemon.athleticsBonus.ToString()));
-        skillList.Add(new Dropdown.OptionData("Acro " + pokemon.acrobaticsDie.ToString() + "d6+" + pokemon.acrobaticsBonus.ToString()));
-        skillList.Add(new Dropdown.OptionData("Combat " + pokemon.combatDie.ToString() + "d6+" + pokemon.combatBonus.ToString()));
-        skillList.Add(new Dropdown.OptionData("Focus " + pokemon.focusDie.ToString() + "d6+" + pokemon.focusBonus.ToString()));
-        skillList.Add(new Dropdown.OptionData("Percep " + pokemon.perceptionDie.ToString() + "d6+" + pokemon.perceptionBonus.ToString()));
-        skillList.Add(new Dropdown.OptionData("Stealth " + pokemon.stealthDie.ToString() + "d6+" + pokemon.stealthBonus.ToString()));
-        skillList.Add(new Dropdown.OptionData("Edu:Tech " + pokemon.techEduDie.ToString() + "d6+" + pokemon.techEduBonus.ToString()));
+        string athl = "Athl " + pokemon.athleticsDie + "d6";
+        if (pokemon.athleticsBonus != 0) { athl += "+" + pokemon.athleticsBonus; }
+        string acro = "Acro " + pokemon.acrobaticsDie + "d6";
+        if (pokemon.acrobaticsBonus != 0) { acro += "+" + pokemon.acrobaticsBonus; }
+        string combat = "Combat " + pokemon.combatDie + "d6";
+        if (pokemon.combatBonus != 0) { combat += "+" + pokemon.combatBonus; }
+        string focus = "Focus " + pokemon.focusDie + "d6";
+        if (pokemon.focusBonus != 0) { focus += "+" + pokemon.focusBonus; }
+        string percep = "Percep " + pokemon.perceptionDie + "d6";
+        if (pokemon.perceptionBonus != 0) { percep += "+" + pokemon.perceptionBonus; }
+        string stealth = "Stealth " + pokemon.stealthDie + "d6";
+        if (pokemon.stealthBonus != 0) { stealth += "+" + pokemon.stealthBonus; }
+        string techEdu = "Edu: Tech " + pokemon.techEduDie + "d6";
+        if (pokemon.techEduBonus != 0) { techEdu += "+" + pokemon.techEduBonus; }
+        skillList.Add(new Dropdown.OptionData(athl));
+        skillList.Add(new Dropdown.OptionData(acro));
+        skillList.Add(new Dropdown.OptionData(combat));
+        skillList.Add(new Dropdown.OptionData(focus));
+        skillList.Add(new Dropdown.OptionData(percep));
+        skillList.Add(new Dropdown.OptionData(stealth));
+        skillList.Add(new Dropdown.OptionData(techEdu));
         skillDropdown.ClearOptions();
         skillDropdown.AddOptions(skillList);
 
