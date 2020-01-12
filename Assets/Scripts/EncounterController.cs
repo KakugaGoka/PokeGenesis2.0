@@ -42,7 +42,12 @@ public class EncounterController : MonoBehaviour {
 
     private Button
         megaButton,
-        altMegaButton;
+        altMegaButton,
+        dynaButton;
+
+    private Image
+        megaImage,
+        altMegaImage;
 
     private UnityEngine.UI.InputField
         nameField,
@@ -124,8 +129,12 @@ public class EncounterController : MonoBehaviour {
 
         megaButton = GameObject.Find("Mega Button").GetComponent<Button>();
         altMegaButton = GameObject.Find("Alt Mega Button").GetComponent<Button>();
+        dynaButton = GameObject.Find("Dynamax Button").GetComponent<Button>();
         megaButton.interactable = false;
         altMegaButton.interactable = false;
+
+        megaImage = GameObject.Find("Mega Image").GetComponent<Image>();
+        altMegaImage = GameObject.Find("Alt Mega Image").GetComponent<Image>();
 
         moveDropdown = GameObject.Find("Moves Dropdown").GetComponent<Dropdown>();
         capabilityDropdown = GameObject.Find("Capabilities Dropdown").GetComponent<Dropdown>();
@@ -401,6 +410,7 @@ public class EncounterController : MonoBehaviour {
         ClearFields();
         PokedexManager.AssignCurrentPokemonAndEntry(entry);
 
+        entry.GetComponent<PokedexEntry>().species.text = pokemon.CheckForNickname();
         nameField.text = pokemon.CheckForNickname();
         typeField.text = pokemon.GetCurrentType();
         sizeField.text = pokemon.size == null ? "Unkown" : pokemon.size;
@@ -457,12 +467,35 @@ public class EncounterController : MonoBehaviour {
         dynaLevelField.text = pokemon.dynamaxLevel.ToString();
 
         megaButton.interactable = pokemon.HasMega();
-        if (megaButton.interactable) {
-            megaButton.GetComponentInChildren<Text>().text = pokemon.mega.name;
-        }
         altMegaButton.interactable = pokemon.HasAltMega();
-        if (altMegaButton.interactable) {
-            altMegaButton.GetComponentInChildren<Text>().text = pokemon.altMega.name;
+
+        if (pokemon.HasMega() && pokemon.HasAltMega()) {
+            megaImage.sprite = Resources.Load<Sprite>("MegaX");
+            altMegaImage.sprite = Resources.Load<Sprite>("MegaY");
+        } else if (pokemon.HasMega() && !pokemon.HasAltMega()) {
+            megaImage.sprite = Resources.Load<Sprite>("Mega");
+            altMegaImage.sprite = Resources.Load<Sprite>("MegaEmpty");
+        } else {
+            megaImage.sprite = Resources.Load<Sprite>("MegaEmpty");
+            altMegaImage.sprite = Resources.Load<Sprite>("MegaEmpty");
+        }
+
+        if (pokemon.mega.inMegaForm) {
+            megaButton.GetComponent<Image>().color = Color.gray;
+        } else {
+            megaButton.GetComponent<Image>().color = Color.white;
+        }
+
+        if (pokemon.altMega.inMegaForm) {
+            altMegaButton.GetComponent<Image>().color = Color.gray;
+        } else {
+            altMegaButton.GetComponent<Image>().color = Color.white;
+        }
+
+        if (pokemon.isDynamax) {
+            dynaButton.GetComponent<Image>().color = Color.gray;
+        } else {
+            dynaButton.GetComponent<Image>().color = Color.white;
         }
 
         List<Dropdown.OptionData> abilitiesList = new List<Dropdown.OptionData>();
@@ -644,16 +677,12 @@ public class EncounterController : MonoBehaviour {
         capabilityDropdown.ClearOptions();
         abilityDropdown.ClearOptions();
         conditionDropdown.ClearOptions();
-        megaButton.GetComponentInChildren<Text>().text = "";
-        altMegaButton.GetComponentInChildren<Text>().text = "";
     }
 
     public void SetStats() {
         Pokemon pokemon = PokedexManager.currentPokemon;
         try {
-            if (nameField.text != pokemon.species) {
-                pokemon.nickname = nameField.text;
-            }
+            pokemon.SetNickname(nameField.text);
 
             pokemon.type = typeField.text;
             pokemon.size = sizeField.text;
@@ -918,14 +947,13 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void ToggleMega() {
+        if (PokedexManager.currentPokemon == null) { return; }
         SetStats();
         Pokemon pokemon = PokedexManager.currentPokemon;
         Text megaText = megaButton.gameObject.GetComponentInChildren<Text>();
         if (pokemon.mega.inMegaForm) {
-            megaText.text = "Mega Evolve";
             pokemon.UnapplyMega();
         } else {
-            megaText.text = "De-Mega Evolve";
             pokemon.ApplyMega();
         }
         OnSelected(pokemon, PokedexManager.currentEntry);
@@ -933,14 +961,12 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void ToggleAltMega() {
+        if (PokedexManager.currentPokemon == null) { return; }
         SetStats();
         Pokemon pokemon = PokedexManager.currentPokemon;
-        Text megaText = altMegaButton.gameObject.GetComponentInChildren<Text>();
         if (pokemon.altMega.inMegaForm) {
-            megaText.text = "Mega Evolve";
             pokemon.UnapplyAltMega();
         } else {
-            megaText.text = "De-Mega Evolve";
             pokemon.ApplyAltMega();
         }
         OnSelected(pokemon, PokedexManager.currentEntry);
@@ -948,6 +974,7 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void ToggleDynamax() {
+        if (PokedexManager.currentPokemon == null) { return; }
         SetStats();
         Pokemon pokemon = PokedexManager.currentPokemon;
         if (pokemon.isDynamax) {

@@ -33,7 +33,7 @@ public class PokedexController : MonoBehaviour {
         habitatField = GameObject.Find("Habitat Field").GetComponent<Text>();
         entryField = GameObject.Find("Entry Field").GetComponent<Text>();
 
-        GetPokemonToView("");
+        StartCoroutine(GetPokemonToView(""));
         EnumerateScrollView();
     }
 
@@ -44,18 +44,20 @@ public class PokedexController : MonoBehaviour {
     }
 
     public void Search() {
+        StopAllCoroutines();
         UnityEngine.UI.InputField searchInput = GameObject.Find("Search Field").GetComponent<UnityEngine.UI.InputField>();
-        GetPokemonToView(searchInput.text);
+        StartCoroutine(GetPokemonToView(searchInput.text));
         EnumerateScrollView();
     }
 
-    private void GetPokemonToView(string query) {
+    private IEnumerator<List<Pokemon>> GetPokemonToView(string query) {
         pokemonInView = new List<Pokemon>();
         foreach (Pokemon pokemon in PokedexManager.pokedex) {
             if (pokemon.species.ToLower().Contains(query.ToLower())) {
                 pokemonInView.Add(pokemon);
             }
         }
+        yield return pokemonInView;
     }
 
     private void EnumerateScrollView() {
@@ -63,7 +65,6 @@ public class PokedexController : MonoBehaviour {
         for (int i = 0; i < contentPanel.transform.childCount; i++) {
             Destroy(contentPanel.transform.GetChild(i).gameObject);
         }
-
         StartCoroutine(CreateListItem());
     }
 

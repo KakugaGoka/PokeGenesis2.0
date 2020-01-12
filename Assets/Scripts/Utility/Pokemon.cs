@@ -181,6 +181,7 @@ public class Pokemon {
         number,
         level,
         dynamaxLevel,
+        tutorPoints,
         loyalty,
         hp,
         atk,
@@ -254,7 +255,9 @@ public class Pokemon {
         advancedAbilities,
         highAbilities,
         currentAbilities,
-        moves;
+        moves,
+        features,
+        edges;
 
     public Nature
         nature;
@@ -630,11 +633,28 @@ public class Pokemon {
                 return mega.name;
             } else if (altMega.inMegaForm) {
                 return altMega.name;
+            } else if (isDynamax) {
+                if (String.IsNullOrWhiteSpace(gigaImage)) {
+                    return "Dynamax " + species;
+                } else {
+                    return "Gigantamax " + species;
+                }
             } else {
                 return species;
             }
         } else {
             return nickname;
+        }
+    }
+
+    public void SetNickname(string text) {
+        if (text != species &&
+                text != "Dynamax " + species &&
+                text != "Gigantamax " + species &&
+                text != mega.name &&
+                text != altMega.name &&
+                !String.IsNullOrWhiteSpace(text)) {
+            nickname = text;
         }
     }
 

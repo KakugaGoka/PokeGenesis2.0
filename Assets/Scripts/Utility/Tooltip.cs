@@ -195,4 +195,28 @@ public class Tooltip : MonoBehaviour
         }
         return toolTip;
     }
+
+    public void ShowEdgeToolTip() {
+        Dropdown dropdown = GameObject.Find("Edges Dropdown").GetComponent<Dropdown>();
+        if (dropdown.options.Count < 1) { return; }
+        string currentValue = dropdown.options[dropdown.value].text;
+        if (currentValue == null || currentValue == "" || currentValue == "None") { return; }
+        PokedexManager.manager.CreateTooltipDialog(EdgeToolTip(currentValue));
+    }
+
+    public string EdgeToolTip(string edge) {
+        return " Edge Tooltips are not currently supported. For info on the Pokemon Edge \"" + edge + "\" please reference the source books.";
+    }
+
+    public void ShowFeatureToolTip() {
+        Dropdown dropdown = GameObject.Find("Features Dropdown").GetComponent<Dropdown>();
+        if (dropdown.options.Count < 1) { return; }
+        string currentValue = dropdown.options[dropdown.value].text;
+        if (currentValue == null || currentValue == "" || currentValue == "None") { return; }
+        PokedexManager.manager.CreateTooltipDialog(FeatureToolTip(currentValue));
+    }
+
+    public string FeatureToolTip(string feature) {
+        return " Feature Tooltips are not currently supported. For info on the Pokemon Feature \"" + feature + "\" please reference the source books.";
+    }
 }

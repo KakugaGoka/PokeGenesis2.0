@@ -22,14 +22,21 @@ public class SheetController : MonoBehaviour {
         capabilityDropdown,
         skillDropdown,
         moveDropdown,
-        conditionDropdown;
+        conditionDropdown,
+        edgeDropdown,
+        featureDropdown;
 
     private Toggle
         conditionToggle;
 
     private Button
         megaButton,
-        altMegaButton;
+        altMegaButton,
+        dynaButton;
+
+    private Image
+        megaImage,
+        altMegaImage;
 
     private UnityEngine.UI.InputField
         nameField,
@@ -69,7 +76,8 @@ public class SheetController : MonoBehaviour {
         heldItemNameField,
         tradeNameField,
         myNameField,
-        loyaltyField;
+        loyaltyField,
+        tutorPointsField;
 
     private void Start() {
         myNameField = GameObject.Find("My Name Field").GetComponent<UnityEngine.UI.InputField>();
@@ -111,19 +119,26 @@ public class SheetController : MonoBehaviour {
         dynaLevelField = GameObject.Find("Dynamax Level Field").GetComponent<UnityEngine.UI.InputField>();
         heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<UnityEngine.UI.InputField>();
         loyaltyField = GameObject.Find("Loyalty Field").GetComponent<UnityEngine.UI.InputField>();
+        tutorPointsField = GameObject.Find("Tutor Points Field").GetComponent<UnityEngine.UI.InputField>();
 
         conditionToggle = GameObject.Find("Condition Toggle").GetComponent<Toggle>();
 
         megaButton = GameObject.Find("Mega Button").GetComponent<Button>();
         altMegaButton = GameObject.Find("Alt Mega Button").GetComponent<Button>();
+        dynaButton = GameObject.Find("Dynamax Button").GetComponent<Button>();
         megaButton.interactable = false;
         altMegaButton.interactable = false;
+
+        megaImage = GameObject.Find("Mega Image").GetComponent<Image>();
+        altMegaImage = GameObject.Find("Alt Mega Image").GetComponent<Image>();
 
         moveDropdown = GameObject.Find("Moves Dropdown").GetComponent<Dropdown>();
         capabilityDropdown = GameObject.Find("Capabilities Dropdown").GetComponent<Dropdown>();
         abilityDropdown = GameObject.Find("Abilities Dropdown").GetComponent<Dropdown>();
         skillDropdown = GameObject.Find("Skills Dropdown").GetComponent<Dropdown>();
         conditionDropdown = GameObject.Find("Conditions Dropdown").GetComponent<Dropdown>();
+        edgeDropdown = GameObject.Find("Edges Dropdown").GetComponent<Dropdown>();
+        featureDropdown = GameObject.Find("Features Dropdown").GetComponent<Dropdown>();
 
         heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
 #if DEBUG
@@ -251,9 +266,11 @@ public class SheetController : MonoBehaviour {
     }
 
     public void OnSelected(Pokemon pokemon, GameObject entry) {
+        ClearFields();
         PokedexManager.AssignCurrentPokemonAndEntry(entry);
         myNameField.text = PokedexManager.GetLocalIPAddress();
 
+        entry.GetComponent<PokedexEntry>().species.text = pokemon.CheckForNickname();
         nameField.text = pokemon.CheckForNickname();
         typeField.text = pokemon.GetCurrentType();
         sizeField.text = pokemon.size == null ? "Unkown" : pokemon.size;
@@ -303,14 +320,36 @@ public class SheetController : MonoBehaviour {
         dynaLevelField.text = pokemon.dynamaxLevel.ToString();
 
         megaButton.interactable = pokemon.HasMega();
-        if (megaButton.interactable) {
-            megaButton.GetComponentInChildren<Text>().text = pokemon.mega.name;
-        }
         altMegaButton.interactable = pokemon.HasAltMega();
-        if (altMegaButton.interactable) {
-            altMegaButton.GetComponentInChildren<Text>().text = pokemon.altMega.name;
+
+        if (pokemon.HasMega() && pokemon.HasAltMega()) {
+            megaImage.sprite = Resources.Load<Sprite>("MegaX");
+            altMegaImage.sprite = Resources.Load<Sprite>("MegaY");
+        } else if (pokemon.HasMega() && !pokemon.HasAltMega()) {
+            megaImage.sprite = Resources.Load<Sprite>("Mega");
+            altMegaImage.sprite = Resources.Load<Sprite>("MegaEmpty");
+        } else {
+            megaImage.sprite = Resources.Load<Sprite>("MegaEmpty");
+            altMegaImage.sprite = Resources.Load<Sprite>("MegaEmpty");
         }
 
+        if (pokemon.mega.inMegaForm) {
+            megaButton.GetComponent<Image>().color = Color.gray;
+        } else {
+            megaButton.GetComponent<Image>().color = Color.white;
+        }
+
+        if (pokemon.altMega.inMegaForm) {
+            altMegaButton.GetComponent<Image>().color = Color.gray;
+        } else {
+            altMegaButton.GetComponent<Image>().color = Color.white;
+        }
+
+        if (pokemon.isDynamax) {
+            dynaButton.GetComponent<Image>().color = Color.gray;
+        } else {
+            dynaButton.GetComponent<Image>().color = Color.white;
+        }
         List<Dropdown.OptionData> abilitiesList = new List<Dropdown.OptionData>();
         foreach (var ability in pokemon.currentAbilities) {
             abilitiesList.Add(new Dropdown.OptionData(ability));
@@ -394,6 +433,20 @@ public class SheetController : MonoBehaviour {
         skillDropdown.ClearOptions();
         skillDropdown.AddOptions(skillList);
 
+        List<Dropdown.OptionData> edgeList = new List<Dropdown.OptionData>();
+        foreach (var item in pokemon.edges) {
+            edgeList.Add(new Dropdown.OptionData(item));
+        }
+        edgeDropdown.ClearOptions();
+        edgeDropdown.AddOptions(edgeList);
+
+        List<Dropdown.OptionData> featureList = new List<Dropdown.OptionData>();
+        foreach (var item in pokemon.features) {
+            featureList.Add(new Dropdown.OptionData(item));
+        }
+        featureDropdown.ClearOptions();
+        featureDropdown.AddOptions(featureList);
+
         heldItemImage.sprite = pokemon.heldItem.sprite;
         heldItemNameField.text = pokemon.heldItem == null ? "None" : pokemon.heldItem.name;
         loyaltyField.text = pokemon.loyalty.ToString();
@@ -435,6 +488,7 @@ public class SheetController : MonoBehaviour {
         levelField.text = "";
         heldItemNameField.text = "";
         loyaltyField.text = "";
+        tutorPointsField.text = "";
         heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
         cryAudioSource.clip = null;
         moveDropdown.ClearOptions();
@@ -442,16 +496,14 @@ public class SheetController : MonoBehaviour {
         capabilityDropdown.ClearOptions();
         abilityDropdown.ClearOptions();
         conditionDropdown.ClearOptions();
-        megaButton.GetComponentInChildren<Text>().text = "";
-        altMegaButton.GetComponentInChildren<Text>().text = "";
+        edgeDropdown.ClearOptions();
+        featureDropdown.ClearOptions();
     }
 
     public void SetStats() {
         Pokemon pokemon = PokedexManager.currentPokemon;
         try {
-            if (nameField.text != pokemon.species) {
-                pokemon.nickname = nameField.text;
-            }
+            pokemon.SetNickname(nameField.text);
 
             pokemon.type = typeField.text;
             pokemon.size = sizeField.text;
@@ -484,6 +536,7 @@ public class SheetController : MonoBehaviour {
 
             pokemon.heldItem.name = heldItemNameField.text;
             pokemon.loyalty = int.Parse(loyaltyField.text);
+            pokemon.tutorPoints = int.Parse(tutorPointsField.text);
 
             pokemon.level = int.Parse((levelField.text));
             pokemon.dynamaxLevel = int.Parse((dynaLevelField.text));
@@ -771,5 +824,13 @@ public class SheetController : MonoBehaviour {
 
     public void EditMoves() {
         PokedexManager.manager.CreateEditDialog(SaveType.moves);
+    }
+
+    public void EditFeatures() {
+        PokedexManager.manager.CreateEditDialog(SaveType.features);
+    }
+
+    public void EditEdges() {
+        PokedexManager.manager.CreateEditDialog(SaveType.edges);
     }
 }

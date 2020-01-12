@@ -145,6 +145,12 @@ public class DialogController : MonoBehaviour
             }
             saveArray = saveList.ToArray();
             infoArray = basePokemon.moves;
+        } else if (saveType == SaveType.features) {
+            saveArray = pokemon.features;
+            infoArray = pokemon.features;
+        } else if (saveType == SaveType.edges) {
+            saveArray = pokemon.edges;
+            infoArray = pokemon.edges;
         } else {
             return;
         }
@@ -163,46 +169,49 @@ public class DialogController : MonoBehaviour
     }
 
     public void SaveEditDialog() {
+        Pokemon pokemon = PokedexManager.currentPokemon.Clone();
+        InputField saveBox = GameObject.Find("New Info Box").GetComponent<InputField>();
         if (saveType == SaveType.capabilities) {
-            SaveCapabilities();
+            SaveCapabilities(pokemon, saveBox.text);
         } else if (saveType == SaveType.abilities) {
-            SaveAbilities();
+            SaveAbilities(pokemon, saveBox.text);
         } else if (saveType == SaveType.skills) {
-            SaveSkills();
+            SaveSkills(pokemon, saveBox.text);
         } else if (saveType == SaveType.moves) {
-            SaveMoves();
+            SaveMoves(pokemon, saveBox.text);
+        }else if (saveType == SaveType.features) {
+            SaveFeatures(pokemon, saveBox.text);
+        } else if (saveType == SaveType.edges) {
+            SaveEdges(pokemon, saveBox.text);
         } else {
             return;
         }
+        PokedexManager.currentEntry.GetComponent<PokedexEntry>().pokemon = pokemon.Clone();
+        PokedexManager.currentPokemon = pokemon.Clone();
+        pokemon.ToJson(pokemon.savePath, true);
+        SheetController sheetController = GameObject.Find("Scroll View").GetComponent<SheetController>();
+        sheetController.OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
         Destroy(this.gameObject);
     }
 
-    public void SaveCapabilities() {
-        Pokemon pokemon = PokedexManager.currentPokemon.Clone();
-        InputField saveBox = GameObject.Find("New Info Box").GetComponent<InputField>();
-        pokemon.capabilities = PokedexManager.RemoveReturns(PokedexManager.CleanCapabilites(saveBox.text, '\n'));
-        PokedexManager.currentEntry.GetComponent<PokedexEntry>().pokemon = pokemon.Clone();
-        PokedexManager.currentPokemon = pokemon.Clone();
-        pokemon.ToJson(pokemon.savePath, true);
-        SheetController sheetController = GameObject.Find("Scroll View").GetComponent<SheetController>();
-        sheetController.OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
+    public void SaveFeatures(Pokemon pokemon, string text) {
+        pokemon.features = PokedexManager.RemoveReturns(text.Split('\n'));
     }
 
-    public void SaveAbilities() {
-        Pokemon pokemon = PokedexManager.currentPokemon.Clone();
-        InputField saveBox = GameObject.Find("New Info Box").GetComponent<InputField>();
-        pokemon.currentAbilities = PokedexManager.RemoveReturns(saveBox.text.Split('\n'));
-        PokedexManager.currentEntry.GetComponent<PokedexEntry>().pokemon = pokemon.Clone();
-        PokedexManager.currentPokemon = pokemon.Clone();
-        pokemon.ToJson(pokemon.savePath, true);
-        SheetController sheetController = GameObject.Find("Scroll View").GetComponent<SheetController>();
-        sheetController.OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
+    public void SaveEdges(Pokemon pokemon, string text) {
+        pokemon.edges = PokedexManager.RemoveReturns(text.Split('\n'));
     }
 
-    public void SaveMoves() {
-        Pokemon pokemon = PokedexManager.currentPokemon.Clone();
-        InputField saveBox = GameObject.Find("New Info Box").GetComponent<InputField>();
-        string[] pokemonMoves = PokedexManager.RemoveReturns(saveBox.text.Split('\n'));
+    public void SaveCapabilities(Pokemon pokemon, string text) {
+        pokemon.capabilities = PokedexManager.RemoveReturns(PokedexManager.CleanCapabilites(text, '\n'));
+    }
+
+    public void SaveAbilities(Pokemon pokemon, string text) {
+        pokemon.currentAbilities = PokedexManager.RemoveReturns(text.Split('\n'));
+    }
+
+    public void SaveMoves(Pokemon pokemon, string text) {
+        string[] pokemonMoves = PokedexManager.RemoveReturns(text.Split('\n'));
         List<Move> newMoveList = new List<Move>();
         foreach (string move in pokemonMoves) {
             try {
@@ -222,18 +231,11 @@ public class DialogController : MonoBehaviour
         }
         pokemon.knownMoveList = newMoveList.ToArray();
         pokemon.knownMoveList = pokemon.knownMoveList.OrderBy(x => x.level).ToArray();
-        PokedexManager.currentEntry.GetComponent<PokedexEntry>().pokemon = pokemon.Clone();
-        PokedexManager.currentPokemon = pokemon.Clone();
-        pokemon.ToJson(pokemon.savePath, true);
-        SheetController sheetController = GameObject.Find("Scroll View").GetComponent<SheetController>();
-        sheetController.OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
     }
 
-    public void SaveSkills() {
-        Pokemon pokemon = PokedexManager.currentPokemon.Clone();
-        InputField saveBox = GameObject.Find("New Info Box").GetComponent<InputField>();
+    public void SaveSkills(Pokemon pokemon, string text) {
         try {
-            string[] skillsArray = saveBox.text.Trim().Split('\n');
+            string[] skillsArray = text.Trim().Split('\n');
             foreach (string skill in skillsArray) {
                 string skillDie;
                 if (skill.Contains("Athl")) {
@@ -287,11 +289,6 @@ public class DialogController : MonoBehaviour
             PokedexManager.manager.CreateWarningDialog("Pokemon - Skills: Failure to process. Please ensure you have copy pasted from the pokedex PDF or that you have entered them in properly");
             return;
         }
-        PokedexManager.currentEntry.GetComponent<PokedexEntry>().pokemon = pokemon.Clone();
-        PokedexManager.currentPokemon = pokemon.Clone();
-        pokemon.ToJson(pokemon.savePath, true);
-        SheetController sheetController = GameObject.Find("Scroll View").GetComponent<SheetController>();
-        sheetController.OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
     }
 
 }
@@ -311,5 +308,7 @@ public enum SaveType {
     capabilities = 0,
     abilities,
     skills,
-    moves
+    moves,
+    edges,
+    features
 }
