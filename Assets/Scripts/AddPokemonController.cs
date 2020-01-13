@@ -174,8 +174,8 @@ public class AddPokemonController : MonoBehaviour
                     habitat.text = habitat.text.Replace("Habitat:", "");
                     habitat.text = habitat.text.Replace("Habitat :", "");
                 } else if (inputFields[currentField] == moves) {
-                    moves.text = habitat.text.Replace("Evo", "1");
-                    moves.text = habitat.text.Replace("§", "");
+                    moves.text = moves.text.Replace("Evo", "1");
+                    moves.text = moves.text.Replace("§", "");
                 } else if (inputFields[currentField] == image) {
                     if (image.text.Contains(".")) {
                         image.text = image.text.Split('.')[0];
@@ -456,6 +456,7 @@ public class AddPokemonController : MonoBehaviour
         json.Property("movesList").Remove();
         json.Property("level").Remove();
         json.Property("dynamaxLevel").Remove();
+        json.Property("isDynamax").Remove();
         json.Property("loyalty").Remove();
         json.Property("hpLevel").Remove();
         json.Property("atkLevel").Remove();
@@ -496,6 +497,8 @@ public class AddPokemonController : MonoBehaviour
         json.Property("tripped").Remove();
         json.Property("vulnerable").Remove();
         json.Property("currentAbilities").Remove();
+        json.Property("features").Remove();
+        json.Property("edges").Remove();
         json.Property("nature").Remove();
 
         JObject pokemonJSON = JObject.Parse(File.ReadAllText(Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json")));

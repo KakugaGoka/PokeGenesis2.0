@@ -319,6 +319,22 @@
 		{
 			"description": "Up to three times per day as an Extended Action, the user may apply Mulch to a yielding plant.",
 			"name": "Gardener"
+		},
+		{
+			"description": "Normal Forme Kyurem can merge with a willing Zekrom as an Extended Action to turn into Black Fusion Forme, or with a willing Reshiram to turn into White Fusion Forme. The respective Zekrom or Reshiram are absorbed and disappear while Fused. The user may unmerge as an Extended Action, and its partner then reappears. All XP earned while Fused is split evenly between Kyurem and its partner. This Pokémon has a different set of Moves for each Forme.",
+			"name": "Dragon Fusion"
+		},
+		{
+			"description": " This Pokémon changes to its Therian Forme if holding a Reveal Glass, otherwise it uses its Incarnate Forme.",
+			"name": "Therian Forme"
+		},
+		{
+			"description": "Giratina is in its Origin Forme when in the Reverse World or when it holds part of Reverse World with in, outside of the Reverse World. Otherwise, Giratina changes into its Altered Forme.",
+			"name": "Origin Forme"
+		},
+		{
+			"description": "Shaymin can transform into its Sky Forme in sunlight when it has Gracidea, a rare type of flower, nearby. Shaymin will be forced to revert into its normal form if it is hit by an Ice Type Move, if it touches ice or if the sun is no longer shining",
+			"name": "Sky Forme"
 		}
 	]
 }

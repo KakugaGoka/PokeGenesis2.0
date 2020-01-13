@@ -256,6 +256,26 @@ public class EncounterController : MonoBehaviour {
             }
         }
 
+        // Verify all numbers exist in the pokedex between 1 and the laregets number registered
+        int largestNumber = 0;
+        foreach (var pokemon in PokedexManager.pokedex) {
+            if (pokemon.number > largestNumber) { largestNumber = pokemon.number; }
+        }
+        for (int i = 1; i <= largestNumber; i++) {
+            bool found = false;
+            foreach (var pokemon in PokedexManager.pokedex) {
+                if (pokemon.number == i) {
+                    found = true;
+                }
+                if (found) {
+                    continue;
+                }
+            }
+            if (!found) {
+                Debug.LogWarning("Pokemon with the number " + i + " could not be found.");
+            }
+        }
+
         // Load temp pokemon if they exist. 
         var myFiles = Directory.EnumerateFiles(PokedexManager.dataPath + "/tmp/", "*.json", SearchOption.TopDirectoryOnly);
         PokedexManager.pokemonToEncounter = new List<Pokemon>();

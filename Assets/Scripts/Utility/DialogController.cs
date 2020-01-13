@@ -54,7 +54,7 @@ public class DialogController : MonoBehaviour
                 JObject backupJSON = JObject.Parse(backupString);
 
                 pokedexJSON.Merge(backupJSON, new JsonMergeSettings {
-                    MergeArrayHandling = MergeArrayHandling.Merge
+                    MergeArrayHandling = MergeArrayHandling.Union
                 });
 
                 string data = pokedexJSON.ToString();

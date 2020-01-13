@@ -655,12 +655,6 @@
 			"tier": "2"
 		},
 		{
-			"name": "Shock Collar",
-			"image": "Shock_Collar",
-			"desc": "Comes with a remote activator, which when pressed, causes the Pokemon or Trainer wearing the shock collar to lose Hit Points equal to 1/6th of their Max Hit Points. This may be used to activate the �Press� Feature.",
-			"tier": "2"
-		},
-		{
 			"name": "Draco Brace",
 			"image": "Draco_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Dragon-Type Moves. Accessory Item for Trainers.",
@@ -1321,12 +1315,6 @@
 			"tier": "3"
 		},
 		{
-			"name": "Shock Collar (Grounded)",
-			"image": "Shock_Collar (Grounded)",
-			"desc": "Comes with a remote activator, which when pressed, causes the Pokemon or Trainer wearing the shock collar to lose Hit Points equal to 1/6th of their Max Hit Points. This may be used to activate the �Press� Feature. This collar works on Ground-Type Pokemon.",
-			"tier": "3"
-		},
-		{
 			"name": "Quick Claw",
 			"image": "Quick_Claw",
 			"desc": "The user adds +10 to their Initiative. Accessory Item for Trainers.",
@@ -1358,13 +1346,13 @@
 		},
 		{
 			"name": "Special Attack Booster",
-			"image": "Special_Attack Booster",
+			"image": "Special_Attack_Booster",
 			"desc": "When held, the default Stage of Special Attack +1 Combat Stage instead of 0. Accessory Item for Trainers.",
 			"tier": "3"
 		},
 		{
 			"name": "Special Defense Booster",
-			"image": "Special_Defense Booster",
+			"image": "Special_Defense_Booster",
 			"desc": "When held, the default Stage of Special Defense +1 Combat Stage instead of 0. Accessory Item for Trainers.",
 			"tier": "3"
 		},

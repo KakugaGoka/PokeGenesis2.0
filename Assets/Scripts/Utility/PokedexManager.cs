@@ -26,6 +26,7 @@ public class PokedexManager : MonoBehaviour {
     static public GameObject currentEntry;
     static public List<Pokemon> pokemonToEncounter = new List<Pokemon>();
     static public bool networkAvailable;
+    static public bool readyToLoadJSONs = false;
 
     static public string dataPath;
 
@@ -34,8 +35,6 @@ public class PokedexManager : MonoBehaviour {
     public GameObject tooltipBox;
     public GameObject sendingBox;
     public GameObject editDialogBox;
-
-    private bool readyToLoadJSONs = false;
 
     // Start is called before the first frame update
     void Awake() {
@@ -46,11 +45,6 @@ public class PokedexManager : MonoBehaviour {
         }
 
         DontDestroyOnLoad(this.gameObject);
-
-#if UNITY_ANDROID
-        dataPath = Application.persistentDataPath;
-        MoveFilesToStorage();
-#else
         dataPath = Application.streamingAssetsPath;
         readyToLoadJSONs = true;
         if (!Directory.Exists(Path.Combine(dataPath, "Captured/"))) {
@@ -59,7 +53,6 @@ public class PokedexManager : MonoBehaviour {
         if (!Directory.Exists(Path.Combine(dataPath, "tmp/"))) {
             Directory.CreateDirectory(Path.Combine(dataPath, "tmp/"));
         }
-#endif
     }
 
     private void Update() {
@@ -148,6 +141,7 @@ public class PokedexManager : MonoBehaviour {
     }
 
     public void ChangeScene(int sceneID) {
+        readyToLoadJSONs = true;
         SceneManager.LoadScene(sceneID);
     }
 
@@ -314,32 +308,6 @@ public class PokedexManager : MonoBehaviour {
             }
         }
     }
-
-#if UNITY_ANDROID
-    public IEnumerator<WWW> MoveFilesToStorage() {
-        string fromPath = "jar:file://" + Application.dataPath + "!/assets/";
-        string toPath = Application.persistentDataPath + "/";
-
-        string[] filesNamesToCopy = Directory.GetFiles(fromPath, "", SearchOption.AllDirectories);
-        foreach (string fileName in filesNamesToCopy) {
-            if (!System.IO.File.Exists(toPath + fileName)) {
-                string file = fileName.Replace(fromPath, "");
-                Debug.Log("copying from " + fromPath + file + " to " + toPath);
-                WWW www = new WWW(fromPath + file);
-                yield return www;
-                Debug.Log("yield done");
-                File.WriteAllBytes(toPath + file, www.bytes);
-                Debug.Log("file copy done");
-                www.Dispose();
-                www = null;
-            } else {
-                Debug.Log("file exists! " + toPath + fileName);
-            }
-        }
-        readyToLoadJSONs = true;
-    }
-
-#endif
 
     static public string[] RemoveReturns(string[] array) {
         List<string> list = array.ToList();

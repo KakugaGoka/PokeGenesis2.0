@@ -299,6 +299,16 @@
       "effect": "The user gains Last Chance with Dark."
     },
     {
+      "name": "Dark Aura",
+      "freq": "Static",
+      "effect": "The user and all allies have the Damage Base of their damaging Dark Type Attacks increased by +1."
+    },
+    {
+      "name": "Fairy Aura",
+      "freq": "Static",
+      "effect": "The user and all allies have the Damage Base of their damaging Fairy Type Attacks increased by +1."
+    },
+    {
       "name": "Deadly Poison",
       "freq": "Daily — Free Action",
       "trigger": "The user Poisons a target",
@@ -564,11 +574,6 @@
       "name": "Fur Coat",
       "freq": "Static",
       "effect": "The user resists all Physical Attacks one step further. Defensive."
-    },
-    {
-      "name": "Gale Wings",
-      "freq": "Scene x2 - Free Action, Priority",
-      "effect": "The user may activate Gale Wings to use a Flying- Type Move with Priority. If the Move is a Damaging Move, the user adds half their Speed Stat to the Damage Roll."
     },
     {
       "name": "Gentle Vibe",
@@ -1901,11 +1906,6 @@
       "effect": "During their turn, if the user Shifts at least 3 meters, they gain a +3 Bonus to Critical Hit Range until the beginning of their next turn. If they do not Shift or Disengage at all, they gain +5 Damage Reduction until the beginning of their next turn."
     },
     {
-      "name": "Leaf Rush",
-      "freq": "Scene x2 - Free Action, Priority",
-      "effect": "The user may activate Leaf Rush to use a Grass-Type Move with Priority. If the Move is a Damaging Move, the user adds half their Speed Stat to the Damage Roll."
-    },
-    {
       "name": "Leafy Cloak",
       "freq": "Static",
       "effect": "Whenever the user activates Designer, theychoose two of Chlorophyll, Leaf Guard, or Overcoat. Until the user activates Designer again, they gain the chosen Abilities."
@@ -1914,11 +1914,6 @@
       "name": "Line Charge",
       "freq": "Static",
       "effect": "The user can only shift in cardinal directions on the grid. However, they do not provoke attacks of opportunity from Shifting."
-    },
-    {
-      "name": "Maelstrom Pulse",
-      "freq": "Scene x2 - Free Action, Priority",
-      "effect": "The user may activate Maelstrom Pulse to use a Water-Type Move with Priority. If the Move is a Damaging Move, the user adds half their Speed Stat to the Damage Roll."
     },
     {
       "name": "Misty Surge",
@@ -1983,8 +1978,8 @@
       "effect": "The user's Physical Attacks gain the following Effect Range: On 18+, the user becomes Enraged and gains +1 Speed CS. If the user is already Enraged, they gain +1 Attack CS instead."
     },
     {
-      "name": "Reciever",
-      "freq": "Sspecial - Free Action",
+      "name": "Receiver",
+      "freq": "Special - Free Action",
       "trigger": "An Allied Pokemon has fainted.",
       "effect": "The user may immediately use the triggering Move as a Standard Action interrupt. Bonus: Whenever the user uses a Dance Move, they gain +2 to Accuracy Rolls until the end of their next turn.Bonus: The user’s Type changes to match the Type of their held Memory Disc.."
     },
@@ -2065,7 +2060,7 @@
       "effect": "For the remainder of the round, if the user uses a 1 target attack on the triggering opponent, the moves Damage Base is increased by 2 for the attack."
     },
     {
-      "name": "Stamine",
+      "name": "Stamina",
       "freq": "At-Will - Free Action",
       "trigger": "The user is hit by a damaging attack",
       "effect": "After damage has been calculated, the user gains +1 Defense Combat Stage. Defensive."
@@ -2296,6 +2291,79 @@
       "freq": "Static",
       "trigger": "The user is brought to 50% Hit Points or lower.",
       "effect": "The user is immediately returned to it's Pokeball. A new Pokemon can be immediately sent out."
-    }
+    },
+	{
+	  "name": "Propeller Tail",
+	  "freq": "Static",
+	  "effect": "Ignores the effects of opposing Pokémon's Abilities and moves that draw in moves. (e.g. The Pokémon can hit any Pokémon with an Electric-type move despite the effects of Lightning Rod)."
+	},
+	{
+		"name": "Gulp Missile",
+		"freq": "Static",
+		"trigger": "When the Pokémon uses Surf or Dive, it will come back with prey. When it takes damage, it will spit out the prey to attack.",
+		"effect": "After Cramorant uses Surf or Dive, if its HP is over half, it catches an Arrokuda and changes into its Gulping Form. If its HP is under half, it instead catches a Pikachu and changes into its Gorging Form. If it is hit by an attack while in either form, Cramorant spits out its catch at the attacker, dealing damage equal to ¼ of the attacker's maximum HP. If Cramorant is hit in its Gulping Form, Gulp Missile additionally lowers the attacker's Defense stat by one stage. If Cramorant is hit in its Gorging Form, Gulp Missile instead additionally paralyzes the attacker."
+	},
+	{
+		"name": "Punk Rock",
+		"freq": "Static",
+		"effect": "This Pokemon deals an additional 6 damage with moves that have the Sonic Keyword. Also The Pokemon taks half of all incoming damage from these kinds of moves."
+	},
+	{
+		"name": "Sand Spit",
+		"freq": "At-Will — Free Action",
+		"trigger": "Damage is taken.",
+		"effect": "This Pokemon creates a Sandstorm that lasts for five turns when hit by a damaging move, unless a Sandstorm is already present. If this Pokemon is holding a Smooth Rock, this Sandstorm lasts for eight turns instead."
+	},
+	{
+		"name": "Ripen",
+		"freq": "Static",
+		"trigger": "This Pokemon uses a berry.",
+		"effect": "This Pokemon doubles the effect of any berry that is consumes."
+	},
+	{
+		"name": "Steam Engine",
+		"freq": "At-Will — Free Action",
+		"trigger": "This Pokemon is hit by a damaging Fire-Type or Water-Type move.",
+		"effect": "If this Pokemon is not already benefiting from the effects of Steam Engine, it gains +6 Combat Stages in Speed until the end of the current Scene."
+	},
+	{
+		"name": "Ball Fetch",
+		"freq": "At-Will — Free Action",
+		"trigger": "This Pokemon is not currently holding an item and a capture attempt failed.",
+		"effect": "If this is the first time this Pokeball has been thrown, and it fails to capture the targeted Pokemon, this Pokemon will retrieve the Pokeball and store it as its held item for the owner to retrieve. Retrieving the Pokeball during combat follows the same rules as swapping a Pokemon's held item during combat."
+	},
+    {
+      "name": "Cotton Down",
+      "freq": "At-Will — Free Action",
+      "trigger": "The user is hit by a Melee Attack",
+      "effect": "The triggering attacker has their Speed lowered by 1 Combat Stage."
+    },
+    {
+      "name": "Mirror Armor",
+      "freq": "Static",
+      "effect": "The stat lowering effects of moves used on this Pokemon are sent back to the move's user."
+    },
+    {
+      "name": "Mimicry",
+      "freq": "Static",
+      "effect": "The Pokemon's Primary Type is changed to match the active terrain. (e.g. Electric-type during Electric Terrain)"
+    },
+	{
+		"name": "Accelerate",
+		"freq": "Scene x2 — Standard Action, Priority",
+		"effect": "The user may activate a damaging Move to which they add STAB with Priority. If the Move hits, the user adds half their Speed Stat to the Damage Roll. If the Move already had Priority, the attack gains a +4 Bonus to Accuracy."
+	}, 
+	{
+		"name": "Probability Control",
+		"freq": "Scene – Free Action",
+		"target": "Any roll made by yourself or an ally",
+		"effect": "The user may reroll any roll, or have any ally reroll any roll that has been made. This leaves discoverable Psychic residue"
+	},
+	{
+		"name": "Gardener",
+		"freq": "Daily x3 – Extended Action",
+		"target": "A yielding plant",
+		"effect": "Increase the soil quality of the plant by +1, as if Mulch had been applied. This may target a specific Plant only once per day."
+	}
   ]
 }
