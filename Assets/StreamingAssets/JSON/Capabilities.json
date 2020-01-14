@@ -335,6 +335,10 @@
 		{
 			"description": "Shaymin can transform into its Sky Forme in sunlight when it has Gracidea, a rare type of flower, nearby. Shaymin will be forced to revert into its normal form if it is hit by an Ice Type Move, if it touches ice or if the sun is no longer shining",
 			"name": "Sky Forme"
+		},
+		{
+			"description": "As an Extended Action, Zacian and Zamazenta may use an Ancestral Sword (Zacian) or Ancestral Shield (Zamazenta) to become Crowned Sword or Crowned Shield Forme respectively. While in Crowned Forme, the Pokemon may use a Move as though it were on its Movelist; for Zacian this is Behemoth Blade, and for Zamazenta this is Behemoth Bash. This form lasts until the Pokémon is Fainted or voluntarily relinquishes it as an Extended Action.",
+			"name": "Weapon Bond"
 		}
 	]
 }

@@ -218,7 +218,7 @@ public class EncounterController : MonoBehaviour {
                     }
                 }
                 if (!nameFound) {
-                    Debug.LogWarning("Move not found: " + move.name);
+                    Debug.LogWarning("Error for: " + pokemon.species + " :: Move not found: " + move.name);
                 }
             }
         }
