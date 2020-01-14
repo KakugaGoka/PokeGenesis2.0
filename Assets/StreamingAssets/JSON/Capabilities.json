@@ -1,6 +1,5 @@
 {
-	"Items": [
-		{
+	"Items": [{
 			"description": "Power represents a Pokémon or Trainer’s physical strength. The chart below shows how much weight a Pokémon or Trainer can bear, depending on their power value.\n\nPower   Heavy    Staggering    Drag\nValue    Lifting         Limit          Limit\n  1         2-5 lb.           10 lb.        20 lb.\n  2         20-30 lb.       60 lb.        120 lb.\n  3         35-50 lb.       100 lb.      200 lb.\n  4         45-70 lb.       140 lb.      280 lb.\n  5         60-90 lb.       180 lb.      360 lb.\n  6         75-115 lb.      230 lb.     460 lb.\n  7         100-140 lb.    300 lb.     600 lb.\n  8         120-190 lb.    380 lb.     760 lb.\n  9         150-240 lb.    480 lb.     960 lb.\n  10       200-300 lb.    600 lb.     1200 lb.\n  11       250-375 lb.    750 lb.     1500 lb.\n  12       350-450 lb.    900 lb.     1800 lb.\n  13       450-525 lb.   1050 lb.    2100 lb.\n  14       500-600 lb.   1200 lb.    2400 lb.\n  15       550-675 lb.   1350 lb.    2700 lb.\n  16       600-750 lb.   1500 lb.    3000 lb.",
 			"name": "Power"
 		},

@@ -627,6 +627,11 @@ public class Pokemon {
         }
     }
 
+    public void SetTutorPoints() {
+        tutorPoints = 1;
+        tutorPoints += level / 5;
+    }
+
     public string CheckForNickname() {
         if (String.IsNullOrEmpty(nickname)) {
             if (mega.inMegaForm) {

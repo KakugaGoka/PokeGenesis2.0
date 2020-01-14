@@ -955,6 +955,7 @@ public class EncounterController : MonoBehaviour {
             pokemon.maxHealth = pokemon.GetMaxHealth();
             pokemon.currentHealth = pokemon.maxHealth;
             pokemon.loyalty = 2;
+            pokemon.SetTutorPoints();
 
             pokemon.GetCaptureRate();
 

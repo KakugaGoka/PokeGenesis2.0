@@ -1,6 +1,5 @@
 {
-	"Items": [
-		{
+	"Items": [{
 			"name": "Attack Order",
 			"typeName": "Bug",
 			"freq": "EOT",
@@ -7542,7 +7541,6 @@
 			"damageClass": "Status",
 			"range": "Field, Social",
 			"effects": "All participants in the battle may choose to immediately consume one of their Food Buffs, regardless of if the conditions to do so are met.",
-			"range": "Burst 1",
 			"contestType": "Cute",
 			"contestEffect": "Safe Option"
 		},
@@ -7956,7 +7954,7 @@
 			"range": "Melee, 1 Target",
 			"effect": "The DB of Behemoth Bash increases by +2 for each positive CS the target has, to a maximum of DB 20",
 			"contestType": "Tough",
-			"contestEffect": " Steady Performance"
+			"contestEffect": "Steady Performance"
 		},
 		{
 			"name": "Plasma Fists",

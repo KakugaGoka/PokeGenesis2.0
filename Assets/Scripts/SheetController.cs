@@ -450,6 +450,7 @@ public class SheetController : MonoBehaviour {
         heldItemImage.sprite = pokemon.heldItem.sprite;
         heldItemNameField.text = pokemon.heldItem == null ? "None" : pokemon.heldItem.name;
         loyaltyField.text = pokemon.loyalty.ToString();
+        tutorPointsField.text = pokemon.tutorPoints.ToString();
     }
 
     public void ClearFields() {
