@@ -813,6 +813,54 @@ public class Pokemon {
         entry.dynaBack.SetActive(false);
         entry.dynaFront.SetActive(false);
     }
+
+    public string[] SkillsToArray() {
+        string athlBase = "Athl " + athleticsDie + "d6";
+        if (athleticsBonus != 0) { athlBase += "+" + athleticsBonus; }
+        string acroBase = "Acro " + acrobaticsDie + "d6";
+        if (acrobaticsBonus != 0) { acroBase += "+" + acrobaticsBonus; }
+        string combatBase = "Combat " + combatDie + "d6";
+        if (combatBonus != 0) { combatBase += "+" + combatBonus; }
+        string focusBase = "Focus " + focusDie + "d6";
+        if (focusBonus != 0) { focusBase += "+" + focusBonus; }
+        string percepBase = "Percep " + perceptionDie + "d6";
+        if (perceptionBonus != 0) { percepBase += "+" + perceptionBonus; }
+        string stealthBase = "Stealth " + stealthDie + "d6";
+        if (stealthBonus != 0) { stealthBase += "+" + stealthBonus; }
+        string techEduBase = "Edu: Tech " + techEduDie + "d6";
+        if (techEduBonus != 0) { techEduBase += "+" + techEduBonus; }
+        return new string[] {
+            athlBase,
+            acroBase,
+            combatBase,
+            focusBase,
+            percepBase,
+            stealthBase,
+            techEduBase
+        };
+    }
+
+    public string[] AbilitiesToArray() {
+        List<string> infoList = new List<string>();
+        foreach (var bAb in basicAbilities) {
+            infoList.Add("Basic Ability: " + bAb);
+        }
+        foreach (var aAb in advancedAbilities) {
+            infoList.Add("Adv Ability: " + aAb);
+        }
+        foreach (var hAb in highAbilities) {
+            infoList.Add("High Ability: " + hAb);
+        }
+        return infoList.ToArray();
+    }
+
+    public string[] HabitatsToArray() {
+        List<string> habitatList = habitat.Split(',').ToList();
+        for (int i = 0; i < habitatList.Count(); i++) {
+            habitatList[i] = habitatList[i].Trim();
+        }
+        return habitatList.ToArray();
+    }
 }
 /*
 Mega Blastoise

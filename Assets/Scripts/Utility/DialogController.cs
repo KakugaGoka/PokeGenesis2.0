@@ -88,56 +88,10 @@ public class DialogController : MonoBehaviour
             foreach (var hAb in pokemon.highAbilities) {
                 infoList.Add("High Ability: " + hAb);
             }
-            infoArray = infoList.ToArray();
+            infoArray = pokemon.AbilitiesToArray();
         } else if (saveType == SaveType.skills) {
-            string athl = "Athl " + pokemon.athleticsDie + "d6";
-            if (pokemon.athleticsBonus != 0) { athl += "+" + pokemon.athleticsBonus; }
-            string acro = "Acro " + pokemon.acrobaticsDie + "d6";
-            if (pokemon.acrobaticsBonus != 0) { acro += "+" + pokemon.acrobaticsBonus; }
-            string combat = "Combat " + pokemon.combatDie + "d6";
-            if (pokemon.combatBonus != 0) { combat += "+" + pokemon.combatBonus; }
-            string focus = "Focus " + pokemon.focusDie + "d6";
-            if (pokemon.focusBonus != 0) { focus += "+" + pokemon.focusBonus; }
-            string percep = "Percep " + pokemon.perceptionDie + "d6";
-            if (pokemon.perceptionBonus != 0) { percep += "+" + pokemon.perceptionBonus; }
-            string stealth = "Stealth " + pokemon.stealthDie + "d6";
-            if (pokemon.stealthBonus != 0) { stealth += "+" + pokemon.stealthBonus; }
-            string techEdu = "Edu: Tech " + pokemon.techEduDie + "d6";
-            if (pokemon.techEduBonus != 0) { techEdu += "+" + pokemon.techEduBonus; }
-            saveArray = new string[] {
-                athl,
-                acro,
-                combat,
-                focus,
-                percep,
-                stealth,
-                techEdu
-            };
-
-            string athlBase = "Athl " + basePokemon.athleticsDie + "d6";
-            if (basePokemon.athleticsBonus != 0) { athlBase += "+" + basePokemon.athleticsBonus; }
-            string acroBase = "Acro " + basePokemon.acrobaticsDie + "d6";
-            if (basePokemon.acrobaticsBonus != 0) { acroBase += "+" + basePokemon.acrobaticsBonus; }
-            string combatBase = "Combat " + basePokemon.combatDie + "d6";
-            if (basePokemon.combatBonus != 0) { combatBase += "+" + basePokemon.combatBonus; }
-            string focusBase = "Focus " + basePokemon.focusDie + "d6";
-            if (basePokemon.focusBonus != 0) { focusBase += "+" + basePokemon.focusBonus; }
-            string percepBase = "Percep " + basePokemon.perceptionDie + "d6";
-            if (basePokemon.perceptionBonus != 0) { percepBase += "+" + basePokemon.perceptionBonus; }
-            string stealthBase = "Stealth " + basePokemon.stealthDie + "d6";
-            if (basePokemon.stealthBonus != 0) { stealthBase += "+" + basePokemon.stealthBonus; }
-            string techEduBase = "Edu: Tech " + basePokemon.techEduDie + "d6";
-            if (basePokemon.techEduBonus != 0) { techEduBase += "+" + basePokemon.techEduBonus; }
-            infoArray = new string[] {
-                athlBase,
-                acroBase,
-                combatBase,
-                focusBase,
-                percepBase,
-                stealthBase,
-                techEduBase
-            };
-
+            saveArray = pokemon.SkillsToArray();
+            infoArray = basePokemon.SkillsToArray();
         } else if (saveType == SaveType.moves) {
             List<string> saveList = new List<string>();
             foreach (var move in pokemon.knownMoveList) {

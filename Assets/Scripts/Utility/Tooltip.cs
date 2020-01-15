@@ -219,4 +219,12 @@ public class Tooltip : MonoBehaviour
     public string FeatureToolTip(string feature) {
         return " Feature Tooltips are not currently supported. For info on the Pokemon Feature \"" + feature + "\" please reference the source books.";
     }
+
+    public void ShowEvolutionToolTip() {
+        Dropdown dropdown = GameObject.Find("Evolutions Dropdown").GetComponent<Dropdown>();
+        if (dropdown.options.Count < 1) { return; }
+        string currentValue = dropdown.options[dropdown.value].text;
+        if (currentValue == null || currentValue == "" || currentValue == "None") { return; }
+        PokedexManager.manager.CreateTooltipDialog(currentValue);
+    }
 }
