@@ -965,7 +965,7 @@ public class Pokemon {
             }
             foreach (string cap in capabilities) {
                 if (!cap.Contains(startNaturewalk)) {
-                    if (cap.Contains("Overland") || cap.Contains("Swim") || cap.Contains("Power")) {
+                    if (cap.Contains("Overland") || cap.Contains("Swim") || cap.Contains("Power") || cap.Contains("Levitate") || cap.Contains("Burrow") || cap.Contains("Sky")) {
                         string[] capSplit = cap.Split(' ');
                         writer.WritePropertyName(capSplit[0]);
                         writer.WriteValue(Convert.ToInt32(capSplit[1]));

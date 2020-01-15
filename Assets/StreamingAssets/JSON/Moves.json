@@ -8417,6 +8417,16 @@
 			"effect": "Against targets with a lower initiative that have not yet acted this round, Fishious Rend deals +10 damage.",
 			"contestType": "Cool",
 			"contestEffect": "Catching Up"
+		},
+		{
+			"name": "Aurora Veil",
+			"typeName": "Ice",
+			"freq": "Scene",
+			"damageClass": "Status",
+			"range": "Blessing",
+			"effect": "Blessing – Any user affected by Aurora Veil may activate it when receiving Damage to resist the Damage one step. Aurora Veil may be activated 2 times, and then disappears.\nSpecial: Aurora Veil can only be used when the user is in Hailing Weather. The Blessings persist even after Hailing Weather has ended, however",
+			"contestType": "Beauty",
+			"contestEffect": "Excitement"
 		}
 	]
 }
