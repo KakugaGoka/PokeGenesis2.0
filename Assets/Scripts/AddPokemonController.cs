@@ -341,18 +341,18 @@ public class AddPokemonController : MonoBehaviour
                 pokemon.altMega.spd = VerifyInteger(megaSPD2.text, "Mega 2 - SPD");
             }
 
-            VerifyString(capabilities.text, "Pokemon - Capabilities");
+            capabilities.text = VerifyString(capabilities.text, "Pokemon - Capabilities");
             pokemon.capabilities = PokedexManager.RemoveReturns(PokedexManager.CleanCapabilites(capabilities.text, ','));
 
             moves.text = moves.text.Replace("Evo", "1");
             moves.text = moves.text.Replace("§", "");
-            VerifyString(moves.text, "Pokemon - Moves");
+            moves.text = VerifyString(moves.text, "Pokemon - Moves");
             pokemon.moves = PokedexManager.RemoveReturns(moves.text.Split('\n'));
 
-            VerifyString(evolutions.text, "Pokemon - Evolutions");
+            evolutions.text = VerifyString(evolutions.text, "Pokemon - Evolutions");
             pokemon.evolutions = PokedexManager.RemoveReturns(evolutions.text.Split('\n'));
 
-            VerifyString(abilities.text, "Pokemon - Abilities");
+            abilities.text = VerifyString(abilities.text, "Pokemon - Abilities");
             string[] cleanAbilities = PokedexManager.RemoveReturns(PokedexManager.CleanAbilites(abilities.text).Split('\n'));
 
 
@@ -520,6 +520,10 @@ public class AddPokemonController : MonoBehaviour
 
     [Discardable]
     public string VerifyString(string text, string errorTitle) {
+        text = text.Replace("‘", "'");
+        text = text.Replace("’", "'");
+        text = text.Replace("“", "\"");
+        text = text.Replace("”", "\"");
         string trimmedText = text.Trim();
         if (String.IsNullOrWhiteSpace(trimmedText)) {
             PokedexManager.manager.CreateWarningDialog(errorTitle + ": There is nothing entered in this required field...");
