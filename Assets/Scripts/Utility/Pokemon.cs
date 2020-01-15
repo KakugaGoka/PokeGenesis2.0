@@ -1,9 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 public class BaseRelations {
     public string 
@@ -861,128 +864,237 @@ public class Pokemon {
         }
         return habitatList.ToArray();
     }
+
+    public void ExportToRoll20JSON() {
+        string jsonLocation = Path.Combine(Application.streamingAssetsPath, "Roll20_Captured");
+        if (!Directory.Exists(jsonLocation)) {
+            Directory.CreateDirectory(jsonLocation);
+        }
+        string typeOne;
+        string typeTwo;
+        if (type.Contains("/")) {
+            string[] typesSplit = type.Split('/');
+            typeOne = typesSplit[0];
+            typeTwo = typesSplit[1];
+        } else {
+            typeOne = type;
+            typeTwo = "None";
+        }
+
+        string jsonHeight;
+        string jsonWeight;
+        string[] hSplit = size.Split('(');
+        string[] wSplit = weight.Split('(');
+        jsonHeight = hSplit[1].Remove(hSplit[1].Length - 1);
+        jsonWeight = wSplit[1].Remove(wSplit[1].Length - 1);
+
+        StringBuilder sb = new StringBuilder();
+        StringWriter sw = new StringWriter(sb);
+        using (JsonWriter writer = new JsonTextWriter(sw)) {
+            writer.Formatting = Formatting.Indented;
+            writer.WriteStartObject();
+            writer.WritePropertyName("CharType");
+            writer.WriteValue(0);
+            writer.WritePropertyName("nickname");
+            writer.WriteValue(nickname);
+            writer.WritePropertyName("species");
+            writer.WriteValue(species);
+            writer.WritePropertyName("type1");
+            writer.WriteValue(typeOne);
+            writer.WritePropertyName("type2");
+            writer.WriteValue(typeTwo);
+            writer.WritePropertyName("Level");
+            writer.WriteValue(level);
+            writer.WritePropertyName("HeldItem");
+            writer.WriteValue(heldItem.name);
+            writer.WritePropertyName("Gender");
+            writer.WriteValue(gender);
+            writer.WritePropertyName("Nature");
+            writer.WriteValue(nature.name);
+            writer.WritePropertyName("Height");
+            writer.WriteValue(jsonHeight);
+            writer.WritePropertyName("WeightClass");
+            writer.WriteValue(int.Parse(jsonWeight));
+            writer.WritePropertyName("base_HP");
+            writer.WriteValue(hp);
+            writer.WritePropertyName("base_ATK");
+            writer.WriteValue(atk);
+            writer.WritePropertyName("base_DEF");
+            writer.WriteValue(def);
+            writer.WritePropertyName("base_SPATK");
+            writer.WriteValue(spatk);
+            writer.WritePropertyName("base_SPDEF");
+            writer.WriteValue(spdef);
+            writer.WritePropertyName("base_SPEED");
+            writer.WriteValue(spd);
+            writer.WritePropertyName("HP");
+            writer.WriteValue(hpLevel);
+            writer.WritePropertyName("ATK");
+            writer.WriteValue(atkLevel);
+            writer.WritePropertyName("DEF");
+            writer.WriteValue(defLevel);
+            writer.WritePropertyName("SPATK");
+            writer.WriteValue(spatkLevel);
+            writer.WritePropertyName("SPDEF");
+            writer.WriteValue(spdefLevel);
+            writer.WritePropertyName("SPEED");
+            writer.WriteValue(spdLevel);
+            writer.WritePropertyName("Capabilities");
+            writer.WriteStartObject();
+            string startNaturewalk = "Error";
+            foreach (var cap in capabilities) {
+                if (cap.Contains("Naturewalk")) {
+                    StringBuilder build = new StringBuilder();
+                    List<string> capWalks = new List<string>();
+                    string[] start1 = cap.Split(')');
+                    string[] start2 = start1[0].Split('(');
+                    string[] start3 = start2[1].Split(',');
+                    foreach (string w in start3) {
+                        build.Clear();
+                        build.Append("Naturewalk (");
+                        build.Append(w.Trim());
+                        build.Append(")");
+                        capWalks.Add(build.ToString());
+                    }
+                    startNaturewalk = cap;
+                    foreach (string v in capWalks) {
+                        writer.WritePropertyName(v);
+                        writer.WriteValue(true);
+                    }
+                }
+            }
+            foreach (string cap in capabilities) {
+                if (!cap.Contains(startNaturewalk)) {
+                    if (cap.Contains("Overland") || cap.Contains("Swim") || cap.Contains("Power")) {
+                        string[] capSplit = cap.Split(' ');
+                        writer.WritePropertyName(capSplit[0]);
+                        writer.WriteValue(Convert.ToInt32(capSplit[1]));
+                    } else if (cap.Contains("Jump")) {
+                        string[] capSplit = cap.Split(' ');
+                        string[] highLow = capSplit[1].Split('/');
+                        writer.WritePropertyName("HJ");
+                        writer.WriteValue(int.Parse(highLow[0]));
+                        writer.WritePropertyName("LJ");
+                        writer.WriteValue(int.Parse(highLow[1]));
+                    } else {
+                        writer.WritePropertyName(cap);
+                        writer.WriteValue(true);
+                    }
+                }
+            }
+            writer.WriteEndObject();
+            writer.WritePropertyName("Athletics");
+            writer.WriteValue(athleticsDie);
+            writer.WritePropertyName("Acrobatics");
+            writer.WriteValue(acrobaticsDie);
+            writer.WritePropertyName("Combat");
+            writer.WriteValue(combatDie);
+            writer.WritePropertyName("Stealth");
+            writer.WriteValue(stealthDie);
+            writer.WritePropertyName("Perception");
+            writer.WriteValue(perceptionDie);
+            writer.WritePropertyName("Focus");
+            writer.WriteValue(focusDie);
+            writer.WritePropertyName("TechnologyEducation");
+            writer.WriteValue(techEduDie);
+            writer.WritePropertyName("Athletics_bonus");
+            writer.WriteValue(athleticsBonus);
+            writer.WritePropertyName("Acrobatics_bonus");
+            writer.WriteValue(acrobaticsBonus);
+            writer.WritePropertyName("Combat_bonus");
+            writer.WriteValue(combatBonus);
+            writer.WritePropertyName("Stealth_bonus");
+            writer.WriteValue(stealthBonus);
+            writer.WritePropertyName("Perception_bonus");
+            writer.WriteValue(perceptionBonus);
+            writer.WritePropertyName("Focus_bonus");
+            writer.WriteValue(focusBonus);
+            writer.WritePropertyName("TechnologyEducation_bonus");
+            writer.WriteValue(techEduBonus);
+            writer.WritePropertyName("TutorPoints");
+            writer.WriteValue(tutorPoints);
+            int placement = 1;
+            foreach (Move moveBase in knownMoveList) {
+                foreach (Move move in PokedexManager.moves) {
+                    if (move.name == moveBase.name) {
+
+                        writer.WritePropertyName("Move" + placement);
+                        writer.WriteStartObject();
+                        writer.WritePropertyName("Name");
+                        writer.WriteValue(move.name);
+                        if (move.typeName != null) {
+                            writer.WritePropertyName("Type");
+                            writer.WriteValue(move.typeName);
+                        }
+                        if (move.freq != null) {
+                            writer.WritePropertyName("Freq");
+                            writer.WriteValue(move.freq);
+                        }
+                        if (move.ac != 0) {
+                            writer.WritePropertyName("AC");
+                            writer.WriteValue(move.ac);
+                        }
+                        if (move.db != 0) {
+                            writer.WritePropertyName("DB");
+                            writer.WriteValue(move.db);
+                        }
+                        if (move.damageClass != null) {
+                            writer.WritePropertyName("DType");
+                            writer.WriteValue(move.damageClass);
+                        }
+                        if (move.range != null) {
+                            writer.WritePropertyName("Range");
+                            writer.WriteValue(move.range);
+                        }
+                        if (move.effects != null) {
+                            writer.WritePropertyName("Effects");
+                            writer.WriteValue(move.effects);
+                        }
+                        if (move.contestType != null) {
+                            writer.WritePropertyName("Contest Type");
+                            writer.WriteValue(move.contestType);
+                        }
+                        if (move.contestEffect != null) {
+                            writer.WritePropertyName("Contest Effect");
+                            writer.WriteValue(move.contestEffect);
+                        }
+                        writer.WriteEndObject();
+                        placement++;
+                        break;
+                    }
+                }
+            }
+            placement = 1;
+            foreach (string abil in currentAbilities) {
+                foreach (var ability in PokedexManager.abilities) {
+                    if (ability.name == abil) {
+                        writer.WritePropertyName("Ability" + placement);
+                        writer.WriteStartObject();
+                        writer.WritePropertyName("Name");
+                        writer.WriteValue(ability.name);
+                        if (ability.freq != null) {
+                            writer.WritePropertyName("Freq");
+                            writer.WriteValue(ability.freq);
+                        }
+                        if (ability.target != null) {
+                            writer.WritePropertyName("Target");
+                            writer.WriteValue(ability.target);
+                        }
+                        if (ability.trigger != null) {
+                            writer.WritePropertyName("Trigger");
+                            writer.WriteValue(ability.trigger);
+                        }
+                        if (ability.effect != null) {
+                            writer.WritePropertyName("Info");
+                            writer.WriteValue(ability.effect);
+                        }
+                        writer.WriteEndObject();
+                        placement++;
+                        break;
+                    }
+                }
+            }
+        }
+        File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "Roll20_" + savePath), sb.ToString());
+    }
 }
-/*
-Mega Blastoise
-Giga Charizard
-Giga Butterfree
-Mega Bedrill
-Mega Pidgeot
-Cosplay Pikachu
-Pikachu Rock Star
-Pikachu Belle
-Pikachu Pop Star
-Pikachu Ph. D
-Pikachu Libre
-Original Cap Pikachu
-Hoenn Cap Pikachu
-Sinnoh Cap Pikachu
-Unova Cap Pikachu
-Kalos Cap Pikchu
-Alola Cap Pikachu
-Partner Cap Pikachu
-Giga Pikachu
-Alolan Raichu
-Alolan Sandshrew
-Alolan Sandslash
-Alolan Vulpix
-Alolan Ninetales
-Alolan Meowth
-Galar Meowth
-Giag Meowth
-Alolan Persion
-Mega Alakazam
-Giga Machamp
-Alolan Geodude
-Alolan Graveller
-Alolan Golem
-Galar Ponyta
-Galar Rapidash
-Mega Slowbro
-Galar Farfetch'd
-Alola Grimer
-Alolan Muk
-Mega Gengar
-Giga Gengar
-Giga Kingler
-Alolan Exeggutor
-Alolan Marowak
-Galarian Weezing
-Mega Kangaskhan
-Mega Gyarados
-Giga Lapras
-Mega Aerodactyl
-Giga Snorlax
-Mega Mewtwo X
-Mega Mewtwo Y
-Mega Ampharos
-Unown A-Z
-Mega Steelix
-Mega Scizor
-Mega Heracross
-Galar Corsala
-Mega Houndoom
-Mega Tyranitar
-Mega Blazakin
-Mega Swampert
-Galar Zigzagoon
-Galar Linoone
-Mega Gardivour
-Mega Mawille
-Mega Agron
-Mega Medicham
-Mega Manectric
-Mega Sharpedo
-Mega Camerupt
-Mega Altaria
-Castform Rain
-Castform Snow
-Castform Sun
-Mega Shuppet
-Mega Absol
-Mega Glalie
-Mega Salamance
-Mega Metagross
-Mega Latios
-Mega Latias
-Burmy (Sand)
-Burmy (Trash)
-Mega Lopunny
-Mega Garchomp
-Mega Lucario
-Mega Abomasnow
-Mega Gallade
-Mega Audino
-Galar Darumaka
-Galar Darmanitan
-Galar Darmanitan Zen
-Darmanitan Zen
-Galar Yamask
-Giga Garbodor
-Deerling and Sawsbuck forms?
-Female Jellicent
-Female Frillish
-Galar Stunfisk
-Vivilon Forms (1-19)
-Blue, Yellow, and White Floette
-Blue, Yellow, and White Florges
-Furfru Forms (1-9)
-Aegislagh Form
-Zygarde Forms 1, complete, ultra
-Minior Forms (1-7)
-Giga Melmetal
-All Galar Pokemon ********
-Giga Corvinight
-Giga 826
-Giga Dreadnaw
-Giga Coalassus
-Giga Flapple
-Giga AppleTurle
-Giga Silacobra
-Giga Toxtricity
-Giga Sizzlpede
-Giga Grimmsnarl
-Alcremy Forms (1-8)
-Giga Alcremy
-Giga Duraludon
-*/

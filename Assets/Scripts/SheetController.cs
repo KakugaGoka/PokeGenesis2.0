@@ -833,4 +833,8 @@ public class SheetController : MonoBehaviour {
     public void EditEdges() {
         PokedexManager.manager.CreateEditDialog(SaveType.edges);
     }
+
+    public void ExportToRoll20() {
+        PokedexManager.currentPokemon.ExportToRoll20JSON();
+    }
 }
