@@ -518,10 +518,6 @@ public class AddPokemonController : MonoBehaviour
         PokedexManager.manager.CreateConfirmationDialog("Are you sure you wish to restore the pokedex from the current backup? This cannot be undone.", ConfirmationType.restore);
     }
 
-    public void MergePokedexWithBackupJSON() {
-        PokedexManager.manager.CreateConfirmationDialog("Are you sure you wish to merge the pokedex with the current backup?", ConfirmationType.merge);
-    }
-
     [Discardable]
     public string VerifyString(string text, string errorTitle) {
         string trimmedText = text.Trim();

@@ -735,7 +735,8 @@ public class EncounterController : MonoBehaviour {
 
             pokemon.heldItem.name = heldItemNameField.text;
 
-            pokemon.dynamaxLevel = int.Parse((dynaLevelField.text));
+            pokemon.dynamaxLevel = Mathf.Clamp(int.Parse(dynaLevelField.text), 0, 10);
+            dynaLevelField.text = Mathf.Clamp(int.Parse(dynaLevelField.text), 0, 10).ToString();
 
             pokemon.GetCaptureRate();
 

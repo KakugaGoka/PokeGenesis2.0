@@ -540,7 +540,8 @@ public class SheetController : MonoBehaviour {
             pokemon.tutorPoints = int.Parse(tutorPointsField.text);
 
             pokemon.level = int.Parse((levelField.text));
-            pokemon.dynamaxLevel = int.Parse((dynaLevelField.text));
+            pokemon.dynamaxLevel = Mathf.Clamp(int.Parse(dynaLevelField.text), 0, 10);
+            dynaLevelField.text = Mathf.Clamp(int.Parse(dynaLevelField.text), 0, 10).ToString();
 
             OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
             pokemon.ToJson(pokemon.savePath, true);
@@ -770,14 +771,13 @@ public class SheetController : MonoBehaviour {
     }
 
     public void ToggleMega() {
+        if (PokedexManager.currentPokemon == null) { return; }
         SetStats();
         Pokemon pokemon = PokedexManager.currentPokemon;
         Text megaText = megaButton.gameObject.GetComponentInChildren<Text>();
         if (pokemon.mega.inMegaForm) {
-            megaText.text = "Mega Evolve";
             pokemon.UnapplyMega();
         } else {
-            megaText.text = "De-Mega Evolve";
             pokemon.ApplyMega();
         }
         OnSelected(pokemon, PokedexManager.currentEntry);
@@ -785,14 +785,12 @@ public class SheetController : MonoBehaviour {
     }
 
     public void ToggleAltMega() {
+        if (PokedexManager.currentPokemon == null) { return; }
         SetStats();
         Pokemon pokemon = PokedexManager.currentPokemon;
-        Text megaText = altMegaButton.gameObject.GetComponentInChildren<Text>();
         if (pokemon.altMega.inMegaForm) {
-            megaText.text = "Mega Evolve";
             pokemon.UnapplyAltMega();
         } else {
-            megaText.text = "De-Mega Evolve";
             pokemon.ApplyAltMega();
         }
         OnSelected(pokemon, PokedexManager.currentEntry);
@@ -800,6 +798,7 @@ public class SheetController : MonoBehaviour {
     }
 
     public void ToggleDynamax() {
+        if (PokedexManager.currentPokemon == null) { return; }
         SetStats();
         Pokemon pokemon = PokedexManager.currentPokemon;
         if (pokemon.isDynamax) {
