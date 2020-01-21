@@ -101,7 +101,7 @@ public class PokedexController : MonoBehaviour {
             controller.species.text = pokemon.number + " - " + pokemon.species;
             newPokemon.transform.SetParent(contentPanel.transform);
             newPokemon.transform.localScale = Vector3.one;
-            pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
+            pokemon.sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + pokemon.image);
 
             if (pokemon.sprite != null) {
                 controller.sprite.sprite = pokemon.sprite;

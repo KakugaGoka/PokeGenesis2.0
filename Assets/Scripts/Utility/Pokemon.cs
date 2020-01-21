@@ -266,13 +266,13 @@ public class Pokemon {
         nature;
 
     public void ToJson(string path, bool overwrite = false) {
-        string data = JsonUtility.ToJson(this, true);
-            string finalPath = path;
+        string finalPath = path;
         if (!overwrite) {
             finalPath = ValidatePath(path);
         }
-        this.savePath = finalPath;
-        File.WriteAllText(Path.Combine(PokedexManager.dataPath, finalPath), data);
+        savePath = finalPath;
+        string data = JsonUtility.ToJson(this, true);
+        File.WriteAllText(Path.Combine(PokedexManager.dataPath, savePath), data);
     }
 
     public static Pokemon FromJson(string path) {
@@ -711,7 +711,7 @@ public class Pokemon {
         if (isDynamax) {
             UnapplyDynamax();
         }
-        mega.sprite = PokedexManager.LoadSprite("PokemonIcons/" + mega.image);
+        mega.sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + mega.image);
         hpLevel += mega.hp;
         atkLevel += mega.atk;
         defLevel += mega.def;
@@ -728,7 +728,7 @@ public class Pokemon {
 
     public void UnapplyMega() {
         PokedexEntry entry = PokedexManager.currentEntry.GetComponent<PokedexEntry>();
-        sprite = PokedexManager.LoadSprite("PokemonIcons/" + image);
+        sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + image);
         hpLevel -= mega.hp;
         atkLevel -= mega.atk;
         defLevel -= mega.def;
@@ -751,7 +751,7 @@ public class Pokemon {
         if (isDynamax) {
             UnapplyDynamax();
         }
-        altMega.sprite = PokedexManager.LoadSprite("PokemonIcons/" + altMega.image);
+        altMega.sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + altMega.image);
         hpLevel += altMega.hp;
         atkLevel += altMega.atk;
         defLevel += altMega.def;
@@ -768,7 +768,7 @@ public class Pokemon {
 
     public void UnapplyAltMega() {
         PokedexEntry entry = PokedexManager.currentEntry.GetComponent<PokedexEntry>();
-        sprite = PokedexManager.LoadSprite("PokemonIcons/" + image);
+        sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + image);
         hpLevel -= altMega.hp;
         atkLevel -= altMega.atk;
         defLevel -= altMega.def;
@@ -792,7 +792,7 @@ public class Pokemon {
             UnapplyAltMega();
         }
         if (!String.IsNullOrWhiteSpace(gigaImage)) {
-            sprite = PokedexManager.LoadSprite("PokemonIcons/" + gigaImage);
+            sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + gigaImage);
         }
         float hpMultiplier = (float)currentHealth / (float)maxHealth;
         maxHealth = GetDynaMaxHealth();
@@ -806,7 +806,7 @@ public class Pokemon {
 
     public void UnapplyDynamax() {
         PokedexEntry entry = PokedexManager.currentEntry.GetComponent<PokedexEntry>();
-        sprite = PokedexManager.LoadSprite("PokemonIcons/" + image);
+        sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + image);
         float hpMultiplier = (float)currentHealth / (float)maxHealth;
         maxHealth = GetMaxHealth();
         currentHealth = Mathf.RoundToInt(maxHealth * hpMultiplier);
@@ -866,7 +866,7 @@ public class Pokemon {
     }
 
     public void ExportToRoll20JSON() {
-        string jsonLocation = Path.Combine(Application.streamingAssetsPath, "Roll20_Captured");
+        string jsonLocation = Path.Combine(PokedexManager.dataPath, "Roll20_Captured");
         if (!Directory.Exists(jsonLocation)) {
             Directory.CreateDirectory(jsonLocation);
         }
@@ -1095,6 +1095,6 @@ public class Pokemon {
                 }
             }
         }
-        File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "Roll20_" + savePath), sb.ToString());
+        File.WriteAllText(Path.Combine(PokedexManager.dataPath, "Roll20_" + savePath), sb.ToString());
     }
 }

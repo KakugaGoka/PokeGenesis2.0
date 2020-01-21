@@ -187,7 +187,6 @@ RectTransform:
   m_Children:
   - {fileID: 1736548351520700196}
   - {fileID: 6516005337036528236}
-  - {fileID: 3842790546907100720}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -269,8 +268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageBox: {fileID: 3842790545351962944}
-  cameraForDialog: {fileID: 0}
   confirmationType: 0
+  saveType: 0
 --- !u!1 &3842790546907100721
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +283,7 @@ GameObject:
   - component: {fileID: 3842790546907100726}
   - component: {fileID: 3842790546907100727}
   m_Layer: 5
-  m_Name: Close Buttton
+  m_Name: Close Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,19 +296,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3842790546907100721}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3842790546155578070}
-  m_Father: {fileID: 3842790546776976868}
-  m_RootOrder: 2
+  m_Father: {fileID: 6516005337036528236}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -205}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -32}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &3842790546907100725
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -503,13 +502,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3842790545351962945}
+  - {fileID: 3842790546907100720}
   m_Father: {fileID: 3842790546776976868}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 15}
-  m_SizeDelta: {x: 320, y: 410}
+  m_SizeDelta: {x: 480, y: -38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &142730998344583497
 CanvasRenderer:

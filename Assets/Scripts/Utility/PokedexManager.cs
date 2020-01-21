@@ -45,13 +45,124 @@ public class PokedexManager : MonoBehaviour {
         }
 
         DontDestroyOnLoad(this.gameObject);
-        dataPath = Application.streamingAssetsPath;
-        readyToLoadJSONs = true;
+        dataPath = Application.persistentDataPath;
         if (!Directory.Exists(Path.Combine(dataPath, "Captured/"))) {
             Directory.CreateDirectory(Path.Combine(dataPath, "Captured/"));
         }
         if (!Directory.Exists(Path.Combine(dataPath, "tmp/"))) {
             Directory.CreateDirectory(Path.Combine(dataPath, "tmp/"));
+        }
+        WriteOutJSONs();
+        WriteOutCries();
+        WriteOutIcons();
+        readyToLoadJSONs = true;
+    }
+
+    public static void WriteOutJSONs() {
+        if (!Directory.Exists(Path.Combine(dataPath, "JSON/"))) {
+            Directory.CreateDirectory(Path.Combine(dataPath, "JSON/"));
+        }
+        TextAsset currentJSON;
+        // Pokedex
+        if (!File.Exists(Path.Combine(dataPath, "JSON/Pokemon.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/Pokemon");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/Pokemon.json"), currentJSON.text);
+        }
+        // Moves
+        if (!File.Exists(Path.Combine(dataPath, "JSON/Moves.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/Moves");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/Moves.json"), currentJSON.text);
+        }
+        // Capabilities
+        if (!File.Exists(Path.Combine(dataPath, "JSON/Capabilities.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/Capabilities");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/Capabilities.json"), currentJSON.text);
+        }
+        // Abilities
+        if (!File.Exists(Path.Combine(dataPath, "JSON/Abilities.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/Abilities");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/Abilities.json"), currentJSON.text);
+        }
+        // Conditions
+        if (!File.Exists(Path.Combine(dataPath, "JSON/Conditions.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/Conditions");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/Conditions.json"), currentJSON.text);
+        }
+        // Items
+        if (!File.Exists(Path.Combine(dataPath, "JSON/Items.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/Items");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/Items.json"), currentJSON.text);
+        }
+        // Natures
+        if (!File.Exists(Path.Combine(dataPath, "JSON/Natures.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/Natures");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/Natures.json"), currentJSON.text);
+        }
+        // PokemonTypes
+        if (!File.Exists(Path.Combine(dataPath, "JSON/PokemonTypes.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/PokemonTypes");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/PokemonTypes.json"), currentJSON.text);
+        }
+        // TMs
+        if (!File.Exists(Path.Combine(dataPath, "JSON/TMs.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/TMs");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/TMs.json"), currentJSON.text);
+        }
+        // Habitats
+        if (!File.Exists(Path.Combine(dataPath, "JSON/Habitats.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/Habitats");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/Habitats.json"), currentJSON.text);
+        }
+        // Skills
+        if (!File.Exists(Path.Combine(dataPath, "JSON/Skills.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/Skills");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/Skills.json"), currentJSON.text);
+        }
+    }
+
+    public static void WriteOutCries() {
+        if (!Directory.Exists(Path.Combine(dataPath, "Cries/"))) {
+            Directory.CreateDirectory(Path.Combine(dataPath, "Cries/"));
+        }
+
+        // Write all items icons to file
+        TextAsset[] cries = Resources.LoadAll<TextAsset>("Cries/");
+        Debug.Log(cries.Length);
+        foreach (var cry in cries) {
+            if (!File.Exists(Path.Combine(dataPath, "Cries/", cry.name + ".ogg"))) {
+                byte[] bytes = cry.bytes;
+                File.WriteAllBytes(Path.Combine(dataPath, "Cries/", cry.name + ".ogg"), bytes);
+            }
+        }
+
+    }
+
+    public static void WriteOutIcons() {
+        if (!Directory.Exists(Path.Combine(dataPath, "Icons/Items/"))) {
+            Directory.CreateDirectory(Path.Combine(dataPath, "Icons/"));
+        }
+        if (!Directory.Exists(Path.Combine(dataPath, "Icons/Items/"))) {
+            Directory.CreateDirectory(Path.Combine(dataPath, "Icons/Items/"));
+        }
+        if (!Directory.Exists(Path.Combine(dataPath, "Icons/Pokemon/"))) {
+            Directory.CreateDirectory(Path.Combine(dataPath, "Icons/Pokemon/"));
+        }
+        // Write all items icons to file
+        Texture2D[] itemSprites = Resources.LoadAll<Texture2D>("Icons/Items/");
+        foreach (var sprite in itemSprites) {
+            if (!File.Exists(Path.Combine(dataPath, "Icons/Items/", sprite.name + ".png"))) {
+                byte[] bytes = sprite.EncodeToPNG();
+                File.WriteAllBytes(Path.Combine(dataPath, "Icons/Items/", sprite.name + ".png"), bytes);
+            }
+        }
+
+        // Write all items icons to file
+        Texture2D[] pokeSprites = Resources.LoadAll<Texture2D>("Icons/Pokemon/");
+        foreach (var sprite in pokeSprites) {
+            if (!File.Exists(Path.Combine(dataPath, "Icons/Pokemon/", sprite.name + ".png"))) {
+                byte[] bytes = sprite.EncodeToPNG();
+                File.WriteAllBytes(Path.Combine(dataPath, "Icons/Pokemon/", sprite.name + ".png"), bytes);
+            }
         }
     }
 
@@ -141,7 +252,9 @@ public class PokedexManager : MonoBehaviour {
     }
 
     public void ChangeScene(int sceneID) {
+#if UNITY_ANDROID == false
         readyToLoadJSONs = true;
+#endif
         SceneManager.LoadScene(sceneID);
     }
 

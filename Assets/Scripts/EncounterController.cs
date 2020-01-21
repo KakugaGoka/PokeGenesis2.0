@@ -182,11 +182,11 @@ public class EncounterController : MonoBehaviour {
         stageOptions.Add(new Dropdown.OptionData("Stage 3"));
         stageDropdown.AddOptions(stageOptions);
 
-        heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
+        heldItemImage.sprite = PokedexManager.LoadSprite("Icons/Items/None");
 
         // Verify all pokemon images and cries
         foreach (Pokemon pokemon in PokedexManager.pokedex) {
-            if (!File.Exists(PokedexManager.dataPath + "/PokemonIcons/" + pokemon.image + ".png")) {
+            if (!File.Exists(PokedexManager.dataPath + "/Icons/Pokemon/" + pokemon.image + ".png")) {
                 Debug.LogWarning("Image not found for pokemon: " + pokemon.species);
             }
             if (!File.Exists(PokedexManager.dataPath + "/Cries/" + pokemon.cry + ".ogg")) {
@@ -251,7 +251,7 @@ public class EncounterController : MonoBehaviour {
 
         // Verify all item images
         foreach (Item item in PokedexManager.items) {
-            if (!File.Exists(PokedexManager.dataPath + "/ItemIcons/" + item.image + ".png")) {
+            if (!File.Exists(PokedexManager.dataPath + "/Icons/Items/" + item.image + ".png")) {
                 Debug.LogWarning("Image not found for item: " + item.name);
             }
         }
@@ -293,11 +293,13 @@ public class EncounterController : MonoBehaviour {
                 OnSelected(nextEntry.GetComponent<PokedexEntry>().pokemon, nextEntry);
             } catch {
                 ClearFields();
+                PokedexManager.currentPokemon = null;
             }
         }
 
         if (nameField.text != "" && PokedexManager.currentEntry == null) {
             ClearFields();
+            PokedexManager.currentPokemon = null;
         }
     }
 
@@ -383,7 +385,7 @@ public class EncounterController : MonoBehaviour {
         newPokemon.transform.SetParent(contentPanel.transform);
         newPokemon.transform.localScale = Vector3.one;
         if (pokemon.mega.inMegaForm) {
-            pokemon.mega.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.mega.image);
+            pokemon.mega.sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + pokemon.mega.image);
             if (pokemon.mega.sprite != null) {
                 controller.sprite.sprite = pokemon.mega.sprite;
             } else {
@@ -391,7 +393,7 @@ public class EncounterController : MonoBehaviour {
                 PokedexManager.manager.CreateWarningDialog(errorMessage);
             }
         } else if (pokemon.altMega.inMegaForm) {
-            pokemon.altMega.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.altMega.image);
+            pokemon.altMega.sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + pokemon.altMega.image);
             if (pokemon.altMega.sprite != null) {
                 controller.sprite.sprite = pokemon.altMega.sprite;
             } else {
@@ -402,18 +404,18 @@ public class EncounterController : MonoBehaviour {
             controller.dynaBack.SetActive(true);
             controller.dynaFront.SetActive(true);
             if (!String.IsNullOrWhiteSpace(pokemon.gigaImage)) {
-                pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.gigaImage);
+                pokemon.sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + pokemon.gigaImage);
                 if (pokemon.sprite != null) {
                     controller.sprite.sprite = pokemon.sprite;
                 }
             } else {
-                pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
+                pokemon.sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + pokemon.image);
                 if (pokemon.sprite != null) {
                     controller.sprite.sprite = pokemon.sprite;
                 }
             }
         } else {
-            pokemon.sprite = PokedexManager.LoadSprite("PokemonIcons/" + pokemon.image);
+            pokemon.sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + pokemon.image);
             if (pokemon.sprite != null) {
                 controller.sprite.sprite = pokemon.sprite;
             } else {
@@ -490,14 +492,14 @@ public class EncounterController : MonoBehaviour {
         altMegaButton.interactable = pokemon.HasAltMega();
 
         if (pokemon.HasMega() && pokemon.HasAltMega()) {
-            megaImage.sprite = Resources.Load<Sprite>("MegaX");
-            altMegaImage.sprite = Resources.Load<Sprite>("MegaY");
+            megaImage.sprite = Resources.Load<Sprite>("Icons/MegaX");
+            altMegaImage.sprite = Resources.Load<Sprite>("Icons/MegaY");
         } else if (pokemon.HasMega() && !pokemon.HasAltMega()) {
-            megaImage.sprite = Resources.Load<Sprite>("Mega");
-            altMegaImage.sprite = Resources.Load<Sprite>("MegaEmpty");
+            megaImage.sprite = Resources.Load<Sprite>("Icons/Mega");
+            altMegaImage.sprite = Resources.Load<Sprite>("Icons/MegaEmpty");
         } else {
-            megaImage.sprite = Resources.Load<Sprite>("MegaEmpty");
-            altMegaImage.sprite = Resources.Load<Sprite>("MegaEmpty");
+            megaImage.sprite = Resources.Load<Sprite>("Icons/MegaEmpty");
+            altMegaImage.sprite = Resources.Load<Sprite>("Icons/MegaEmpty");
         }
 
         if (pokemon.mega.inMegaForm) {
@@ -570,10 +572,10 @@ public class EncounterController : MonoBehaviour {
                 name = "None",
                 desc = "",
                 image = "",
-                sprite = PokedexManager.LoadSprite("ItemIcons/None")
+                sprite = PokedexManager.LoadSprite("Icons/Items/None")
             };
         } else {
-            pokemon.heldItem.sprite = PokedexManager.LoadSprite("ItemIcons/" + pokemon.heldItem.image);
+            pokemon.heldItem.sprite = PokedexManager.LoadSprite("Icons/Items/" + pokemon.heldItem.image);
         }
 
         List<Dropdown.OptionData> skillList = new List<Dropdown.OptionData>();
@@ -642,6 +644,10 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void DeletePokemon() {
+        if (PokedexManager.currentPokemon == null) {
+            Debug.Log("No pokemon currently selected");
+            return;
+        }
         Pokemon pokemon = PokedexManager.currentPokemon;
         string name = pokemon.CheckForNickname();
         string message = "Are you sure you wish to remove " + name + " from the encounter list?";
@@ -649,6 +655,10 @@ public class EncounterController : MonoBehaviour {
     }
 
     public void CapturePokemon() {
+        if (PokedexManager.currentPokemon == null) {
+            Debug.Log("No pokemon currently selected");
+            return;
+        }
         Pokemon pokemon = PokedexManager.currentPokemon;
         string name = pokemon.CheckForNickname();
         string message = "Are you sure you wish to capture " + name + "?";
@@ -690,7 +700,7 @@ public class EncounterController : MonoBehaviour {
         maxHealthField.text = "";
         levelField.text = "";
         heldItemNameField.text = "";
-        heldItemImage.sprite = PokedexManager.LoadSprite("ItemIcons/None");
+        heldItemImage.sprite = PokedexManager.LoadSprite("Icons/Items/None");
         cryAudioSource.clip = null;
         moveDropdown.ClearOptions();
         skillDropdown.ClearOptions();
@@ -757,9 +767,9 @@ public class EncounterController : MonoBehaviour {
         foreach (var item in PokedexManager.items) {
             if (heldItemNameField.text == item.name) {
                 pokemon.heldItem = item;
-                pokemon.heldItem.sprite = PokedexManager.LoadSprite("ItemIcons/" + item.image);
+                pokemon.heldItem.sprite = PokedexManager.LoadSprite("Icons/Items/" + item.image);
                 if (pokemon.heldItem.sprite == null) {
-                    pokemon.heldItem.sprite = PokedexManager.LoadSprite("ItemIcons/None");
+                    pokemon.heldItem.sprite = PokedexManager.LoadSprite("Icons/Items/None");
                 }
                 itemFound = true;
             }

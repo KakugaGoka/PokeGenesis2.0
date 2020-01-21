@@ -102,6 +102,8 @@ public class Client : MonoBehaviour {
             }
             PokedexManager.manager.CreateWarningDialog(PokedexManager.currentPokemon.CheckForNickname() + " was successfully sent to " + ip);
             File.Delete(Path.Combine(PokedexManager.dataPath, PokedexManager.currentPokemon.savePath));
+            PokedexManager.currentEntry = null;
+            PokedexManager.currentPokemon = null;
             myClient.Disconnect();
             clientStarted = false;
             startClient = false;
