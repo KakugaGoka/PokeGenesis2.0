@@ -9,6 +9,9 @@ using Newtonsoft.Json.Linq;
 public class DialogController : MonoBehaviour
 {
     public Text messageBox;
+    public Text titleBox;
+    public Text typeBox;
+    public Image typeImage;
     public ConfirmationType confirmationType;
     public SaveType saveType;
 

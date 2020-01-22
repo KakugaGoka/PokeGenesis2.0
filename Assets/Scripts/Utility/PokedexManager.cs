@@ -379,9 +379,13 @@ public class PokedexManager : MonoBehaviour {
     }
 
     [Discardable]
-    public GameObject CreateTooltipDialog(string message) {
+    public GameObject CreateTooltipDialog(string title, string type, string message, Color? color = null) {
+        if (color == null) { color = Color.clear; } 
         GameObject dialog = Instantiate(tooltipBox);
         DialogController dialogController = dialog.GetComponent<DialogController>();
+        if (dialogController.titleBox != null) { dialogController.titleBox.text = title; }
+        if (dialogController.typeBox != null) { dialogController.typeBox.text = type; }
+        if (dialogController.typeImage != null) { dialogController.typeImage.color = (Color)color; }
         dialogController.messageBox.text = message;
         Debug.Log(message);
         return dialog;
