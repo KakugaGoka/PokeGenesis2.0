@@ -4,7 +4,13 @@ using UnityEngine.UI;
 
 public class PokedexController : MonoBehaviour {
     public GameObject pokedexPrefab;
-    public GameObject contentPanel;
+    public GameObject movePrefab;
+    public GameObject contentView;
+    public GameObject movesView;
+
+    private Color
+        frontGrey = new Color(0.8f, 0.8f, 0.8f, 1f),
+        backGrey = new Color(0.5f, 0.5f, 0.5f, 1f);
 
     private List<Pokemon> pokemonInView = new List<Pokemon>();
     private UnityEngine.UI.InputField
@@ -30,10 +36,29 @@ public class PokedexController : MonoBehaviour {
         abilitiesDropdown,
         skillsDropdown,
         capabilitiesDropdown,
-        movesDropdown,
         habitatDropdown;
 
+    private GameObject
+        generalPanel,
+        entryPanel,
+        skillsPanel,
+        movesPanel,
+        generalTab,
+        entryTab,
+        skillsTab,
+        movesTab;
+
     private void Start() {
+        generalTab = GameObject.Find("General Tab");
+        entryTab = GameObject.Find("Entry Tab");
+        skillsTab = GameObject.Find("Skills Tab");
+        movesTab = GameObject.Find("Moves Tab");
+
+        generalPanel = GameObject.Find("General Panel");
+        entryPanel = GameObject.Find("Entry Panel");
+        skillsPanel = GameObject.Find("Skills Panel");
+        movesPanel = GameObject.Find("Moves Panel");
+
         nameField = GameObject.Find("Name Field").GetComponent<UnityEngine.UI.InputField>();
         numField = GameObject.Find("Number Field").GetComponent<UnityEngine.UI.InputField>();
         typeField = GameObject.Find("Types Field").GetComponent<UnityEngine.UI.InputField>();
@@ -55,7 +80,6 @@ public class PokedexController : MonoBehaviour {
         abilitiesDropdown = GameObject.Find("Abilities Dropdown").GetComponent<Dropdown>();
         skillsDropdown = GameObject.Find("Skills Dropdown").GetComponent<Dropdown>();
         capabilitiesDropdown = GameObject.Find("Capabilities Dropdown").GetComponent<Dropdown>();
-        movesDropdown = GameObject.Find("Moves Dropdown").GetComponent<Dropdown>();
         habitatDropdown = GameObject.Find("Habitat Dropdown").GetComponent<Dropdown>();
 
         StartCoroutine(GetPokemonToView(""));
@@ -64,8 +88,8 @@ public class PokedexController : MonoBehaviour {
 
     private void Update() {
         if (nameField.text == "" && pokemonInView.Count > 0) {
-            OnSelected(pokemonInView[0]);
-        } 
+            OnSelected(pokemonInView[0], contentView.transform.GetChild(0).gameObject);
+        }
     }
 
     public void Search() {
@@ -87,8 +111,8 @@ public class PokedexController : MonoBehaviour {
 
     private void EnumerateScrollView() {
         // Clear any entries so not to duplicate.
-        for (int i = 0; i < contentPanel.transform.childCount; i++) {
-            Destroy(contentPanel.transform.GetChild(i).gameObject);
+        for (int i = 0; i < contentView.transform.childCount; i++) {
+            Destroy(contentView.transform.GetChild(i).gameObject);
         }
         StartCoroutine(CreateListItem());
     }
@@ -96,11 +120,11 @@ public class PokedexController : MonoBehaviour {
     private IEnumerator<GameObject> CreateListItem() {
         foreach (Pokemon pokemon in pokemonInView) {
             GameObject newPokemon = Instantiate(pokedexPrefab) as GameObject;
+            newPokemon.transform.SetParent(contentView.transform);
+            newPokemon.transform.localScale = Vector3.one;
             PokedexEntry controller = newPokemon.GetComponent<PokedexEntry>();
             controller.pokemon = pokemon;
             controller.species.text = pokemon.number + " - " + pokemon.species;
-            newPokemon.transform.SetParent(contentPanel.transform);
-            newPokemon.transform.localScale = Vector3.one;
             pokemon.sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + pokemon.image);
 
             if (pokemon.sprite != null) {
@@ -112,8 +136,8 @@ public class PokedexController : MonoBehaviour {
         }
     }
 
-    public void OnSelected(Pokemon pokemon) {
-        //AudioSource pokemonCry = GameObject.Find("Cry Button").GetComponent<AudioSource>();
+    public void OnSelected(Pokemon pokemon, GameObject entry) {
+        PokedexManager.AssignCurrentPokemonAndEntry(entry);
 
         nameField.text = pokemon.species == null ?
             "Unkown" :
@@ -167,13 +191,6 @@ public class PokedexController : MonoBehaviour {
         abilitiesDropdown.ClearOptions();
         abilitiesDropdown.AddOptions(abilityList);
 
-        List<Dropdown.OptionData> moveList = new List<Dropdown.OptionData>();
-        foreach (var move in pokemon.moves) {
-            moveList.Add(new Dropdown.OptionData(move));
-        }
-        movesDropdown.ClearOptions();
-        movesDropdown.AddOptions(moveList);
-
         List<Dropdown.OptionData> skillList = new List<Dropdown.OptionData>();
         foreach (var skill in pokemon.SkillsToArray()) {
             skillList.Add(new Dropdown.OptionData(skill));
@@ -194,5 +211,61 @@ public class PokedexController : MonoBehaviour {
         }
         habitatDropdown.ClearOptions();
         habitatDropdown.AddOptions(habitatList);
+        if (pokemon.movesList == null) {
+            pokemon.GetMoves();
+        }
+        for (int i = 0; i < movesView.transform.childCount; i++) {
+            Destroy(movesView.transform.GetChild(i).gameObject);
+        }
+        StartCoroutine(CreateMoveListItems(pokemon));
+    }
+
+    private IEnumerator<GameObject> CreateMoveListItems(Pokemon pokemon) {
+        foreach (Move move in pokemon.movesList) {
+            GameObject newMove = Instantiate(movePrefab) as GameObject;
+            newMove.transform.parent = movesView.transform;
+            newMove.transform.localScale = Vector3.one;
+            MoveEntry controller = newMove.GetComponent<MoveEntry>();
+            foreach (var fullMove in PokedexManager.moves) {
+                if (fullMove.name == move.name) {
+                    controller.move = fullMove;
+                    controller.SetFields("Level " + move.level + " : " + fullMove.name);
+                    break;
+                }
+            }
+            yield return newMove;
+        }
+    }
+
+    public void ShowGeneral() {
+        generalPanel.transform.SetSiblingIndex(3);
+        generalTab.GetComponent<Image>().color = frontGrey;
+        entryTab.GetComponent<Image>().color = backGrey;
+        skillsTab.GetComponent<Image>().color = backGrey;
+        movesTab.GetComponent<Image>().color = backGrey;
+    }
+
+    public void ShowEntry() {
+        entryPanel.transform.SetSiblingIndex(3);
+        generalTab.GetComponent<Image>().color = backGrey;
+        entryTab.GetComponent<Image>().color = frontGrey;
+        skillsTab.GetComponent<Image>().color = backGrey;
+        movesTab.GetComponent<Image>().color = backGrey;
+    }
+
+    public void ShowSkills() {
+        skillsPanel.transform.SetSiblingIndex(3);
+        generalTab.GetComponent<Image>().color = backGrey;
+        entryTab.GetComponent<Image>().color = backGrey;
+        skillsTab.GetComponent<Image>().color = frontGrey;
+        movesTab.GetComponent<Image>().color = backGrey;
+    }
+
+    public void ShowMoves() {
+        movesPanel.transform.SetSiblingIndex(3);
+        generalTab.GetComponent<Image>().color = backGrey;
+        entryTab.GetComponent<Image>().color = backGrey;
+        skillsTab.GetComponent<Image>().color = backGrey;
+        movesTab.GetComponent<Image>().color = frontGrey;
     }
 }

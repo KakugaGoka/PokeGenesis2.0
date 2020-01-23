@@ -11,49 +11,17 @@ public class Tooltip : MonoBehaviour
         if (currentValue == null || currentValue == "" || currentValue == "None") { return; }
         foreach (var move in PokedexManager.moves) {
             if (move.name == currentValue) {
-                Color color = Color.clear;
-                if (move.typeName == "Normal") {
-                    color = new Color(56.5f / 100f, 56.1f / 100f, 37.3f / 100f);
-                } else if (move.typeName == "Fire") {
-                    color = new Color(88.2f / 100f, 42.7f / 100f, 9.4f / 100f);
-                } else if (move.typeName == "Water") {
-                    color = new Color(27.8f / 100f, 43.9f / 100f, 92.5f / 100f);
-                } else if (move.typeName == "Electric") {
-                    color = new Color(94.9f / 100f, 75.7f / 100f, 5.1f / 100f);
-                } else if (move.typeName == "Grass") {
-                    color = new Color(36.1f / 100f, 69.4f / 100f, 22.7f / 100f);
-                } else if (move.typeName == "Ice") {
-                    color = new Color(44.3f / 100f, 78f / 100f, 78.4f / 100f);
-                } else if (move.typeName == "Fighting") {
-                    color = new Color(61.2f / 100f, 16.5f / 100f, 12.5f / 100f);
-                } else if (move.typeName == "Poison") {
-                    color = new Color(53.3f / 100f, 20.4f / 100f, 53.7f / 100f);
-                } else if (move.typeName == "Ground") {
-                    color = new Color(83.1f / 100f, 67.5f / 100f, 23.1f / 100f);
-                } else if (move.typeName == "Flying") {
-                    color = new Color(58.4f / 100f, 50.2f / 100f, 79.6f / 100f);
-                } else if (move.typeName == "Psychic") {
-                    color = new Color(94.9f / 100f, 14.5f / 100f, 37.6f / 100f);
-                } else if (move.typeName == "Bug") {
-                    color = new Color(56.9f / 100f, 61.6f / 100f, 12.9f / 100f);
-                } else if (move.typeName == "Rock") {
-                    color = new Color(60f / 100f, 51.8f / 100f, 16.1f / 100f);
-                } else if (move.typeName == "Ghost") {
-                    color = new Color(35.7f / 100f, 27.8f / 100f, 48.6f / 100f);
-                } else if (move.typeName == "Dragon") {
-                    color = new Color(32.9f / 100f, 7.8f / 100f, 93.7f / 100f);
-                } else if (move.typeName == "Dark") {
-                    color = new Color(46.7f / 100f, 33.3f / 100f, 26.7f / 100f);
-                } else if (move.typeName == "Steel") {
-                    color = new Color(66.7f / 100f, 66.7f / 100f, 73.3f / 100f);
-                } else if (move.typeName == "Fairy") {
-                    color = new Color(93.3f / 100f, 60f / 100f, 93.3f / 100f);
-                }
+                Color color = move.type.GetColor();
                 PokedexManager.manager.CreateTooltipDialog(move.name, move.typeName, MoveToolTip(move), color);
                 return;
             }
         }
         PokedexManager.manager.CreateWarningDialog("Move is not registered in Moves.json: '" + currentValue + "'");
+    }
+
+    public void ShowMoveToolTipFromPrefab(Move move) {
+        Color color = move.type.GetColor();
+        PokedexManager.manager.CreateTooltipDialog(move.name, move.typeName, MoveToolTip(move), color);
     }
 
     public string MoveToolTip(Move move) {
@@ -89,7 +57,7 @@ public class Tooltip : MonoBehaviour
         string currentValue = dropdown.options[dropdown.value].text;
         if (currentValue == null || currentValue == "" || currentValue == "None") { return; }
         foreach (var ability in PokedexManager.abilities) {
-            if (ability.name == currentValue) {
+            if (currentValue.Contains(ability.name)) {
                 PokedexManager.manager.CreateTooltipDialog(ability.name, "", AbilityToolTip(ability));
                 return;
             }

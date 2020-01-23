@@ -19,7 +19,12 @@
 			"dark": 1,
 			"steel": 1,
 			"fairy": 1,
-			"typeName": "Bug"
+			"typeName": "Bug",
+			"color": {
+				"r": 0.569,
+				"g": 0.616,
+				"b": 0.129
+			}
 		},
 		{
 			"normal": 1,
@@ -40,7 +45,12 @@
 			"dark": 0.5,
 			"steel": 1,
 			"fairy": 1.5,
-			"typeName": "Dark"
+			"typeName": "Dark",
+			"color": {
+				"r": 0.467,
+				"g": 0.333,
+				"b": 0.267
+			}
 		},
 		{
 			"normal": 1,
@@ -61,7 +71,12 @@
 			"dark": 1,
 			"steel": 1,
 			"fairy": 1.5,
-			"typeName": "Dragon"
+			"typeName": "Dragon",
+			"color": {
+				"r": 0.329,
+				"g": 0.078,
+				"b": 0.937
+			}
 		},
 		{
 			"normal": 1,
@@ -82,7 +97,12 @@
 			"dark": 1,
 			"steel": 0.5,
 			"fairy": 1,
-			"typeName": "Electric"
+			"typeName": "Electric",
+			"color": {
+				"r": 0.949,
+				"g": 0.757,
+				"b": 0.051
+			}
 		},
 		{
 			"normal": 1,
@@ -103,7 +123,12 @@
 			"dark": 0.5,
 			"steel": 1.5,
 			"fairy": 1,
-			"typeName": "Fairy"
+			"typeName": "Fairy",
+			"color": {
+				"r": 0.933,
+				"g": 0.6,
+				"b": 0.933
+			}
 		},
 		{
 			"normal": 1,
@@ -124,7 +149,12 @@
 			"dark": 0.5,
 			"steel": 1,
 			"fairy": 1.5,
-			"typeName": "Fighting"
+			"typeName": "Fighting",
+			"color": {
+				"r": 0.612,
+				"g": 0.165,
+				"b": 0.125
+			}
 		},
 		{
 			"normal": 1,
@@ -145,7 +175,12 @@
 			"dark": 1,
 			"steel": 0.5,
 			"fairy": 0.5,
-			"typeName": "Fire"
+			"typeName": "Fire",
+			"color": {
+				"r": 0.882,
+				"g": 0.427,
+				"b": 0.094
+			}
 		},
 		{
 			"normal": 1,
@@ -166,7 +201,12 @@
 			"dark": 1,
 			"steel": 1,
 			"fairy": 1,
-			"typeName": "Flying"
+			"typeName": "Flying",
+			"color": {
+				"r": 0.584,
+				"g": 0.502,
+				"b": 0.796
+			}
 		},
 		{
 			"normal": 0,
@@ -187,7 +227,12 @@
 			"dark": 1.5,
 			"steel": 1,
 			"fairy": 1,
-			"typeName": "Ghost"
+			"typeName": "Ghost",
+			"color": {
+				"r": 0.357,
+				"g": 0.278,
+				"b": 0.486
+			}
 		},
 		{
 			"normal": 1,
@@ -208,7 +253,12 @@
 			"dark": 1,
 			"steel": 1,
 			"fairy": 1,
-			"typeName": "Grass"
+			"typeName": "Grass",
+			"color": {
+				"r": 0.361,
+				"g": 0.694,
+				"b": 0.227
+			}
 		},
 		{
 			"normal": 1,
@@ -229,7 +279,12 @@
 			"dark": 1,
 			"steel": 1,
 			"fairy": 1,
-			"typeName": "Ground"
+			"typeName": "Ground",
+			"color": {
+				"r": 0.831,
+				"g": 0.675,
+				"b": 0.231
+			}
 		},
 		{
 			"normal": 1,
@@ -250,7 +305,12 @@
 			"dark": 1,
 			"steel": 1.5,
 			"fairy": 1,
-			"typeName": "Ice"
+			"typeName": "Ice",
+			"color": {
+				"r": 0.443,
+				"g": 0.78,
+				"b": 0.784
+			}
 		},
 		{
 			"normal": 1,
@@ -271,7 +331,12 @@
 			"dark": 1,
 			"steel": 1,
 			"fairy": 1,
-			"typeName": "Normal"
+			"typeName": "Normal",
+			"color": {
+				"r": 0.565,
+				"g": 0.561,
+				"b": 0.373
+			}
 		},
 		{
 			"normal": 1,
@@ -292,7 +357,12 @@
 			"dark": 1,
 			"steel": 1,
 			"fairy": 0.5,
-			"typeName": "Poison"
+			"typeName": "Poison",
+			"color": {
+				"r": 0.533,
+				"g": 0.204,
+				"b": 0.537
+			}
 		},
 		{
 			"normal": 1,
@@ -313,7 +383,12 @@
 			"dark": 1.5,
 			"steel": 1,
 			"fairy": 1,
-			"typeName": "Psychic"
+			"typeName": "Psychic",
+			"color": {
+				"r": 0.949,
+				"g": 0.145,
+				"b": 0.376
+			}
 		},
 		{
 			"normal": 0.5,
@@ -334,7 +409,12 @@
 			"dark": 1,
 			"steel": 1.5,
 			"fairy": 1,
-			"typeName": "Rock"
+			"typeName": "Rock",
+			"color": {
+				"r": 0.6,
+				"g": 0.518,
+				"b": 0.161
+			}
 		},
 		{
 			"normal": 0.5,
@@ -355,7 +435,12 @@
 			"dark": 1,
 			"steel": 0.5,
 			"fairy": 0.5,
-			"typeName": "Steel"
+			"typeName": "Steel",
+			"color": {
+				"r": 0.667,
+				"g": 0.667,
+				"b": 0.733
+			}
 		},
 		{
 			"normal": 1,
@@ -376,7 +461,12 @@
 			"dark": 1,
 			"steel": 0.5,
 			"fairy": 1,
-			"typeName": "Water"
+			"typeName": "Water",
+			"color": {
+				"r": 0.278,
+				"g": 0.439,
+				"b": 0.925
+			}
 		}
 	]
 }

@@ -17,8 +17,8 @@ public class PokedexEntry : MonoBehaviour {
 
     public void OnSelected() {
         if (SceneManager.GetActiveScene().name.Contains("Pokedex")) {
-            PokedexController pokedexController = GameObject.Find("Scroll View").GetComponent<PokedexController>();
-            pokedexController.OnSelected(pokemon);
+            PokedexController pokedexController = GameObject.Find("Pokedex Scroll View").GetComponent<PokedexController>();
+            pokedexController.OnSelected(pokemon, this.gameObject);
         }
 
         if (SceneManager.GetActiveScene().name.Contains("Encounter")) {

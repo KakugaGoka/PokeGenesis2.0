@@ -230,6 +230,17 @@ public class PokedexManager : MonoBehaviour {
             string moveString = File.ReadAllText(Path.Combine(dataPath, "JSON/Moves.json"));
             moves = JsonHelper.FromJson<Move>(moveString);
             moves = moves.OrderBy(x => x.name).ToArray();
+            foreach (var move in moves) {
+                foreach (var type in types) {
+                    if (move.typeName == type.typeName) {
+                        move.type = type;
+                        break;
+                    }
+                }
+                if (move.type.typeName == null && move.typeName != "--") {
+                    Debug.LogError("Move \"" + move.name + "\" could not be assinged a full type value for the type of: \"" + move.typeName + "\"");
+                }
+            }
             Debug.Log("Move Count: " + TMs.Count());
 
             string skillString = File.ReadAllText(Path.Combine(dataPath, "JSON/Skills.json"));
