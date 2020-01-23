@@ -16,7 +16,8 @@ public class PokedexController : MonoBehaviour {
     private UnityEngine.UI.InputField
         numField,
         nameField,
-        typeField,
+        typeField1,
+        typeField2,
         sizeField,
         weightField,
         genderField,
@@ -31,6 +32,11 @@ public class PokedexController : MonoBehaviour {
         spdefField,
         spdField;
 
+    private Image
+        spriteField,
+        typeImage1,
+        typeImage2;
+
     private Dropdown
         evolutionsDropdown,
         abilitiesDropdown,
@@ -43,25 +49,30 @@ public class PokedexController : MonoBehaviour {
         entryPanel,
         skillsPanel,
         movesPanel,
+        breedingPanel,
         generalTab,
         entryTab,
         skillsTab,
-        movesTab;
+        movesTab,
+        breedingTab;
 
     private void Start() {
         generalTab = GameObject.Find("General Tab");
         entryTab = GameObject.Find("Entry Tab");
         skillsTab = GameObject.Find("Skills Tab");
         movesTab = GameObject.Find("Moves Tab");
+        breedingTab = GameObject.Find("Breeding Tab");
 
         generalPanel = GameObject.Find("General Panel");
         entryPanel = GameObject.Find("Entry Panel");
         skillsPanel = GameObject.Find("Skills Panel");
         movesPanel = GameObject.Find("Moves Panel");
+        breedingPanel = GameObject.Find("Breeding Panel");
 
         nameField = GameObject.Find("Name Field").GetComponent<UnityEngine.UI.InputField>();
         numField = GameObject.Find("Number Field").GetComponent<UnityEngine.UI.InputField>();
-        typeField = GameObject.Find("Types Field").GetComponent<UnityEngine.UI.InputField>();
+        typeField1 = GameObject.Find("Type Field 1").GetComponent<UnityEngine.UI.InputField>();
+        typeField2 = GameObject.Find("Type Field 2").GetComponent<UnityEngine.UI.InputField>();
         sizeField = GameObject.Find("Size Field").GetComponent<UnityEngine.UI.InputField>();
         weightField = GameObject.Find("Weight Field").GetComponent<UnityEngine.UI.InputField>();
         genderField = GameObject.Find("Gender Field").GetComponent<UnityEngine.UI.InputField>();
@@ -75,6 +86,10 @@ public class PokedexController : MonoBehaviour {
         spatkField = GameObject.Find("SPATK Field").GetComponent<UnityEngine.UI.InputField>();
         spdefField = GameObject.Find("SPDEF Field").GetComponent<UnityEngine.UI.InputField>();
         spdField = GameObject.Find("SPD Field").GetComponent<UnityEngine.UI.InputField>();
+
+        spriteField = GameObject.Find("Sprite Field").GetComponent<Image>();
+        typeImage1 = GameObject.Find("Type Field 1").GetComponent<Image>();
+        typeImage2 = GameObject.Find("Type Field 2").GetComponent<Image>();
 
         evolutionsDropdown = GameObject.Find("Evolutions Dropdown").GetComponent<Dropdown>();
         abilitiesDropdown = GameObject.Find("Abilities Dropdown").GetComponent<Dropdown>();
@@ -145,9 +160,6 @@ public class PokedexController : MonoBehaviour {
         numField.text = pokemon.number == 0 ?
             "???" :
             pokemon.number.ToString();
-        typeField.text = pokemon.type == null ?
-            "Unkown" :
-            pokemon.type;
         sizeField.text = pokemon.size == null ?
             "Unkown" :
             pokemon.size;
@@ -177,6 +189,29 @@ public class PokedexController : MonoBehaviour {
         spdefField.text = pokemon.spdef.ToString();
         spdField.text = pokemon.spd.ToString();
 
+        spriteField.sprite = pokemon.sprite;
+
+        string[] types = pokemon.type.Split('/');
+        foreach (var type in PokedexManager.types) {
+            if (types[0].Trim() == type.typeName) {
+                typeImage1.color = type.GetColor();
+                typeField1.text = type.typeName;
+                break;
+            }
+        }
+        if (types.Length > 1) {
+            foreach (var type in PokedexManager.types) {
+                if (types[1].Trim() == type.typeName) {
+                    typeImage2.color = type.GetColor();
+                    typeField2.text = type.typeName;
+                    break;
+                }
+            }
+        } else {
+            typeImage2.color = frontGrey;
+            typeField2.text = "X";
+        }
+        
         List<Dropdown.OptionData> capList = new List<Dropdown.OptionData>();
         foreach (var cap in pokemon.capabilities) {
             capList.Add(new Dropdown.OptionData(cap));
@@ -238,34 +273,47 @@ public class PokedexController : MonoBehaviour {
     }
 
     public void ShowGeneral() {
-        generalPanel.transform.SetSiblingIndex(3);
+        generalPanel.transform.SetSiblingIndex(movesView.transform.childCount);
         generalTab.GetComponent<Image>().color = frontGrey;
         entryTab.GetComponent<Image>().color = backGrey;
         skillsTab.GetComponent<Image>().color = backGrey;
         movesTab.GetComponent<Image>().color = backGrey;
+        breedingTab.GetComponent<Image>().color = backGrey;
     }
 
     public void ShowEntry() {
-        entryPanel.transform.SetSiblingIndex(3);
+        entryPanel.transform.SetSiblingIndex(movesView.transform.childCount);
         generalTab.GetComponent<Image>().color = backGrey;
         entryTab.GetComponent<Image>().color = frontGrey;
         skillsTab.GetComponent<Image>().color = backGrey;
         movesTab.GetComponent<Image>().color = backGrey;
+        breedingTab.GetComponent<Image>().color = backGrey;
     }
 
     public void ShowSkills() {
-        skillsPanel.transform.SetSiblingIndex(3);
+        skillsPanel.transform.SetSiblingIndex(movesView.transform.childCount);
         generalTab.GetComponent<Image>().color = backGrey;
         entryTab.GetComponent<Image>().color = backGrey;
         skillsTab.GetComponent<Image>().color = frontGrey;
         movesTab.GetComponent<Image>().color = backGrey;
+        breedingTab.GetComponent<Image>().color = backGrey;
     }
 
     public void ShowMoves() {
-        movesPanel.transform.SetSiblingIndex(3);
+        movesPanel.transform.SetSiblingIndex(movesView.transform.childCount);
         generalTab.GetComponent<Image>().color = backGrey;
         entryTab.GetComponent<Image>().color = backGrey;
         skillsTab.GetComponent<Image>().color = backGrey;
         movesTab.GetComponent<Image>().color = frontGrey;
+        breedingTab.GetComponent<Image>().color = backGrey;
+    }
+
+    public void ShowBreeding() {
+        breedingPanel.transform.SetSiblingIndex(movesView.transform.childCount);
+        generalTab.GetComponent<Image>().color = backGrey;
+        entryTab.GetComponent<Image>().color = backGrey;
+        skillsTab.GetComponent<Image>().color = backGrey;
+        movesTab.GetComponent<Image>().color = backGrey;
+        breedingTab.GetComponent<Image>().color = frontGrey;
     }
 }
