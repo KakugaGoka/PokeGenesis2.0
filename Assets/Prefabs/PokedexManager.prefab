@@ -53,3 +53,7 @@ MonoBehaviour:
     type: 3}
   editDialogBox: {fileID: 7536172299456276388, guid: d439a8b5324a70b4cb63f08c7ff28208,
     type: 3}
+  pokedexPrefab: {fileID: 5872624402897464418, guid: 0b593bef7a3b47b43bd3d9a934a4fe0d,
+    type: 3}
+  movePrefab: {fileID: 3558793313090381047, guid: d21f14e535b32484784a08eada89ebe0,
+    type: 3}

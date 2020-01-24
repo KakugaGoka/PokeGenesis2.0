@@ -178,7 +178,8 @@ public class Pokemon {
         entry,
         basicAbility,
         advancedAbility,
-        highAbility;
+        highAbility,
+        notes;
 
     public int
         number,

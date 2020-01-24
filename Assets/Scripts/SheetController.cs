@@ -5,23 +5,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 
-public class SheetController : MonoBehaviour {
-
-    // Known bugs:
-    // NetworkServer need to not be started if there is no internet. Need a check for this. 
-
-    public GameObject pokedexPrefab;
-    public GameObject contentPanel;
+public class SheetController : MonoBehaviour { 
+    public GameObject movesView;
+    public GameObject contentView;
     public AudioSource cryAudioSource;
     public Image heldItemImage;
 
     public int capturedJSONCount = 0;
 
+    private bool
+        readyToUpdate = false;
+
     private Dropdown
         abilityDropdown,
         capabilityDropdown,
         skillDropdown,
-        moveDropdown,
         conditionDropdown,
         edgeDropdown,
         featureDropdown;
@@ -36,12 +34,20 @@ public class SheetController : MonoBehaviour {
 
     private Image
         megaImage,
-        altMegaImage;
+        altMegaImage,
+        spriteField,
+        dynaFrontField,
+        dynaBackField,
+        typeImage1,
+        typeImage2;
 
     private UnityEngine.UI.InputField
         nameField,
-        typeField,
+        numField,
+        notesField,
         sizeField,
+        typeField1,
+        typeField2,
         weightField,
         genderField,
         natureField,
@@ -79,12 +85,44 @@ public class SheetController : MonoBehaviour {
         loyaltyField,
         tutorPointsField;
 
+    private GameObject
+        infoPanel,
+        notesPanel,
+        skillsPanel,
+        movesPanel,
+        statsPanel,
+        tradePanel,
+        infoTab,
+        notesTab,
+        skillsTab,
+        movesTab,
+        statsTab,
+        tradeTab,
+        panelParent;
+
     private void Start() {
+        panelParent = GameObject.Find("Panels");
+        infoPanel = GameObject.Find("Info Panel");
+        notesPanel = GameObject.Find("Notes Panel");
+        skillsPanel = GameObject.Find("Skills Panel");
+        movesPanel = GameObject.Find("Moves Panel");
+        statsPanel = GameObject.Find("Stats Panel");
+        tradePanel = GameObject.Find("Trade Panel");
+
+        infoTab = GameObject.Find("Info Tab");
+        notesTab = GameObject.Find("Notes Tab");
+        skillsTab = GameObject.Find("Skills Tab");
+        movesTab = GameObject.Find("Moves Tab");
+        statsTab = GameObject.Find("Stats Tab");
+        tradeTab = GameObject.Find("Trade Tab");
+
         myNameField = GameObject.Find("My Name Field").GetComponent<UnityEngine.UI.InputField>();
         tradeNameField = GameObject.Find("Trade Name Field").GetComponent<UnityEngine.UI.InputField>();
         nameField = GameObject.Find("Name Field").GetComponent<UnityEngine.UI.InputField>();
-        nameField = GameObject.Find("Name Field").GetComponent<UnityEngine.UI.InputField>();
-        typeField = GameObject.Find("Types Field").GetComponent<UnityEngine.UI.InputField>();
+        notesField = GameObject.Find("Notes Field").GetComponent<UnityEngine.UI.InputField>();
+        numField = GameObject.Find("Number Field").GetComponent<UnityEngine.UI.InputField>();
+        typeField1 = GameObject.Find("Type Field 1").GetComponent<UnityEngine.UI.InputField>();
+        typeField2 = GameObject.Find("Type Field 2").GetComponent<UnityEngine.UI.InputField>();
         sizeField = GameObject.Find("Size Field").GetComponent<UnityEngine.UI.InputField>();
         weightField = GameObject.Find("Weight Field").GetComponent<UnityEngine.UI.InputField>();
         genderField = GameObject.Find("Gender Field").GetComponent<UnityEngine.UI.InputField>();
@@ -131,8 +169,12 @@ public class SheetController : MonoBehaviour {
 
         megaImage = GameObject.Find("Mega Image").GetComponent<Image>();
         altMegaImage = GameObject.Find("Alt Mega Image").GetComponent<Image>();
-
-        moveDropdown = GameObject.Find("Moves Dropdown").GetComponent<Dropdown>();
+        spriteField = GameObject.Find("Sprite Field").GetComponent<Image>();
+        dynaFrontField = GameObject.Find("DynaFront Field").GetComponent<Image>();
+        dynaBackField = GameObject.Find("DynaBack Field").GetComponent<Image>();
+        typeImage1 = GameObject.Find("Type Field 1").GetComponent<Image>();
+        typeImage2 = GameObject.Find("Type Field 2").GetComponent<Image>();
+        
         capabilityDropdown = GameObject.Find("Capabilities Dropdown").GetComponent<Dropdown>();
         abilityDropdown = GameObject.Find("Abilities Dropdown").GetComponent<Dropdown>();
         skillDropdown = GameObject.Find("Skills Dropdown").GetComponent<Dropdown>();
@@ -185,6 +227,7 @@ public class SheetController : MonoBehaviour {
     }
 
     private void Update() {
+        if (!readyToUpdate) { return; }
         if (PokedexManager.pokemonToEncounter.Count > 0 && PokedexManager.currentEntry == null) {
             try {
                 GameObject nextEntry = GameObject.Find("Encounter Content").transform.GetChild(0).gameObject;
@@ -204,8 +247,8 @@ public class SheetController : MonoBehaviour {
         if (capturedJSONCount != myFiles.Length) {
             capturedJSONCount = myFiles.Length;
             PokedexManager.pokemonToEncounter = new List<Pokemon>(); 
-            for (int i = 0; i < contentPanel.transform.childCount; i++) {
-                Destroy(contentPanel.transform.GetChild(i).gameObject);
+            for (int i = 0; i < contentView.transform.childCount; i++) {
+                Destroy(contentView.transform.GetChild(i).gameObject);
             }
             foreach (var file in myFiles) {
                 Pokemon pokemon = Pokemon.FromJson(file);
@@ -217,11 +260,11 @@ public class SheetController : MonoBehaviour {
     }
 
     public void CreateListItem(Pokemon pokemon) {
-        GameObject newPokemon = Instantiate(pokedexPrefab) as GameObject;
+        GameObject newPokemon = Instantiate(PokedexManager.manager.pokedexPrefab) as GameObject;
         PokedexEntry controller = newPokemon.GetComponent<PokedexEntry>();
         controller.pokemon = pokemon;
         controller.species.text = pokemon.CheckForNickname();
-        newPokemon.transform.SetParent(contentPanel.transform);
+        newPokemon.transform.SetParent(contentView.transform);
         newPokemon.transform.localScale = Vector3.one;
         if (pokemon.mega.inMegaForm) {
             pokemon.mega.sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + pokemon.mega.image);
@@ -274,11 +317,13 @@ public class SheetController : MonoBehaviour {
 
         entry.GetComponent<PokedexEntry>().species.text = pokemon.CheckForNickname();
         nameField.text = pokemon.CheckForNickname();
-        typeField.text = pokemon.GetCurrentType();
+        numField.text = pokemon.number.ToString();
         sizeField.text = pokemon.size == null ? "Unkown" : pokemon.size;
         weightField.text = pokemon.weight == null ? "Unkown" : pokemon.weight;
         genderField.text = pokemon.gender == null ? "Unkown" : pokemon.gender;
         natureField.text = pokemon.nature.name;
+        if (pokemon.notes == null) { pokemon.notes = ""; }
+        notesField.text = pokemon.notes;
 
         hpBaseField.text = pokemon.hp.ToString();
         atkBaseField.text = pokemon.atk.ToString();
@@ -320,6 +365,27 @@ public class SheetController : MonoBehaviour {
 
         levelField.text = pokemon.level.ToString();
         dynaLevelField.text = pokemon.dynamaxLevel.ToString();
+
+        string[] types = pokemon.type.Split('/');
+        foreach (var type in PokedexManager.types) {
+            if (types[0].Trim() == type.typeName) {
+                typeImage1.color = type.GetColor();
+                typeField1.text = type.typeName;
+                break;
+            }
+        }
+        if (types.Length > 1) {
+            foreach (var type in PokedexManager.types) {
+                if (types[1].Trim() == type.typeName) {
+                    typeImage2.color = type.GetColor();
+                    typeField2.text = type.typeName;
+                    break;
+                }
+            }
+        } else {
+            typeImage2.color = PokedexManager.frontGrey;
+            typeField2.text = "X";
+        }
 
         megaButton.interactable = pokemon.HasMega();
         altMegaButton.interactable = pokemon.HasAltMega();
@@ -392,13 +458,6 @@ public class SheetController : MonoBehaviour {
         conditionDropdown.AddOptions(conditionsList);
         GetCondition();
 
-        List<Dropdown.OptionData> moveList = new List<Dropdown.OptionData>();
-        foreach (var item in pokemon.knownMoveList) {
-            moveList.Add(new Dropdown.OptionData(item.name));
-        }
-        moveDropdown.ClearOptions();
-        moveDropdown.AddOptions(moveList);
-
         if (pokemon.heldItem.name == null || pokemon.heldItem.name == "None" || pokemon.heldItem.name == "") {
             pokemon.heldItem = new Item() {
                 name = "None",
@@ -449,15 +508,54 @@ public class SheetController : MonoBehaviour {
         featureDropdown.ClearOptions();
         featureDropdown.AddOptions(featureList);
 
+        spriteField.sprite = entry.GetComponent<PokedexEntry>().sprite.sprite;
+        if (pokemon.isDynamax) {
+            dynaBackField.sprite = Resources.Load<Sprite>("Icons/Dynamax");
+            dynaFrontField.sprite = Resources.Load<Sprite>("Icons/DynamaxFront");
+        } else {
+            dynaBackField.sprite = Resources.Load<Sprite>("Icons/None");
+            dynaFrontField.sprite = Resources.Load<Sprite>("Icons/None");
+        }
+
         heldItemImage.sprite = pokemon.heldItem.sprite;
         heldItemNameField.text = pokemon.heldItem == null ? "None" : pokemon.heldItem.name;
         loyaltyField.text = pokemon.loyalty.ToString();
         tutorPointsField.text = pokemon.tutorPoints.ToString();
+
+        if (pokemon.knownMoveList == null) {
+            pokemon.GetMoves();
+        }
+        for (int i = 0; i < movesView.transform.childCount; i++) {
+            Destroy(movesView.transform.GetChild(i).gameObject);
+        }
+        StartCoroutine(CreateMoveListItems(pokemon));
+    }
+
+    private IEnumerator<GameObject> CreateMoveListItems(Pokemon pokemon) {
+        foreach (Move move in pokemon.knownMoveList) {
+            GameObject newMove = Instantiate(PokedexManager.manager.movePrefab) as GameObject;
+            newMove.transform.parent = movesView.transform;
+            newMove.transform.localScale = Vector3.one;
+            MoveEntry controller = newMove.GetComponent<MoveEntry>();
+            foreach (var fullMove in PokedexManager.moves) {
+                if (fullMove.name == move.name) {
+                    controller.move = fullMove;
+                    controller.SetFields("Level " + move.level + " : " + fullMove.name);
+                    break;
+                }
+            }
+            yield return newMove;
+        }
     }
 
     public void ClearFields() {
         nameField.text = "";
-        typeField.text = "";
+        numField.text = "";
+        typeField1.text = "X";
+        typeField2.text = "X";
+        typeImage1.color = PokedexManager.frontGrey;
+        typeImage2.color = PokedexManager.frontGrey;
+        spriteField.sprite = Resources.Load<Sprite>("Icons/None");
         sizeField.text = "";
         weightField.text = "";
         genderField.text = "";
@@ -494,7 +592,6 @@ public class SheetController : MonoBehaviour {
         tutorPointsField.text = "";
         heldItemImage.sprite = PokedexManager.LoadSprite("Icons/Items/None");
         cryAudioSource.clip = null;
-        moveDropdown.ClearOptions();
         skillDropdown.ClearOptions();
         capabilityDropdown.ClearOptions();
         abilityDropdown.ClearOptions();
@@ -508,7 +605,8 @@ public class SheetController : MonoBehaviour {
         try {
             pokemon.SetNickname(nameField.text);
 
-            pokemon.type = typeField.text;
+            pokemon.notes = notesField.text;
+
             pokemon.size = sizeField.text;
             pokemon.weight = weightField.text;
             pokemon.gender = genderField.text;
@@ -874,5 +972,65 @@ public class SheetController : MonoBehaviour {
             return;
         }
         PokedexManager.currentPokemon.ExportToRoll20JSON();
+    }
+
+    public void ShowStats() {
+        statsPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        statsTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        infoTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        notesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        tradeTab.GetComponent<Image>().color = PokedexManager.backGrey;
+    }
+
+    public void ShowInfo() {
+        infoPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        statsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        infoTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        notesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        tradeTab.GetComponent<Image>().color = PokedexManager.backGrey;
+    }
+
+    public void ShowSkills() {
+        skillsPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        statsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        infoTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        notesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        tradeTab.GetComponent<Image>().color = PokedexManager.backGrey;
+    }
+
+    public void ShowMoves() {
+        movesPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        statsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        infoTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        notesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        tradeTab.GetComponent<Image>().color = PokedexManager.backGrey;
+    }
+
+    public void ShowNotes() {
+        notesPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        statsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        infoTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        notesTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        tradeTab.GetComponent<Image>().color = PokedexManager.backGrey;
+    }
+
+    public void ShowTrade() {
+        tradePanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        statsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        infoTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        notesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        tradeTab.GetComponent<Image>().color = PokedexManager.frontGrey;
     }
 }

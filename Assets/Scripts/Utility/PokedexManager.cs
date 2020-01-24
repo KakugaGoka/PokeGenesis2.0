@@ -28,6 +28,10 @@ public class PokedexManager : MonoBehaviour {
     static public bool networkAvailable;
     static public bool readyToLoadJSONs = false;
 
+    static public Color
+        frontGrey = new Color(0.8f, 0.8f, 0.8f, 1f),
+        backGrey = new Color(0.5f, 0.5f, 0.5f, 1f);
+
     static public string dataPath;
 
     public GameObject warningBox;
@@ -35,6 +39,8 @@ public class PokedexManager : MonoBehaviour {
     public GameObject tooltipBox;
     public GameObject sendingBox;
     public GameObject editDialogBox;
+    public GameObject pokedexPrefab;
+    public GameObject movePrefab;
 
     // Start is called before the first frame update
     void Awake() {

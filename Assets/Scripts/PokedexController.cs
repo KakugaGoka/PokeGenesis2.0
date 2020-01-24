@@ -3,14 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PokedexController : MonoBehaviour {
-    public GameObject pokedexPrefab;
-    public GameObject movePrefab;
     public GameObject contentView;
     public GameObject movesView;
-
-    private Color
-        frontGrey = new Color(0.8f, 0.8f, 0.8f, 1f),
-        backGrey = new Color(0.5f, 0.5f, 0.5f, 1f);
 
     private List<Pokemon> pokemonInView = new List<Pokemon>();
     private UnityEngine.UI.InputField
@@ -54,20 +48,22 @@ public class PokedexController : MonoBehaviour {
         entryTab,
         skillsTab,
         movesTab,
-        breedingTab;
+        breedingTab,
+        panelParent;
 
     private void Start() {
-        generalTab = GameObject.Find("General Tab");
-        entryTab = GameObject.Find("Entry Tab");
-        skillsTab = GameObject.Find("Skills Tab");
-        movesTab = GameObject.Find("Moves Tab");
-        breedingTab = GameObject.Find("Breeding Tab");
-
+        panelParent = GameObject.Find("Panels");
         generalPanel = GameObject.Find("General Panel");
         entryPanel = GameObject.Find("Entry Panel");
         skillsPanel = GameObject.Find("Skills Panel");
         movesPanel = GameObject.Find("Moves Panel");
         breedingPanel = GameObject.Find("Breeding Panel");
+
+        generalTab = GameObject.Find("General Tab");
+        entryTab = GameObject.Find("Entry Tab");
+        skillsTab = GameObject.Find("Skills Tab");
+        movesTab = GameObject.Find("Moves Tab");
+        breedingTab = GameObject.Find("Breeding Tab");
 
         nameField = GameObject.Find("Name Field").GetComponent<UnityEngine.UI.InputField>();
         numField = GameObject.Find("Number Field").GetComponent<UnityEngine.UI.InputField>();
@@ -134,7 +130,7 @@ public class PokedexController : MonoBehaviour {
 
     private IEnumerator<GameObject> CreateListItem() {
         foreach (Pokemon pokemon in pokemonInView) {
-            GameObject newPokemon = Instantiate(pokedexPrefab) as GameObject;
+            GameObject newPokemon = Instantiate(PokedexManager.manager.pokedexPrefab) as GameObject;
             newPokemon.transform.SetParent(contentView.transform);
             newPokemon.transform.localScale = Vector3.one;
             PokedexEntry controller = newPokemon.GetComponent<PokedexEntry>();
@@ -208,7 +204,7 @@ public class PokedexController : MonoBehaviour {
                 }
             }
         } else {
-            typeImage2.color = frontGrey;
+            typeImage2.color = PokedexManager.frontGrey;
             typeField2.text = "X";
         }
         
@@ -257,7 +253,7 @@ public class PokedexController : MonoBehaviour {
 
     private IEnumerator<GameObject> CreateMoveListItems(Pokemon pokemon) {
         foreach (Move move in pokemon.movesList) {
-            GameObject newMove = Instantiate(movePrefab) as GameObject;
+            GameObject newMove = Instantiate(PokedexManager.manager.movePrefab) as GameObject;
             newMove.transform.parent = movesView.transform;
             newMove.transform.localScale = Vector3.one;
             MoveEntry controller = newMove.GetComponent<MoveEntry>();
@@ -273,47 +269,47 @@ public class PokedexController : MonoBehaviour {
     }
 
     public void ShowGeneral() {
-        generalPanel.transform.SetSiblingIndex(movesView.transform.childCount);
-        generalTab.GetComponent<Image>().color = frontGrey;
-        entryTab.GetComponent<Image>().color = backGrey;
-        skillsTab.GetComponent<Image>().color = backGrey;
-        movesTab.GetComponent<Image>().color = backGrey;
-        breedingTab.GetComponent<Image>().color = backGrey;
+        generalPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        generalTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        entryTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        breedingTab.GetComponent<Image>().color = PokedexManager.backGrey;
     }
 
     public void ShowEntry() {
-        entryPanel.transform.SetSiblingIndex(movesView.transform.childCount);
-        generalTab.GetComponent<Image>().color = backGrey;
-        entryTab.GetComponent<Image>().color = frontGrey;
-        skillsTab.GetComponent<Image>().color = backGrey;
-        movesTab.GetComponent<Image>().color = backGrey;
-        breedingTab.GetComponent<Image>().color = backGrey;
+        entryPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        generalTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        entryTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        breedingTab.GetComponent<Image>().color = PokedexManager.backGrey;
     }
 
     public void ShowSkills() {
-        skillsPanel.transform.SetSiblingIndex(movesView.transform.childCount);
-        generalTab.GetComponent<Image>().color = backGrey;
-        entryTab.GetComponent<Image>().color = backGrey;
-        skillsTab.GetComponent<Image>().color = frontGrey;
-        movesTab.GetComponent<Image>().color = backGrey;
-        breedingTab.GetComponent<Image>().color = backGrey;
+        skillsPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        generalTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        entryTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        breedingTab.GetComponent<Image>().color = PokedexManager.backGrey;
     }
 
     public void ShowMoves() {
-        movesPanel.transform.SetSiblingIndex(movesView.transform.childCount);
-        generalTab.GetComponent<Image>().color = backGrey;
-        entryTab.GetComponent<Image>().color = backGrey;
-        skillsTab.GetComponent<Image>().color = backGrey;
-        movesTab.GetComponent<Image>().color = frontGrey;
-        breedingTab.GetComponent<Image>().color = backGrey;
+        movesPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        generalTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        entryTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        breedingTab.GetComponent<Image>().color = PokedexManager.backGrey;
     }
 
     public void ShowBreeding() {
-        breedingPanel.transform.SetSiblingIndex(movesView.transform.childCount);
-        generalTab.GetComponent<Image>().color = backGrey;
-        entryTab.GetComponent<Image>().color = backGrey;
-        skillsTab.GetComponent<Image>().color = backGrey;
-        movesTab.GetComponent<Image>().color = backGrey;
-        breedingTab.GetComponent<Image>().color = frontGrey;
+        breedingPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        generalTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        entryTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        breedingTab.GetComponent<Image>().color = PokedexManager.frontGrey;
     }
 }
