@@ -6,8 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EncounterController : MonoBehaviour {
-    public GameObject pokedexPrefab;
-    public GameObject contentPanel;
+    public GameObject contentView;
+    public GameObject movesView;
     public Slider encounterSlider;
     public Slider minLevelSlider;
     public Slider maxLevelSlider;
@@ -23,19 +23,20 @@ public class EncounterController : MonoBehaviour {
         allowLegendaries,
         allowHeldItems,
         alwaysHoldItem,
-        scanInProgress;
+        scanInProgress,
+        readyToUpdate = false;
 
     private Dropdown
         abilityDropdown,
         capabilityDropdown,
         skillDropdown,
-        moveDropdown,
         conditionDropdown,
         natureDropdown,
         typeDropdown,
         pokemonDropdown,
         stageDropdown,
-        habitatDropdown;
+        habitatDropdown,
+        routeDropdown;
 
     private Toggle
         conditionToggle;
@@ -47,11 +48,18 @@ public class EncounterController : MonoBehaviour {
 
     private Image
         megaImage,
-        altMegaImage;
+        altMegaImage,
+        spriteField,
+        dynaFrontField,
+        dynaBackField,
+        typeImage1,
+        typeImage2;
 
     private UnityEngine.UI.InputField
         nameField,
-        typeField,
+        typeField1,
+        typeField2,
+        numField,
         sizeField,
         weightField,
         genderField,
@@ -87,9 +95,41 @@ public class EncounterController : MonoBehaviour {
         heldItemNameField,
         captureRateField;
 
+    private GameObject
+        infoPanel,
+        scanPanel,
+        skillsPanel,
+        movesPanel,
+        statsPanel,
+        settingsPanel,
+        infoTab,
+        scanTab,
+        skillsTab,
+        movesTab,
+        statsTab,
+        settingsTab,
+        panelParent;
+
     private void Start() {
+        panelParent = GameObject.Find("Panels");
+        infoPanel = GameObject.Find("Info Panel");
+        scanPanel = GameObject.Find("Scan Panel");
+        skillsPanel = GameObject.Find("Skills Panel");
+        movesPanel = GameObject.Find("Moves Panel");
+        statsPanel = GameObject.Find("Stats Panel");
+        settingsPanel = GameObject.Find("Settings Panel");
+
+        infoTab = GameObject.Find("Info Tab");
+        scanTab = GameObject.Find("Scan Tab");
+        skillsTab = GameObject.Find("Skills Tab");
+        movesTab = GameObject.Find("Moves Tab");
+        statsTab = GameObject.Find("Stats Tab");
+        settingsTab = GameObject.Find("Settings Tab");
+
         nameField = GameObject.Find("Name Field").GetComponent<UnityEngine.UI.InputField>();
-        typeField = GameObject.Find("Types Field").GetComponent<UnityEngine.UI.InputField>();
+        numField = GameObject.Find("Number Field").GetComponent<UnityEngine.UI.InputField>();
+        typeField1 = GameObject.Find("Type Field 1").GetComponent<UnityEngine.UI.InputField>();
+        typeField2 = GameObject.Find("Type Field 2").GetComponent<UnityEngine.UI.InputField>();
         sizeField = GameObject.Find("Size Field").GetComponent<UnityEngine.UI.InputField>();
         weightField = GameObject.Find("Weight Field").GetComponent<UnityEngine.UI.InputField>();
         genderField = GameObject.Find("Gender Field").GetComponent<UnityEngine.UI.InputField>();
@@ -135,8 +175,12 @@ public class EncounterController : MonoBehaviour {
 
         megaImage = GameObject.Find("Mega Image").GetComponent<Image>();
         altMegaImage = GameObject.Find("Alt Mega Image").GetComponent<Image>();
+        spriteField = GameObject.Find("Sprite Field").GetComponent<Image>();
+        dynaFrontField = GameObject.Find("DynaFront Field").GetComponent<Image>();
+        dynaBackField = GameObject.Find("DynaBack Field").GetComponent<Image>();
+        typeImage1 = GameObject.Find("Type Field 1").GetComponent<Image>();
+        typeImage2 = GameObject.Find("Type Field 2").GetComponent<Image>();
 
-        moveDropdown = GameObject.Find("Moves Dropdown").GetComponent<Dropdown>();
         capabilityDropdown = GameObject.Find("Capabilities Dropdown").GetComponent<Dropdown>();
         abilityDropdown = GameObject.Find("Abilities Dropdown").GetComponent<Dropdown>();
         skillDropdown = GameObject.Find("Skills Dropdown").GetComponent<Dropdown>();
@@ -146,6 +190,7 @@ public class EncounterController : MonoBehaviour {
         stageDropdown = GameObject.Find("Stage Dropdown").GetComponent<Dropdown>();
         pokemonDropdown = GameObject.Find("Pokemon Dropdown").GetComponent<Dropdown>();
         typeDropdown = GameObject.Find("Type Dropdown").GetComponent<Dropdown>();
+        routeDropdown = GameObject.Find("Route Dropdown").GetComponent<Dropdown>();
 
         List<Dropdown.OptionData> habitatOptions = new List<Dropdown.OptionData>();
         habitatOptions.Add(new Dropdown.OptionData("Any Habitat"));
@@ -168,19 +213,31 @@ public class EncounterController : MonoBehaviour {
         }
         typeDropdown.AddOptions(typeOptions);
 
-        List<Dropdown.OptionData> pokemonOptions = new List<Dropdown.OptionData>();
-        pokemonOptions.Add(new Dropdown.OptionData("Any Pokemon"));
-        foreach (Pokemon pokemon in PokedexManager.pokedex) {
-            pokemonOptions.Add(new Dropdown.OptionData(pokemon.species));
-        }
-        pokemonDropdown.AddOptions(pokemonOptions);
-
         List<Dropdown.OptionData> stageOptions = new List<Dropdown.OptionData>();
         stageOptions.Add(new Dropdown.OptionData("Any Stage"));
         stageOptions.Add(new Dropdown.OptionData("Stage 1"));
         stageOptions.Add(new Dropdown.OptionData("Stage 2"));
         stageOptions.Add(new Dropdown.OptionData("Stage 3"));
+        stageOptions.Add(new Dropdown.OptionData("Stage 1 or 2"));
+        stageOptions.Add(new Dropdown.OptionData("Stage 1 or 3"));
+        stageOptions.Add(new Dropdown.OptionData("Stage 2 or 3"));
         stageDropdown.AddOptions(stageOptions);
+
+        List<Dropdown.OptionData> routesList = new List<Dropdown.OptionData>();
+        routesList.Add(new Dropdown.OptionData("Any Route"));
+        foreach (Route route in PokedexManager.routes) {
+            routesList.Add(new Dropdown.OptionData(route.name));
+        }
+        routeDropdown.ClearOptions();
+        routeDropdown.AddOptions(routesList);
+
+        List<Dropdown.OptionData> pokemonOptions = new List<Dropdown.OptionData>();
+        pokemonOptions.Add(new Dropdown.OptionData("Any Pokemon"));
+        foreach (Pokemon pokemon in PokedexManager.pokedex) {
+            pokemonOptions.Add(new Dropdown.OptionData(pokemon.species));
+        }
+        pokemonDropdown.ClearOptions();
+        pokemonDropdown.AddOptions(pokemonOptions);
 
         heldItemImage.sprite = PokedexManager.LoadSprite("Icons/Items/None");
 
@@ -284,9 +341,12 @@ public class EncounterController : MonoBehaviour {
             PokedexManager.pokemonToEncounter.Add(pokemon);
             CreateListItem(pokemon);
         }
+
+        readyToUpdate = true;
     }
 
     private void Update() {
+        if (!readyToUpdate) { return; }
         if (PokedexManager.pokemonToEncounter.Count > 0 && PokedexManager.currentEntry == null) {
             try {
                 GameObject nextEntry = GameObject.Find("Encounter Content").transform.GetChild(0).gameObject;
@@ -305,23 +365,59 @@ public class EncounterController : MonoBehaviour {
 
     public void OnScan() {
         if (scanInProgress) { return; }
-        Debug.Log("Scan Begin");
         scanInProgress = true;
         // Get the check box fields to apply to the private bools. 
         appendScan = GameObject.Find("Append to List").GetComponent<Toggle>().isOn;
+
+        CreateScanList();
+
+        if (encounterablePokemon.Count() < 1) {
+            PokedexManager.manager.CreateWarningDialog("No pokemon to encounter with these settings.");
+            return;
+        }
+
+        if (!appendScan) {
+            PokedexManager.pokemonToEncounter = new List<Pokemon>();
+            foreach (var file in Directory.EnumerateFiles(Path.Combine(PokedexManager.dataPath, "tmp/"))) {
+                File.Delete(file);
+            }
+        }
+
+        // Clear out the old prefabs so that all UI items are correct ad their are no duplicates.
+        // This is a quick and dirty method to do this, but could be optimized to just ensure no recreations of each encounterEntry in the future. 
+        for (int i = 0; i < contentView.transform.childCount; i++) {
+            Destroy(contentView.transform.GetChild(i).gameObject);
+        }
+
+        // Add a number of new pokemon to the list equal to the slider value.
+        AddPokemon(encounterSlider.value);
+
+        foreach(Pokemon pokemon in PokedexManager.pokemonToEncounter) {
+            CreateListItem(pokemon);
+        }
+
+        scanInProgress = false;
+    }
+
+    public void CreateScanList() {
         allowShinies = GameObject.Find("Allow Shinies").GetComponent<Toggle>().isOn;
         alwaysShiny = GameObject.Find("Always Shiny").GetComponent<Toggle>().isOn;
         allowLegendaries = GameObject.Find("Allow Legendaries").GetComponent<Toggle>().isOn;
         allowHeldItems = GameObject.Find("Allow Held Items").GetComponent<Toggle>().isOn;
         alwaysHoldItem = GameObject.Find("Always Hold Item").GetComponent<Toggle>().isOn;
 
-        // Clean the lists to ensure proper data is used fro the scans
-        encounterablePokemon = new List<Pokemon>();
-        Debug.Log("UI Info Gathered");
+        // Clean the lists to ensure proper data is used for the scans
+        encounterablePokemon.Clear();
 
         // Ensure that no pokemon is added that does not fit the parameters, like legendary or habitat. 
         // This should be pushed into its own function when all of the fields are added so to keep this function clean.
         foreach (Pokemon pokemon in PokedexManager.pokedex) {
+            string route = routeDropdown.options[routeDropdown.value].text;
+            if (route != "Any Route") {
+                Route thisRoute = PokedexManager.routes.First(x => x.name == route);
+                string thisPokemon = thisRoute.pokemon.FirstOrDefault(x => x == pokemon.species);
+                if (thisPokemon == null) { continue; }
+            }
             if (!allowLegendaries && pokemon.legendary) {
                 continue;
             }
@@ -340,49 +436,39 @@ public class EncounterController : MonoBehaviour {
                 continue;
             } else if (stage == "Stage 3" && pokemon.stage != 3) {
                 continue;
-            }
-            string species = pokemonDropdown.options[pokemonDropdown.value].text;
-            if (species != "Any Pokemon" && species != pokemon.species) {
+            } else if (stage == "Stage 1 or 2" && pokemon.stage == 3) {
+                continue;
+            } else if (stage == "Stage 1 or 3" && pokemon.stage == 2) {
+                continue;
+            } else if (stage == "Stage 2 or 3" && pokemon.stage == 1) {
                 continue;
             }
-            encounterablePokemon.Add(pokemon);
-        }
-        Debug.Log("Encounterable Pokemon Gathered");
-        if (encounterablePokemon.Count() < 1) {
-            Debug.LogError("No pokemon to encounter with these settings.");
-            return;
-        }
-
-        if (!appendScan) {
-            PokedexManager.pokemonToEncounter = new List<Pokemon>();
-            foreach (var file in Directory.EnumerateFiles(Path.Combine(PokedexManager.dataPath, "tmp/"))) {
-                File.Delete(file);
+            string species = pokemonDropdown.options[pokemonDropdown.value].text;
+            if ((species != "Any Pokemon" && species != "No Pokemon") && species != pokemon.species) {
+                continue;
             }
+            encounterablePokemon.Add(pokemon.Clone());
         }
-
-        // Clear out the old prefabs so that all UI items are correct ad their are no duplicates.
-        // This is a quick and dirty method to do this, but could be optimized to just ensure no recreations of each encounterEntry in the future. 
-        for (int i = 0; i < contentPanel.transform.childCount; i++) {
-            Destroy(contentPanel.transform.GetChild(i).gameObject);
+        pokemonDropdown.ClearOptions();
+        List<Dropdown.OptionData> pokemonOptions = new List<Dropdown.OptionData>();
+        if (encounterablePokemon.Count() < 1) {
+            pokemonOptions.Add(new Dropdown.OptionData("No Pokemon"));
+            pokemonDropdown.AddOptions(pokemonOptions);
+        } else {
+            pokemonOptions.Add(new Dropdown.OptionData("Any Pokemon"));
+            foreach (Pokemon pokemon in encounterablePokemon) {
+                pokemonOptions.Add(new Dropdown.OptionData(pokemon.species));
+            }
+            pokemonDropdown.AddOptions(pokemonOptions);
         }
-        Debug.Log("Old Displays Destroyed");
-
-        // Add a number of new pokemon to the list equal to the slider value.
-        AddPokemon(encounterSlider.value);
-
-        foreach(Pokemon pokemon in PokedexManager.pokemonToEncounter) {
-            CreateListItem(pokemon);
-        }
-
-        scanInProgress = false;
     }
 
     public void CreateListItem(Pokemon pokemon) {
-        GameObject newPokemon = Instantiate(pokedexPrefab) as GameObject;
+        GameObject newPokemon = Instantiate(PokedexManager.manager.pokedexPrefab) as GameObject;
         PokedexEntry controller = newPokemon.GetComponent<PokedexEntry>();
         controller.pokemon = pokemon;
         controller.species.text = pokemon.CheckForNickname();
-        newPokemon.transform.SetParent(contentPanel.transform);
+        newPokemon.transform.SetParent(contentView.transform);
         newPokemon.transform.localScale = Vector3.one;
         if (pokemon.mega.inMegaForm) {
             pokemon.mega.sprite = PokedexManager.LoadSprite("Icons/Pokemon/" + pokemon.mega.image);
@@ -434,7 +520,7 @@ public class EncounterController : MonoBehaviour {
 
         entry.GetComponent<PokedexEntry>().species.text = pokemon.CheckForNickname();
         nameField.text = pokemon.CheckForNickname();
-        typeField.text = pokemon.GetCurrentType();
+        numField.text = pokemon.number.ToString();
         sizeField.text = pokemon.size == null ? "Unkown" : pokemon.size;
         weightField.text = pokemon.weight == null ? "Unkown" : pokemon.weight;
         genderField.text = pokemon.gender == null ? "Unkown" : pokemon.gender;
@@ -487,6 +573,27 @@ public class EncounterController : MonoBehaviour {
 
         levelField.text = pokemon.level.ToString();
         dynaLevelField.text = pokemon.dynamaxLevel.ToString();
+
+        string[] types = pokemon.type.Split('/');
+        foreach (var type in PokedexManager.types) {
+            if (types[0].Trim() == type.typeName) {
+                typeImage1.color = type.GetColor();
+                typeField1.text = type.typeName;
+                break;
+            }
+        }
+        if (types.Length > 1) {
+            foreach (var type in PokedexManager.types) {
+                if (types[1].Trim() == type.typeName) {
+                    typeImage2.color = type.GetColor();
+                    typeField2.text = type.typeName;
+                    break;
+                }
+            }
+        } else {
+            typeImage2.color = PokedexManager.frontGrey;
+            typeField2.text = "X";
+        }
 
         megaButton.interactable = pokemon.HasMega();
         altMegaButton.interactable = pokemon.HasAltMega();
@@ -560,13 +667,6 @@ public class EncounterController : MonoBehaviour {
         conditionDropdown.AddOptions(conditionsList);
         GetCondition();
 
-        List<Dropdown.OptionData> moveList = new List<Dropdown.OptionData>();
-        foreach (var item in pokemon.knownMoveList) {
-            moveList.Add(new Dropdown.OptionData(item.name));
-        }
-        moveDropdown.ClearOptions();
-        moveDropdown.AddOptions(moveList);
-
         if (pokemon.heldItem.name == null || pokemon.heldItem.name == "None" || pokemon.heldItem.name == "") {
             pokemon.heldItem = new Item() {
                 name = "None",
@@ -603,10 +703,57 @@ public class EncounterController : MonoBehaviour {
         skillDropdown.ClearOptions();
         skillDropdown.AddOptions(skillList);
 
+        spriteField.sprite = entry.GetComponent<PokedexEntry>().sprite.sprite;
+        if (pokemon.isDynamax) {
+            dynaBackField.sprite = Resources.Load<Sprite>("Icons/Dynamax");
+            dynaFrontField.sprite = Resources.Load<Sprite>("Icons/DynamaxFront");
+        } else {
+            dynaBackField.sprite = Resources.Load<Sprite>("Icons/None");
+            dynaFrontField.sprite = Resources.Load<Sprite>("Icons/None");
+        }
+
         heldItemImage.sprite = pokemon.heldItem.sprite;
         heldItemNameField.text = pokemon.heldItem == null ? "None" : pokemon.heldItem.name;
 
         captureRateField.text = pokemon.captureRate.ToString() + " or less";
+
+        if (pokemon.knownMoveList == null) {
+            pokemon.GetMoves();
+        }
+        for (int i = 0; i < movesView.transform.childCount; i++) {
+            Destroy(movesView.transform.GetChild(i).gameObject);
+        }
+        StartCoroutine(CreateMoveListItems(pokemon));
+    }
+
+    private IEnumerator<GameObject> CreateMoveListItems(Pokemon pokemon) {
+        foreach (Move move in pokemon.knownMoveList) {
+            GameObject newMove = Instantiate(PokedexManager.manager.movePrefab) as GameObject;
+            newMove.transform.parent = movesView.transform;
+            newMove.transform.localScale = Vector3.one;
+            MoveEntry controller = newMove.GetComponent<MoveEntry>();
+            foreach (var fullMove in PokedexManager.moves) {
+                if (fullMove.name == move.name) {
+                    controller.move = fullMove;
+                    controller.SetFields("Level " + move.level + " : " + fullMove.name);
+                    break;
+                }
+            }
+            yield return newMove;
+        }
+    }
+
+    public void SetRouteDetails() {
+        string route = routeDropdown.options[routeDropdown.value].text;
+        if (route != "Any Route") {
+            Route thisRoute = PokedexManager.routes.First(x => x.name == route);
+            GameObject.Find("Allow Shinies").GetComponent<Toggle>().isOn = thisRoute.allowShiny;
+            GameObject.Find("Allow Legendaries").GetComponent<Toggle>().isOn = thisRoute.allowLegends;
+            GameObject.Find("Allow Held Items").GetComponent<Toggle>().isOn = thisRoute.allowItems;
+            GameObject.Find("Min Level Slider").GetComponent<Slider>().value = thisRoute.minLevel;
+            GameObject.Find("Max Level Slider").GetComponent<Slider>().value = thisRoute.maxLevel;
+        }
+        CreateScanList();
     }
 
     public void UpdateEncounterSliderNumber() {
@@ -667,7 +814,13 @@ public class EncounterController : MonoBehaviour {
 
     public void ClearFields() {
         nameField.text = "";
-        typeField.text = "";
+        typeField1.text = "X";
+        typeField2.text = "X";
+        typeImage1.color = PokedexManager.frontGrey;
+        typeImage2.color = PokedexManager.frontGrey;
+        spriteField.sprite = Resources.Load<Sprite>("Icons/None");
+        dynaBackField.sprite = Resources.Load<Sprite>("Icons/None");
+        dynaFrontField.sprite = Resources.Load<Sprite>("Icons/None");
         sizeField.text = "";
         weightField.text = "";
         genderField.text = "";
@@ -702,19 +855,20 @@ public class EncounterController : MonoBehaviour {
         heldItemNameField.text = "";
         heldItemImage.sprite = PokedexManager.LoadSprite("Icons/Items/None");
         cryAudioSource.clip = null;
-        moveDropdown.ClearOptions();
         skillDropdown.ClearOptions();
         capabilityDropdown.ClearOptions();
         abilityDropdown.ClearOptions();
         conditionDropdown.ClearOptions();
+        for (int i = 0; i < movesView.transform.childCount; i++) {
+            Destroy(movesView.transform.GetChild(i).gameObject);
+        }
     }
 
     public void SetStats() {
         Pokemon pokemon = PokedexManager.currentPokemon;
         try {
             pokemon.SetNickname(nameField.text);
-
-            pokemon.type = typeField.text;
+            
             pokemon.size = sizeField.text;
             pokemon.weight = weightField.text;
             pokemon.gender = genderField.text;
@@ -1016,5 +1170,65 @@ public class EncounterController : MonoBehaviour {
         }
         OnSelected(pokemon, PokedexManager.currentEntry);
         pokemon.ToJson(pokemon.savePath, true);
+    }
+
+    public void ShowStats() {
+        statsPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        statsTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        infoTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        scanTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        settingsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+    }
+
+    public void ShowInfo() {
+        infoPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        statsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        infoTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        scanTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        settingsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+    }
+
+    public void ShowSkills() {
+        skillsPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        statsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        infoTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        scanTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        settingsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+    }
+
+    public void ShowMoves() {
+        movesPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        statsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        infoTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        scanTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        settingsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+    }
+
+    public void ShowScan() {
+        scanPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        statsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        infoTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        scanTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        settingsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+    }
+
+    public void ShowSettings() {
+        settingsPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        statsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        infoTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        skillsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        movesTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        scanTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        settingsTab.GetComponent<Image>().color = PokedexManager.frontGrey;
     }
 }

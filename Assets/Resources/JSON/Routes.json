@@ -1,0 +1,17 @@
+﻿{
+	"Items": [
+		{
+			"name": "Route 101",
+			"minLevel": 1,
+			"maxLevel": 5,
+			"allowShiny": false,
+			"allowItems": false,
+			"allowLegends": false,
+			"pokemon": [
+				"Caterpie",
+				"Pidgey",
+				"Rattata"
+			]
+		}
+	]
+}

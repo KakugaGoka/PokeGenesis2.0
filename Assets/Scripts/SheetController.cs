@@ -224,6 +224,7 @@ public class SheetController : MonoBehaviour {
             Server.server.startServer = true;
         }
         myNameField.text = PokedexManager.GetLocalIPAddress();
+        readyToUpdate = true;
     }
 
     private void Update() {
@@ -556,6 +557,8 @@ public class SheetController : MonoBehaviour {
         typeImage1.color = PokedexManager.frontGrey;
         typeImage2.color = PokedexManager.frontGrey;
         spriteField.sprite = Resources.Load<Sprite>("Icons/None");
+        dynaBackField.sprite = Resources.Load<Sprite>("Icons/None");
+        dynaFrontField.sprite = Resources.Load<Sprite>("Icons/None");
         sizeField.text = "";
         weightField.text = "";
         genderField.text = "";
@@ -598,6 +601,9 @@ public class SheetController : MonoBehaviour {
         conditionDropdown.ClearOptions();
         edgeDropdown.ClearOptions();
         featureDropdown.ClearOptions();
+        for (int i = 0; i < movesView.transform.childCount; i++) {
+            Destroy(movesView.transform.GetChild(i).gameObject);
+        }
     }
 
     public void SetStats() {

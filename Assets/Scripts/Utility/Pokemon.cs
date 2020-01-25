@@ -8,6 +8,24 @@ using UnityEngine;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+[Serializable]
+public class Route {
+    public string
+        name;
+
+    public string[]
+        pokemon;
+
+    public bool
+        allowItems,
+        allowShiny,
+        allowLegends;
+
+    public int
+        minLevel,
+        maxLevel;
+}
+
 public class BaseRelations {
     public string 
         name;

@@ -21,6 +21,7 @@ public class PokedexManager : MonoBehaviour {
     static public Info[] skillsInfo;
     static public Info[] capabilitiesInfo;
     static public Info[] conditionsInfo;
+    static public Route[] routes;
 
     static public Pokemon currentPokemon;
     static public GameObject currentEntry;
@@ -123,6 +124,11 @@ public class PokedexManager : MonoBehaviour {
         if (!File.Exists(Path.Combine(dataPath, "JSON/Skills.json"))) {
             currentJSON = Resources.Load<TextAsset>("JSON/Skills");
             File.WriteAllText(Path.Combine(dataPath, "JSON/Skills.json"), currentJSON.text);
+        }
+        // Routes 
+        if (!File.Exists(Path.Combine(dataPath, "JSON/Routes.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/Routes");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/Routes.json"), currentJSON.text);
         }
     }
 
@@ -263,6 +269,11 @@ public class PokedexManager : MonoBehaviour {
             conditionsInfo = JsonHelper.FromJson<Info>(conditionString);
             conditionsInfo = conditionsInfo.OrderBy(x => x.name).ToArray();
             Debug.Log("Condition Info Count: " + conditionsInfo.Count());
+
+            string routesString = File.ReadAllText(Path.Combine(dataPath, "JSON/Routes.json"));
+            routes = JsonHelper.FromJson<Route>(routesString);
+            routes = routes.OrderBy(x => x.name).ToArray();
+            Debug.Log("Routes Count: " + routes.Count());
 
             readyToLoadJSONs = false;
         }
