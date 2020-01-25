@@ -1115,5 +1115,10 @@ public class Pokemon {
             }
         }
         File.WriteAllText(Path.Combine(PokedexManager.dataPath, "Roll20_" + savePath), sb.ToString());
+        TextEditor editor = new TextEditor();
+        editor.text = sb.ToString();
+        editor.SelectAll();
+        editor.Copy();
+        PokedexManager.manager.CreateWarningDialog("Pokemon has been saved to JSON, and the contents copied to your clipboard.");
     }
 }
