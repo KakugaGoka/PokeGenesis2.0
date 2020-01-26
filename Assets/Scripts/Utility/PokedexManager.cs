@@ -25,6 +25,8 @@ public class PokedexManager : MonoBehaviour {
 
     static public Pokemon currentPokemon;
     static public GameObject currentEntry;
+    static public GameObject currentItem;
+    static public GameObject currentItemList;
     static public List<Pokemon> pokemonToEncounter = new List<Pokemon>();
     static public bool networkAvailable;
     static public bool readyToLoadJSONs = false;
@@ -42,6 +44,8 @@ public class PokedexManager : MonoBehaviour {
     public GameObject editDialogBox;
     public GameObject pokedexPrefab;
     public GameObject movePrefab;
+    public GameObject itemPrefab;
+    public GameObject itemListPrefab;
 
     // Start is called before the first frame update
     void Awake() {
@@ -58,6 +62,9 @@ public class PokedexManager : MonoBehaviour {
         }
         if (!Directory.Exists(Path.Combine(dataPath, "tmp/"))) {
             Directory.CreateDirectory(Path.Combine(dataPath, "tmp/"));
+        }
+        if (!Directory.Exists(Path.Combine(dataPath, "ItemLists/"))) {
+            Directory.CreateDirectory(Path.Combine(dataPath, "ItemLists/"));
         }
         WriteOutJSONs();
         WriteOutCries();
@@ -139,7 +146,7 @@ public class PokedexManager : MonoBehaviour {
 
         // Write all items icons to file
         TextAsset[] cries = Resources.LoadAll<TextAsset>("Cries/");
-        Debug.Log(cries.Length);
+        Debug.Log("Cries Count: " + cries.Length);
         foreach (var cry in cries) {
             if (!File.Exists(Path.Combine(dataPath, "Cries/", cry.name + ".ogg"))) {
                 byte[] bytes = cry.bytes;
@@ -207,26 +214,8 @@ public class PokedexManager : MonoBehaviour {
 
             // Load in Items from JSON
             string itemsString = File.ReadAllText(Path.Combine(dataPath, "JSON/Items.json"));
-            Item[] tempItems = JsonHelper.FromJson<Item>(itemsString);
-            List<Item> itemsList = new List<Item>();
-            for (int i = 0; i < tempItems.Length; i++) {
-                if (tempItems[i].tier == 1) {
-                    itemsList.Add(tempItems[i]);
-                    itemsList.Add(tempItems[i]);
-                    itemsList.Add(tempItems[i]);
-                    itemsList.Add(tempItems[i]);
-                } else if (tempItems[i].tier == 2) {
-                    itemsList.Add(tempItems[i]);
-                    itemsList.Add(tempItems[i]);
-                    itemsList.Add(tempItems[i]);
-                } else if (tempItems[i].tier == 3) {
-                    itemsList.Add(tempItems[i]);
-                    itemsList.Add(tempItems[i]);
-                } else if (tempItems[i].tier == 4) {
-                    itemsList.Add(tempItems[i]);
-                }
-            }
-            items = itemsList.ToArray();
+            items = JsonHelper.FromJson<Item>(itemsString);
+            items = items.OrderBy(x => x.name).ToArray();
             Debug.Log("Items Count: " + items.Count());
 
             string tmString = File.ReadAllText(Path.Combine(dataPath, "JSON/TMs.json"));
@@ -310,6 +299,18 @@ public class PokedexManager : MonoBehaviour {
         Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(texture.width / 2, texture.height / 2));
 
         return sprite;
+    }
+
+    static public string ValidatePath(string path, int iteration = 0) {
+        string newPath = path;
+        if (File.Exists(Path.Combine(PokedexManager.dataPath, path))) {
+            bool match = Regex.IsMatch(newPath, @"_[\d-]*[\d-]");
+            if (match == true) {
+                newPath = Regex.Replace(newPath, @"_[\d-]*[\d-]", "");
+            }
+            newPath = ValidatePath(newPath.Replace(".json", "_" + iteration.ToString() + ".json"), iteration + 1);
+        }
+        return newPath;
     }
 
     private void OnApplicationQuit() {

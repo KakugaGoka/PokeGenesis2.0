@@ -24,6 +24,10 @@ public class Tooltip : MonoBehaviour
         PokedexManager.manager.CreateTooltipDialog(move.name, move.typeName, MoveToolTip(move), color);
     }
 
+    public void ShowItemToolTipFromPrefab(Item item) {
+        PokedexManager.manager.CreateTooltipDialog(item.name, item.group, ItemToolTip(item), Color.gray);
+    }
+
     public string MoveToolTip(Move move) {
         string toolTip = "";
         if (move.ac != 0) {

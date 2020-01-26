@@ -1,1906 +1,2684 @@
 ﻿{
-	"Items": [
-		{
+	"Items": [{
 			"name": "Big Root",
 			"image": "Big_Root",
 			"desc": "HP stealing moves restore double HP. Cannot be used by Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Bright Powder",
 			"image": "Bright_Powder",
 			"desc": "+2 to Speed Evasion. Cannot be used by Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Contest Accessory",
 			"image": "Contest_Accessory",
 			"desc": "The user rolls +2d6 during the Introduction Stage of a Contest. Cannot be used by Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Yellow Scarf",
 			"image": "Yellow_Scarf",
 			"desc": "When held, once per Contest, the holder may re-roll any 1s made when using a Tough Move. Cannot be used by Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Red Scarf",
 			"image": "Red_Scarf",
 			"desc": "When held, once per Contest, the holder may re-roll any 1s made when using a Cool Move. Cannot be used by Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Pink Scarf",
 			"image": "Pink_Scarf",
 			"desc": "When held, once per Contest, the holder may re-roll any 1s made when using a Cute Move. Cannot be used by Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Green Scarf",
 			"image": "Green_Scarf",
 			"desc": "When held, once per Contest, the holder may re-roll any 1s made when using a Smart Move. Cannot be used by Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Blue Scarf",
 			"image": "Blue_Scarf",
 			"desc": "When held, once per Contest, the holder may re-roll any 1s made when using a Beauty Move. Cannot be used by Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Everstone",
 			"image": "Everstone",
 			"desc": "Evolution is prevented for the holder. Cannot be used by Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Go-Goggles",
 			"image": "Go-Goggles",
 			"desc": "The user does not take damage from Sandstorm. Head Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Iron Ball",
 			"image": "Iron_Ball",
 			"desc": "The Holder's Speed is halved, and any immunity to Ground Type is lost. Hand Item for Trainers. Standard Action to drop.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Lagging Tail",
 			"image": "Lagging_Tail",
 			"desc": "The Lagging Items are tied to a specific Stat. When held, they set that Stat to -4 Combat Stages. Cannot be used by Trainers. Standard Action to drop.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Safety Goggles",
 			"image": "Safety_Goggles",
 			"desc": "The holder is immune to Moves with the Powder Keyword. Accessory or Head Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Black Belt",
 			"image": "Black_Belt",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Fighting-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Black Glasses",
 			"image": "Black_Glasses",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Dark-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Charcoal",
 			"image": "Charcoal",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Fire-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Dragon Fang",
 			"image": "Dragon_Fang",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Dragon-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Hard Stone",
 			"image": "Hard_Stone",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Rock-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Magnet",
 			"image": "Magnet",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Electric-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Metal Coat",
 			"image": "Metal_Coat",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Steel-Type Moves performed by the user. Accessory Item for Trainers. Can be used by Onix and Scyther to evolve.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Miracle Seed",
 			"image": "Miracle_Seed",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Grass-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Mystic Water",
 			"image": "Mystic_Water",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Water-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Poison Barb",
 			"image": "Poison_Barb",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Poison-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Sharp Beak",
 			"image": "Sharp_Beak",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Flying-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Silk Scarf",
 			"image": "Silk_Scarf",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Fairy-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Silver Powder",
 			"image": "Silver_Powder",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Bug-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Soft Sand",
 			"image": "Soft_Sand",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Ground-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Spell Tag",
 			"image": "Spell_Tag",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Ghost-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Never Melt Ice",
 			"image": "Never_Melt_Ice",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Ice-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Twisted Spoon",
 			"image": "Twisted_Spoon",
 			"desc": "When held, it grants a +5 Damage Bonus to all direct damage Psychic-Type Moves performed by the user. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "Winter Cloak",
 			"image": "Winter_Cloak",
 			"desc": "The user does not take damage from Hail. Accessory Item for Trainers.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Held Item"
 		},
 		{
 			"name": "HP Down",
 			"image": "HP_Down",
 			"desc": "Lowers the user's HP Base Stat 1.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Anti-Protein",
 			"image": "Anti-Protein",
 			"desc": "Lowers the user's Attack Base Stat 1.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Anti-Iron",
 			"image": "Anti-Iron",
 			"desc": "Lowers the user's Defense Base Stat 1.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Anti-Calcium",
 			"image": "Anti-Calcium",
 			"desc": "Lowers the user's Special Attack Base Stat 1.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Anti-Zinc",
 			"image": "Anti-Zinc",
 			"desc": "Lowers the user's Special Defense Base Stat 1.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Anti-Carbos",
 			"image": "Anti-Carbos",
 			"desc": "Lowers the user's Speed Base Stat 1.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Blue Shard",
 			"image": "Blue_Shard",
 			"desc": "A bit of colored energized crystal used for various crafting purposes. Blue Shards are associated with Water, Ice, and Flying types.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Crafting"
 		},
 		{
 			"name": "Green Shard",
 			"image": "Green_Shard",
 			"desc": "A bit of colored energized crystal used for various crafting purposes. Green Shards are associated with Bug, Grass, and Ground types.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Crafting"
 		},
 		{
 			"name": "Red Shard",
 			"image": "Red_Shard",
 			"desc": "A bit of colored energized crystal used for various crafting purposes. Red Shards are associated with Fire, Fairy, and Psychic types.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Crafting"
 		},
 		{
 			"name": "Yellow Shard",
 			"image": "Yellow_Shard",
 			"desc": "A bit of colored energized crystal used for various crafting purposes. Yellow Shards are associated with Electric, Rock, and Steel types.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Crafting"
 		},
 		{
 			"name": "Orange Shard",
 			"image": "Orange_Shard",
 			"desc": "A bit of colored energized crystal used for various crafting purposes. Orange Shards are associated with Normal, Fighting, and Dragon types.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Crafting"
 		},
 		{
 			"name": "Violet Shard",
 			"image": "Violet_Shard",
 			"desc": "A bit of colored energized crystal used for various crafting purposes. Violet Shards are associated with Poison, Dark, and Ghost types.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Crafting"
 		},
 		{
 			"name": "X Attack",
 			"image": "X_Attack",
 			"desc": "Increases the Pokemon's Attack by two Combat Stages",
-			"tier": "1"
+			"tier": 1,
+			"group": "X-Item"
 		},
 		{
 			"name": "X Defense",
 			"image": "X_Defense",
 			"desc": "Increases the Pokemon's Defense by two Combat Stages",
-			"tier": "1"
+			"tier": 1,
+			"group": "X-Item"
 		},
 		{
 			"name": "X Sp. Atk",
 			"image": "X_Sp._Atk",
 			"desc": "Increases the Pokemon's Special Attack by two Combat Stages",
-			"tier": "1"
+			"tier": 1,
+			"group": "X-Item"
 		},
 		{
 			"name": "X Sp. Def",
 			"image": "X_Sp._Def",
 			"desc": "Increases the Pokemon's Special Defense by two Combat Stages",
-			"tier": "1"
+			"tier": 1,
+			"group": "X-Item"
 		},
 		{
 			"name": "X Speed",
 			"image": "X_Speed",
 			"desc": "Increases the Pokemon's Speed by two Combat Stages",
-			"tier": "1"
+			"tier": 1,
+			"group": "X-Item"
 		},
 		{
 			"name": "Dire Hit",
 			"image": "Dire_Hit",
 			"desc": "Increases Critical Hit Range of all moves by +2.",
-			"tier": "1"
+			"tier": 1,
+			"group": "X-Item"
 		},
 		{
 			"name": "X Accuracy",
 			"image": "X_Accuracy",
 			"desc": "Increases Accuracy by +2",
-			"tier": "1"
+			"tier": 1,
+			"group": "X-Item"
 		},
 		{
 			"name": "Guard Spec.",
 			"image": "Guard_Spec.",
 			"desc": "Prevents reduction of Combat Stages or Accuracy on the Pokemon for 5 Turns",
-			"tier": "1"
+			"tier": 1,
+			"group": "X-Item"
 		},
 		{
 			"name": "Potion",
 			"image": "Potion",
 			"desc": "Heals 20 Hit Points",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Super Potion",
 			"image": "Super_Potion",
 			"desc": "Heals 35 Hit Points",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Hyper Potion",
 			"image": "Hyper_Potion",
 			"desc": "Heals 70 Hit Points",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Antidote",
 			"image": "Antidote",
 			"desc": "Cures Poison",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Paralyze Heal",
 			"image": "Paralyze_Heal",
 			"desc": "Cures Paralysis",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Burn Heal",
 			"image": "Burn_Heal",
 			"desc": "Cures Burns",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Ice Heal",
 			"image": "Ice_Heal",
 			"desc": "Cures Freezing",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Full Heal",
 			"image": "Full_Heal",
 			"desc": "Cures all Persistent Status Afflictions",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Full Restore",
 			"image": "Full_Restore",
 			"desc": "Heals a Pokemon for 80 Hit Points and cures any Status Afflictions",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Revive",
 			"image": "Revive",
 			"desc": "Revives fainted Pokemon and sets to 20 Hit Points",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Fresh Water",
 			"image": "Fresh_Water",
 			"desc": "Heals 20 Hit Points.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Refreshments"
 		},
 		{
 			"name": "Shuckle's Berry Juice",
 			"image": "Berry_Juice",
 			"desc": "Heals 30 Hit Points.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Refreshments"
 		},
 		{
 			"name": "Super Soda Pop",
 			"image": "Soda_Pop",
 			"desc": "Heals 30 Hit Points.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Refreshments"
 		},
 		{
 			"name": "Sparkling Lemonade",
 			"image": "Lemonade",
 			"desc": "Heals 50 Hit Points.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Refreshments"
 		},
 		{
 			"name": "MooMoo Milk",
 			"image": "MooMoo_Milk",
 			"desc": "Heals 80 Hit Points.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Refreshments"
 		},
 		{
 			"name": "Candy Bar",
 			"image": "Rage_Candy_Bar",
 			"desc": "Snack. Grants a Digestion Buff that heals 5 Hit Points.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Food Item"
 		},
 		{
 			"name": "Honey",
 			"image": "Honey",
 			"desc": "Snack. Grants a Digestion Buff that heals 5 Hit Points. May be used as Bait",
-			"tier": "1"
+			"tier": 1,
+			"group": "Food Item"
 		},
 		{
 			"name": "Leftovers",
 			"image": "Leftovers",
 			"desc": "Snack. When their Digestion Buff is traded in, the user recovers 1/16th of their max Hit Points at the beginning of each turn for the rest of the encounter.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Food Item"
 		},
 		{
 			"name": "Black Sludge",
 			"image": "Black_Sludge",
 			"desc": "Poison-Type Pokemon may consume the Black Sludge as a Snack Item; when the Digestion Buff is traded in, they recover 1/8th of their Max Hit Points at the beginning of each turn for the rest of the encounter.",
-			"tier": "1"
+			"tier": 1,
+			"group": "Food Item"
 		},
 		{
 			"name": "Energy Powder",
 			"image": "Energy_Powder",
 			"desc": "Heals 25 Hit Points - Repulsive",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Heal Powder",
 			"image": "Heal_Powder",
 			"desc": "Cure all Persistent Status Afflictions - Repulsive",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Repel",
 			"image": "Repel",
 			"desc": "Lasts 1 hour; causes Pokemon of level 15 or lower to flee",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Super Repel",
 			"image": "Super_Repel",
 			"desc": "Lasts 2 hour; causes Pokemon of level 25 or lower to flee",
-			"tier": "1"
+			"tier": 1,
+			"group": "Restorative"
 		},
 		{
 			"name": "Basic Ball",
 			"image": "Basic_Ball",
 			"desc": "Basic Poke Ball; often called just a “Poke Ball”",
-			"tier": "1"
+			"tier": 1,
+			"group": "Ball"
 		},
 		{
 			"name": "Safari Ball",
 			"image": "Safari_Ball",
 			"desc": "Used during Safari hunts",
-			"tier": "1"
+			"tier": 1,
+			"group": "Ball"
 		},
 		{
 			"name": "Premier Ball",
 			"image": "Premier_Ball",
 			"desc": "Given as promotional balls during sales",
-			"tier": "1"
+			"tier": 1,
+			"group": "Ball"
 		},
 		{
 			"name": "Cherish Ball",
 			"image": "Cherish_Ball",
 			"desc": "A decorative Poke Ball often given out during special events",
-			"tier": "1"
+			"tier": 1,
+			"group": "Ball"
 		},
 		{
 			"name": "Park Ball",
 			"image": "Park_Ball",
 			"desc": "Used during Safari hunts",
-			"tier": "1"
+			"tier": 1,
+			"group": "Ball"
 		},
 		{
 			"name": "Sport Ball",
 			"image": "Sport_Ball",
 			"desc": "Used during Safari hunts",
-			"tier": "1"
+			"tier": 1,
+			"group": "Ball"
 		},
 		{
 			"name": "Cheri Berry",
 			"image": "Cheri_Berry",
 			"desc": "Cures Paralysis, Cool Poffin Ingredient",
-			"tier": "1"
+			"tier": 1,
+			"group": "Berry"
 		},
 		{
 			"name": "Chesto Berry",
 			"image": "Chesto_Berry",
 			"desc": "Cures Sleep, Beauty Poffin Ingredient",
-			"tier": "1"
+			"tier": 1,
+			"group": "Berry"
 		},
 		{
 			"name": "Pecha Berry",
 			"image": "Pecha_Berry",
 			"desc": "Cures Poison, Cute Poffin Ingredient",
-			"tier": "1"
+			"tier": 1,
+			"group": "Berry"
 		},
 		{
 			"name": "Rawst Berry",
 			"image": "Rawst_Berry",
 			"desc": "Cures Burn, Smart Poffin Ingredient",
-			"tier": "1"
+			"tier": 1,
+			"group": "Berry"
 		},
 		{
 			"name": "Aspear Berry",
 			"image": "Aspear_Berry",
 			"desc": "Cures Freeze, Tough Poffin Ingredient",
-			"tier": "1"
+			"tier": 1,
+			"group": "Berry"
 		},
 		{
 			"name": "Oran Berry",
 			"image": "Oran_Berry",
 			"desc": "Restores 5 Hit Points",
-			"tier": "1"
+			"tier": 1,
+			"group": "Berry"
 		},
 		{
 			"name": "Persim Berry",
 			"image": "Persim_Berry",
 			"desc": "Cures Confusion",
-			"tier": "1"
+			"tier": 1,
+			"group": "Berry"
 		},
 		{
 			"name": "Razz Berry",
 			"image": "Razz_Berry",
 			"desc": "Cool Poffin Ingredient",
-			"tier": "1"
+			"tier": 1,
+			"group": "Berry"
 		},
 		{
 			"name": "Bluk Berry",
 			"image": "Bluk_Berry",
 			"desc": "Beauty Poffin Ingredient",
-			"tier": "1"
+			"tier": 1,
+			"group": "Berry"
 		},
 		{
 			"name": "Nanab Berry",
 			"image": "Nanab_Berry",
 			"desc": "Cute Poffin Ingredient",
-			"tier": "1"
+			"tier": 1,
+			"group": "Berry"
 		},
 		{
 			"name": "Wepear Berry",
 			"image": "Wepear_Berry",
 			"desc": "Smart Poffin Ingredient",
-			"tier": "1"
+			"tier": 1,
+			"group": "Berry"
 		},
 		{
 			"name": "Choice Band",
 			"image": "Choice_Band",
 			"desc": "While worn, Attack is +2 Combat Stages instead of 0. However, the user is Suppressed and cannot be cured until the end of Combat, even if the item is removed. Cannot be used by Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Choice Specs",
 			"image": "Choice_Specs",
 			"desc": "While worn, Special Attack is +2 Combat Stages instead of 0. However, the user is Suppressed and cannot be cured until the end of Combat, even if the item is removed. Cannot be used by Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Choice Scarf",
 			"image": "Choice_Scarf",
 			"desc": "While worn, Speed is +2 Combat Stages instead of 0. However, the user is Suppressed and cannot be cured until the end of Combat, even if the item is removed. Cannot be used by Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Expert Belt",
 			"image": "Expert_Belt",
 			"desc": "Whenever the holder deals Super Effective Damage, they deal an additional 5 damage (this damage is not multiplied). Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Flame Orb",
 			"image": "Flame_Orb",
 			"desc": "Induces burn on holder. Off-Hand Item for Trainers. Standard Action to drop.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "King's Rock",
 			"image": "Kings_Rock",
 			"desc": "Attacks cause Flinch on a roll of 19+. This does not stack with any abilities, moves, or effects that extend flinch rate. Head Item for Trainers. Can be used by Slowpoke and Poliwhirl to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Full Incense",
 			"image": "Full_Incense",
 			"desc": "The holder gains the Stall ability. Cannot be used by Trainers. Causes Snorlax to be able to produce a Munchlax Egg",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Luck Incense",
 			"image": "Luck_Incense",
 			"desc": "When held, it grants +1 Bonus to all Accuracy Rolls. A roll of 1 always misses. Cannot be used by Trainers. Causes Chansey and Blissey to be able to produce a Happiny Egg",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Lax Incense",
 			"image": "Lax_Incense",
 			"desc": "When held, it grants +1 to all Stat Evasions. Cannot be used by Trainers. Causes Wobbuffet to be able to produce a Wynaut Egg",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Odd Incense",
 			"image": "Odd_Incense",
 			"desc": "When held, it grants +2 to the Damage Base of Psychic-Type Move. Cannot be used by Trainers. Causes Mr. Mime to be able to produce a Mime Jr. Egg",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Pure Incense",
 			"image": "Pure_Incense",
 			"desc": "When held, The user cannot be Slowed, Stuck, or Trapped.The user does not provoke Attacks of Opportunity by Shifting. Cannot be used by Trainers. Causes Chimecho to be able to produce a Chingling Egg",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Rock Incense",
 			"image": "Rock_Incense",
 			"desc": "When held, it grants +2 to the Damage Base of Rock-Type Moves. Cannot be used by Trainers. Causes SudoWoodo to be able to produce a Bonsly Egg",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Rose Incense",
 			"image": "Rose_Incense",
 			"desc": "When held, it grants +2 to the Damage Base of Grass-Type Moves. Cannot be used by Trainers. Causes Roselia and Roserade to be able to produce a Budew Egg",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Sea Incense",
 			"image": "Sea_Incense",
 			"desc": "When held, it grants +2 to the Damage Base of Water-Type Moves. Cannot be used by Trainers. Causes Maril and Azumaril to be able to produce a Azurill Egg",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Wave Incense",
 			"image": "Wave_Incense",
 			"desc": "When held, it grants +2 to the Damage Base of Water-Type Moves. Cannot be used by Trainers. Causes Mantine to be able to produce a Mantyke Egg",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Life Orb",
 			"image": "Life_Orb",
 			"desc": "Whenever the holder deals direct damage, increase the damage by +5, and then the holder loses Hit Points equal to 1/16th of their Max Hit Points. Off-Hand Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Razor Claw",
 			"image": "Razor_Claw",
 			"desc": "The holder's damaging attacks have their Critical Hit Range extended by +1. Can be used by Sneasel to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Razor Fang",
 			"image": "Razor_Fang",
 			"desc": "The holder's damaging attacks cause an Injury on a roll of 19+. Accessory Item for Trainers. Can be used by Gilgar to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Draco Brace",
 			"image": "Draco_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Dragon-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Dread Brace",
 			"image": "Dread_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Dark-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Earth Brace",
 			"image": "Earth_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Ground-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Flame Brace",
 			"image": "Flame_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Fire-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Icicle Brace",
 			"image": "Icicle_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Ice-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Insect Brace",
 			"image": "Insect_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Bug-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Iron Brace",
 			"image": "Iron_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Steel-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Meadow Brace",
 			"image": "Meadow_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Grass-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Mind Brace",
 			"image": "Mind_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Psychic-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Pixie Brace",
 			"image": "Pixie_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Fairy-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Sky Brace",
 			"image": "Sky_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Flying-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Splash Brace",
 			"image": "Splash_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Water-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Spooky Brace",
 			"image": "Spooky_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Ghost-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Stone Brace",
 			"image": "Stone_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Rock-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Toxic Brace",
 			"image": "Toxic_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Poison-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Zap Brace",
 			"image": "Zap_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Electric-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Fist Brace",
 			"image": "Fist_Brace",
 			"desc": "When held, it grants the holder 15 Damage Reduction against Fighting-Type Moves. Accessory Item for Trainers.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Fire Stone",
 			"image": "Fire_Stone",
 			"desc": "A peculiar stone that can make certain species of Pokemon evolve. The stone has a fiery orange heart.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Evolution Stone"
 		},
 		{
 			"name": "Water Stone",
 			"image": "Water_Stone",
 			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It is the blue of a pool of clear water.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Evolution Stone"
 		},
 		{
 			"name": "Thunder Stone",
 			"image": "Thunder_Stone",
 			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It has a distinct thunderbolt pattern.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Evolution Stone"
 		},
 		{
 			"name": "Leaf Stone",
 			"image": "Leaf_Stone",
 			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It has an unmistakable leaf pattern.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Evolution Stone"
 		},
 		{
 			"name": "Moon Stone",
 			"image": "Moon_Stone",
 			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It is as black as the night sky.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Evolution Stone"
 		},
 		{
 			"name": "Sun Stone",
 			"image": "Sun_Stone",
 			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It burns as red as the evening sun.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Evolution Stone"
 		},
 		{
 			"name": "Shiny Stone",
 			"image": "Shiny_Stone",
 			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It shines with a dazzling light.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Evolution Stone"
 		},
 		{
 			"name": "Dusk Stone",
 			"image": "Dusk_Stone",
 			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It holds shadows as dark as can be.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Evolution Stone"
 		},
 		{
 			"name": "Dawn Stone",
 			"image": "Dawn_Stone",
 			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It sparkles like a glittering eye.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Evolution Stone"
 		},
 		{
 			"name": "Deep Sea Scale",
 			"image": "Deep_Sea_Scale",
 			"desc": "An item to be held by Clamperl. This scale shines with a faint pink and raises the holder's Sp. Def stat.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Deep Sea Tooth",
 			"image": "Deep_Sea_Tooth",
 			"desc": "An item to be held by Clamperl. This fang gleams a sharp silver and raises the holder's Sp. Atk stat.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Dragon Scale",
 			"image": "Dragon_Scale",
 			"desc": "Boosts the power of Dragon-type moves by 10% when held. Can be used by Seadra to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Dubious Disc",
 			"image": "Dubious_Disc",
 			"desc": "A transparent device overflowing with dubious data. Its producer is unknown. Can be used by Porygon2 to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Electirizer",
 			"image": "Electirizer",
 			"desc": "A box packed with a tremendous amount of electric energy. It's loved by a certain Pokemon. Can be used by Electabuzz to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Magmarizer",
 			"image": "Magmarizer",
 			"desc": "A box packed with a tremendous amount of magma energy. It's loved by a certain Pokemon. Can be used by Magmar to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Prism Scale",
 			"image": "Prism_Scale",
 			"desc": "A mysterious scale that causes Feebas to evolve. It shines in rainbow colors.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Protector",
 			"image": "Protector",
 			"desc": "A protective item of some sort. It is extremely stiff and heavy. It's loved by a certain Pokemon. Can be used by Rhydon to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Reaper Cloth",
 			"image": "Reaper_Cloth",
 			"desc": "A cloth imbued with horrifyingly strong spiritual energy. It's loved by a certain Pokemon. Can be used by Dusclops to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Sachet",
 			"image": "Sachet",
 			"desc": "A sachet filled with fragrant perfumes that are just slightly too overwhelming. Yet it's loved by a certain Pokemon. Can be used by Spritzee to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Up-Grade",
 			"image": "Up-Grade",
 			"desc": "A transparent device somehow filled with all sorts of data. It was produced by Silph Co. Can be used by Porygon to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Whipped Dream",
 			"image": "Whipped_Dream",
 			"desc": "A soft and sweet treat made of fluffy, puffy, whipped and whirled cream. It's loved by a certain Pokemon. Can be used by Swirlix to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Oval Stone",
 			"image": "Oval_Stone",
 			"desc": "A peculiar stone that can make certain species of Pokemon evolve. It's as round as a Pokemon Egg. Can be used by Happiny to evolve.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Held Item"
 		},
 		{
 			"name": "Heart Scale",
 			"image": "Heart_Scale",
 			"desc": "This tiny rainbow scale from a Luvdisc is valued by Apothecary Researchers, because it can be used to create the Heart Booster vitamin.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Crafting"
 		},
 		{
 			"name": "Red Apricorn",
 			"image": "Red_Apricorn",
 			"desc": "Used to make a Level Ball",
-			"tier": "2"
+			"tier": 2,
+			"group": "Apricorn"
 		},
 		{
 			"name": "Yellow Apricorn",
 			"image": "Yellow_Apricorn",
 			"desc": "Used to make a Moon Ball",
-			"tier": "2"
+			"tier": 2,
+			"group": "Apricorn"
 		},
 		{
 			"name": "Blue Apricorn",
 			"image": "Blue_Apricorn",
 			"desc": "Used to make a Lure Ball",
-			"tier": "2"
+			"tier": 2,
+			"group": "Apricorn"
 		},
 		{
 			"name": "Green Apricorn",
 			"image": "Green_Apricorn",
 			"desc": "Used to make a Friend Ball",
-			"tier": "2"
+			"tier": 2,
+			"group": "Apricorn"
 		},
 		{
 			"name": "Pink Apricorn",
 			"image": "Pink_Apricorn",
 			"desc": "Used to make a Love Ball",
-			"tier": "2"
+			"tier": 2,
+			"group": "Apricorn"
 		},
 		{
 			"name": "White Apricorn",
 			"image": "White_Apricorn",
 			"desc": "Used to make a Fast Ball",
-			"tier": "2"
+			"tier": 2,
+			"group": "Apricorn"
 		},
 		{
 			"name": "Black Apricorn",
 			"image": "Black_Apricorn",
 			"desc": "Used to make a Heavy Ball",
-			"tier": "2"
+			"tier": 2,
+			"group": "Apricorn"
 		},
 		{
 			"name": "Energy Root",
 			"image": "Energy_Root",
 			"desc": "Heals 70 Hit Points - Repulsive",
-			"tier": "2"
+			"tier": 2,
+			"group": "Restorative"
+		},
+		{
+			"name": "Energy Root",
+			"image": "Energy_Root",
+			"desc": "Heals 70 Hit Points - Repulsive",
+			"tier": 2,
+			"group": "Herb"
 		},
 		{
 			"name": "Revival Herb",
 			"image": "Revival_Herb",
 			"desc": "Revives Pokemon and sets to 50% Hit Points - Repulsive",
-			"tier": "2"
+			"tier": 2,
+			"group": "Restorative"
+		},
+		{
+			"name": "Revival Herb",
+			"image": "Revival_Herb",
+			"desc": "Revives Pokemon and sets to 50% Hit Points - Repulsive",
+			"tier": 2,
+			"group": "Herb"
 		},
 		{
 			"name": "Mental Herb",
 			"image": "Mental_Herb",
 			"desc": "Cures all Volatile Status Effects.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Herb"
 		},
 		{
 			"name": "Power Herb",
 			"image": "Power_Herb",
 			"desc": "Eliminates the Set-Up turn of Moves with the Set-Up Keyword.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Herb"
 		},
 		{
 			"name": "White Herb",
 			"image": "White_Herb",
 			"desc": "Any negative Combat Stages are set to 0.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Herb"
 		},
 		{
 			"name": "Pearl",
 			"image": "Pearl",
 			"desc": "Can be sold for $1400.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Crafting"
 		},
 		{
 			"name": "Stardust",
 			"image": "Stardust",
 			"desc": "Can be sold for $2000.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Crafting"
 		},
 		{
 			"name": "Relic Copper",
 			"image": "Relic_Copper",
 			"desc": "Can be sold for $1000.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Crafting"
 		},
 		{
 			"name": "Relic Vase",
 			"image": "Relic_Vase",
 			"desc": "The right person may want this.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Crafting"
 		},
 		{
 			"name": "Relic Statue",
 			"image": "Relic_Statue",
 			"desc": "The right person may want this.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Crafting"
 		},
 		{
 			"name": "Relic Band",
 			"image": "Relic_Band",
 			"desc": "The right person may want this.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Crafting"
 		},
 		{
-			"name": "Repel",
-			"image": "Repel",
+			"name": "Relic Crown",
+			"image": "Relic_Crown",
+			"desc": "The right person may want this.",
+			"tier": 3,
+			"group": "Crafting"
+		},
+		{
+			"name": "Max Repel",
+			"image": "Max_Repel",
 			"desc": "Lasts 5 hour; causes Pokemon of level 35 or lower to flee.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Restorative"
 		},
 		{
 			"name": "Great Ball",
 			"image": "Great_Ball",
 			"desc": "A better Poke Ball with no special effects.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Level Ball",
 			"image": "Level_Ball",
 			"desc": "-20 Modifier if the target is under half the level your active Pokémon is.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Lure Ball",
 			"image": "Lure_Ball",
 			"desc": "-20 Modifier if the target was baited into the encounter with food.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Moon Ball",
 			"image": "Moon_Ball",
 			"desc": "-20 Modifier if the target evolves with an Evolution Stone.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Friend Ball",
 			"image": "Friend_Ball",
 			"desc": "A caught Pokémon will start with +1 Loyalty.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Love Ball",
 			"image": "Love_Ball",
 			"desc": "-30 Modifier if the user has an active Pokémon that is of the same evolutionary line as the target, and the opposite gender.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Heavy Ball",
 			"image": "Heavy_Ball",
 			"desc": "-5 Modifier for each Weight Class the target is above 1.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Fast Ball",
 			"image": "Fast_Ball",
 			"desc": "-20 Modifier if the target has a Movement Capability above 7.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Repeat Ball",
 			"image": "Repeat_Ball",
 			"desc": "-20 Modifier if you already own a Pokemon of the target’s species.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Timer Ball",
 			"image": "Timer_Ball",
 			"desc": "-5 to the Modifier after every round since the beginning of the encounter, until the Modifier is -20.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Nest Ball",
 			"image": "Nest_Ball",
 			"desc": ".20 Modifier if the target is under level 10.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Net Ball",
 			"image": "Net_Ball",
 			"desc": "-20 Modifier, if the target is Water or Bug type.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Dive Ball",
 			"image": "Dive_Ball",
 			"desc": "-20 Modifier, if the target was found underwater or underground.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Luxury Ball",
 			"image": "Luxury_Ball",
 			"desc": "A caught Pokemon is easily pleased and starts with a raised happiness.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Heal Ball",
 			"image": "Heal_Ball",
 			"desc": "A caught Pokemon will heal to Max HP immediately upon capture.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Quick Ball",
 			"image": "Quick_Ball",
 			"desc": "+5 to Modifier after 1 round of the encounter, +10 to Modifier after round 2, +20 to modifier after round 3.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Dusk Ball",
 			"image": "Dusk_Ball",
 			"desc": "-20 Modifier if it is dark, or if there is very little light out, when used.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Ball"
 		},
 		{
 			"name": "Pinap Berry",
 			"image": "Pinap_Berry",
 			"desc": "Tough Poffin Ingredient.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Lum Berry",
 			"image": "Lum_Berry",
 			"desc": "Cures any single status ailment.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Sitrus Berry",
 			"image": "Sitrus_Berry",
 			"desc": "Restores 15 Hit Points",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Figy Berry",
 			"image": "Figy_Berry",
 			"desc": "Spicy Treat, Cool Poffin Ingredient.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Wiki Berry",
 			"image": "Wiki_Berry",
 			"desc": "Dry Treat, Beauty Poffin Ingredient.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Mago Berry",
 			"image": "Mago_Berry",
 			"desc": "Sweet Treat, Cute Poffin Ingredient.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Aguav Berry",
 			"image": "Aguav_Berry",
 			"desc": "Bitter Treat, Smart Poffin Ingredient.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Iapapa Berry",
 			"image": "Iapapa_Berry",
 			"desc": "Sour Treat, Tough Poffin Ingredient.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Liechi Berry",
 			"image": "Liechi_Berry",
 			"desc": "+1 Attack CS.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Ganlon Berry",
 			"image": "Ganlon_Berry",
 			"desc": "+1 Defense CS.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Salac Berry",
 			"image": "Salac_Berry",
 			"desc": "+1 Speed CS.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Petaya Berry",
 			"image": "Petaya_Berry",
 			"desc": "+1 Special Attack CS.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Apicot Berry",
 			"image": "Apicot_Berry",
 			"desc": "+1 Special Defense CS.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Lansat Berry",
 			"image": "Lansat_Berry",
 			"desc": "Increases Critical Range by +1 for the remainder of the encounter.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Starf Berry",
 			"image": "Starf_Berry",
 			"desc": "+2 CS to a random Stat. May be used only at 25% HP or lower.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Enigma Berry",
 			"image": "Enigma_Berry",
 			"desc": "User gains Temporary HP equal to 1/6th of their Max HP when hit by a Super Effective Move.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Micle Berry",
 			"image": "Micle_Berry",
 			"desc": "Increases Accuracy by +1.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Jaboca Berry",
 			"image": "Jaboca_Berry",
 			"desc": "Foe dealing Physical Damage to the user loses 1/8 of their Maximum HP.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Rowap Berry",
 			"image": "Rowap_Berry",
 			"desc": "Foe dealing Special Damage to the user loses 1/8 of their Maximum HP.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Cornn Berry",
 			"image": "Cornn_Berry",
 			"desc": "Cures Disabled Condition.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Magost Berry",
 			"image": "Magost_Berry",
 			"desc": "Cures Enraged condition.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Rabuta Berry",
 			"image": "Rabuta_Berry",
 			"desc": "Cures Suppressed condition.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Nomel Berry",
 			"image": "Nomel_Berry",
 			"desc": "Cures Infatuated condition.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Spelon Berry",
 			"image": "Spelon_Berry",
 			"desc": "Cool or Beauty Poffin Ingredient.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Pamtre Berry",
 			"image": "Pamtre_Berry",
 			"desc": "Cute or Beauty Poffin Ingredient.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Watmel Berry",
 			"image": "Watmel_Berry",
 			"desc": "Cute or Smart Poffin Ingredient.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Durin Berry",
 			"image": "Durin_Berry",
 			"desc": "Smart or Tough Poffin Ingredient.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Belue Berry",
 			"image": "Belue_Berry",
 			"desc": "Cool or Tough Poffin Ingredient.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Berry"
 		},
 		{
 			"name": "Fluffy Tail",
 			"image": "Fluffy_Tail",
 			"desc": "A toy that attracts the attention of a Pokemon. It guarantees escape from any battle with wild Pokemon.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Toy"
 		},
 		{
 			"name": "Poke Toy",
 			"image": "Poke_Toy",
 			"desc": "A toy that attracts the attention of a Pokemon. It guarantees escape from any battle with wild Pokemon.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Toy"
 		},
 		{
 			"name": "Poke Doll",
 			"image": "Poke_Doll",
 			"desc": "A doll that attracts the attention of a Pokemon. It guarantees escape from any battle with wild Pokemon.",
-			"tier": "2"
+			"tier": 2,
+			"group": "Toy"
 		},
 		{
 			"name": "Eviolite",
 			"image": "Eviolite",
 			"desc": "Only affects not-fully-evolved Pokemon of a single family, decided when the Eviolite is made. Grants a +5 Bonus to two different Stats, after Combat Stages, decided when the Eviolite is made. Prevents Pokemon from evolving when held. Cannot be used by Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Focus Band",
 			"image": "Focus_Band",
 			"desc": "Whenever the user faints, roll 1d20. Once a Scene on a result of 16+, the holder does not faint, and is left with 1 Hit Point. Accessory Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Focus Sash",
 			"image": "Focus_Sash",
 			"desc": "Once a Scene, if damage from a Move would take Focus Sash's holder's Hit Points from Max to 0 or less, Focus Sash's holder instead has 1 Hit Point remaining. Accessory Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Quick Claw",
 			"image": "Quick_Claw",
 			"desc": "The user adds +10 to their Initiative. Accessory Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Shell Bell",
 			"image": "Shell_Bell",
 			"desc": "Whenever the user damages a foe, they gain a Tick of Temporary Hit Points. Accessory Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "HP Booster",
 			"image": "HP_Booster",
 			"desc": "When held, the default Stage of HP is +1 Combat Stage instead of 0. Accessory Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Attack Booster",
 			"image": "Attack_Booster",
 			"desc": "When held, the default Stage of Attack is +1 Combat Stage instead of 0. Accessory Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Defense Booster",
 			"image": "Defense_Booster",
 			"desc": "When held, the default Stage of Defense is +1 Combat Stage instead of 0. Accessory Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Special Attack Booster",
 			"image": "Special_Attack_Booster",
 			"desc": "When held, the default Stage of Special Attack +1 Combat Stage instead of 0. Accessory Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Special Defense Booster",
 			"image": "Special_Defense_Booster",
 			"desc": "When held, the default Stage of Special Defense +1 Combat Stage instead of 0. Accessory Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Speed Booster",
 			"image": "Speed_Booster",
 			"desc": "When held, the default Stage of Speed +1 Combat Stage instead of 0. Accessory Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Accuracy Booster",
 			"image": "Accuracy_Booster",
 			"desc": "When held, it gives +1 for Accuracy and Evasion. Accessory Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Toxic Orb",
 			"image": "Toxic_Orb",
 			"desc": "Induces Poison on holder. Off-Hand Item for Trainers. Standard Action to drop.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Bug Gem",
 			"image": "Bug_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Bug-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Dark Gem",
 			"image": "Dark_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Dark-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Dragon Gem",
 			"image": "Dragon_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Dragon-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Electric Gem",
 			"image": "Electric_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Electric-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Fairy Gem",
 			"image": "Fairy_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Fairy-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Fighting Gem",
 			"image": "Fighting_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Fighting-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Fire Gem",
 			"image": "Fire_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Fire-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Flying Gem",
 			"image": "Flying_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Flying-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Ghost Gem",
 			"image": "Ghost_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Ghost-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Grass Gem",
 			"image": "Grass_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Grass-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Ground Gem",
 			"image": "Ground_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Ground-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Ice Gem",
 			"image": "Ice_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Ice-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Normal Gem",
 			"image": "Normal_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Normal-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Poison Gem",
 			"image": "Poison_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Poison-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Psychic Gem",
 			"image": "Psychic_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Psychic-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Rock Gem",
 			"image": "Rock_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Rock-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Steel Gem",
 			"image": "Steel_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Steel-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Water Gem",
 			"image": "Water_Gem",
 			"desc": "When held, it can be consumed as a Free Action to give a +3 Damage Base bonus to one attack of the Water-Type. Off-hand or Accessory Slot Item for Trainers",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Draco Plate",
 			"image": "Draco_Plate",
 			"desc": "When held, it act as both a Dragon Fang and a Draco Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Dread Plate",
 			"image": "Dread_Plate",
 			"desc": "When held, it act as both a Black Glasses and a Dread Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Earth Plate",
 			"image": "Earth_Plate",
 			"desc": "When held, it act as both a Soft Sand and an Earth Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Fist Plate",
 			"image": "Fist_Plate",
 			"desc": "When held, it act as both a Black Belt and a Fist Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Flame Plate",
 			"image": "Flame_Plate",
 			"desc": "When held, it act as both a Charcoal and a Flame Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Icicle Plate",
 			"image": "Icicle_Plate",
 			"desc": "When held, it act as both a Never Melt Ice and an Icicle Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Insect Plate",
 			"image": "Insect_Plate",
 			"desc": "When held, it act as both a Silver Powder and an Insect Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Iron Plate",
 			"image": "Iron_Plate",
 			"desc": "When held, it act as both a Metal Coat and an Iron Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Meadow Plate",
 			"image": "Meadow_Plate",
 			"desc": "When held, it act as both a Miracle Seed and a Meadow Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Mind Plate",
 			"image": "Mind_Plate",
 			"desc": "When held, it act as both a Twisted Spoon and a Mind Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Pixie Plate",
 			"image": "Pixie_Plate",
 			"desc": "When held, it act as both a Silk Scarf and a Pixie Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Sky Plate",
 			"image": "Sky_Plate",
 			"desc": "When held, it act as both a Sharp Beak and a Sky Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Splash Plate",
 			"image": "Splash_Plate",
 			"desc": "When held, it act as both a Mystic Water and a Splash Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Spooky Plate",
 			"image": "Spooky_Plate",
 			"desc": "When held, it act as both a Spell Tag and a Spooky Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Stone Plate",
 			"image": "Stone_Plate",
 			"desc": "When held, it act as both a Hard Stone and a Stone Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Toxic Plate",
 			"image": "Toxic_Plate",
 			"desc": "When held, it act as both a Poison Barb and a Toxic Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Zap Plate",
 			"image": "Zap_Plate",
 			"desc": "When held, it act as both a Magnet and a Zap Brace. Accessory Slot Item for Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Metal Powder",
 			"image": "Metal_Powder",
 			"desc": "When held by an untransformed Ditto, increases both Defense and Special Defense by +2 Combat Stages. Cannot be used by Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Rare Leek",
 			"image": "Leek",
 			"desc": "When held by a Farfetch'd, this rare Leek increase the holder's critical range by 2. Rare Leeks are Wielded. Cannot be used by Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Thick Club",
 			"image": "Thick_Club",
 			"desc": "When held by a Cubone or Marowak, this rare, dense bone grants the Pure Power Ability. Thick Clubs are Wielded. Cannot be used by Trainers.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "Pink Pearl",
 			"image": "Pink_Pearl",
 			"desc": "Acts as a Psychic Type Booster. If held by a Spoink, it also acts as a Special Attack Stat Booster.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Held Item"
 		},
 		{
 			"name": "HP Up",
 			"image": "HP_Up",
 			"desc": "Raise the user's HP Base Stat 1.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Protein",
 			"image": "Protein",
 			"desc": "Raise the user's Attack Base Stat 1.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Iron",
 			"image": "Iron",
 			"desc": "Raise the user's Defense Base Stat 1.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Calcium",
 			"image": "Calcium",
 			"desc": "Raise the user's Special Attack Base Stat 1.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Zinc",
 			"image": "Zinc",
 			"desc": "Raise the user's Special Defense Base Stat 1.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Carbos",
 			"image": "Carbos",
 			"desc": "Raise the user's Speed Base Stat 1.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Heart Booster",
 			"image": "Heart_Booster",
 			"desc": "The Pokemon gains 2 Tutor Points. Use only one per Pokemon.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Vitamin"
 		},
 		{
 			"name": "PP Up",
 			"image": "PP_Up",
 			"desc": "Raise one of the user's Move's Frequency one level. Use only one per Pokemon.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Tiny Mushroom",
 			"image": "Tiny_Mushroom",
 			"desc": "The user loses 5 HP, and gains +1 Combat Stage in a random Stat.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Herb"
 		},
 		{
 			"name": "Big Mushroom",
 			"image": "Big_Mushroom",
 			"desc": "The user becomes Poisoned; if they do, they gain +1 Combat Stage in two random Stats.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Herb"
 		},
 		{
 			"name": "Balm Mushroom",
 			"image": "Balm_Mushroom",
 			"desc": "The user is cured of Burn, Paralysis, or Poison. If they are, they lose 1 Combat Stage in a random Stat.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Herb"
 		},
 		{
 			"name": "Nugget",
 			"image": "Nugget",
 			"desc": "Can be sold for $10000.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Crafting"
 		},
 		{
 			"name": "Big Pearl",
 			"image": "Big_Pearl",
 			"desc": "Can be sold for $7500.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Crafting"
 		},
 		{
 			"name": "Star Piece",
 			"image": "Star_Piece",
 			"desc": "Can be sold for $9800.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Crafting"
 		},
 		{
 			"name": "Relic Silver",
 			"image": "Relic_Silver",
 			"desc": "Can be sold for $5000.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Crafting"
 		},
 		{
 			"name": "Relic Gold",
 			"image": "Relic_Gold",
 			"desc": "Can be sold for $10000.",
-			"tier": "3"
+			"tier": 3,
+			"group": "Crafting"
 		},
 		{
 			"name": "Ultra Ball",
 			"image": "Ultra_Ball",
 			"desc": "The best generic Poke Ball",
-			"tier": "3"
+			"tier": 3,
+			"group": "Ball"
 		},
 		{
 			"name": "Leppa Berry",
 			"image": "Leppa_Berry",
 			"desc": "Restores a Scene Move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Pomeg Berry",
 			"image": "Pomeg_Berry",
 			"desc": "HP Suppressant",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Kelpsy Berry",
 			"image": "Kelpsy_Berry",
 			"desc": "Attack Suppressant",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Qualot Berry",
 			"image": "Qualot_Berry",
 			"desc": "Defense Suppressant",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Hondew Berry",
 			"image": "Hondew_Berry",
 			"desc": "Special Attack Suppressant",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Grepa Berry",
 			"image": "Grepa_Berry",
 			"desc": "Special Defense Suppressant",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Tamato Berry",
 			"image": "Tamato_Berry",
 			"desc": "Speed Suppressant",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Occa Berry",
 			"image": "Occa_Berry",
 			"desc": "Weakens foe’s super effective Fire-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Passho Berry",
 			"image": "Passho_Berry",
 			"desc": "Weakens foe’s super effective Water-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Wacan Berry",
 			"image": "Wacan_Berry",
 			"desc": "Weakens foe’s super effective Electric-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Rindo Berry",
 			"image": "Rindo_Berry",
 			"desc": "Weakens foe’s super effective Grass-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Yache Berry",
 			"image": "Yache_Berry",
 			"desc": "Weakens foe’s super effective Ice-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Chople Berry",
 			"image": "Chople_Berry",
 			"desc": "Weakens foe’s super effective Fighting-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Kebia Berry",
 			"image": "Kebia_Berry",
 			"desc": "Weakens foe’s super effective Poison-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Shuca Berry",
 			"image": "Shuca_Berry",
 			"desc": "Weakens foe’s super effective Ground-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Coba Berry",
 			"image": "Coba_Berry",
 			"desc": "Weakens foe’s super effective Flying-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Payapa Berry",
 			"image": "Payapa_Berry",
 			"desc": "Weakens foe’s super effective Psychic-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Tanga Berry",
 			"image": "Tanga_Berry",
 			"desc": "Weakens foe’s super effective Bug-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Charti Berry",
 			"image": "Charti_Berry",
 			"desc": "Weakens foe’s super effective Rock-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Kasib Berry",
 			"image": "Kasib_Berry",
 			"desc": "Weakens foe’s super effective Ghost-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Haban Berry",
 			"image": "Haban_Berry",
 			"desc": "Weakens foe’s super effective Dragon-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Colbur Berry",
 			"image": "Colbur_Berry",
 			"desc": "Weakens foe’s super effective Dark-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Babiri Berry",
 			"image": "Babiri_Berry",
 			"desc": "Weakens foe’s super effective Steel-type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Chilan Berry",
 			"image": "Chilan_Berry",
 			"desc": "Weakens foe’s Normal type move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Roseli Berry",
 			"image": "Roseli_Berry",
 			"desc": "Weakens foe’s super effective Fairytype move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Custap Berry",
 			"image": "Custap_Berry",
 			"desc": "Grants the Priority keyword to any Move. May only be used at 25% HP or lower",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Kee Berry",
 			"image": "Kee_Berry",
 			"desc": "+1 Defense CS. Activates as a Free Action when hit by a Physical Move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Maranga Berry",
 			"image": "Maranga_Berry",
 			"desc": "+1 Special Defense CS. Activates as a Free Action when hit by a Special Move",
-			"tier": "3"
+			"tier": 3,
+			"group": "Berry"
 		},
 		{
 			"name": "Rare Candy",
 			"image": "Rare_Candy",
 			"desc": "These very rare treats, When ingested by a Pokemon, grant the eater enough experience to reach its next Level. Pokemon may benefit from up to five Rare Candies in their lifetime.",
-			"tier": "4"
+			"tier": 4,
+			"group": "Vitamin"
 		},
 		{
 			"name": "Pearl String",
 			"image": "Pearl_String",
 			"desc": "Can be sold for $25000.",
-			"tier": "4"
+			"tier": 4,
+			"group": "Crafting"
 		},
 		{
 			"name": "Big Nugget",
 			"image": "Big_Nugget",
 			"desc": "Can be sold for $30000.",
-			"tier": "4"
+			"tier": 4,
+			"group": "Crafting"
 		},
 		{
 			"name": "Comet Shard",
 			"image": "Comet_Shard",
 			"desc": "Can be sold for $60000.",
-			"tier": "4"
+			"tier": 4,
+			"group": "Crafting"
+		},
+		{
+			"name": "Egg Warmer",
+			"image": "Egg_Warmer",
+			"desc": "Egg Warmers are insulated cases that carry up to four Pokémon Eggs and protect them from harm. They also cause Pokémon to hatch twice as fast; each day spent in an Egg Warmer counts as 2 days for the purposes of Hatch Rate.",
+			"tier": 6,
+			"group": "Crafting"
+		},
+		{
+			"name": "Groomer's Kit",
+			"image": "Fashion_Case",
+			"desc": "Used by Trainers with the Groomer Edge to clean their Pokémon.",
+			"tier": 5,
+			"group": "Crafting"
+		},
+		{
+			"name": "Chemistry Set",
+			"image": "Travel_Trunk",
+			"desc": "Used to create Repels, Potions, and other objects.",
+			"tier": 5,
+			"group": "Crafting"
+		},
+		{
+			"name": "Cooking Set",
+			"image": "Apricorn_Box",
+			"desc": "Used by Chefs to create Snacks and Refreshments",
+			"tier": 5,
+			"group": "Crafting"
+		},
+		{
+			"name": "Dowsing Rod",
+			"image": "Stick",
+			"desc": "Dowsing Rods have been attuned to the energy resonance given off by Shards. They may be used while in any route, cave, or outside area. They may be activated by spending 10 minutes searching an area, and may be activated a number of times per day equal to half of the trainer’s Occult Education Rank.\nAfter the 10 minutes, roll 1d6 per Occult Education Rank. If the area being searched is a beach, cave, desert, or any other sandy or rocky area, roll +1d6. If you have Skill Stunt (Dowsing), you roll an additional 1d6. For each die that results in 4 or higher, you find 1 Shard of a random color: Red, Orange, Yellow, Green, Blue, or Violet. You may reroll any die that result in 6, gaining that shard and potentially more.",
+			"tier": 6,
+			"group": "Crafting"
+		},
+		{
+			"name": "Poffin Mixer",
+			"image": "Pokeblock_Kit",
+			"desc": "A Poffin Mixer can be used by any Trainer to create Poffins. You simply insert cooking ingredients worth $500, and at least one of the listed berries. You create two Poffins that raises the Contest Stat most represented by the berries used by +1 Contest Die. Some Berries can raise multiple Contest Stats; you choose which to raise when using these Berries to make Poffins. Cheri, Figy, Razz, Spelon and Belue Berries raise Cool; Chesto, Wiki, Bluk, Spelon and Pamtre Berries raise Beauty; Pecha, Mago, Nanab, Pamtre, and Watmel Berries raise Cute; Rawst, Aguav, Wepear, Watmel, and Durin Berries raise Smart; Aspear, Iapapa, Pinap, Durin, and Belue Berries raise Tough.",
+			"tier": 5,
+			"group": "Crafting"
+		},
+		{
+			"name": "Poffin Case",
+			"image": "Poffin_Case",
+			"desc": "A handy case for storing poffins for quick retrieval.",
+			"tier": 3,
+			"group": "Crafting"
+		},
+		{
+			"name": "Poke Ball Tool Box",
+			"image": "TM_Case",
+			"desc": "These tool boxes let those with the know-how craft and repair Poke Balls.",
+			"tier": 5,
+			"group": "Crafting"
+		},
+		{
+			"name": "Portable Growers",
+			"image": "Berry_Pots",
+			"desc": "Portable Growers can be used to grow berries and herbs. Portable Growers protect the plants within them from external weather, and never need to be fertilized. Each Grower holds one plant. ",
+			"tier": 5,
+			"group": "Crafting"
+		},
+		{
+			"name": "Scrap (Food)",
+			"image": "Secret_Potion",
+			"desc": "Scarp is material that can be used in place of money when crafting. Give a value to this that makes sense for the area/story.",
+			"tier": 1,
+			"group": "Crafting"
+		},
+		{
+			"name": "Scrap (Medicine)",
+			"image": "Secret_Potion",
+			"desc": "Scarp is material that can be used in place of money when crafting. Give a value to this that makes sense for the area/story.",
+			"tier": 1,
+			"group": "Crafting"
+		},
+		{
+			"name": "Scrap (Poke Ball)",
+			"image": "Secret_Potion",
+			"desc": "Scarp is material that can be used in place of money when crafting. Give a value to this that makes sense for the area/story.",
+			"tier": 1,
+			"group": "Crafting"
+		},
+		{
+			"name": "Scrap (Fashion)",
+			"image": "Secret_Potion",
+			"desc": "Scarp is material that can be used in place of money when crafting. Give a value to this that makes sense for the area/story.",
+			"tier": 1,
+			"group": "Crafting"
+		},
+		{
+			"name": "Venusaurite",
+			"image": "Venusaurite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Venusaur.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Charizardite X",
+			"image": "Charizardite_X",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Charizard.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Charizardite Y",
+			"image": "Charizardite_Y",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Charizard.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Blastoisinite",
+			"image": "Blastoisinite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Blastoise.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Alakazite",
+			"image": "Alakazite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Alakazam.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Gengarite",
+			"image": "Gengarite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Gengar.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Kangaskhanite",
+			"image": "Kangaskhanite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Kangaskhan.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Pinsirite",
+			"image": "Pinsirite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Pinsir.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Gyaradosite",
+			"image": "Gyaradosite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Gyarados.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Aerodactylite",
+			"image": "Aerodactylite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Aerodactyl.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Mewtwonite X",
+			"image": "Mewtwonite_X",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Mewtwo.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Mewtwonite Y",
+			"image": "Mewtwonite_Y",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Mewtwo.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Ampharosite",
+			"image": "Ampharosite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Ampharos.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Scizorite",
+			"image": "Scizorite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Scizor.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Heracronite",
+			"image": "Heracronite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Heracross.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Houndoominite",
+			"image": "Houndoominite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Houndoom.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Tyranitarite",
+			"image": "Tyranitarite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Tyranitar.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Blazikenite",
+			"image": "Blazikenite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Blaziken.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Gardevoirite",
+			"image": "Gardevoirite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Gardevoir.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Mawilite",
+			"image": "Mawilite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Mawile.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Aggronite",
+			"image": "Aggronite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Aggron.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Medichamite",
+			"image": "Medichamite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Medicham.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Manectite",
+			"image": "Manectite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Manectric.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Banettite",
+			"image": "Banettite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Banette.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Absolite",
+			"image": "Absolite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Absol.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Lucarionite",
+			"image": "Lucarionite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Lucario.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Garchompite",
+			"image": "Garchompite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Garchomp.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Abomasite",
+			"image": "Abomasite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Abomasnow.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Beedrillite",
+			"image": "Beedrillite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Beedrill.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Pidgeotite",
+			"image": "Pidgeotite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Pidgeot.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Slowbronite",
+			"image": "Slowbronite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Slowbro.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Steelixite",
+			"image": "Steelixite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Steelix.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Sceptilite",
+			"image": "Sceptilite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Sceptile.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Swampertite",
+			"image": "Swampertite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Swampert.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Sablenite",
+			"image": "Sablenite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Sableye.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Sharpedonite",
+			"image": "Sharpedonite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Sharpedo.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Cameruptite",
+			"image": "Cameruptite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Camerupt.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Glalitite",
+			"image": "Glalitite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Glalie.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Salamencite",
+			"image": "Salamencite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Salamence.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Metagrossite",
+			"image": "Metagrossite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Metagross.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Latiasite",
+			"image": "Latiasite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Latias.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Latiosite",
+			"image": "Latiosite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Latios.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Jade Orb",
+			"image": "Jade_Orb",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Rayquaza.",
+			"tier": 6,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Red Orb",
+			"image": "Red_Orb",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Groudon.",
+			"tier": 6,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Blue Orb",
+			"image": "Blue_Orb",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Kyogre.",
+			"tier": 6,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Lopunnite",
+			"image": "Lopunnite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Lopunny.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Galladite",
+			"image": "Galladite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Gallade.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Audinite",
+			"image": "Audinite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Audino.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Diancite",
+			"image": "Diancite",
+			"desc": "An item that allows a Pokémon to Mega Evolve when used in conjunction with a Mega Ring. Each Mega Stone is specific to one species and Mega Evolved form. This is used to evolve Diancie.",
+			"tier": 4,
+			"group": "Evolution Stone"
+		},
+		{
+			"name": "Mega Ring",
+			"image": "Mega_Bracelet",
+			"desc": "Mega Rings are extraordinarily rare accessories that allow a Trainer’s Pokémon to Mega Evolve when used in conjunction with a Mega Stone. They cannot be bought in stores anywhere and must usually be earned through a trial of sorts, governed by a Gym Leader or other influential Pokémon Trainer. They can take the form of a bracelet, a necklace, or an actual ring. ",
+			"tier": 6,
+			"group": "Held Item"
 		}
 	]
 }

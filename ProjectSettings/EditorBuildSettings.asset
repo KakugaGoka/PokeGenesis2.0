@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AddPokemon.unity
     guid: 6c93bacc5a7324149911a534af2cf05e
+  - enabled: 1
+    path: Assets/Scenes/Forage.unity
+    guid: a913cfc32b429f54c872528a4e58d2a9
   m_configObjects: {}

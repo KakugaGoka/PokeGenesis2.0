@@ -57,3 +57,7 @@ MonoBehaviour:
     type: 3}
   movePrefab: {fileID: 3558793313090381047, guid: d21f14e535b32484784a08eada89ebe0,
     type: 3}
+  itemPrefab: {fileID: 2168865246284680315, guid: 0ffe9a0905fae994583e22c6141dcb0c,
+    type: 3}
+  itemListPrefab: {fileID: 6283013253410108817, guid: c138ba0dbbab61343952c5af1062fa20,
+    type: 3}

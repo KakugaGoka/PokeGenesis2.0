@@ -64,6 +64,26 @@ public class DialogController : MonoBehaviour
                 File.WriteAllText(Path.Combine(PokedexManager.dataPath, "JSON/Pokemon.json"), data);
                 PokedexManager.manager.CreateWarningDialog("Pokedex successfully merged with the backup pokedex data!");
                 break;
+            case ConfirmationType.itemDelete:
+                ItemList itemList = PokedexManager.currentItem.GetComponent<ItemEntry>().parent.itemList;
+                ItemListEntry entry = PokedexManager.currentItem.GetComponent<ItemEntry>().parent;
+                Item inQuestion = PokedexManager.currentItem.GetComponent<ItemEntry>().item;
+                foreach (Item item in itemList.Items) {
+                    if (item.name == inQuestion.name) {
+                        List<Item> newList = itemList.Items.ToList();
+                        newList.Remove(item);
+                        itemList.Items = newList.ToArray();
+                    }
+                }
+                itemList.ToJson(itemList.savePath, true);
+                Destroy(PokedexManager.currentItem);
+                entry.OnSelected();
+                break;
+            case ConfirmationType.listDelete:
+                ItemList list = PokedexManager.currentItemList.GetComponent<ItemListEntry>().itemList;
+                File.Delete(Path.Combine(PokedexManager.dataPath, list.savePath));
+                Destroy(PokedexManager.currentItemList);
+                break;
 
         }
         Destroy(this.gameObject);
@@ -258,7 +278,9 @@ public enum ConfirmationType {
     quit,
     backup,
     restore,
-    merge
+    merge,
+    itemDelete,
+    listDelete
 }
 
 public enum SaveType {

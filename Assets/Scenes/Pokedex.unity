@@ -374,7 +374,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Add Pokemon
+  m_Text: Loot
 --- !u!222 &40887475
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11743,7 +11743,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13083,10 +13083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1a41a7972fc9c42b80e0e64ef77619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pokedexPrefab: {fileID: 5872624402897464418, guid: 0b593bef7a3b47b43bd3d9a934a4fe0d,
-    type: 3}
-  movePrefab: {fileID: 3558793313090381047, guid: d21f14e535b32484784a08eada89ebe0,
-    type: 3}
   contentView: {fileID: 1009237040}
   movesView: {fileID: 1110061628}
 --- !u!114 &1788262862

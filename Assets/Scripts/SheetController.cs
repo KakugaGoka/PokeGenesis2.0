@@ -541,7 +541,7 @@ public class SheetController : MonoBehaviour {
             foreach (var fullMove in PokedexManager.moves) {
                 if (fullMove.name == move.name) {
                     controller.move = fullMove;
-                    controller.SetFields("Level " + move.level + " : " + fullMove.name);
+                    controller.SetFields();
                     break;
                 }
             }

@@ -141,20 +141,6 @@ public enum Condition {
 }
 
 [Serializable]
-public class Item {
-    public Sprite
-        sprite;
-    
-    public string
-        name,
-        desc,
-        image;
-
-    public int
-        tier;
-}
-
-[Serializable]
 public class Pokemon {
 
     public BaseRelations[]
@@ -287,7 +273,7 @@ public class Pokemon {
     public void ToJson(string path, bool overwrite = false) {
         string finalPath = path;
         if (!overwrite) {
-            finalPath = ValidatePath(path);
+            finalPath = PokedexManager.ValidatePath(path);
         }
         savePath = finalPath;
         string data = JsonUtility.ToJson(this, true);
@@ -297,18 +283,6 @@ public class Pokemon {
     public static Pokemon FromJson(string path) {
         string data = File.ReadAllText(path);
         return JsonUtility.FromJson<Pokemon>(data);
-    }
-
-    private string ValidatePath(string path, int iteration = 0) {
-        string newPath = path;
-        if (File.Exists(Path.Combine(PokedexManager.dataPath, path))) {
-            bool match = Regex.IsMatch(newPath, @"_[\d-]*[\d-]");
-            if (match == true) {
-                newPath = Regex.Replace(newPath, @"_[\d-]*[\d-]", "");
-            }
-            newPath = ValidatePath(newPath.Replace(".json", "_" + iteration.ToString() + ".json"), iteration+1);
-        }
-        return newPath;
     }
 
     public Pokemon Clone() {
