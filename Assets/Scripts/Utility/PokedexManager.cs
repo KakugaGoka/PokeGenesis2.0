@@ -46,6 +46,7 @@ public class PokedexManager : MonoBehaviour {
     public GameObject movePrefab;
     public GameObject itemPrefab;
     public GameObject itemListPrefab;
+    public GameObject groupPrefab;
 
     // Start is called before the first frame update
     void Awake() {

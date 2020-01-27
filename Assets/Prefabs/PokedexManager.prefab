@@ -61,3 +61,5 @@ MonoBehaviour:
     type: 3}
   itemListPrefab: {fileID: 6283013253410108817, guid: c138ba0dbbab61343952c5af1062fa20,
     type: 3}
+  groupPrefab: {fileID: 7249125634240867520, guid: d00ecea890f4fb648a605877e7311bf7,
+    type: 3}

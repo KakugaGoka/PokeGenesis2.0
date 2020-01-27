@@ -368,8 +368,10 @@ public class EncounterController : MonoBehaviour {
         scanInProgress = true;
         // Get the check box fields to apply to the private bools. 
         appendScan = GameObject.Find("Append to List").GetComponent<Toggle>().isOn;
-
-        CreateScanList();
+        allowShinies = GameObject.Find("Allow Shinies").GetComponent<Toggle>().isOn;
+        alwaysShiny = GameObject.Find("Always Shiny").GetComponent<Toggle>().isOn;
+        allowHeldItems = GameObject.Find("Allow Held Items").GetComponent<Toggle>().isOn;
+        alwaysHoldItem = GameObject.Find("Always Hold Item").GetComponent<Toggle>().isOn;
 
         if (encounterablePokemon.Count() < 1) {
             PokedexManager.manager.CreateWarningDialog("No pokemon to encounter with these settings.");
@@ -399,20 +401,27 @@ public class EncounterController : MonoBehaviour {
         scanInProgress = false;
     }
 
-    public void CreateScanList() {
-        allowShinies = GameObject.Find("Allow Shinies").GetComponent<Toggle>().isOn;
-        alwaysShiny = GameObject.Find("Always Shiny").GetComponent<Toggle>().isOn;
-        allowLegendaries = GameObject.Find("Allow Legendaries").GetComponent<Toggle>().isOn;
-        allowHeldItems = GameObject.Find("Allow Held Items").GetComponent<Toggle>().isOn;
-        alwaysHoldItem = GameObject.Find("Always Hold Item").GetComponent<Toggle>().isOn;
+    public void CreateScanList(bool fromPokemonDropdown = false) {
 
         // Clean the lists to ensure proper data is used for the scans
         encounterablePokemon.Clear();
 
+        if (!fromPokemonDropdown) {
+            pokemonDropdown.value = 0;
+        }
+
+        string species = pokemonDropdown.options[pokemonDropdown.value].text;
+        string route = routeDropdown.options[routeDropdown.value].text;
+        allowLegendaries = GameObject.Find("Allow Legendaries").GetComponent<Toggle>().isOn;
+        string habitat = habitatDropdown.options[habitatDropdown.value].text;
+        string type = typeDropdown.options[typeDropdown.value].text;
+        string stage = stageDropdown.options[stageDropdown.value].text;
         // Ensure that no pokemon is added that does not fit the parameters, like legendary or habitat. 
         // This should be pushed into its own function when all of the fields are added so to keep this function clean.
         foreach (Pokemon pokemon in PokedexManager.pokedex) {
-            string route = routeDropdown.options[routeDropdown.value].text;
+            if ((species != "Any Pokemon" && species != "No Pokemon") && species != pokemon.species) {
+                continue;
+            }
             if (route != "Any Route") {
                 Route thisRoute = PokedexManager.routes.First(x => x.name == route);
                 string thisPokemon = thisRoute.pokemon.FirstOrDefault(x => x == pokemon.species);
@@ -421,15 +430,12 @@ public class EncounterController : MonoBehaviour {
             if (!allowLegendaries && pokemon.legendary) {
                 continue;
             }
-            string habitat = habitatDropdown.options[habitatDropdown.value].text;
             if (habitat != "Any Habitat" && !pokemon.habitat.Contains(habitat)) {
                 continue;
             }
-            string type = typeDropdown.options[typeDropdown.value].text;
             if (type != "Any Type" && !pokemon.type.Contains(type)) {
                 continue;
             }
-            string stage = stageDropdown.options[stageDropdown.value].text;
             if (stage == "Stage 1" && pokemon.stage != 1) {
                 continue;
             } else if (stage == "Stage 2" && pokemon.stage != 2) {
@@ -443,23 +449,21 @@ public class EncounterController : MonoBehaviour {
             } else if (stage == "Stage 2 or 3" && pokemon.stage == 1) {
                 continue;
             }
-            string species = pokemonDropdown.options[pokemonDropdown.value].text;
-            if ((species != "Any Pokemon" && species != "No Pokemon") && species != pokemon.species) {
-                continue;
-            }
             encounterablePokemon.Add(pokemon.Clone());
         }
-        pokemonDropdown.ClearOptions();
-        List<Dropdown.OptionData> pokemonOptions = new List<Dropdown.OptionData>();
-        if (encounterablePokemon.Count() < 1) {
-            pokemonOptions.Add(new Dropdown.OptionData("No Pokemon"));
-            pokemonDropdown.AddOptions(pokemonOptions);
-        } else {
-            pokemonOptions.Add(new Dropdown.OptionData("Any Pokemon"));
-            foreach (Pokemon pokemon in encounterablePokemon) {
-                pokemonOptions.Add(new Dropdown.OptionData(pokemon.species));
+        if (!fromPokemonDropdown) {
+            pokemonDropdown.ClearOptions();
+            List<Dropdown.OptionData> pokemonOptions = new List<Dropdown.OptionData>();
+            if (encounterablePokemon.Count() < 1) {
+                pokemonOptions.Add(new Dropdown.OptionData("No Pokemon"));
+                pokemonDropdown.AddOptions(pokemonOptions);
+            } else {
+                pokemonOptions.Add(new Dropdown.OptionData("Any Pokemon"));
+                foreach (Pokemon pokemon in encounterablePokemon) {
+                    pokemonOptions.Add(new Dropdown.OptionData(pokemon.species));
+                }
+                pokemonDropdown.AddOptions(pokemonOptions);
             }
-            pokemonDropdown.AddOptions(pokemonOptions);
         }
     }
 

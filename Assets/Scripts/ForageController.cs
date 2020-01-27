@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class ForageController : MonoBehaviour {
     public GameObject
         contentView,
-        itemView;
+        itemView,
+        groupView;
 
     public int capturedJSONCount = 0;
 
@@ -33,12 +34,14 @@ public class ForageController : MonoBehaviour {
     private GameObject
         itemsPanel,
         searchPanel,
+        groupPanel,
         itemsTab,
         searchTab,
+        groupTab,
         panelParent;
 
-    private Dictionary<string, bool>
-        groupDictionary = new Dictionary<string, bool>();
+    private List<Group>
+        groupList = new List<Group>();
 
     void Start() {
         nameField = GameObject.Find("Name Field").GetComponent<UnityEngine.UI.InputField>();
@@ -58,21 +61,19 @@ public class ForageController : MonoBehaviour {
         maxTierSlider = GameObject.Find("Max Tier Slider").GetComponent<Slider>();
 
         int maxTier = PokedexManager.items.OrderBy(x => x.tier).ToArray()[PokedexManager.items.Length - 1].tier;
-        Debug.Log("Max Tier is: " + maxTier.ToString());
 
         minTierSlider.maxValue = maxTier;
         maxTierSlider.maxValue = maxTier;
 
         searchPanel = GameObject.Find("Search Panel");
         itemsPanel = GameObject.Find("Items Panel");
+        groupPanel = GameObject.Find("Group Panel");
         panelParent = GameObject.Find("Panels");
 
         searchTab = GameObject.Find("Search Tab");
         itemsTab = GameObject.Find("Items Tab");
+        groupTab = GameObject.Find("Group Tab");
 
-        groupToggle = GameObject.Find("Group Toggle").GetComponent<Toggle>();
-
-        groupDropdown = GameObject.Find("Allowed Groups Dropdown").GetComponent<Dropdown>();
         List<string> groups = new List<string>();
         foreach (Item item in PokedexManager.items) {
             if (!groups.Contains(item.group)) {
@@ -80,15 +81,17 @@ public class ForageController : MonoBehaviour {
             }
         }
         groups = groups.OrderBy(x => x).ToList();
+
         foreach (string group in groups) {
-            groupDictionary.Add(group, true);
+            GameObject newGroup = Instantiate(PokedexManager.manager.groupPrefab) as GameObject;
+            newGroup.transform.parent = groupView.transform;
+            newGroup.transform.localScale = Vector3.one;
+            Group controller = newGroup.GetComponent<Group>();
+            controller.title = group;
+            controller.allowed = true;
+            controller.SetFields();
+            groupList.Add(controller);
         }
-        List<Dropdown.OptionData> groupOptions = new List<Dropdown.OptionData>();
-        foreach (string group in groupDictionary.Keys) {
-            groupOptions.Add(new Dropdown.OptionData(group));
-        }
-        groupDropdown.ClearOptions();
-        groupDropdown.AddOptions(groupOptions);
 
 #if DEBUG
         // Verify that all items have a description, group, and tier.
@@ -127,14 +130,6 @@ public class ForageController : MonoBehaviour {
                 }
             }
         }
-    }
-
-    public void SetGroupToggle() {
-        groupDictionary[groupDropdown.options[groupDropdown.value].text] = groupToggle.isOn;
-    }
-
-    public void GetGroupToggle() {
-        groupToggle.isOn = groupDictionary[groupDropdown.options[groupDropdown.value].text];
     }
 
     public void OnSelected() {
@@ -225,8 +220,9 @@ public class ForageController : MonoBehaviour {
             if (item.tier < min || item.tier > max) {
                 continue;
             }
-            if (groupDictionary.Keys.Contains(item.group)) {
-                if (groupDictionary[item.group] == false) {
+            Group currentGroup = groupList.FirstOrDefault(x => x.title == item.group);
+            if (currentGroup.title == item.group) {
+                if (currentGroup.allowed == false) {
                     continue;
                 }
             }
@@ -300,11 +296,20 @@ public class ForageController : MonoBehaviour {
         itemsPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
         itemsTab.GetComponent<Image>().color = PokedexManager.frontGrey;
         searchTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        groupTab.GetComponent<Image>().color = PokedexManager.backGrey;
     }
 
     public void ShowSearch() {
         searchPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
         itemsTab.GetComponent<Image>().color = PokedexManager.backGrey;
         searchTab.GetComponent<Image>().color = PokedexManager.frontGrey;
+        groupTab.GetComponent<Image>().color = PokedexManager.backGrey;
+    }
+
+    public void ShowGroups() {
+        groupPanel.transform.SetSiblingIndex(panelParent.transform.childCount);
+        itemsTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        searchTab.GetComponent<Image>().color = PokedexManager.backGrey;
+        groupTab.GetComponent<Image>().color = PokedexManager.frontGrey;
     }
 }
