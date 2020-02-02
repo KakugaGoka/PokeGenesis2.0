@@ -357,6 +357,13 @@ public class SheetController : MonoBehaviour {
         int spdefStage = pokemon.spdefLevel / 10;
         int spdStage = pokemon.spdLevel / 10;
 
+        if (hpStage == 0) { hpStage = 1; }
+        if (atkStage == 0) { atkStage = 1; }
+        if (defStage == 0) { defStage = 1; }
+        if (spatkStage == 0) { spatkStage = 1; }
+        if (spdefStage == 0) { spdefStage = 1; }
+        if (spdStage == 0) { spdStage = 1; }
+
         hpTotalField.text = (pokemon.hp + pokemon.hpLevel + (pokemon.hpCS * hpStage)).ToString();
         atkTotalField.text = (pokemon.atk + pokemon.atkLevel + (pokemon.atkCS * atkStage)).ToString();
         defTotalField.text = (pokemon.def + pokemon.defLevel + (pokemon.defCS * defStage)).ToString();
