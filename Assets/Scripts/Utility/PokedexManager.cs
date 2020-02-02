@@ -67,6 +67,9 @@ public class PokedexManager : MonoBehaviour {
         if (!Directory.Exists(Path.Combine(dataPath, "ItemLists/"))) {
             Directory.CreateDirectory(Path.Combine(dataPath, "ItemLists/"));
         }
+        if (!Directory.Exists(Path.Combine(dataPath, "Maps/"))) {
+            Directory.CreateDirectory(Path.Combine(dataPath, " Maps/"));
+        }
         WriteOutJSONs();
         WriteOutCries();
         WriteOutIcons();

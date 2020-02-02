@@ -80574,7 +80574,7 @@
       "perceptionBonus": 2,
       "focusBonus": 0,
       "techEduBonus": 0,
-      "legendary": false,
+      "legendary": true,
       "evolutions": [
         "1 - Zacian"
       ],
@@ -80652,7 +80652,7 @@
       "perceptionBonus": 2,
       "focusBonus": 0,
       "techEduBonus": 0,
-      "legendary": false,
+      "legendary": true,
       "evolutions": [
         "1 - Zacian"
       ],
@@ -80729,7 +80729,7 @@
       "perceptionBonus": 0,
       "focusBonus": 2,
       "techEduBonus": 0,
-      "legendary": false,
+      "legendary": true,
       "evolutions": [
         "1 - Zamazenta"
       ],
@@ -80807,7 +80807,7 @@
       "perceptionBonus": 0,
       "focusBonus": 2,
       "techEduBonus": 0,
-      "legendary": false,
+      "legendary": true,
       "evolutions": [
         "1 - Zamazenta"
       ],

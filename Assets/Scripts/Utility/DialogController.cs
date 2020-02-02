@@ -73,6 +73,7 @@ public class DialogController : MonoBehaviour
                         List<Item> newList = itemList.Items.ToList();
                         newList.Remove(item);
                         itemList.Items = newList.ToArray();
+                        break;
                     }
                 }
                 itemList.ToJson(itemList.savePath, true);

@@ -93,7 +93,8 @@ public class EncounterController : MonoBehaviour {
         levelField,
         dynaLevelField,
         heldItemNameField,
-        captureRateField;
+        captureRateField,
+        searchField;
 
     private GameObject
         infoPanel,
@@ -164,6 +165,7 @@ public class EncounterController : MonoBehaviour {
         dynaLevelField = GameObject.Find("Dynamax Level Field").GetComponent<UnityEngine.UI.InputField>();
         heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<UnityEngine.UI.InputField>();
         captureRateField = GameObject.Find("Capture Rate Field").GetComponent<UnityEngine.UI.InputField>();
+        searchField = GameObject.Find("Search Field").GetComponent<UnityEngine.UI.InputField>();
 
         conditionToggle = GameObject.Find("Condition Toggle").GetComponent<Toggle>();
 
@@ -416,39 +418,26 @@ public class EncounterController : MonoBehaviour {
         string habitat = habitatDropdown.options[habitatDropdown.value].text;
         string type = typeDropdown.options[typeDropdown.value].text;
         string stage = stageDropdown.options[stageDropdown.value].text;
+        string search = searchField.text.ToLower();
         // Ensure that no pokemon is added that does not fit the parameters, like legendary or habitat. 
         // This should be pushed into its own function when all of the fields are added so to keep this function clean.
         foreach (Pokemon pokemon in PokedexManager.pokedex) {
-            if ((species != "Any Pokemon" && species != "No Pokemon") && species != pokemon.species) {
-                continue;
-            }
+            if (!pokemon.species.ToLower().Contains(search)) { continue; }
+            if ((species != "Any Pokemon" && species != "No Pokemon") && species != pokemon.species) { continue; }
             if (route != "Any Route") {
                 Route thisRoute = PokedexManager.routes.First(x => x.name == route);
                 string thisPokemon = thisRoute.pokemon.FirstOrDefault(x => x == pokemon.species);
                 if (thisPokemon == null) { continue; }
             }
-            if (!allowLegendaries && pokemon.legendary) {
-                continue;
-            }
-            if (habitat != "Any Habitat" && !pokemon.habitat.Contains(habitat)) {
-                continue;
-            }
-            if (type != "Any Type" && !pokemon.type.Contains(type)) {
-                continue;
-            }
-            if (stage == "Stage 1" && pokemon.stage != 1) {
-                continue;
-            } else if (stage == "Stage 2" && pokemon.stage != 2) {
-                continue;
-            } else if (stage == "Stage 3" && pokemon.stage != 3) {
-                continue;
-            } else if (stage == "Stage 1 or 2" && pokemon.stage == 3) {
-                continue;
-            } else if (stage == "Stage 1 or 3" && pokemon.stage == 2) {
-                continue;
-            } else if (stage == "Stage 2 or 3" && pokemon.stage == 1) {
-                continue;
-            }
+            if (!allowLegendaries && pokemon.legendary) { continue; }
+            if (habitat != "Any Habitat" && !pokemon.habitat.Contains(habitat)) { continue; }
+            if (type != "Any Type" && !pokemon.type.Contains(type)) { continue; }
+            if (stage == "Stage 1" && pokemon.stage != 1) { continue; } 
+            else if (stage == "Stage 2" && pokemon.stage != 2) { continue; } 
+            else if (stage == "Stage 3" && pokemon.stage != 3) { continue;} 
+            else if (stage == "Stage 1 or 2" && pokemon.stage == 3) { continue; } 
+            else if (stage == "Stage 1 or 3" && pokemon.stage == 2) { continue; } 
+            else if (stage == "Stage 2 or 3" && pokemon.stage == 1) { continue; }
             encounterablePokemon.Add(pokemon.Clone());
         }
         if (!fromPokemonDropdown) {
@@ -457,7 +446,7 @@ public class EncounterController : MonoBehaviour {
             if (encounterablePokemon.Count() < 1) {
                 pokemonOptions.Add(new Dropdown.OptionData("No Pokemon"));
                 pokemonDropdown.AddOptions(pokemonOptions);
-            } else {
+            } else { 
                 pokemonOptions.Add(new Dropdown.OptionData("Any Pokemon"));
                 foreach (Pokemon pokemon in encounterablePokemon) {
                     pokemonOptions.Add(new Dropdown.OptionData(pokemon.species));
