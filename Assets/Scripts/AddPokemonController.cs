@@ -455,6 +455,7 @@ public class AddPokemonController : MonoBehaviour
         json.Property("knownMoveList").Remove();
         json.Property("movesList").Remove();
         json.Property("level").Remove();
+        json.Property("exp").Remove();
         json.Property("dynamaxLevel").Remove();
         json.Property("isDynamax").Remove();
         json.Property("loyalty").Remove();

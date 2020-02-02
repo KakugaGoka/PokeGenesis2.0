@@ -83,7 +83,9 @@ public class SheetController : MonoBehaviour {
         tradeNameField,
         myNameField,
         loyaltyField,
-        tutorPointsField;
+        tutorPointsField,
+        currentEXPField,
+        neededEXPField;
 
     private GameObject
         infoPanel,
@@ -158,6 +160,8 @@ public class SheetController : MonoBehaviour {
         heldItemNameField = GameObject.Find("Held Item Name Field").GetComponent<UnityEngine.UI.InputField>();
         loyaltyField = GameObject.Find("Loyalty Field").GetComponent<UnityEngine.UI.InputField>();
         tutorPointsField = GameObject.Find("Tutor Points Field").GetComponent<UnityEngine.UI.InputField>();
+        currentEXPField = GameObject.Find("Current Exp Field").GetComponent<UnityEngine.UI.InputField>();
+        neededEXPField = GameObject.Find("Needed Exp Field").GetComponent<UnityEngine.UI.InputField>();
 
         conditionToggle = GameObject.Find("Condition Toggle").GetComponent<Toggle>();
 
@@ -325,6 +329,13 @@ public class SheetController : MonoBehaviour {
         natureField.text = pokemon.nature.name;
         if (pokemon.notes == null) { pokemon.notes = ""; }
         notesField.text = pokemon.notes;
+
+        currentEXPField.text = pokemon.exp.ToString();
+        if (PokedexManager.expNeeded.Length >= pokemon.level + 1) {
+            neededEXPField.text = PokedexManager.expNeeded[pokemon.level].ToString();
+        } else {
+            neededEXPField.text = "X";
+        }
 
         hpBaseField.text = pokemon.hp.ToString();
         atkBaseField.text = pokemon.atk.ToString();
@@ -661,6 +672,8 @@ public class SheetController : MonoBehaviour {
             pokemon.level = int.Parse((levelField.text));
             pokemon.dynamaxLevel = Mathf.Clamp(int.Parse(dynaLevelField.text), 0, 10);
             dynaLevelField.text = Mathf.Clamp(int.Parse(dynaLevelField.text), 0, 10).ToString();
+
+            pokemon.exp = int.Parse(currentEXPField.text);
 
             OnSelected(PokedexManager.currentPokemon, PokedexManager.currentEntry);
             pokemon.ToJson(pokemon.savePath, true);

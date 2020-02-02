@@ -24,10 +24,6 @@ public class Tooltip : MonoBehaviour
         PokedexManager.manager.CreateTooltipDialog(move.name, move.typeName, MoveToolTip(move), color);
     }
 
-    public void ShowItemToolTipFromPrefab(Item item) {
-        PokedexManager.manager.CreateTooltipDialog(item.name, item.group, ItemToolTip(item), Color.gray);
-    }
-
     public string MoveToolTip(Move move) {
         string toolTip = "";
         if (move.ac != 0) {
@@ -195,6 +191,10 @@ public class Tooltip : MonoBehaviour
         PokedexManager.manager.CreateWarningDialog("Capability is not registered in Capabilities.json: '" + inputField.text + "'");
     }
 
+    public void ShowItemToolTipFromPrefab(Item item) {
+        PokedexManager.manager.CreateTooltipDialog(item.name, item.group, ItemToolTip(item), Color.gray);
+    }
+
     public string ItemToolTip(Item item) {
         string toolTip = "";
         if (item.desc != null) {
@@ -225,5 +225,36 @@ public class Tooltip : MonoBehaviour
 
     public string FeatureToolTip(string feature) {
         return " Feature Tooltips are not currently supported. For info on the Pokemon Feature \"" + feature + "\" please reference the source books.";
+    }
+
+    public void ShowTypeToolTip() {
+        if (PokedexManager.currentPokemon == null) { return; }
+        PokemonType type = PokedexManager.currentPokemon.GetTypeInfo();
+        PokedexManager.manager.CreateTooltipDialog(type.typeName, "", TypeToolTip(type));
+    }
+
+    public string TypeToolTip(PokemonType type) {
+        string toolTip = "";
+        toolTip += "Bug:\t\t\tx" + type.bug + Environment.NewLine; 
+        toolTip += "Dark:\t\tx" + type.dark + Environment.NewLine; 
+        toolTip += "Dargon:\t\tx" + type.dragon + Environment.NewLine; 
+        toolTip += "Electric:\tx" + type.electric + Environment.NewLine; 
+        toolTip += "Fairy:\t\tx" + type.fairy + Environment.NewLine; 
+        toolTip += "Fighting:\tx" + type.fighting + Environment.NewLine; 
+        toolTip += "Fire:\t\t\tx" + type.fire + Environment.NewLine; 
+        toolTip += "Flying:\t\tx" + type.flying + Environment.NewLine; 
+        toolTip += "Ghost:\t\tx" + type.ghost + Environment.NewLine; 
+        toolTip += "Grass:\t\tx" + type.grass + Environment.NewLine; 
+        toolTip += "Ground:\tx" + type.ground + Environment.NewLine; 
+        toolTip += "Ice:\t\t\tx" + type.ice + Environment.NewLine; 
+        toolTip += "Normal:\t\tx" + type.normal + Environment.NewLine; 
+        toolTip += "Poison:\t\tx" + type.poison + Environment.NewLine; 
+        toolTip += "Psychic:\tx" + type.psychic + Environment.NewLine; 
+        toolTip += "Rock:\t\tx" + type.rock + Environment.NewLine; 
+        toolTip += "Steel:\t\tx" + type.steel + Environment.NewLine; 
+        toolTip += "Water:\t\tx" + type.water + Environment.NewLine; 
+
+
+        return toolTip;
     }
 }

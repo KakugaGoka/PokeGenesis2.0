@@ -22,6 +22,7 @@ public class PokedexManager : MonoBehaviour {
     static public Info[] capabilitiesInfo;
     static public Info[] conditionsInfo;
     static public Route[] routes;
+    static public int[] expNeeded;
 
     static public Pokemon currentPokemon;
     static public GameObject currentEntry;
@@ -140,6 +141,11 @@ public class PokedexManager : MonoBehaviour {
         if (!File.Exists(Path.Combine(dataPath, "JSON/Routes.json"))) {
             currentJSON = Resources.Load<TextAsset>("JSON/Routes");
             File.WriteAllText(Path.Combine(dataPath, "JSON/Routes.json"), currentJSON.text);
+        }
+        // ExperienceChart 
+        if (!File.Exists(Path.Combine(dataPath, "JSON/ExperienceChart.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/ExperienceChart");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/ExperienceChart.json"), currentJSON.text);
         }
     }
 
@@ -267,6 +273,11 @@ public class PokedexManager : MonoBehaviour {
             routes = JsonHelper.FromJson<Route>(routesString);
             routes = routes.OrderBy(x => x.name).ToArray();
             Debug.Log("Routes Count: " + routes.Count());
+
+            string expString = File.ReadAllText(Path.Combine(dataPath, "JSON/ExperienceChart.json"));
+            expNeeded = JsonHelper.FromJson<int>(expString);
+            expNeeded = expNeeded.OrderBy(x => x).ToArray();
+            Debug.Log("Experience Levels Count: " + expNeeded.Count());
 
             readyToLoadJSONs = false;
         }
