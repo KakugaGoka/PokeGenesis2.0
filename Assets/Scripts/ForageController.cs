@@ -271,22 +271,37 @@ public class ForageController : MonoBehaviour {
         listEntry.SetFields();
     }
 
-    public void UpdateEncounterSliderNumber() {
-        Text sliderLabel = GameObject.Find("Count Slider Label").GetComponent<Text>();
-        sliderLabel.text = "Count: " + countSlider.value.ToString();
+    public void UpdateCountSliderNumber(bool bySlider) {
+        UnityEngine.UI.InputField sliderLabel = GameObject.Find("Count Field").GetComponent<UnityEngine.UI.InputField>();
+        if (bySlider) {
+            sliderLabel.text = countSlider.value.ToString();
+        } else {
+            sliderLabel.text = Mathf.Clamp(int.Parse(sliderLabel.text), (int)countSlider.minValue, (int)countSlider.maxValue).ToString();
+            countSlider.value = float.Parse(sliderLabel.text);
+        }
     }
 
-    public void UpdateMinLevelSliderNumber() {
-        Text sliderLabel = GameObject.Find("Min Tier Slider Label").GetComponent<Text>();
-        sliderLabel.text = "Min Lvl: " + minTierSlider.value.ToString();
+    public void UpdateMinLevelSliderNumber(bool bySlider) {
+        UnityEngine.UI.InputField sliderLabel = GameObject.Find("Min Tier Field").GetComponent<UnityEngine.UI.InputField>();
+        if (bySlider) {
+            sliderLabel.text = minTierSlider.value.ToString();
+        } else {
+            sliderLabel.text = Mathf.Clamp(int.Parse(sliderLabel.text), (int)minTierSlider.minValue, (int)minTierSlider.maxValue).ToString();
+            minTierSlider.value = float.Parse(sliderLabel.text);
+        }
         if (minTierSlider.value > maxTierSlider.value) {
             maxTierSlider.value = minTierSlider.value;
         }
     }
 
-    public void UpdateMaxLevelSliderNumber() {
-        Text sliderLabel = GameObject.Find("Max Tier Slider Label").GetComponent<Text>();
-        sliderLabel.text = "Max Lvl: " + maxTierSlider.value.ToString();
+    public void UpdateMaxLevelSliderNumber(bool bySlider) {
+        UnityEngine.UI.InputField sliderLabel = GameObject.Find("Max Tier Field").GetComponent<UnityEngine.UI.InputField>();
+        if (bySlider) {
+            sliderLabel.text = maxTierSlider.value.ToString();
+        } else {
+            sliderLabel.text = Mathf.Clamp(int.Parse(sliderLabel.text), (int)maxTierSlider.minValue, (int)maxTierSlider.maxValue).ToString();
+            maxTierSlider.value = float.Parse(sliderLabel.text);
+        }
         if (maxTierSlider.value < minTierSlider.value) {
             minTierSlider.value = maxTierSlider.value;
         }

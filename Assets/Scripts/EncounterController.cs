@@ -751,22 +751,37 @@ public class EncounterController : MonoBehaviour {
         CreateScanList();
     }
 
-    public void UpdateEncounterSliderNumber() {
-        Text sliderLabel = GameObject.Find("Encounter Slider Label").GetComponent<Text>();
-        sliderLabel.text = "Count: " + encounterSlider.value.ToString();
+    public void UpdateEncounterSliderNumber(bool bySlider) {
+        UnityEngine.UI.InputField sliderLabel = GameObject.Find("Scan Count Field").GetComponent<UnityEngine.UI.InputField>();
+        if (bySlider) {
+            sliderLabel.text = encounterSlider.value.ToString();
+        } else {
+            sliderLabel.text = Mathf.Clamp(int.Parse(sliderLabel.text), (int)encounterSlider.minValue, (int)encounterSlider.maxValue).ToString();
+            encounterSlider.value = float.Parse(sliderLabel.text);
+        }
     }
 
-    public void UpdateMinLevelSliderNumber() {
-        Text sliderLabel = GameObject.Find("Min Level Slider Label").GetComponent<Text>();
-        sliderLabel.text = "Min Lvl: " + minLevelSlider.value.ToString();
+    public void UpdateMinLevelSliderNumber(bool bySlider) {
+        UnityEngine.UI.InputField sliderLabel = GameObject.Find("Min Level Field").GetComponent<UnityEngine.UI.InputField>();
+        if (bySlider) {
+            sliderLabel.text = minLevelSlider.value.ToString();
+        } else {
+            sliderLabel.text = Mathf.Clamp(int.Parse(sliderLabel.text), (int)minLevelSlider.minValue, (int)minLevelSlider.maxValue).ToString();
+            minLevelSlider.value = float.Parse(sliderLabel.text);
+        }
         if (minLevelSlider.value > maxLevelSlider.value) {
             maxLevelSlider.value = minLevelSlider.value;
         }
     }
 
-    public void UpdateMaxLevelSliderNumber() {
-        Text sliderLabel = GameObject.Find("Max Level Slider Label").GetComponent<Text>();
-        sliderLabel.text = "Max Lvl: " + maxLevelSlider.value.ToString();
+    public void UpdateMaxLevelSliderNumber(bool bySlider) {
+        UnityEngine.UI.InputField sliderLabel = GameObject.Find("Max Level Field").GetComponent<UnityEngine.UI.InputField>();
+        if (bySlider) {
+            sliderLabel.text = maxLevelSlider.value.ToString();
+        } else {
+            sliderLabel.text = Mathf.Clamp(int.Parse(sliderLabel.text), (int)maxLevelSlider.minValue, (int)maxLevelSlider.maxValue).ToString();
+            maxLevelSlider.value = float.Parse(sliderLabel.text);
+        }
         if (maxLevelSlider.value < minLevelSlider.value) {
             minLevelSlider.value = maxLevelSlider.value;
         }
