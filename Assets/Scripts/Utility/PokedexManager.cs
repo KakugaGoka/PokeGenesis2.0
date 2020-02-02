@@ -23,6 +23,7 @@ public class PokedexManager : MonoBehaviour {
     static public Info[] conditionsInfo;
     static public Route[] routes;
     static public int[] expNeeded;
+    static public string[] dbDice;
 
     static public Pokemon currentPokemon;
     static public GameObject currentEntry;
@@ -146,6 +147,11 @@ public class PokedexManager : MonoBehaviour {
         if (!File.Exists(Path.Combine(dataPath, "JSON/ExperienceChart.json"))) {
             currentJSON = Resources.Load<TextAsset>("JSON/ExperienceChart");
             File.WriteAllText(Path.Combine(dataPath, "JSON/ExperienceChart.json"), currentJSON.text);
+        }
+        // DBChart 
+        if (!File.Exists(Path.Combine(dataPath, "JSON/DBChart.json"))) {
+            currentJSON = Resources.Load<TextAsset>("JSON/DBChart");
+            File.WriteAllText(Path.Combine(dataPath, "JSON/DBChart.json"), currentJSON.text);
         }
     }
 
@@ -278,6 +284,10 @@ public class PokedexManager : MonoBehaviour {
             expNeeded = JsonHelper.FromJson<int>(expString);
             expNeeded = expNeeded.OrderBy(x => x).ToArray();
             Debug.Log("Experience Levels Count: " + expNeeded.Count());
+
+            string dbString = File.ReadAllText(Path.Combine(dataPath, "JSON/DBChart.json"));
+            dbDice = JsonHelper.FromJson<string>(dbString);
+            Debug.Log("DB Dice Set Count: " + dbDice.Count());
 
             readyToLoadJSONs = false;
         }
