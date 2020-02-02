@@ -28,7 +28,11 @@ public class MoveEntry : MonoBehaviour
             typeText.text = move.type.typeName;
             moveText.text = title == "" ? move.name : title;
             classText.text = move.damageClass;
-            dbText.text = "DB " + move.db.ToString();
+            int db = move.db;
+            if (PokedexManager.currentPokemon.type.Contains(move.type.typeName)) {
+                db++;
+            }
+            dbText.text = "DB " + db.ToString();
             acText.text = "AC " + move.ac.ToString();
             freqText.text = move.freq;
         }
