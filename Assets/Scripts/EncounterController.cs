@@ -344,6 +344,7 @@ public class EncounterController : MonoBehaviour {
             CreateListItem(pokemon);
         }
 
+        CreateScanList();
         readyToUpdate = true;
     }
 
@@ -377,6 +378,7 @@ public class EncounterController : MonoBehaviour {
 
         if (encounterablePokemon.Count() < 1) {
             PokedexManager.manager.CreateWarningDialog("No pokemon to encounter with these settings.");
+            scanInProgress = false;
             return;
         }
 
