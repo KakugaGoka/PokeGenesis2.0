@@ -652,6 +652,12 @@ public class SheetController : MonoBehaviour {
             pokemon.loyalty = int.Parse(loyaltyField.text);
             pokemon.tutorPoints = int.Parse(tutorPointsField.text);
 
+            if (typeField2.text == "X" || String.IsNullOrWhiteSpace(typeField2.text)) {
+                pokemon.type = typeField1.text;
+            } else {
+                pokemon.type = typeField1.text + " / " + typeField2.text;
+            }
+
             pokemon.level = int.Parse((levelField.text));
             pokemon.dynamaxLevel = Mathf.Clamp(int.Parse(dynaLevelField.text), 0, 10);
             dynaLevelField.text = Mathf.Clamp(int.Parse(dynaLevelField.text), 0, 10).ToString();
