@@ -34,7 +34,11 @@ public class Tooltip : MonoBehaviour
             if (PokedexManager.currentPokemon.type.Contains(move.typeName)) {
                 db++;
             }
-            toolTip += "DB: " + db + " (" + PokedexManager.dbDice[db] + ")" + Environment.NewLine;
+            if (db < PokedexManager.dbDice.Length) {
+                toolTip += "DB: " + db + " (" + PokedexManager.dbDice[db] + ")" + Environment.NewLine;
+            } else {
+                toolTip += "DB: " + db + " (Off The Charts)" + Environment.NewLine;
+            }
         }
         if (move.effects != null) {
             toolTip += "Effect: " + move.effects + Environment.NewLine;
