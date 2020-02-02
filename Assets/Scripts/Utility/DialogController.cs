@@ -30,6 +30,16 @@ public class DialogController : MonoBehaviour
             case ConfirmationType.delete:
                 PokedexManager.manager.DeleteCurrentPokemonAndEntry();
                 break;
+            case ConfirmationType.deleteAll:
+                GameObject contentView = GameObject.Find("Encounter Content");
+                for (int i = contentView.transform.childCount - 1; i >= 0; i--) {
+                    GameObject thisEntry = contentView.transform.GetChild(i).gameObject;
+                    PokedexManager.currentEntry = thisEntry;
+                    PokedexManager.currentPokemon = thisEntry.GetComponent<PokedexEntry>().pokemon;
+                    PokedexManager.manager.DeleteCurrentPokemonAndEntry();
+                }
+                PokedexManager.manager.DeleteCurrentPokemonAndEntry();
+                break;
             case ConfirmationType.capture:
                 PokedexManager.manager.CaptureCurrentSelected();
                 break;
@@ -273,7 +283,8 @@ public class DialogController : MonoBehaviour
 
 public enum ConfirmationType {
     trade = 0,
-    delete, 
+    delete,
+    deleteAll,
     capture,
     release,
     quit,

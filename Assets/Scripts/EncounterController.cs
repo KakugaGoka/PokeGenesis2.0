@@ -802,6 +802,14 @@ public class EncounterController : MonoBehaviour {
         PokedexManager.manager.CreateConfirmationDialog(message, ConfirmationType.delete);
     }
 
+    public void DeleteAllPokemon() {
+        if (contentView.transform.childCount < 1) {
+            return;
+        }
+        string message = "Are you sure you wish to remove *All Pokemon* from the encounter list?";
+        PokedexManager.manager.CreateConfirmationDialog(message, ConfirmationType.deleteAll);
+    }
+
     public void CapturePokemon() {
         if (PokedexManager.currentPokemon == null) {
             Debug.Log("No pokemon currently selected");
