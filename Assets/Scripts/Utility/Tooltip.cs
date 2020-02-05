@@ -241,7 +241,7 @@ public class Tooltip : MonoBehaviour
         string toolTip = "";
         toolTip += "Bug:\t\t\tx" + type.bug + Environment.NewLine; 
         toolTip += "Dark:\t\tx" + type.dark + Environment.NewLine; 
-        toolTip += "Dargon:\t\tx" + type.dragon + Environment.NewLine; 
+        toolTip += "Dragon:\t\tx" + type.dragon + Environment.NewLine; 
         toolTip += "Electric:\tx" + type.electric + Environment.NewLine; 
         toolTip += "Fairy:\t\tx" + type.fairy + Environment.NewLine; 
         toolTip += "Fighting:\tx" + type.fighting + Environment.NewLine; 
