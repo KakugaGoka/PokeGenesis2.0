@@ -214,6 +214,26 @@ public class PokedexManager : MonoBehaviour {
             string typesString = File.ReadAllText(Path.Combine(dataPath, "JSON/PokemonTypes.json"));
             types = JsonHelper.FromJson<PokemonType>(typesString);
             types = types.OrderBy(x => x.typeName).ToArray();
+            foreach (PokemonType type in types) {
+                if (type.immuneTo == null) { type.immuneTo = new string[] { }; }
+                if (type.superResistantTo == null) { type.superResistantTo = new string[] { }; }
+                if (type.resistantTo == null) { type.resistantTo = new string[] { }; }
+                if (type.normalDamage == null) { type.normalDamage = new string[] { }; }
+                if (type.weakTo == null) { type.weakTo = new string[] { }; }
+                if (type.superWeakTo == null) { type.superWeakTo = new string[] { }; }
+                List<string> normalDamage = type.normalDamage.ToList();
+                foreach (PokemonType checkType in types) {
+                    if (!type.immuneTo.Contains(checkType.typeName) &&
+                        !type.superResistantTo.Contains(checkType.typeName) &&
+                        !type.resistantTo.Contains(checkType.typeName) &&
+                        !type.normalDamage.Contains(checkType.typeName) &&
+                        !type.weakTo.Contains(checkType.typeName) &&
+                        !type.superWeakTo.Contains(checkType.typeName)) {
+                        normalDamage.Add(checkType.typeName);
+                    }
+                }
+                type.normalDamage = normalDamage.ToArray();
+            }
             Debug.Log("Types Count: " + types.Count());
 
             // Load in Natures from JSON

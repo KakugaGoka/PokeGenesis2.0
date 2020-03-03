@@ -1,25 +1,18 @@
 {
 	"Items": [
 		{
-			"normal": 1,
-			"fire": 1.5,
-			"water": 1,
-			"electric": 1,
-			"grass": 0.5,
-			"ice": 1,
-			"fighting": 0.5,
-			"poison": 1,
-			"ground": 0.5,
-			"flying": 1.5,
-			"psychic": 1,
-			"bug": 1,
-			"rock": 1.5,
-			"ghost": 1,
-			"dragon": 1,
-			"dark": 1,
-			"steel": 1,
-			"fairy": 1,
 			"typeName": "Bug",
+			"resistantTo": [
+				"Grass",
+				"Fighting",
+				"Ground"
+			],
+			"weakTo": [
+				"Fire",
+				"Flying",
+				"Rock"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.569,
 				"g": 0.616,
@@ -27,25 +20,19 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 1,
-			"water": 1,
-			"electric": 1,
-			"grass": 1,
-			"ice": 1,
-			"fighting": 1.5,
-			"poison": 1,
-			"ground": 1,
-			"flying": 1,
-			"psychic": 0,
-			"bug": 1.5,
-			"rock": 1,
-			"ghost": 0.5,
-			"dragon": 1,
-			"dark": 0.5,
-			"steel": 1,
-			"fairy": 1.5,
 			"typeName": "Dark",
+			"resistantTo": [
+				"Ghost",
+				"Dark"
+			],
+			"weakTo": [
+				"Fighting",
+				"Bug",
+				"Fairy"
+			],
+			"immuneTo": [
+				"Psychic"
+			],
 			"color": {
 				"r": 0.467,
 				"g": 0.333,
@@ -53,25 +40,19 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 0.5,
-			"water": 0.5,
-			"electric": 0.5,
-			"grass": 0.5,
-			"ice": 1.5,
-			"fighting": 1,
-			"poison": 1,
-			"ground": 1,
-			"flying": 1,
-			"psychic": 1,
-			"bug": 1,
-			"rock": 1,
-			"ghost": 1,
-			"dragon": 1.5,
-			"dark": 1,
-			"steel": 1,
-			"fairy": 1.5,
 			"typeName": "Dragon",
+			"resistantTo": [
+				"Fire",
+				"Water",
+				"Electric",
+				"Grass"
+			],
+			"weakTo": [
+				"Ice",
+				"Dragon",
+				"Fairy"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.329,
 				"g": 0.078,
@@ -79,25 +60,16 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 1,
-			"water": 1,
-			"electric": 0.5,
-			"grass": 1,
-			"ice": 1,
-			"fighting": 1,
-			"poison": 1,
-			"ground": 1.5,
-			"flying": 0.5,
-			"psychic": 1,
-			"bug": 1,
-			"rock": 1,
-			"ghost": 1,
-			"dragon": 1,
-			"dark": 1,
-			"steel": 0.5,
-			"fairy": 1,
 			"typeName": "Electric",
+			"resistantTo": [
+				"Electric",
+				"Flying",
+				"Steel"
+			],
+			"weakTo": [
+				"Ground"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.949,
 				"g": 0.757,
@@ -105,25 +77,17 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 1,
-			"water": 1,
-			"electric": 1,
-			"grass": 1,
-			"ice": 1,
-			"fighting": 0.5,
-			"poison": 1.5,
-			"ground": 1,
-			"flying": 1,
-			"psychic": 1,
-			"bug": 0.5,
-			"rock": 1,
-			"ghost": 1,
-			"dragon": 0,
-			"dark": 0.5,
-			"steel": 1.5,
-			"fairy": 1,
 			"typeName": "Fairy",
+			"resistantTo": [
+				"Fighting",
+				"Bug",
+				"Dark"
+			],
+			"weakTo": [
+				"Steel",
+				"Poison"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.933,
 				"g": 0.6,
@@ -131,25 +95,18 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 1,
-			"water": 1,
-			"electric": 1,
-			"grass": 1,
-			"ice": 1,
-			"fighting": 1,
-			"poison": 1,
-			"ground": 1,
-			"flying": 1.5,
-			"psychic": 1.5,
-			"bug": 0.5,
-			"rock": 0.5,
-			"ghost": 1,
-			"dragon": 1,
-			"dark": 0.5,
-			"steel": 1,
-			"fairy": 1.5,
 			"typeName": "Fighting",
+			"resistantTo": [
+				"Bug",
+				"Rock",
+				"Dark"
+			],
+			"weakTo": [
+				"Flying",
+				"Psychic",
+				"Fairy"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.612,
 				"g": 0.165,
@@ -157,25 +114,21 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 0.5,
-			"water": 1.5,
-			"electric": 1,
-			"grass": 0.5,
-			"ice": 0.5,
-			"fighting": 1,
-			"poison": 1,
-			"ground": 1.5,
-			"flying": 1,
-			"psychic": 1,
-			"bug": 0.5,
-			"rock": 1.5,
-			"ghost": 1,
-			"dragon": 1,
-			"dark": 1,
-			"steel": 0.5,
-			"fairy": 0.5,
 			"typeName": "Fire",
+			"resistantTo": [
+				"Fire",
+				"Grass",
+				"Ice",
+				"Bug",
+				"Steel",
+				"Fairy"
+			],
+			"weakTo": [
+				"Water",
+				"Ground",
+				"Rock"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.882,
 				"g": 0.427,
@@ -183,25 +136,18 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 1,
-			"water": 1,
-			"electric": 1.5,
-			"grass": 0.5,
-			"ice": 1.5,
-			"fighting": 0.5,
-			"poison": 1,
-			"ground": 1,
-			"flying": 1,
-			"psychic": 1,
-			"bug": 0.5,
-			"rock": 1.5,
-			"ghost": 1,
-			"dragon": 1,
-			"dark": 1,
-			"steel": 1,
-			"fairy": 1,
 			"typeName": "Flying",
+			"resistantTo": [
+				"Grass",
+				"Fighting",
+				"Bug"
+			],
+			"weakTo": [
+				"Electric",
+				"Ice",
+				"Rock"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.584,
 				"g": 0.502,
@@ -209,25 +155,19 @@
 			}
 		},
 		{
-			"normal": 0,
-			"fire": 1,
-			"water": 1,
-			"electric": 1,
-			"grass": 1,
-			"ice": 1,
-			"fighting": 0,
-			"poison": 0.5,
-			"ground": 1,
-			"flying": 1,
-			"psychic": 1,
-			"bug": 0.5,
-			"rock": 1,
-			"ghost": 1.5,
-			"dragon": 1,
-			"dark": 1.5,
-			"steel": 1,
-			"fairy": 1,
 			"typeName": "Ghost",
+			"resistantTo": [
+				"Poison",
+				"Bug"
+			],
+			"weakTo": [
+				"Ghost",
+				"Dark"
+			],
+			"immuneTo": [
+				"Fighting",
+				"Normal"
+			],
 			"color": {
 				"r": 0.357,
 				"g": 0.278,
@@ -235,25 +175,21 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 1.5,
-			"water": 0.5,
-			"electric": 0.5,
-			"grass": 0.5,
-			"ice": 1.5,
-			"fighting": 1,
-			"poison": 1.5,
-			"ground": 0.5,
-			"flying": 1.5,
-			"psychic": 1,
-			"bug": 1.5,
-			"rock": 1,
-			"ghost": 1,
-			"dragon": 1,
-			"dark": 1,
-			"steel": 1,
-			"fairy": 1,
 			"typeName": "Grass",
+			"resistantTo": [
+				"Water",
+				"Electric",
+				"Grass",
+				"Ground"
+			],
+			"weakTo": [
+				"Fire",
+				"Ice",
+				"Poison",
+				"Flying",
+				"Bug"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.361,
 				"g": 0.694,
@@ -261,25 +197,19 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 1,
-			"water": 1.5,
-			"electric": 0,
-			"grass": 1.5,
-			"ice": 1.5,
-			"fighting": 1,
-			"poison": 0.5,
-			"ground": 1,
-			"flying": 1,
-			"psychic": 1,
-			"bug": 1,
-			"rock": 0.5,
-			"ghost": 1,
-			"dragon": 1,
-			"dark": 1,
-			"steel": 1,
-			"fairy": 1,
 			"typeName": "Ground",
+			"resistantTo": [
+				"Poison",
+				"Rock"
+			],
+			"weakTo": [
+				"Water",
+				"Grass",
+				"Ice"
+			],
+			"immuneTo": [
+				"Electric"
+			],
 			"color": {
 				"r": 0.831,
 				"g": 0.675,
@@ -287,25 +217,17 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 1.5,
-			"water": 1,
-			"electric": 1,
-			"grass": 1,
-			"ice": 0.5,
-			"fighting": 1.5,
-			"poison": 1,
-			"ground": 1,
-			"flying": 1,
-			"psychic": 1,
-			"bug": 1,
-			"rock": 1.5,
-			"ghost": 1,
-			"dragon": 1,
-			"dark": 1,
-			"steel": 1.5,
-			"fairy": 1,
 			"typeName": "Ice",
+			"resistantTo": [
+				"Ice"
+			],
+			"weakTo": [
+				"Fire",
+				"Fighting",
+				"Rock",
+				"Steel"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.443,
 				"g": 0.78,
@@ -313,25 +235,14 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 1,
-			"water": 1,
-			"electric": 1,
-			"grass": 1,
-			"ice": 1,
-			"fighting": 1.5,
-			"poison": 1,
-			"ground": 1,
-			"flying": 1,
-			"psychic": 1,
-			"bug": 1,
-			"rock": 1,
-			"ghost": 0,
-			"dragon": 1,
-			"dark": 1,
-			"steel": 1,
-			"fairy": 1,
 			"typeName": "Normal",
+			"resistantTo": [],
+			"weakTo": [
+				"Fighting"
+			],
+			"immuneTo": [
+				"Ghost"
+			],
 			"color": {
 				"r": 0.565,
 				"g": 0.561,
@@ -339,25 +250,19 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 1,
-			"water": 1,
-			"electric": 1,
-			"grass": 0.5,
-			"ice": 1,
-			"fighting": 0.5,
-			"poison": 0.5,
-			"ground": 1.5,
-			"flying": 1,
-			"psychic": 1.5,
-			"bug": 0.5,
-			"rock": 1,
-			"ghost": 1,
-			"dragon": 1,
-			"dark": 1,
-			"steel": 1,
-			"fairy": 0.5,
 			"typeName": "Poison",
+			"resistantTo": [
+				"Grass",
+				"Poison",
+				"Fighting",
+				"Bug",
+				"Fairy"
+			],
+			"weakTo": [
+				"Ground",
+				"Psychic"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.533,
 				"g": 0.204,
@@ -365,25 +270,17 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 1,
-			"water": 1,
-			"electric": 1,
-			"grass": 1,
-			"ice": 1,
-			"fighting": 0.5,
-			"poison": 1,
-			"ground": 1,
-			"flying": 1,
-			"psychic": 0.5,
-			"bug": 1.5,
-			"rock": 1,
-			"ghost": 1.5,
-			"dragon": 1,
-			"dark": 1.5,
-			"steel": 1,
-			"fairy": 1,
 			"typeName": "Psychic",
+			"resistantTo": [
+				"Fighting",
+				"Psychic"
+			],
+			"weakTo": [
+				"Bug",
+				"Ghost",
+				"Dark"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.949,
 				"g": 0.145,
@@ -391,25 +288,21 @@
 			}
 		},
 		{
-			"normal": 0.5,
-			"fire": 0.5,
-			"water": 1.5,
-			"electric": 1,
-			"grass": 1.5,
-			"ice": 1,
-			"fighting": 1.5,
-			"poison": 0.5,
-			"ground": 1.5,
-			"flying": 0.5,
-			"psychic": 1,
-			"bug": 1,
-			"rock": 1,
-			"ghost": 1,
-			"dragon": 1,
-			"dark": 1,
-			"steel": 1.5,
-			"fairy": 1,
 			"typeName": "Rock",
+			"resistantTo": [
+				"Normal",
+				"Fire",
+				"Poison",
+				"Flying"
+			],
+			"weakTo": [
+				"Water",
+				"Grass",
+				"Fighting",
+				"Ground",
+				"Steel"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.6,
 				"g": 0.518,
@@ -417,25 +310,27 @@
 			}
 		},
 		{
-			"normal": 0.5,
-			"fire": 1.5,
-			"water": 1,
-			"electric": 1,
-			"grass": 0.5,
-			"ice": 0.5,
-			"fighting": 1.5,
-			"poison": 0,
-			"ground": 1.5,
-			"flying": 0.5,
-			"psychic": 0.5,
-			"bug": 0.5,
-			"rock": 0.5,
-			"ghost": 1,
-			"dragon": 0.5,
-			"dark": 1,
-			"steel": 0.5,
-			"fairy": 0.5,
 			"typeName": "Steel",
+			"resistantTo": [
+				"Normal",
+				"Grass",
+				"Ice",
+				"Flying",
+				"Psychic",
+				"Bug",
+				"Rock",
+				"Dragon",
+				"Steel",
+				"Fairy"
+			],
+			"weakTo": [
+				"Fire",
+				"Fighting",
+				"Ground"
+			],
+			"immuneTo": [
+				"Poison"
+			],
 			"color": {
 				"r": 0.667,
 				"g": 0.667,
@@ -443,25 +338,18 @@
 			}
 		},
 		{
-			"normal": 1,
-			"fire": 0.5,
-			"water": 0.5,
-			"electric": 1.5,
-			"grass": 1.5,
-			"ice": 0.5,
-			"fighting": 1,
-			"poison": 1,
-			"ground": 1,
-			"flying": 1,
-			"psychic": 1,
-			"bug": 1,
-			"rock": 1,
-			"ghost": 1,
-			"dragon": 1,
-			"dark": 1,
-			"steel": 0.5,
-			"fairy": 1,
 			"typeName": "Water",
+			"resistantTo": [
+				"Fire",
+				"Water",
+				"Ice",
+				"Steel"
+			],
+			"weakTo": [
+				"Electric",
+				"Grass"
+			],
+			"immuneTo": [],
 			"color": {
 				"r": 0.278,
 				"g": 0.439,

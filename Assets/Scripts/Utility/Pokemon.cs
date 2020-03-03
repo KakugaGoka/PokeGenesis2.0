@@ -862,66 +862,92 @@ public class Pokemon {
     public PokemonType GetTypeInfo() {
         PokemonType newType = new PokemonType();
         newType.typeName = type;
-        newType.bug = 1;
-        newType.dark = 1;
-        newType.dragon = 1;
-        newType.electric = 1;
-        newType.fairy = 1;
-        newType.fighting = 1;
-        newType.fire = 1;
-        newType.flying = 1;
-        newType.ghost = 1;
-        newType.grass = 1;
-        newType.ground = 1;
-        newType.ice = 1;
-        newType.normal = 1;
-        newType.poison = 1;
-        newType.psychic = 1;
-        newType.rock = 1;
-        newType.steel = 1;
-        newType.water = 1;
         string[] types = type.Split('/');
-        foreach (string item in types) {
-            string typeString = item.Trim();
+        string typeString = types[0].Trim();
+        bool found = false;
+        if (types.Length > 1) {
+            string typeString2 = types[1].Trim();
+            PokemonType type1 = new PokemonType();
+            PokemonType type2 = new PokemonType();
             foreach (PokemonType pokeType in PokedexManager.types) {
                 if (typeString == pokeType.typeName) {
-                    newType.bug *= pokeType.bug;
-                    if (newType.bug > 1.5f || newType.bug == 0.75f) { newType.bug = Mathf.Round(newType.bug); }
-                    newType.dark *= pokeType.dark;
-                    if (newType.dark > 1.5f || newType.dark == 0.75f) { newType.dark = Mathf.Round(newType.dark); }
-                    newType.dragon *= pokeType.dragon;
-                    if (newType.dragon > 1.5f || newType.dragon == 0.75f) { newType.dragon = Mathf.Round(newType.dragon); }
-                    newType.electric *= pokeType.electric;
-                    if (newType.electric > 1.5f || newType.electric == 0.75f) { newType.electric = Mathf.Round(newType.electric); }
-                    newType.fairy *= pokeType.fairy;
-                    if (newType.fairy > 1.5f || newType.fairy == 0.75f) { newType.fairy = Mathf.Round(newType.fairy); }
-                    newType.fighting *= pokeType.fighting;
-                    if (newType.fighting > 1.5f || newType.fighting == 0.75f) { newType.fighting = Mathf.Round(newType.fighting); }
-                    newType.fire *= pokeType.fire;
-                    if (newType.fire > 1.5f || newType.fire == 0.75f) { newType.fire = Mathf.Round(newType.fire); }
-                    newType.flying *= pokeType.flying;
-                    if (newType.flying > 1.5f || newType.flying == 0.75f) { newType.flying = Mathf.Round(newType.flying); }
-                    newType.ghost *= pokeType.ghost;
-                    if (newType.ghost > 1.5f || newType.ghost == 0.75f) { newType.ghost = Mathf.Round(newType.ghost); }
-                    newType.grass *= pokeType.grass;
-                    if (newType.grass > 1.5f || newType.grass == 0.75f) { newType.grass = Mathf.Round(newType.grass); }
-                    newType.ground *= pokeType.ground;
-                    if (newType.ground > 1.5f || newType.ground == 0.75f) { newType.ground = Mathf.Round(newType.ground); }
-                    newType.ice *= pokeType.ice;
-                    if (newType.ice > 1.5f || newType.ice == 0.75f) { newType.ice = Mathf.Round(newType.ice); }
-                    newType.normal *= pokeType.normal;
-                    if (newType.normal > 1.5f || newType.normal == 0.75f) { newType.normal = Mathf.Round(newType.normal); }
-                    newType.poison *= pokeType.poison;
-                    if (newType.poison > 1.5f || newType.poison == 0.75f) { newType.poison = Mathf.Round(newType.poison); }
-                    newType.psychic *= pokeType.psychic;
-                    if (newType.psychic > 1.5f || newType.psychic == 0.75f) { newType.psychic = Mathf.Round(newType.psychic); }
-                    newType.rock *= pokeType.rock;
-                    if (newType.rock > 1.5f || newType.rock == 0.75f) { newType.rock = Mathf.Round(newType.rock); }
-                    newType.steel *= pokeType.steel;
-                    if (newType.steel > 1.5f || newType.steel == 0.75f) { newType.steel = Mathf.Round(newType.steel); }
-                    newType.water *= pokeType.water;
-                    if (newType.water > 1.5f || newType.water == 0.75f) { newType.water = Mathf.Round(newType.water); }
+                    found = true;
+                    type1.immuneTo = pokeType.immuneTo;
+                    type1.superResistantTo = pokeType.superResistantTo;
+                    type1.resistantTo = pokeType.resistantTo;
+                    type1.normalDamage = pokeType.normalDamage;
+                    type1.weakTo = pokeType.weakTo;
+                    type1.superWeakTo = pokeType.superWeakTo;
                 }
+                if (typeString2 == pokeType.typeName) {
+                    found = true;
+                    type2.immuneTo = pokeType.immuneTo;
+                    type2.superResistantTo = pokeType.superResistantTo;
+                    type2.resistantTo = pokeType.resistantTo;
+                    type2.normalDamage = pokeType.normalDamage;
+                    type2.weakTo = pokeType.weakTo;
+                    type2.superWeakTo = pokeType.superWeakTo;
+                }
+            }
+            List<string> immuneTo = new List<string>();
+            List<string> superResistantTo = new List<string>();
+            List<string> resistantTo = new List<string>();
+            List<string> normalDamage = new List<string>();
+            List<string> weakTo = new List<string>();
+            List<string> superWeakTo = new List<string>();
+            foreach (PokemonType pokeType in PokedexManager.types) {
+                if (type1.immuneTo.Contains(pokeType.typeName) || type2.immuneTo.Contains(pokeType.typeName)) {
+                    immuneTo.Add(pokeType.typeName);
+                    found = true;
+                } else if (type1.resistantTo.Contains(pokeType.typeName) && type2.resistantTo.Contains(pokeType.typeName)) {
+                    superResistantTo.Add(pokeType.typeName);
+                    found = true;
+                } else if (type1.weakTo.Contains(pokeType.typeName) && type2.weakTo.Contains(pokeType.typeName)) {
+                    superWeakTo.Add(pokeType.typeName);
+                    found = true;
+                } else if (type1.weakTo.Contains(pokeType.typeName) && type2.resistantTo.Contains(pokeType.typeName)) {
+                    normalDamage.Add(pokeType.typeName);
+                    found = true;
+                } else if (type1.resistantTo.Contains(pokeType.typeName) && type2.weakTo.Contains(pokeType.typeName)) {
+                    normalDamage.Add(pokeType.typeName);
+                    found = true;
+                } else if (type1.resistantTo.Contains(pokeType.typeName) && type2.weakTo.Contains(pokeType.typeName)) {
+                    normalDamage.Add(pokeType.typeName);
+                    found = true;
+                } else if (type1.resistantTo.Contains(pokeType.typeName) && type2.normalDamage.Contains(pokeType.typeName)) {
+                    resistantTo.Add(pokeType.typeName);
+                    found = true;
+                } else if (type1.normalDamage.Contains(pokeType.typeName) && type2.resistantTo.Contains(pokeType.typeName)) {
+                    resistantTo.Add(pokeType.typeName);
+                    found = true;
+                } else if (type1.weakTo.Contains(pokeType.typeName) && type2.normalDamage.Contains(pokeType.typeName)) {
+                    weakTo.Add(pokeType.typeName);
+                    found = true;
+                } else if (type1.normalDamage.Contains(pokeType.typeName) && type2.weakTo.Contains(pokeType.typeName)) {
+                    weakTo.Add(pokeType.typeName);
+                    found = true;
+                } else {
+                    normalDamage.Add(pokeType.typeName);
+                }
+                if (!found) {
+                    Debug.LogError("Type Name not found: " + typeString);
+                }
+            }
+            newType.immuneTo = immuneTo.ToArray();
+            newType.superResistantTo = superResistantTo.ToArray();
+            newType.resistantTo = resistantTo.ToArray();
+            newType.normalDamage = normalDamage.ToArray();
+            newType.weakTo = weakTo.ToArray();
+            newType.superWeakTo = superWeakTo.ToArray();
+        } else {
+            foreach (PokemonType pokeType in PokedexManager.types) {
+                if (typeString == pokeType.typeName) {
+                    found = true;
+                    newType = pokeType;
+                }
+            }
+            if (!found) {
+                Debug.LogError("Type Name not found: " + typeString);
             }
         }
         return newType;

@@ -13,26 +13,14 @@ public class TypeColor {
 public class PokemonType {
     public string 
         typeName;
-    
-    public float
-        normal,
-        fire,
-        water,
-        electric,
-        grass,
-        ice,
-        fighting,
-        poison,
-        ground,
-        flying,
-        bug,
-        rock,
-        psychic,
-        ghost,
-        dragon,
-        dark,
-        steel,
-        fairy;
+
+    public string[]
+        immuneTo,
+        superResistantTo,
+        resistantTo,
+        normalDamage,
+        weakTo,
+        superWeakTo;
 
     public TypeColor
         color;

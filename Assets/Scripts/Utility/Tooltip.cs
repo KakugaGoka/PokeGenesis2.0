@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -237,28 +238,25 @@ public class Tooltip : MonoBehaviour
         PokedexManager.manager.CreateTooltipDialog(type.typeName, "", TypeToolTip(type));
     }
 
-    public string TypeToolTip(PokemonType type) {
+    public string TypeToolTip(PokemonType currentType) {
         string toolTip = "";
-        toolTip += "Bug:\t\t\tx" + type.bug + Environment.NewLine; 
-        toolTip += "Dark:\t\tx" + type.dark + Environment.NewLine; 
-        toolTip += "Dragon:\t\tx" + type.dragon + Environment.NewLine; 
-        toolTip += "Electric:\tx" + type.electric + Environment.NewLine; 
-        toolTip += "Fairy:\t\tx" + type.fairy + Environment.NewLine; 
-        toolTip += "Fighting:\tx" + type.fighting + Environment.NewLine; 
-        toolTip += "Fire:\t\t\tx" + type.fire + Environment.NewLine; 
-        toolTip += "Flying:\t\tx" + type.flying + Environment.NewLine; 
-        toolTip += "Ghost:\t\tx" + type.ghost + Environment.NewLine; 
-        toolTip += "Grass:\t\tx" + type.grass + Environment.NewLine; 
-        toolTip += "Ground:\tx" + type.ground + Environment.NewLine; 
-        toolTip += "Ice:\t\t\tx" + type.ice + Environment.NewLine; 
-        toolTip += "Normal:\t\tx" + type.normal + Environment.NewLine; 
-        toolTip += "Poison:\t\tx" + type.poison + Environment.NewLine; 
-        toolTip += "Psychic:\tx" + type.psychic + Environment.NewLine; 
-        toolTip += "Rock:\t\tx" + type.rock + Environment.NewLine; 
-        toolTip += "Steel:\t\tx" + type.steel + Environment.NewLine; 
-        toolTip += "Water:\t\tx" + type.water + Environment.NewLine; 
-
-
+        foreach (PokemonType type in PokedexManager.types) {
+            if (currentType.immuneTo.Any(x => x.Contains(type.typeName))) {
+                toolTip += type.typeName + ": x0" + Environment.NewLine;
+            } else if (currentType.superResistantTo.Any(x => x.Contains(type.typeName))) {
+                toolTip += type.typeName + ": x0.25" + Environment.NewLine;
+            } else if (currentType.resistantTo.Any(x => x.Contains(type.typeName))) {
+                toolTip += type.typeName + ": x0.5" + Environment.NewLine;
+            } else if (currentType.normalDamage.Any(x => x.Contains(type.typeName))) {
+                toolTip += type.typeName + ": x1" + Environment.NewLine;
+            } else if (currentType.weakTo.Any(x => x.Contains(type.typeName))) {
+                toolTip += type.typeName + ": x1.5" + Environment.NewLine;
+            } else if (currentType.superWeakTo.Any(x => x.Contains(type.typeName))) {
+                toolTip += type.typeName + ": x2" + Environment.NewLine;
+            } else {
+                Debug.LogError("TypeNotFound: " + type.typeName + " in " + currentType.typeName);
+            }
+        }
         return toolTip;
     }
 }
