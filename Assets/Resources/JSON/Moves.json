@@ -7563,7 +7563,7 @@
 			"db": 10,
 			"damageClass": "Special",
 			"range": "6, 1 Target",
-			"effect": "If the target is Dynamaxed or Gigantamaxed, its damage base is doubled to 20.",
+			"effects": "If the target is Dynamaxed or Gigantamaxed, its damage base is doubled to 20.",
 			"contestType": "Cool",
 			"contestEffect": "Unsettling"
 		},
@@ -7575,7 +7575,7 @@
 			"db": 11,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "The user’s Speed is increased 1 CS.\nSpecial: If the user is in Hangry Mode, Aura Wheel is Dark-Typed.",
+			"effects": "The user’s Speed is increased 1 CS.\nSpecial: If the user is in Hangry Mode, Aura Wheel is Dark-Typed.",
 			"contestType": "Cool",
 			"contestEffect": "Special Attention"
 		},
@@ -7586,7 +7586,7 @@
 			"ac": 2,
 			"damageClass": "Status",
 			"range": "Melee, 1 Target",
-			"effect": "The user initiates a Grapple Maneuver with the target, which automatically hits. If successful, until the user no longer has Dominance in the grapple, the target is Trapped and loses 1 CS in Defense and Special Defense at the end of each of their turns.",
+			"effects": "The user initiates a Grapple Maneuver with the target, which automatically hits. If successful, until the user no longer has Dominance in the grapple, the target is Trapped and loses 1 CS in Defense and Special Defense at the end of each of their turns.",
 			"contestType": "Tough",
 			"contestEffect": "Sabotage"
 		},
@@ -7598,7 +7598,7 @@
 			"db": 13,
 			"damageClass": "Special",
 			"range": "Burst 1, Smite",
-			"effect": "Until the end of the encounter, the user loses its Fire-Type. Pure Fire-Types instead become Normal-Type.",
+			"effects": "Until the end of the encounter, the user loses its Fire-Type. Pure Fire-Types instead become Normal-Type.",
 			"contestType": "Beauty",
 			"contestEffect": "Attention Grabber"
 		},
@@ -7610,7 +7610,7 @@
 			"db": 8,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "Lunge may be used as a Free Action at the end of a Sprint Maneuver taken as a Standard Action, as long as the user Shifted at least 3 meters in a straight line towards the target. When used this way, Lunge's target receives a -5 penalty to damage rolls for 1 round.",
+			"effects": "Lunge may be used as a Free Action at the end of a Sprint Maneuver taken as a Standard Action, as long as the user Shifted at least 3 meters in a straight line towards the target. When used this way, Lunge's target receives a -5 penalty to damage rolls for 1 round.",
 			"contestType": "Smart",
 			"contestEffect": "Sabotage"
 		},
@@ -7622,7 +7622,7 @@
 			"db": 8,
 			"damageClass": "Physical",
 			"range": "2, 1 Target",
-			"effect": "The target's Defense is lowered by 1 Combat Stage.",
+			"effects": "The target's Defense is lowered by 1 Combat Stage.",
 			"contestType": "Cool",
 			"contestEffect": "Safe Option"
 		},
@@ -7645,7 +7645,7 @@
 			"db": 9,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "The target's Defense is lowered by 1 Combat Stage on a 17+.",
+			"effects": "The target's Defense is lowered by 1 Combat Stage on a 17+.",
 			"contestType": "Beauty",
 			"contestEffect": "Steady Performance"
 		},
@@ -7655,7 +7655,7 @@
 			"freq": "Scene x2",
 			"damageClass": "Status",
 			"range": "Self",
-			"effect": "The next successful damaging attack made by the user is automatically a Critical Hit.",
+			"effects": "The next successful damaging attack made by the user is automatically a Critical Hit.",
 			"contestType": "Smart",
 			"contestEffect": "Get Ready"
 		},
@@ -7678,7 +7678,7 @@
 			"db": 8,
 			"damageClass": "Special",
 			"range": "Cone 2",
-			"effect": "Lowers the target's Special Defense by 1 CS.",
+			"effects": "Lowers the target's Special Defense by 1 CS.",
 			"contestType": "Smart",
 			"contestEffect": "Unsettling"
 		},
@@ -7690,7 +7690,7 @@
 			"db": 8,
 			"damageClass": "Physical",
 			"range": "6, 1 Target",
-			"effect": "The target’s Defense is lowered by 1 CS. If Gravity is in effect, this attack's Damage Base is increase to 12.",
+			"effects": "The target’s Defense is lowered by 1 CS. If Gravity is in effect, this attack's Damage Base is increase to 12.",
 			"contestType": "Smart",
 			"contestEffect": "Excitement"
 		},
@@ -7702,7 +7702,7 @@
 			"db": 4,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "The target is trapped in a Vortex. The DC to escape the Vortex is increased by 3.",
+			"effects": "The target is trapped in a Vortex. The DC to escape the Vortex is increased by 3.",
 			"contestType": "Smart",
 			"contestEffect": "Sabotage"
 		},
@@ -7712,7 +7712,7 @@
 			"freq": "Daily",
 			"damageClass": "Status",
 			"range": "Field",
-			"effect": "All Blessings and Hazards swap which side that they belong to.",
+			"effects": "All Blessings and Hazards swap which side that they belong to.",
 			"contestType": "Smart",
 			"contestEffect": "Sabotage"
 		},
@@ -7724,7 +7724,7 @@
 			"db": 10,
 			"damageClass": "Special",
 			"range": "Burst 2",
-			"effect": "This attack uses the highest of the user's Attack or Special Attack Stat, though it remains a Special Move. This Move ignores any Abilities that would cause it to fail or miss, such as Dodge or Wonder Guard; those Abilities cannot be activated in response to Photon Geyser.",
+			"effects": "This attack uses the highest of the user's Attack or Special Attack Stat, though it remains a Special Move. This Move ignores any Abilities that would cause it to fail or miss, such as Dodge or Wonder Guard; those Abilities cannot be activated in response to Photon Geyser.",
 			"contestType": "Smart",
 			"contestEffect": "Seen Nothing Yet"
 		},
@@ -7735,7 +7735,7 @@
 			"ac": 2,
 			"damageClass": "Status",
 			"range": "Cone 2",
-			"effect": "The target gains a Coat that is automatically expended upon being hit with a Fire Type attack in order to make them one step more vulnerable to that attack. In addition, the target’s Speed is lowered by 1 CS.",
+			"effects": "The target gains a Coat that is automatically expended upon being hit with a Fire Type attack in order to make them one step more vulnerable to that attack. In addition, the target’s Speed is lowered by 1 CS.",
 			"contestType": "Tough",
 			"contestEffect": "Sabotage"
 		},
@@ -7746,7 +7746,7 @@
 			"ac": 2,
 			"damageClass": "Status",
 			"range": "Melee, 1 Target",
-			"effect": "The user and the target trade Initiative values.",
+			"effects": "The user and the target trade Initiative values.",
 			"contestType": "Cute",
 			"contestEffect": "Inversed Appeal"
 		},
@@ -7758,7 +7758,7 @@
 			"db": 8,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "You may perform a Grapple Maneuver against the target as a Free Action.",
+			"effects": "You may perform a Grapple Maneuver against the target as a Free Action.",
 			"contestType": "Tough",
 			"contestEffect": "Sabotage"
 		},
@@ -7779,7 +7779,7 @@
 			"freq": "Daily x2",
 			"damageClass": "Status",
 			"range": "Field",
-			"effect": "The Field becomes Weird for five rounds. While the Field is Weird, non-Flying and non-Levitating Pokémon cannot declare Priority or Interrupt Moves outside their own Initiatives. Damaging Psychic-Type attacks deal an additional 10 damage.",
+			"effects": "The Field becomes Weird for five rounds. While the Field is Weird, non-Flying and non-Levitating Pokémon cannot declare Priority or Interrupt Moves outside their own Initiatives. Damaging Psychic-Type attacks deal an additional 10 damage.",
 			"contestType": "Smart",
 			"contestEffect": "Sabotage"
 		},
@@ -7790,7 +7790,7 @@
 			"ac": 4,
 			"damageClass": "Special",
 			"range": "4, 1 Target",
-			"effect": "Target loses 1/2 of their current Hip Points.",
+			"effects": "Target loses 1/2 of their current Hip Points.",
 			"contestType": "Tough",
 			"contestEffect": "Steady Performance"
 		},
@@ -7802,7 +7802,7 @@
 			"db": 2,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "This Move gains +2 to its Damage Base for every positive Combat Stage held by the user, to a maximum of DB 20.",
+			"effects": "This Move gains +2 to its Damage Base for every positive Combat Stage held by the user, to a maximum of DB 20.",
 			"contestType": "Tough",
 			"contestEffect": "Incentives"
 		},
@@ -7812,7 +7812,7 @@
 			"freq": "Scene",
 			"damageClass": "Status",
 			"range": "Self",
-			"effect": "The user immediately consumes one of its Food Buffs, regardless of any conditions that need to be met, gaining its benefit if applicable. If a Buff is consumed, the user’s Defense CS is raised by 2. ",
+			"effects": "The user immediately consumes one of its Food Buffs, regardless of any conditions that need to be met, gaining its benefit if applicable. If a Buff is consumed, the user’s Defense CS is raised by 2. ",
 			"contestType": "Cute",
 			"contestEffect": "Get Ready"
 		},
@@ -7823,7 +7823,7 @@
 			"ac": 2,
 			"damageClass": "Status",
 			"range": "Burst 1, Social, Friendly",
-			"effect": "Tearful Look lowers all Legal Targets' Attack and Special Attack 1 Combat Stage.",
+			"effects": "Tearful Look lowers all Legal Targets' Attack and Special Attack 1 Combat Stage.",
 			"contestType": "Cute",
 			"contestEffect": "Sabotage"
 		},
@@ -7835,7 +7835,7 @@
 			"db": 8,
 			"damageClass": "Special",
 			"range": "8, 1 Target",
-			"effect": "Snipe Shot is a Critical Hit on 18+. This Move may not be Intercepted, nor may any Abilities, Moves, or Features be activated to change this Move’s target. Any of those existing effects (such as Follow Me) fail.",
+			"effects": "Snipe Shot is a Critical Hit on 18+. This Move may not be Intercepted, nor may any Abilities, Moves, or Features be activated to change this Move’s target. Any of those existing effects (such as Follow Me) fail.",
 			"contestType": "Beauty",
 			"contestEffect": "Reliable"
 		},
@@ -7847,7 +7847,7 @@
 			"db": 8,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "Zing Zap Flinches target on 15+.",
+			"effects": "Zing Zap Flinches target on 15+.",
 			"contestType": "Cool",
 			"contestEffect": "Tease"
 		},
@@ -7859,7 +7859,7 @@
 			"db": 15,
 			"damageClass": "Special",
 			"range": "Melee, 1 Target, Interrupt, Trigger",
-			"effect": "If the user is hit by a Melee attack, they may use Shell Trap as an Interrupt.",
+			"effects": "If the user is hit by a Melee attack, they may use Shell Trap as an Interrupt.",
 			"contestType": "Tough",
 			"contestEffect": "Desperation"
 		},
@@ -7871,7 +7871,7 @@
 			"db": 12,
 			"damageClass": "Physical",
 			"range": "6, 1 Target, Smite",
-			"effect": "Pyro Ball applies burn on 19+.",
+			"effects": "Pyro Ball applies burn on 19+.",
 			"contestType": "Cool",
 			"contestEffect": "Attention Grabber"
 		},
@@ -7894,7 +7894,7 @@
 			"db": 8,
 			"damageClass": "Physical",
 			"range": "4, 1 Target",
-			"effect": "The target’s Speed is lowered by 1 CS.",
+			"effects": "The target’s Speed is lowered by 1 CS.",
 			"contestType": "Smart",
 			"contestEffect": "Big Show"
 		},
@@ -7906,7 +7906,7 @@
 			"db": 6,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target, Double Strike",
-			"effect": "Double Iron Bash Flinches the targets on 15+. This move is affected by Iron Fist.",
+			"effects": "Double Iron Bash Flinches the targets on 15+. This move is affected by Iron Fist.",
 			"contestType": "Tough",
 			"contestEffect": "Reliable"
 		},
@@ -7918,7 +7918,7 @@
 			"db": 10,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target, Double Strike",
-			"effect": "The DB of Behemoth Blade increases by +2 for each positive CS the target has, to a maximum of DB 20.",
+			"effects": "The DB of Behemoth Blade increases by +2 for each positive CS the target has, to a maximum of DB 20.",
 			"contestType": "Cool",
 			"contestEffect": "Good Show"
 		},
@@ -7930,7 +7930,7 @@
 			"db": 14,
 			"damageClass": "Special",
 			"range": "Cone 3, Smite",
-			"effect": "The user’s Hit Points are reduced by 50% of their full Hit Point value. This Hit Point loss cannot be prevented or reduced in any way.",
+			"effects": "The user’s Hit Points are reduced by 50% of their full Hit Point value. This Hit Point loss cannot be prevented or reduced in any way.",
 			"contestType": "Smart",
 			"contestEffect": "Big Show"
 		},
@@ -7940,7 +7940,7 @@
 			"freq": "Scene x2",
 			"damageClass": "Status",
 			"range": "Burst 4",
-			"effect": "All targets that are Steel-Typed receive +1 Attack and Special Attack Combat Stages",
+			"effects": "All targets that are Steel-Typed receive +1 Attack and Special Attack Combat Stages",
 			"contestType": "Smart",
 			"contestEffect": "Get Ready"
 		},
@@ -7952,7 +7952,7 @@
 			"db": 10,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "The DB of Behemoth Bash increases by +2 for each positive CS the target has, to a maximum of DB 20",
+			"effects": "The DB of Behemoth Bash increases by +2 for each positive CS the target has, to a maximum of DB 20",
 			"contestType": "Tough",
 			"contestEffect": "Steady Performance"
 		},
@@ -7964,7 +7964,7 @@
 			"db": 10,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target, Smite",
-			"effect": "The target's next damaging Normal Type Move instead becomes Electric Type.",
+			"effects": "The target's next damaging Normal Type Move instead becomes Electric Type.",
 			"contestType": "Cool",
 			"contestEffect": "Special Attention"
 		},
@@ -7976,7 +7976,7 @@
 			"db": 15,
 			"damageClass": "Special",
 			"range": "6, Ranged Blast 3, Smite",
-			"effect": "The user's Hit Points are reduced by 50% of their full Hit Point value. This Hit Point loss cannot be prevented or reduced in any way.",
+			"effects": "The user's Hit Points are reduced by 50% of their full Hit Point value. This Hit Point loss cannot be prevented or reduced in any way.",
 			"contestType": "Beauty",
 			"contestEffect": "Big Show"
 		},
@@ -7986,7 +7986,7 @@
 			"freq": "Daily x2",
 			"damageClass": "Status",
 			"range": "Self, Healing",
-			"effect": "The user regains Hit Points equal to half of its full Hit Point value. If it is Sand Storming, the user gains 2/3 of its full Hit Point value instead. If it is Sunny, Rainy or Hailing the user gains 1/4 of their full Hit Point value instead.",
+			"effects": "The user regains Hit Points equal to half of its full Hit Point value. If it is Sand Storming, the user gains 2/3 of its full Hit Point value instead. If it is Sunny, Rainy or Hailing the user gains 1/4 of their full Hit Point value instead.",
 			"contestType": "Tough",
 			"contestEffect": "Reflective Appeal"
 		},
@@ -7998,7 +7998,7 @@
 			"db": 9,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "Before rolling damage, transfer all Combat Stages on the target to the user.",
+			"effects": "Before rolling damage, transfer all Combat Stages on the target to the user.",
 			"contestType": "Smart",
 			"contestEffect": "Attention Grabber"
 		},
@@ -8010,7 +8010,7 @@
 			"db": 13,
 			"damageClass": "Special",
 			"range": "Line 9, Smite",
-			"effect": "Lower the user's Special Attack 2 Combat Stages after damage.",
+			"effects": "Lower the user's Special Attack 2 Combat Stages after damage.",
 			"contestType": "Beauty",
 			"contestEffect": "Seen Nothing Yet"
 		},
@@ -8022,7 +8022,7 @@
 			"db": 8,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "If the user's last attack failed or missed, Stomping Tantrum has a Damage Base 15 (4d10+10 / 45) instead.",
+			"effects": "If the user's last attack failed or missed, Stomping Tantrum has a Damage Base 15 (4d10+10 / 45) instead.",
 			"contestType": "Tough",
 			"contestEffect": "Unsettling"
 		},
@@ -8034,7 +8034,7 @@
 			"db": 10,
 			"damageClass": "Special",
 			"range": "Line 6",
-			"effect": "This Move ignores any Abilities that would cause it to fail or miss, such as Dodge or Wonder Guard; those Abilities cannot be activated in response to Moongeist Beam.",
+			"effects": "This Move ignores any Abilities that would cause it to fail or miss, such as Dodge or Wonder Guard; those Abilities cannot be activated in response to Moongeist Beam.",
 			"contestType": "Smart",
 			"contestEffect": "Good Show"
 		},
@@ -8046,7 +8046,7 @@
 			"db": 10,
 			"damageClass": "Physical",
 			"range": "Close Blast 2",
-			"effect": "This Move ignores any Abilities that would cause it to fail or miss, such as Dodge or Wonder Guard; those Abilities cannot be activated in response to Sunsteel Strike.",
+			"effects": "This Move ignores any Abilities that would cause it to fail or miss, such as Dodge or Wonder Guard; those Abilities cannot be activated in response to Sunsteel Strike.",
 			"contestType": "Cool",
 			"contestEffect": "Big Show"
 		},
@@ -8058,7 +8058,7 @@
 			"db": 10,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "High Horsepower may be used as a Free Action at the end of a Sprint Maneuver taken as a Standard Action, as long as the user Shifted at least 3 meters in a straight line towards the target. When used this way, High Horsepower gains Smite.",
+			"effects": "High Horsepower may be used as a Free Action at the end of a Sprint Maneuver taken as a Standard Action, as long as the user Shifted at least 3 meters in a straight line towards the target. When used this way, High Horsepower gains Smite.",
 			"contestType": "Tough",
 			"contestEffect": "Big Show"
 		},
@@ -8070,7 +8070,7 @@
 			"db": 11,
 			"damageClass": "Special",
 			"range": "6, 1 Target or Burst 1",
-			"effect": "The user adds half their Defense Stat to Clanging Scale's Damage Roll. After the Move is resolved, the user's Defense is lowered by 1 CS.",
+			"effects": "The user adds half their Defense Stat to Clanging Scale's Damage Roll. After the Move is resolved, the user's Defense is lowered by 1 CS.",
 			"contestType": "Cool",
 			"contestEffect": "Good Show"
 		},
@@ -8091,7 +8091,7 @@
 			"freq": "Scene",
 			"damageClass": "Status",
 			"range": "Self",
-			"effect": "The user loses 1/3rd of their Max Hit Points and has each of its stats raised by +1 Combat Stage.",
+			"effects": "The user loses 1/3rd of their Max Hit Points and has each of its stats raised by +1 Combat Stage.",
 			"contestType": "Cool",
 			"contestEffect": "Seen Nothing Yet"
 		},
@@ -8103,7 +8103,7 @@
 			"db": 8,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "The Target is Trapped for 2 rounds. Anchor Shot may only be used from the user's Anchor Token.",
+			"effects": "The Target is Trapped for 2 rounds. Anchor Shot may only be used from the user's Anchor Token.",
 			"contestType": "Tough",
 			"contestEffect": "Catching Up"
 		},
@@ -8115,7 +8115,7 @@
 			"db": 9,
 			"damageClass": "Physical",
 			"range": "4, 1 Target",
-			"effect": "Light Screen, Reflect and Aurora Veil cannot be declared in response to Psychic Fangs.",
+			"effects": "Light Screen, Reflect and Aurora Veil cannot be declared in response to Psychic Fangs.",
 			"contestType": "Smart",
 			"contestEffect": "Steady Performance"
 		},
@@ -8127,7 +8127,7 @@
 			"db": 12,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "Multi-Attack is the same Type as the Memory Disc, Plate, or Drive Item held.",
+			"effects": "Multi-Attack is the same Type as the Memory Disc, Plate, or Drive Item held.",
 			"contestType": "Cool",
 			"contestEffect": "Reflective Appeal"
 		},
@@ -8137,7 +8137,7 @@
 			"freq": "Scene",
 			"damageClass": "Status",
 			"range": "Melee, 1 Target, Healing",
-			"effect": "The target is cured of all Permanent and Volatile Statuses. For every status removed, the user recovers a Tick of Hit Points.",
+			"effects": "The target is cured of all Permanent and Volatile Statuses. For every status removed, the user recovers a Tick of Hit Points.",
 			"contestType": "Smart",
 			"contestEffect": "Reflective Appeal"
 		},
@@ -8149,7 +8149,7 @@
 			"db": 9,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target, Priority",
-			"effect": "You may only use First Impression with Priority upon joining an encounter; if you do, First Impression Flinches the target. Switching out resets the requirement of joining an encounter.",
+			"effects": "You may only use First Impression with Priority upon joining an encounter; if you do, First Impression Flinches the target. Switching out resets the requirement of joining an encounter.",
 			"contestType": "Smart",
 			"contestEffect": "Exhausting Act"
 		},
@@ -8159,7 +8159,7 @@
 			"freq": "Scene x2",
 			"damageClass": "Status",
 			"range": "Melee, 1 Target",
-			"effect": "The target immediately reuses the attack it performed last, ignoring frequency, as a Free Action. They may choose new targets for the copied attack. Instruct may not be used if the Target's last Move was a Set-Up Move, a Trigger Move, or Instruct, or if the Target is currently affected by Exhaust.",
+			"effects": "The target immediately reuses the attack it performed last, ignoring frequency, as a Free Action. They may choose new targets for the copied attack. Instruct may not be used if the Target's last Move was a Set-Up Move, a Trigger Move, or Instruct, or if the Target is currently affected by Exhaust.",
 			"contestType": "Smart",
 			"contestEffect": "Catching Up"
 		},
@@ -8169,7 +8169,7 @@
 			"freq": "Daily x2",
 			"damageClass": "Status",
 			"range": "Melee, 1 Target, Healing",
-			"effect": "The target regains Hit Points equal to half of its full Hit Point value. If the field is Grassy Terrain, the target gains 2/3 of its full Hit Point value instead.",
+			"effects": "The target regains Hit Points equal to half of its full Hit Point value. If the field is Grassy Terrain, the target gains 2/3 of its full Hit Point value instead.",
 			"contestType": "Beauty",
 			"contestEffect": "Reflective Appeal"
 		},
@@ -8181,7 +8181,7 @@
 			"db": 7,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "The target receives a -5 penalty to damage rolls for 1 round.",
+			"effects": "The target receives a -5 penalty to damage rolls for 1 round.",
 			"contestType": "Tough",
 			"contestEffect": "Double Time"
 		},
@@ -8191,7 +8191,7 @@
 			"freq": "Daily",
 			"damageClass": "Status",
 			"range": "6, 1 Target, Priority",
-			"effect": "Until the end of the user's next turn, the target is Blinded and Vulnerable. *Grants Glow.",
+			"effects": "Until the end of the user's next turn, the target is Blinded and Vulnerable. *Grants Glow.",
 			"contestType": "Smart",
 			"contestEffect": "Attention Grabber"
 		},
@@ -8202,7 +8202,7 @@
 			"ac": 2,
 			"damageClass": "Status",
 			"range": "Melee, 1 Target, Healing",
-			"effect": "The user gains Hit Points equal to the higher of the target's Attack or Special Attack; the target then loses 1 Combat Stage in that Stat.",
+			"effects": "The user gains Hit Points equal to the higher of the target's Attack or Special Attack; the target then loses 1 Combat Stage in that Stat.",
 			"contestType": "Smart",
 			"contestEffect": "Incentives"
 		},
@@ -8214,7 +8214,7 @@
 			"db": 13,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target, Set Up",
-			"effect": "If the weather is not Sunny, the user gains +1 CS in Attack and Special Defense, and the user's turn ends. If the weather is Sunny, immediately proceed to the Resolution Effect instead and this Move loses the Set-Up keyword. The user attacks with Solar Blade. If the weather is Rainy, Sandstorming, or Hailing, Solar Blade's Damage Base is lowered to 6 (2d6+8 / 15).",
+			"effects": "If the weather is not Sunny, the user gains +1 CS in Attack and Special Defense, and the user's turn ends. If the weather is Sunny, immediately proceed to the Resolution Effect instead and this Move loses the Set-Up keyword. The user attacks with Solar Blade. If the weather is Rainy, Sandstorming, or Hailing, Solar Blade's Damage Base is lowered to 6 (2d6+8 / 15).",
 			"contestType": "Cool",
 			"contestEffect": "Special Attention"
 		},
@@ -8237,7 +8237,7 @@
 			"db": 9,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "The target's Defense is lowered by 1 Combat Stage on a 17+.",
+			"effects": "The target's Defense is lowered by 1 Combat Stage on a 17+.",
 			"contestType": "Tough",
 			"contestEffect": "Steady Performance"
 		},
@@ -8249,7 +8249,7 @@
 			"db": 9,
 			"damageClass": "Physical",
 			"range": "Burst 5, Friendly, Groundsource",
-			"effect": "*Grants Groundshaper.",
+			"effects": "*Grants Groundshaper.",
 			"contestType": "Tough",
 			"contestEffect": "Big Show"
 		},
@@ -8261,7 +8261,7 @@
 			"db": 8,
 			"damageClass": "Special",
 			"range": "Melee, 3 Targets",
-			"effect": "Make and resolve of Hyperspace Hole's attacks separately. In between each attack, the user may Shift using their Teleporter capability, ending the Shift next to a legal target. Interrupts may not be triggered against Hyperspace Hole.",
+			"effects": "Make and resolve of Hyperspace Hole's attacks separately. In between each attack, the user may Shift using their Teleporter capability, ending the Shift next to a legal target. Interrupts may not be triggered against Hyperspace Hole.",
 			"contestType": "Smart",
 			"contestEffect": "Gamble"
 		},
@@ -8273,7 +8273,7 @@
 			"db": 10,
 			"damageClass": "Physical",
 			"range": "Burst 2",
-			"effect": "Interrupts may not be triggered against Hyperspace Fury. The user's Defense is lowered by 1 Combat Stage.",
+			"effects": "Interrupts may not be triggered against Hyperspace Fury. The user's Defense is lowered by 1 Combat Stage.",
 			"contestType": "Tough",
 			"contestEffect": "Double Time"
 		},
@@ -8285,7 +8285,7 @@
 			"db": 11,
 			"damageClass": "Special",
 			"range": "Close Blast 3, Smite",
-			"effect": "Steam Eruption burns all legal targets on a 15+.",
+			"effects": "Steam Eruption burns all legal targets on a 15+.",
 			"contestType": "Cool",
 			"contestEffect": "Seen nothing Yet"
 		},
@@ -8297,7 +8297,7 @@
 			"db": 8,
 			"damageClass": "Physical",
 			"range": "8, 1 Target",
-			"effect": "The Target is Trapped for 2 rounds.",
+			"effects": "The Target is Trapped for 2 rounds.",
 			"contestType": "Smart",
 			"contestEffect": "Sabotage"
 		},
@@ -8309,7 +8309,7 @@
 			"db": 9,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "This Move ignores the target's positive Defense Combat Stages and all Damage Reduction.",
+			"effects": "This Move ignores the target's positive Defense Combat Stages and all Damage Reduction.",
 			"contestType": "Tough",
 			"contestEffect": "Inversed Appeal"
 		},
@@ -8321,7 +8321,7 @@
 			"db": 9,
 			"damageClass": "Special",
 			"range": "Cone 2, Sonic",
-			"effect": "When you hit a target with Sparkling Aria, the user may choose to deal no damage and instead cure that target of Burn, Confusion, Infatuation, or Rage.",
+			"effects": "When you hit a target with Sparkling Aria, the user may choose to deal no damage and instead cure that target of Burn, Confusion, Infatuation, or Rage.",
 			"contestType": "Beauty",
 			"contestEffect": "Attention Grabber"
 		},
@@ -8333,7 +8333,7 @@
 			"db": 10,
 			"damageClass": "Physical",
 			"range": "6, 1 Target, Priority",
-			"effect": "Beak Blast must be declared at the start of the round. If the user is hit by a Melee attack this round, their attacker is Burned. At the end of the round, the user may shift and attack with Beak Blast. Contest Type: Cool",
+			"effects": "Beak Blast must be declared at the start of the round. If the user is hit by a Melee attack this round, their attacker is Burned. At the end of the round, the user may shift and attack with Beak Blast. Contest Type: Cool",
 			"contestType": "Cool",
 			"contestEffect": "Special Attention"
 		},
@@ -8345,7 +8345,7 @@
 			"db": 10,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "The user's Speed is lowered by 1 Combat Stage.",
+			"effects": "The user's Speed is lowered by 1 Combat Stage.",
 			"contestType": "Cool",
 			"contestEffect": "Good Show"
 		},
@@ -8357,7 +8357,7 @@
 			"db": 9,
 			"damageClass": "Special",
 			"range": "6, 1 Target, Dance",
-			"effect": "Revelation Dance is the same Type as the user's primary Type (the first one listed in the Pokédex). Revelation Dance deals +5 Bonus Damage for every other Dance Move used by the user this round, to a maximum of +15.",
+			"effects": "Revelation Dance is the same Type as the user's primary Type (the first one listed in the Pokédex). Revelation Dance deals +5 Bonus Damage for every other Dance Move used by the user this round, to a maximum of +15.",
 			"contestType": "Beauty",
 			"contestEffect": "Reliable"
 		},
@@ -8369,7 +8369,7 @@
 			"db": 9,
 			"damageClass": "Special",
 			"range": "6, 1 Target",
-			"effect": "Once per Scene, Pollen Puff may instead be used on an ally; when used this way, the target recovers 50% of their maximum Hit Points and the Move has the Healing keyword.",
+			"effects": "Once per Scene, Pollen Puff may instead be used on an ally; when used this way, the target recovers 50% of their maximum Hit Points and the Move has the Healing keyword.",
 			"contestType": "Beauty",
 			"contestEffect": "Reflective Appeal"
 		},
@@ -8390,7 +8390,7 @@
 			"freq": "Scene",
 			"damageClass": "Status",
 			"range": "Self, Interrupt, Shield, Trigger",
-			"effect": "If the user is hit by an attack, the user may use Baneful Bunker. The user is instead not hit by the Move. You do not take any damage nor are you affected by any of the Move's effects. In addition, if the triggering attack was Melee ranged, the attacker is Poisoned.",
+			"effects": "If the user is hit by an attack, the user may use Baneful Bunker. The user is instead not hit by the Move. You do not take any damage nor are you affected by any of the Move's effects. In addition, if the triggering attack was Melee ranged, the attacker is Poisoned.",
 			"contestType": "Smart",
 			"contestEffect": "Inversed Appeal"
 		},
@@ -8402,7 +8402,7 @@
 			"db": 6,
 			"damageClass": "Physical",
 			"range": "Cloase Blast 2",
-			"effect": "The target’s Attack is lowered 1 CS.",
+			"effects": "The target’s Attack is lowered 1 CS.",
 			"contestType": "Tough",
 			"contestEffect": "Desperation"
 		},
@@ -8414,7 +8414,7 @@
 			"db": 9,
 			"damageClass": "Physical",
 			"range": "Melee, 1 Target",
-			"effect": "Against targets with a lower initiative that have not yet acted this round, Fishious Rend deals +10 damage.",
+			"effects": "Against targets with a lower initiative that have not yet acted this round, Fishious Rend deals +10 damage.",
 			"contestType": "Cool",
 			"contestEffect": "Catching Up"
 		},
@@ -8424,7 +8424,7 @@
 			"freq": "Scene",
 			"damageClass": "Status",
 			"range": "Blessing",
-			"effect": "Blessing – Any user affected by Aurora Veil may activate it when receiving Damage to resist the Damage one step. Aurora Veil may be activated 2 times, and then disappears.\nSpecial: Aurora Veil can only be used when the user is in Hailing Weather. The Blessings persist even after Hailing Weather has ended, however",
+			"effects": "Blessing – Any user affected by Aurora Veil may activate it when receiving Damage to resist the Damage one step. Aurora Veil may be activated 2 times, and then disappears.\nSpecial: Aurora Veil can only be used when the user is in Hailing Weather. The Blessings persist even after Hailing Weather has ended, however",
 			"contestType": "Beauty",
 			"contestEffect": "Excitement"
 		}
