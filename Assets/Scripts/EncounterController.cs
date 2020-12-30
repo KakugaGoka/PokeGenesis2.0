@@ -801,7 +801,7 @@ public class EncounterController : MonoBehaviour {
                 cryAudioSource.clip = PokedexManager.currentPokemon.cryAudio;
                 cryAudioSource.Play();
             } else {
-                Debug.LogError("The current pokemon does not have a proper cry set up: " + PokedexManager.currentPokemon.species);
+                Debug.LogWarning("The current pokemon does not have a proper cry set up: " + PokedexManager.currentPokemon.species);
             }
         }
     }

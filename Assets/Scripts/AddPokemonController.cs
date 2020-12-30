@@ -296,7 +296,7 @@ public class AddPokemonController : MonoBehaviour
             pokemon.species = VerifyString(species.text, "Pokemon - Species");
             pokemon.image = VerifyString(image.text, "Pokemon - Image");
             pokemon.gigaImage = gigaImage.text.Trim();
-            pokemon.cry = VerifyString(cry.text, "Pokemon - Audio");
+            pokemon.cry = cry.text.Trim();
             pokemon.type = VerifyString(type.text, "Pokemon - Types");
             pokemon.size = VerifyString(size.text, "Pokemon - Height");
             pokemon.weight = VerifyString(weight.text, "Pokemon - Weight");

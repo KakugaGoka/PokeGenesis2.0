@@ -361,12 +361,12 @@ public class SheetController : MonoBehaviour {
         maxHealthField.text = pokemon.isDynamax ? pokemon.GetDynaMaxHealth().ToString() : pokemon.GetMaxHealth().ToString();
         currentHealthField.text = pokemon.currentHealth.ToString();
 
-        int hpStage = pokemon.hpLevel / 10;
-        int atkStage = pokemon.atkLevel / 10;
-        int defStage = pokemon.defLevel / 10;
-        int spatkStage = pokemon.spatkLevel / 10;
-        int spdefStage = pokemon.spdefLevel / 10;
-        int spdStage = pokemon.spdLevel / 10;
+        int hpStage = (pokemon.hpLevel + pokemon.hp) / 10;
+        int atkStage = (pokemon.atkLevel + pokemon.atk) / 10;
+        int defStage = (pokemon.defLevel + pokemon.def) / 10;
+        int spatkStage = (pokemon.spatkLevel + pokemon.spatk) / 10;
+        int spdefStage = (pokemon.spdefLevel + pokemon.spdef) / 10;
+        int spdStage = (pokemon.spdLevel + pokemon.spd) / 10;
 
         if (hpStage == 0) { hpStage = 1; }
         if (atkStage == 0) { atkStage = 1; }

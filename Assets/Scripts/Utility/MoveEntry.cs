@@ -30,7 +30,7 @@ public class MoveEntry : MonoBehaviour
             classText.text = move.damageClass;
             int db = move.db;
             if (PokedexManager.currentPokemon.type.Contains(move.type.typeName)) {
-                db++;
+                db += 2;
             }
             dbText.text = "DB " + db.ToString();
             acText.text = "AC " + move.ac.ToString();
